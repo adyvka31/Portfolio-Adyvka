@@ -1,0 +1,137 @@
+.footerSection {
+  width: 100%;
+  margin-top: 200px; /* Memberi ruang untuk floating card */
+  position: relative;
+}
+
+.footerContent {
+  background-color: var(--bg-dark-green);
+  padding: 150px 80px 50px;
+  color: var(--bg-beige);
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerName {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footerName h1 {
+  font-family: "BebasNeue";
+  font-size: 40px;
+  margin: 0;
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--bg-beige);
+}
+
+.footerDivider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--bg-beige);
+  margin: 30px 0;
+  opacity: 0.5;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footerNav {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Floating Card di tengah-tengah Footer */
+.floatingCard {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 350px;
+  background-color: white;
+  border: 1px solid var(--bg-dark-green);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.footerImg {
+  width: 300px;
+  z-index: 2;
+}
+
+.floatingButtons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 10;
+}
+
+.floatingButtons .btnWork,
+.floatingButtons .btnAbout {
+  background-color: var(--bg-beige);
+  border: 1px solid var(--bg-dark-green);
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-family: "Poppins";
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.floatingButtons .btnWork:hover,
+.floatingButtons .btnAbout:hover {
+  background-color: var(--bg-dark-green);
+  color: var(--bg-beige);
+}
+
+@media (max-width: 767px) {
+  .footerContent {
+    padding: 100px 30px 30px;
+  }
+  .footerTop {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footerBottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .floatingCard {
+    width: 90%;
+    height: 250px;
+    top: -100px;
+  }
+  .footerImg {
+    width: 200px;
+  }
+  .floatingButtons {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+  }
+}

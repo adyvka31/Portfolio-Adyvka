@@ -1,0 +1,96 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
+.navList {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  list-style: none;
+}
+
+.navItem {
+  border: 1px solid var(--bg-dark-green);
+  padding: 5px 24px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.navItem.active,
+.navItem:hover {
+  background-color: var(--accent-yellow);
+}
+
+.heroMarqueeBg {
+  position: absolute;
+  top: -50px;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.marqueeSlide {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marqueeSlide h1 {
+  font-family: "BebasNeue";
+  font-size: 250px;
+  margin-right: 50px;
+}
+
+.heroMainContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+
+.heroImg {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  width: 40%;
+  z-index: -1;
+}
+
+.heroTitle {
+  font-family: "BebasNeue";
+  font-size: 150px;
+  color: var(--bg-dark-green);
+  -webkit-text-stroke: 1px black;
+  line-height: 0.8;
+}
+
+.heroTitle .textLine:hover {
+  color: var(--bg-beige);
+  transition: 0.2s;
+}
+
+.indent1 {
+  margin-left: 60px;
+}
+.indent2 {
+  margin-left: 120px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

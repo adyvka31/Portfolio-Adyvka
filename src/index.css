@@ -1,0 +1,32 @@
+:root {
+  --bg-beige: #f6eee1;
+  --bg-dark-green: #334b35;
+  --accent-yellow: #feac1b;
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src: url("/Font/BebasNeue-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/Font/Poppins-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-beige);
+  border: 12px solid var(--bg-dark-green);
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,99 @@
+.certificateSection {
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.marqueeWrapper {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mt4 {
+  margin-top: 20px;
+}
+
+.marqueeTrack {
+  display: inline-flex;
+  gap: 24px;
+  padding: 0 12px;
+}
+
+.slideRight {
+  animation: scroll-right 40s linear infinite;
+}
+.slideLeft {
+  animation: scroll-left-cert 40s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.certCard {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.certCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.certOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+  color: white;
+}
+
+.certOverlay h3 {
+  font-size: 20px;
+  margin: 0;
+}
+.certOverlay p {
+  margin: 5px 0 0;
+}
+
+.certCard:hover img {
+  transform: scale(1.1);
+}
+.certCard:hover .certOverlay {
+  opacity: 1;
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left-cert {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .certCard {
+    width: 240px;
+    height: 160px;
+  }
+}
