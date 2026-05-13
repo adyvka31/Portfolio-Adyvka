@@ -1,0 +1,19 @@
+.tag {
+  display: inline-block;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  color: var(--ink-100);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.sm {
+  font-size: 11px;
+  padding: 4px 10px;
+}
+
+.xs {
+  font-size: 10px;
+  padding: 2px 8px;
+}

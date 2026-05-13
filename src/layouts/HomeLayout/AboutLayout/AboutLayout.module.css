@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+  padding: 8rem 1.5rem;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.headlineCol {
+  grid-column: span 12 / span 12;
+}
+
+@media (min-width: 768px) {
+  .headlineCol {
+    grid-column: span 7 / span 7;
+  }
+}
+
+.copyCol {
+  grid-column: span 12 / span 12;
+}
+
+@media (min-width: 768px) {
+  .copyCol {
+    grid-column: span 5 / span 5;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+.headline {
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .headline {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 3.75rem;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.paragraph {
+  color: rgba(207, 207, 214, 0.8);
+  line-height: 1.625;
+  margin-top: 1.25rem;
+}
+
+.paragraph:first-child {
+  margin-top: 0;
+}

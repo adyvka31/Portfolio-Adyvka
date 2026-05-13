@@ -1,32 +1,387 @@
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
 :root {
-  --bg-beige: #f6eee1;
-  --bg-dark-green: #334b35;
-  --accent-yellow: #feac1b;
+  /* Ink scale (near-black grays) */
+  --ink-950: #070708;
+  --ink-900: #0a0a0c;
+  --ink-850: #0d0d10;
+  --ink-800: #111114;
+  --ink-700: #16161a;
+  --ink-600: #1c1c22;
+  --ink-500: #24242c;
+  --ink-400: #36363f;
+  --ink-300: #54545e;
+  --ink-200: #9a9aa6;
+  --ink-100: #cfcfd6;
+  --ink-50: #f4f4f6;
+
+  /* Accent — signature cyan glow */
+  --accent-glow: #7cf2ff;
+  --accent-bright: #5ee9ff;
+  --accent-deep: #0ea5d4;
+
+  /* Surfaces */
+  --bg: #070708;
+  --bg-soft: #0a0a0c;
+  --line: rgba(255, 255, 255, 0.06);
+  --line-strong: rgba(255, 255, 255, 0.1);
+  --text: #ededf0;
+  --muted: #8a8a93;
 }
 
-@font-face {
-  font-family: "BebasNeue";
-  src: url("/Font/BebasNeue-Regular.ttf");
-}
-@font-face {
-  font-family: "Poppins";
-  src: url("/Font/Poppins-Regular.ttf");
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-beige);
-  border: 12px solid var(--bg-dark-green);
-  overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
-}
-
-* {
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family:
+    "Geist",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILS
+   ============================================ */
+.font-sans {
+  font-family: "Geist", system-ui, sans-serif;
+}
+.font-mono {
+  font-family: "Geist Mono", ui-monospace, monospace;
+}
+.font-serif {
+  font-family: "Instrument Serif", ui-serif, serif;
+}
+
+.text-fade {
+  background: linear-gradient(180deg, #ffffff 0%, #999aa3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-glow {
+  background: linear-gradient(180deg, #f4faff 0%, #6fdfff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================
+   SURFACES
+   ============================================ */
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.015)
+  );
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-hi {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ============================================
+   CURSOR SPOTLIGHT
+   ============================================ */
+.spotlight {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(124, 242, 255, 0.08),
+    transparent 40%
+  );
+  transition: background 0.15s ease;
+}
+
+/* ============================================
+   GRAIN OVERLAY
+   ============================================ */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* ============================================
+   HERO GRID BACKGROUND
+   ============================================ */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center center;
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    black 30%,
+    transparent 75%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    black 30%,
+    transparent 75%
+  );
+}
+
+/* ============================================
+   AURORA
+   ============================================ */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+
+.aurora::before {
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: -10%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(124, 242, 255, 0.22),
+    transparent 70%
+  );
+  animation: aurora-drift 18s ease-in-out infinite alternate;
+}
+
+.aurora::after {
+  width: 500px;
+  height: 500px;
+  right: -10%;
+  bottom: -10%;
+  background: radial-gradient(
+    circle,
+    rgba(180, 130, 255, 0.1),
+    transparent 70%
+  );
+  animation: aurora-drift 22s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(-40%) translateY(40px) scale(1.1);
+  }
+}
+
+/* ============================================
+   CARD HOVER GLOW
+   ============================================ */
+.card {
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1),
+    border-color 0.3s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    400px circle at var(--cx, 50%) var(--cy, 50%),
+    rgba(124, 242, 255, 0.1),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover {
+  border-color: rgba(124, 242, 255, 0.18);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   MARQUEE
+   ============================================ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+/* ============================================
+   PULSE DOT
+   ============================================ */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ============================================
+   NAV LINK HOVER DOT
+   ============================================ */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--accent-glow);
+  opacity: 0;
+  transform: translateX(-50%) translateY(-4px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   BUTTON SHIMMER
+   ============================================ */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c22;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a32;
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+::selection {
+  background: rgba(124, 242, 255, 0.25);
+  color: #fff;
 }

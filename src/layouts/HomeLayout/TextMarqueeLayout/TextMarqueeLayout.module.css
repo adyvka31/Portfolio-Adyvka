@@ -1,0 +1,65 @@
+.section {
+  position: relative;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.caption {
+  text-align: center;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+  margin-bottom: 2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.viewport {
+  position: relative;
+}
+
+.fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, var(--ink-950), transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, var(--ink-950), transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: 4rem;
+  white-space: nowrap;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  font-size: 1.5rem;
+  color: rgba(154, 154, 166, 0.7);
+  font-weight: 500;
+}
+
+.row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.bullet {
+  color: var(--ink-300);
+}

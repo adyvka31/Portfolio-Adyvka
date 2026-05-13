@@ -1,0 +1,32 @@
+.logoMark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.letter {
+  font-family: "Instrument Serif", ui-serif, serif;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.dot {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: var(--accent-glow);
+}
