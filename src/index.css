@@ -147,6 +147,93 @@ textarea {
 }
 
 /* ============================================
+   METEOR SHOWER (LUXURY LIGHT BEAMS)
+   ============================================ */
+.meteors {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* Di atas background grid, di belakang konten teks */
+}
+
+.meteor {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 150px; /* Panjang buntut meteor */
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(124, 242, 255, 0.15) 60%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  border-radius: 999px;
+  filter: drop-shadow(0 0 5px rgba(124, 242, 255, 0.6));
+  animation: meteor-fall linear infinite;
+  opacity: 0;
+}
+
+/* Variasi posisi, delay, dan durasi agar jatuhnya terlihat natural & acak */
+.meteor:nth-child(1) {
+  left: 12.8%;
+  animation-delay: 0.2s;
+  animation-duration: 5.5s;
+}
+.meteor:nth-child(2) {
+  left: 30.3%;
+  animation-delay: 1.5s;
+  animation-duration: 6.2s;
+}
+.meteor:nth-child(3) {
+  left: 47.8%;
+  animation-delay: 0.8s;
+  animation-duration: 4.8s;
+}
+.meteor:nth-child(4) {
+  left: 74.1%;
+  animation-delay: 2.1s;
+  animation-duration: 5.8s;
+}
+.meteor:nth-child(5) {
+  left: 91.6%;
+  animation-delay: 0.5s;
+  animation-duration: 7.5s;
+}
+.meteor:nth-child(6) {
+  left: 21.5%;
+  animation-delay: 2.8s;
+  animation-duration: 5.4s;
+}
+.meteor:nth-child(7) {
+  left: 61%;
+  animation-delay: 1.2s;
+  animation-duration: 6.8s;
+}
+.meteor:nth-child(8) {
+  left: 82.9%;
+  animation-delay: 3.5s;
+  animation-duration: 5.6s;
+}
+
+@keyframes meteor-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  15% {
+    opacity: 0.6;
+  }
+  35% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh);
+  }
+}
+
+/* ============================================
    GRAIN OVERLAY
    ============================================ */
 .grain::before {
@@ -165,19 +252,19 @@ textarea {
    ============================================ */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 64px 64px;
   background-position: center center;
   mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 30%,
-    black 30%,
-    transparent 75%
+    ellipse 120% 100% at 50% 30%,
+    black 35%,
+    transparent 80%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 30%,
-    black 30%,
-    transparent 75%
+    ellipse 120% 100% at 50% 30%,
+    black 35%,
+    transparent 80%
   );
 }
 
@@ -384,4 +471,28 @@ textarea {
 ::selection {
   background: rgba(124, 242, 255, 0.25);
   color: #fff;
+}
+
+.global-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+
+  /* Gunakan variabel kursor yang relatif terhadap containernya */
+  mask-image: radial-gradient(
+    600px circle at var(--dotX, -1000px) var(--dotY, -1000px),
+    black,
+    transparent 40%
+  );
+  -webkit-mask-image: radial-gradient(
+    600px circle at var(--dotX, -1000px) var(--dotY, -1000px),
+    black,
+    transparent 40%
+  );
 }
