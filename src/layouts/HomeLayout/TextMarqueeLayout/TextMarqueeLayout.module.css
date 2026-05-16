@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding: 4rem 0;
+  padding: 3rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
@@ -50,8 +50,8 @@
   align-items: center;
   gap: 4rem;
   font-size: 1.5rem;
-  color: rgba(154, 154, 166, 0.7);
   font-weight: 500;
+  /* Hapus color abu-abu statis dari sini, kita pindahkan ke .itemText */
 }
 
 .row {
@@ -60,6 +60,34 @@
   gap: 4rem;
 }
 
+/* --- WARNA & ANIMASI TEMA --- */
+
+.itemText {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* Urutan 1: Warna Base (Abu-abu terang/Putih) */
+.row:nth-child(3n + 1) .itemText {
+  color: rgba(207, 207, 214, 0.9);
+}
+
+/* Urutan 2: Warna Aksen (Cyan Glow) */
+.row:nth-child(3n + 2) .itemText {
+  color: rgba(124, 242, 255, 0.75);
+}
+
+.row:nth-child(3n + 3) .itemText {
+  color: rgba(168, 85, 247, 0.7);
+}
+
+.itemText:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
 .bullet {
-  color: var(--ink-300);
+  color: rgba(124, 242, 255, 0.3); /* Cyan pudar */
+  font-size: 1rem; /* Sedikit lebih kecil dari teks agar proporsional */
+  text-shadow: 0 0 12px rgba(124, 242, 255, 0.2);
 }

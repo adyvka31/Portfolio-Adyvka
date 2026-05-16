@@ -6,8 +6,8 @@ function TextMarqueeLayout() {
     <div className={styles.track} aria-hidden={ariaHidden || undefined}>
       {marqueeStack.map((item, idx) => (
         <span key={`${item}-${idx}`} className={styles.row}>
-          <span>{item}</span>
-          <span className={styles.bullet}>·</span>
+          <span className={styles.itemText}>{item}</span>
+          <span className={styles.bullet}>◆</span>
         </span>
       ))}
     </div>
