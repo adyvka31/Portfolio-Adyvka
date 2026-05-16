@@ -1,0 +1,50 @@
+.section {
+  padding: 7rem 1.5rem 5rem;
+}
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+.title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  margin: 0;
+}
+.italic {
+  font-style: italic;
+}
+.description {
+  margin-top: 1.5rem;
+  color: rgba(207, 207, 214, 0.75);
+  font-size: 1.0625rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  background: #fff;
+  color: var(--ink-950);
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
