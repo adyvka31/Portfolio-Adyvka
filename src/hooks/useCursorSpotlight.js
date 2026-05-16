@@ -1,33 +1,26 @@
-// src/hooks/useCursorSpotlight.js
 import { useEffect } from "react";
 
 export function useCursorSpotlight() {
   useEffect(() => {
-    if (!window.matchMedia("(pointer:fine)").matches) return;
+    const handleMouseMove = (e) => {
+      // 1. Update variabel untuk Spotlight utama (jika di-set di root/body)
+      document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--my", `${e.clientY}px`);
 
-    const spot = document.querySelector(".spotlight");
-    // Ambil elemen titik-titik
-    const globalDots = document.querySelector(".global-dots");
+      // 2. Update posisi mask untuk titik-titik (global-dots)
+      // PENTING: Taruh querySelectorAll DI DALAM event listener
+      // agar elemen baru hasil perpindahan halaman (React Router) selalu terdeteksi
+      const dots = document.querySelectorAll(".global-dots");
 
-    const handleMove = (e) => {
-      // Senter elemen global bawaan (Hero dll)
-      if (spot) {
-        spot.style.setProperty("--mx", e.clientX + "px");
-        spot.style.setProperty("--my", e.clientY + "px");
-      }
-
-      // Senter khusus untuk elemen titik-titik
-      if (globalDots) {
-        const rect = globalDots.getBoundingClientRect();
-        // Kalkulasi posisi X dan Y murni di dalam kotak .global-dots
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        globalDots.style.setProperty("--dotX", x + "px");
-        globalDots.style.setProperty("--dotY", y + "px");
-      }
+      dots.forEach((dot) => {
+        const rect = dot.getBoundingClientRect();
+        // Kalkulasi posisi kursor relatif terhadap kontainer dot
+        dot.style.setProperty("--dotX", `${e.clientX - rect.left}px`);
+        dot.style.setProperty("--dotY", `${e.clientY - rect.top}px`);
+      });
     };
 
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []); // Kosongkan dependency array agar listener cukup dipasang 1x di App.jsx
 }

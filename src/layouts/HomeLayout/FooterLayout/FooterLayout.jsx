@@ -32,9 +32,11 @@ export default function FooterLayout() {
           >
             linkedin
           </a>
-          <a href="#contact" className={styles.link}>
+
+          <a href="/#contact" className={styles.link}>
             contact
           </a>
+
           <span className={styles.status}>
             <span className={`${styles.dot} pulse-dot`}></span>
             available

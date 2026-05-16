@@ -1,0 +1,88 @@
+.timelineSection {
+  padding: 3rem 1.5rem 5rem;
+}
+.timelineInner {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+.spine {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-glow),
+    transparent
+  );
+  opacity: 0.3;
+}
+.row {
+  display: block;
+  position: relative;
+  padding: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+.row:hover {
+  border-color: rgba(124, 242, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(4px);
+}
+.dot {
+  position: absolute;
+  left: -2.5rem;
+  top: 2rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--ink-400);
+  border: 2px solid var(--ink-950);
+  border-radius: 50%;
+}
+.dotCurrent {
+  background: var(--accent-glow);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.period {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-300);
+  margin-bottom: 0.5rem;
+}
+.periodCurrent {
+  color: var(--accent-glow);
+}
+.role {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+.company {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.875rem;
+  color: var(--accent-glow);
+  margin-top: 0.25rem;
+  opacity: 0.85;
+}
+.description {
+  color: rgba(207, 207, 214, 0.7);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 1rem 0 0;
+}
+.cta {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+}

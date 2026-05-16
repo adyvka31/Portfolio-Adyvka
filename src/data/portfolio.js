@@ -342,3 +342,49 @@ export const navLinks = [
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
+
+export const projectsList = projects.map((p) => ({
+  ...p,
+  slug: p.id, // already URL-safe in your data
+}));
+
+// Helper: get prev/next in a list
+export function getSiblings(list, slug) {
+  const i = list.findIndex((x) => x.slug === slug);
+  if (i === -1) return { prev: null, next: null };
+  return {
+    prev: i > 0 ? list[i - 1] : null,
+    next: i < list.length - 1 ? list[i + 1] : null,
+  };
+}
+
+// Flatten recognition for routing
+export const allAchievements = [
+  ...recognitionData.experience.map((x, i) => ({
+    ...x,
+    slug: slugify(x.title),
+    category: "experience",
+  })),
+  ...recognitionData.achievement.map((x, i) => ({
+    ...x,
+    slug: slugify(x.title),
+    category: "achievement",
+  })),
+];
+
+export const allCertificates = recognitionData.certificate.map((x) => ({
+  ...x,
+  slug: slugify(x.title),
+}));
+
+export const experiencesList = experiences.map((e) => ({
+  ...e,
+  slug: slugify(`${e.company}-${e.role}`),
+}));
+
+function slugify(s) {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}

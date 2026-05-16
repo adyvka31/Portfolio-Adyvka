@@ -1,0 +1,1151 @@
+/* src/pages/AboutPage.module.css */
+
+/* --------------------------------------------
+   GENERIC PRIMITIVES
+   -------------------------------------------- */
+
+.section {
+  padding: 7rem 1.5rem;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  max-width: 42rem;
+}
+
+.headCenter {
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.headRight {
+  margin-left: auto;
+  margin-right: 0;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.headLeft {
+  margin-left: 0;
+  margin-right: auto;
+  align-items: flex-start;
+  text-align: left;
+}
+.sectionLabel {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sectionTitle {
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0;
+}
+.sectionLead {
+  margin-top: 0.75rem;
+  color: rgba(207, 207, 214, 0.7);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 36rem;
+}
+.italic {
+  font-style: italic;
+}
+
+/* ============================================
+   INTRO — pull quote + identity card
+   ============================================ */
+
+.introWrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .introWrap {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.introLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.introQuote {
+  font-style: italic;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0.75rem 0 0.5rem;
+  max-width: 32rem;
+}
+
+.introBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: rgba(207, 207, 214, 0.78);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 36rem;
+}
+.introBody p {
+  margin: 0;
+}
+.introBody em {
+  font-family: "Instrument Serif", ui-serif, serif;
+  font-style: italic;
+  color: var(--accent-glow);
+  font-weight: 400;
+}
+
+/* ============================================
+   INTRO CARD — ID/Passport style with photo
+   ============================================ */
+
+.introCard {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.015)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skillPanel,
+.currentPanel,
+.nextRight,
+.trackCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+
+  /* Tambahkan efek bias kaca di sini juga */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.introCard:hover {
+  border-color: rgba(124, 242, 255, 0.22);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.35),
+    0 0 50px rgba(124, 242, 255, 0.08);
+}
+
+/* ---- Photo header ---- */
+
+.introPhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(124, 242, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.introPhotoGlow {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 242, 255, 0.16),
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.introPhoto {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: grayscale(20%) contrast(1.05) brightness(0.95);
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.introCard:hover .introPhoto {
+  transform: scale(1.04);
+  filter: grayscale(0%) contrast(1.08) brightness(1);
+}
+
+.introPhotoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(8, 8, 10, 0.65) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating glass status badge */
+.introPhotoBadge {
+  position: absolute;
+  bottom: 0.875rem;
+  left: 0.875rem;
+  right: 0.875rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.introCard:hover .introPhotoBadge {
+  transform: translateY(-3px);
+}
+
+.introPhotoBadgeStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.introPhotoBadgeDot {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+}
+
+.introPhotoBadgeMeta {
+  color: var(--accent-glow);
+}
+
+/* ---- Card content (below photo) ---- */
+
+.introCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.introCardLabel {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.introCardList {
+  display: flex;
+  flex-direction: column;
+}
+
+.introCardRow {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+  padding: 0.625rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+  align-items: baseline;
+}
+
+.introCardRow:last-child {
+  border-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .introCardRow {
+    grid-template-columns: 110px 1fr;
+  }
+}
+
+.introCardKey {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-200);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.introCardValue {
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+/* ============================================
+   SKILLS — compact unified panels
+   ============================================ */
+
+.sectionCompact {
+  padding: 4rem 1.5rem;
+}
+
+/* ---- Tech rows ---- */
+
+.skillRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.625rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+  transition: background 0.25s ease;
+}
+.skillRow:last-child {
+  border-bottom: 0;
+}
+.skillRow:hover {
+  background: rgba(124, 242, 255, 0.02);
+}
+
+@media (min-width: 768px) {
+  .skillRow {
+    grid-template-columns: 150px 1fr;
+    gap: 1.5rem;
+    padding: 1rem 1.75rem;
+  }
+}
+
+.skillLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.skillBadge {
+  color: var(--accent-glow);
+  font-size: 0.75rem;
+}
+.skillLabelText {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.1em;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.skillTag {
+  display: inline-block;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-100);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.skillTag:hover {
+  background: rgba(124, 242, 255, 0.08);
+  border-color: rgba(124, 242, 255, 0.3);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ---- Soft rows ---- */
+
+.softCompactRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.375rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: baseline;
+  transition: background 0.25s ease;
+}
+.softCompactRow:last-child {
+  border-bottom: 0;
+}
+.softCompactRow:hover {
+  background: rgba(180, 130, 255, 0.025);
+}
+
+@media (min-width: 768px) {
+  .softCompactRow {
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    padding: 1rem 1.75rem;
+  }
+}
+
+.softCompactLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.softCompactBadge {
+  color: rgba(180, 130, 255, 0.9);
+  font-size: 0.75rem;
+}
+.softCompactName {
+  font-size: 0.9375rem;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.softCompactFrom {
+  font-size: 0.875rem;
+  color: rgba(207, 207, 214, 0.7);
+  line-height: 1.55;
+}
+
+.skillsIntegratedWrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3.5rem; /* Memberikan transisi mulus dari Identity Card ke area Skills */
+  padding-top: 3rem;
+  border-top: 1.5px dashed rgba(255, 255, 255, 0.1); /* Garis pemisah tipis yang elegan */
+}
+
+@media (min-width: 1024px) {
+  .skillsIntegratedWrap {
+    grid-template-columns: 1fr 1fr; /* Membagi jadi 2 kolom sama besar */
+    gap: 4rem;
+  }
+}
+
+.skillsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skillsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skillsTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Modifikasi pada layout row di dalam kolom agar lebih fit */
+@media (min-width: 1024px) {
+  .skillRow {
+    grid-template-columns: 100px 1fr; /* Sedikit dikecilkan lebar labelnya karena layout dibagi 2 */
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+  .softCompactRow {
+    grid-template-columns: 140px 1fr; /* Sedikit disesuaikan untuk kolom yang lebih sempit */
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* ============================================
+   1 · PREMISE — split grid with photo integration
+   ============================================ */
+
+.premiseSection {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem 1.5rem;
+  overflow: hidden;
+}
+
+/* Massive italic word floating behind */
+.premiseBackdrop {
+  position: absolute;
+  right: -4%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-style: italic;
+  font-size: clamp(14rem, 38vw, 32rem);
+  color: rgba(124, 242, 255, 0.04);
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Thin vertical accent line on the left */
+.premiseAccent {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-glow) 30%,
+    var(--accent-glow) 70%,
+    transparent
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.premiseContainer {
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.premiseWrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .premiseWrap {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 5rem;
+  }
+}
+
+.premiseLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.premise {
+  max-width: 50rem;
+}
+.premiseTitle {
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0.75rem 0 2.5rem;
+}
+.premiseBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: rgba(207, 207, 214, 0.78);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 40rem;
+}
+.premiseBody p {
+  margin: 0;
+}
+.premiseBody em {
+  font-family: "Instrument Serif", ui-serif, serif;
+  font-style: italic;
+  color: var(--accent-glow);
+  font-weight: 400;
+}
+
+.premiseRight {
+  position: relative;
+  padding-top: 4rem; /* room for the head to protrude */
+}
+@media (min-width: 1024px) {
+  .premiseRight {
+    padding-top: 5rem;
+  }
+}
+
+/* ---- Photo frame aesthetic ---- */
+.photoFrame {
+  position: relative;
+  height: 380px;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 50% 75%,
+      rgba(124, 242, 255, 0.08),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: visible;
+  isolation: isolate;
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+@media (min-width: 768px) {
+  .photoFrame {
+    height: 460px;
+  }
+}
+.photoFrame:hover {
+  border-color: rgba(124, 242, 255, 0.2);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(124, 242, 255, 0.06);
+}
+
+/* Glow halo behind the head */
+.photoFrame::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 242, 255, 0.18),
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Inner gradient overlay */
+.photoFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(8, 8, 10, 0.5) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photoImage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 460px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: grayscale(15%) contrast(1.05) brightness(0.95);
+  z-index: 2;
+  pointer-events: none;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s ease;
+}
+@media (min-width: 768px) {
+  .photoImage {
+    height: 560px;
+  }
+}
+.photoFrame:hover .photoImage {
+  transform: translateX(-50%) translateY(-8px);
+  filter: grayscale(0%) contrast(1.08) brightness(1);
+}
+
+.photoCaption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.photoFrame:hover .photoCaption {
+  transform: translateY(-4px);
+}
+
+.photoCaptionStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.photoCaptionDot {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+}
+.photoCaptionMeta {
+  color: var(--accent-glow);
+}
+
+/* ============================================
+   2 · TWO TRACKS — tabular timeline with spine
+   ============================================ */
+
+.trackList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.trackSpine {
+  display: none;
+}
+@media (min-width: 768px) {
+  .trackSpine {
+    display: block;
+    position: absolute;
+    left: 88px;
+    top: 2rem;
+    bottom: 2rem;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(124, 242, 255, 0.25) 10%,
+      rgba(124, 242, 255, 0.25) 90%,
+      transparent
+    );
+    pointer-events: none;
+  }
+}
+@media (min-width: 1024px) {
+  .trackSpine {
+    left: 116px;
+  }
+}
+
+.trackRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+@media (min-width: 768px) {
+  .trackRow {
+    grid-template-columns: 120px 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    align-items: stretch;
+  }
+}
+@media (min-width: 1024px) {
+  .trackRow {
+    grid-template-columns: 160px 1fr 1fr;
+    gap: 2rem;
+  }
+}
+.trackRowLast {
+  border-bottom: 0;
+}
+
+.trackYear {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  align-self: center;
+  position: relative;
+}
+.trackYearNum {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--accent-glow);
+  line-height: 1;
+}
+.trackYearMeta {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-300);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.trackYearGrade {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-300);
+}
+
+.trackCard {
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+.trackCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(124, 242, 255, 0.18);
+  transform: translateY(-2px);
+}
+.trackBadge {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-glow);
+}
+.trackHuman .trackBadge {
+  color: rgba(180, 130, 255, 0.9);
+}
+.trackHuman:hover {
+  border-color: rgba(180, 130, 255, 0.22);
+}
+.trackTitle {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+.trackDetail {
+  font-size: 0.875rem;
+  color: rgba(207, 207, 214, 0.7);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============================================
+   3 · STORIES — bento grid
+   ============================================ */
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .storyGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* feature card spans 2 cols, others span 1 */
+  .storyFeature {
+    grid-column: span 3;
+  }
+}
+@media (min-width: 1280px) {
+  .storyGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+  }
+  .storyFeature {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.storyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  height: 100%;
+}
+.storyFeature {
+  padding: 2.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(124, 242, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+}
+.storyEyebrow {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.storyTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+  line-height: 1.25;
+}
+.storyFeature .storyTitle {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.storyBody {
+  font-size: 0.9375rem;
+  color: rgba(207, 207, 214, 0.78);
+  line-height: 1.7;
+  margin: 0;
+}
+.storyFeature .storyBody {
+  font-size: 1.0625rem;
+  max-width: 38rem;
+}
+
+/* ============================================
+   6 · CURRENTLY — dashboard panel
+   ============================================ */
+
+.currentPanel {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .currentPanel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .currentPanel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.currentSlot {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+.currentSlot:hover {
+  background: rgba(124, 242, 255, 0.025);
+}
+/* Strip bottom border on the last row */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .currentSlot:nth-last-child(-n + 2):nth-child(even),
+  .currentSlot:nth-last-child(-n + 2):nth-child(odd) {
+    border-bottom: 0;
+  }
+  .currentSlot:nth-child(even) {
+    border-right: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .currentSlot {
+    border-bottom: 0;
+  }
+  .currentSlot:last-child {
+    border-right: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .currentSlot {
+    border-right: 0;
+  }
+  .currentSlot:last-child {
+    border-bottom: 0;
+  }
+}
+
+.currentHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.currentDot {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: var(--accent-glow);
+  box-shadow: 0 0 8px rgba(124, 242, 255, 0.6);
+}
+.currentLabel {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.12em;
+}
+.currentTitle {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+.currentDetail {
+  font-size: 0.875rem;
+  color: rgba(207, 207, 214, 0.7);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============================================
+   6 · WHAT'S NEXT — split copy + facts table
+   ============================================ */
+
+.nextWrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .nextWrap {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+  }
+}
+.nextLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.nextLead {
+  color: rgba(207, 207, 214, 0.7);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin: 0.5rem 0 0.25rem;
+  max-width: 30rem;
+}
+.nextCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.8125rem;
+  color: var(--accent-glow);
+  padding: 0.625rem 1rem;
+  border-radius: 9999px;
+  background: rgba(124, 242, 255, 0.05);
+  border: 1px solid rgba(124, 242, 255, 0.2);
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+.nextCta:hover {
+  background: rgba(124, 242, 255, 0.1);
+  transform: translateY(-1px);
+}
+.nextRight {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+.nextRow {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: baseline;
+}
+.nextRow:last-child {
+  border-bottom: 0;
+}
+@media (min-width: 640px) {
+  .nextRow {
+    grid-template-columns: 140px 1fr;
+    gap: 1.5rem;
+  }
+}
+.nextRowLabel {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-200);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nextRowValue {
+  font-size: 0.9375rem;
+  color: #fff;
+  line-height: 1.55;
+}
