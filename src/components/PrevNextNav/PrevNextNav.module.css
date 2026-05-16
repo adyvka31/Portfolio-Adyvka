@@ -1,0 +1,44 @@
+/* src/components/PrevNextNav/PrevNextNav.module.css */
+.nav {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 4rem 1.5rem;
+}
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.linkPrev,
+.linkNext {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+.linkNext {
+  text-align: right;
+}
+.linkPrev:hover,
+.linkNext:hover {
+  border-color: rgba(124, 242, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+.label {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-200);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.title {
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: 500;
+}
