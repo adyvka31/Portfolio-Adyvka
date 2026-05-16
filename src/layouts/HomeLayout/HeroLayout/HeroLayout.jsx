@@ -2,6 +2,7 @@ import Reveal from "../../../components/Reveal/Reveal";
 import { ArrowRightIcon, GithubIcon } from "../../../components/Icons/Icons";
 import { heroMetrics, personalInfo } from "../../../data/portfolio";
 import styles from "./HeroLayout.module.css";
+import profilePhoto from "../../../assets/profile.webp";
 
 function HeroLayout() {
   return (
@@ -9,16 +10,33 @@ function HeroLayout() {
       <div className={`${styles.gridBg} grid-bg`} />
       <div className="aurora" />
 
-      {/* Floating top-left status */}
-      <div className={styles.statusLeft}>
-        <span className={`${styles.statusDot} pulse-dot`} />
-        Available for new opportunities · 2026
+      <div className="meteors">
+        <span className="meteor"></span>
+        <span className="meteor"></span>
+        <span className="meteor"></span>
+        <span className="meteor"></span>
+        <span className="meteor"></span>
+        <span className="meteor"></span>
+        <span className="meteor"></span>
+        <span className="meteor"></span>
       </div>
 
-      {/* Floating top-right meta */}
+      <div className={styles.statusLeft}>
+        <span className={styles.statusLine} />
+        <span className={`${styles.statusDot} pulse-dot`} />
+        <span>Available for new opportunities · 2026</span>
+      </div>
+
+      {/* --- KANAN: Lokasi & Waktu --- */}
       <div className={styles.statusRight}>
-        <div>{personalInfo.location}</div>
-        <div className={styles.statusRightSub}>{personalInfo.timezone}</div>
+        <span>
+          {personalInfo.location}
+          <span className={styles.statusRightSub}>
+            {" "}
+            // {personalInfo.timezone}
+          </span>
+        </span>
+        <span className={styles.statusLine} />
       </div>
 
       <div className={styles.content}>
@@ -29,20 +47,67 @@ function HeroLayout() {
           </div>
         </Reveal>
 
+        {/* --- EFEK 3D INTERTWINE --- */}
         <Reveal delay={0.06}>
-          <h1 className={styles.headline}>
-            <span className="text-fade">Building</span>{" "}
-            <span className={`font-serif ${styles.italic} text-glow`}>
-              scalable
-            </span>
-            <br />
-            <span className="text-fade">software</span>{" "}
-            <span className="text-fade">that</span>{" "}
-            <span className={`font-serif ${styles.italic} text-fade`}>
-              ships.
-            </span>
-          </h1>
+          <div className={styles.headlineWrapper}>
+            {/* Lapis 1: Teks Solid (Di Belakang Foto) */}
+            <h1 className={`${styles.headline} ${styles.textBack}`}>
+              <div>
+                <span className="text-fade">Rafif</span>
+                <span className={styles.gapTop}></span>
+                <span className="text-fade">Sava</span>
+              </div>
+              <div>
+                {/* Tambahkan styles.shiftAdyvka dan styles.shiftPratama di sini */}
+                <span
+                  className={`font-serif ${styles.italic} text-glow ${styles.shiftAdyvka}`}
+                >
+                  Adyvka
+                </span>
+                <span className={styles.gapBottom}></span>
+                <span className={`text-fade ${styles.shiftPratama}`}>
+                  Pratama
+                </span>
+              </div>
+            </h1>
+
+            {/* Lapis 2: Foto Anda (Di Tengah) */}
+            <div className={styles.heroBgPhotoContainer}>
+              <img
+                src={profilePhoto}
+                alt="Rafif Sava"
+                className={styles.heroBgPhoto}
+              />
+            </div>
+
+            {/* Lapis 3: Teks Garis Luar/Stroke (Di Depan Foto) */}
+            <h1
+              className={`${styles.headline} ${styles.textFront}`}
+              aria-hidden="true"
+            >
+              <div>
+                <span className={styles.textStrokeFade}>Rafif</span>
+                <span className={styles.gapTop}></span>
+                <span className={styles.textStrokeFade}>Sava</span>
+              </div>
+              <div>
+                {/* Pastikan ditambahkan juga di Lapis 3 agar garis tepi ikut bergeser */}
+                <span
+                  className={`font-serif ${styles.italic} ${styles.textStrokeGlow} ${styles.shiftAdyvka}`}
+                >
+                  Adyvka
+                </span>
+                <span className={styles.gapBottom}></span>
+                <span
+                  className={`${styles.textStrokeFade} ${styles.shiftPratama}`}
+                >
+                  Pratama
+                </span>
+              </div>
+            </h1>
+          </div>
         </Reveal>
+        {/* --------------------------- */}
 
         <Reveal delay={0.12}>
           <p className={styles.subhead}>
