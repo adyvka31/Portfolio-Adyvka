@@ -1,28 +1,33 @@
-// src/components/Navbar/Navbar.jsx
 import { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import LogoMark from "../LogoMark/LogoMark";
 import { ArrowUpRightIcon } from "../Icons/Icons";
-import { navLinks, personalInfo } from "../../data/portfolio";
+import { personalInfo } from "../../data/portfolio";
 import styles from "./Navbar.module.css";
 
-function Navbar() {
+const NAV = [
+  { to: "/about", label: "About" },
+  { to: "/projects", label: "Projects" },
+  { to: "/experience", label: "Experience" },
+  { to: "/achievements", label: "Achievements" },
+  { to: "/certificates", label: "Certificates" },
+];
+
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  // 1. State untuk mengontrol popup CV
-  const [isCVOpen, setIsCVOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Fungsi untuk membuka/tutup modal
-  const toggleCV = (e) => {
-    e.preventDefault();
-    setIsCVOpen(!isCVOpen);
-  };
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
@@ -30,79 +35,105 @@ function Navbar() {
         <nav
           className={`${styles.nav} ${scrolled ? "glass" : styles.navTransparent}`}
         >
-          <a href="#top" className={styles.brand}>
+          <Link to="/" className={styles.brand}>
             <LogoMark />
             <span className={styles.brandName}>{personalInfo.name}</span>
-          </a>
+          </Link>
 
           <ul className={styles.links}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a className={`nav-link ${styles.link}`} href={link.href}>
-                  {link.label}
-                </a>
+            {NAV.map((l) => (
+              <li key={l.to}>
+                <NavLink
+                  to={l.to}
+                  className={({ isActive }) =>
+                    `nav-link ${styles.link} ${isActive ? styles.linkActive : ""}`
+                  }
+                >
+                  {l.label}
+                </NavLink>
               </li>
             ))}
           </ul>
 
           <div className={styles.actions}>
             <a
-              href={personalInfo.portfolioUrl}
+              href={personalInfo.socials.github}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaSecondary}
             >
-              Portfolio <ArrowUpRightIcon />
+              GitHub <ArrowUpRightIcon />
             </a>
-
-            <button onClick={toggleCV} className={`btn-primary ${styles.cta}`}>
-              Curiculum Vitae <ArrowUpRightIcon />
+            <button
+              onClick={() => setCvOpen(true)}
+              className={`btn-primary ${styles.cta}`}
+            >
+              CV <ArrowUpRightIcon />
+            </button>
+            <button
+              className={styles.burger}
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <span />
+              <span />
+              <span />
             </button>
           </div>
         </nav>
       </header>
 
-      {/* MODAL DIPINDAHKAN KE SINI (DI LUAR HEADER) */}
-      {isCVOpen && (
-        <div className={styles.modalOverlay} onClick={toggleCV}>
+      {/* Mobile sheet */}
+      {menuOpen && (
+        <div className={styles.sheet} onClick={() => setMenuOpen(false)}>
+          <div
+            className={styles.sheetInner}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.sheetClose}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
+            <ul className={styles.sheetLinks}>
+              {NAV.map((l) => (
+                <li key={l.to}>
+                  <NavLink to={l.to} className={styles.sheetLink}>
+                    {l.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* CV modal */}
+      {cvOpen && (
+        <div className={styles.modalOverlay} onClick={() => setCvOpen(false)}>
           <div
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
             <div className={styles.modalHeader}>
               <span>Curriculum Vitae</span>
-              <button className={styles.closeBtn} onClick={toggleCV}>
+              <button
+                className={styles.closeBtn}
+                onClick={() => setCvOpen(false)}
+              >
                 ✕
               </button>
             </div>
-
-            {/* Menggunakan <object> sebagai ganti <iframe> untuk kompabilitas PDF Viewer yang lebih baik */}
             <object
               data={`${personalInfo.cvUrl}#view=FitH&toolbar=1`}
               type="application/pdf"
               className={styles.pdfViewer}
-            >
-              <div
-                style={{ padding: "2rem", textAlign: "center", color: "#fff" }}
-              >
-                <p>Browser Anda tidak mendukung pratinjau PDF.</p>
-                <a
-                  href={personalInfo.cvUrl}
-                  download="CV_Rafif_Sava_Adyvka.pdf"
-                  style={{
-                    color: "var(--accent-glow)",
-                    textDecoration: "underline",
-                  }}
-                >
-                  Klik di sini untuk mengunduh CV.
-                </a>
-              </div>
-            </object>
+            />
           </div>
         </div>
       )}
     </>
   );
 }
-
-export default Navbar;
