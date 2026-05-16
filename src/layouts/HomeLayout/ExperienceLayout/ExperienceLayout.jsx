@@ -1,3 +1,4 @@
+// src/layouts/HomeLayout/ExperienceLayout/ExperienceLayout.jsx
 import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import Tag from "../../../components/Tag/Tag";
@@ -5,59 +6,47 @@ import { experiences } from "../../../data/portfolio";
 import styles from "./ExperienceLayout.module.css";
 
 function TimelineItem({ item, index }) {
-  // Even index → text on the left, content on the right (default)
-  // Odd index → mirror it
-  const isMirrored = index % 2 === 1;
+  // Indeks genap di kiri, ganjil di kanan
+  const isLeft = index % 2 === 0;
 
   return (
-    <Reveal delay={index * 0.05}>
-      <div className={styles.item}>
+    <Reveal
+      delay={index * 0.1}
+      className={index > 0 ? styles.revealWrapper : ""}
+    >
+      <div
+        className={`${styles.item} ${isLeft ? styles.leftSide : styles.rightSide}`}
+      >
         <div
           className={`${styles.dot} ${item.current ? styles.dotCurrent : ""}`}
         />
 
-        <div
-          className={`${styles.left} ${isMirrored ? styles.mirrorContent : ""}`}
-        >
-          {!isMirrored ? (
-            <>
-              <div
-                className={`${styles.period} ${item.current ? styles.periodCurrent : ""}`}
-              >
-                {item.period}
-              </div>
-              <h3 className={styles.role}>{item.role}</h3>
-              <div className={styles.company}>{item.company}</div>
-            </>
-          ) : (
+        <div className={styles.itemCard}>
+          <div className={styles.itemHeader}>
+            <div
+              className={`${styles.period} ${item.current ? styles.periodCurrent : ""}`}
+            >
+              {item.period}
+            </div>
+            <h3 className={styles.role}>{item.role}</h3>
+            <div className={styles.company}>{item.company}</div>
+          </div>
+
+          <div className={styles.itemBody}>
             <p className={styles.description}>{item.description}</p>
-          )}
+            {item.tags && (
+              <div className={styles.tags}>
+                {item.tags.map((tag) => (
+                  <Tag key={tag} size="xs">
+                    {tag}
+                  </Tag>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
-        <div
-          className={`${styles.right} ${isMirrored ? styles.mirrorMeta : ""}`}
-        >
-          {!isMirrored ? (
-            <>
-              <p className={styles.description}>{item.description}</p>
-              {item.tags && (
-                <div className={styles.tags}>
-                  {item.tags.map((tag) => (
-                    <Tag key={tag} size="xs">
-                      {tag}
-                    </Tag>
-                  ))}
-                </div>
-              )}
-            </>
-          ) : (
-            <>
-              <div className={styles.period}>{item.period}</div>
-              <h3 className={styles.role}>{item.role}</h3>
-              <div className={styles.company}>{item.company}</div>
-            </>
-          )}
-        </div>
+        <div className={styles.spacer} aria-hidden="true" />
       </div>
     </Reveal>
   );
@@ -67,8 +56,9 @@ function ExperienceLayout() {
   return (
     <section id="experience" className={styles.section}>
       <div className={styles.container}>
-        <Reveal>
-          <SectionLabel number="04" label="Experience" />
+        {/* Label di tengah */}
+        <Reveal className={styles.centeredLabel}>
+          <SectionLabel number="03" label="Experience" />
         </Reveal>
 
         <Reveal delay={0.05}>
