@@ -14,31 +14,6 @@ import barmusImg from "../assets/barmusImg.webp";
 
 import cvPdfFile from "../assets/RafifSavaAdyvkaPratama_CV.pdf";
 
-import databankImg from "../assets/databank.webp";
-import ruangtumbuhImg from "../assets/ruangtumbuh.webp";
-import mindoraImg from "../assets/ruangtumbuh.webp";
-import delifoodImg from "../assets/delifood.webp";
-import aiTicketManagerImg from "../assets/ruangtumbuh.webp";
-
-import attendanceAppImg from "../assets/ruangtumbuh.webp";
-import qrScannerImg from "../assets/ruangtumbuh.webp";
-import newsAppImg from "../assets/ruangtumbuh.webp";
-import quranAppImg from "../assets/ruangtumbuh.webp";
-
-import payrollServiceImg from "../assets/payroll-service.webp";
-import eLibraryImg from "../assets/ruangtumbuh.webp";
-import bookshelfApiImg from "../assets/ruangtumbuh.webp";
-import personalNotesImg from "../assets/ruangtumbuh.webp";
-
-import javaislandImg from "../assets/javaisland.webp";
-import fitsmartImg from "../assets/fitsmart.webp";
-import coffeeeShopImg from "../assets/coffeee-shop.webp";
-import mystyleImg from "../assets/mystyle.webp";
-import pusakakuImg from "../assets/pusakaku.webp";
-import nanoStudioImg from "../assets/ruangtumbuh.webp";
-import semuaBisaImg from "../assets/semua-bisa.webp";
-import idncourseImg from "../assets/idncourse.webp";
-
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
   title: "Digital Craftsman // Fullstack Engineer",
@@ -88,11 +63,10 @@ export const marqueeStack = [
 // PROJECTS (Bento grid)
 // ============================================
 export const projects = [
-  // ── FEATURED / EXISTING ──────────────────────────────────────────
   {
     id: "databank",
     category: "web",
-    span: "lg",
+    span: "lg", // 4 cols × 2 rows
     label: "WEBSITE · ENTERPRISE ERP",
     title: "Databank ERP",
     year: "2025 →",
@@ -110,7 +84,6 @@ export const projects = [
     ],
     hasPreview: true,
     link: "#",
-    thumbnail: databankImg,
   },
   {
     id: "ruangtumbuh",
@@ -118,7 +91,6 @@ export const projects = [
     span: "sm",
     label: "WEBSITE · E-LEARNING",
     title: "RuangTumbuh",
-    year: "2025",
     description:
       "Course booking platform connecting students with tutors. Monorepo architecture with shared types and a real-time scheduling engine.",
     tags: [
@@ -134,10 +106,19 @@ export const projects = [
       "Jest",
     ],
     link: "https://github.com/adyvka31/RuangTumbuh",
-    thumbnail: ruangtumbuhImg,
   },
-  // ── MOBILE ───────────────────────────────────────────────────────
-
+  {
+    id: "jagajiwa",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · MENTAL HEALTH",
+    title: "Mindora",
+    year: "2025",
+    description:
+      "An AI-powered digital mental health platform for Indonesia's Golden Generation. It offers mood tracking, an empathetic chatbot, and interactive digital exercises.",
+    tags: ["React", "Tailwind", "Gemini API", "TypeScript"],
+    link: "https://jagajiwamu.vercel.app/",
+  },
   {
     id: "flutter",
     category: "mobile",
@@ -145,181 +126,21 @@ export const projects = [
     label: "MOBILE · E-COMMERCE",
     title: "DeliFood",
     description:
-      "Mobile e-commerce app with a seamless UI connected to a real-time Firebase database. Provides up-to-date order and product information with smooth UX across platforms.",
+      "The main goal of this application is to provide a seamless user interface (UI) connected to a real-time database, ensuring that users have the most up-to-date information on their orders, products.",
     tags: ["Flutter", "Dart", "Firebase"],
-    link: "https://github.com/adyvka31/DeliFood",
-    thumbnail: delifoodImg,
+    link: "#",
   },
   {
     id: "ai-ticket-manager",
     category: "ai",
     span: "md",
-    label: "MOBILE · AI",
+    label: "FLUTTER • GOOGLE AI",
     title: "AI Ticket Manager",
     year: "2025",
     description:
-      "Smart ticket management app with Gemini API integration. Stores real-time ticket data and delivers automated AI-based analytics summaries on demand.",
-    tags: ["Flutter", "Firebase", "Gemini API", "Provider", "Dart"],
-    link: "https://github.com/adyvka31/AI-Generator-App",
-    thumbnail: aiTicketManagerImg,
-  },
-
-  {
-    id: "attendance-app",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · PRODUCTIVITY",
-    title: "Attendance App",
-    year: "2024",
-    description:
-      "Cross-platform attendance digitization app built with Flutter. Uses real-time camera access and Firebase backend to streamline check-in flows for organizations.",
-    tags: ["Flutter", "Dart", "Firebase"],
-    link: "https://github.com/adyvka31/Attendance-App",
-    thumbnail: attendanceAppImg,
-  },
-  {
-    id: "qr-scanner",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · UTILITIES",
-    title: "QR Guest Manager",
-    year: "2024",
-    description:
-      "QR Scanner and guest registration manager built with Flutter. Integrates Firebase for secure real-time data storage, streamlining event check-in workflows.",
-    tags: ["Flutter", "Dart", "Firebase"],
-    link: "https://github.com/adyvka31/QR_Scanner_App",
-    thumbnail: qrScannerImg,
-  },
-  {
-    id: "news-app",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · NEWS",
-    title: "News App",
-    year: "2024",
-    description:
-      "Cross-platform news reader app that demonstrates real-time REST API integration, clean state management, and a well-structured business logic layer.",
-    tags: ["Flutter", "Dart", "REST API"],
-    link: "https://github.com/adyvka31/News-App",
-    thumbnail: newsAppImg,
-  },
-  {
-    id: "quran-app",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · LIFESTYLE",
-    title: "Quran App",
-    year: "2024",
-    description:
-      "Cross-platform Quran reader focused on clean UI, responsive performance, and structured separation of business logic — making daily reading seamless and accessible.",
-    tags: ["Flutter", "Dart", "C++"],
-    link: "https://github.com/adyvka31/Quran-App",
-    thumbnail: quranAppImg,
-  },
-  // ── WEB · FRONTEND / STATIC ──────────────────────────────────────
-  {
-    id: "javaisland",
-    category: "web",
-    span: "md",
-    label: "WEBSITE · CULTURAL",
-    title: "Java Island",
-    year: "2023",
-    description:
-      "Tourism and culture showcase for Java Island covering Javanese culture, traditional foods, and local events. Features an embedded AI assistant to answer visitor questions.",
-    tags: ["HTML", "CSS", "JavaScript", "AI"],
-    link: "https://github.com/adyvka31/JavaIsland",
-    thumbnail: javaislandImg,
-  },
-  {
-    id: "fitsmart",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · HEALTH",
-    title: "FitSmart",
-    year: "2023",
-    description:
-      "Health and wellness platform offering health education, dietary guides, and fitness routines. Built under a busy academic schedule with pure HTML, CSS, and JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/adyvka31/FitSmart",
-    thumbnail: fitsmartImg,
-  },
-  {
-    id: "coffeee-shop",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · COMPANY PROFILE",
-    title: "Coffeee Shop",
-    year: "2023",
-    description:
-      "Company profile website for a coffee shop brand, designed and built with Tailwind CSS for a modern, responsive layout.",
-    tags: ["HTML", "Tailwind", "CSS"],
-    link: "https://github.com/adyvka31/Coffeee-Shop",
-    thumbnail: coffeeeShopImg,
-  },
-  {
-    id: "mystyle",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · E-COMMERCE",
-    title: "MyStyle",
-    year: "2023",
-    description:
-      "Fashion e-commerce website showcasing a wide range of clothing items. Explores product listing, detail views, and a clean storefront design.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/adyvka31/MyStyle",
-    thumbnail: mystyleImg,
-  },
-  {
-    id: "pusakaku",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · CULTURAL",
-    title: "Pusakaku",
-    year: "2023",
-    description:
-      "Digital preservation of traditional Indonesian games — a cultural heritage site exploring the life values and history behind classic folk activities.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/adyvka31/Pusakaku",
-    thumbnail: pusakakuImg,
-  },
-  {
-    id: "nano-studio",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · AGENCY",
-    title: "Nano Studio",
-    year: "2023",
-    description:
-      "Agency portfolio website for a three-person creative studio. Showcases services and team identity with a clean, structured layout.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/adyvka31/Nano-Studio-Web",
-    thumbnail: nanoStudioImg,
-  },
-  {
-    id: "semua-bisa",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · E-LEARNING",
-    title: "SemuaBisa",
-    year: "2023",
-    description:
-      "E-learning website built with two collaborators for a competition. Empowers young people to grow in tech through accessible course content and Tailwind-styled UI.",
-    tags: ["HTML", "Tailwind", "CSS"],
-    link: "https://github.com/adyvka31/SemuaBisa-Web",
-    thumbnail: semuaBisaImg,
-  },
-  {
-    id: "idncourse",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · E-LEARNING",
-    title: "IDNCourse",
-    year: "2023",
-    description:
-      "Course platform website built collaboratively with two friends for a competition, featuring course listings and a clean multi-page layout.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/adyvka31/IDNCourse-Web",
-    thumbnail: idncourseImg,
+      "A mobile application for smart ticket management with Gemini API integration. Allows users to store real-time ticket data and receive automated AI-based analytics summaries.",
+    tags: ["Flutter", "Firebase", "Gemini API", "Provider"],
+    link: "#",
   },
 ];
 
