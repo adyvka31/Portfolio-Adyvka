@@ -12,31 +12,54 @@ import styles from "./IndexPage.module.css";
 
 function ProjectCard({ project }) {
   const spot = useCardSpotlight();
+
   return (
     <Link
       to={`/projects/${project.slug}`}
-      className={`card glass ${styles.card}`}
+      className={`card glass ${styles.cardModern}`}
       {...spot}
     >
-      <div className={styles.cardHead}>
-        <div className={styles.cardLabel}>{project.label}</div>
-        {project.year && (
-          <span className={styles.cardYear}>{project.year}</span>
-        )}
-      </div>
-      <h3 className={styles.cardTitle}>{project.title}</h3>
-      <p className={styles.cardDescription}>{project.description}</p>
-      <div className={styles.cardFooter}>
-        <div className={styles.cardTags}>
-          {project.tags.slice(0, 4).map((t) => (
-            <Tag key={t} size="xs">
-              {t}
-            </Tag>
+      {/* IMAGE AREA */}
+      <div className={styles.cardImageWrap}>
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className={styles.cardImage}
+        />
+
+        {/* OVERLAY */}
+        <div className={styles.cardOverlay}>
+          <div className={styles.overlayGradient} />
+
+          <div className={styles.overlayContent}>
+            <span className={styles.deployText}>View Live Deploy</span>
+
+            <div className={styles.deployButton}>
+              <ArrowUpRightIcon size={18} />
+            </div>
+          </div>
+        </div>
+
+        {/* TAGS */}
+        <div className={styles.imageTags}>
+          {project.tags.slice(0, 3).map((tag) => (
+            <span key={tag} className={styles.imageTag}>
+              {tag}
+            </span>
           ))}
         </div>
-        <span className={styles.cardArrow}>
-          <ArrowUpRightIcon size={12} />
-        </span>
+      </div>
+
+      {/* CONTENT */}
+      <div className={styles.cardBody}>
+        <div className={styles.cardMetaRow}>
+          <span>{project.label}</span>
+          {project.year && <span>{project.year}</span>}
+        </div>
+
+        <h3 className={styles.cardTitleModern}>{project.title}</h3>
+
+        <p className={styles.cardDescModern}>{project.description}</p>
       </div>
     </Link>
   );
