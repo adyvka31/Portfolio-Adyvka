@@ -13,6 +13,18 @@ import styles from "./ProjectLayout.module.css";
 function ProjectLayout() {
   const [activeFilter, setActiveFilter] = useState("all");
 
+  const FEATURED_IDS = [
+    "databank",
+    "ruangtumbuh",
+    "fitsmart",
+    "flutter",
+    "ai-ticket-manager",
+  ];
+
+  const featuredProjects = FEATURED_IDS.map((id) =>
+    projects.find((project) => project.id === id),
+  ).filter(Boolean);
+
   return (
     <section id="work" className={styles.section}>
       <div className={styles.container}>
@@ -45,7 +57,7 @@ function ProjectLayout() {
         </Reveal>
 
         <div className={styles.grid}>
-          {projects.map((project) => (
+          {featuredProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
