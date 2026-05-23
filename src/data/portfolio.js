@@ -283,23 +283,9 @@ export const projects = [
     tags: ["Flutter", "Dart", "C++"],
     link: "https://github.com/adyvka31/Quran-App",
   },
-  // ── WEB · FRONTEND / STATIC ──────────────────────────────────────
-  {
-    id: "nano-studio",
-    category: "web",
-    span: "sm",
-    label: "WEBSITE · AGENCY",
-    title: "Nano Studio",
-    year: "2023",
-    description:
-      "Agency portfolio website for a three-person creative studio. Showcases services and team identity with a clean, structured layout.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/adyvka31/Nano-Studio-Web",
-  },
 ];
 
 export const projectFilters = [
-  { id: "all", label: "All" },
   { id: "web", label: "Web" },
   { id: "mobile", label: "Mobile" },
   { id: "ai", label: "AI" },
