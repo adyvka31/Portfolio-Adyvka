@@ -1,7 +1,3 @@
-// ============================================
-// PERSONAL INFO
-// ============================================
-
 import webDevImg from "../assets/web_dev_instructor.webp";
 import osisImg from "../assets/osis.webp";
 import appDevImg from "../assets/app_dev_instructor.webp";
@@ -13,6 +9,20 @@ import backpackerImg from "../assets/backpackerImg.webp";
 import barmusImg from "../assets/barmusImg.webp";
 
 import cvPdfFile from "../assets/RafifSavaAdyvkaPratama_CV.pdf";
+
+import databankImg from "../assets/databank.webp";
+import ruangtumbuhImg from "../assets/ruangtumbuh.webp";
+import delifoodImg from "../assets/delifood.webp";
+
+import payrollServiceImg from "../assets/payroll-service.webp";
+
+import javaislandImg from "../assets/javaisland.webp";
+import fitsmartImg from "../assets/fitsmart.webp";
+import coffeeeShopImg from "../assets/coffeee-shop.webp";
+import mystyleImg from "../assets/mystyle.webp";
+import pusakakuImg from "../assets/pusakaku.webp";
+import semuaBisaImg from "../assets/semua-bisa.webp";
+import idncourseImg from "../assets/idncourse.webp";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -63,10 +73,11 @@ export const marqueeStack = [
 // PROJECTS (Bento grid)
 // ============================================
 export const projects = [
+  // ── FEATURED / EXISTING ──────────────────────────────────────────
   {
     id: "databank",
     category: "web",
-    span: "lg", // 4 cols × 2 rows
+    span: "lg", 
     label: "WEBSITE · ENTERPRISE ERP",
     title: "Databank ERP",
     year: "2025 →",
@@ -84,6 +95,7 @@ export const projects = [
     ],
     hasPreview: true,
     link: "#",
+    thumbnail: databankImg,
   },
   {
     id: "ruangtumbuh",
@@ -106,18 +118,98 @@ export const projects = [
       "Jest",
     ],
     link: "https://github.com/adyvka31/RuangTumbuh",
+    thumbnail: ruangtumbuhImg,
   },
   {
-    id: "jagajiwa",
+    id: "fitsmart",
     category: "web",
     span: "sm",
     label: "WEBSITE · MENTAL HEALTH",
-    title: "Mindora",
+    title: "FitSmart",
     year: "2025",
     description:
-      "An AI-powered digital mental health platform for Indonesia's Golden Generation. It offers mood tracking, an empathetic chatbot, and interactive digital exercises.",
-    tags: ["React", "Tailwind", "Gemini API", "TypeScript"],
+      "Serves as a centralized platform offering health education, dietary guides, fitness routines, and an innovative AI-powered consultation feature",
+    tags: ["HTML", "TailwindCSS", "JavaScript"],
     link: "https://jagajiwamu.vercel.app/",
+    thumbnail: fitsmartImg,
+  },
+  {
+    id: "javaisland",
+    category: "web",
+    span: "md",
+    label: "WEBSITE · CULTURAL",
+    title: "JavaIsland",
+    year: "2023",
+    description:
+      "Tourism and culture showcase for Java Island covering Javanese culture, traditional foods, and local events. Features an embedded AI assistant to answer visitor questions.",
+    tags: ["HTML", "CSS", "JavaScript", "AI"],
+    link: "https://github.com/adyvka31/JavaIsland",
+    thumbnail: javaislandImg,
+  },
+  {
+    id: "pusakaku",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · CULTURAL",
+    title: "Pusakaku",
+    year: "2023",
+    description:
+      "Digital preservation of traditional Indonesian games — a cultural heritage site exploring the life values and history behind classic folk activities.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/adyvka31/Pusakaku",
+    thumbnail: pusakakuImg,
+  },
+  {
+    id: "semua-bisa",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · E-LEARNING",
+    title: "SemuaBisa",
+    year: "2023",
+    description:
+      "E-learning website built with two collaborators for a competition. Empowers young people to grow in tech through accessible course content and Tailwind-styled UI.",
+    tags: ["HTML", "Tailwind", "CSS"],
+    link: "https://github.com/adyvka31/SemuaBisa-Web",
+    thumbnail: semuaBisaImg,
+  },
+  {
+    id: "idncourse",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · E-LEARNING",
+    title: "IDNCourse",
+    year: "2023",
+    description:
+      "Course platform website built collaboratively with two friends for a competition, featuring course listings and a clean multi-page layout.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/adyvka31/IDNCourse-Web",
+    thumbnail: idncourseImg,
+  },
+  {
+    id: "coffeee-shop",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · COMPANY PROFILE",
+    title: "Coffeee Shop",
+    year: "2023",
+    description:
+      "Company profile website for a coffee shop brand, designed and built with Tailwind CSS for a modern, responsive layout.",
+    tags: ["HTML", "Tailwind", "CSS"],
+    link: "https://github.com/adyvka31/Coffeee-Shop",
+    thumbnail: coffeeeShopImg,
+  },
+  {
+    id: "mystyle",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · E-COMMERCE",
+    title: "MyStyle",
+    year: "2023",
+    description:
+      "Fashion e-commerce website showcasing a wide range of clothing items. Explores product listing, detail views, and a clean storefront design.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/adyvka31/MyStyle",
+    thumbnail: mystyleImg,
   },
   {
     id: "flutter",
@@ -141,6 +233,68 @@ export const projects = [
       "A mobile application for smart ticket management with Gemini API integration. Allows users to store real-time ticket data and receive automated AI-based analytics summaries.",
     tags: ["Flutter", "Firebase", "Gemini API", "Provider"],
     link: "#",
+  },
+
+  {
+    id: "attendance-app",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · PRODUCTIVITY",
+    title: "Attendance App",
+    year: "2024",
+    description:
+      "Cross-platform attendance digitization app built with Flutter. Uses real-time camera access and Firebase backend to streamline check-in flows for organizations.",
+    tags: ["Flutter", "Dart", "Firebase"],
+    link: "https://github.com/adyvka31/Attendance-App",
+  },
+  {
+    id: "qr-scanner",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · UTILITIES",
+    title: "QR Guest Manager",
+    year: "2024",
+    description:
+      "QR Scanner and guest registration manager built with Flutter. Integrates Firebase for secure real-time data storage, streamlining event check-in workflows.",
+    tags: ["Flutter", "Dart", "Firebase"],
+    link: "https://github.com/adyvka31/QR_Scanner_App",
+  },
+  {
+    id: "news-app",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · NEWS",
+    title: "News App",
+    year: "2024",
+    description:
+      "Cross-platform news reader app that demonstrates real-time REST API integration, clean state management, and a well-structured business logic layer.",
+    tags: ["Flutter", "Dart", "REST API"],
+    link: "https://github.com/adyvka31/News-App",
+  },
+  {
+    id: "quran-app",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · LIFESTYLE",
+    title: "Quran App",
+    year: "2024",
+    description:
+      "Cross-platform Quran reader focused on clean UI, responsive performance, and structured separation of business logic — making daily reading seamless and accessible.",
+    tags: ["Flutter", "Dart", "C++"],
+    link: "https://github.com/adyvka31/Quran-App",
+  },
+  // ── WEB · FRONTEND / STATIC ──────────────────────────────────────
+  {
+    id: "nano-studio",
+    category: "web",
+    span: "sm",
+    label: "WEBSITE · AGENCY",
+    title: "Nano Studio",
+    year: "2023",
+    description:
+      "Agency portfolio website for a three-person creative studio. Showcases services and team identity with a clean, structured layout.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/adyvka31/Nano-Studio-Web",
   },
 ];
 
