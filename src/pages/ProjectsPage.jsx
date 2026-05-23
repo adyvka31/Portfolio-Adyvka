@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import PageHero from "../components/PageHero/PageHero";
 import Reveal from "../components/Reveal/Reveal";
-import Tag from "../components/Tag/Tag"; // Pastikan Tag di-import
+import Tag from "../components/Tag/Tag";
 import BottomCTA from "../components/BottomCTA/BottomCTA";
 import { SearchIcon, ArrowUpRightIcon } from "../components/Icons/Icons";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
@@ -12,6 +12,7 @@ import styles from "./IndexPage.module.css";
 
 function ProjectCard({ project }) {
   const spot = useCardSpotlight();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <Link
@@ -19,21 +20,23 @@ function ProjectCard({ project }) {
       className={`card glass ${styles.cardModern}`}
       {...spot}
     >
-      <div className={styles.cardImageWrap}>
+      {/* IMAGE AREA */}
+      <div
+        className={`${styles.cardImageWrap} ${isLoaded ? styles.imageLoadedWrap : ""}`}
+      >
         <img
           src={project.thumbnail}
           alt={project.title}
-          className={styles.cardImage}
+          className={`${styles.cardImage} ${isLoaded ? styles.loaded : ""}`}
           loading="lazy"
           decoding="async"
+          onLoad={() => setIsLoaded(true)}
         />
 
         <div className={styles.cardOverlay}>
           <div className={styles.overlayGradient} />
-
           <div className={styles.overlayContent}>
             <span className={styles.deployText}>View Live Deploy</span>
-
             <div className={styles.deployButton}>
               <ArrowUpRightIcon size={18} />
             </div>
@@ -66,7 +69,6 @@ function ProjectCard({ project }) {
               rel="noopener noreferrer"
               className={styles.cardActionButton}
               onClick={(e) => {
-                // Hentikan propagasi agar klik tombol tidak memicu Link utama card
                 if (project.link) e.stopPropagation();
               }}
             >
@@ -81,7 +83,7 @@ function ProjectCard({ project }) {
 }
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("web");
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
@@ -110,6 +112,7 @@ export default function ProjectsPage() {
       <section className={styles.mainSection}>
         <div className={styles.container}>
           <div className={styles.controlsInner}>
+            {/* Animasi pencarian (delay 0) */}
             <Reveal className={styles.searchWrap}>
               <SearchIcon size={16} />
               <input
@@ -120,6 +123,8 @@ export default function ProjectsPage() {
                 className={styles.searchInput}
               />
             </Reveal>
+
+            {/* Animasi filter (delay 0.05, menyambung secara konsisten) */}
             <Reveal delay={0.05} className={styles.filters}>
               {projectFilters.map((f) => (
                 <button
@@ -138,14 +143,21 @@ export default function ProjectsPage() {
           {/* --- GRID LIST PROJECTS --- */}
           <div className={styles.gridInner}>
             {filtered.length === 0 ? (
-              <p className={styles.empty}>No projects match that filter.</p>
+              <Reveal delay={0.1}>
+                <p className={styles.empty}>No projects match that filter.</p>
+              </Reveal>
             ) : (
               <div className={styles.grid}>
-                {filtered.map((p, i) => (
-                  <Reveal key={p.slug} delay={i * 0.05}>
-                    <ProjectCard project={p} />
-                  </Reveal>
-                ))}
+                {filtered.map((p, i) => {
+                  const staggerDelay = i < 6 ? i * 0.05 : 0;
+
+                  return (
+                    <Reveal key={p.slug} delay={staggerDelay}>
+                      {/* Pastikan prop index diteruskan agar gambar awal di-load dengan "eager" */}
+                      <ProjectCard project={p} index={i} />
+                    </Reveal>
+                  );
+                })}
               </div>
             )}
           </div>
