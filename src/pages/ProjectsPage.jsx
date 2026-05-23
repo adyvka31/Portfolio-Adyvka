@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import PageHero from "../components/PageHero/PageHero";
 import Reveal from "../components/Reveal/Reveal";
-import Tag from "../components/Tag/Tag";
+import Tag from "../components/Tag/Tag"; // Pastikan Tag di-import
 import BottomCTA from "../components/BottomCTA/BottomCTA";
 import { SearchIcon, ArrowUpRightIcon } from "../components/Icons/Icons";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
@@ -19,15 +19,15 @@ function ProjectCard({ project }) {
       className={`card glass ${styles.cardModern}`}
       {...spot}
     >
-      {/* IMAGE AREA */}
       <div className={styles.cardImageWrap}>
         <img
           src={project.thumbnail}
           alt={project.title}
           className={styles.cardImage}
+          loading="lazy"
+          decoding="async"
         />
 
-        {/* OVERLAY */}
         <div className={styles.cardOverlay}>
           <div className={styles.overlayGradient} />
 
@@ -39,18 +39,8 @@ function ProjectCard({ project }) {
             </div>
           </div>
         </div>
-
-        {/* TAGS */}
-        <div className={styles.imageTags}>
-          {project.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className={styles.imageTag}>
-              {tag}
-            </span>
-          ))}
-        </div>
       </div>
 
-      {/* CONTENT */}
       <div className={styles.cardBody}>
         <div className={styles.cardMetaRow}>
           <span>{project.label}</span>
@@ -58,8 +48,33 @@ function ProjectCard({ project }) {
         </div>
 
         <h3 className={styles.cardTitleModern}>{project.title}</h3>
-
         <p className={styles.cardDescModern}>{project.description}</p>
+
+        <div className={styles.cardFooterModern}>
+          <div className={styles.cardTagsModern}>
+            {project.tags.slice(0, 3).map((tag) => (
+              <Tag key={tag} size="xs">
+                {tag}
+              </Tag>
+            ))}
+          </div>
+
+          <div className={styles.cardActionWrap}>
+            <a
+              href={project.link || `/projects/${project.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.cardActionButton}
+              onClick={(e) => {
+                // Hentikan propagasi agar klik tombol tidak memicu Link utama card
+                if (project.link) e.stopPropagation();
+              }}
+            >
+              <span className={styles.cardActionText}>Source</span>
+              <ArrowUpRightIcon size={14} />
+            </a>
+          </div>
+        </div>
       </div>
     </Link>
   );
@@ -92,47 +107,51 @@ export default function ProjectsPage() {
         description="A catalogue of everything I've designed, engineered, or shipped — filtered by stack or searched by name."
       />
 
-      <section className={styles.controlsSection}>
-        <div className={styles.controlsInner}>
-          <Reveal className={styles.searchWrap}>
-            <SearchIcon size={16} />
-            <input
-              type="text"
-              placeholder="Search by name, stack, or keyword…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className={styles.searchInput}
-            />
-          </Reveal>
-          <Reveal delay={0.05} className={styles.filters}>
-            {projectFilters.map((f) => (
-              <button
-                key={f.id}
-                onClick={() => setFilter(f.id)}
-                className={`${styles.chip} ${filter === f.id ? styles.chipActive : ""}`}
-              >
-                {f.label}
-              </button>
-            ))}
-          </Reveal>
+      <section className={styles.mainSection}>
+        <div className={styles.container}>
+          <div className={styles.controlsInner}>
+            <Reveal className={styles.searchWrap}>
+              <SearchIcon size={16} />
+              <input
+                type="text"
+                placeholder="Search by name, stack, or keyword…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className={styles.searchInput}
+              />
+            </Reveal>
+            <Reveal delay={0.05} className={styles.filters}>
+              {projectFilters.map((f) => (
+                <button
+                  key={f.id}
+                  onClick={() => setFilter(f.id)}
+                  className={`${styles.chip} ${
+                    filter === f.id ? styles.chipActive : ""
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </Reveal>
+          </div>
+
+          {/* --- GRID LIST PROJECTS --- */}
+          <div className={styles.gridInner}>
+            {filtered.length === 0 ? (
+              <p className={styles.empty}>No projects match that filter.</p>
+            ) : (
+              <div className={styles.grid}>
+                {filtered.map((p, i) => (
+                  <Reveal key={p.slug} delay={i * 0.05}>
+                    <ProjectCard project={p} />
+                  </Reveal>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
-      <section className={styles.gridSection}>
-        <div className={styles.gridInner}>
-          {filtered.length === 0 ? (
-            <p className={styles.empty}>No projects match that filter.</p>
-          ) : (
-            <div className={styles.grid}>
-              {filtered.map((p, i) => (
-                <Reveal key={p.slug} delay={i * 0.04}>
-                  <ProjectCard project={p} />
-                </Reveal>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
       <BottomCTA />
     </PageShell>
   );

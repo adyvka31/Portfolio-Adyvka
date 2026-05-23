@@ -1,30 +1,135 @@
-.controlsSection {
-  position: sticky;
-  top: 5rem;
-  z-index: 5;
-  background: linear-gradient(to bottom, var(--bg) 70%, transparent);
-  padding: 1rem 1.5rem 2rem;
-  backdrop-filter: blur(8px);
-}
-.controlsInner {
+/* =========================================
+   MODERN PROJECT CARD
+========================================= */
+
+.container {
+  padding: 7rem 1.5rem;
   max-width: 72rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; 
+}
+
+/* =========================================
+   CONTROLS (Search & Filters)
+========================================= */
+
+.controlsInner {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
   align-items: center;
+  border-bottom: none;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 0.625rem 1rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 32rem;
+  color: var(--ink-200);
+  transition: border-color 0.2s ease;
+}
+
+.searchWrap:focus-within {
+  border-color: rgba(124, 242, 255, 0.3);
+}
+
+.searchInput {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.searchInput::placeholder {
+  color: var(--ink-300);
+}
+
+.filters {
+  display: flex;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 0.5rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ink-200);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  color: #fff;
+}
+
+.chipActive {
+  border-color: rgba(124, 242, 255, 0.3);
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.05);
 }
 
 /* =========================================
-   MODERN PROJECT CARD
+   GRID SYSTEM
+========================================= */
+
+.gridInner {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* Menyamakan gap antar card dengan halaman landing page */
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.empty {
+  text-align: center;
+  color: var(--ink-200);
+  padding: 4rem 0;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.875rem;
+}
+
+/* =========================================
+   MODERN PROJECT CARD 
 ========================================= */
 
 .cardModern {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
   padding: 0;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
+  text-decoration: none;
   transition:
     transform 0.35s ease,
     border-color 0.35s ease;
@@ -35,11 +140,10 @@
 }
 
 /* IMAGE */
-
 .cardImageWrap {
   position: relative;
   overflow: hidden;
-  height: 420px;
+  height: 320px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -47,41 +151,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition:
-    transform 0.7s ease,
-    filter 0.5s ease;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .cardModern:hover .cardImage {
-  transform: scale(1.06);
-  filter: brightness(0.8);
-}
-
-/* TAGS */
-
-.imageTags {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  z-index: 4;
-}
-
-.imageTag {
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  background: #f4b323;
-  color: #111;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.06) translateZ(0);
 }
 
 /* OVERLAY */
-
 .cardOverlay {
   position: absolute;
   inset: 0;
@@ -115,25 +194,18 @@
   opacity: 1;
 }
 
-/* HOVER CONTENT */
-
 .overlayContent {
   position: relative;
   z-index: 3;
   width: calc(100% - 2rem);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 1rem 1.2rem;
   margin-bottom: 1rem;
-
   border-radius: 1.25rem;
-
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
-
   transform: translateY(120%);
   transition: transform 0.45s ease;
 }
@@ -153,37 +225,33 @@
   width: 42px;
   height: 42px;
   border-radius: 999px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: linear-gradient(
     135deg,
     rgba(124, 242, 255, 1),
     rgba(84, 214, 255, 0.8)
   );
-
   color: black;
 }
 
 /* BODY */
-
 .cardBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* PENTING: Mendorong footer ke paling bawah */
   padding: 1.5rem 1.5rem 1.75rem;
 }
 
 .cardMetaRow {
   display: flex;
   justify-content: space-between;
-
   margin-bottom: 0.9rem;
-
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   color: var(--ink-300);
 }
 
@@ -197,175 +265,71 @@
 
 .cardDescModern {
   color: rgba(255, 255, 255, 0.7);
-
   line-height: 1.7;
   font-size: 0.95rem;
-
-  margin: 0;
 }
 
-/* MOBILE */
+.cardFooterModern {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
 
+.cardTagsModern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+/* Tombol Source / GitHub */
+.cardActionWrap {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.cardActionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink-200);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.cardActionButton:hover {
+  background: rgba(124, 242, 255, 0.1);
+  color: #fff;
+  border-color: rgba(124, 242, 255, 0.3);
+}
+
+.cardActionText {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .cardImageWrap {
-    height: 340px;
+    height: 260px;
   }
-
   .cardTitleModern {
     font-size: 1.7rem;
   }
-
   .overlayContent {
     transform: translateY(0);
   }
-
   .overlayGradient {
     opacity: 1;
   }
-}
-
-.searchWrap {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 9999px;
-  padding: 0.625rem 1rem;
-  flex: 1;
-  min-width: 280px;
-  max-width: 32rem;
-  color: var(--ink-200);
-  transition: border-color 0.2s ease;
-}
-.searchWrap:focus-within {
-  border-color: rgba(124, 242, 255, 0.3);
-}
-.searchInput {
-  background: transparent;
-  border: 0;
-  outline: 0;
-  width: 100%;
-  font-size: 0.875rem;
-  color: #fff;
-}
-.searchInput::placeholder {
-  color: var(--ink-300);
-}
-.filters {
-  display: flex;
-  gap: 0.375rem;
-  flex-wrap: wrap;
-}
-.chip {
-  padding: 0.5rem 0.875rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--ink-200);
-  font-family: "Geist Mono", monospace;
-  font-size: 0.75rem;
-  transition: all 0.2s ease;
-}
-.chip:hover {
-  color: #fff;
-}
-.chipActive {
-  border-color: rgba(124, 242, 255, 0.3);
-  color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.05);
-}
-.gridSection {
-  padding: 2rem 1.5rem 6rem;
-}
-.gridInner {
-  max-width: 72rem;
-  margin: 0 auto;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.empty {
-  text-align: center;
-  color: var(--ink-200);
-  padding: 4rem 0;
-  font-family: "Geist Mono", monospace;
-  font-size: 0.875rem;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.75rem;
-  border-radius: 1.25rem;
-  height: 100%;
-  text-decoration: none;
-}
-.cardHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cardLabel {
-  font-family: "Geist Mono", monospace;
-  font-size: 0.7rem;
-  color: var(--accent-glow);
-  letter-spacing: 0.08em;
-}
-.cardYear {
-  font-family: "Geist Mono", monospace;
-  font-size: 0.7rem;
-  color: var(--ink-300);
-}
-.cardTitle {
-  font-size: 1.375rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin: 0;
-  color: #fff;
-}
-.cardDescription {
-  color: rgba(207, 207, 214, 0.7);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  margin: 0;
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.cardFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-.cardTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-}
-.cardArrow {
-  color: var(--ink-200);
-  transition:
-    transform 0.3s ease,
-    color 0.2s ease;
-}
-.card:hover .cardArrow {
-  color: #fff;
-  transform: translate(2px, -2px);
 }
