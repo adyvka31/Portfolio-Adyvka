@@ -149,11 +149,10 @@ export default function ProjectsPage() {
             ) : (
               <div className={styles.grid}>
                 {filtered.map((p, i) => {
-                  const staggerDelay = i < 6 ? i * 0.05 : 0;
+                  const staggerDelay = (i % 6) * 0.08;
 
                   return (
                     <Reveal key={p.slug} delay={staggerDelay}>
-                      {/* Pastikan prop index diteruskan agar gambar awal di-load dengan "eager" */}
                       <ProjectCard project={p} index={i} />
                     </Reveal>
                   );
