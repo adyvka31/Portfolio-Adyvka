@@ -17,10 +17,7 @@ import aigeneratorImg from "../assets/aigenerator.webp";
 import newsImg from "../assets/news.webp";
 import qrscannerImg from "../assets/qrscanner.webp";
 import todoImg from "../assets/todo.webp";
-
-
 import payrollServiceImg from "../assets/payroll-service.webp";
-
 import javaislandImg from "../assets/javaisland.webp";
 import fitsmartImg from "../assets/fitsmart.webp";
 import coffeeeShopImg from "../assets/coffeee-shop.webp";
@@ -28,6 +25,13 @@ import mystyleImg from "../assets/mystyle.webp";
 import pusakakuImg from "../assets/pusakaku.webp";
 import semuaBisaImg from "../assets/semua-bisa.webp";
 import idncourseImg from "../assets/idncourse.webp";
+
+import alansharImg from "../assets/alanshar.webp";
+import griyyasunnahImg from "../assets/griyyasunnah.webp";
+import hajrabyadlImg from "../assets/hajrabyadl.webp";
+import mtsyasmineImg from "../assets/mtsyasmine.webp";
+import semutsemutImg from "../assets/semutsemut.webp";
+import smpn45Img from "../assets/smpn45.webp";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -82,7 +86,7 @@ export const projects = [
   {
     id: "databank",
     category: "web",
-    span: "lg", 
+    span: "lg",
     label: "WEBSITE · ENTERPRISE ERP",
     title: "Databank ERP",
     year: "2025 →",
@@ -361,7 +365,7 @@ export const recognitionData = {
       year: "Sep 2025",
       description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
       image: webDevImg,
-      tags: ["Public Speaking", "Web Development", "UI/UX Design"],
+      tags: ["Web Development", "UI/UX Design", "25+ Students"],
     },
     {
       title: "Event Division Leader",
@@ -377,7 +381,7 @@ export const recognitionData = {
       year: "Oct 2023",
       description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
       image: appDevImg,
-      tags: ["Public Speaking", "App Development"],
+      tags: ["App Development", "25+ Students"],
     },
     {
       title: "Backpacker 3 Country",
@@ -389,11 +393,11 @@ export const recognitionData = {
     },
     {
       title: "Game Development Instructor",
-      institution: "SMP INS Depok",
+      institution: "Semut-Semut The Natural School",
       year: "Oct 2023",
       description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
-      image: appDevImg,
-      tags: ["Public Speaking", "App Development"],
+      image: semutsemutImg,
+      tags: ["Game Development", "25+ Students"],
     },
     {
       title: "Volunteer Event Organizer",
@@ -481,6 +485,54 @@ export const recognitionData = {
     },
   ],
 };
+
+export const extraTeachingExperiences = [
+  {
+    title: "Web Development Instructor",
+    institution: "Hajrabyadl",
+    year: "May 2025",
+    description:
+      "Memandu siswa dalam mempelajari dasar-dasar HTML, CSS, dan desain UI/UX untuk membangun struktur halaman web interaktif.",
+    image: hajrabyadlImg,
+    tags: ["Web Development", "UI/UX Design", "23+ Students"],
+  },
+  {
+    title: "App Development Instructor",
+    institution: "SMPN 45",
+    year: "Sep 2023",
+    description:
+      "Memperkenalkan konsep pembuatan aplikasi seluler dasar dan implementasi komponen interaktif kepada siswa sekolah menengah.",
+    image: smpn45Img,
+    tags: ["App Development", "10+ Students"],
+  },
+  {
+    title: "Game Development Instructor",
+    institution: "Al Anshar",
+    year: "Nov 2022",
+    description:
+      "Mengajarkan dasar-dasar pengembangan game dan logika pemrograman interaktif kepada para siswa untuk mengasah kreativitas digital mereka.",
+    image: alansharImg,
+    tags: ["Game Development", "15+ Students"],
+  },
+  {
+    title: "Design Instructor",
+    institution: "MTs Yasmine",
+    year: "Oct 2022",
+    description:
+      "Mengajarkan prinsip-prinsip desain antarmuka (UI/UX) dan pembuatan poster digital menggunakan perangkat lunak desain visual modern.",
+    image: mtsyasmineImg,
+    tags: ["UI/UX Design", "Poster Design", "25+ Students"],
+  },
+  {
+    title: "Game Development Instructor",
+    institution: "Griyya Sunnah",
+    year: "Sep 2022",
+    description:
+      "Membimbing siswa dalam membuat game sederhana, mengenalkan alur logika, dan pemecahan masalah komputasional melalui pemrograman.",
+    image: griyyasunnahImg,
+    tags: ["Game Development", "15+ Students"],
+  },
+];
 
 // ============================================
 // NAV LINKS

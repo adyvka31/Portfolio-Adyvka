@@ -7,10 +7,14 @@ import BottomCTA from "../components/BottomCTA/BottomCTA";
 import SectionLabel from "../components/SectionLabel/SectionLabel";
 import Tag from "../components/Tag/Tag";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
-import { experiencesList, recognitionData } from "../data/portfolio";
+// Tambahkan extraTeachingExperiences ke dalam daftar import dari portfolio.js
+import {
+  experiencesList,
+  recognitionData,
+  extraTeachingExperiences,
+} from "../data/portfolio";
 import styles from "./ExperiencePage.module.css";
 
-// Komponen kartu yang dibuat sama persis dengan AchievementCard di homepage
 function ExperienceBentoCard({ item }) {
   const spotlight = useCardSpotlight();
 
@@ -64,24 +68,39 @@ export default function ExperiencePage() {
   // 1. Data Work Experience
   const workExperiences = experiencesList;
 
-  // 2. Data Teaching Experience
-  const teachingExperiencesRaw = recognitionData.experience.filter(
+  // 2. Data Teaching Experience Asli (dari portfolio.js)
+  const baseTeachingExperiences = recognitionData.experience.filter(
     (exp) =>
       exp.title.toLowerCase().includes("instructor") ||
       exp.title.toLowerCase().includes("teaching"),
   );
 
+  // 3. Gabungkan data bawaan dengan data extra baru dari portfolio.js
+  const teachingExperiencesRaw = [
+    ...baseTeachingExperiences,
+    ...extraTeachingExperiences,
+  ];
+
   // Logika Filter untuk Teaching Experience
-  const teachingTabs = ["All", "Web Dev", "App Dev", "Speaking"];
+  const teachingTabs = ["All", "Game Development", "Web Development", "Other"];
+
   const teachingExperiences = teachingExperiencesRaw.filter((item) => {
     if (activeTab === "All") return true;
-    if (activeTab === "Web Dev") return item.tags.includes("Web Development");
-    if (activeTab === "App Dev") return item.tags.includes("App Development");
-    if (activeTab === "Speaking") return item.tags.includes("Public Speaking");
+    if (activeTab === "Game Development")
+      return item.tags?.includes("Game Development");
+    if (activeTab === "Web Development")
+      return item.tags?.includes("Web Development");
+
+    if (activeTab === "Other") {
+      const isGameDev = item.tags?.includes("Game Development");
+      const isWebDev = item.tags?.includes("Web Development");
+      return !isGameDev && !isWebDev;
+    }
+
     return true;
   });
 
-  // 3. Data Other Experience
+  // 4. Data Other Experience
   const otherExperiences = recognitionData.experience.filter(
     (exp) =>
       !exp.title.toLowerCase().includes("instructor") &&
@@ -172,7 +191,6 @@ export default function ExperiencePage() {
         <div className={styles.container}>
           <Reveal>
             <div className={styles.headContentReverse}>
-              {/* Headline di sebelah kanan secara visual */}
               <div className={`${styles.sectionHead} ${styles.headRight}`}>
                 <SectionLabel number="02" label="Teaching Experience" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
@@ -184,7 +202,6 @@ export default function ExperiencePage() {
                 </h2>
               </div>
 
-              {/* Tabs Filter di sebelah kiri secara visual */}
               <div className={styles.filterTabs}>
                 {teachingTabs.map((tab) => (
                   <button
