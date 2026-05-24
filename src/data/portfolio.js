@@ -13,6 +13,11 @@ import cvPdfFile from "../assets/RafifSavaAdyvkaPratama_CV.pdf";
 import databankImg from "../assets/databank.webp";
 import ruangtumbuhImg from "../assets/ruangtumbuh.webp";
 import delifoodImg from "../assets/delifood.webp";
+import aigeneratorImg from "../assets/aigenerator.webp";
+import newsImg from "../assets/news.webp";
+import qrscannerImg from "../assets/qrscanner.webp";
+import todoImg from "../assets/todo.webp";
+
 
 import payrollServiceImg from "../assets/payroll-service.webp";
 
@@ -221,6 +226,7 @@ export const projects = [
       "The main goal of this application is to provide a seamless user interface (UI) connected to a real-time database, ensuring that users have the most up-to-date information on their orders, products.",
     tags: ["Flutter", "Dart", "Firebase"],
     link: "#",
+    thumbnail: delifoodImg,
   },
   {
     id: "ai-ticket-manager",
@@ -233,6 +239,7 @@ export const projects = [
       "A mobile application for smart ticket management with Gemini API integration. Allows users to store real-time ticket data and receive automated AI-based analytics summaries.",
     tags: ["Flutter", "Firebase", "Gemini API", "Provider"],
     link: "#",
+    thumbnail: aigeneratorImg,
   },
 
   {
@@ -246,6 +253,7 @@ export const projects = [
       "Cross-platform attendance digitization app built with Flutter. Uses real-time camera access and Firebase backend to streamline check-in flows for organizations.",
     tags: ["Flutter", "Dart", "Firebase"],
     link: "https://github.com/adyvka31/Attendance-App",
+    thumbnail: todoImg,
   },
   {
     id: "qr-scanner",
@@ -258,6 +266,7 @@ export const projects = [
       "QR Scanner and guest registration manager built with Flutter. Integrates Firebase for secure real-time data storage, streamlining event check-in workflows.",
     tags: ["Flutter", "Dart", "Firebase"],
     link: "https://github.com/adyvka31/QR_Scanner_App",
+    thumbnail: qrscannerImg,
   },
   {
     id: "news-app",
@@ -270,6 +279,7 @@ export const projects = [
       "Cross-platform news reader app that demonstrates real-time REST API integration, clean state management, and a well-structured business logic layer.",
     tags: ["Flutter", "Dart", "REST API"],
     link: "https://github.com/adyvka31/News-App",
+    thumbnail: newsImg,
   },
   {
     id: "quran-app",
