@@ -175,10 +175,10 @@
   object-fit: cover;
   opacity: 0;
   transition:
-    opacity 0.6s ease,
-    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform, opacity;
-  transform: translate3d(0, 0, 0);
+    opacity 0.5s ease,
+    transform 0.3s ease-out;
+  will-change: transform;
+  transform: translateZ(0); /* Memaksa browser menggunakan GPU */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -188,7 +188,7 @@
 }
 
 .cardModern:hover .cardImage.loaded {
-  transform: scale(1.06) translate3d(0, 0, 0);
+  transform: scale(1.03) translateZ(0);
 }
 
 /* OVERLAY */
@@ -235,13 +235,9 @@
   padding: 1rem 1.2rem;
   margin-bottom: 1rem;
   border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(
-    14px
-  ); 
-  transform: translateY(120%) translate3d(0, 0, 0);
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  background: rgba(15, 15, 15, 0.85); 
+  transform: translateY(120%) translateZ(0);
+  transition: transform 0.3s ease-out;
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;

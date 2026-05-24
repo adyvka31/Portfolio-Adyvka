@@ -11,14 +11,12 @@ import { projectsList, projectFilters } from "../data/portfolio";
 import styles from "./IndexPage.module.css";
 
 function ProjectCard({ project }) {
-  const spot = useCardSpotlight();
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <Link
       to={`/projects/${project.slug}`}
       className={`card glass ${styles.cardModern}`}
-      {...spot}
     >
       {/* IMAGE AREA */}
       <div
@@ -149,7 +147,7 @@ export default function ProjectsPage() {
             ) : (
               <div className={styles.grid}>
                 {filtered.map((p, i) => (
-                  <Reveal key={p.slug} delay={(i % 6) * 0.08}>
+                  <Reveal key={p.slug} delay={i * 0.05}>
                     <ProjectCard project={p} />
                   </Reveal>
                 ))}
