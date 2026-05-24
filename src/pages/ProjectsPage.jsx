@@ -148,15 +148,11 @@ export default function ProjectsPage() {
               </Reveal>
             ) : (
               <div className={styles.grid}>
-                {filtered.map((p, i) => {
-                  const staggerDelay = (i % 6) * 0.08;
-
-                  return (
-                    <Reveal key={p.slug} delay={staggerDelay}>
-                      <ProjectCard project={p} index={i} />
-                    </Reveal>
-                  );
-                })}
+                {filtered.map((p, i) => (
+                  <Reveal key={p.slug} delay={(i % 6) * 0.08}>
+                    <ProjectCard project={p} />
+                  </Reveal>
+                ))}
               </div>
             )}
           </div>
