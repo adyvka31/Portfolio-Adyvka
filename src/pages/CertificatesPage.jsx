@@ -1,51 +1,92 @@
-import { useState, useMemo } from "react";
+// src/pages/CertificatesPage.jsx
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import PageHero from "../components/PageHero/PageHero";
 import Reveal from "../components/Reveal/Reveal";
 import Tag from "../components/Tag/Tag";
-import BottomCTA from "../components/BottomCTA/BottomCTA";
-import { SearchIcon, ArrowUpRightIcon } from "../components/Icons/Icons";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
-import { allCertificates } from "../data/portfolio";
-import styles from "./IndexPage.module.css";
-import local from "./CertificatesPage.module.css";
+import { allCertificates } from "../data/portfolio"; // Sesuaikan dengan nama variabel data Anda
+import BottomCTA from "../components/BottomCTA/BottomCTA";
 import Image from "../components/Image/Image";
+import local from "./CertificatesPage.module.css";
 
-function CertCard({ cert }) {
+function CertificateCard({ item }) {
   const spot = useCardSpotlight();
+
   return (
     <Link
-      to={`/certificates/${cert.slug}`}
-      className={`card glass ${local.card}`}
+      to={`/certificates/${item.slug}`}
+      className={`glass ${local.card}`}
       {...spot}
     >
-      <div className={local.thumb}>
+      {/* 1. Framed Image Display */}
+      <div className={local.imageFrame}>
         <Image
-          src={cert.image}
-          alt={cert.title}
-          className={local.thumbImg}
-          width={400} 
-          height={300}
+          src={item.image}
+          alt={item.title}
+          className={local.image}
+          width={600}
+          height={450}
         />
-        <div className={local.thumbOverlay} />
-      </div>
-      <div className={local.body}>
-        <div className={local.headRow}>
-          <span className={local.issuer}>{cert.institution}</span>
-          <span className={local.year}>{cert.year}</span>
+        <div className={local.imageOverlay} />
+
+        {/* 2. Floating Verified Badge */}
+        <div className={local.badge}>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Verified
         </div>
-        <h3 className={local.title}>{cert.title}</h3>
+      </div>
+
+      {/* 3. Certificate Info */}
+      <div className={local.info}>
+        <div className={local.meta}>
+          <span className={local.issuer}>{item.issuer}</span>
+          <span className={local.year}>{item.year}</span>
+        </div>
+
+        <h3 className={local.title}>{item.title}</h3>
+
         <div className={local.tags}>
-          {cert.tags?.slice(0, 2).map((t) => (
+          {item.tags?.slice(0, 3).map((t) => (
             <Tag key={t} size="xs">
               {t}
             </Tag>
           ))}
         </div>
-        <div className={local.footer}>
-          <span className={local.viewLabel}>View certificate</span>
-          <ArrowUpRightIcon size={12} />
+
+        {/* 4. Action Link dengan Ticket-Dashed Border */}
+        <div className={local.actionWrapper}>
+          <span className={local.actionText}>View Credential</span>
+          <svg
+            className={local.actionIcon}
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 12H19M19 12L12 5M19 12L12 19"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
       </div>
     </Link>
@@ -53,82 +94,27 @@ function CertCard({ cert }) {
 }
 
 export default function CertificatesPage() {
-  const [query, setQuery] = useState("");
-
-  const issuers = useMemo(() => {
-    const set = new Set(allCertificates.map((c) => c.institution));
-    return ["all", ...Array.from(set)];
-  }, []);
-  const [issuer, setIssuer] = useState("all");
-
-  const filtered = useMemo(() => {
-    return allCertificates.filter((c) => {
-      const matchIssuer = issuer === "all" || c.institution === issuer;
-      const q = query.trim().toLowerCase();
-      const matchQ =
-        !q ||
-        c.title.toLowerCase().includes(q) ||
-        c.institution.toLowerCase().includes(q) ||
-        c.tags?.some((t) => t.toLowerCase().includes(q));
-      return matchIssuer && matchQ;
-    });
-  }, [issuer, query]);
+  const items = allCertificates || [];
 
   return (
     <PageShell>
       <PageHero
         number="05"
         label="Certificates"
-        title="Verified, not vibes."
+        title="Verified knowledge."
         italicWord="Verified"
-        description="Every certification I've earned — from Harvard's CS50 to industry bootcamps — with links to the issuing organisation."
-        meta={[
-          { label: "Total", value: allCertificates.length.toString() },
-          { label: "Issuers", value: (issuers.length - 1).toString() },
-          { label: "Latest", value: allCertificates[0]?.year || "—" },
-          { label: "Verified", value: "All" },
-        ]}
+        description="Koleksi sertifikasi dan lisensi profesional yang membuktikan kompetensi teknis, kredibilitas, dan komitmen saya terhadap pembelajaran berkelanjutan."
       />
 
-      <section className={styles.controlsSection}>
-        <div className={styles.controlsInner}>
-          <Reveal className={styles.searchWrap}>
-            <SearchIcon size={16} />
-            <input
-              type="text"
-              placeholder="Search certificates…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className={styles.searchInput}
-            />
-          </Reveal>
-          <Reveal delay={0.05} className={styles.filters}>
-            {issuers.map((iss) => (
-              <button
-                key={iss}
-                onClick={() => setIssuer(iss)}
-                className={`${styles.chip} ${issuer === iss ? styles.chipActive : ""}`}
-              >
-                {iss === "all" ? "All issuers" : iss}
-              </button>
+      <section className={local.gridSection}>
+        <div className={local.gridInner}>
+          <div className={local.grid}>
+            {items.map((item, i) => (
+              <Reveal key={item.slug} delay={i * 0.05}>
+                <CertificateCard item={item} />
+              </Reveal>
             ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <section className={styles.gridSection}>
-        <div className={styles.gridInner}>
-          {filtered.length === 0 ? (
-            <p className={styles.empty}>No certificates match.</p>
-          ) : (
-            <div className={local.grid}>
-              {filtered.map((c, i) => (
-                <Reveal key={c.slug} delay={i * 0.04}>
-                  <CertCard cert={c} />
-                </Reveal>
-              ))}
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
