@@ -174,8 +174,8 @@ export default function ContactLayout() {
                   src={profilePhoto}
                   alt={personalInfo.name}
                   className={styles.ncAvatar}
-                  width={100}
-                  height={100}
+                  width={500}
+                  height={500}
                 />
 
                 <div className={styles.ncImageOverlay}></div>
