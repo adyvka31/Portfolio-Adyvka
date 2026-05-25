@@ -1,64 +1,260 @@
-.card {
+/* src/pages/AchievementsPage.module.css */
+
+.storySection {
+  padding: 7rem 1.5rem;
+  position: relative;
+}
+
+.storyContainer {
+  max-width: 72rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 0;
+  gap: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timelineLine {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .timelineLine {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(124, 242, 255, 0.1) 20%,
+      rgba(124, 242, 255, 0.1) 80%,
+      transparent
+    );
+    z-index: 1;
+    transform: translateX(-50%);
+  }
+}
+
+.storyBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.giantNumber {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  font-family: "Geist Mono", monospace;
+  font-size: 8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  z-index: -1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* --- PERUBAHAN GRID: TEKS LEBIH LEBAR, GAMBAR LEBIH KECIL --- */
+@media (min-width: 1024px) {
+  .storyBlock {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 0;
+  }
+
+  .giantNumber {
+    font-size: 12rem;
+    top: -6.5rem;
+    left: -1rem;
+  }
+
+  /* Ganjil: Gambar (5 Kolom), Teks (8 Kolom) dengan Overlap di kolom ke-5 */
+  .imageColumn {
+    grid-column: 1 / 6; /* Gambar hanya 5 kolom (lebih compact) */
+    grid-row: 1;
+    z-index: 1;
+  }
+
+  .textColumn {
+    grid-column: 5 / 13; /* Card teks mengambil 8 kolom (sangat luas) */
+    grid-row: 1;
+    z-index: 10;
+  }
+
+  /* Genap: Reversed */
+  .storyBlock.reverse .giantNumber {
+    left: auto;
+    right: -1rem;
+  }
+
+  .storyBlock.reverse .imageColumn {
+    grid-column: 8 / 13; /* Gambar 5 kolom di kanan */
+  }
+
+  .storyBlock.reverse .textColumn {
+    grid-column: 1 / 9; /* Card teks 8 kolom di kiri */
+  }
+}
+
+/* --- Image Styling --- */
+.imageWrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Rasio klasik agar gambar tidak terlihat terlalu pipih/stretch */
   border-radius: 1.25rem;
   overflow: hidden;
-  text-decoration: none;
-  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.02);
 }
-.imageWrap {
-  position: relative;
-  aspect-ratio: 16/10;
-  overflow: hidden;
+
+.imageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 2;
 }
+
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.card:hover .image {
+
+.imageWrap:hover .image {
   transform: scale(1.05);
 }
+
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  z-index: 1;
+  transition: opacity 0.5s ease;
 }
-.year {
-  position: absolute;
-  top: 0.875rem;
-  right: 0.875rem;
-  font-family: "Geist Mono", monospace;
-  font-size: 0.7rem;
-  color: var(--accent-glow);
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  padding: 0.25rem 0.625rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+
+.imageWrap:hover .imageOverlay {
+  opacity: 0.1;
 }
-.body {
+
+/* --- Text Card Styling --- */
+.textCard {
+  border-radius: 1.25rem;
   padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.institution {
+
+@media (min-width: 768px) {
+  .textCard {
+    padding: 2.5rem; /* Padding desktop sedikit dilebarkan karena kontainer sekarang luas */
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
   font-family: "Geist Mono", monospace;
+}
+
+.year {
   font-size: 0.7rem;
-  color: var(--accent-glow);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  color: var(--ink-900);
+  background: var(--accent-glow);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-weight: 600;
   letter-spacing: 0.05em;
 }
-.title {
-  font-size: 1.125rem;
-  font-weight: 500;
-  margin: 0;
-  color: #fff;
+
+.institution {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
-  margin-top: 1rem;
+
+.title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  color: rgba(207, 207, 214, 0.7);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  max-width: 90%;
+}
+
+.actionWrapper {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.readMore span {
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.readMore span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--accent-glow);
+  transition: width 0.3s ease;
+}
+
+.readMore:hover {
+  color: var(--accent-glow);
+}
+
+.readMore:hover span::after {
+  width: 100%;
+}
+
+.readMore svg {
+  transition: transform 0.3s ease;
+}
+
+.readMore:hover svg {
+  transform: translateX(4px);
 }

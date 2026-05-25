@@ -1,5 +1,4 @@
 // src/pages/AchievementsPage.jsx
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import PageHero from "../components/PageHero/PageHero";
@@ -8,50 +7,61 @@ import Tag from "../components/Tag/Tag";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
 import { allAchievements } from "../data/portfolio";
 import BottomCTA from "../components/BottomCTA/BottomCTA";
-import styles from "./IndexPage.module.css";
-import local from "./AchievementsPage.module.css";
 import Image from "../components/Image/Image";
+import local from "./AchievementsPage.module.css";
 
-function Card({ item }) {
+function TextContentCard({ item }) {
   const spot = useCardSpotlight();
+
   return (
-    <Link
-      to={`/achievements/${item.slug}`}
-      className={`card glass ${local.card}`}
-      {...spot}
-    >
-      <div className={local.imageWrap}>
-        <Image
-          src={item.image}
-          alt={item.title}
-          className={local.image}
-          width={600}
-          height={400}
-        />
-        <div className={local.imageOverlay} />
+    // Gunakan class "glass" bawaan tema Anda + class lokal untuk layout
+    <div className={`glass ${local.textCard}`} {...spot}>
+      <div className={local.meta}>
         <span className={local.year}>{item.year}</span>
+        <span className={local.institution}>{item.institution}</span>
       </div>
-      <div className={local.body}>
-        <div className={local.institution}>— {item.institution}</div>
-        <h3 className={local.title}>{item.title}</h3>
-        <div className={local.tags}>
-          {item.tags?.slice(0, 3).map((t) => (
-            <Tag key={t} size="xs">
-              {t}
-            </Tag>
-          ))}
-        </div>
+
+      <h3 className={local.title}>{item.title}</h3>
+
+      <p className={local.description}>
+        {item.description ||
+          "Sebuah bukti nyata dari eksekusi teknis yang presisi, pemecahan masalah kompleks, dan dedikasi terhadap standar kualitas tertinggi."}
+      </p>
+
+      <div className={local.tags}>
+        {item.tags?.slice(0, 4).map((t) => (
+          <Tag key={t} size="sm">
+            {t}
+          </Tag>
+        ))}
       </div>
-    </Link>
+
+      <div className={local.actionWrapper}>
+        <Link to={`/achievements/${item.slug}`} className={local.readMore}>
+          <span>Read the full story</span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 12H19M19 12L12 5M19 12L12 19"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+      </div>
+    </div>
   );
 }
 
 export default function AchievementsPage() {
-  const [tab, setTab] = useState("all");
-  const items =
-    tab === "all"
-      ? allAchievements
-      : allAchievements.filter((a) => a.category === tab);
+  const storyItems = allAchievements.slice(0, 3);
 
   return (
     <PageShell>
@@ -60,34 +70,48 @@ export default function AchievementsPage() {
         label="Achievements"
         title="Receipts, not résumé filler."
         italicWord="Receipts"
-        description="Competitions won, events organised, students taught — the things that don't fit on a résumé bullet."
+        description="Achievements aren’t just a list on a resume. They’re a record of dedication, execution, and high standards. Here’s the story behind them."
       />
-      <section className={styles.controlsSection}>
-        <div className={styles.controlsInner}>
-          <Reveal className={styles.filters}>
-            {["all", "experience", "achievement"].map((t) => (
-              <button
-                key={t}
-                onClick={() => setTab(t)}
-                className={`${styles.chip} ${tab === t ? styles.chipActive : ""}`}
-              >
-                {t}
-              </button>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-      <section className={styles.gridSection}>
-        <div className={styles.gridInner}>
-          <div className={styles.grid}>
-            {items.map((item, i) => (
-              <Reveal key={item.slug} delay={i * 0.04}>
-                <Card item={item} />
+
+      <section className={local.storySection}>
+        <div className={local.timelineLine}></div>
+
+        <div className={local.storyContainer}>
+          {storyItems.map((item, i) => {
+            const isReverse = i % 2 !== 0;
+            return (
+              <Reveal key={item.slug} delay={0.2}>
+                <div
+                  className={`${local.storyBlock} ${isReverse ? local.reverse : ""}`}
+                >
+                  <div className={local.giantNumber}>0{i + 1}</div>
+
+                  <div className={local.imageColumn}>
+                    <Link
+                      to={`/achievements/${item.slug}`}
+                      className={local.imageWrap}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        className={local.image}
+                        width={900}
+                        height={560}
+                      />
+                      <div className={local.imageOverlay} />
+                    </Link>
+                  </div>
+
+                  <div className={local.textColumn}>
+                    <TextContentCard item={item} />
+                  </div>
+                </div>
               </Reveal>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
+
       <BottomCTA />
     </PageShell>
   );
