@@ -27,6 +27,7 @@ import semuaBisaImg from "../assets/semua-bisa.webp?w=400;800;1200&format=avif;w
 import idncourseImg from "../assets/idncourse.webp?w=400;800;1200&format=avif;webp&as=picture";
 
 import alansharImg from "../assets/alanshar.webp?w=400;800;1200&format=avif;webp&as=picture";
+import alansharImg2 from "../assets/alanshar2.webp?w=400;800;1200&format=avif;webp&as=picture";
 import griyyasunnahImg from "../assets/griyyasunnah.webp?w=400;800;1200&format=avif;webp&as=picture";
 import hajrabyadlImg from "../assets/hajrabyadl.webp?w=400;800;1200&format=avif;webp&as=picture";
 import mtsyasmineImg from "../assets/mtsyasmine.webp?w=400;800;1200&format=avif;webp&as=picture";
@@ -35,6 +36,7 @@ import smpn45Img from "../assets/smpn45.webp?w=400;800;1200&format=avif;webp&as=
 import eduraceImg from "../assets/edurace.webp?w=400;800;1200&format=avif;webp&as=picture";
 import itfestImg from "../assets/itfest.webp?w=400;800;1200&format=avif;webp&as=picture";
 import semarangImg from "../assets/semarang.webp?w=400;800;1200&format=avif;webp&as=picture";
+import posterImg from "../assets/poster.webp?w=400;800;1200&format=avif;webp&as=picture";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -374,7 +376,8 @@ export const recognitionData = {
       title: "Event Division Leader",
       institution: "IDN Student Council",
       year: "Jan 2025 - Mar 2026",
-      description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
+      description:
+        "Memimpin divisi acara OSIS selama dua tahun, mengelola perencanaan acara, penjangkauan sponsor, logistik, serta mendelegasikan tugas kepada tim untuk setiap acara besar di sekolah.",
       image: osisImg,
       tags: ["Leadership", "Event Management", "Time Management"],
     },
@@ -390,7 +393,8 @@ export const recognitionData = {
       title: "Backpacker 3 Country",
       institution: "Singapore, Malaysia, Thailand",
       year: "Sep 2025",
-      description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
+      description:
+        "Melakukan perjalanan backpacker lintas negara (Singapura, Malaysia, Thailand) dalam satu minggu untuk melatih kefasihan lintas budaya, manajemen rute, dan adaptasi di lingkungan yang tidak pasti.",
       image: backpackerImg,
       tags: ["Public Speaking", "Cross-cultural Fluency"],
     },
@@ -406,7 +410,8 @@ export const recognitionData = {
       title: "Volunteer Event Organizer",
       institution: "Barmus Voluntrip",
       year: "Feb 2026",
-      description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
+      description:
+        "Mengoordinasikan logistik, eksekusi lapangan, dan pelaporan pasca-acara untuk kegiatan sukarelawan komunitas guna menumbuhkan rasa empati terhadap masyarakat sekitar.",
       image: barmusImg,
       tags: ["Empathy Social", "Community"],
     },
@@ -497,7 +502,7 @@ export const extraTeachingExperiences = [
     description:
       "Memandu siswa dalam mempelajari dasar-dasar HTML, CSS, dan desain UI/UX untuk membangun struktur halaman web interaktif.",
     image: hajrabyadlImg,
-    tags: ["Web Development", "UI/UX Design", "23+ Students"],
+    tags: ["HTML", "CSS", "UI/UX Design", "23+ Students"],
   },
   {
     title: "App Development Instructor",
@@ -506,7 +511,26 @@ export const extraTeachingExperiences = [
     description:
       "Memperkenalkan konsep pembuatan aplikasi seluler dasar dan implementasi komponen interaktif kepada siswa sekolah menengah.",
     image: smpn45Img,
-    tags: ["App Development", "10+ Students"],
+    tags: ["Kodular", "10+ Students"],
+  },
+  {
+    title: "App Design Instructor",
+    institution: "Al Anshar",
+    year: "Sep 2022",
+    description:
+      "Mengajarkan dasar-dasar pengembangan game dan logika pemrograman interaktif kepada para siswa untuk mengasah kreativitas digital mereka.",
+    image: alansharImg2,
+    tags: ["Figma", "15+ Students"],
+  },
+
+  {
+    title: "Design Instructor",
+    institution: "MTs Yasmine",
+    year: "Oct 2022",
+    description:
+      "Mengajarkan prinsip-prinsip desain antarmuka (UI/UX) dan pembuatan poster digital menggunakan perangkat lunak desain visual modern.",
+    image: mtsyasmineImg,
+    tags: ["Figma", "UI/UX & Poster Design", "25+ Students"],
   },
   {
     title: "Game Development Instructor",
@@ -515,21 +539,12 @@ export const extraTeachingExperiences = [
     description:
       "Mengajarkan dasar-dasar pengembangan game dan logika pemrograman interaktif kepada para siswa untuk mengasah kreativitas digital mereka.",
     image: alansharImg,
-    tags: ["Game Development", "15+ Students"],
-  },
-  {
-    title: "Design Instructor",
-    institution: "MTs Yasmine",
-    year: "Oct 2022",
-    description:
-      "Mengajarkan prinsip-prinsip desain antarmuka (UI/UX) dan pembuatan poster digital menggunakan perangkat lunak desain visual modern.",
-    image: mtsyasmineImg,
-    tags: ["UI/UX Design", "Poster Design", "25+ Students"],
+    tags: ["Scratch", "15+ Students"],
   },
   {
     title: "Game Development Instructor",
     institution: "Griyya Sunnah",
-    year: "Sep 2022",
+    year: "Jul 2022",
     description:
       "Membimbing siswa dalam membuat game sederhana, mengenalkan alur logika, dan pemecahan masalah komputasional melalui pemrograman.",
     image: griyyasunnahImg,
@@ -542,24 +557,27 @@ export const extraOtherExperiences = [
     title: "Business & Life Survival",
     institution: "PT Intisel Semarang",
     year: "Nov 2025",
-    description: "Deskripsi pengalaman 1.",
-    tags: ["Tag1", "Tag2"],
+    description:
+      "Menjalani program survival selama satu minggu di kota tak dikenal tanpa jaring pengaman atau uang saku. Bekerja mendistribusikan perlengkapan konstruksi telekomunikasi ke lokasi kontraktor untuk bertahan hidup dan membiayai tiket pulang.",
+    tags: ["Survival", "Resilience", "Hard Work"],
     image: semarangImg,
   },
   {
     title: "Competition Event Coordinator",
     institution: "IT Fest 2025",
     year: "Aug 2025",
-    description: "Deskripsi pengalaman 2.",
-    tags: ["Tag1", "Tag2"],
+    description:
+      "Memanfaatkan pengalaman sebagai Event Division Lead OSIS untuk merencanakan dan mengeksekusi acara secara end-to-end, mengatur logistik, delegasi tim, serta memastikan kelancaran operasional perlombaan IT.",
+    tags: ["Project Management", "Leadership", "Event Planning"],
     image: itfestImg,
   },
   {
     title: "Mission Impossible",
     institution: "IDN Boarding School",
     year: "17 Mar 2023",
-    description: "Deskripsi pengalaman 3.",
-    tags: ["Tag1", "Tag2"],
+    description:
+      "Latihan simulasi bisnis dan negosiasi. Mempraktikkan pembelian produk ritel (minuman dan makanan ringan) dan menjualnya kembali di lapangan dengan strategi markup yang tepat untuk menggandakan modal awal.",
+    tags: ["Business Strategy", "Problem Solving", "Adaptability"],
     image: eduraceImg,
   },
 ];
@@ -592,16 +610,35 @@ export function getSiblings(list, slug) {
 
 // Flatten recognition for routing
 export const allAchievements = [
-  ...recognitionData.experience.map((x, i) => ({
-    ...x,
-    slug: slugify(x.title),
-    category: "experience",
-  })),
-  ...recognitionData.achievement.map((x, i) => ({
-    ...x,
-    slug: slugify(x.title),
-    category: "achievement",
-  })),
+  {
+    // Slug ini harus sama dengan key yang ada di src/data/achievementDetails.js
+    slug: "1st-place-national-web-design-competition",
+    title: "1st Place National Web Design Competition",
+    institution: "Icomfest 2025",
+    year: "Feb 2025",
+    description:
+      "Berhasil meraih juara 1 pada kompetisi desain web nasional Icomfest 2025 dengan menyisihkan 80+ tim. Penilaian difokuskan pada kualitas UX, performa kode, dan standar aksesibilitas (WCAG AA).",
+    image: icomfestImg,
+  },
+  {
+    slug: "finalist-national-web-dev-competition",
+    title: "Top 5 Finalist National Web Dev Competition",
+    institution: "Universitas Lampung",
+    year: "Oct 2024",
+    description:
+      "Terpilih sebagai salah satu dari 5 finalis terbaik dalam kompetisi pengembangan web tingkat nasional. Mengembangkan platform full-stack B2B marketplace untuk mengurangi limbah makanan.",
+    image: unilaImg,
+  },
+  {
+    // Ini adalah data dummy yang nanti bisa Anda ganti
+    slug: "dummy-new-achievement",
+    title: "Best Poster Award: Idul Adha Festival",
+    institution: "IDN Boarding School",
+    year: "Des 2023",
+    description:
+      "Ini adalah data dummy. Nanti Anda bisa menggantinya dengan cerita lengkap mengenai pencapaian terbaru Anda. Ceritakan tentang tantangan yang Anda hadapi dan bagaimana Anda menyelesaikannya secara teknis.",
+    image: posterImg, 
+  },
 ];
 
 export const allCertificates = recognitionData.certificate.map((x) => ({
