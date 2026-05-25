@@ -1,15 +1,30 @@
-// src/components/Image/Image.jsx
+import { useState, useRef, useEffect } from "react";
+import "./Image.css";
+
 export default function Image({
   src,
   alt,
   width,
   height,
   priority = false,
-  className,
+  className = "",
   sizes = "(max-width: 768px) 100vw, 50vw",
   ...rest
 }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
+
   const isPicture = typeof src === "object" && src !== null && "sources" in src;
+
+  // Memastikan skeleton hilang jika gambar dimuat instan dari cache browser
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  const loadingClass = isLoaded ? "img-loaded" : "img-skeleton";
+  const combinedClassName = `${className} ${loadingClass}`.trim();
 
   if (isPicture) {
     return (
@@ -23,6 +38,7 @@ export default function Image({
           />
         ))}
         <img
+          ref={imgRef}
           src={src.img.src}
           alt={alt}
           width={width || src.img.w}
@@ -30,7 +46,8 @@ export default function Image({
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
           fetchpriority={priority ? "high" : "auto"}
-          className={className}
+          className={combinedClassName}
+          onLoad={() => setIsLoaded(true)}
           {...rest}
         />
       </picture>
@@ -39,6 +56,7 @@ export default function Image({
 
   return (
     <img
+      ref={imgRef}
       src={src}
       alt={alt}
       width={width}
@@ -47,7 +65,8 @@ export default function Image({
       decoding={priority ? "sync" : "async"}
       fetchpriority={priority ? "high" : "auto"}
       sizes={sizes}
-      className={className}
+      className={combinedClassName}
+      onLoad={() => setIsLoaded(true)}
       {...rest}
     />
   );
