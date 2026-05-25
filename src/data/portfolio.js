@@ -32,6 +32,9 @@ import hajrabyadlImg from "../assets/hajrabyadl.webp?w=400;800;1200&format=avif;
 import mtsyasmineImg from "../assets/mtsyasmine.webp?w=400;800;1200&format=avif;webp&as=picture";
 import semutsemutImg from "../assets/semutsemut.webp?w=400;800;1200&format=avif;webp&as=picture";
 import smpn45Img from "../assets/smpn45.webp?w=400;800;1200&format=avif;webp&as=picture";
+import eduraceImg from "../assets/edurace.webp?w=400;800;1200&format=avif;webp&as=picture";
+import itfestImg from "../assets/itfest.webp?w=400;800;1200&format=avif;webp&as=picture";
+import semarangImg from "../assets/semarang.webp?w=400;800;1200&format=avif;webp&as=picture";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -389,7 +392,7 @@ export const recognitionData = {
       year: "Sep 2025",
       description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
       image: backpackerImg,
-      tags: ["Public Speaking", "Web Development", "UI/UX Design"],
+      tags: ["Public Speaking", "Cross-cultural Fluency"],
     },
     {
       title: "Game Development Instructor",
@@ -405,7 +408,7 @@ export const recognitionData = {
       year: "Feb 2026",
       description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
       image: barmusImg,
-      tags: ["Leadership", "Event Management", "Time Management"],
+      tags: ["Empathy Social", "Community"],
     },
   ],
   achievement: [
@@ -531,6 +534,33 @@ export const extraTeachingExperiences = [
       "Membimbing siswa dalam membuat game sederhana, mengenalkan alur logika, dan pemecahan masalah komputasional melalui pemrograman.",
     image: griyyasunnahImg,
     tags: ["Game Development", "15+ Students"],
+  },
+];
+
+export const extraOtherExperiences = [
+  {
+    title: "Business & Life Survival",
+    institution: "PT Intisel Semarang",
+    year: "Nov 2025",
+    description: "Deskripsi pengalaman 1.",
+    tags: ["Tag1", "Tag2"],
+    image: semarangImg,
+  },
+  {
+    title: "Competition Event Coordinator",
+    institution: "IT Fest 2025",
+    year: "Aug 2025",
+    description: "Deskripsi pengalaman 2.",
+    tags: ["Tag1", "Tag2"],
+    image: itfestImg,
+  },
+  {
+    title: "Mission Impossible",
+    institution: "IDN Boarding School",
+    year: "17 Mar 2023",
+    description: "Deskripsi pengalaman 3.",
+    tags: ["Tag1", "Tag2"],
+    image: eduraceImg,
   },
 ];
 
