@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import { ArrowUpRightIcon } from "../../../components/Icons/Icons";
 import {
@@ -28,7 +27,7 @@ function ProjectLayout() {
   return (
     <section id="work" className={styles.section}>
       <div className={styles.container}>
-        <Reveal className={styles.header}>
+        <div className={`${styles.header} css-reveal`}>
           <div>
             <SectionLabel number="02" label="Selected Work" />
             <h2 className={`${styles.headline} text-fade`}>
@@ -54,7 +53,7 @@ function ProjectLayout() {
               </button>
             ))}
           </div>
-        </Reveal>
+        </div>
 
         <div className={styles.grid}>
           {featuredProjects.map((project) => (
@@ -68,7 +67,8 @@ function ProjectLayout() {
           ))}
         </div>
 
-        <Reveal className={styles.allRepos}>
+        {/* ✅ GANTI Reveal dengan div class css-reveal */}
+        <div className={`${styles.allRepos} css-reveal`}>
           <a
             href={personalInfo.socials.githubRepos}
             target="_blank"
@@ -78,7 +78,7 @@ function ProjectLayout() {
             See all 25 repositories on GitHub
             <ArrowUpRightIcon size={13} />
           </a>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

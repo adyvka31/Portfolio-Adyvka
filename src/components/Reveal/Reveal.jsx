@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion"; 
 
 /**
  * Wrapper that fades + slides content into view as it scrolls in.
  * Uses Framer Motion's whileInView for performant intersection animations.
  */
 function Reveal({ children, delay = 0, className = "", as = "div", ...rest }) {
-  const MotionTag = motion[as] ?? motion.div;
+  const MotionTag = m[as] ?? m.div;
 
   return (
     <MotionTag

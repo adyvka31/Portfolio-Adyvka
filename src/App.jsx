@@ -1,20 +1,30 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { HelmetProvider } from "react-helmet-async";
+
 import Navbar from "./components/Navbar/Navbar";
+import PageLoader from "./components/PageLoader/PageLoader";
+
 import { useCursorSpotlight } from "./hooks/useCursorSpotlight";
 import useScrollToTop from "./hooks/useScrollToTop";
 
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ProjectDetailPage from "./pages/ProjectDetailPage";
-import ExperiencePage from "./pages/ExperiencePage";
-import ExperienceDetailPage from "./pages/ExperienceDetailPage";
-import AchievementsPage from "./pages/AchievementsPage";
-import AchievementDetailPage from "./pages/AchievementDetailPage";
-import CertificatesPage from "./pages/CertificatesPage";
-import CertificateDetailPage from "./pages/CertificateDetailPage";
-import NotFoundPage from "./pages/NotFoundPage";
+
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
+const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
+const ExperienceDetailPage = lazy(() => import("./pages/ExperienceDetailPage"));
+const AchievementsPage = lazy(() => import("./pages/AchievementsPage"));
+const AchievementDetailPage = lazy(
+  () => import("./pages/AchievementDetailPage"),
+);
+const CertificatesPage = lazy(() => import("./pages/CertificatesPage"));
+const CertificateDetailPage = lazy(
+  () => import("./pages/CertificateDetailPage"),
+);
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -22,19 +32,27 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait" initial={false}>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-        <Route path="/experience" element={<ExperiencePage />} />
-        <Route path="/experience/:slug" element={<ExperienceDetailPage />} />
-        <Route path="/achievements" element={<AchievementsPage />} />
-        <Route path="/achievements/:slug" element={<AchievementDetailPage />} />
-        <Route path="/certificates" element={<CertificatesPage />} />
-        <Route path="/certificates/:slug" element={<CertificateDetailPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/experience/:slug" element={<ExperienceDetailPage />} />
+          <Route path="/achievements" element={<AchievementsPage />} />
+          <Route
+            path="/achievements/:slug"
+            element={<AchievementDetailPage />}
+          />
+          <Route path="/certificates" element={<CertificatesPage />} />
+          <Route
+            path="/certificates/:slug"
+            element={<CertificateDetailPage />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 }
@@ -42,10 +60,12 @@ function AnimatedRoutes() {
 export default function App() {
   useCursorSpotlight();
   return (
-    <BrowserRouter>
-      <div className="spotlight" />
-      <Navbar />
-      <AnimatedRoutes />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <div className="spotlight" />
+        <Navbar />
+        <AnimatedRoutes />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }

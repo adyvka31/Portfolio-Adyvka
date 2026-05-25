@@ -1,13 +1,16 @@
+import SEO from "../components/SEO/SEO";
 import PageShell from "../components/PageShell/PageShell";
 import PageHero from "../components/PageHero/PageHero";
 import BottomCTA from "../components/BottomCTA/BottomCTA";
 import Reveal from "../components/Reveal/Reveal";
+import { RevealGroup, RevealItem } from "../components/Reveal/RevealGroup";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
 import { ArrowRightIcon } from "../components/Icons/Icons";
 import { personalInfo } from "../data/portfolio";
-import profilePhoto from "../assets/profile2.webp";
+import profilePhoto from "../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
 import styles from "./AboutPage.module.css";
-import storyImage from "../assets/teach_teacher.webp";
+import storyImage from "../assets/teach_teacher.webp?w=400;800;1200&format=avif;webp&as=picture";
+import Image from "../components/Image/Image";
 
 /* ====== DATA ====== */
 
@@ -315,6 +318,11 @@ function CurrentSlot({ item }) {
 export default function AboutPage() {
   return (
     <PageShell>
+      <SEO
+        title="About"
+        description="Engineer by training, operator by curriculum, teacher by habit. Full Stack Engineer and Mobile Developer based in Indonesia, building since 2021."
+        path="/about"
+      />
       <PageHero
         number="01"
         label="About"
@@ -373,10 +381,12 @@ export default function AboutPage() {
                 {/* PHOTO HEADER */}
                 <div className={styles.introPhotoWrap}>
                   <div className={styles.introPhotoGlow} aria-hidden="true" />
-                  <img
+                  <Image
                     src={profilePhoto}
                     alt="Rafif Sava Adyvka Pratama"
                     className={styles.introPhoto}
+                    width={500}
+                    height={500}
                   />
                   <div
                     className={styles.introPhotoOverlay}
@@ -505,14 +515,14 @@ export default function AboutPage() {
               </p>
             </div>
           </Reveal>
-          <div className={styles.trackList}>
+          <RevealGroup className={styles.trackList} stagger={0.1}>
             <span className={styles.trackSpine} aria-hidden="true" />
             {TRACKS.map((row, i) => (
-              <Reveal key={row.year} delay={i * 0.05}>
+              <RevealItem key={row.year}>
                 <TrackRow row={row} last={i === TRACKS.length - 1} />
-              </Reveal>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -533,13 +543,13 @@ export default function AboutPage() {
               </h2>
             </div>
           </Reveal>
-          <div className={styles.storyGrid}>
-            {STORIES.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.06}>
+          <RevealGroup className={styles.storyGrid} stagger={0.15}>
+            {STORIES.map((s) => (
+              <RevealItem key={s.title}>
                 <StoryCard story={s} />
-              </Reveal>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -558,11 +568,13 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={0.06}>
-            <div className={styles.currentPanel}>
+            <RevealGroup className={styles.currentPanel} stagger={0.1}>
               {CURRENTLY.map((item) => (
-                <CurrentSlot key={item.label} item={item} />
+                <RevealItem key={item.label}>
+                  <CurrentSlot item={item} />
+                </RevealItem>
               ))}
-            </div>
+            </RevealGroup>
           </Reveal>
         </div>
       </section>

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal/Reveal";
 import { ArrowRightIcon } from "../Icons/Icons";
 import styles from "./BottomCTA.module.css";
 
@@ -13,10 +12,11 @@ export default function BottomCTA({
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Reveal>
+        <div className="css-reveal">
           <div className={styles.eyebrow}>{eyebrow}</div>
-        </Reveal>
-        <Reveal delay={0.06}>
+        </div>
+
+        <div className="css-reveal">
           <h2 className={`${styles.title} text-fade`}>
             {before}
             <span className={`font-serif ${styles.italic} text-glow`}>
@@ -24,15 +24,17 @@ export default function BottomCTA({
             </span>
             {after}.
           </h2>
-        </Reveal>
-        <Reveal delay={0.12}>
+        </div>
+
+        <div className="css-reveal">
           <p className={styles.description}>{description}</p>
-        </Reveal>
-        <Reveal delay={0.18}>
+        </div>
+
+        <div className="css-reveal">
           <Link to="/#contact" className={`btn-primary ${styles.btn}`}>
             Get in touch <ArrowRightIcon />
           </Link>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

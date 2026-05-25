@@ -1,12 +1,8 @@
-// src/layouts/HomeLayout/ContactLayout/ContactLayout.jsx
-
-import { useRef } from "react";
-
+import { useRef, useState } from "react";
 import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-
-import profilePhoto from "../../../assets/profile2.webp";
-
+import profilePhoto from "../../../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
+import Image from "../../../components/Image/Image";
 import {
   MailIcon,
   LinkedInIcon,
@@ -14,22 +10,20 @@ import {
   ArrowRightIcon,
 } from "../../../components/Icons/Icons";
 
-import {
-  SiReact,
-  SiJavascript,
-  SiTypescript,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiGit,
-  SiFigma,
-  SiFirebase,
-  SiMongodb,
-  SiHtml5,
-  SiVite,
-  SiRedux,
-  SiVercel,
-} from "react-icons/si";
+import { SiReact } from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
+import { SiNodedotjs } from "react-icons/si";
+import { SiGit } from "react-icons/si";
+import { SiFigma } from "react-icons/si";
+import { SiFirebase } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiHtml5 } from "react-icons/si";
+import { SiVite } from "react-icons/si";
+import { SiRedux } from "react-icons/si";
+import { SiVercel } from "react-icons/si";
 import { FaCss3Alt } from "react-icons/fa";
 
 import { personalInfo } from "../../../data/portfolio";
@@ -41,6 +35,8 @@ export default function ContactLayout() {
   const spotlight = useCardSpotlight();
 
   const cardRef = useRef(null);
+
+  const [formStatus, setFormStatus] = useState("IDLE");
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -71,6 +67,36 @@ export default function ContactLayout() {
     cardRef.current.style.setProperty("--rotY", `0deg`);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus("SUBMITTING");
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      // GANTI "YOUR_FORM_ID" DENGAN ID DARI FORMSPREE NANTI
+      const response = await fetch("https://formspree.io/f/mkoevqya", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setFormStatus("SUCCESS");
+        form.reset();
+        // Kembalikan tombol ke state awal setelah 3 detik
+        setTimeout(() => setFormStatus("IDLE"), 3000);
+      } else {
+        setFormStatus("ERROR");
+      }
+    } catch (error) {
+      setFormStatus("ERROR");
+    }
+  };
+
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
@@ -91,21 +117,65 @@ export default function ContactLayout() {
 
             {/* PINDAHKAN TECH BACKGROUND KE SINI (DI LUAR inner3D) */}
             <div className={styles.techStack}>
-              <div className={`${styles.techIcon} ${styles.react} ${styles.xl}`}><SiReact /></div>
-              <div className={`${styles.techIcon} ${styles.js} ${styles.md}`}><SiJavascript /></div>
-              <div className={`${styles.techIcon} ${styles.ts} ${styles.lg}`}><SiTypescript /></div>
-              <div className={`${styles.techIcon} ${styles.next} ${styles.md}`}><SiNextdotjs /></div>
-              <div className={`${styles.techIcon} ${styles.tailwind} ${styles.lg}`}><SiTailwindcss /></div>
-              <div className={`${styles.techIcon} ${styles.node} ${styles.md}`}><SiNodedotjs /></div>
-              <div className={`${styles.techIcon} ${styles.git} ${styles.md}`}><SiGit /></div>
-              <div className={`${styles.techIcon} ${styles.figma} ${styles.lg}`}><SiFigma /></div>
-              <div className={`${styles.techIcon} ${styles.firebase} ${styles.md}`}><SiFirebase /></div>
-              <div className={`${styles.techIcon} ${styles.mongo} ${styles.lg}`}><SiMongodb /></div>
-              <div className={`${styles.techIcon} ${styles.html} ${styles.md}`}><SiHtml5 /></div>
-              <div className={`${styles.techIcon} ${styles.css} ${styles.md}`}><FaCss3Alt /></div>
-              <div className={`${styles.techIcon} ${styles.vite} ${styles.md}`}><SiVite /></div>
-              <div className={`${styles.techIcon} ${styles.redux} ${styles.sm}`}><SiRedux /></div>
-              <div className={`${styles.techIcon} ${styles.vercel} ${styles.sm}`}><SiVercel /></div>
+              <div
+                className={`${styles.techIcon} ${styles.react} ${styles.xl}`}
+              >
+                <SiReact />
+              </div>
+              <div className={`${styles.techIcon} ${styles.js} ${styles.md}`}>
+                <SiJavascript />
+              </div>
+              <div className={`${styles.techIcon} ${styles.ts} ${styles.lg}`}>
+                <SiTypescript />
+              </div>
+              <div className={`${styles.techIcon} ${styles.next} ${styles.md}`}>
+                <SiNextdotjs />
+              </div>
+              <div
+                className={`${styles.techIcon} ${styles.tailwind} ${styles.lg}`}
+              >
+                <SiTailwindcss />
+              </div>
+              <div className={`${styles.techIcon} ${styles.node} ${styles.md}`}>
+                <SiNodedotjs />
+              </div>
+              <div className={`${styles.techIcon} ${styles.git} ${styles.md}`}>
+                <SiGit />
+              </div>
+              <div
+                className={`${styles.techIcon} ${styles.figma} ${styles.lg}`}
+              >
+                <SiFigma />
+              </div>
+              <div
+                className={`${styles.techIcon} ${styles.firebase} ${styles.md}`}
+              >
+                <SiFirebase />
+              </div>
+              <div
+                className={`${styles.techIcon} ${styles.mongo} ${styles.lg}`}
+              >
+                <SiMongodb />
+              </div>
+              <div className={`${styles.techIcon} ${styles.html} ${styles.md}`}>
+                <SiHtml5 />
+              </div>
+              <div className={`${styles.techIcon} ${styles.css} ${styles.md}`}>
+                <FaCss3Alt />
+              </div>
+              <div className={`${styles.techIcon} ${styles.vite} ${styles.md}`}>
+                <SiVite />
+              </div>
+              <div
+                className={`${styles.techIcon} ${styles.redux} ${styles.sm}`}
+              >
+                <SiRedux />
+              </div>
+              <div
+                className={`${styles.techIcon} ${styles.vercel} ${styles.sm}`}
+              >
+                <SiVercel />
+              </div>
             </div>
 
             {/* Lapis 2: Inner 3D Wrapper (Hanya Teks, Foto, dan Bottom Bar yang masuk sini) */}
@@ -124,10 +194,12 @@ export default function ContactLayout() {
 
               {/* IMAGE */}
               <div className={styles.ncAvatarWrapper}>
-                <img
+                <Image
                   src={profilePhoto}
                   alt={personalInfo.name}
                   className={styles.ncAvatar}
+                  width={100}
+                  height={100}
                 />
                 <div className={styles.ncImageOverlay}></div>
               </div>
@@ -205,18 +277,13 @@ export default function ContactLayout() {
 
               {/* FORM */}
 
-              <form
-                className={styles.form}
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Form ready — wire to your backend.");
-                }}
-              >
+              <form className={styles.form} onSubmit={handleSubmit}>
                 <div>
                   <label className={styles.label}>Name</label>
-
+                  {/* Tambahkan atribut name */}
                   <input
                     type="text"
+                    name="name"
                     required
                     className={styles.input}
                     placeholder="Your name"
@@ -225,9 +292,10 @@ export default function ContactLayout() {
 
                 <div>
                   <label className={styles.label}>Email</label>
-
+                  {/* Tambahkan atribut name */}
                   <input
                     type="email"
+                    name="email"
                     required
                     className={styles.input}
                     placeholder="you@company.com"
@@ -236,8 +304,9 @@ export default function ContactLayout() {
 
                 <div>
                   <label className={styles.label}>Message</label>
-
+                  {/* Tambahkan atribut name */}
                   <textarea
+                    name="message"
                     required
                     rows="5"
                     className={`${styles.input} ${styles.textarea}`}
@@ -245,11 +314,22 @@ export default function ContactLayout() {
                   ></textarea>
                 </div>
 
+                {/* ✅ 5. Dynamic Button State */}
                 <button
                   type="submit"
+                  disabled={
+                    formStatus === "SUBMITTING" || formStatus === "SUCCESS"
+                  }
                   className={`btn-primary ${styles.submitBtn}`}
+                  style={{
+                    backgroundColor: formStatus === "SUCCESS" ? "#10b981" : "", 
+                    borderColor: formStatus === "SUCCESS" ? "#10b981" : "",
+                  }}
                 >
-                  Send message
+                  {formStatus === "IDLE" && "Send message"}
+                  {formStatus === "SUBMITTING" && "Sending..."}
+                  {formStatus === "SUCCESS" && "Message Sent!"}
+                  {formStatus === "ERROR" && "Failed. Try again."}
                   <ArrowRightIcon size={14} />
                 </button>
               </form>

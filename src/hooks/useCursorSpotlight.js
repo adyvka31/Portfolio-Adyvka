@@ -1,26 +1,65 @@
-import { useEffect } from "react";
+// src/hooks/useCursorSpotlight.js
+import { useEffect, useRef } from "react";
 
 export function useCursorSpotlight() {
+  const rafIdRef = useRef(null);
+  const lastEventRef = useRef(null);
+  const dotsCacheRef = useRef([]);
+
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      // 1. Update variabel untuk Spotlight utama (jika di-set di root/body)
-      document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
-      document.documentElement.style.setProperty("--my", `${e.clientY}px`);
+    // ✅ Disable di mobile dan reduced motion
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (isMobile || reducedMotion) return;
 
-      // 2. Update posisi mask untuk titik-titik (global-dots)
-      // PENTING: Taruh querySelectorAll DI DALAM event listener
-      // agar elemen baru hasil perpindahan halaman (React Router) selalu terdeteksi
-      const dots = document.querySelectorAll(".global-dots");
+    // ✅ Cache DOM elements + observe mutations
+    const refreshDotsCache = () => {
+      dotsCacheRef.current = Array.from(
+        document.querySelectorAll(".global-dots"),
+      ).map((el) => ({ el, rect: el.getBoundingClientRect() }));
+    };
+    refreshDotsCache();
 
-      dots.forEach((dot) => {
-        const rect = dot.getBoundingClientRect();
-        // Kalkulasi posisi kursor relatif terhadap kontainer dot
-        dot.style.setProperty("--dotX", `${e.clientX - rect.left}px`);
-        dot.style.setProperty("--dotY", `${e.clientY - rect.top}px`);
-      });
+    // ✅ Refresh cache hanya saat resize / route change
+    const observer = new MutationObserver(refreshDotsCache);
+    observer.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener("resize", refreshDotsCache, { passive: true });
+    window.addEventListener("scroll", refreshDotsCache, { passive: true });
+
+    const update = () => {
+      const e = lastEventRef.current;
+      if (!e) return;
+
+      const root = document.documentElement;
+      root.style.setProperty("--mx", `${e.clientX}px`);
+      root.style.setProperty("--my", `${e.clientY}px`);
+
+      // ✅ Pakai cache, tidak panggil getBoundingClientRect lagi
+      for (const { el, rect } of dotsCacheRef.current) {
+        el.style.setProperty("--dotX", `${e.clientX - rect.left}px`);
+        el.style.setProperty("--dotY", `${e.clientY - rect.top}px`);
+      }
+      rafIdRef.current = null;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []); // Kosongkan dependency array agar listener cukup dipasang 1x di App.jsx
+    const handleMouseMove = (e) => {
+      lastEventRef.current = e;
+      // ✅ Throttle dengan rAF — max 1 update per frame
+      if (rafIdRef.current === null) {
+        rafIdRef.current = requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", refreshDotsCache);
+      window.removeEventListener("scroll", refreshDotsCache);
+      observer.disconnect();
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    };
+  }, []);
 }

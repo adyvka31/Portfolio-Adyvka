@@ -1,3 +1,4 @@
+import SEO from "../components/SEO/SEO";
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
@@ -9,6 +10,7 @@ import { SearchIcon, ArrowUpRightIcon } from "../components/Icons/Icons";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
 import { projectsList, projectFilters } from "../data/portfolio";
 import styles from "./IndexPage.module.css";
+import Image from "../components/Image/Image";
 
 function ProjectCard({ project }) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,12 +24,12 @@ function ProjectCard({ project }) {
       <div
         className={`${styles.cardImageWrap} ${isLoaded ? styles.imageLoadedWrap : ""}`}
       >
-        <img
+        <Image
           src={project.thumbnail}
           alt={project.title}
           className={`${styles.cardImage} ${isLoaded ? styles.loaded : ""}`}
-          loading="lazy"
-          decoding="async"
+          width={600}
+          height={400}
           onLoad={() => setIsLoaded(true)}
         />
 
@@ -99,6 +101,12 @@ export default function ProjectsPage() {
 
   return (
     <PageShell>
+      <SEO
+        title="Project"
+        description="Engineer by training, operator by curriculum, teacher by habit. Full Stack Engineer and Mobile Developer based in Indonesia, building since 2021."
+        path="/projects"
+        type="article"
+      />
       <PageHero
         number="02"
         label="All Projects"

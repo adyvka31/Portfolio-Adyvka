@@ -7,13 +7,13 @@ import BottomCTA from "../components/BottomCTA/BottomCTA";
 import SectionLabel from "../components/SectionLabel/SectionLabel";
 import Tag from "../components/Tag/Tag";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
-// Tambahkan extraTeachingExperiences ke dalam daftar import dari portfolio.js
 import {
   experiencesList,
   recognitionData,
   extraTeachingExperiences,
 } from "../data/portfolio";
 import styles from "./ExperiencePage.module.css";
+import Image from "../components/Image/Image";
 
 function ExperienceBentoCard({ item }) {
   const spotlight = useCardSpotlight();
@@ -21,7 +21,13 @@ function ExperienceBentoCard({ item }) {
   return (
     <div className={`card glass ${styles.card}`} {...spotlight}>
       <div className={styles.imageContainer}>
-        <img src={item.image} alt={item.title} className={styles.cardImage} />
+        <Image
+          src={item.image}
+          alt={item.title}
+          className={styles.cardImage}
+          width={600}
+          height={400}
+        />
         <div className={styles.imageOverlay} />
         <span className={styles.yearBadge}>{item.year}</span>
       </div>

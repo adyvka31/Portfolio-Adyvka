@@ -10,6 +10,7 @@ import { allAchievements } from "../data/portfolio";
 import BottomCTA from "../components/BottomCTA/BottomCTA";
 import styles from "./IndexPage.module.css";
 import local from "./AchievementsPage.module.css";
+import Image from "../components/Image/Image";
 
 function Card({ item }) {
   const spot = useCardSpotlight();
@@ -20,7 +21,13 @@ function Card({ item }) {
       {...spot}
     >
       <div className={local.imageWrap}>
-        <img src={item.image} alt={item.title} className={local.image} />
+        <Image
+          src={item.image}
+          alt={item.title}
+          className={local.image}
+          width={600}
+          height={400}
+        />
         <div className={local.imageOverlay} />
         <span className={local.year}>{item.year}</span>
       </div>

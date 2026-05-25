@@ -1,37 +1,37 @@
-import webDevImg from "../assets/web_dev_instructor.webp";
-import osisImg from "../assets/osis.webp";
-import appDevImg from "../assets/app_dev_instructor.webp";
-import icomfestImg from "../assets/icomfest2025.webp";
-import unilaImg from "../assets/unila2025.webp";
-import cs50Img from "../assets/cs50.webp";
-import frontendImg from "../assets/frontend_web.webp";
-import backpackerImg from "../assets/backpackerImg.webp";
-import barmusImg from "../assets/barmusImg.webp";
+import webDevImg from "../assets/web_dev_instructor.webp?w=400;800;1200&format=avif;webp&as=picture";
+import osisImg from "../assets/osis.webp?w=400;800;1200&format=avif;webp&as=picture";
+import appDevImg from "../assets/app_dev_instructor.webp?w=400;800;1200&format=avif;webp&as=picture";
+import icomfestImg from "../assets/icomfest2025.webp?w=400;800;1200&format=avif;webp&as=picture";
+import unilaImg from "../assets/unila2025.webp?w=400;800;1200&format=avif;webp&as=picture";
+import cs50Img from "../assets/cs50.webp?w=400;800;1200&format=avif;webp&as=picture";
+import frontendImg from "../assets/frontend_web.webp?w=400;800;1200&format=avif;webp&as=picture";
+import backpackerImg from "../assets/backpackerImg.webp?w=400;800;1200&format=avif;webp&as=picture";
+import barmusImg from "../assets/barmusImg.webp?w=400;800;1200&format=avif;webp&as=picture";
 
 import cvPdfFile from "../assets/RafifSavaAdyvkaPratama_CV.pdf";
 
-import databankImg from "../assets/databank.webp";
-import ruangtumbuhImg from "../assets/ruangtumbuh.webp";
-import delifoodImg from "../assets/delifood.webp";
-import aigeneratorImg from "../assets/aigenerator.webp";
-import newsImg from "../assets/news.webp";
-import qrscannerImg from "../assets/qrscanner.webp";
-import todoImg from "../assets/todo.webp";
-import payrollServiceImg from "../assets/payroll-service.webp";
-import javaislandImg from "../assets/javaisland.webp";
-import fitsmartImg from "../assets/fitsmart.webp";
-import coffeeeShopImg from "../assets/coffeee-shop.webp";
-import mystyleImg from "../assets/mystyle.webp";
-import pusakakuImg from "../assets/pusakaku.webp";
-import semuaBisaImg from "../assets/semua-bisa.webp";
-import idncourseImg from "../assets/idncourse.webp";
+import databankImg from "../assets/databank.webp?w=400;800;1200&format=avif;webp&as=picture";
+import ruangtumbuhImg from "../assets/ruangtumbuh.webp?w=400;800;1200&format=avif;webp&as=picture";
+import delifoodImg from "../assets/delifood.webp?w=400;800;1200&format=avif;webp&as=picture";
+import aigeneratorImg from "../assets/aigenerator.webp?w=400;800;1200&format=avif;webp&as=picture";
+import newsImg from "../assets/news.webp?w=400;800;1200&format=avif;webp&as=picture";
+import qrscannerImg from "../assets/qrscanner.webp?w=400;800;1200&format=avif;webp&as=picture";
+import todoImg from "../assets/todo.webp?w=400;800;1200&format=avif;webp&as=picture";
+import payrollServiceImg from "../assets/payroll-service.webp?w=400;800;1200&format=avif;webp&as=picture";
+import javaislandImg from "../assets/javaisland.webp?w=400;800;1200&format=avif;webp&as=picture";
+import fitsmartImg from "../assets/fitsmart.webp?w=400;800;1200&format=avif;webp&as=picture";
+import coffeeeShopImg from "../assets/coffeee-shop.webp?w=400;800;1200&format=avif;webp&as=picture";
+import mystyleImg from "../assets/mystyle.webp?w=400;800;1200&format=avif;webp&as=picture";
+import pusakakuImg from "../assets/pusakaku.webp?w=400;800;1200&format=avif;webp&as=picture";
+import semuaBisaImg from "../assets/semua-bisa.webp?w=400;800;1200&format=avif;webp&as=picture";
+import idncourseImg from "../assets/idncourse.webp?w=400;800;1200&format=avif;webp&as=picture";
 
-import alansharImg from "../assets/alanshar.webp";
-import griyyasunnahImg from "../assets/griyyasunnah.webp";
-import hajrabyadlImg from "../assets/hajrabyadl.webp";
-import mtsyasmineImg from "../assets/mtsyasmine.webp";
-import semutsemutImg from "../assets/semutsemut.webp";
-import smpn45Img from "../assets/smpn45.webp";
+import alansharImg from "../assets/alanshar.webp?w=400;800;1200&format=avif;webp&as=picture";
+import griyyasunnahImg from "../assets/griyyasunnah.webp?w=400;800;1200&format=avif;webp&as=picture";
+import hajrabyadlImg from "../assets/hajrabyadl.webp?w=400;800;1200&format=avif;webp&as=picture";
+import mtsyasmineImg from "../assets/mtsyasmine.webp?w=400;800;1200&format=avif;webp&as=picture";
+import semutsemutImg from "../assets/semutsemut.webp?w=400;800;1200&format=avif;webp&as=picture";
+import smpn45Img from "../assets/smpn45.webp?w=400;800;1200&format=avif;webp&as=picture";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -430,58 +430,58 @@ export const recognitionData = {
   ],
   certificate: [
     {
-      title: "Coding Camp: Full Stack Developer",
-      institution: "Dicoding Indonesia × DBS Foundation",
-      year: "Apr 2026",
-      description:
-        "Sertifikat kelulusan ilmu komputer dari Harvard University.",
-      image: cs50Img,
-      tags: ["Computer Science", "Harvard"],
-    },
-    {
       title: "CS50: Introduction to Computer Science",
       institution: "Harvard University",
       year: "Oct 2025",
       description:
-        "Sertifikat kelulusan ilmu komputer dari Harvard University.",
+        "Sertifikat kelulusan kurikulum dasar ilmu komputer, algoritma, dan seni pemrograman.",
       image: cs50Img,
-      tags: ["Computer Science", "Harvard"],
-    },
-    {
-      title: "Frontend Web",
-      institution: "Dicoding Indonesia",
-      year: "Mar 2026",
-      description:
-        "Sertifikat kelulusan ilmu komputer dari Harvard University.",
-      image: frontendImg,
-      tags: ["Computer Science", "Harvard"],
+      tags: ["Computer Science", "Harvard", "C", "Python"],
     },
     {
       title: "Coding Camp: Full Stack Developer",
       institution: "Dicoding Indonesia × DBS Foundation",
       year: "Apr 2026",
       description:
-        "Sertifikat kelulusan ilmu komputer dari Harvard University.",
-      image: cs50Img,
-      tags: ["Computer Science", "Harvard"],
+        "Sertifikasi intensif pengembangan aplikasi web dari arsitektur backend hingga antarmuka frontend.",
+      image: frontendImg,
+      tags: ["Web Development", "Backend", "Frontend"],
     },
     {
-      title: "CS50: Introduction to Computer Science",
-      institution: "Harvard University",
-      year: "Oct 2025",
-      description:
-        "Sertifikat kelulusan ilmu komputer dari Harvard University.",
-      image: cs50Img,
-      tags: ["Computer Science", "Harvard"],
-    },
-    {
-      title: "Frontend Web",
+      title: "Frontend Web Developer",
       institution: "Dicoding Indonesia",
       year: "Mar 2026",
       description:
-        "Sertifikat kelulusan ilmu komputer dari Harvard University.",
+        "Sertifikasi fundamental pembuatan website interaktif modern dan responsif.",
       image: frontendImg,
-      tags: ["Computer Science", "Harvard"],
+      tags: ["HTML/CSS", "JavaScript", "Frontend"],
+    },
+    {
+      title: "IDCamp 2025: Generative AI Engineer",
+      institution: "Dicoding Indonesia",
+      year: "Feb 2026",
+      description:
+        "Pelatihan teknis pengembangan solusi Artificial Intelligence berbasis model generatif.",
+      image: aigeneratorImg, // Menggunakan gambar AI yang sudah Anda import
+      tags: ["Generative AI", "Machine Learning", "AI"],
+    },
+    {
+      title: "Coding Camp 2026: Data Science",
+      institution: "Dicoding Indonesia",
+      year: "Feb 2026",
+      description:
+        "Sertifikasi analisis komputasional, ekstraksi data, dan pemodelan prediktif.",
+      image: databankImg,
+      tags: ["Data Science", "Python", "Analytics"],
+    },
+    {
+      title: "Prompt Engineering for Software Developer",
+      institution: "Dicoding Indonesia",
+      year: "Mar 2026",
+      description:
+        "Sertifikasi penerapan rekayasa prompt tingkat lanjut untuk mempercepat siklus pengembangan perangkat lunak.",
+      image: aigeneratorImg,
+      tags: ["Prompt Engineering", "Developer Tools", "AI"],
     },
   ],
 };

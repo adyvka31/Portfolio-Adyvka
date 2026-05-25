@@ -13,6 +13,29 @@ const NAV = [
   { to: "/certificates", label: "Certificates" },
 ];
 
+// ✅ 1. Buat fungsi helper untuk memanggil import() secara dinamis
+const handlePrefetch = (path) => {
+  switch (path) {
+    case "/about":
+      import("../../pages/AboutPage");
+      break;
+    case "/projects":
+      import("../../pages/ProjectsPage");
+      break;
+    case "/experience":
+      import("../../pages/ExperiencePage");
+      break;
+    case "/achievements":
+      import("../../pages/AchievementsPage");
+      break;
+    case "/certificates":
+      import("../../pages/CertificatesPage");
+      break;
+    default:
+      break;
+  }
+};
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +44,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    // ✅ 2. Tambahkan { passive: true } untuk performa scroll yang lebih mulus (Issue P1)
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -45,6 +69,8 @@ export default function Navbar() {
               <li key={l.to}>
                 <NavLink
                   to={l.to}
+                  // ✅ 3. Panggil handlePrefetch saat mouse hover ke link
+                  onMouseEnter={() => handlePrefetch(l.to)}
                   className={({ isActive }) =>
                     `nav-link ${styles.link} ${isActive ? styles.linkActive : ""}`
                   }
@@ -100,7 +126,12 @@ export default function Navbar() {
             <ul className={styles.sheetLinks}>
               {NAV.map((l) => (
                 <li key={l.to}>
-                  <NavLink to={l.to} className={styles.sheetLink}>
+                  <NavLink
+                    to={l.to}
+                    className={styles.sheetLink}
+                    // ✅ (Opsional) Tambahkan juga di mobile, prefetch bisa tertrigger saat user menekan/menyentuh sebentar sebelum lepas
+                    onTouchStart={() => handlePrefetch(l.to)}
+                  >
                     {l.label}
                   </NavLink>
                 </li>
@@ -111,6 +142,7 @@ export default function Navbar() {
       )}
 
       {/* CV modal */}
+      {/* CV modal */}
       {cvOpen && (
         <div className={styles.modalOverlay} onClick={() => setCvOpen(false)}>
           <div
@@ -119,17 +151,51 @@ export default function Navbar() {
           >
             <div className={styles.modalHeader}>
               <span>Curriculum Vitae</span>
-              <button
-                className={styles.closeBtn}
-                onClick={() => setCvOpen(false)}
+
+              {/* Kontainer Aksi di Kanan Header Modal */}
+              <div
+                style={{ display: "flex", gap: "16px", alignItems: "center" }}
               >
-                ✕
-              </button>
+                <a
+                  href={personalInfo.cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "rgba(255, 255, 255, 0.5)",
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
+                    transition: "color 0.2s",
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = "white")}
+                  onMouseLeave={(e) =>
+                    (e.target.style.color = "rgba(255, 255, 255, 0.5)")
+                  }
+                >
+                  Buka Penuh <ArrowUpRightIcon size={12} />
+                </a>
+
+                <button
+                  className={styles.closeBtn}
+                  onClick={() => setCvOpen(false)}
+                >
+                  ✕
+                </button>
+              </div>
             </div>
-            <object
-              data={`${personalInfo.cvUrl}#view=FitH&toolbar=1`}
-              type="application/pdf"
+
+            {/* ✅ Menggunakan <iframe> untuk menampilkan PDF langsung di dalam popup */}
+            <iframe
+              src={`${personalInfo.cvUrl}#view=FitH&toolbar=1`}
+              title="Curriculum Vitae"
               className={styles.pdfViewer}
+              style={{
+                width: "100%",
+                height: "65vh", // Mengunci tinggi agar pas di dalam frame modal dan responsif
+                border: "none",
+              }}
             />
           </div>
         </div>

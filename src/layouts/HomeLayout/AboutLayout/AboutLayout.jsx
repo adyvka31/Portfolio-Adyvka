@@ -1,7 +1,8 @@
 import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-import { useRef, useEffect, useState } from "react";
-import { useCardSpotlight } from "../../../hooks/useCardSpotlight"; // 1. Import Hook Spotlight
+import { useRef } from "react"; // Hapus useEffect dan useState
+import { motion, useScroll, useTransform } from "framer-motion"; // ✅ 1. Import Framer Motion
+import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
 import {
   MonitorIcon,
   ServerIcon,
@@ -12,7 +13,15 @@ import {
 } from "../../../components/Icons/Icons";
 import styles from "./AboutLayout.module.css";
 
-// ... (ScrollWordRevealGroup tetap sama, saya lewati agar tidak kepanjangan)
+// ✅ 2. Buat Komponen Kecil <Word /> untuk masing-masing kata
+function Word({ children, progress, start, end }) {
+  // useTransform akan memetakan nilai scroll (progress) ke opacity (0.15 -> 1)
+  // Ini berjalan murni di Framer Motion, TIDAK memicu React re-render!
+  const opacity = useTransform(progress, [start, end], [0.15, 1]);
+
+  return <motion.span style={{ opacity }}>{children} </motion.span>;
+}
+
 function ScrollWordRevealGroup({
   paragraphs,
   paragraphClassName = "",
@@ -20,31 +29,19 @@ function ScrollWordRevealGroup({
   end = 0.5,
 }) {
   const ref = useRef(null);
-  const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      const startPoint = windowHeight * start;
-      const endPoint = windowHeight * end;
-
-      let currentProgress = (startPoint - rect.top) / (startPoint - endPoint);
-      setProgress(Math.max(0, Math.min(1, currentProgress)));
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [start, end]);
+  // ✅ 3. Gunakan useScroll dari Framer Motion
+  // Offset secara otomatis melacak target. "start 70%" artinya animasi mulai saat target ada di 70% layar.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`start ${start * 100}%`, `start ${end * 100}%`],
+  });
 
   const totalWords = paragraphs.reduce(
     (acc, text) => acc + text.split(" ").length,
     0,
   );
+
   let globalWordIndex = 0;
 
   return (
@@ -60,25 +57,23 @@ function ScrollWordRevealGroup({
 
               globalWordIndex++;
 
-              let opacity = 0.15;
-              if (progress >= wordEnd) opacity = 1;
-              else if (progress > wordStart)
-                opacity = 0.15 + ((progress - wordStart) / step) * 0.85;
-
               const isItalic = word.includes("*");
               const cleanWord = word.replace(/\*/g, "");
 
               return (
-                <span
+                // ✅ 4. Gunakan komponen Word dan berikan range progress-nya
+                <Word
                   key={wIndex}
-                  style={{ opacity, transition: "opacity 0.1s ease-out" }}
+                  progress={scrollYProgress}
+                  start={wordStart}
+                  end={wordEnd}
                 >
                   {isItalic ? (
                     <em className="font-serif">{cleanWord}</em>
                   ) : (
                     cleanWord
-                  )}{" "}
-                </span>
+                  )}
+                </Word>
               );
             })}
           </p>
@@ -89,7 +84,7 @@ function ScrollWordRevealGroup({
 }
 
 function AboutLayout() {
-  const spotlight = useCardSpotlight(); // 2. Inisialisasi Hook
+  const spotlight = useCardSpotlight();
 
   const aboutParagraphs = [
     "I'm Rafif Sava Adyvka Pratama — a full-stack engineer based in West Java, Indonesia. I've spent the last few years shipping web and mobile products under tight deadlines, from ERP modules used internally by enterprise teams to e-commerce platforms with real revenue on the line.",
@@ -220,7 +215,6 @@ function AboutLayout() {
           <div className={styles.skillsGrid}>
             {skillsData.map((skillGroup, idx) => (
               <Reveal key={idx} delay={0.2 + idx * 0.05}>
-                {/* 3. Masukkan class 'card' secara global dan panggil {...spotlight} di sini */}
                 <div
                   className={`card glass ${styles.skillCard}`}
                   {...spotlight}

@@ -1,4 +1,5 @@
 import styles from "./MediaFrame.module.css";
+import Image from "../Image/Image";
 
 /**
  * Image frame styled like a browser/macOS window — for case-study screenshots,
@@ -16,6 +17,8 @@ export default function MediaFrame({
   caption,
   chromeLabel,
   aspect = "16/10",
+  width = 1200,
+  height = 750,
 }) {
   return (
     <figure className={styles.figure}>
@@ -29,7 +32,13 @@ export default function MediaFrame({
           )}
         </div>
         <div className={styles.imageWrap} style={{ aspectRatio: aspect }}>
-          <img src={src} alt={alt} className={styles.image} loading="lazy" />
+          <Image
+            src={src}
+            alt={alt}
+            className={styles.image}
+            width={width}
+            height={height}
+          />
         </div>
       </div>
       {caption && <figcaption className={styles.caption}>{caption}</figcaption>}

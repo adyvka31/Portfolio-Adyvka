@@ -10,6 +10,7 @@ import { useCardSpotlight } from "../hooks/useCardSpotlight";
 import { allCertificates } from "../data/portfolio";
 import styles from "./IndexPage.module.css";
 import local from "./CertificatesPage.module.css";
+import Image from "../components/Image/Image";
 
 function CertCard({ cert }) {
   const spot = useCardSpotlight();
@@ -20,7 +21,13 @@ function CertCard({ cert }) {
       {...spot}
     >
       <div className={local.thumb}>
-        <img src={cert.image} alt={cert.title} className={local.thumbImg} />
+        <Image
+          src={cert.image}
+          alt={cert.title}
+          className={local.thumbImg}
+          width={400} 
+          height={300}
+        />
         <div className={local.thumbOverlay} />
       </div>
       <div className={local.body}>

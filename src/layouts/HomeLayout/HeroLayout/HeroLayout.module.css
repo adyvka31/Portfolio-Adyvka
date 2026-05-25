@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.paused .meteor {
+  animation-play-state: paused !important;
+}
+
 .gridBg {
   position: absolute;
   inset: 0;
