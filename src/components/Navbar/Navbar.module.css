@@ -1,4 +1,3 @@
-/* src/components/Navbar/Navbar.module.css */
 .header {
   position: fixed;
   left: 50%;
@@ -10,7 +9,6 @@
 }
 
 .header.scrolled {
-  /* Kondisi Scroll: Merapat dan turun sedikit */
   top: 1.25rem;
   width: min(960px, calc(100% - 2rem));
 }
@@ -24,8 +22,11 @@
 }
 
 .header.scrolled .nav {
-  padding: 0.625rem 1.25rem; /* Mengecil saat scroll */
+  padding: 0.625rem 1.25rem;
   border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .navTransparent {
@@ -142,9 +143,7 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -270,9 +269,9 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.8);
 }
+
 .sheetInner {
   position: absolute;
   top: 0;

@@ -1,7 +1,7 @@
 import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-import { useRef } from "react"; // Hapus useEffect dan useState
-import { motion, useScroll, useTransform } from "framer-motion"; // ✅ 1. Import Framer Motion
+import { useRef } from "react";
+import { m, useScroll, useTransform } from "framer-motion"; // Aktifkan kembali scroll utilitas
 import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
 import {
   MonitorIcon,
@@ -13,30 +13,34 @@ import {
 } from "../../../components/Icons/Icons";
 import styles from "./AboutLayout.module.css";
 
-// ✅ 2. Buat Komponen Kecil <Word /> untuk masing-masing kata
+// Komponen internal Word untuk mengikat opacity ke progress scroll secara murni di tingkat GPU
 function Word({ children, progress, start, end }) {
-  // useTransform akan memetakan nilai scroll (progress) ke opacity (0.15 -> 1)
-  // Ini berjalan murni di Framer Motion, TIDAK memicu React re-render!
+  // Memetakan posisi scroll langsung ke nilai opacity kata (0.15 memudar -> 1 terang benderang)
   const opacity = useTransform(progress, [start, end], [0.15, 1]);
 
-  return <motion.span style={{ opacity }}>{children} </motion.span>;
+  return (
+    <m.span style={{ opacity, display: "inline-block", marginRight: "0.24em" }}>
+      {children}
+    </m.span>
+  );
 }
 
+// Komponen pembungkus yang memecah paragraf dan menghitung rentang animasi tiap kata
 function ScrollWordRevealGroup({
   paragraphs,
   paragraphClassName = "",
-  start = 0.9,
-  end = 0.5,
+  start = 0.85,
+  end = 0.4,
 }) {
   const ref = useRef(null);
 
-  // ✅ 3. Gunakan useScroll dari Framer Motion
-  // Offset secara otomatis melacak target. "start 70%" artinya animasi mulai saat target ada di 70% layar.
+  // Inisialisasi pelacak scroll viewport terhadap elemen target
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: [`start ${start * 100}%`, `start ${end * 100}%`],
   });
 
+  // Hitung total kata keseluruhan untuk membagi rata porsi pembagian progress scroll
   const totalWords = paragraphs.reduce(
     (acc, text) => acc + text.split(" ").length,
     0,
@@ -49,7 +53,11 @@ function ScrollWordRevealGroup({
       {paragraphs.map((text, pIndex) => {
         const words = text.split(" ");
         return (
-          <p key={pIndex} className={paragraphClassName}>
+          <p
+            key={pIndex}
+            className={paragraphClassName}
+            style={{ marginBottom: "1.5rem" }}
+          >
             {words.map((word, wIndex) => {
               const step = 1 / totalWords;
               const wordStart = globalWordIndex * step;
@@ -61,7 +69,6 @@ function ScrollWordRevealGroup({
               const cleanWord = word.replace(/\*/g, "");
 
               return (
-                // ✅ 4. Gunakan komponen Word dan berikan range progress-nya
                 <Word
                   key={wIndex}
                   progress={scrollYProgress}
@@ -69,7 +76,7 @@ function ScrollWordRevealGroup({
                   end={wordEnd}
                 >
                   {isItalic ? (
-                    <em className="font-serif">{cleanWord}</em>
+                    <em className="font-serif text-glow">{cleanWord}</em>
                   ) : (
                     cleanWord
                   )}
@@ -198,11 +205,12 @@ function AboutLayout() {
           </Reveal>
 
           <Reveal delay={0.1} className={styles.copyCol}>
+            {/* Menggunakan kembali komponen pengikat posisi scroll */}
             <ScrollWordRevealGroup
               paragraphs={aboutParagraphs}
               paragraphClassName={styles.paragraph}
-              start={0.7}
-              end={0.13}
+              start={0.75}
+              end={0.2}
             />
           </Reveal>
         </div>

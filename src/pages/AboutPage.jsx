@@ -13,7 +13,7 @@ import storyImage from "../assets/teach_teacher.webp?w=400;800;1200&format=avif;
 import Image from "../components/Image/Image";
 
 /* ====== DATA ====== */
-
+// [DATA TETAP SAMA SEPERTI SEBELUMNYA]
 const INTRO_FACTS = [
   { label: "Full name", value: "Rafif Sava Adyvka Pratama" },
   { label: "Goes by", value: "Adyvka" },
@@ -187,33 +187,6 @@ const STORIES = [
   },
 ];
 
-const CAPABILITIES = [
-  {
-    n: "01",
-    title: "Engineer and operator in one seat.",
-    detail:
-      "At PT Intisel I'm both Full Stack Developer and Project Manager on the ERP build. Code in the morning, planning in the afternoon. The combination is rare; the demand for it is rarer still.",
-  },
-  {
-    n: "02",
-    title: "Teaches what they ship.",
-    detail:
-      "Five years of teaching peers and faculty made documentation, onboarding, and knowledge transfer native — not a checkbox at the end of a sprint.",
-  },
-  {
-    n: "03",
-    title: "Comfortable in unfamiliar rooms.",
-    detail:
-      "Backpacker through three countries at 15. Solo survival in Semarang at 17. Teaching adults at 16. New rooms don't freeze me — they're a feature.",
-  },
-  {
-    n: "04",
-    title: "Ships under real pressure.",
-    detail:
-      "Every paid contract since 17 has run alongside a full school schedule. Production deadlines and final exams teach you what actually matters in a codebase.",
-  },
-];
-
 const CURRENTLY = [
   {
     label: "BUILDING",
@@ -272,12 +245,14 @@ function TrackRow({ row, last }) {
         <span className={styles.trackYearMeta}>age {row.age}</span>
         <span className={styles.trackYearGrade}>{row.grade}</span>
       </div>
-      <div className={styles.trackCard}>
+      {/* ✅ TAMBAHKAN CLASS "glass" DI SINI */}
+      <div className={`glass ${styles.trackCard}`}>
         <span className={styles.trackBadge}>◆ {row.tech.label}</span>
         <h3 className={styles.trackTitle}>{row.tech.title}</h3>
         <p className={styles.trackDetail}>{row.tech.detail}</p>
       </div>
-      <div className={`${styles.trackCard} ${styles.trackHuman}`}>
+      {/* ✅ TAMBAHKAN CLASS "glass" DI SINI */}
+      <div className={`glass ${styles.trackCard} ${styles.trackHuman}`}>
         <span className={styles.trackBadge}>◇ {row.human.label}</span>
         <h3 className={styles.trackTitle}>{row.human.title}</h3>
         <p className={styles.trackDetail}>{row.human.detail}</p>
@@ -289,6 +264,7 @@ function TrackRow({ row, last }) {
 function StoryCard({ story }) {
   const spot = useCardSpotlight();
   return (
+    // ✅ StoryCard sebenarnya SUDAH menggunakan 'glass', saya tambah 'card' agar selaras dengan HomePage
     <article
       className={`card glass ${styles.storyCard} ${story.feature ? styles.storyFeature : ""}`}
       {...spot}
@@ -337,11 +313,8 @@ export default function AboutPage() {
         ]}
       />
 
-      {/* INTRO — pull quote + bio + identity card */}
-      {/* INTRO & SKILLS INTEGRATED */}
       <section className={styles.section}>
         <div className={styles.container}>
-          {/* --- BAGIAN INTRO --- */}
           <div className={styles.introWrap}>
             <div className={styles.introLeft}>
               <Reveal>
@@ -377,8 +350,8 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={0.1}>
-              <div className={styles.introCard}>
-                {/* PHOTO HEADER */}
+              {/* ✅ TAMBAHKAN CLASS "glass" UNTUK KARTU INTRO */}
+              <div className={`glass ${styles.introCard}`}>
                 <div className={styles.introPhotoWrap}>
                   <div className={styles.introPhotoGlow} aria-hidden="true" />
                   <Image
@@ -393,8 +366,8 @@ export default function AboutPage() {
                     aria-hidden="true"
                   />
 
-                  {/* Status badge floating over photo */}
-                  <div className={styles.introPhotoBadge}>
+                  {/* ✅ TAMBAHKAN CLASS "glass-hi" UNTUK BADGE FOTO (lebih solid) */}
+                  <div className={`glass-hi ${styles.introPhotoBadge}`}>
                     <span className={styles.introPhotoBadgeStatus}>
                       <span
                         className={`${styles.introPhotoBadgeDot} pulse-dot`}
@@ -407,10 +380,8 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* CARD CONTENT */}
                 <div className={styles.introCardContent}>
                   <span className={styles.introCardLabel}>— Identity Card</span>
-
                   <div className={styles.introCardList}>
                     {INTRO_FACTS.map((f) => (
                       <div key={f.label} className={styles.introCardRow}>
@@ -424,10 +395,8 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* --- BAGIAN SKILLS (KIRI-KANAN) MENGGABUNG DENGAN INTRO --- */}
           <Reveal delay={0.15}>
             <div className={styles.skillsIntegratedWrap}>
-              {/* Kolom Kiri: Technical Skills */}
               <div className={styles.skillsColumn}>
                 <div className={styles.skillsHeader}>
                   <span className={styles.sectionLabel}>
@@ -441,7 +410,8 @@ export default function AboutPage() {
                     , by layer.
                   </h2>
                 </div>
-                <div className={styles.skillPanel}>
+                {/* ✅ TAMBAHKAN CLASS "glass" UNTUK PANEL SKILL KIRI */}
+                <div className={`glass ${styles.skillPanel}`}>
                   {TECH_STACK.map((row) => (
                     <div key={row.layer} className={styles.skillRow}>
                       <div className={styles.skillLabel}>
@@ -462,7 +432,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Kolom Kanan: Soft Skills */}
               <div className={styles.skillsColumn}>
                 <div className={styles.skillsHeader}>
                   <span className={styles.sectionLabel}>— Soft Skills</span>
@@ -473,8 +442,9 @@ export default function AboutPage() {
                     the code.
                   </h2>
                 </div>
+                {/* ✅ TAMBAHKAN CLASS "glass" UNTUK PANEL SKILL KANAN */}
                 <div
-                  className={`${styles.skillPanel} ${styles.skillPanelSoft}`}
+                  className={`glass ${styles.skillPanel} ${styles.skillPanelSoft}`}
                 >
                   {SOFT_SKILLS.map((row) => (
                     <div key={row.skill} className={styles.softCompactRow}>
@@ -494,7 +464,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3 · TWO TRACKS */}
       <section className={styles.section}>
         <div className={styles.container}>
           <Reveal>
@@ -526,7 +495,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4 · STORIES — bento */}
       <section className={styles.section}>
         <div className={styles.container}>
           <Reveal>
@@ -568,7 +536,11 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={0.06}>
-            <RevealGroup className={styles.currentPanel} stagger={0.1}>
+            {/* ✅ TAMBAHKAN CLASS "glass" DI PARENT CURRENT PANEL */}
+            <RevealGroup
+              className={`glass ${styles.currentPanel}`}
+              stagger={0.1}
+            >
               {CURRENTLY.map((item) => (
                 <RevealItem key={item.label}>
                   <CurrentSlot item={item} />
@@ -579,7 +551,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 7 · WHAT'S NEXT */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.nextWrap}>
@@ -607,7 +578,8 @@ export default function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className={styles.nextRight}>
+              {/* ✅ TAMBAHKAN CLASS "glass" DI NEXT PANEL KANAN */}
+              <div className={`glass ${styles.nextRight}`}>
                 {NEXT_INTENT.map((item) => (
                   <div key={item.label} className={styles.nextRow}>
                     <span className={styles.nextRowLabel}>{item.label}</span>
