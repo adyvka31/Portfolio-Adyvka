@@ -1,6 +1,7 @@
+// src/App.jsx
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -11,6 +12,7 @@ import useScrollToTop from "./hooks/useScrollToTop";
 
 import HomePage from "./pages/HomePage";
 
+// Lazy imports tetap sama...
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
@@ -62,9 +64,11 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <div className="spotlight" />
-        <Navbar />
-        <AnimatedRoutes />
+        <LazyMotion features={domAnimation} strict>
+          <div className="spotlight" />
+          <Navbar />
+          <AnimatedRoutes />
+        </LazyMotion>
       </BrowserRouter>
     </HelmetProvider>
   );
