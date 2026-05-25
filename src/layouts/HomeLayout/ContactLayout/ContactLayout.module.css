@@ -126,33 +126,24 @@
    TECH BACKGROUND
 ========================================= */
 
-.techStack {
+.gridDotsBg {
   position: absolute;
   inset: 0;
-
-  z-index: 1;
-
-  overflow: hidden;
+  background-image: radial-gradient(
+    rgba(124, 242, 255, 0.2) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  background-position: center;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    black 20%,
+    transparent 80%
+  );
 
   pointer-events: none;
-}
-
-.techIcon {
-  position: absolute;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: rgba(255, 255, 255, 0.05);
-
-  filter: blur(0.3px);
-
-  transition:
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    color 0.4s ease;
-
-  animation: float 8s ease-in-out infinite;
+  z-index: 0; /* Pastikan berada di belakang inner3D */
 }
 
 .cardName:hover .techIcon {
@@ -175,98 +166,6 @@
 
 .xl {
   font-size: 3.5rem;
-}
-
-/* Positioning */
-
-.react {
-  top: 12%;
-  left: 8%;
-  animation-delay: 0s;
-}
-
-.js {
-  top: 18%;
-  right: 10%;
-  animation-delay: 1s;
-}
-
-.ts {
-  top: 30%;
-  left: 15%;
-  animation-delay: 2s;
-}
-
-.next {
-  top: 38%;
-  right: 18%;
-  animation-delay: 1.5s;
-}
-
-.tailwind {
-  top: 48%;
-  left: 6%;
-  animation-delay: 0.5s;
-}
-
-.node {
-  top: 58%;
-  right: 8%;
-  animation-delay: 3s;
-}
-
-.git {
-  top: 70%;
-  left: 12%;
-  animation-delay: 2.5s;
-}
-
-.figma {
-  top: 20%;
-  left: 42%;
-  animation-delay: 1.2s;
-}
-
-.firebase {
-  top: 62%;
-  left: 38%;
-  animation-delay: 2.2s;
-}
-
-.mongo {
-  top: 72%;
-  right: 28%;
-  animation-delay: 0.8s;
-}
-
-.html {
-  top: 12%;
-  right: 34%;
-  animation-delay: 1.7s;
-}
-
-.css {
-  top: 45%;
-  right: 42%;
-  animation-delay: 2.8s;
-}
-
-.vite {
-  top: 82%;
-  left: 42%;
-  animation-delay: 1.4s;
-}
-
-.redux {
-  top: 84%;
-  right: 12%;
-  animation-delay: 2.1s;
-}
-
-.vercel {
-  top: 8%;
-  left: 65%;
-  animation-delay: 3.2s;
 }
 
 /* Floating animation */
@@ -402,14 +301,14 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.82);
   font-size: 0.82rem;
-  transform: translateZ(80px); 
+  transform: translateZ(80px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .cardName:hover .bottomBar {
   transform: translateZ(120px);
-  box-shadow: 
+  box-shadow:
     0 40px 80px rgba(0, 0, 0, 0.8),
     0 20px 40px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
@@ -430,7 +329,9 @@
   justify-content: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .cardName:hover .bottomArrow {
