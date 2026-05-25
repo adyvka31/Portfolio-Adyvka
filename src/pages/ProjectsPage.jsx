@@ -13,24 +13,19 @@ import styles from "./IndexPage.module.css";
 import Image from "../components/Image/Image";
 
 function ProjectCard({ project }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   return (
     <Link
       to={`/projects/${project.slug}`}
       className={`card glass ${styles.cardModern}`}
     >
       {/* IMAGE AREA */}
-      <div
-        className={`${styles.cardImageWrap} ${isLoaded ? styles.imageLoadedWrap : ""}`}
-      >
+      <div className={styles.cardImageWrap}>
         <Image
           src={project.thumbnail}
           alt={project.title}
-          className={`${styles.cardImage} ${isLoaded ? styles.loaded : ""}`}
+          className={styles.cardImage}
           width={600}
           height={400}
-          onLoad={() => setIsLoaded(true)}
         />
 
         <div className={styles.cardOverlay}>

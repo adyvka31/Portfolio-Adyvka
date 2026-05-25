@@ -155,11 +155,6 @@
   animation: skeletonShimmer 2s infinite linear;
 }
 
-.imageLoadedWrap {
-  animation: none !important;
-  background: transparent !important;
-}
-
 @keyframes skeletonShimmer {
   0% {
     background-position: 200% 0;
@@ -181,14 +176,6 @@
   transform: translateZ(0); /* Memaksa browser menggunakan GPU */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-}
-
-.cardImage.loaded {
-  opacity: 1;
-}
-
-.cardModern:hover .cardImage.loaded {
-  transform: scale(1.03) translateZ(0);
 }
 
 /* OVERLAY */
