@@ -11,6 +11,7 @@ import {
   experiencesList,
   recognitionData,
   extraTeachingExperiences,
+  extraOtherExperiences,
 } from "../data/portfolio";
 import styles from "./ExperiencePage.module.css";
 import Image from "../components/Image/Image";
@@ -107,11 +108,14 @@ export default function ExperiencePage() {
   });
 
   // 4. Data Other Experience
-  const otherExperiences = recognitionData.experience.filter(
+  const baseOther = recognitionData.experience.filter(
     (exp) =>
       !exp.title.toLowerCase().includes("instructor") &&
       !exp.title.toLowerCase().includes("teaching"),
   );
+
+  // Kedua, gabungkan dengan data extra baru
+  const otherExperiences = [...baseOther, ...extraOtherExperiences];
 
   return (
     <PageShell>
