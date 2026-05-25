@@ -119,14 +119,14 @@ textarea {
    SURFACES
    ============================================ */
 .glass {
-  background: rgba(20, 20, 25, 0.85);
+  background: rgba(20, 20, 25, 0.92);
   border: 1px solid var(--line);
   will-change: transform;
   transform: translateZ(0);
 }
 
 .glass-hi {
-  background: rgba(30, 30, 38, 0.9);
+  background: rgba(30, 30, 38, 0.95);
   border: 1px solid var(--line-strong);
 }
 
@@ -193,7 +193,7 @@ textarea {
     rgba(255, 255, 255, 0.5) 100%
   );
   border-radius: 999px;
-  filter: drop-shadow(0 0 5px rgba(124, 242, 255, 0.6));
+  will-change: transform, opacity;
   animation: meteor-fall linear infinite;
   animation-play-state: paused;
   opacity: 0;
