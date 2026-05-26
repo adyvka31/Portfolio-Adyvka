@@ -38,6 +38,28 @@ import itfestImg from "../assets/itfest.webp?w=400;800;1200&format=avif;webp&as=
 import semarangImg from "../assets/semarang.webp?w=400;800;1200&format=avif;webp&as=picture";
 import posterImg from "../assets/poster.webp?w=400;800;1200&format=avif;webp&as=picture";
 
+import dataanalystImg from "../assets/dataanalyst.webp?w=400;800;1200&format=avif;webp&as=picture";
+import backendImg from "../assets/backend.webp?w=400;800;1200&format=avif;webp&as=picture";
+import gitImg from "../assets/git.webp?w=400;800;1200&format=avif;webp&as=picture";
+import canvaImg from "../assets/canva.webp?w=400;800;1200&format=avif;webp&as=picture";
+import cdicodingImg from "../assets/cdicoding.webp?w=400;800;1200&format=avif;webp&as=picture";
+import figmaImg from "../assets/figma.webp?w=400;800;1200&format=avif;webp&as=picture";
+import pythondqlabImg from "../assets/pythondqlab.webp?w=400;800;1200&format=avif;webp&as=picture";
+import javascriptImg from "../assets/javascript.webp?w=400;800;1200&format=avif;webp&as=picture";
+import awsImg from "../assets/aws.webp?w=400;800;1200&format=avif;webp&as=picture";
+import reactImg from "../assets/react.webp?w=400;800;1200&format=avif;webp&as=picture";
+import pythondicodingImg from "../assets/pythondicoding.webp?w=400;800;1200&format=avif;webp&as=picture";
+import webbasicImg from "../assets/webbasic.webp?w=400;800;1200&format=avif;webp&as=picture";
+import logicdevImg from "../assets/logicdev.webp?w=400;800;1200&format=avif;webp&as=picture";
+import cskillvulImg from "../assets/cskillvul.webp?w=400;800;1200&format=avif;webp&as=picture";
+import promptImg from "../assets/prompt.webp?w=400;800;1200&format=avif;webp&as=picture";
+import softwaredevImg from "../assets/softwaredev.webp?w=400;800;1200&format=avif;webp&as=picture";
+import financialImg from "../assets/financial.webp?w=400;800;1200&format=avif;webp&as=picture";
+import aiImg from "../assets/ai.webp?w=400;800;1200&format=avif;webp&as=picture";
+import gdgImg from "../assets/gdg.webp?w=400;800;1200&format=avif;webp&as=picture";
+import codingcampImg from "../assets/codingcamp.webp?w=400;800;1200&format=avif;webp&as=picture";
+import englishImg from "../assets/english.webp?w=400;800;1200&format=avif;webp&as=picture";
+
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
   title: "Digital Craftsman // Fullstack Engineer",
@@ -310,6 +332,153 @@ export const projectFilters = [
   { id: "ai", label: "AI" },
 ];
 
+export const extraCertificatesOnlyForPage = [
+  {
+    title: "Graphic Design Fundamentals",
+    institution: "Canva / Course",
+    year: "2023",
+    description:
+      "Sertifikasi desain grafis untuk pembuatan aset visual dan pemasaran.",
+    image: canvaImg,
+    tags: ["Design", "Canva", "Creative"],
+  },
+  {
+    title: "Memulai Pemrograman Dengan C",
+    institution: "Dicoding Indonesia",
+    year: "2023",
+    description:
+      "Sertifikasi dasar pemrograman menggunakan bahasa C untuk algoritma tingkat rendah.",
+    image: cdicodingImg,
+    tags: ["C Programming", "Logic", "Backend"],
+  },
+  {
+    title: "Dasar UI/UX Design",
+    institution: "Figma Course",
+    year: "2023",
+    description:
+      "Sertifikasi perancangan antarmuka pengguna dan pengalaman pengguna menggunakan Figma.",
+    image: figmaImg,
+    tags: ["UI/UX", "Figma", "Design"],
+  },
+  {
+    title: "Python Fundamentals",
+    institution: "DQLab",
+    year: "2024",
+    description:
+      "Sertifikasi dasar pemrograman Python untuk keperluan pengolahan data sains.",
+    image: pythondqlabImg,
+    tags: ["Python", "DQLab", "Data Science"],
+  },
+  {
+    title: "Belajar Dasar Pemrograman JavaScript",
+    institution: "Dicoding Indonesia",
+    year: "2024",
+    description:
+      "Sertifikasi pemahaman logika dasar, ES6, dan manipulasi DOM JavaScript.",
+    image: javascriptImg,
+    tags: ["JavaScript", "Frontend", "ES6"],
+  },
+  {
+    title: "Cloud Practitioner Essentials",
+    institution: "Amazon Web Services (AWS)",
+    year: "2024",
+    description:
+      "Sertifikasi dasar komputasi awan, infrastruktur, dan layanan global AWS.",
+    image: awsImg,
+    tags: ["AWS", "Cloud", "Infrastructure"],
+  },
+  {
+    title: "Belajar Membuat Aplikasi Web dengan React",
+    institution: "Dicoding Indonesia",
+    year: "2025",
+    description:
+      "Sertifikasi pengembangan antarmuka web modern dengan pustaka React.js.",
+    image: reactImg,
+    tags: ["React.js", "Frontend", "Web"],
+  },
+  {
+    title: "Memulai Pemrograman Dengan Python",
+    institution: "Dicoding Indonesia",
+    year: "2024",
+    description:
+      "Sertifikasi sintaksis dan logika pemrograman dasar menggunakan Python.",
+    image: pythondicodingImg,
+    tags: ["Python", "Programming", "Logic"],
+  },
+  {
+    title: "Belajar Dasar Pemrograman Web",
+    institution: "Dicoding Indonesia",
+    year: "2024",
+    description:
+      "Sertifikasi pembuatan struktur web dasar menggunakan HTML, CSS, dan Flexbox.",
+    image: webbasicImg,
+    tags: ["HTML", "CSS", "Frontend"],
+  },
+  {
+    title: "Pengenalan ke Logika Pemrograman",
+    institution: "Dicoding Indonesia",
+    year: "2023",
+    description:
+      "Sertifikasi dasar pemecahan masalah algoritma dan logika komputasional.",
+    image: logicdevImg,
+    tags: ["Logic", "Algorithm", "Computer Science"],
+  },
+  {
+    title: "Pemrograman Dasar C",
+    institution: "Skilvul",
+    year: "2023",
+    description:
+      "Sertifikasi penyelesaian modul algoritma dan struktur data dasar bahasa C.",
+    image: cskillvulImg,
+    tags: ["C", "Skilvul", "Algorithm"],
+  },
+  {
+    title: "Dasar Prompt Engineering",
+    institution: "AI Course",
+    year: "2025",
+    description:
+      "Sertifikasi rekayasa prompt untuk memaksimalkan hasil dari model bahasa besar (LLM).",
+    image: promptImg,
+    tags: ["Prompt Engineering", "LLM", "AI"],
+  },
+  {
+    title: "Meniti Karier Sebagai Software Developer",
+    institution: "Dicoding Indonesia",
+    year: "2024",
+    description:
+      "Sertifikasi pemahaman metodologi kerja, agile, dan jalur karier insinyur perangkat lunak.",
+    image: softwaredevImg,
+    tags: ["Career", "Software Engineering", "Agile"],
+  },
+  {
+    title: "Financial Literacy Fundamentals",
+    institution: "Finance Course",
+    year: "2023",
+    description:
+      "Sertifikasi literasi keuangan dasar dan manajemen aset finansial.",
+    image: financialImg,
+    tags: ["Finance", "Literacy", "Management"],
+  },
+  {
+    title: "Artificial Intelligence Basics",
+    institution: "AI Academy",
+    year: "2024",
+    description:
+      "Sertifikasi pengenalan konsep kecerdasan buatan, machine learning, dan neural networks.",
+    image: aiImg,
+    tags: ["AI", "Machine Learning", "Tech"],
+  },
+  {
+    title: "Google Developer Groups Participant",
+    institution: "Google Developer Groups",
+    year: "2024",
+    description:
+      "Sertifikasi partisipasi aktif dalam kegiatan komunitas dan workshop GDG.",
+    image: gdgImg,
+    tags: ["GDG", "Google", "Community"],
+  },
+];
+
 // ============================================
 // AI STARTUP FEATURES
 // ============================================
@@ -452,7 +621,7 @@ export const recognitionData = {
       year: "Apr 2026",
       description:
         "Sertifikasi intensif pengembangan aplikasi web dari arsitektur backend hingga antarmuka frontend.",
-      image: frontendImg,
+      image: codingcampImg,
       tags: ["Web Development", "Backend", "Frontend"],
     },
     {
@@ -465,31 +634,31 @@ export const recognitionData = {
       tags: ["HTML/CSS", "JavaScript", "Frontend"],
     },
     {
-      title: "IDCamp 2025: Generative AI Engineer",
+      title: "Belajar Dasar Data Analyst",
       institution: "Dicoding Indonesia",
-      year: "Feb 2026",
+      year: "2024",
       description:
-        "Pelatihan teknis pengembangan solusi Artificial Intelligence berbasis model generatif.",
-      image: aigeneratorImg, // Menggunakan gambar AI yang sudah Anda import
-      tags: ["Generative AI", "Machine Learning", "AI"],
+        "Sertifikasi fundamental untuk ekstraksi, manipulasi, dan visualisasi data dasar.",
+      image: dataanalystImg,
+      tags: ["Data Analyst", "Data Science"],
     },
     {
-      title: "Coding Camp 2026: Data Science",
+      title: "Belajar Membuat Aplikasi Back-End",
       institution: "Dicoding Indonesia",
-      year: "Feb 2026",
+      year: "2024",
       description:
-        "Sertifikasi analisis komputasional, ekstraksi data, dan pemodelan prediktif.",
-      image: databankImg,
-      tags: ["Data Science", "Python", "Analytics"],
+        "Sertifikasi perancangan RESTful API dan logika sisi server (server-side).",
+      image: backendImg,
+      tags: ["Backend", "REST API", "Node.js"],
     },
     {
-      title: "Prompt Engineering for Software Developer",
+      title: "Belajar Dasar Git dengan GitHub",
       institution: "Dicoding Indonesia",
-      year: "Mar 2026",
+      year: "2024",
       description:
-        "Sertifikasi penerapan rekayasa prompt tingkat lanjut untuk mempercepat siklus pengembangan perangkat lunak.",
-      image: aigeneratorImg,
-      tags: ["Prompt Engineering", "Developer Tools", "AI"],
+        "Sertifikasi pengelolaan versi kode menggunakan Git dan kolaborasi via GitHub.",
+      image: gitImg,
+      tags: ["Git", "GitHub", "Version Control"],
     },
   ],
 };
@@ -637,14 +806,20 @@ export const allAchievements = [
     year: "Des 2023",
     description:
       "Ini adalah data dummy. Nanti Anda bisa menggantinya dengan cerita lengkap mengenai pencapaian terbaru Anda. Ceritakan tentang tantangan yang Anda hadapi dan bagaimana Anda menyelesaikannya secara teknis.",
-    image: posterImg, 
+    image: posterImg,
   },
 ];
 
-export const allCertificates = recognitionData.certificate.map((x) => ({
-  ...x,
-  slug: slugify(x.title),
-}));
+export const allCertificates = [
+  ...recognitionData.certificate.map((x) => ({
+    ...x,
+    slug: slugify(x.title),
+  })),
+  ...extraCertificatesOnlyForPage.map((x) => ({
+    ...x,
+    slug: slugify(x.title),
+  })),
+];
 
 export const experiencesList = experiences.map((e) => ({
   ...e,
