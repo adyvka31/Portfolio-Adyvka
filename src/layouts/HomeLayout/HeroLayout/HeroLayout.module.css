@@ -20,11 +20,11 @@
 .statusRight {
   display: none;
   position: absolute;
-  top: 55%; /* Sedikit di bawah 50% agar sejajar dengan titik berat visual foto */
+  top: 50%; 
   z-index: 20;
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.65rem;
-  letter-spacing: 0.2em; /* Tracking sangat lebar khas desain editorial */
+  letter-spacing: 0.2em; 
   text-transform: uppercase;
   color: var(--ink-300);
   transition:

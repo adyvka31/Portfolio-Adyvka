@@ -1,11 +1,13 @@
-// src/components/SEO/SEO.jsx
-import { Helmet } from "react-helmet-async";
-
-const SITE_URL = "https://adyvka-pratama.netlify.app"; // GANTI dengan domain final Anda
-const DEFAULT_OG_IMAGE = "/og-image.jpg"; // taruh file di public/
+const SITE_URL = "https://adyvka-pratama.netlify.app";
+const DEFAULT_OG_IMAGE = "/og-image.jpg";
 const DEFAULT_DESCRIPTION =
   "Full Stack Engineer & Mobile Developer based in West Java, Indonesia. Building production systems with React, NestJS, PostgreSQL, and Flutter.";
 
+/**
+ * React 19 native metadata — no external library needed.
+ * React hoists <title>, <meta>, <link> to <head> automatically.
+ * @see https://react.dev/reference/react-dom/components/meta
+ */
 export default function SEO({
   title,
   description = DEFAULT_DESCRIPTION,
@@ -21,8 +23,21 @@ export default function SEO({
   const url = `${SITE_URL}${path}`;
   const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Rafif Sava Adyvka Pratama",
+    alternateName: "Adyvka",
+    jobTitle: "Full Stack Engineer",
+    url: SITE_URL,
+    sameAs: [
+      "https://github.com/adyvka31",
+      "https://www.linkedin.com/in/adyvka-pratama/",
+    ],
+  };
+
   return (
-    <Helmet>
+    <>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
@@ -44,21 +59,11 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
 
-      {/* Structured Data — Person */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Rafif Sava Adyvka Pratama",
-          alternateName: "Adyvka",
-          jobTitle: "Full Stack Engineer",
-          url: SITE_URL,
-          sameAs: [
-            "https://github.com/adyvka31",
-            "https://www.linkedin.com/in/adyvka-pratama/",
-          ],
-        })}
-      </script>
-    </Helmet>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+    </>
   );
 }

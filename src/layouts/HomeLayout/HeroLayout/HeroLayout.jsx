@@ -38,13 +38,13 @@ function HeroLayout() {
         ))}
       </div>
 
-      <div className={`${styles.statusLeft} css-reveal`}>
+      <div className={`${styles.statusLeft}`}>
         <span className={styles.statusLine} />
         <span className={`${styles.statusDot} pulse-dot`} />
         <span>Available for new opportunities · 2026</span>
       </div>
 
-      <div className={`${styles.statusRight} css-reveal`}>
+      <div className={`${styles.statusRight}`}>
         <span>
           {personalInfo.location}
           <span className={styles.statusRightSub}>
