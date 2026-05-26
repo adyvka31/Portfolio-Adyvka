@@ -173,6 +173,15 @@
   flex: 1;
 }
 
+.institution {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--accent-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
 /* --- META (Issuer / Penyelenggara) --- */
 .meta {
   display: flex;

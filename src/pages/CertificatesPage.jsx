@@ -56,26 +56,7 @@ function CertificateCard({ item }) {
 
       {/* Certificate Info */}
       <div className={local.info}>
-        {/* Data Penyelenggara (Issuer) di atas Title */}
-        <div className={local.meta}>
-          <svg
-            className={local.issuerIcon}
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 21h18M3 7v14a2 2 0 002 2h14a2 2 0 002-2V7M9 21V9h6v12M3 7l9-4 9 4"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className={local.issuer}>{item.issuer}</span>
-        </div>
+        <div className={local.institution}>— {item.institution}</div>
 
         <h3 className={local.title}>{item.title}</h3>
 
