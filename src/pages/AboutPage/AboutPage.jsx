@@ -1,16 +1,16 @@
-import SEO from "../components/SEO/SEO";
-import PageShell from "../components/PageShell/PageShell";
-import PageHero from "../components/PageHero/PageHero";
-import BottomCTA from "../components/BottomCTA/BottomCTA";
-import Reveal from "../components/Reveal/Reveal";
-import { RevealGroup, RevealItem } from "../components/Reveal/RevealGroup";
-import { useCardSpotlight } from "../hooks/useCardSpotlight";
-import { ArrowRightIcon } from "../components/Icons/Icons";
-import { personalInfo } from "../data/portfolio";
+import SEO from "../../components/SEO/SEO";
+import PageShell from "../../components/PageShell/PageShell";
+import PageHero from "../../components/PageHero/PageHero";
+import BottomCTA from "../../components/BottomCTA/BottomCTA";
+import Reveal from "../../components/Reveal/Reveal";
+import { RevealGroup, RevealItem } from "../../components/Reveal/RevealGroup";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
+import { ArrowRightIcon } from "../../components/Icons/Icons";
+import { personalInfo } from "../../data/portfolio";
 import profilePhoto from "../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
 import styles from "./AboutPage.module.css";
 import storyImage from "../assets/teach_teacher.webp?w=400;800;1200&format=avif;webp&as=picture";
-import Image from "../components/Image/Image";
+import Image from "../../components/Image/Image";
 
 /* ====== DATA ====== */
 // [DATA TETAP SAMA SEPERTI SEBELUMNYA]

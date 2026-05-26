@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import PageShell from "../components/PageShell/PageShell";
-import PageHero from "../components/PageHero/PageHero";
+import PageShell from "../../components/PageShell/PageShell";
+import PageHero from "../../components/PageHero/PageHero";
 
 export default function NotFoundPage() {
   return (

@@ -10,23 +10,33 @@ import PageLoader from "./components/PageLoader/PageLoader";
 import { useCursorSpotlight } from "./hooks/useCursorSpotlight";
 import useScrollToTop from "./hooks/useScrollToTop";
 
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 
 // Lazy imports tetap sama...
-const AboutPage = lazy(() => import("./pages/AboutPage"));
-const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
-const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
-const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
-const ExperienceDetailPage = lazy(() => import("./pages/ExperienceDetailPage"));
-const AchievementsPage = lazy(() => import("./pages/AchievementsPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectPage/ProjectsPage"));
+const ProjectDetailPage = lazy(
+  () => import("./pages/DetailPage/ProjectDetailPage"),
+);
+const ExperiencePage = lazy(
+  () => import("./pages/ExperiencePage/ExperiencePage"),
+);
+const ExperienceDetailPage = lazy(
+  () => import("./pages/DetailPage/ExperienceDetailPage"),
+);
+const AchievementsPage = lazy(
+  () => import("./pages/AchievementPage/AchievementsPage"),
+);
 const AchievementDetailPage = lazy(
-  () => import("./pages/AchievementDetailPage"),
+  () => import("./pages/DetailPage/AchievementDetailPage"),
 );
-const CertificatesPage = lazy(() => import("./pages/CertificatesPage"));
+const CertificatesPage = lazy(
+  () => import("./pages/CertificatePage/CertificatesPage"),
+);
 const CertificateDetailPage = lazy(
-  () => import("./pages/CertificateDetailPage"),
+  () => import("./pages/DetailPage/CertificateDetailPage"),
 );
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoudPage/NotFoundPage"));
 
 function AnimatedRoutes() {
   const location = useLocation();

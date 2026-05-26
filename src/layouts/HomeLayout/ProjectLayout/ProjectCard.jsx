@@ -24,14 +24,19 @@ function ProjectCard({ project, visible }) {
       data-cat={project.category}
       className={`card glass ${styles.card} ${spanClass} ${visible ? styles.visible : styles.hidden}`}
       {...spotlight}
+      // Tambahkan aria-label agar screen reader dapat membaca judul project saat fokus
+      aria-label={`Project: ${project.title}`}
     >
-      {project.hasAccentBlur && <div className={styles.accentBlur} />}
+      {project.hasAccentBlur && (
+        <div className={styles.accentBlur} aria-hidden="true" />
+      )}
 
       <div className={styles.contentTop}>
         <div className={styles.headRow}>
           <div className={styles.headLeft}>
             <div
               className={`${styles.label} ${project.labelAccent ? styles.labelAccent : ""}`}
+              aria-hidden="true"
             >
               {project.label}
             </div>
@@ -41,7 +46,12 @@ function ProjectCard({ project, visible }) {
             <p className={styles.description}>{project.description}</p>
           </div>
           {project.year && isFlagship && (
-            <span className={styles.year}>{project.year}</span>
+            <span
+              className={styles.year}
+              aria-label={`Completed in ${project.year}`}
+            >
+              {project.year}
+            </span>
           )}
         </div>
 
@@ -49,26 +59,34 @@ function ProjectCard({ project, visible }) {
       </div>
 
       <div className={styles.footer}>
-        <div className={styles.tags}>
+        {/* SENIOR FIX: Ubah div menjadi ul untuk list teknologi */}
+        <ul className={styles.tags} aria-label="Technologies used">
           {project.tags.map((tag) => (
-            <Tag key={tag} size={isFlagship ? "sm" : "xs"}>
-              {tag}
-            </Tag>
+            <li key={tag} style={{ listStyle: "none" }}>
+              <Tag size={isFlagship ? "sm" : "xs"}>{tag}</Tag>
+            </li>
           ))}
-        </div>
+        </ul>
+
         {project.link && (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.viewLink}
+            aria-label={`View ${project.title} project live`}
           >
             View
             <ArrowUpRightIcon size={11} />
           </a>
         )}
         {!project.link && project.year && !isFlagship && (
-          <span className={styles.yearSm}>{project.year}</span>
+          <span
+            className={styles.yearSm}
+            aria-label={`Completed in ${project.year}`}
+          >
+            {project.year}
+          </span>
         )}
       </div>
     </article>

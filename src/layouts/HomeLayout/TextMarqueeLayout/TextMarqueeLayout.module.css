@@ -1,63 +1,77 @@
+/* SENIOR FIX: Fluid Padding */
 .section {
   position: relative;
-  padding: 3rem 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
 }
 
+/* SENIOR FIX: Diubah menjadi tag <h2> secara semantik agar SEO bersahabat */
 .caption {
   text-align: center;
   font-family: "Geist Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   color: var(--ink-200);
-  margin-bottom: 2rem;
+  margin: 0 0 clamp(1.5rem, 4vw, 2.5rem) 0;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 .viewport {
   position: relative;
 }
 
+/* SENIOR FIX: Fluid Fade Width
+   Di HP (320px): lebar bayangan hanya 2rem (32px), menjaga teks tetap terlihat.
+   Di Desktop: lebar bayangan maksimal 8rem (128px), menjaga efek mewah.
+*/
 .fade {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 8rem;
+  width: clamp(2rem, 15vw, 8rem);
   z-index: 10;
   pointer-events: none;
 }
 
 .fadeLeft {
   left: 0;
-  background: linear-gradient(to right, var(--ink-950), transparent);
+  background: linear-gradient(to right, var(--ink-950) 0%, transparent 100%);
 }
 
 .fadeRight {
   right: 0;
-  background: linear-gradient(to left, var(--ink-950), transparent);
+  background: linear-gradient(to left, var(--ink-950) 0%, transparent 100%);
 }
 
+/* SENIOR FIX: Fluid Gap */
 .marquee {
   display: flex;
-  gap: 4rem;
+  gap: clamp(2rem, 5vw, 4rem);
   white-space: nowrap;
+}
+
+/* Tambahan UX: Jika global animasi marquee-track menggunakan CSS, 
+   kita pause saat pengguna ingin melihat teks / efek hover-nya */
+.viewport:hover .marquee {
+  animation-play-state: paused;
 }
 
 .track {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  font-size: 1.5rem;
+  gap: clamp(2rem, 5vw, 4rem);
+  /* SENIOR FIX: Fluid Typography */
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
   font-weight: 500;
-  /* Hapus color abu-abu statis dari sini, kita pindahkan ke .itemText */
 }
 
 .row {
   display: inline-flex;
   align-items: center;
-  gap: 4rem;
+  gap: clamp(2rem, 5vw, 4rem);
 }
 
 /* --- WARNA & ANIMASI TEMA --- */
@@ -67,7 +81,7 @@
   cursor: default;
 }
 
-/* Urutan 1: Warna Base (Abu-abu terang/Putih) */
+/* Urutan 1: Warna Base */
 .row:nth-child(3n + 1) .itemText {
   color: rgba(207, 207, 214, 0.9);
 }
@@ -77,17 +91,19 @@
   color: rgba(124, 242, 255, 0.75);
 }
 
+/* Urutan 3: Warna Tersier (Purple/Magenta) */
 .row:nth-child(3n + 3) .itemText {
   color: rgba(168, 85, 247, 0.7);
 }
 
 .itemText:hover {
   color: #ffffff !important;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05); /* Sedikit feedback scaling */
 }
 
 .bullet {
-  color: rgba(124, 242, 255, 0.3); /* Cyan pudar */
-  font-size: 1rem; /* Sedikit lebih kecil dari teks agar proporsional */
+  color: rgba(124, 242, 255, 0.3);
+  font-size: 0.75em; /* Menggunakan em agar merespon pada perubahan font-size parent */
   text-shadow: 0 0 12px rgba(124, 242, 255, 0.2);
 }

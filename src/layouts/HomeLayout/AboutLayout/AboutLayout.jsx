@@ -1,7 +1,7 @@
 import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import { useRef } from "react";
-import { m, useScroll, useTransform } from "framer-motion"; // Aktifkan kembali scroll utilitas
+import { m, useScroll, useTransform } from "framer-motion";
 import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
 import {
   MonitorIcon,
@@ -13,9 +13,8 @@ import {
 } from "../../../components/Icons/Icons";
 import styles from "./AboutLayout.module.css";
 
-// Komponen internal Word untuk mengikat opacity ke progress scroll secara murni di tingkat GPU
+// Komponen Word: Fluid Opacity Mapping via GPU
 function Word({ children, progress, start, end }) {
-  // Memetakan posisi scroll langsung ke nilai opacity kata (0.15 memudar -> 1 terang benderang)
   const opacity = useTransform(progress, [start, end], [0.15, 1]);
 
   return (
@@ -25,7 +24,7 @@ function Word({ children, progress, start, end }) {
   );
 }
 
-// Komponen pembungkus yang memecah paragraf dan menghitung rentang animasi tiap kata
+// Komponen ScrollWordRevealGroup: Logic tetap utuh, performa sudah bagus
 function ScrollWordRevealGroup({
   paragraphs,
   paragraphClassName = "",
@@ -34,13 +33,11 @@ function ScrollWordRevealGroup({
 }) {
   const ref = useRef(null);
 
-  // Inisialisasi pelacak scroll viewport terhadap elemen target
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: [`start ${start * 100}%`, `start ${end * 100}%`],
   });
 
-  // Hitung total kata keseluruhan untuk membagi rata porsi pembagian progress scroll
   const totalWords = paragraphs.reduce(
     (acc, text) => acc + text.split(" ").length,
     0,
@@ -101,88 +98,23 @@ function AboutLayout() {
 
   const getCategoryIcon = (category) => {
     switch (category) {
-      case "Frontend":
-        return <MonitorIcon size={24} />;
-      case "Backend":
-        return <ServerIcon size={24} />;
-      case "Database":
-        return <DatabaseIcon size={24} />;
-      case "Tools & Testing":
-        return <TerminalIcon size={24} />;
-      case "Cloud & DevOps":
-        return <CloudIcon size={24} />;
-      case "Software Engineering":
-        return <CubeIcon size={24} />;
-      default:
-        return <CubeIcon size={24} />;
+      case "Frontend": return <MonitorIcon size={24} />;
+      case "Backend": return <ServerIcon size={24} />;
+      case "Database": return <DatabaseIcon size={24} />;
+      case "Tools & Testing": return <TerminalIcon size={24} />;
+      case "Cloud & DevOps": return <CloudIcon size={24} />;
+      case "Software Engineering": return <CubeIcon size={24} />;
+      default: return <CubeIcon size={24} />;
     }
   };
 
   const skillsData = [
-    {
-      category: "Frontend",
-      items: [
-        "React",
-        "Next.js",
-        "Angular",
-        "Tailwind CSS",
-        "TypeScript",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-      ],
-    },
-    {
-      category: "Backend",
-      items: [
-        "NestJS",
-        "Node.js",
-        "Express.js",
-        "Laravel",
-        "REST API",
-        "Authentication",
-        "RBAC",
-      ],
-    },
-    {
-      category: "Database",
-      items: ["PostgreSQL", "MySQL", "Firebase Firestore", "Prisma ORM"],
-    },
-    {
-      category: "Tools & Testing",
-      items: [
-        "Git",
-        "GitHub",
-        "Postman",
-        "Figma",
-        "Jest",
-        "Cypress",
-        "Unit Testing",
-        "Integration Testing",
-      ],
-    },
-    {
-      category: "Cloud & DevOps",
-      items: [
-        "Docker Compose",
-        "OWASP",
-        "JWT",
-        "AWS",
-        "CI/CD",
-        "Cloud Deployment",
-        "Biznet Cloud",
-      ],
-    },
-    {
-      category: "Software Engineering",
-      items: [
-        "Clean Architecture",
-        "SOLID Principles",
-        "OOP",
-        "System Design",
-        "Agile (Scrum)",
-      ],
-    },
+    { category: "Frontend", items: ["React", "Next.js", "Angular", "Tailwind CSS", "TypeScript", "JavaScript", "HTML5", "CSS3"] },
+    { category: "Backend", items: ["NestJS", "Node.js", "Express.js", "Laravel", "REST API", "Authentication", "RBAC"] },
+    { category: "Database", items: ["PostgreSQL", "MySQL", "Firebase Firestore", "Prisma ORM"] },
+    { category: "Tools & Testing", items: ["Git", "GitHub", "Postman", "Figma", "Jest", "Cypress", "Unit Testing", "Integration Testing"] },
+    { category: "Cloud & DevOps", items: ["Docker Compose", "OWASP", "JWT", "AWS", "CI/CD", "Cloud Deployment", "Biznet Cloud"] },
+    { category: "Software Engineering", items: ["Clean Architecture", "SOLID Principles", "OOP", "System Design", "Agile (Scrum)"] },
   ];
 
   return (
@@ -205,7 +137,6 @@ function AboutLayout() {
           </Reveal>
 
           <Reveal delay={0.1} className={styles.copyCol}>
-            {/* Menggunakan kembali komponen pengikat posisi scroll */}
             <ScrollWordRevealGroup
               paragraphs={aboutParagraphs}
               paragraphClassName={styles.paragraph}
@@ -223,10 +154,7 @@ function AboutLayout() {
           <div className={styles.skillsGrid}>
             {skillsData.map((skillGroup, idx) => (
               <Reveal key={idx} delay={0.2 + idx * 0.05}>
-                <div
-                  className={`card glass ${styles.skillCard}`}
-                  {...spotlight}
-                >
+                <div className={`card glass ${styles.skillCard}`} {...spotlight}>
                   <div className={styles.cardIcon}>
                     {getCategoryIcon(skillGroup.category)}
                   </div>
@@ -234,13 +162,15 @@ function AboutLayout() {
                   <h4 className={styles.skillCategory}>
                     {skillGroup.category}
                   </h4>
-                  <div className={styles.skillItems}>
+                  
+                  {/* SENIOR FIX: Semantic HTML list for better accessibility */}
+                  <ul className={styles.skillItems} aria-label={`${skillGroup.category} skills`}>
                     {skillGroup.items.map((item, i) => (
-                      <span key={i} className={styles.skillTag}>
+                      <li key={i} className={styles.skillTag}>
                         {item}
-                      </span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </Reveal>
             ))}

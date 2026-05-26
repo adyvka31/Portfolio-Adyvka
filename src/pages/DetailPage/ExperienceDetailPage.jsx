@@ -1,13 +1,13 @@
 import { useParams, Navigate } from "react-router-dom";
-import PageShell from "../components/PageShell/PageShell";
-import PageHero from "../components/PageHero/PageHero";
-import CaseStudyBlock from "../components/CaseStudyBlock/CaseStudyBlock";
-import PrevNextNav from "../components/PrevNextNav/PrevNextNav";
-import BottomCTA from "../components/BottomCTA/BottomCTA";
-import Tag from "../components/Tag/Tag";
-import Reveal from "../components/Reveal/Reveal";
-import { experiencesList, getSiblings } from "../data/portfolio";
-import { experienceDetails } from "../data/experienceDetails";
+import PageShell from "../../components/PageShell/PageShell";
+import PageHero from "../../components/PageHero/PageHero";
+import CaseStudyBlock from "../../components/CaseStudyBlock/CaseStudyBlock";
+import PrevNextNav from "../../components/PrevNextNav/PrevNextNav";
+import BottomCTA from "../../components/BottomCTA/BottomCTA";
+import Tag from "../../components/Tag/Tag";
+import Reveal from "../../components/Reveal/Reveal";
+import { experiencesList, getSiblings } from "../../data/portfolio";
+import { experienceDetails } from "../../data/experienceDetails";
 import styles from "./DetailPage.module.css";
 
 function renderBodyBlock(block, idx) {

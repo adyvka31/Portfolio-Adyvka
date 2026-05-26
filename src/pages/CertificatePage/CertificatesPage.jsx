@@ -1,13 +1,13 @@
 // src/pages/CertificatesPage.jsx
 import { Link } from "react-router-dom";
-import PageShell from "../components/PageShell/PageShell";
-import PageHero from "../components/PageHero/PageHero";
-import Reveal from "../components/Reveal/Reveal";
-import Tag from "../components/Tag/Tag";
-import { useCardSpotlight } from "../hooks/useCardSpotlight";
-import { allCertificates } from "../data/portfolio";
-import BottomCTA from "../components/BottomCTA/BottomCTA";
-import Image from "../components/Image/Image";
+import PageShell from "../../components/PageShell/PageShell";
+import PageHero from "../../components/PageHero/PageHero";
+import Reveal from "../../components/Reveal/Reveal";
+import Tag from "../../components/Tag/Tag";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
+import { allCertificates } from "../../data/portfolio";
+import BottomCTA from "../../components/BottomCTA/BottomCTA";
+import Image from "../../components/Image/Image";
 import local from "./CertificatesPage.module.css";
 
 function CertificateCard({ item }) {

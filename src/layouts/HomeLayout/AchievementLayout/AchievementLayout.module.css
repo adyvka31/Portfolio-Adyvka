@@ -1,6 +1,7 @@
+/* SENIOR FIX: Fluid padding */
 .section {
   position: relative;
-  padding: 7rem 1.5rem;
+  padding: clamp(4rem, 10vw, 7rem) 1.5rem;
 }
 
 .container {
@@ -10,38 +11,44 @@
 
 .centeredLabel {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Mobile first alignment */
   margin-bottom: 1rem;
 }
 
+/* SENIOR FIX: Mobile First Header Direction */
 .header {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column-reverse;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 4rem;
-  gap: 2rem;
-  flex-direction: row;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  gap: 1.5rem;
 }
 
-.headline {
-  font-size: 2.25rem;
-  font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 1.05;
-  margin: 0;
-  text-align: right;
-  white-space: nowrap;
-}
-
-@media (min-width: 640px) {
-  .headline {
-    font-size: 3rem;
+@media (min-width: 1024px) {
+  .centeredLabel {
+    justify-content: flex-end;
+  }
+  .header {
+    flex-direction: row;
+    align-items: flex-end;
   }
 }
 
-@media (min-width: 768px) {
+/* SENIOR FIX: Hapus white-space: nowrap & gunakan clamp() */
+.headline {
+  font-size: clamp(2rem, 4.5vw + 1rem, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+  text-align: left; /* Mobile */
+  max-width: 18ch; /* Menjaga agar kalimat turun baris dengan rapi */
+}
+
+@media (min-width: 1024px) {
   .headline {
-    font-size: 3.75rem;
+    text-align: right;
   }
 }
 
@@ -55,25 +62,35 @@
   margin-bottom: 0;
 }
 
+/* SENIOR FIX: Flex-wrap agar chip tidak nabrak di layar sempit */
 .filters {
   display: flex;
-  gap: 0.375rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   font-family: "Geist Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
 }
 
 .chip {
-  padding: 0.375rem 0.85rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--ink-200);
   background: transparent;
   text-transform: capitalize;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.chip:hover {
+.chip:hover,
+.chip:focus-visible {
   color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+.chip:focus-visible {
+  border-color: var(--accent-glow);
 }
 
 .chipActive {
@@ -86,7 +103,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.5rem);
   position: relative;
 }
 
@@ -123,7 +140,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .card:hover .cardImage {
@@ -133,7 +150,7 @@
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
 }
 
 .yearBadge {
@@ -142,6 +159,7 @@
   right: 1rem;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
   font-family: "Geist Mono", monospace;
@@ -151,7 +169,10 @@
 }
 
 .cardBody {
-  padding: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .head {
@@ -180,30 +201,36 @@
 }
 
 .title {
-  font-size: 1.15rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   font-weight: 500;
   margin: 0;
   color: #fff;
-}
-
-.tagWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
-  margin-top: 1.25rem;
+  line-height: 1.3;
 }
 
 .description {
   margin-top: 0.75rem;
   color: rgba(207, 207, 214, 0.6);
-  font-size: 0.875rem;
+  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  flex: 1; /* Memastikan tag selalu terdorong ke bawah jika deskripsi pendek */
 }
 
+/* SENIOR FIX: Reset default ul */
+.tagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 1.25rem 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Logic Fade Card & Tombol */
 .gridWrapper {
   position: relative;
   display: flex;
@@ -211,54 +238,34 @@
   align-items: center;
 }
 
-.gridLimit {
-  position: relative;
-  max-height: 62rem;
-  overflow: hidden;
-  margin-bottom: -22rem; 
+.gridHasOverlay {
+  margin-bottom: -18rem;
 }
 
 .fadedCard {
   opacity: 0.45;
+  pointer-events: none; /* Cegah hover/interaksi pada card yang terpotong */
   mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.6) 20%,
-    transparent 30%
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.1) 40%,
-    transparent 90%
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
   );
-}
-
-.fadeOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(7, 7, 8, 0.2) 0%,
-    rgba(7, 7, 8, 0.8) 40%,
-    var(--bg) 100%
-  );
-  pointer-events: none;
-  z-index: 2;
 }
 
 .seeMoreWrapper {
-  position: relative; 
-  bottom: -1rem;
+  position: relative;
   z-index: 20;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 4rem;
+  margin-bottom: 10rem;
 }
 
 .seeMoreBtn {
@@ -268,23 +275,19 @@
   border-radius: 9999px;
   color: #fff;
   font-weight: 500;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-.seeMoreBtn:hover {
-  background: rgba(255, 255, 255, 0.08);
+.seeMoreBtn:hover,
+.seeMoreBtn:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--accent-glow);
   color: #fff;
   transform: translateY(-2px);
-}
-
-.seeMoreBtn svg {
-  transition: transform 0.3s ease;
-}
-
-.seeMoreBtn:hover svg {
-  transform: translateX(4px);
+  outline: none;
 }

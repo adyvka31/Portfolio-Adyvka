@@ -1,16 +1,16 @@
-import SEO from "../components/SEO/SEO";
+import SEO from "../../components/SEO/SEO";
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import PageShell from "../components/PageShell/PageShell";
-import PageHero from "../components/PageHero/PageHero";
-import Reveal from "../components/Reveal/Reveal";
-import Tag from "../components/Tag/Tag";
-import BottomCTA from "../components/BottomCTA/BottomCTA";
-import { SearchIcon, ArrowUpRightIcon } from "../components/Icons/Icons";
-import { useCardSpotlight } from "../hooks/useCardSpotlight";
-import { projectsList, projectFilters } from "../data/portfolio";
-import styles from "./IndexPage.module.css";
-import Image from "../components/Image/Image";
+import PageShell from "../../components/PageShell/PageShell";
+import PageHero from "../../components/PageHero/PageHero";
+import Reveal from "../../components/Reveal/Reveal";
+import Tag from "../../components/Tag/Tag";
+import BottomCTA from "../../components/BottomCTA/BottomCTA";
+import { SearchIcon, ArrowUpRightIcon } from "../../components/Icons/Icons";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
+import { projectsList, projectFilters } from "../../data/portfolio";
+import styles from "./ProjectPage.module.css";
+import Image from "../../components/Image/Image";
 
 function ProjectCard({ project }) {
   return (

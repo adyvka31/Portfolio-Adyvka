@@ -1,6 +1,7 @@
+/* SENIOR FIX: Fluid Padding agar proporsional di mobile & desktop */
 .section {
   position: relative;
-  padding: 7rem 1.5rem;
+  padding: clamp(4rem, 10vw, 7rem) 1.5rem;
 }
 
 .container {
@@ -8,10 +9,9 @@
   margin: 0 auto;
 }
 
-/* Memposisikan SectionLabel ke tengah */
 .centeredLabel {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Mobile first: kiri */
   margin-bottom: 1rem;
 }
 
@@ -19,9 +19,18 @@
   font-size: clamp(2.25rem, 5vw, 3.75rem);
   font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 1.05;
-  margin: 0 0 6rem 0;
-  text-align: center;
+  line-height: 1.1; /* Diperbaiki dari 1.05 agar descender font tidak terpotong */
+  margin: 0 0 clamp(3rem, 8vw, 6rem) 0;
+  text-align: left; /* Mobile first */
+}
+
+@media (min-width: 768px) {
+  .centeredLabel {
+    justify-content: center;
+  }
+  .headline {
+    text-align: center;
+  }
 }
 
 .italic {
@@ -32,17 +41,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2rem; /* Jarak aman di mobile */
 }
 
-/* Spine Tengah Mewah */
+/* Spine Tengah */
 .spine {
   position: absolute;
-  left: 50%;
+  left: 1.5rem; /* Posisi mobile */
   top: 0;
   bottom: 0;
   width: 1px;
-  transform: translateX(-50%);
   background: linear-gradient(
     to bottom,
     transparent,
@@ -53,6 +61,7 @@
     transparent
   );
   opacity: 0.3;
+  z-index: 0;
 }
 
 .item {
@@ -62,50 +71,63 @@
   width: 100%;
   align-items: center;
   z-index: 2;
-  transition: margin 0.4s ease;
+  padding-left: 3.5rem; /* Memberi ruang untuk dot di mobile */
 }
 
+/* --- DESKTOP GRID SYSTEM (Min 768px) --- */
 @media (min-width: 768px) {
+  .timeline {
+    gap: 0;
+  }
+
+  .spine {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .revealWrapper {
-    margin-top: -2rem; /* Sesuaikan nilai ini sesuai keinginan */
+    /* Fluid negative margin mencegah tabrakan di layar tablet */
+    margin-top: clamp(-4rem, -5vw, -2rem);
     position: relative;
   }
 
   .item {
-    display: grid;
+    padding-left: 0;
     grid-template-columns: 1fr 1fr;
-    gap: 8rem;
-    position: relative;
-    align-items: center;
+    /* Fluid gap menggantikan 8rem yang raksasa */
+    gap: clamp(2rem, 8vw, 6rem);
+  }
+
+  /* SENIOR FIX: Explicit Grid Columns menggantikan 'grid-order' yang invalid */
+  .leftSide .itemCard {
+    grid-column: 1;
+    text-align: right;
+  }
+  .leftSide .spacer {
+    grid-column: 2;
+    display: block;
+  }
+
+  .rightSide .spacer {
+    grid-column: 1;
+    display: block;
+  }
+  .rightSide .itemCard {
+    grid-column: 2;
+    text-align: left;
   }
 }
 
-/* Pengaturan arah konten */
-.leftSide .itemCard {
-  text-align: right;
-  grid-order: 1;
-}
-.leftSide .spacer {
-  order: 2;
-}
-
-.rightSide .itemCard {
-  order: 2;
-}
-.rightSide .spacer {
-  order: 1;
-}
-
-/* Dot tepat di tengah Spine */
+/* Dot Navigation */
 .dot {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.85rem;
+  height: 0.85rem;
   background: var(--ink-400);
   border: 2px solid var(--ink-950);
   border-radius: 9999px;
   position: absolute;
-  left: 1.5rem; /* Default mobile */
-  top: 2rem;
+  left: 1.5rem; /* Mobile */
+  top: 2.5rem; /* Posisi sejajar dengan label tahun */
   transform: translateX(-50%);
   transition: all 0.3s ease;
   z-index: 10;
@@ -114,7 +136,7 @@
 @media (min-width: 768px) {
   .dot {
     left: 50%;
-    top: 50%;
+    top: 50%; /* Di desktop kembali ke tengah vertikal */
     transform: translate(-50%, -50%);
   }
 }
@@ -122,12 +144,13 @@
 .dotCurrent {
   background: var(--accent-glow);
   box-shadow: 0 0 15px var(--accent-glow);
+  border-color: var(--accent-deep);
 }
 
 /* Card Styling */
 .itemCard {
-  padding: 2rem;
-  border-radius: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 1.25rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s ease;
@@ -136,6 +159,7 @@
 .itemCard:hover {
   border-color: rgba(124, 242, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
 }
 
 .period {
@@ -150,7 +174,7 @@
 }
 
 .role {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 500;
   margin: 0;
   background: linear-gradient(180deg, #fff 0%, var(--ink-200) 100%);
@@ -161,46 +185,39 @@
 
 .company {
   font-family: "Geist Mono", monospace;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--accent-glow);
-  margin-top: 0.25rem;
-  opacity: 0.8;
+  margin-top: 0.375rem;
+  opacity: 0.85;
 }
 
 .description {
   color: rgba(207, 207, 214, 0.7);
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
   line-height: 1.6;
   margin: 1rem 0 0 0;
 }
 
+/* SENIOR FIX: Alignment Tags yang benar */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1.25rem;
-  justify-content: inherit;
+  margin: 1.25rem 0 0 0;
+  padding: 0;
+  justify-content: flex-start; /* Mobile default */
 }
 
-/* Responsivitas Mobile */
-@media (max-width: 767px) {
-  .spine {
-    left: 1.5rem;
+@media (min-width: 768px) {
+  /* Pastikan tag bersandar ke tulang punggung timeline */
+  .leftSide .tags {
+    justify-content: flex-end;
   }
-  .item {
-    padding-left: 3.5rem;
-  }
-  .leftSide .itemCard,
-  .rightSide .itemCard {
-    text-align: left;
-  }
-  .spacer {
-    display: none;
-  }
-  .centeredLabel {
+  .rightSide .tags {
     justify-content: flex-start;
   }
-  .headline {
-    text-align: left;
-  }
+}
+
+.spacer {
+  display: none;
 }

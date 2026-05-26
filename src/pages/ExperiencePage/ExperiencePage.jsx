@@ -1,20 +1,20 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import PageShell from "../components/PageShell/PageShell";
-import PageHero from "../components/PageHero/PageHero";
-import Reveal from "../components/Reveal/Reveal";
-import BottomCTA from "../components/BottomCTA/BottomCTA";
-import SectionLabel from "../components/SectionLabel/SectionLabel";
-import Tag from "../components/Tag/Tag";
-import { useCardSpotlight } from "../hooks/useCardSpotlight";
+import PageShell from "../../components/PageShell/PageShell";
+import PageHero from "../../components/PageHero/PageHero";
+import Reveal from "../../components/Reveal/Reveal";
+import BottomCTA from "../../components/BottomCTA/BottomCTA";
+import SectionLabel from "../../components/SectionLabel/SectionLabel";
+import Tag from "../../components/Tag/Tag";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import {
   experiencesList,
   recognitionData,
   extraTeachingExperiences,
   extraOtherExperiences,
-} from "../data/portfolio";
+} from "../../data/portfolio";
 import styles from "./ExperiencePage.module.css";
-import Image from "../components/Image/Image";
+import Image from "../../components/Image/Image";
 
 function ExperienceBentoCard({ item }) {
   const spotlight = useCardSpotlight();

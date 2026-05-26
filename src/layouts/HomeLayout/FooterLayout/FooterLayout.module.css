@@ -1,9 +1,11 @@
+/* SENIOR FIX: Fluid Padding */
 .footer {
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 3rem 1.5rem;
+  padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
 }
 
+/* SENIOR FIX: Mobile First Layout dengan Gap Dinamis */
 .container {
   max-width: 72rem;
   margin: 0 auto;
@@ -11,7 +13,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: clamp(2rem, 5vw, 3rem);
 }
 
 @media (min-width: 768px) {
@@ -21,48 +23,93 @@
   }
 }
 
+.brandWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .brand {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  margin-bottom: 0.5rem;
 }
 
+/* SENIOR FIX: Fluid Typography */
 .name {
   font-weight: 500;
   letter-spacing: -0.025em;
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: #fff;
 }
 
 .copyright {
   font-family: "Geist Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   color: var(--ink-200);
   margin: 0;
 }
 
+/* Navigasi */
+.nav {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    width: auto;
+  }
+}
+
+/* SENIOR FIX: Reset ul element */
 .links {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.75rem);
   font-family: "Geist Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   color: var(--ink-200);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .link {
-  transition: color 0.2s ease;
+  color: var(--ink-200);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  /* SENIOR FIX: Touch Target Size (Mencegah salah ketuk di mobile) */
+  padding: 0.375rem 0;
+  display: inline-block;
 }
 
 .link:hover {
   color: #fff;
 }
 
+/* SENIOR FIX: Keyboard Accessibility */
+.link:focus-visible {
+  color: #fff;
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent-glow);
+}
+
 .status {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.375rem 0;
+  /* Mendorong status ke sisi kanan secara halus jika wrap terjadi di mobile */
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .status {
+    margin-left: 0;
+  }
 }
 
 .dot {
@@ -70,4 +117,5 @@
   height: 0.375rem;
   border-radius: 9999px;
   background: #34d399;
+  flex-shrink: 0;
 }

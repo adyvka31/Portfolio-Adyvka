@@ -7,20 +7,34 @@ function TextMarqueeLayout() {
       {marqueeStack.map((item, idx) => (
         <span key={`${item}-${idx}`} className={styles.row}>
           <span className={styles.itemText}>{item}</span>
-          <span className={styles.bullet}>◆</span>
+          <span className={styles.bullet} aria-hidden="true">
+            ◆
+          </span>
         </span>
       ))}
     </div>
   );
 
   return (
-    <section id="trusted" className={styles.section}>
-      <div className={styles.caption}>Tools I build with daily</div>
+    <section
+      id="trusted"
+      className={styles.section}
+      aria-label="Tools and Technologies"
+    >
+      <h2 className={styles.caption}>Tools I build with daily</h2>
 
       <div className={styles.viewport}>
-        <div className={`${styles.fade} ${styles.fadeLeft}`} />
-        <div className={`${styles.fade} ${styles.fadeRight}`} />
+        {/* Fades untuk efek vignette kiri dan kanan */}
+        <div
+          className={`${styles.fade} ${styles.fadeLeft}`}
+          aria-hidden="true"
+        />
+        <div
+          className={`${styles.fade} ${styles.fadeRight}`}
+          aria-hidden="true"
+        />
 
+        {/* SENIOR FIX: Tambahkan hover-pause melalui CSS parent */}
         <div className={`${styles.marquee} marquee-track`}>
           {renderTrack(false)}
           {renderTrack(true)}
