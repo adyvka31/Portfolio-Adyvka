@@ -5,7 +5,7 @@ import PageHero from "../components/PageHero/PageHero";
 import Reveal from "../components/Reveal/Reveal";
 import Tag from "../components/Tag/Tag";
 import { useCardSpotlight } from "../hooks/useCardSpotlight";
-import { allCertificates } from "../data/portfolio"; // Sesuaikan dengan nama variabel data Anda
+import { allCertificates } from "../data/portfolio";
 import BottomCTA from "../components/BottomCTA/BottomCTA";
 import Image from "../components/Image/Image";
 import local from "./CertificatesPage.module.css";
@@ -19,7 +19,27 @@ function CertificateCard({ item }) {
       className={`glass ${local.card}`}
       {...spot}
     >
-      {/* 1. Framed Image Display */}
+      {/* 1. Verified Ribbon - Berada di luar gambar, mengikat ujung card */}
+      <div className={local.verifiedBadge}>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        Verified
+      </div>
+
+      {/* Framed Image Display */}
       <div className={local.imageFrame}>
         <Image
           src={item.image}
@@ -30,9 +50,16 @@ function CertificateCard({ item }) {
         />
         <div className={local.imageOverlay} />
 
-        {/* 2. Floating Verified Badge */}
-        <div className={local.badge}>
+        {/* Date Tag - Melayang di Kanan Atas */}
+        <div className={local.dateTag}>{item.year}</div>
+      </div>
+
+      {/* Certificate Info */}
+      <div className={local.info}>
+        {/* Data Penyelenggara (Issuer) di atas Title */}
+        <div className={local.meta}>
           <svg
+            className={local.issuerIcon}
             width="14"
             height="14"
             viewBox="0 0 24 24"
@@ -40,22 +67,14 @@ function CertificateCard({ item }) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+              d="M3 21h18M3 7v14a2 2 0 002 2h14a2 2 0 002-2V7M9 21V9h6v12M3 7l9-4 9 4"
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
-          Verified
-        </div>
-      </div>
-
-      {/* 3. Certificate Info */}
-      <div className={local.info}>
-        <div className={local.meta}>
           <span className={local.issuer}>{item.issuer}</span>
-          <span className={local.year}>{item.year}</span>
         </div>
 
         <h3 className={local.title}>{item.title}</h3>
@@ -68,8 +87,8 @@ function CertificateCard({ item }) {
           ))}
         </div>
 
-        {/* 4. Action Link dengan Ticket-Dashed Border */}
-        <div className={local.actionWrapper}>
+        {/* Action Button - Design seperti Tag tapi Full Width */}
+        <div className={local.actionBtn}>
           <span className={local.actionText}>View Credential</span>
           <svg
             className={local.actionIcon}
