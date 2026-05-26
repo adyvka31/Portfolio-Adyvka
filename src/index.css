@@ -123,9 +123,9 @@ textarea {
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   -webkit-transform: translateZ(0);
+  will-change: transform;
   transform: translateZ(0);
   border: 1px solid var(--line);
-  will-change: transform;
 }
 
 .glass-hi {
