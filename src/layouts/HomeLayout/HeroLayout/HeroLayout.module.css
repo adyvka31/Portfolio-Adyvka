@@ -20,7 +20,7 @@
 .statusRight {
   display: none;
   position: absolute;
-  top: 50%; 
+  top: 55%; 
   z-index: 20;
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.65rem;
