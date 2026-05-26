@@ -119,9 +119,10 @@ textarea {
    SURFACES
    ============================================ */
 .glass {
-  background: rgba(20, 20, 25, 0.92);
-  border: 1px solid var(--line);
-  will-change: transform;
+  background: rgba(10, 10, 12, 0.6); 
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 

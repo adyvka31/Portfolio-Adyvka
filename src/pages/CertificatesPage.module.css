@@ -61,11 +61,14 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 3.5rem;
+
+  /* 1. TURUNKAN OPACITY agar blur bisa tembus */
   background: linear-gradient(
     180deg,
-    rgba(18, 20, 24, 0.96),
-    rgba(6, 8, 10, 0.98)
+    rgba(18, 20, 24, 0.65),
+    /* tadinya 0.96 */ rgba(6, 8, 10, 0.75) /* tadinya 0.98 */
   );
+
   border-top: 1px solid rgba(124, 242, 255, 0.25);
   border-bottom: 1px solid rgba(124, 242, 255, 0.12);
   color: var(--accent-glow);
@@ -74,12 +77,14 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transform: rotate(-38deg);
+
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  -webkit-transform: translateZ(0) rotate(-38deg);
+  transform: translateZ(0) rotate(-38deg);
 }
 
 /* =========================================
