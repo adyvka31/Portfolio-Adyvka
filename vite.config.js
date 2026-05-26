@@ -1,28 +1,25 @@
-import { defineConfig, splitVendorChunkPlugin } from "vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { imagetools } from "vite-imagetools";
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), imagetools()],
+  plugins: [react()],
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          framer: ["framer-motion"],
-          router: ["react-router-dom", "react-router"],
-          "react-vendor": ["react", "react-dom"],
+        manualChunks(id) {
+          if (
+            id.includes("node_modules/react") ||
+            id.includes("node_modules/react-dom") ||
+            id.includes("node_modules/react-router-dom")
+          ) {
+            return "react-vendor";
+          }
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
         },
       },
-    },
-    sourcemap: false,
-    target: "es2020",
-    cssCodeSplit: true,
-    chunkSizeWarningLimit: 500,
-  },
-  // Preload hints otomatis
-  experimental: {
-    renderBuiltUrl(filename) {
-      return filename;
     },
   },
 });
