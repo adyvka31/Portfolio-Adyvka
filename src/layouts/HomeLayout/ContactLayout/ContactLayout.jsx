@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import Reveal from "../../../components/Reveal/Reveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-import profilePhoto from "../../../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
+import profilePhoto from "../../../assets/profile3.webp?w=400;800;1200&format=avif;webp&as=picture";
 import Image from "../../../components/Image/Image";
 
 import {
@@ -137,8 +137,8 @@ export default function ContactLayout() {
                   src={profilePhoto}
                   alt={personalInfo.name}
                   className={styles.ncAvatar}
-                  width={500}
-                  height={500}
+                  width={470}
+                  height={470}
                 />
                 <div className={styles.ncImageOverlay} />
               </div>

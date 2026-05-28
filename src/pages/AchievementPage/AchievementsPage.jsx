@@ -14,12 +14,11 @@ function TextContentCard({ item }) {
   const spot = useCardSpotlight();
 
   return (
-    // Gunakan class "glass" bawaan tema Anda + class lokal untuk layout
-    <div className={`glass ${local.textCard}`} {...spot}>
-      <div className={local.meta}>
+    <article className={`glass ${local.textCard}`} {...spot}>
+      <header className={local.meta}>
         <span className={local.year}>{item.year}</span>
         <span className={local.institution}>{item.institution}</span>
-      </div>
+      </header>
 
       <h3 className={local.title}>{item.title}</h3>
 
@@ -28,16 +27,20 @@ function TextContentCard({ item }) {
           "Sebuah bukti nyata dari eksekusi teknis yang presisi, pemecahan masalah kompleks, dan dedikasi terhadap standar kualitas tertinggi."}
       </p>
 
-      <div className={local.tags}>
+      <ul className={local.tags} aria-label="Skills and topics">
         {item.tags?.slice(0, 4).map((t) => (
-          <Tag key={t} size="sm">
-            {t}
-          </Tag>
+          <li key={t} style={{ listStyle: "none" }}>
+            <Tag size="sm">{t}</Tag>
+          </li>
         ))}
-      </div>
+      </ul>
 
-      <div className={local.actionWrapper}>
-        <Link to={`/achievements/${item.slug}`} className={local.readMore}>
+      <footer className={local.actionWrapper}>
+        <Link
+          to={`/achievements/${item.slug}`}
+          className={local.readMore}
+          aria-label={`Read the full story about ${item.title}`}
+        >
           <span>Read the full story</span>
           <svg
             width="18"
@@ -45,6 +48,7 @@ function TextContentCard({ item }) {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M5 12H19M19 12L12 5M19 12L12 19"
@@ -55,8 +59,8 @@ function TextContentCard({ item }) {
             />
           </svg>
         </Link>
-      </div>
-    </div>
+      </footer>
+    </article>
   );
 }
 
@@ -73,32 +77,42 @@ export default function AchievementsPage() {
         description="Achievements aren’t just a list on a resume. They’re a record of dedication, execution, and high standards. Here’s the story behind them."
       />
 
-      <section className={local.storySection}>
-        <div className={local.timelineLine}></div>
+      <section
+        className={local.storySection}
+        aria-label="Featured Achievements"
+      >
+        <div className={local.timelineLine} aria-hidden="true"></div>
 
         <div className={local.storyContainer}>
           {storyItems.map((item, i) => {
             const isReverse = i % 2 !== 0;
             return (
-              <Reveal key={item.slug} delay={0.2}>
+              <Reveal key={item.slug} delay={0.1}>
                 <div
                   className={`${local.storyBlock} ${isReverse ? local.reverse : ""}`}
                 >
-                  <div className={local.giantNumber}>0{i + 1}</div>
+                  {/* SENIOR FIX: Sembunyikan angka raksasa dekoratif dari screen reader */}
+                  <div className={local.giantNumber} aria-hidden="true">
+                    0{i + 1}
+                  </div>
 
                   <div className={local.imageColumn}>
                     <Link
                       to={`/achievements/${item.slug}`}
                       className={local.imageWrap}
+                      aria-label={`View images for ${item.title}`}
+                      tabIndex={
+                        -1
+                      } /* Hindari tab stop ganda karena tombol read more sudah ada */
                     >
                       <Image
                         src={item.image}
-                        alt={item.title}
+                        alt={`Highlight of ${item.title}`}
                         className={local.image}
                         width={900}
                         height={560}
                       />
-                      <div className={local.imageOverlay} />
+                      <div className={local.imageOverlay} aria-hidden="true" />
                     </Link>
                   </div>
 

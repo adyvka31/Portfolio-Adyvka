@@ -14,19 +14,26 @@ function CertificateCard({ item }) {
   const spot = useCardSpotlight();
 
   return (
-    <Link
-      to={`/certificates/${item.slug}`}
+    <article
       className={`glass ${local.card}`}
       {...spot}
+      aria-label={`Certificate: ${item.title}`}
     >
-      {/* 1. Verified Ribbon - Berada di luar gambar, mengikat ujung card */}
-      <div className={local.verifiedBadge}>
+      {/* SENIOR FIX: The Absolute Link Overlay */}
+      <Link
+        to={`/certificates/${item.slug}`}
+        className={local.cardLinkOverlay}
+        aria-label={`View details for ${item.title}`}
+      />
+
+      <div className={local.verifiedBadge} aria-hidden="true">
         <svg
           width="14"
           height="14"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
@@ -39,37 +46,34 @@ function CertificateCard({ item }) {
         Verified
       </div>
 
-      {/* Framed Image Display */}
       <div className={local.imageFrame}>
         <Image
           src={item.image}
-          alt={item.title}
+          alt={`Certificate credential for ${item.title}`}
           className={local.image}
           width={600}
           height={450}
         />
-        <div className={local.imageOverlay} />
-
-        {/* Date Tag - Melayang di Kanan Atas */}
-        <div className={local.dateTag}>{item.year}</div>
+        <div className={local.imageOverlay} aria-hidden="true" />
+        <div className={local.dateTag} aria-label={`Issued in ${item.year}`}>
+          {item.year}
+        </div>
       </div>
 
-      {/* Certificate Info */}
       <div className={local.info}>
         <div className={local.institution}>— {item.institution}</div>
-
         <h3 className={local.title}>{item.title}</h3>
 
-        <div className={local.tags}>
+        {/* SENIOR FIX: Semantic <ul> untuk tags */}
+        <ul className={local.tags} aria-label="Skills acquired">
           {item.tags?.slice(0, 3).map((t) => (
-            <Tag key={t} size="xs">
-              {t}
-            </Tag>
+            <li key={t} style={{ listStyle: "none" }}>
+              <Tag size="xs">{t}</Tag>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        {/* Action Button - Design seperti Tag tapi Full Width */}
-        <div className={local.actionBtn}>
+        <div className={local.actionBtn} aria-hidden="true">
           <span className={local.actionText}>View Credential</span>
           <svg
             className={local.actionIcon}
@@ -89,7 +93,7 @@ function CertificateCard({ item }) {
           </svg>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }
 
@@ -106,11 +110,11 @@ export default function CertificatesPage() {
         description="Koleksi sertifikasi dan lisensi profesional yang membuktikan kompetensi teknis, kredibilitas, dan komitmen saya terhadap pembelajaran berkelanjutan."
       />
 
-      <section className={local.gridSection}>
+      <section className={local.gridSection} aria-label="Certificate Gallery">
         <div className={local.gridInner}>
           <div className={local.grid}>
             {items.map((item, i) => (
-              <Reveal key={item.slug} delay={i * 0.05}>
+              <Reveal key={item.slug} delay={(i % 3) * 0.05}>
                 <CertificateCard item={item} />
               </Reveal>
             ))}

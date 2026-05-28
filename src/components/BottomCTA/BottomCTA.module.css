@@ -1,50 +1,77 @@
+/* SENIOR FIX: Fluid Padding */
 .section {
-  padding: 7rem 1.5rem 5rem;
+  padding: clamp(4rem, 10vw, 7rem) 1.5rem clamp(5rem, 12vw, 8rem);
+  position: relative;
+  overflow: hidden;
 }
+
 .container {
   max-width: 56rem;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .eyebrow {
-  font-family: "Geist Mono", monospace;
-  font-size: 0.75rem;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   color: var(--accent-glow);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem); /* Fluid margin */
 }
+
 .title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 1.05;
+  line-height: 1.1; 
   margin: 0;
 }
+
 .italic {
   font-style: italic;
 }
+
 .description {
-  margin-top: 1.5rem;
+  margin-top: clamp(1.25rem, 3vw, 1.5rem);
   color: rgba(207, 207, 214, 0.75);
-  font-size: 1.0625rem;
+  font-size: clamp(0.95rem, 2vw, 1.0625rem); /* Fluid font size */
+  line-height: 1.6;
   max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
 }
+
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  margin-top: 2.5rem;
+  margin-top: clamp(2rem, 5vw, 2.5rem);
   background: #fff;
   color: var(--ink-950);
-  padding: 0.875rem 1.5rem;
+  padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 9999px;
   font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 500; 
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
+  border: 2px solid transparent;
 }
+
 .btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn:focus-visible {
+  outline: none;
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 0 2px rgba(124, 242, 255, 0.3);
   transform: translateY(-2px);
 }

@@ -4,26 +4,39 @@ import styles from "./BottomCTA.module.css";
 
 export default function BottomCTA({
   eyebrow = "What's next",
-  title = "Let's build something",
+  // SENIOR FIX: Pindahkan tanda titik ke dalam prop default agar bisa diubah menjadi "?" atau "!" nantinya
+  title = "Let's build something.",
   italicWord = "something",
   description = "Recruiting, contracting, or just curious — the inbox is open.",
 }) {
-  const [before, after] = title.split(italicWord);
+  // SENIOR FIX: RegEx Case-Insensitive Split yang anti-gagal
+  const renderTitle = () => {
+    if (!italicWord) return title;
+
+    // Pecah string dengan mengabaikan huruf besar/kecil (flag "i")
+    const regex = new RegExp(`(${italicWord})`, "i");
+    const parts = title.split(regex);
+
+    return parts.map((part, i) =>
+      part.toLowerCase() === italicWord.toLowerCase() ? (
+        <span key={i} className={`font-serif ${styles.italic} text-glow`}>
+          {part}
+        </span>
+      ) : (
+        <span key={i}>{part}</span>
+      ),
+    );
+  };
+
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-label="Call to Action">
       <div className={styles.container}>
         <div className="css-reveal">
           <div className={styles.eyebrow}>{eyebrow}</div>
         </div>
 
         <div className="css-reveal">
-          <h2 className={`${styles.title} text-fade`}>
-            {before}
-            <span className={`font-serif ${styles.italic} text-glow`}>
-              {italicWord}
-            </span>
-            {after}.
-          </h2>
+          <h2 className={`${styles.title} text-fade`}>{renderTitle()}</h2>
         </div>
 
         <div className="css-reveal">
@@ -31,9 +44,9 @@ export default function BottomCTA({
         </div>
 
         <div className="css-reveal">
-          <Link to="/#contact" className={`btn-primary ${styles.btn}`}>
-            Get in touch <ArrowRightIcon />
-          </Link>
+          <a href="/#contact" className={`btn-primary ${styles.btn}`}>
+            Get in touch <ArrowRightIcon size={16} />
+          </a>
         </div>
       </div>
     </section>

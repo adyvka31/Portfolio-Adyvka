@@ -53,7 +53,7 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  // SENIOR FIX: Body Scroll Lock ketika Modal / Menu terbuka
+  // Body Scroll Lock ketika Modal / Menu terbuka
   useEffect(() => {
     if (menuOpen || cvOpen) {
       document.body.style.overflow = "hidden";
@@ -150,6 +150,19 @@ export default function Navbar() {
                 </li>
               ))}
               <li className={styles.sheetDivider}></li>
+
+              {/* ✅ TAMBAHAN: LinkedIn Profile di atas GitHub Profile */}
+              <li>
+                <a
+                  href={personalInfo.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.sheetLink}
+                >
+                  LinkedIn Profile <ArrowUpRightIcon size={16} />
+                </a>
+              </li>
+
               <li>
                 <a
                   href={personalInfo.socials.github}
@@ -200,7 +213,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* SENIOR FIX: Tambahkan styling scrolling khusus iframe mobile */}
             <div className={styles.iframeContainer}>
               <iframe
                 src={`${personalInfo.cvUrl}#view=FitH&toolbar=1`}

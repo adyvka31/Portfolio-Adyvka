@@ -72,21 +72,6 @@
 .link:hover {
   color: #fff;
 }
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background: #fff;
-  color: var(--ink-950);
-  padding: 0.375rem 0.875rem;
-  border-radius: 9999px;
-  transition: background 0.2s ease;
-}
-.cta:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
 
 .actions {
   display: flex;

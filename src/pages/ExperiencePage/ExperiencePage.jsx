@@ -20,7 +20,11 @@ function ExperienceBentoCard({ item }) {
   const spotlight = useCardSpotlight();
 
   return (
-    <div className={`card glass ${styles.card}`} {...spotlight}>
+    <article
+      className={`card glass ${styles.card}`}
+      {...spotlight}
+      aria-label={`Experience: ${item.title}`}
+    >
       <div className={styles.imageContainer}>
         <Image
           src={item.image}
@@ -29,8 +33,10 @@ function ExperienceBentoCard({ item }) {
           width={600}
           height={400}
         />
-        <div className={styles.imageOverlay} />
-        <span className={styles.yearBadge}>{item.year}</span>
+        <div className={styles.imageOverlay} aria-hidden="true" />
+        <span className={styles.yearBadge} aria-label={`Year ${item.year}`}>
+          {item.year}
+        </span>
       </div>
 
       <div className={styles.cardBody}>
@@ -38,21 +44,26 @@ function ExperienceBentoCard({ item }) {
           <div className={styles.institutionWrapper}>
             <span className={styles.institution}>— {item.institution}</span>
           </div>
-          {item.icon && <span className={styles.icon}>{item.icon}</span>}
+          {item.icon && (
+            <span className={styles.icon} aria-hidden="true">
+              {item.icon}
+            </span>
+          )}
         </div>
 
         <h3 className={styles.title}>{item.title}</h3>
         <p className={styles.description}>{item.description}</p>
 
-        <div className={styles.tagWrapper}>
+        {/* SENIOR FIX: Semantic list untuk tags */}
+        <ul className={styles.tagWrapper} aria-label="Skills and technologies">
           {item.tags?.map((tag) => (
-            <Tag key={tag} size="xs">
-              {tag}
-            </Tag>
+            <li key={tag} style={{ listStyle: "none" }}>
+              <Tag size="xs">{tag}</Tag>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -63,6 +74,8 @@ export default function ExperiencePage() {
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
+      // SENIOR FIX: Menghitung lebar card secara dinamis jika diperlukan,
+      // tapi 370px adalah angka fallback yang aman.
       const scrollAmount = 370;
       if (direction === "left") {
         current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -72,23 +85,19 @@ export default function ExperiencePage() {
     }
   };
 
-  // 1. Data Work Experience
   const workExperiences = experiencesList;
 
-  // 2. Data Teaching Experience Asli (dari portfolio.js)
   const baseTeachingExperiences = recognitionData.experience.filter(
     (exp) =>
       exp.title.toLowerCase().includes("instructor") ||
       exp.title.toLowerCase().includes("teaching"),
   );
 
-  // 3. Gabungkan data bawaan dengan data extra baru dari portfolio.js
   const teachingExperiencesRaw = [
     ...baseTeachingExperiences,
     ...extraTeachingExperiences,
   ];
 
-  // Logika Filter untuk Teaching Experience
   const teachingTabs = ["All", "Game Development", "Web Development", "Other"];
 
   const teachingExperiences = teachingExperiencesRaw.filter((item) => {
@@ -103,18 +112,15 @@ export default function ExperiencePage() {
       const isWebDev = item.tags?.includes("Web Development");
       return !isGameDev && !isWebDev;
     }
-
     return true;
   });
 
-  // 4. Data Other Experience
   const baseOther = recognitionData.experience.filter(
     (exp) =>
       !exp.title.toLowerCase().includes("instructor") &&
       !exp.title.toLowerCase().includes("teaching"),
   );
 
-  // Kedua, gabungkan dengan data extra baru
   const otherExperiences = [...baseOther, ...extraOtherExperiences];
 
   return (
@@ -128,7 +134,10 @@ export default function ExperiencePage() {
       />
 
       {/* 01 - WORK EXPERIENCE */}
-      <section className={`${styles.section} ${styles.firstSection}`}>
+      <section
+        className={`${styles.section} ${styles.firstSection}`}
+        aria-label="Work Experience"
+      >
         <div className={styles.container}>
           <Reveal>
             <div className={`${styles.sectionHead} ${styles.headLeft}`}>
@@ -147,24 +156,38 @@ export default function ExperiencePage() {
             <button
               onClick={() => scroll("left")}
               className={`${styles.arrowBtn} ${styles.arrowLeft}`}
-              aria-label="Scroll left"
+              aria-label="Scroll carousel left"
             >
               ←
             </button>
 
             <div className={styles.timelineWrapper}>
-              <div className={styles.spine} />
-              <div className={styles.timelineInner} ref={scrollRef}>
+              <div className={styles.spine} aria-hidden="true" />
+              <div
+                className={styles.timelineInner}
+                ref={scrollRef}
+                role="list"
+                aria-label="Timeline of work experiences"
+              >
                 {workExperiences.map((exp, i) => (
-                  <div key={exp.slug} className={styles.cardWrapper}>
+                  <div
+                    key={exp.slug}
+                    className={styles.cardWrapper}
+                    role="listitem"
+                  >
                     <Reveal delay={i * 0.08}>
-                      <Link
-                        to={`/experience/${exp.slug}`}
-                        className={styles.row}
-                      >
+                      {/* SENIOR FIX: Bungkus link dalam article */}
+                      <article className={styles.row}>
+                        <Link
+                          to={`/experience/${exp.slug}`}
+                          className={styles.rowLinkOverlay}
+                          aria-label={`View details for ${exp.role}`}
+                        />
                         <div
                           className={`${styles.dot} ${exp.current ? styles.dotCurrent : ""}`}
+                          aria-hidden="true"
                         />
+
                         <div className={styles.rowContent}>
                           <div
                             className={`${styles.period} ${exp.current ? styles.periodCurrent : ""}`}
@@ -176,9 +199,11 @@ export default function ExperiencePage() {
                           <p className={styles.description}>
                             {exp.description}
                           </p>
-                          <span className={styles.cta}>Read more →</span>
+                          <span className={styles.cta} aria-hidden="true">
+                            Read more →
+                          </span>
                         </div>
-                      </Link>
+                      </article>
                     </Reveal>
                   </div>
                 ))}
@@ -188,7 +213,7 @@ export default function ExperiencePage() {
             <button
               onClick={() => scroll("right")}
               className={`${styles.arrowBtn} ${styles.arrowRight}`}
-              aria-label="Scroll right"
+              aria-label="Scroll carousel right"
             >
               →
             </button>
@@ -197,7 +222,7 @@ export default function ExperiencePage() {
       </section>
 
       {/* 02 - TEACHING EXPERIENCE */}
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Teaching Experience">
         <div className={styles.container}>
           <Reveal>
             <div className={styles.headContentReverse}>
@@ -212,14 +237,19 @@ export default function ExperiencePage() {
                 </h2>
               </div>
 
-              <div className={styles.filterTabs}>
+              {/* SENIOR FIX: A11y Tablist implementation */}
+              <div
+                className={styles.filterTabs}
+                role="tablist"
+                aria-label="Filter teaching experiences"
+              >
                 {teachingTabs.map((tab) => (
                   <button
                     key={tab}
+                    role="tab"
+                    aria-selected={activeTab === tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`${styles.filterTab} ${
-                      activeTab === tab ? styles.filterTabActive : ""
-                    }`}
+                    className={`${styles.filterTab} ${activeTab === tab ? styles.filterTabActive : ""}`}
                   >
                     {tab}
                   </button>
@@ -230,7 +260,7 @@ export default function ExperiencePage() {
 
           <div className={styles.bentoGrid}>
             {teachingExperiences.map((item, i) => (
-              <Reveal key={i} delay={i * 0.06}>
+              <Reveal key={i} delay={(i % 3) * 0.06}>
                 <ExperienceBentoCard item={item} />
               </Reveal>
             ))}
@@ -239,7 +269,7 @@ export default function ExperiencePage() {
       </section>
 
       {/* 03 - OTHER EXPERIENCE */}
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Other Experience">
         <div className={styles.container}>
           <Reveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
@@ -256,7 +286,7 @@ export default function ExperiencePage() {
 
           <div className={styles.bentoGrid}>
             {otherExperiences.map((item, i) => (
-              <Reveal key={i} delay={i * 0.06}>
+              <Reveal key={i} delay={(i % 3) * 0.06}>
                 <ExperienceBentoCard item={item} />
               </Reveal>
             ))}

@@ -1,7 +1,7 @@
-/* src/pages/CertificatesPage.module.css */
-
+/* SENIOR FIX: Fluid Padding */
 .gridSection {
-  padding: 3rem 1.5rem 7rem;
+  padding: clamp(2.5rem, 4.5vw, 3.5rem) 1.5rem 7rem;
+  position: relative;
 }
 
 .gridInner {
@@ -9,23 +9,22 @@
   margin: 0 auto;
 }
 
+/* SENIOR FIX: Fluid Gap */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: clamp(1.25rem, 3vw, 2rem);
 }
 
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
   }
 }
 
@@ -34,18 +33,31 @@
   display: flex;
   flex-direction: column;
   border-radius: 1.5rem;
-  text-decoration: none;
   height: 100%;
   transition:
     transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
     border-color 0.4s ease;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Ini juga akan memotong ribbon overflow secara otomatis */
 }
 
 .card:hover {
   transform: translateY(-6px);
   border-color: rgba(124, 242, 255, 0.3);
+}
+
+/* SENIOR FIX: The Absolute Link Overlay */
+.cardLinkOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30; /* Paling atas agar seluruh card bisa diklik */
+  border-radius: inherit;
+  outline: none;
+}
+
+/* Aksesibilitas Keyboard Focus */
+.cardLinkOverlay:focus-visible {
+  box-shadow: 0 0 0 3px rgba(124, 242, 255, 0.6) inset;
 }
 
 /* =========================================
@@ -61,35 +73,27 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 3.5rem;
-
-  /* 1. TURUNKAN OPACITY agar blur bisa tembus */
   background: linear-gradient(
     180deg,
     rgba(18, 20, 24, 0.65),
-    /* tadinya 0.96 */ rgba(6, 8, 10, 0.75) /* tadinya 0.98 */
+    rgba(6, 8, 10, 0.75)
   );
-
   border-top: 1px solid rgba(124, 242, 255, 0.25);
   border-bottom: 1px solid rgba(124, 242, 255, 0.12);
   color: var(--accent-glow);
-  font-family: "Geist Mono", monospace;
+  font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  -webkit-transform: translateZ(0) rotate(-38deg);
   transform: translateZ(0) rotate(-38deg);
+  pointer-events: none; /* Cegah interaksi mouse */
 }
-
-/* =========================================
-   LEFT WRAP CURVE
-========================================= */
 
 .verifiedBadge::before {
   content: "";
@@ -103,10 +107,6 @@
   box-shadow: inset -8px 0 12px rgba(0, 0, 0, 0.45);
   opacity: 0.98;
 }
-
-/* =========================================
-   RIGHT WRAP CURVE
-========================================= */
 
 .verifiedBadge::after {
   content: "";
@@ -136,10 +136,11 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .card:hover .image {
-  transform: scale(1.08);
+  transform: scale(1.05); /* Sedikit dikurangi dari 1.08 agar tidak over-zoom */
 }
 
 .imageOverlay {
@@ -148,12 +149,12 @@
   background: linear-gradient(
     to bottom,
     transparent 60%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.4) 100%
   );
   z-index: 1;
 }
 
-/* --- DATE TAG (Melayang Kanan Atas) --- */
+/* --- DATE TAG --- */
 .dateTag {
   position: absolute;
   top: 0.75rem;
@@ -164,7 +165,7 @@
   -webkit-backdrop-filter: blur(8px);
   padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
-  font-family: "Geist Mono", monospace;
+  font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.7rem;
   color: var(--accent-glow);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -174,12 +175,12 @@
 .info {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 1.5rem); /* Fluid padding */
   flex: 1;
 }
 
 .institution {
-  font-family: "Geist Mono", monospace;
+  font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.7rem;
   color: var(--accent-glow);
   text-transform: uppercase;
@@ -187,29 +188,9 @@
   margin-bottom: 0.5rem;
 }
 
-/* --- META (Issuer / Penyelenggara) --- */
-.meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.issuerIcon {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.issuer {
-  font-family: "Geist Mono", monospace;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
 .title {
-  font-size: 1.15rem;
+  /* Fluid Typography */
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
   font-weight: 500;
   color: #fff;
   line-height: 1.4;
@@ -221,15 +202,16 @@
   overflow: hidden;
 }
 
+/* SENIOR FIX: Reset ul element */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;
-  margin-bottom: auto;
-  padding-bottom: 1rem;
+  margin: 0 0 auto 0; /* Dorong button ke bawah */
+  padding: 0 0 1rem 0;
 }
 
-/* --- ACTION BUTTON (Full Width Tag Design) --- */
+/* --- ACTION BUTTON --- */
 .actionBtn {
   display: flex;
   align-items: center;
@@ -252,7 +234,7 @@
 }
 
 .actionText {
-  font-family: "Geist Mono", monospace;
+  font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -260,7 +242,7 @@
 }
 
 .actionIcon {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .card:hover .actionIcon {

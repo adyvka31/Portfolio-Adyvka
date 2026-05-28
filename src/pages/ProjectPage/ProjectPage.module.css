@@ -11,6 +11,21 @@
   gap: 3rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    /* SENIOR FIX: Hanya memotong padding atas di mobile.
+       Kita gunakan 0.5rem untuk memberikan sedikit 'napas' 
+       agar tidak benar-benar menempel dengan PageHero. */
+    padding-top: 0.5rem;
+    
+    /* Padding bawah tetap atau sesuaikan jika terasa terlalu jauh juga */
+    padding-bottom: 5rem; 
+    
+    /* Gap antar elemen internal (Search & Grid) bisa diperapat di mobile */
+    gap: 2rem;
+  }
+}
+
 /* =========================================
    CONTROLS (Search & Filters)
 ========================================= */

@@ -7,13 +7,12 @@ import { RevealGroup, RevealItem } from "../../components/Reveal/RevealGroup";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import { ArrowRightIcon } from "../../components/Icons/Icons";
 import { personalInfo } from "../../data/portfolio";
-import profilePhoto from "../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
+import profilePhoto from "../../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
 import styles from "./AboutPage.module.css";
-import storyImage from "../assets/teach_teacher.webp?w=400;800;1200&format=avif;webp&as=picture";
+import storyImage from "../../assets/teach_teacher.webp?w=400;800;1200&format=avif;webp&as=picture";
 import Image from "../../components/Image/Image";
 
 /* ====== DATA ====== */
-// [DATA TETAP SAMA SEPERTI SEBELUMNYA]
 const INTRO_FACTS = [
   { label: "Full name", value: "Rafif Sava Adyvka Pratama" },
   { label: "Goes by", value: "Adyvka" },
@@ -245,18 +244,20 @@ function TrackRow({ row, last }) {
         <span className={styles.trackYearMeta}>age {row.age}</span>
         <span className={styles.trackYearGrade}>{row.grade}</span>
       </div>
-      {/* ✅ TAMBAHKAN CLASS "glass" DI SINI */}
-      <div className={`glass ${styles.trackCard}`}>
-        <span className={styles.trackBadge}>◆ {row.tech.label}</span>
+      <article className={`glass ${styles.trackCard}`}>
+        <span className={styles.trackBadge} aria-hidden="true">
+          ◆ {row.tech.label}
+        </span>
         <h3 className={styles.trackTitle}>{row.tech.title}</h3>
         <p className={styles.trackDetail}>{row.tech.detail}</p>
-      </div>
-      {/* ✅ TAMBAHKAN CLASS "glass" DI SINI */}
-      <div className={`glass ${styles.trackCard} ${styles.trackHuman}`}>
-        <span className={styles.trackBadge}>◇ {row.human.label}</span>
+      </article>
+      <article className={`glass ${styles.trackCard} ${styles.trackHuman}`}>
+        <span className={styles.trackBadge} aria-hidden="true">
+          ◇ {row.human.label}
+        </span>
         <h3 className={styles.trackTitle}>{row.human.title}</h3>
         <p className={styles.trackDetail}>{row.human.detail}</p>
-      </div>
+      </article>
     </div>
   );
 }
@@ -264,7 +265,6 @@ function TrackRow({ row, last }) {
 function StoryCard({ story }) {
   const spot = useCardSpotlight();
   return (
-    // ✅ StoryCard sebenarnya SUDAH menggunakan 'glass', saya tambah 'card' agar selaras dengan HomePage
     <article
       className={`card glass ${styles.storyCard} ${story.feature ? styles.storyFeature : ""}`}
       {...spot}
@@ -278,14 +278,14 @@ function StoryCard({ story }) {
 
 function CurrentSlot({ item }) {
   return (
-    <div className={styles.currentSlot}>
+    <article className={styles.currentSlot}>
       <div className={styles.currentHeader}>
-        <span className={`${styles.currentDot} pulse-dot`} />
+        <span className={`${styles.currentDot} pulse-dot`} aria-hidden="true" />
         <span className={styles.currentLabel}>{item.label}</span>
       </div>
       <h3 className={styles.currentTitle}>{item.title}</h3>
       <p className={styles.currentDetail}>{item.detail}</p>
-    </div>
+    </article>
   );
 }
 
@@ -313,7 +313,7 @@ export default function AboutPage() {
         ]}
       />
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Introduction">
         <div className={styles.container}>
           <div className={styles.introWrap}>
             <div className={styles.introLeft}>
@@ -350,7 +350,6 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={0.1}>
-              {/* ✅ TAMBAHKAN CLASS "glass" UNTUK KARTU INTRO */}
               <div className={`glass ${styles.introCard}`}>
                 <div className={styles.introPhotoWrap}>
                   <div className={styles.introPhotoGlow} aria-hidden="true" />
@@ -358,19 +357,19 @@ export default function AboutPage() {
                     src={profilePhoto}
                     alt="Rafif Sava Adyvka Pratama"
                     className={styles.introPhoto}
-                    width={500}
-                    height={500}
+                    width={700}
+                    height={700}
                   />
                   <div
                     className={styles.introPhotoOverlay}
                     aria-hidden="true"
                   />
 
-                  {/* ✅ TAMBAHKAN CLASS "glass-hi" UNTUK BADGE FOTO (lebih solid) */}
                   <div className={`glass-hi ${styles.introPhotoBadge}`}>
                     <span className={styles.introPhotoBadgeStatus}>
                       <span
                         className={`${styles.introPhotoBadgeDot} pulse-dot`}
+                        aria-hidden="true"
                       />
                       Available 2027
                     </span>
@@ -382,14 +381,15 @@ export default function AboutPage() {
 
                 <div className={styles.introCardContent}>
                   <span className={styles.introCardLabel}>— Identity Card</span>
-                  <div className={styles.introCardList}>
+                  {/* SENIOR FIX: Gunakan Description List (dl) untuk Key-Value */}
+                  <dl className={styles.introCardList}>
                     {INTRO_FACTS.map((f) => (
                       <div key={f.label} className={styles.introCardRow}>
-                        <span className={styles.introCardKey}>{f.label}</span>
-                        <span className={styles.introCardValue}>{f.value}</span>
+                        <dt className={styles.introCardKey}>{f.label}</dt>
+                        <dd className={styles.introCardValue}>{f.value}</dd>
                       </div>
                     ))}
-                  </div>
+                  </dl>
                 </div>
               </div>
             </Reveal>
@@ -410,23 +410,28 @@ export default function AboutPage() {
                     , by layer.
                   </h2>
                 </div>
-                {/* ✅ TAMBAHKAN CLASS "glass" UNTUK PANEL SKILL KIRI */}
                 <div className={`glass ${styles.skillPanel}`}>
                   {TECH_STACK.map((row) => (
                     <div key={row.layer} className={styles.skillRow}>
                       <div className={styles.skillLabel}>
-                        <span className={styles.skillBadge}>◆</span>
+                        <span className={styles.skillBadge} aria-hidden="true">
+                          ◆
+                        </span>
                         <span className={styles.skillLabelText}>
                           {row.layer}
                         </span>
                       </div>
-                      <div className={styles.skillTags}>
+                      {/* SENIOR FIX: Gunakan Unordered List untuk daftar keahlian */}
+                      <ul
+                        className={styles.skillTags}
+                        aria-label={`${row.layer} Skills`}
+                      >
                         {row.items.map((item) => (
-                          <span key={item} className={styles.skillTag}>
+                          <li key={item} className={styles.skillTag}>
                             {item}
-                          </span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
                   ))}
                 </div>
@@ -442,14 +447,18 @@ export default function AboutPage() {
                     the code.
                   </h2>
                 </div>
-                {/* ✅ TAMBAHKAN CLASS "glass" UNTUK PANEL SKILL KANAN */}
                 <div
                   className={`glass ${styles.skillPanel} ${styles.skillPanelSoft}`}
                 >
                   {SOFT_SKILLS.map((row) => (
                     <div key={row.skill} className={styles.softCompactRow}>
                       <div className={styles.softCompactLabel}>
-                        <span className={styles.softCompactBadge}>◇</span>
+                        <span
+                          className={styles.softCompactBadge}
+                          aria-hidden="true"
+                        >
+                          ◇
+                        </span>
                         <span className={styles.softCompactName}>
                           {row.skill}
                         </span>
@@ -464,7 +473,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Timeline">
         <div className={styles.container}>
           <Reveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
@@ -495,7 +504,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Stories">
         <div className={styles.container}>
           <Reveal>
             <div className={`${styles.sectionHead} ${styles.headLeft}`}>
@@ -521,7 +530,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Current Focus">
         <div className={styles.container}>
           <Reveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
@@ -536,7 +545,6 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={0.06}>
-            {/* ✅ TAMBAHKAN CLASS "glass" DI PARENT CURRENT PANEL */}
             <RevealGroup
               className={`glass ${styles.currentPanel}`}
               stagger={0.1}
@@ -551,7 +559,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label="Future Intents">
         <div className={styles.container}>
           <div className={styles.nextWrap}>
             <Reveal>
@@ -578,15 +586,14 @@ export default function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              {/* ✅ TAMBAHKAN CLASS "glass" DI NEXT PANEL KANAN */}
-              <div className={`glass ${styles.nextRight}`}>
+              <dl className={`glass ${styles.nextRight}`}>
                 {NEXT_INTENT.map((item) => (
                   <div key={item.label} className={styles.nextRow}>
-                    <span className={styles.nextRowLabel}>{item.label}</span>
-                    <span className={styles.nextRowValue}>{item.value}</span>
+                    <dt className={styles.nextRowLabel}>{item.label}</dt>
+                    <dd className={styles.nextRowValue}>{item.value}</dd>
                   </div>
                 ))}
-              </div>
+              </dl>
             </Reveal>
           </div>
         </div>
