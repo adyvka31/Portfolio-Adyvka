@@ -9,7 +9,7 @@ import Reveal from "../../components/Reveal/Reveal";
 import { ArrowUpRightIcon } from "../../components/Icons/Icons";
 import { projectsList, getSiblings } from "../../data/portfolio";
 import { projectDetails } from "../../data/projectDetails";
-import styles from "./DetailPage.module.css";
+import styles from "../DetailPage.module.css";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();

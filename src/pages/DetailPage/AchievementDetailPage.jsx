@@ -9,7 +9,7 @@ import Tag from "../../components/Tag/Tag";
 import Reveal from "../../components/Reveal/Reveal";
 import { allAchievements, getSiblings } from "../../data/portfolio";
 import { achievementDetails } from "../../data/achievementDetails";
-import styles from "./DetailPage.module.css";
+import styles from "../DetailPage.module.css";
 
 function renderBodyBlock(block, idx) {
   if (typeof block === "string") return <p key={idx}>{block}</p>;

@@ -10,7 +10,7 @@ import Reveal from "../../components/Reveal/Reveal";
 import { ArrowUpRightIcon } from "../../components/Icons/Icons";
 import { allCertificates, getSiblings } from "../../data/portfolio";
 import { certificateDetails } from "../../data/certificateDetails";
-import styles from "./DetailPage.module.css";
+import styles from "../DetailPage.module.css";
 
 function renderBodyBlock(block, idx) {
   if (typeof block === "string") return <p key={idx}>{block}</p>;
