@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 2rem; /* Padding lebih besar di awal */
+  padding: 1.25rem 2rem;
   transition:
     padding 0.4s ease,
     border-radius 0.4s ease,
