@@ -2,6 +2,7 @@ const SITE_URL = "https://adyvka-pratama.netlify.app";
 const DEFAULT_OG_IMAGE = "/og-image.jpg";
 const DEFAULT_DESCRIPTION =
   "Full Stack Engineer & Mobile Developer based in West Java, Indonesia. Building production systems with React, NestJS, PostgreSQL, and Flutter.";
+const SITE_NAME = "Rafif Sava Adyvka Pratama";
 
 /**
  * React 19 native metadata — no external library needed.
@@ -17,8 +18,10 @@ export default function SEO({
   noIndex = false,
 }) {
   const fullTitle = title
-    ? `${title} — Rafif Sava Adyvka Pratama`
-    : "Rafif Sava Adyvka Pratama — Full Stack Engineer";
+    ? title.includes(SITE_NAME)
+      ? title
+      : `${title} — ${SITE_NAME}`
+    : `${SITE_NAME} — Full Stack Engineer`;
 
   const url = `${SITE_URL}${path}`;
   const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
@@ -26,7 +29,7 @@ export default function SEO({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Rafif Sava Adyvka Pratama",
+    name: SITE_NAME,
     alternateName: "Adyvka",
     jobTitle: "Full Stack Engineer",
     url: SITE_URL,
