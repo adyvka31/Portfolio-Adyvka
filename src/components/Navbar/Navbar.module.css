@@ -42,23 +42,25 @@
   border: 1px solid transparent;
 }
 
-/* Sisanya tetap sama seperti sebelumnya */
 .brand {
   display: flex;
   align-items: center;
   gap: 0.625rem;
 }
+
 .brandName {
   font-weight: 500;
   letter-spacing: -0.025em;
   font-size: 0.875rem;
   display: none;
 }
+
 @media (min-width: 640px) {
   .brandName {
     display: inline;
   }
 }
+
 .links {
   display: none;
   align-items: center;
@@ -68,15 +70,18 @@
   padding: 0;
   font-size: 0.875rem;
 }
+
 @media (min-width: 768px) {
   .links {
     display: flex;
   }
 }
+
 .link {
   color: rgba(207, 207, 214, 0.8);
   transition: color 0.2s ease;
 }
+
 .link:hover {
   color: #fff;
 }
@@ -84,7 +89,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* Jarak antar dua tombol */
+  gap: 0.75rem;
 }
 
 .cta {
@@ -107,7 +112,6 @@
   transform: translateY(-1px);
 }
 
-/* Style untuk tombol Portfolio (Gaya Outline/Glass) */
 .ctaSecondary {
   display: inline-flex;
   align-items: center;
@@ -132,12 +136,53 @@
 }
 
 @media (max-width: 640px) {
-  /* Di mobile, sembunyikan teks tombol agar tidak sempit, atau biarkan satu saja */
   .ctaSecondary {
     display: none;
   }
 }
 
+/* =====================================================================
+   SENIOR FIX: TABLET OPTIMIZATION (768px - 1024px)
+   Mencegah tabrakan menu di layar iPad portrait dengan merapatkan jarak
+   ===================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    padding: 1rem 1.25rem;
+  }
+  .links {
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+  .actions {
+    gap: 0.5rem;
+  }
+  .cta,
+  .ctaSecondary {
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header.scrolled {
+    width: min(1120px, calc(100% - 2rem));
+  }
+  .nav {
+    padding: 1.5rem 2.5rem;
+  }
+  .header.scrolled .nav {
+    padding: 0.75rem 1.5rem;
+  }
+  .links {
+    gap: 2.5rem;
+    font-size: 0.95rem;
+  }
+  .modalContent {
+    max-width: 850px;
+    height: 85vh;
+  }
+}
+
+/* --- MODAL CV --- */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -149,7 +194,6 @@
   padding: 2rem;
 }
 
-/* Kotak konten CV yang mengambang */
 .modalContent {
   width: 100%;
   max-width: 650px;
@@ -161,11 +205,9 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-
   box-shadow:
     0 25px 50px -12px rgba(0, 0, 0, 0.7),
     0 0 40px rgba(124, 242, 255, 0.05);
-
   animation: modalSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -180,17 +222,6 @@
   }
 }
 
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .modalHeader {
   padding: 1rem 1.5rem;
   display: flex;
@@ -201,7 +232,8 @@
   font-size: 0.875rem;
 }
 
-closeBtn {
+/* SENIOR FIX: Menambahkan titik (.) yang hilang pada selector class */
+.closeBtn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
   color: #fff;
@@ -211,7 +243,6 @@ closeBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* SENIOR FIX: Hapus 'all' */
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
@@ -231,6 +262,7 @@ closeBtn {
 .linkActive {
   color: #fff;
 }
+
 .linkActive::after {
   content: "";
   position: absolute;
@@ -243,6 +275,7 @@ closeBtn {
   opacity: 1;
   transform: translateX(-50%);
 }
+
 .burger {
   display: flex;
   flex-direction: column;
@@ -255,17 +288,20 @@ closeBtn {
   border-radius: 8px;
   padding: 0 8px;
 }
+
 .burger span {
   display: block;
   height: 1.5px;
   background: #fff;
   border-radius: 2px;
 }
+
 @media (min-width: 768px) {
   .burger {
     display: none;
   }
 }
+
 .sheet {
   position: fixed;
   inset: 0;
@@ -286,6 +322,7 @@ closeBtn {
   flex-direction: column;
   animation: slideIn 0.3s ease;
 }
+
 @keyframes slideIn {
   from {
     transform: translateX(100%);
@@ -294,6 +331,7 @@ closeBtn {
     transform: translateX(0);
   }
 }
+
 .sheetClose {
   position: absolute;
   top: 1.5rem;
@@ -305,6 +343,7 @@ closeBtn {
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
 }
+
 .sheetLinks {
   list-style: none;
   padding: 0;
@@ -313,6 +352,7 @@ closeBtn {
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .sheetLink {
   display: block;
   padding: 1rem 0;
@@ -321,6 +361,7 @@ closeBtn {
   color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 .sheetLink:hover {
   color: #fff;
 }
@@ -338,14 +379,8 @@ closeBtn {
   width: 100%;
   flex: 1;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch; /* Crucial for iOS */
+  -webkit-overflow-scrolling: touch;
   background: var(--ink-950);
-}
-
-.pdfViewer {
-  width: 100%;
-  height: 100%; /* Gunakan 100% dari flex parent, BUKAN vh agar tidak meluber */
-  border: none;
 }
 
 .sheetDivider {
@@ -363,6 +398,7 @@ closeBtn {
   gap: 4px;
   transition: color 0.2s;
 }
+
 .externalLink:hover {
   color: white;
 }

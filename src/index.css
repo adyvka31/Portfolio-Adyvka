@@ -149,22 +149,21 @@ textarea {
   .glass {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(255, 255, 255, 0.015)
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
     );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .glass-hi {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.02)
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.03)
     );
-  }
-
-  .glass:hover,
-  .glass-hi:hover {
-    will-change: transform, backdrop-filter;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 }
 
