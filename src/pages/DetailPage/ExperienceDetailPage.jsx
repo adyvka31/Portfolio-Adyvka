@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -34,6 +35,12 @@ export default function ExperienceDetailPage() {
 
   return (
     <PageShell>
+      <SEO
+        title={`${experience.title} — Rafif Sava Adyvka Pratama`}
+        description={detail?.summary || experience.description}
+        path={`/experience/${experience.slug}`}
+        type="article"
+      />
       <PageHero
         number={experience.current ? "Now" : "—"}
         label={experience.period}

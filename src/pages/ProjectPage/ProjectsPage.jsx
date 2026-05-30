@@ -96,10 +96,9 @@ export default function ProjectsPage() {
   return (
     <PageShell>
       <SEO
-        title="Project"
-        description="Engineer by training, operator by curriculum, teacher by habit. Full Stack Engineer and Mobile Developer based in Indonesia, building since 2021."
+        title="Projects — Rafif Sava Adyvka Pratama"
+        description="Explore the software engineering portfolio and shipped projects by Rafif Sava Adyvka Pratama, featuring web and mobile apps built with modern tech stacks."
         path="/projects"
-        type="article"
       />
       <PageHero
         number="02"

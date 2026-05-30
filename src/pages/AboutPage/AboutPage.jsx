@@ -294,8 +294,8 @@ export default function AboutPage() {
   return (
     <PageShell>
       <SEO
-        title="About"
-        description="Engineer by training, operator by curriculum, teacher by habit. Full Stack Engineer and Mobile Developer based in Indonesia, building since 2021."
+        title="About — Rafif Sava Adyvka Pratama"
+        description="Learn more about Rafif Sava Adyvka Pratama (Adyvka). Engineer by training, operator by curriculum, and teacher by habit based in Depok, Indonesia."
         path="/about"
       />
       <PageHero

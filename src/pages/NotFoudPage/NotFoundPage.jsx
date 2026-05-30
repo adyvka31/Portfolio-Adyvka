@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -5,6 +6,11 @@ import PageHero from "../../components/PageHero/PageHero";
 export default function NotFoundPage() {
   return (
     <PageShell>
+      <SEO
+        title="404 Not Found — Rafif Sava Adyvka Pratama"
+        description="The page you are looking for does not exist on the official portfolio of Rafif Sava Adyvka Pratama."
+        path="*"
+      />
       <PageHero
         number="404"
         label="Not Found"

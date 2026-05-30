@@ -1,8 +1,8 @@
-// src/pages/AchievementsPage.jsx
+import SEO from "../../components/SEO/SEO";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
-import NativeReveal from "../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
+import NativeReveal from "../../components/Reveal/NativeReveal";
 import Tag from "../../components/Tag/Tag";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import { allAchievements } from "../../data/portfolio";
@@ -69,6 +69,11 @@ export default function AchievementsPage() {
 
   return (
     <PageShell>
+      <SEO
+        title="Achievements — Rafif Sava Adyvka Pratama"
+        description="Awards, milestones, and recognitions earned by Rafif Sava Adyvka Pratama. A record of dedication and high standards in software development."
+        path="/achievements"
+      />
       <PageHero
         number="04"
         label="Achievements"

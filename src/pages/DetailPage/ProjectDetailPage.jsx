@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate, Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -21,6 +22,12 @@ export default function ProjectDetailPage() {
 
   return (
     <PageShell>
+      <SEO
+        title={`${project.title} — Rafif Sava Adyvka Pratama`}
+        description={detail?.summary || project.description}
+        path={`/projects/${project.slug}`}
+        type="article"
+      />
       <PageHero
         number={project.year || "—"}
         label={project.label}

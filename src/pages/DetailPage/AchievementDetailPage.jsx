@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -35,6 +36,12 @@ export default function AchievementDetailPage() {
 
   return (
     <PageShell>
+      <SEO
+        title={`${item.title} — Rafif Sava Adyvka Pratama`}
+        description={detail?.summary || item.description}
+        path={`/achievements/${item.slug}`}
+        type="article"
+      />
       <PageHero
         number={item.year || "—"}
         label={item.category === "achievement" ? "Achievement" : "Experience"}
@@ -46,7 +53,7 @@ export default function AchievementDetailPage() {
       {item.image && (
         <section className={styles.mediaSection}>
           <div className={styles.mediaInner}>
-           <div className="css-reveal">
+            <div className="css-reveal">
               <MediaFrame
                 src={item.image}
                 alt={item.title}

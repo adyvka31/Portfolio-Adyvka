@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
@@ -122,6 +123,11 @@ export default function ExperiencePage() {
 
   return (
     <PageShell>
+      <SEO
+        title="Experiences — Rafif Sava Adyvka Pratama"
+        description="Professional timeline and work experience of Rafif Sava Adyvka Pratama. Featuring roles in Full Stack development, ERP engineering at PT Intisel, and tech education."
+        path="/experience"
+      />
       <PageHero
         number="03"
         label="Experience"
@@ -232,16 +238,14 @@ export default function ExperiencePage() {
 
               <div
                 className={styles.filterTabs}
-                role="group" 
+                role="group"
                 aria-label="Filter teaching experiences"
               >
                 {teachingTabs.map((tab) => (
                   <button
                     key={tab}
-                    type="button" 
-                    aria-pressed={
-                      activeTab === tab
-                    } 
+                    type="button"
+                    aria-pressed={activeTab === tab}
                     onClick={() => setActiveTab(tab)}
                     className={`${styles.filterTab} ${activeTab === tab ? styles.filterTabActive : ""}`}
                   >

@@ -1,8 +1,8 @@
-// src/pages/CertificatesPage.jsx
+import SEO from "../../components/SEO/SEO";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
-import NativeReveal from "../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
+import NativeReveal from "../../components/Reveal/NativeReveal"; 
 import Tag from "../../components/Tag/Tag";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import { allCertificates } from "../../data/portfolio";
@@ -101,6 +101,11 @@ export default function CertificatesPage() {
 
   return (
     <PageShell>
+      <SEO
+        title="Certificates — Rafif Sava Adyvka Pratama"
+        description="Verified professional certifications and credentials earned by Rafif Sava Adyvka Pratama in software engineering, AI, and modern web development."
+        path="/certificates"
+      />
       <PageHero
         number="05"
         label="Certificates"

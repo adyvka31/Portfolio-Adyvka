@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -36,6 +37,12 @@ export default function CertificateDetailPage() {
 
   return (
     <PageShell>
+      <SEO
+        title={`${cert.title} — Rafif Sava Adyvka Pratama`}
+        description={detail?.summary || cert.description}
+        path={`/certificates/${cert.slug}`}
+        type="article"
+      />
       <PageHero
         number={cert.year || "—"}
         label="Certificate"
