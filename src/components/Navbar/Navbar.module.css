@@ -5,6 +5,8 @@
   z-index: 50;
   top: 0;
   width: 100%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition:
     transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1),
     width 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
@@ -24,8 +26,7 @@
     padding 0.4s ease,
     border-radius 0.4s ease,
     background-color 0.4s ease,
-    border-color 0.4s ease,
-    backdrop-filter 0.4s ease;
+    border-color 0.4s ease;
 }
 
 .header.scrolled .nav {
@@ -33,8 +34,6 @@
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background-color: rgba(15, 15, 17, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .navTransparent {
