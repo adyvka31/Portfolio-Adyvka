@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Pastikan bot tidak meng-index halaman 404
+Disallow: /404
+
+Sitemap: https://adyvka-pratama.netlify.app/sitemap.xml
