@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        title="Full Stack Engineer Portfolio"
+        title="Rafif Sava Adyvka Pratama - Full Stack Engineer"
         description="Rafif Sava Adyvka Pratama — Full Stack Engineer crafting production systems with React, NestJS, and PostgreSQL. View selected work, experience, and recognition."
         path="/"
       />
