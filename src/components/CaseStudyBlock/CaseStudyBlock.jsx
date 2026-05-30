@@ -1,4 +1,3 @@
-import Reveal from "../Reveal/Reveal";
 import styles from "./CaseStudyBlock.module.css";
 
 export default function CaseStudyBlock({ number, title, children, id }) {
