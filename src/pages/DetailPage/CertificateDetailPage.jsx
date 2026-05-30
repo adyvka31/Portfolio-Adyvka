@@ -6,7 +6,6 @@ import PrevNextNav from "../../components/PrevNextNav/PrevNextNav";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import MediaFrame from "../../components/MediaFrame/MediaFrame";
 import Tag from "../../components/Tag/Tag";
-import Reveal from "../../components/Reveal/Reveal";
 import { ArrowUpRightIcon } from "../../components/Icons/Icons";
 import { allCertificates, getSiblings } from "../../data/portfolio";
 import { certificateDetails } from "../../data/certificateDetails";

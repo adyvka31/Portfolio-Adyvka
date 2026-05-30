@@ -5,7 +5,6 @@ import CaseStudyBlock from "../../components/CaseStudyBlock/CaseStudyBlock";
 import PrevNextNav from "../../components/PrevNextNav/PrevNextNav";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import Tag from "../../components/Tag/Tag";
-import Reveal from "../../components/Reveal/Reveal";
 import { ArrowUpRightIcon } from "../../components/Icons/Icons";
 import { projectsList, getSiblings } from "../../data/portfolio";
 import { projectDetails } from "../../data/projectDetails";
