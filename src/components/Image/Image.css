@@ -1,39 +1,44 @@
-
-/* Tampilan saat gambar belum dimuat (Skeleton) */
 .img-skeleton {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: transparent; 
+  position: relative;
+  overflow: hidden; 
+}
+
+/* 2. Efek cahaya berjalan dipindah ke pseudo-element (layer terpisah) */
+.img-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.02) 25%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(255, 255, 255, 0.02) 75%
+    transparent 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 75%
   );
-  background-size: 200% 100%;
-  animation: skeleton-shimmer 1.5s infinite linear;
-  color: transparent; /* Menyembunyikan teks alt saat gambar belum siap */
+  transform: translateX(-100%);
+  animation: skeleton-shimmer 1.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animasi fade in ringan saat gambar selesai dimuat */
+/* --- Tampilan saat gambar selesai dimuat --- */
 .img-loaded {
   background: transparent;
-  animation: img-fade-in 0.5s ease-out forwards;
+  animation: img-fade-in 0.4s ease-out forwards;
 }
 
+/* --- KEYFRAMES BEBAS LAG (GPU ACCELERATED) --- */
+
 @keyframes skeleton-shimmer {
-  0% {
-    background-position: 200% 0;
-  }
   100% {
-    background-position: -200% 0;
+    transform: translateX(100%);
   }
 }
 
 @keyframes img-fade-in {
   from {
-    opacity: 0.5;
-    filter: blur(4px);
+    opacity: 0;
   }
   to {
     opacity: 1;
-    filter: blur(0);
   }
 }

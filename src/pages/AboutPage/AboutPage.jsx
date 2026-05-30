@@ -2,14 +2,13 @@ import SEO from "../../components/SEO/SEO";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
-import Reveal from "../../components/Reveal/Reveal";
-import { RevealGroup, RevealItem } from "../../components/Reveal/RevealGroup";
+import NativeReveal from "../../components/Reveal/NativeReveal";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import { ArrowRightIcon } from "../../components/Icons/Icons";
 import { personalInfo } from "../../data/portfolio";
-import profilePhoto from "../../assets/profile2.webp?w=400;800;1200&format=avif;webp&as=picture";
+import profilePhoto from "../../assets/profile2.webp";
 import styles from "./AboutPage.module.css";
-import storyImage from "../../assets/teach_teacher.webp?w=400;800;1200&format=avif;webp&as=picture";
+import storyImage from "../../assets/teach_teacher.webp";
 import Image from "../../components/Image/Image";
 
 /* ====== DATA ====== */
@@ -317,39 +316,42 @@ export default function AboutPage() {
         <div className={styles.container}>
           <div className={styles.introWrap}>
             <div className={styles.introLeft}>
-              <Reveal>
+              <NativeReveal>
                 <span className={styles.sectionLabel}>— Introduction</span>
-              </Reveal>
-              <Reveal delay={0.05}>
+              </NativeReveal>
+              <NativeReveal delay={0.1}>
                 <h2 className={`font-serif ${styles.introQuote} text-glow`}>
                   "Engineer by training, operator by curriculum, teacher by
                   habit."
                 </h2>
-              </Reveal>
-              <div className={styles.introBody}>
-                <p>
-                  I'm Rafif Sava Adyvka Pratama — everything I ship goes out as{" "}
-                  <em>Adyvka</em>. Based in West Java, Indonesia, I'm a Full
-                  Stack Engineer and Mobile Developer who works end-to-end
-                  across the modern product stack: React and Next on the
-                  frontend, NestJS and PostgreSQL on the backend, Flutter and
-                  Firebase when the screen gets smaller. At PT Intisel I
-                  currently lead the Databank ERP build as both Project Manager
-                  and lead engineer — owning architecture, delivery cadence, and
-                  code review across the team.
-                </p>
-                <p>
-                  Three things compound in how I work, and I keep doing all
-                  three because they sharpen each other: production engineering,
-                  project delivery, and teaching. I've shipped code under real
-                  deadlines since fifteen, led my school's student council event
-                  division for two years, and taught development to peers since
-                  thirteen and to faculty at SMPN 25 Depok at sixteen.
-                </p>
-              </div>
+              </NativeReveal>
+              <NativeReveal delay={0.2}>
+                <div className={styles.introBody}>
+                  <p>
+                    I'm Rafif Sava Adyvka Pratama — everything I ship goes out
+                    as <em>Adyvka</em>. Based in West Java, Indonesia, I'm a
+                    Full Stack Engineer and Mobile Developer who works
+                    end-to-end across the modern product stack: React and Next
+                    on the frontend, NestJS and PostgreSQL on the backend,
+                    Flutter and Firebase when the screen gets smaller. At PT
+                    Intisel I currently lead the Databank ERP build as both
+                    Project Manager and lead engineer — owning architecture,
+                    delivery cadence, and code review across the team.
+                  </p>
+                  <p>
+                    Three things compound in how I work, and I keep doing all
+                    three because they sharpen each other: production
+                    engineering, project delivery, and teaching. I've shipped
+                    code under real deadlines since fifteen, led my school's
+                    student council event division for two years, and taught
+                    development to peers since thirteen and to faculty at SMPN
+                    25 Depok at sixteen.
+                  </p>
+                </div>
+              </NativeReveal>
             </div>
 
-            <Reveal delay={0.1}>
+            <NativeReveal delay={0.2}>
               <div className={`glass ${styles.introCard}`}>
                 <div className={styles.introPhotoWrap}>
                   <div className={styles.introPhotoGlow} aria-hidden="true" />
@@ -381,7 +383,6 @@ export default function AboutPage() {
 
                 <div className={styles.introCardContent}>
                   <span className={styles.introCardLabel}>— Identity Card</span>
-                  {/* SENIOR FIX: Gunakan Description List (dl) untuk Key-Value */}
                   <dl className={styles.introCardList}>
                     {INTRO_FACTS.map((f) => (
                       <div key={f.label} className={styles.introCardRow}>
@@ -392,16 +393,18 @@ export default function AboutPage() {
                   </dl>
                 </div>
               </div>
-            </Reveal>
+            </NativeReveal>
           </div>
 
-          <Reveal delay={0.15}>
-            <div className={styles.skillsIntegratedWrap}>
-              <div className={styles.skillsColumn}>
+          <div className={styles.skillsIntegratedWrap}>
+            {/* LEFT COLUMN */}
+            <div className={styles.skillsColumn}>
+              <NativeReveal className="reveal-slide-up">
                 <div className={styles.skillsHeader}>
                   <span className={styles.sectionLabel}>
                     — Technical Skills
                   </span>
+
                   <h2 className={`${styles.skillsTitle} text-fade`}>
                     The{" "}
                     <span className={`font-serif ${styles.italic} text-glow`}>
@@ -410,18 +413,26 @@ export default function AboutPage() {
                     , by layer.
                   </h2>
                 </div>
-                <div className={`glass ${styles.skillPanel}`}>
-                  {TECH_STACK.map((row) => (
-                    <div key={row.layer} className={styles.skillRow}>
+              </NativeReveal>
+
+              <div className={`glass ${styles.skillPanel}`}>
+                {TECH_STACK.map((row, index) => (
+                  <NativeReveal
+                    key={row.layer}
+                    className="reveal-slide-up"
+                    delay={index * 0.1}
+                  >
+                    <div className={styles.skillRow}>
                       <div className={styles.skillLabel}>
                         <span className={styles.skillBadge} aria-hidden="true">
                           ◆
                         </span>
+
                         <span className={styles.skillLabelText}>
                           {row.layer}
                         </span>
                       </div>
-                      {/* SENIOR FIX: Gunakan Unordered List untuk daftar keahlian */}
+
                       <ul
                         className={styles.skillTags}
                         aria-label={`${row.layer} Skills`}
@@ -433,13 +444,17 @@ export default function AboutPage() {
                         ))}
                       </ul>
                     </div>
-                  ))}
-                </div>
+                  </NativeReveal>
+                ))}
               </div>
+            </div>
 
-              <div className={styles.skillsColumn}>
+            {/* RIGHT COLUMN */}
+            <div className={styles.skillsColumn}>
+              <NativeReveal className="reveal-slide-up" delay={0.1}>
                 <div className={styles.skillsHeader}>
                   <span className={styles.sectionLabel}>— Soft Skills</span>
+
                   <h2 className={`${styles.skillsTitle} text-fade`}>
                     <span className={`font-serif ${styles.italic} text-glow`}>
                       Beyond
@@ -447,11 +462,18 @@ export default function AboutPage() {
                     the code.
                   </h2>
                 </div>
-                <div
-                  className={`glass ${styles.skillPanel} ${styles.skillPanelSoft}`}
-                >
-                  {SOFT_SKILLS.map((row) => (
-                    <div key={row.skill} className={styles.softCompactRow}>
+              </NativeReveal>
+
+              <div
+                className={`glass ${styles.skillPanel} ${styles.skillPanelSoft}`}
+              >
+                {SOFT_SKILLS.map((row, index) => (
+                  <NativeReveal
+                    key={row.skill}
+                    className="reveal-slide-up"
+                    delay={index * 0.1}
+                  >
+                    <div className={styles.softCompactRow}>
                       <div className={styles.softCompactLabel}>
                         <span
                           className={styles.softCompactBadge}
@@ -459,23 +481,25 @@ export default function AboutPage() {
                         >
                           ◇
                         </span>
+
                         <span className={styles.softCompactName}>
                           {row.skill}
                         </span>
                       </div>
+
                       <span className={styles.softCompactFrom}>{row.from}</span>
                     </div>
-                  ))}
-                </div>
+                  </NativeReveal>
+                ))}
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       <section className={styles.section} aria-label="Timeline">
         <div className={styles.container}>
-          <Reveal>
+          <NativeReveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
               <span className={styles.sectionLabel}>
                 — Two Tracks, Five Years
@@ -492,21 +516,22 @@ export default function AboutPage() {
                 separate — that's the point.
               </p>
             </div>
-          </Reveal>
-          <RevealGroup className={styles.trackList} stagger={0.1}>
+          </NativeReveal>
+
+          <div className={styles.trackList}>
             <span className={styles.trackSpine} aria-hidden="true" />
             {TRACKS.map((row, i) => (
-              <RevealItem key={row.year}>
+              <NativeReveal key={row.year} delay={0.1}>
                 <TrackRow row={row} last={i === TRACKS.length - 1} />
-              </RevealItem>
+              </NativeReveal>
             ))}
-          </RevealGroup>
+          </div>
         </div>
       </section>
 
       <section className={styles.section} aria-label="Stories">
         <div className={styles.container}>
-          <Reveal>
+          <NativeReveal>
             <div className={`${styles.sectionHead} ${styles.headLeft}`}>
               <span className={styles.sectionLabel}>
                 — Stories Worth Telling
@@ -519,20 +544,25 @@ export default function AboutPage() {
                 me.
               </h2>
             </div>
-          </Reveal>
-          <RevealGroup className={styles.storyGrid} stagger={0.15}>
-            {STORIES.map((s) => (
-              <RevealItem key={s.title}>
+          </NativeReveal>
+
+          <NativeReveal stagger className={styles.storyGrid}>
+            {STORIES.map((s, index) => (
+              <div
+                key={s.title}
+                className="css-stagger-item"
+                style={{ transitionDelay: `${index * 0.15}s` }}
+              >
                 <StoryCard story={s} />
-              </RevealItem>
+              </div>
             ))}
-          </RevealGroup>
+          </NativeReveal>
         </div>
       </section>
 
       <section className={styles.section} aria-label="Current Focus">
         <div className={styles.container}>
-          <Reveal>
+          <NativeReveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
               <span className={styles.sectionLabel}>— Right Now</span>
               <h2 className={`${styles.sectionTitle} text-fade`}>
@@ -543,26 +573,31 @@ export default function AboutPage() {
                 .
               </h2>
             </div>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <RevealGroup
-              className={`glass ${styles.currentPanel}`}
-              stagger={0.1}
-            >
-              {CURRENTLY.map((item) => (
-                <RevealItem key={item.label}>
-                  <CurrentSlot item={item} />
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          </Reveal>
+          </NativeReveal>
+
+          {/* ✅ NativeReveal STAGGER Group */}
+          <NativeReveal
+            delay={0.1}
+            stagger
+            className={`glass ${styles.currentPanel}`}
+          >
+            {CURRENTLY.map((item, index) => (
+              <div
+                key={item.label}
+                className="css-stagger-item"
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                <CurrentSlot item={item} />
+              </div>
+            ))}
+          </NativeReveal>
         </div>
       </section>
 
       <section className={styles.section} aria-label="Future Intents">
         <div className={styles.container}>
           <div className={styles.nextWrap}>
-            <Reveal>
+            <NativeReveal>
               <div className={styles.nextLeft}>
                 <span className={styles.sectionLabel}>— What's Next</span>
                 <h2 className={`${styles.sectionTitle} text-fade`}>
@@ -584,17 +619,20 @@ export default function AboutPage() {
                   Reach out <ArrowRightIcon size={14} />
                 </a>
               </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <dl className={`glass ${styles.nextRight}`}>
-                {NEXT_INTENT.map((item) => (
-                  <div key={item.label} className={styles.nextRow}>
-                    <dt className={styles.nextRowLabel}>{item.label}</dt>
-                    <dd className={styles.nextRowValue}>{item.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
+            </NativeReveal>
+
+            <NativeReveal
+              delay={0.2}
+              as="dl"
+              className={`glass ${styles.nextRight}`}
+            >
+              {NEXT_INTENT.map((item) => (
+                <div key={item.label} className={styles.nextRow}>
+                  <dt className={styles.nextRowLabel}>{item.label}</dt>
+                  <dd className={styles.nextRowValue}>{item.value}</dd>
+                </div>
+              ))}
+            </NativeReveal>
           </div>
         </div>
       </section>

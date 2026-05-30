@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Reveal from "../../../components/Reveal/Reveal";
+import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import Tag from "../../../components/Tag/Tag";
 import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
@@ -23,6 +23,7 @@ function AchievementCard({ item, faded }) {
           className={styles.cardImage}
           width={600}
           height={400}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px"
         />
         <div className={styles.imageOverlay} aria-hidden="true" />
         <span
@@ -75,9 +76,6 @@ function AchievementLayout() {
 
   const allData = recognitionData[activeTab] || [];
 
-  // SENIOR FIX: Selalu tampilkan tepat 2 baris (berapapun jumlah kolomnya)
-  // Mobile (1 col) = 2 item. Tablet (2 cols) = 4 item. Desktop (3 cols) = 6 item.
-  // Ini menghilangkan kebutuhan CSS max-height: 62rem yang buggy!
   const displayLimit = columns * 2;
   const displayData = allData.slice(0, displayLimit);
   const hasSecondRow = allData.length > columns;
@@ -85,23 +83,25 @@ function AchievementLayout() {
   return (
     <section className={styles.section} id="recognition">
       <div className={styles.container}>
-        <div className={`${styles.centeredLabel} css-reveal`}>
+        <NativeReveal className={`${styles.centeredLabel} reveal-slide-up`}>
           <SectionLabel number="04" label="Recognition" />
-        </div>
+        </NativeReveal>
 
         <div className={styles.header}>
-          <div className={`${styles.filterWrapper} css-reveal`}>
-            {/* SENIOR FIX: A11y Role Tablist */}
+          <NativeReveal
+            delay={0.05}
+            className={`${styles.filterWrapper} reveal-slide-up`}
+          >
             <div
               className={styles.filters}
-              role="tablist"
-              aria-label="Recognition categories"
+              role="group"
+              aria-label="Filter recognition categories"
             >
               {tabs.map((tab) => (
                 <button
                   key={tab}
-                  role="tab"
-                  aria-selected={activeTab === tab}
+                  type="button"
+                  aria-pressed={activeTab === tab}
                   onClick={() => setActiveTab(tab)}
                   className={`${styles.chip} ${activeTab === tab ? styles.chipActive : ""}`}
                 >
@@ -109,34 +109,34 @@ function AchievementLayout() {
                 </button>
               ))}
             </div>
-          </div>
+          </NativeReveal>
 
-          <div className="css-reveal">
+          <NativeReveal delay={0.1} className="reveal-slide-up">
             <h2 className={`${styles.headline} text-fade`}>
               <span className={`font-serif ${styles.italic} text-glow`}>
                 Receipts
               </span>
-              ,<br /> not résumé filler.
+              , not résumé filler.
             </h2>
-          </div>
+          </NativeReveal>
         </div>
 
         <div className={styles.gridWrapper}>
           <div
             key={activeTab}
             className={`${styles.grid} ${hasSecondRow ? styles.gridHasOverlay : ""}`}
-            role="tabpanel"
+            aria-live="polite"
           >
             {displayData.map((item, idx) => {
-              // Jika index >= jumlah kolom, berarti dia ada di baris kedua
               const isSecondRow = idx >= columns;
               return (
-                <Reveal
+                <NativeReveal
                   key={`${activeTab}-${idx}`}
-                  delay={(idx % columns) * 0.1}
+                  delay={(idx % columns) * 0.15}
+                  className="reveal-slide-up"
                 >
                   <AchievementCard item={item} faded={isSecondRow} />
-                </Reveal>
+                </NativeReveal>
               );
             })}
           </div>

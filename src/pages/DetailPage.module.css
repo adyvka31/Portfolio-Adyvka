@@ -46,7 +46,7 @@
 .companyLabel {
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
-  color: var(--ink-300);
+  color: var(--ink-200);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -64,7 +64,7 @@
 .companyLabel {
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
-  color: var(--ink-300);
+  color: var(--ink-200);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }

@@ -19,9 +19,9 @@
   font-size: clamp(2.25rem, 5vw, 3.75rem);
   font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 1.1; /* Diperbaiki dari 1.05 agar descender font tidak terpotong */
-  margin: 0 0 clamp(3rem, 8vw, 6rem) 0;
-  text-align: left; /* Mobile first */
+  line-height: 1.1;
+  margin: 0 0 clamp(5rem, 8vw, 6rem) 0;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -41,7 +41,53 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Jarak aman di mobile */
+  gap: 2rem;
+  padding-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    gap: 0;
+  }
+
+  .timeline > *:not(:first-child) {
+    margin-top: clamp(-10rem, -8vw, -4rem);
+  }
+
+  .timeline > *:nth-child(3) {
+    margin-top: -2rem;
+  }
+
+  .spine {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .item {
+    padding-left: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 8vw, 6rem);
+  }
+
+  .leftSide .itemCard {
+    grid-column: 1;
+    text-align: right;
+  }
+
+  .leftSide .spacer {
+    grid-column: 2;
+    display: block;
+  }
+
+  .rightSide .spacer {
+    grid-column: 1;
+    display: block;
+  }
+
+  .rightSide .itemCard {
+    grid-column: 2;
+    text-align: left;
+  }
 }
 
 /* Spine Tengah */
@@ -71,13 +117,14 @@
   width: 100%;
   align-items: center;
   z-index: 2;
-  padding-left: 3.5rem; /* Memberi ruang untuk dot di mobile */
+  padding-left: 3.5rem;
 }
 
 /* --- DESKTOP GRID SYSTEM (Min 768px) --- */
 @media (min-width: 768px) {
   .timeline {
     gap: 0;
+    margin-top: 8rem;
   }
 
   .spine {
@@ -85,24 +132,29 @@
     transform: translateX(-50%);
   }
 
-  .revealWrapper {
-    /* Fluid negative margin mencegah tabrakan di layar tablet */
-    margin-top: clamp(-4rem, -5vw, -2rem);
-    position: relative;
-  }
-
   .item {
     padding-left: 0;
     grid-template-columns: 1fr 1fr;
-    /* Fluid gap menggantikan 8rem yang raksasa */
     gap: clamp(2rem, 8vw, 6rem);
+
+    position: relative;
   }
 
-  /* SENIOR FIX: Explicit Grid Columns menggantikan 'grid-order' yang invalid */
+  /* =========================
+     OVERLAP EFFECT
+  ========================= */
+
+  .timeline .item:not(:first-of-type) {
+    margin-top: clamp(-7rem, -10vw, -4rem);
+  }
+
+  /* ========================= */
+
   .leftSide .itemCard {
     grid-column: 1;
     text-align: right;
   }
+
   .leftSide .spacer {
     grid-column: 2;
     display: block;
@@ -112,6 +164,7 @@
     grid-column: 1;
     display: block;
   }
+
   .rightSide .itemCard {
     grid-column: 2;
     text-align: left;
@@ -165,7 +218,7 @@
 .period {
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
-  color: var(--ink-300);
+  color: var(--ink-200);
   margin-bottom: 0.5rem;
 }
 

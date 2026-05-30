@@ -32,7 +32,7 @@ export default function ProjectDetailPage() {
 
       <section className={styles.tagsStrip}>
         <div className={styles.tagsInner}>
-          <Reveal>
+          <div className="css-reveal">
             <div className={styles.tags}>
               {project.tags.map((t) => (
                 <Tag key={t} size="sm">
@@ -40,9 +40,9 @@ export default function ProjectDetailPage() {
                 </Tag>
               ))}
             </div>
-          </Reveal>
+          </div>
           {detail?.links?.length > 0 && (
-            <Reveal delay={0.05}>
+            <div className="css-reveal" style={{ animationDelay: "0.05s" }}>
               <div className={styles.linksRow}>
                 {detail.links.map((l) => (
                   <a
@@ -56,7 +56,7 @@ export default function ProjectDetailPage() {
                   </a>
                 ))}
               </div>
-            </Reveal>
+            </div>
           )}
         </div>
       </section>

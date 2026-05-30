@@ -115,9 +115,9 @@ export default function Navbar() {
               aria-label="Open navigation menu"
               aria-expanded={menuOpen}
             >
-              <span />
-              <span />
-              <span />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
             </button>
           </div>
         </nav>
@@ -185,13 +185,20 @@ export default function Navbar() {
           onClick={() => setCvOpen(false)}
           role="dialog"
           aria-modal="true"
+          aria-labelledby="cv-modal-title"
         >
           <div
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
             <div className={styles.modalHeader}>
-              <span>Curriculum Vitae</span>
+              <h2
+                id="cv-modal-title"
+                style={{ fontSize: "inherit", margin: 0, fontWeight: "normal" }}
+              >
+                Curriculum Vitae
+              </h2>
+
               <div
                 style={{ display: "flex", gap: "16px", alignItems: "center" }}
               >
@@ -201,14 +208,14 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className={styles.externalLink}
                 >
-                  Buka Penuh <ArrowUpRightIcon size={12} />
+                  Fully Open <ArrowUpRightIcon size={12} />
                 </a>
                 <button
                   className={styles.closeBtn}
                   onClick={() => setCvOpen(false)}
                   aria-label="Close CV Modal"
                 >
-                  ✕
+                  <span aria-hidden="true">✕</span>
                 </button>
               </div>
             </div>
@@ -216,7 +223,7 @@ export default function Navbar() {
             <div className={styles.iframeContainer}>
               <iframe
                 src={`${personalInfo.cvUrl}#view=FitH&toolbar=1`}
-                title="Curriculum Vitae"
+                title="Curriculum Vitae PDF Document"
                 className={styles.pdfViewer}
               />
             </div>

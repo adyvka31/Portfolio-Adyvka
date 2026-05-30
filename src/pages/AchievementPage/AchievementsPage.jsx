@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
-import Reveal from "../../components/Reveal/Reveal";
+import NativeReveal from "../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
 import Tag from "../../components/Tag/Tag";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import { allAchievements } from "../../data/portfolio";
@@ -87,11 +87,14 @@ export default function AchievementsPage() {
           {storyItems.map((item, i) => {
             const isReverse = i % 2 !== 0;
             return (
-              <Reveal key={item.slug} delay={0.1}>
+              <NativeReveal
+                key={item.slug}
+                delay={0.1}
+                className="reveal-slide-up"
+              >
                 <div
                   className={`${local.storyBlock} ${isReverse ? local.reverse : ""}`}
                 >
-                  {/* SENIOR FIX: Sembunyikan angka raksasa dekoratif dari screen reader */}
                   <div className={local.giantNumber} aria-hidden="true">
                     0{i + 1}
                   </div>
@@ -101,9 +104,7 @@ export default function AchievementsPage() {
                       to={`/achievements/${item.slug}`}
                       className={local.imageWrap}
                       aria-label={`View images for ${item.title}`}
-                      tabIndex={
-                        -1
-                      } /* Hindari tab stop ganda karena tombol read more sudah ada */
+                      tabIndex={-1}
                     >
                       <Image
                         src={item.image}
@@ -120,7 +121,7 @@ export default function AchievementsPage() {
                     <TextContentCard item={item} />
                   </div>
                 </div>
-              </Reveal>
+              </NativeReveal>
             );
           })}
         </div>

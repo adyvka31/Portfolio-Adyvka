@@ -45,14 +45,14 @@ export default function ExperienceDetailPage() {
 
       <section className={styles.tagsStrip}>
         <div className={styles.tagsInner}>
-          <Reveal>
+          <div className="css-reveal">
             <div className={styles.companyRow}>
               <span className={styles.companyLabel}>At</span>
               <span className={styles.companyName}>{experience.company}</span>
             </div>
-          </Reveal>
+          </div>
           {detail?.stack && (
-            <Reveal delay={0.05}>
+            <div className="css-reveal" style={{ animationDelay: "0.05s" }}>
               <div className={styles.tags}>
                 {detail.stack.map((t) => (
                   <Tag key={t} size="sm">
@@ -60,7 +60,7 @@ export default function ExperienceDetailPage() {
                   </Tag>
                 ))}
               </div>
-            </Reveal>
+            </div>
           )}
         </div>
       </section>

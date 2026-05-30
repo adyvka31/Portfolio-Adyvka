@@ -1,7 +1,7 @@
-import Reveal from "../../../components/Reveal/Reveal";
+import NativeReveal from "../../../components/Reveal/NativeReveal"; 
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import { useRef } from "react";
-import { m, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion"; 
 import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
 import {
   MonitorIcon,
@@ -13,7 +13,7 @@ import {
 } from "../../../components/Icons/Icons";
 import styles from "./AboutLayout.module.css";
 
-// Komponen Word: Fluid Opacity Mapping via GPU
+// Komponen Word: Fluid Opacity Mapping via GPU (Tetap menggunakan Framer Motion)
 function Word({ children, progress, start, end }) {
   const opacity = useTransform(progress, [start, end], [0.15, 1]);
 
@@ -98,34 +98,101 @@ function AboutLayout() {
 
   const getCategoryIcon = (category) => {
     switch (category) {
-      case "Frontend": return <MonitorIcon size={24} />;
-      case "Backend": return <ServerIcon size={24} />;
-      case "Database": return <DatabaseIcon size={24} />;
-      case "Tools & Testing": return <TerminalIcon size={24} />;
-      case "Cloud & DevOps": return <CloudIcon size={24} />;
-      case "Software Engineering": return <CubeIcon size={24} />;
-      default: return <CubeIcon size={24} />;
+      case "Frontend":
+        return <MonitorIcon size={24} />;
+      case "Backend":
+        return <ServerIcon size={24} />;
+      case "Database":
+        return <DatabaseIcon size={24} />;
+      case "Tools & Testing":
+        return <TerminalIcon size={24} />;
+      case "Cloud & DevOps":
+        return <CloudIcon size={24} />;
+      case "Software Engineering":
+        return <CubeIcon size={24} />;
+      default:
+        return <CubeIcon size={24} />;
     }
   };
 
   const skillsData = [
-    { category: "Frontend", items: ["React", "Next.js", "Angular", "Tailwind CSS", "TypeScript", "JavaScript", "HTML5", "CSS3"] },
-    { category: "Backend", items: ["NestJS", "Node.js", "Express.js", "Laravel", "REST API", "Authentication", "RBAC"] },
-    { category: "Database", items: ["PostgreSQL", "MySQL", "Firebase Firestore", "Prisma ORM"] },
-    { category: "Tools & Testing", items: ["Git", "GitHub", "Postman", "Figma", "Jest", "Cypress", "Unit Testing", "Integration Testing"] },
-    { category: "Cloud & DevOps", items: ["Docker Compose", "OWASP", "JWT", "AWS", "CI/CD", "Cloud Deployment", "Biznet Cloud"] },
-    { category: "Software Engineering", items: ["Clean Architecture", "SOLID Principles", "OOP", "System Design", "Agile (Scrum)"] },
+    {
+      category: "Frontend",
+      items: [
+        "React",
+        "Next.js",
+        "Angular",
+        "Tailwind CSS",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+      ],
+    },
+    {
+      category: "Backend",
+      items: [
+        "NestJS",
+        "Node.js",
+        "Express.js",
+        "Laravel",
+        "REST API",
+        "Authentication",
+        "RBAC",
+      ],
+    },
+    {
+      category: "Database",
+      items: ["PostgreSQL", "MySQL", "Firebase Firestore", "Prisma ORM"],
+    },
+    {
+      category: "Tools & Testing",
+      items: [
+        "Git",
+        "GitHub",
+        "Postman",
+        "Figma",
+        "Jest",
+        "Cypress",
+        "Unit Testing",
+        "Integration Testing",
+      ],
+    },
+    {
+      category: "Cloud & DevOps",
+      items: [
+        "Docker Compose",
+        "OWASP",
+        "JWT",
+        "AWS",
+        "CI/CD",
+        "Cloud Deployment",
+        "Biznet Cloud",
+      ],
+    },
+    {
+      category: "Software Engineering",
+      items: [
+        "Clean Architecture",
+        "SOLID Principles",
+        "OOP",
+        "System Design",
+        "Agile (Scrum)",
+      ],
+    },
   ];
 
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
-        <Reveal>
+        {/* ✅ Ganti css-reveal dengan NativeReveal */}
+        <NativeReveal className="reveal-slide-up">
           <SectionLabel number="01" label="About" />
-        </Reveal>
+        </NativeReveal>
 
         <div className={styles.grid}>
-          <Reveal className={styles.headlineCol}>
+          {/* ✅ Ganti css-reveal dengan NativeReveal */}
+          <NativeReveal className={`${styles.headlineCol} reveal-slide-up`}>
             <h2 className={`${styles.headline} text-fade`}>
               An engineer who treats{" "}
               <span className={`font-serif ${styles.italic} text-glow`}>
@@ -134,27 +201,40 @@ function AboutLayout() {
               like a contract — every commit a quiet promise that the next
               person reading this code will understand it.
             </h2>
-          </Reveal>
+          </NativeReveal>
 
-          <Reveal delay={0.1} className={styles.copyCol}>
+          {/* ✅ Ganti Reveal lama dengan NativeReveal */}
+          <NativeReveal
+            delay={0.1}
+            className={`${styles.copyCol} reveal-slide-up`}
+          >
             <ScrollWordRevealGroup
               paragraphs={aboutParagraphs}
               paragraphClassName={styles.paragraph}
               start={0.75}
               end={0.2}
             />
-          </Reveal>
+          </NativeReveal>
         </div>
 
         <div className={styles.skillsWrapper}>
-          <Reveal delay={0.2}>
+          {/* ✅ Ganti css-reveal dengan NativeReveal */}
+          <NativeReveal delay={0.2} className="reveal-slide-up">
             <h3 className={styles.skillsTitle}>Technical Arsenal</h3>
-          </Reveal>
+          </NativeReveal>
 
           <div className={styles.skillsGrid}>
             {skillsData.map((skillGroup, idx) => (
-              <Reveal key={idx} delay={0.2 + idx * 0.05}>
-                <div className={`card glass ${styles.skillCard}`} {...spotlight}>
+              /* ✅ Terapkan rumus stagger Grid (idx % 3) * 0.15 */
+              <NativeReveal
+                key={idx}
+                delay={(idx % 3) * 0.15}
+                className="reveal-slide-up"
+              >
+                <div
+                  className={`card glass ${styles.skillCard}`}
+                  {...spotlight}
+                >
                   <div className={styles.cardIcon}>
                     {getCategoryIcon(skillGroup.category)}
                   </div>
@@ -162,9 +242,11 @@ function AboutLayout() {
                   <h4 className={styles.skillCategory}>
                     {skillGroup.category}
                   </h4>
-                  
-                  {/* SENIOR FIX: Semantic HTML list for better accessibility */}
-                  <ul className={styles.skillItems} aria-label={`${skillGroup.category} skills`}>
+
+                  <ul
+                    className={styles.skillItems}
+                    aria-label={`${skillGroup.category} skills`}
+                  >
                     {skillGroup.items.map((item, i) => (
                       <li key={i} className={styles.skillTag}>
                         {item}
@@ -172,7 +254,7 @@ function AboutLayout() {
                     ))}
                   </ul>
                 </div>
-              </Reveal>
+              </NativeReveal>
             ))}
           </div>
         </div>

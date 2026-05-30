@@ -45,7 +45,7 @@ export default function Image({
           height={height || src.img.h}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
-          fetchpriority={priority ? "high" : "auto"}
+          fetchPriority={priority ? "high" : "auto"}
           className={combinedClassName}
           onLoad={() => setIsLoaded(true)}
           {...rest}
@@ -63,7 +63,7 @@ export default function Image({
       height={height}
       loading={priority ? "eager" : "lazy"}
       decoding={priority ? "sync" : "async"}
-      fetchpriority={priority ? "high" : "auto"}
+      fetchPriority={priority ? "high" : "auto"}
       sizes={sizes}
       className={combinedClassName}
       onLoad={() => setIsLoaded(true)}

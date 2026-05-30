@@ -119,18 +119,29 @@ textarea {
    SURFACES
    ============================================ */
 .glass {
-  background: rgba(10, 10, 12, 0.6);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: rgba(15, 15, 17, 0.85);
   -webkit-transform: translateZ(0);
-  will-change: transform;
   transform: translateZ(0);
   border: 1px solid var(--line);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .glass-hi {
-  background: rgba(30, 30, 38, 0.95);
+  background: rgba(25, 25, 28, 0.95);
   border: 1px solid var(--line-strong);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.glass:hover,
+.glass-hi:hover {
+  will-change: transform;
 }
 
 @media (min-width: 768px) {
@@ -142,7 +153,6 @@ textarea {
     );
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    will-change: transform, backdrop-filter;
   }
 
   .glass-hi {
@@ -153,6 +163,11 @@ textarea {
     );
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass:hover,
+  .glass-hi:hover {
+    will-change: transform, backdrop-filter;
   }
 }
 
@@ -169,7 +184,6 @@ textarea {
     rgba(124, 242, 255, 0.08),
     transparent 40%
   );
-  transition: background 0.15s ease;
 }
 
 /* ============================================
@@ -281,24 +295,64 @@ textarea {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Scroll timeline animation */
 .css-reveal {
   animation: scroll-reveal linear both;
   animation-timeline: view();
   animation-range: entry 5% cover 25%;
 }
 
-/* Fallback untuk browser lawas yang belum support (Safari lama / Firefox lama) */
+/* Fallback browser lama */
 @supports not (animation-timeline: view()) {
   .css-reveal {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ========================================
+   UNIVERSAL REVEAL SYSTEM
+======================================== */
+
+.css-reveal-base,
+.reveal-slide-up {
+  opacity: 0;
+
+  transform: translate3d(0, 48px, 0);
+
+  transition:
+    opacity 0.7s ease-out,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: opacity, transform;
+
+  backface-visibility: hidden;
+}
+
+.css-reveal-base.is-visible,
+.reveal-slide-up.is-visible {
+  opacity: 1;
+
+  transform: none;
+
+  will-change: auto;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .css-reveal-base,
+  .reveal-slide-up {
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }
 

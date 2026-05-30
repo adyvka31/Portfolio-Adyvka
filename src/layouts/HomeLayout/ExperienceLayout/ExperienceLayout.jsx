@@ -1,4 +1,4 @@
-import Reveal from "../../../components/Reveal/Reveal";
+import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import Tag from "../../../components/Tag/Tag";
 import { experiences } from "../../../data/portfolio";
@@ -8,10 +8,8 @@ function TimelineItem({ item, index }) {
   const isLeft = index % 2 === 0;
 
   return (
-    <Reveal
-      delay={index * 0.1}
-      className={index > 0 ? styles.revealWrapper : ""}
-    >
+    /* NativeReveal membungkus tanpa merusak struktur, karena kita pakai display: contents di CSS */
+    <NativeReveal delay={index * 0.1} className="reveal-slide-up">
       <article
         className={`${styles.item} ${isLeft ? styles.leftSide : styles.rightSide}`}
         aria-label={`Experience at ${item.company}`}
@@ -37,7 +35,6 @@ function TimelineItem({ item, index }) {
             <p className={styles.description}>{item.description}</p>
 
             {item.tags && (
-              /* SENIOR FIX: Semantic ul untuk list of technologies */
               <ul className={styles.tags} aria-label="Skills used">
                 {item.tags.map((tag) => (
                   <li key={tag} style={{ listStyle: "none" }}>
@@ -52,7 +49,7 @@ function TimelineItem({ item, index }) {
         {/* Spacer untuk mengisi kolom Grid yang kosong */}
         <div className={styles.spacer} aria-hidden="true" />
       </article>
-    </Reveal>
+    </NativeReveal>
   );
 }
 
@@ -60,11 +57,13 @@ function ExperienceLayout() {
   return (
     <section id="experience" className={styles.section}>
       <div className={styles.container}>
-        <div className={`${styles.centeredLabel} css-reveal`}>
-          <SectionLabel number="03" label="Experience" />
-        </div>
+        <NativeReveal className="reveal-slide-up">
+          <div className={styles.centeredLabel}>
+            <SectionLabel number="03" label="Experience" />
+          </div>
+        </NativeReveal>
 
-        <div className="css-reveal">
+        <NativeReveal delay={0.1} className="reveal-slide-up">
           <h2 className={`${styles.headline} text-fade`}>
             A short timeline of{" "}
             <span className={`font-serif ${styles.italic} text-glow`}>
@@ -72,11 +71,11 @@ function ExperienceLayout() {
             </span>
             .
           </h2>
-        </div>
+        </NativeReveal>
 
-        {/* SENIOR FIX: Jadikan timeline sebagai role="list" untuk Screen Reader */}
-        <div className={styles.timeline} role="list">
+        <div className={styles.timeline}>
           <div className={styles.spine} aria-hidden="true" />
+
           {experiences.map((item, idx) => (
             <TimelineItem
               key={item.period + item.role}

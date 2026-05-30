@@ -9,10 +9,9 @@ function DatabankPreview() {
   const bars = [32, 48, 42, 64, 56, 78, 72, 88, 82, 95];
 
   return (
-    <div
+    <section
       className={styles.preview}
       aria-label="Databank dashboard interface preview mockup"
-      role="img"
     >
       {/* Background dekoratif disembunyikan dari screen reader */}
       <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
@@ -57,7 +56,7 @@ function DatabankPreview() {
           <div key={i} className={styles.bar} style={{ height: `${h}%` }} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

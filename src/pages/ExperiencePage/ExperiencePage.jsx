@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
-import Reveal from "../../components/Reveal/Reveal";
+import NativeReveal from "../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
 import Tag from "../../components/Tag/Tag";
@@ -54,7 +54,6 @@ function ExperienceBentoCard({ item }) {
         <h3 className={styles.title}>{item.title}</h3>
         <p className={styles.description}>{item.description}</p>
 
-        {/* SENIOR FIX: Semantic list untuk tags */}
         <ul className={styles.tagWrapper} aria-label="Skills and technologies">
           {item.tags?.map((tag) => (
             <li key={tag} style={{ listStyle: "none" }}>
@@ -74,8 +73,6 @@ export default function ExperiencePage() {
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
-      // SENIOR FIX: Menghitung lebar card secara dinamis jika diperlukan,
-      // tapi 370px adalah angka fallback yang aman.
       const scrollAmount = 370;
       if (direction === "left") {
         current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -139,7 +136,8 @@ export default function ExperiencePage() {
         aria-label="Work Experience"
       >
         <div className={styles.container}>
-          <Reveal>
+          {/* ✅ Terapkan NativeReveal di Header */}
+          <NativeReveal className="reveal-slide-up">
             <div className={`${styles.sectionHead} ${styles.headLeft}`}>
               <SectionLabel number="01" label="Work Experience" />
               <h2 className={`${styles.sectionTitle} text-fade`}>
@@ -150,38 +148,32 @@ export default function ExperiencePage() {
                 & contracts.
               </h2>
             </div>
-          </Reveal>
+          </NativeReveal>
 
           <div className={styles.carouselContainer}>
             <button
               onClick={() => scroll("left")}
               className={`${styles.arrowBtn} ${styles.arrowLeft}`}
-              aria-label="Scroll carousel left"
+              aria-label="Scroll to previous experience"
             >
-              ←
+              <span aria-hidden="true">←</span>
             </button>
 
             <div className={styles.timelineWrapper}>
               <div className={styles.spine} aria-hidden="true" />
-              <div
+              <ul
                 className={styles.timelineInner}
                 ref={scrollRef}
-                role="list"
                 aria-label="Timeline of work experiences"
               >
                 {workExperiences.map((exp, i) => (
-                  <div
-                    key={exp.slug}
-                    className={styles.cardWrapper}
-                    role="listitem"
-                  >
-                    <Reveal delay={i * 0.08}>
-                      {/* SENIOR FIX: Bungkus link dalam article */}
+                  <li key={exp.slug} className={styles.cardWrapper}>
+                    <NativeReveal delay={i * 0.1} className="reveal-slide-up">
                       <article className={styles.row}>
                         <Link
                           to={`/experience/${exp.slug}`}
                           className={styles.rowLinkOverlay}
-                          aria-label={`View details for ${exp.role}`}
+                          aria-label={`View details for ${exp.role} at ${exp.company}`}
                         />
                         <div
                           className={`${styles.dot} ${exp.current ? styles.dotCurrent : ""}`}
@@ -204,18 +196,18 @@ export default function ExperiencePage() {
                           </span>
                         </div>
                       </article>
-                    </Reveal>
-                  </div>
+                    </NativeReveal>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <button
               onClick={() => scroll("right")}
               className={`${styles.arrowBtn} ${styles.arrowRight}`}
-              aria-label="Scroll carousel right"
+              aria-label="Scroll to next experience"
             >
-              →
+              <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>
@@ -224,7 +216,8 @@ export default function ExperiencePage() {
       {/* 02 - TEACHING EXPERIENCE */}
       <section className={styles.section} aria-label="Teaching Experience">
         <div className={styles.container}>
-          <Reveal>
+          {/* ✅ Terapkan NativeReveal di Header */}
+          <NativeReveal className="reveal-slide-up">
             <div className={styles.headContentReverse}>
               <div className={`${styles.sectionHead} ${styles.headRight}`}>
                 <SectionLabel number="02" label="Teaching Experience" />
@@ -237,17 +230,18 @@ export default function ExperiencePage() {
                 </h2>
               </div>
 
-              {/* SENIOR FIX: A11y Tablist implementation */}
               <div
                 className={styles.filterTabs}
-                role="tablist"
+                role="group" 
                 aria-label="Filter teaching experiences"
               >
                 {teachingTabs.map((tab) => (
                   <button
                     key={tab}
-                    role="tab"
-                    aria-selected={activeTab === tab}
+                    type="button" 
+                    aria-pressed={
+                      activeTab === tab
+                    } 
                     onClick={() => setActiveTab(tab)}
                     className={`${styles.filterTab} ${activeTab === tab ? styles.filterTabActive : ""}`}
                   >
@@ -256,13 +250,18 @@ export default function ExperiencePage() {
                 ))}
               </div>
             </div>
-          </Reveal>
+          </NativeReveal>
 
           <div className={styles.bentoGrid}>
             {teachingExperiences.map((item, i) => (
-              <Reveal key={i} delay={(i % 3) * 0.06}>
+              /* ✅ Terapkan NativeReveal pada setiap Bento Card */
+              <NativeReveal
+                key={i}
+                delay={(i % 3) * 0.1}
+                className="reveal-slide-up"
+              >
                 <ExperienceBentoCard item={item} />
-              </Reveal>
+              </NativeReveal>
             ))}
           </div>
         </div>
@@ -271,7 +270,8 @@ export default function ExperiencePage() {
       {/* 03 - OTHER EXPERIENCE */}
       <section className={styles.section} aria-label="Other Experience">
         <div className={styles.container}>
-          <Reveal>
+          {/* ✅ Terapkan NativeReveal di Header */}
+          <NativeReveal className="reveal-slide-up">
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
               <SectionLabel number="03" label="Other Experience" />
               <h2 className={`${styles.sectionTitle} text-fade`}>
@@ -282,13 +282,18 @@ export default function ExperiencePage() {
                 .
               </h2>
             </div>
-          </Reveal>
+          </NativeReveal>
 
           <div className={styles.bentoGrid}>
             {otherExperiences.map((item, i) => (
-              <Reveal key={i} delay={(i % 3) * 0.06}>
+              /* ✅ Terapkan NativeReveal pada setiap Bento Card */
+              <NativeReveal
+                key={i}
+                delay={(i % 3) * 0.1}
+                className="reveal-slide-up"
+              >
                 <ExperienceBentoCard item={item} />
-              </Reveal>
+              </NativeReveal>
             ))}
           </div>
         </div>

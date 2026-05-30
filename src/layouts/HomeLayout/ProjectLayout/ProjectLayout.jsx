@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import { ArrowUpRightIcon } from "../../../components/Icons/Icons";
 import {
@@ -27,7 +28,7 @@ function ProjectLayout() {
   return (
     <section id="work" className={styles.section}>
       <div className={styles.container}>
-        <div className={`${styles.header} css-reveal`}>
+        <NativeReveal className={styles.header}>
           <div className={styles.headerText}>
             <SectionLabel number="02" label="Selected Work" />
             <h2 className={`${styles.headline} text-fade`}>
@@ -35,11 +36,10 @@ function ProjectLayout() {
               <span className={`font-serif ${styles.italic} text-glow`}>
                 shipped
               </span>
-              ,<br /> not pitched.
+              , not pitched.
             </h2>
           </div>
 
-          {/* SENIOR FIX: Tambahkan aksesibilitas agar screen reader mengenali area filter */}
           <div
             className={styles.filters}
             role="group"
@@ -53,28 +53,28 @@ function ProjectLayout() {
                 className={`${styles.chip} ${
                   activeFilter === f.id ? styles.chipActive : ""
                 }`}
-                // SENIOR FIX: Identifikasi state aktif untuk Screen Reader
                 aria-pressed={activeFilter === f.id}
               >
                 {f.label}
               </button>
             ))}
           </div>
-        </div>
+        </NativeReveal>
 
         <div className={styles.grid}>
-          {featuredProjects.map((project) => (
+          {featuredProjects.map((project, idx) => (
             <ProjectCard
               key={project.id}
               project={project}
               visible={
                 activeFilter === "all" || project.category === activeFilter
               }
+              revealDelay={(idx % 3) * 0.1}
             />
           ))}
         </div>
 
-        <div className={`${styles.allRepos} css-reveal`}>
+        <NativeReveal className={styles.allRepos}>
           <a
             href={personalInfo.socials.githubRepos}
             target="_blank"
@@ -85,7 +85,7 @@ function ProjectLayout() {
             See all 25 repositories on GitHub
             <ArrowUpRightIcon size={13} />
           </a>
-        </div>
+        </NativeReveal>
       </div>
     </section>
   );

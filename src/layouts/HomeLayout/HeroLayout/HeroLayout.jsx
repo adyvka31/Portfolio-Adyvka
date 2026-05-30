@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import Reveal from "../../../components/Reveal/Reveal";
+import NativeReveal from "../../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
 import { ArrowRightIcon, GithubIcon } from "../../../components/Icons/Icons";
 import { heroMetrics, personalInfo } from "../../../data/portfolio";
 import styles from "./HeroLayout.module.css";
-import profilePhoto from "../../../assets/profile.webp?w=400;800;1200&format=avif;webp&as=picture";
+import profilePhoto from "../../../assets/profile.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import Image from "../../../components/Image/Image";
 
 function HeroLayout() {
@@ -42,34 +42,47 @@ function HeroLayout() {
         ))}
       </div>
 
-      {/* Status Bar: Sembunyi di mobile secara fungsional melalui CSS */}
       <div className={styles.statusLeft}>
-        <span className={styles.statusLine} />
-        <span className={`${styles.statusDot} pulse-dot`} />
-        <span>Available for new opportunities · 2026</span>
+        <NativeReveal
+          delay={0.1}
+          className="reveal-slide-up"
+          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+        >
+          <span className={styles.statusLine} />
+          <span className={`${styles.statusDot} pulse-dot`} />
+          <span>Available for new opportunities · 2026</span>
+        </NativeReveal>
       </div>
 
       <div className={styles.statusRight}>
-        <span>
-          {personalInfo.location}
-          <span className={styles.statusRightSub}>
-            {" "}
-            // {personalInfo.timezone}
+        <NativeReveal
+          delay={0.2}
+          className="reveal-slide-up"
+          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+        >
+          <span>
+            {personalInfo.location}
+            <span className={styles.statusRightSub}>
+              {" "}
+              // {personalInfo.timezone}
+            </span>
           </span>
-        </span>
-        <span className={styles.statusLine} />
+          <span className={styles.statusLine} />
+        </NativeReveal>
       </div>
 
       <div className={styles.content}>
         <div className={styles.inner}>
-          <Reveal>
+          {/* ✅ 1. Badge muncul pertama (Delay: 0s) */}
+          <NativeReveal className="reveal-slide-up">
             <div className={styles.badge}>
               <span className={styles.diamond}>◆</span>
               {personalInfo.currentRole}
             </div>
-          </Reveal>
+          </NativeReveal>
 
-          <Reveal delay={0.06}>
+          {/* ✅ 2. Judul Utama & Foto 3 Lapis muncul bersamaan (Delay: 0.1s) */}
+          <NativeReveal delay={0.1} className="reveal-slide-up">
             <div className={styles.headlineWrapper}>
               {/* Layer 1: Text Back */}
               <h1 className={`${styles.headline} ${styles.textBack}`}>
@@ -99,7 +112,7 @@ function HeroLayout() {
                   className={styles.heroBgPhoto}
                   width={800}
                   height={1000}
-                  sizes="(max-width: 768px) 100vw, 800px"
+                  sizes="(max-width: 768px) 100vw, 600px"
                   priority={true}
                 />
               </div>
@@ -129,47 +142,73 @@ function HeroLayout() {
                 </div>
               </h1>
             </div>
-          </Reveal>
+          </NativeReveal>
 
-          <p className={`${styles.subhead} css-reveal`}>
-            I'm Adyvka — a full-stack engineer crafting production systems with
-            React, NestJS, and PostgreSQL. Currently engineering an ERP platform
-            serving enterprise clients.
-          </p>
+          {/* ✅ 3. Subhead menyusul (Delay: 0.2s) */}
+          <NativeReveal delay={0.2} className="reveal-slide-up">
+            <p className={styles.subhead}>
+              I'm Adyvka — a full-stack engineer crafting production systems
+              with React, NestJS, and PostgreSQL. Currently engineering an ERP
+              platform serving enterprise clients.
+            </p>
+          </NativeReveal>
 
-          <div className={`${styles.actions} css-reveal`}>
-            <a href="#work" className={`btn-primary ${styles.primaryBtn}`}>
-              View selected work
-              <ArrowRightIcon />
-            </a>
-            <a
-              href={personalInfo.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${styles.secondaryBtn} glass-hi`}
-            >
-              <GithubIcon />
-              GitHub
-            </a>
-          </div>
+          {/* ✅ 4. Tombol Aksi menyusul (Delay: 0.3s) */}
+          <NativeReveal delay={0.3} className="reveal-slide-up">
+            <div className={styles.actions}>
+              <a href="#work" className={`btn-primary ${styles.primaryBtn}`}>
+                View selected work
+                <ArrowRightIcon />
+              </a>
+              <a
+                href={personalInfo.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.secondaryBtn} glass-hi`}
+              >
+                <GithubIcon />
+                GitHub
+              </a>
+            </div>
+          </NativeReveal>
 
-          <div className={`${styles.metrics} css-reveal`}>
-            {heroMetrics.map((metric) => (
-              <div key={metric.label} className={styles.metric}>
-                <div className={`font-serif ${styles.metricValue} text-glow`}>
-                  {metric.value}
+          {/* ✅ 5. Metrik angka menyusul (Delay: 0.4s) */}
+          <NativeReveal delay={0.4} className="reveal-slide-up">
+            <div className={styles.metrics}>
+              {heroMetrics.map((metric) => (
+                <div key={metric.label} className={styles.metric}>
+                  <div className={`font-serif ${styles.metricValue} text-glow`}>
+                    {metric.value}
+                  </div>
+                  <div className={styles.metricLabel}>{metric.label}</div>
                 </div>
-                <div className={styles.metricLabel}>{metric.label}</div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </NativeReveal>
         </div>
       </div>
 
-      <a href="#trusted" className={`${styles.scrollCue} css-reveal`}>
-        <span>Scroll</span>
-        <span className={styles.scrollLine} />
-      </a>
+      {/* ✅ 6. Scroll Cue di paling bawah menyusul terakhir (Delay: 0.5s) */}
+      <div className={styles.scrollCue}>
+        {/* 2. Wadah Dalam (NativeReveal): 
+            Bertugas melakukan animasi meluncur. 
+            Karena dia berada di dalam wadah yang sudah fixed, 
+            posisinya tidak akan melompat-lompat.
+        */}
+        <NativeReveal delay={0.5} className="reveal-slide-up">
+          <a
+            href="#trusted"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <span>Scroll</span>
+            <span className={styles.scrollLine} />
+          </a>
+        </NativeReveal>
+      </div>
     </section>
   );
 }

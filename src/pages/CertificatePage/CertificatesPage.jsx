@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
-import Reveal from "../../components/Reveal/Reveal";
+import NativeReveal from "../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
 import Tag from "../../components/Tag/Tag";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import { allCertificates } from "../../data/portfolio";
@@ -64,7 +64,6 @@ function CertificateCard({ item }) {
         <div className={local.institution}>— {item.institution}</div>
         <h3 className={local.title}>{item.title}</h3>
 
-        {/* SENIOR FIX: Semantic <ul> untuk tags */}
         <ul className={local.tags} aria-label="Skills acquired">
           {item.tags?.slice(0, 3).map((t) => (
             <li key={t} style={{ listStyle: "none" }}>
@@ -114,9 +113,14 @@ export default function CertificatesPage() {
         <div className={local.gridInner}>
           <div className={local.grid}>
             {items.map((item, i) => (
-              <Reveal key={item.slug} delay={(i % 3) * 0.05}>
+              /* ✅ Implementasi NativeReveal dengan jeda (delay) 0.15 detik per kolom */
+              <NativeReveal
+                key={item.slug}
+                delay={(i % 3) * 0.15}
+                className="reveal-slide-up"
+              >
                 <CertificateCard item={item} />
-              </Reveal>
+              </NativeReveal>
             ))}
           </div>
         </div>

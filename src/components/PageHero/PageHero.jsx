@@ -1,4 +1,4 @@
-import Reveal from "../Reveal/Reveal";
+import NativeReveal from "../Reveal/NativeReveal"; 
 import SectionLabel from "../SectionLabel/SectionLabel";
 import styles from "./PageHero.module.css";
 
@@ -13,7 +13,6 @@ export default function PageHero({
   const renderTitle = () => {
     if (!italicWord) return <>{title}</>;
 
-    // SENIOR FIX: Gunakan Regex Case-Insensitive agar tidak rentan bug kapitalisasi
     const regex = new RegExp(`(${italicWord})`, "i");
     const parts = title.split(regex);
 
@@ -38,23 +37,22 @@ export default function PageHero({
   return (
     <section className={styles.section} aria-label={`${label} Hero Section`}>
       <div className={styles.container}>
-        <Reveal>
+        <NativeReveal className="reveal-slide-up">
           <SectionLabel number={number} label={label} />
-        </Reveal>
+        </NativeReveal>
 
-        <Reveal delay={0.05}>
+        <NativeReveal delay={0.05} className="reveal-slide-up">
           <h1 className={`${styles.title} text-fade`}>{renderTitle()}</h1>
-        </Reveal>
+        </NativeReveal>
 
         {description && (
-          <Reveal delay={0.12}>
+          <NativeReveal delay={0.12} className="reveal-slide-up">
             <p className={styles.description}>{description}</p>
-          </Reveal>
+          </NativeReveal>
         )}
 
         {meta && (
-          <Reveal delay={0.18}>
-            {/* SENIOR FIX: Semantic description list untuk data key-value */}
+          <NativeReveal delay={0.18} className="reveal-slide-up">
             <dl className={styles.meta} aria-label="Hero Metadata">
               {meta.map((item, i) => (
                 <div key={i} className={styles.metaItem}>
@@ -63,7 +61,7 @@ export default function PageHero({
                 </div>
               ))}
             </dl>
-          </Reveal>
+          </NativeReveal>
         )}
       </div>
     </section>

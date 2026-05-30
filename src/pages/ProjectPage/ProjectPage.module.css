@@ -17,10 +17,10 @@
        Kita gunakan 0.5rem untuk memberikan sedikit 'napas' 
        agar tidak benar-benar menempel dengan PageHero. */
     padding-top: 0.5rem;
-    
+
     /* Padding bawah tetap atau sesuaikan jika terasa terlalu jauh juga */
-    padding-bottom: 5rem; 
-    
+    padding-bottom: 5rem;
+
     /* Gap antar elemen internal (Search & Grid) bisa diperapat di mobile */
     gap: 2rem;
   }
@@ -69,7 +69,7 @@
 }
 
 .searchInput::placeholder {
-  color: var(--ink-300);
+  color: var(--ink-200);
 }
 
 .filters {
@@ -237,7 +237,7 @@
   padding: 1rem 1.2rem;
   margin-bottom: 1rem;
   border-radius: 1.25rem;
-  background: rgba(15, 15, 15, 0.85); 
+  background: rgba(15, 15, 15, 0.85);
   transform: translateY(120%) translateZ(0);
   transition: transform 0.3s ease-out;
   will-change: transform;
@@ -287,7 +287,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-300);
+  color: var(--ink-200);
 }
 
 .cardTitleModern {

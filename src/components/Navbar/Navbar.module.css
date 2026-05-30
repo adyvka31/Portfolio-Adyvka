@@ -1,15 +1,17 @@
 .header {
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
   z-index: 50;
   top: 0;
   width: 100%;
-  transition: all 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1),
+    width 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
 .header.scrolled {
-  top: 1.25rem;
+  transform: translate(-50%, 1.25rem);
   width: min(960px, calc(100% - 2rem));
 }
 
@@ -18,7 +20,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 2rem; /* Padding lebih besar di awal */
-  transition: all 0.4s ease;
+  transition:
+    padding 0.4s ease,
+    border-radius 0.4s ease,
+    background-color 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .header.scrolled .nav {
@@ -89,7 +95,9 @@
   color: var(--ink-950);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .cta:hover {
@@ -109,7 +117,10 @@
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .ctaSecondary:hover {
@@ -188,7 +199,7 @@
   font-size: 0.875rem;
 }
 
-.closeBtn {
+closeBtn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
   color: #fff;
@@ -198,7 +209,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  /* SENIOR FIX: Hapus 'all' */
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .closeBtn:hover {
@@ -340,7 +354,7 @@
 
 .externalLink {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   display: flex;
   align-items: center;

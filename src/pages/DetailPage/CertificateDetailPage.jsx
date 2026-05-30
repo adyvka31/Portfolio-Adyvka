@@ -48,27 +48,27 @@ export default function CertificateDetailPage() {
       {cert.image && (
         <section className={styles.mediaSection}>
           <div className={styles.mediaInner}>
-            <Reveal>
+            <div className="css-reveal">
               <MediaFrame
                 src={cert.image}
                 alt={cert.title}
                 caption={`${cert.institution} · ${cert.year}`}
                 aspect="4/3"
               />
-            </Reveal>
+            </div>
           </div>
         </section>
       )}
 
       <section className={styles.tagsStrip}>
         <div className={styles.tagsInner}>
-          <Reveal>
+          <div className="css-reveal">
             <div className={styles.companyRow}>
               <span className={styles.companyLabel}>Issued by</span>
               <span className={styles.companyName}>{cert.institution}</span>
             </div>
-          </Reveal>
-          <Reveal delay={0.05}>
+          </div>
+          <div className="css-reveal" style={{ animationDelay: "0.05s" }}>
             <div className={styles.linksRow}>
               {(detail?.skills || cert.tags || []).map((t) => (
                 <Tag key={t} size="sm">
@@ -86,7 +86,7 @@ export default function CertificateDetailPage() {
                 </a>
               )}
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 

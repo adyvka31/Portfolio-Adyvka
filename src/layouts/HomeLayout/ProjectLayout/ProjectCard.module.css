@@ -182,7 +182,7 @@
 .yearSm {
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.75rem;
-  color: var(--ink-300);
+  color: var(--ink-200);
 }
 
 /* Flagship card needs the top content to not push the tag footer */

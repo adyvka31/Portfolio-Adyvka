@@ -47,27 +47,27 @@ export default function AchievementDetailPage() {
       {item.image && (
         <section className={styles.mediaSection}>
           <div className={styles.mediaInner}>
-            <Reveal>
+           <div className="css-reveal">
               <MediaFrame
                 src={item.image}
                 alt={item.title}
                 caption={`${item.institution} · ${item.year}`}
               />
-            </Reveal>
+            </div>
           </div>
         </section>
       )}
 
       <section className={styles.tagsStrip}>
         <div className={styles.tagsInner}>
-          <Reveal>
+          <div className="css-reveal">
             <div className={styles.companyRow}>
               <span className={styles.companyLabel}>By</span>
               <span className={styles.companyName}>{item.institution}</span>
             </div>
-          </Reveal>
+          </div>
           {(detail?.stack || item.tags) && (
-            <Reveal delay={0.05}>
+            <div className="css-reveal" style={{ animationDelay: "0.05s" }}>
               <div className={styles.tags}>
                 {(detail?.stack || item.tags || []).map((t) => (
                   <Tag key={t} size="sm">
@@ -75,7 +75,7 @@ export default function AchievementDetailPage() {
                   </Tag>
                 ))}
               </div>
-            </Reveal>
+            </div>
           )}
         </div>
       </section>

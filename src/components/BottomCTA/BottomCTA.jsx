@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
+import NativeReveal from "../Reveal/NativeReveal";
 import { ArrowRightIcon } from "../Icons/Icons";
 import styles from "./BottomCTA.module.css";
 
 export default function BottomCTA({
   eyebrow = "What's next",
-  // SENIOR FIX: Pindahkan tanda titik ke dalam prop default agar bisa diubah menjadi "?" atau "!" nantinya
   title = "Let's build something.",
   italicWord = "something",
   description = "Recruiting, contracting, or just curious — the inbox is open.",
 }) {
-  // SENIOR FIX: RegEx Case-Insensitive Split yang anti-gagal
   const renderTitle = () => {
     if (!italicWord) return title;
 
-    // Pecah string dengan mengabaikan huruf besar/kecil (flag "i")
     const regex = new RegExp(`(${italicWord})`, "i");
     const parts = title.split(regex);
 
@@ -31,23 +29,23 @@ export default function BottomCTA({
   return (
     <section className={styles.section} aria-label="Call to Action">
       <div className={styles.container}>
-        <div className="css-reveal">
+        <NativeReveal className="reveal-slide-up">
           <div className={styles.eyebrow}>{eyebrow}</div>
-        </div>
+        </NativeReveal>
 
-        <div className="css-reveal">
+        <NativeReveal delay={0.1} className="reveal-slide-up">
           <h2 className={`${styles.title} text-fade`}>{renderTitle()}</h2>
-        </div>
+        </NativeReveal>
 
-        <div className="css-reveal">
+        <NativeReveal delay={0.2} className="reveal-slide-up">
           <p className={styles.description}>{description}</p>
-        </div>
+        </NativeReveal>
 
-        <div className="css-reveal">
+        <NativeReveal delay={0.3} className="reveal-slide-up">
           <a href="/#contact" className={`btn-primary ${styles.btn}`}>
             Get in touch <ArrowRightIcon size={16} />
           </a>
-        </div>
+        </NativeReveal>
       </div>
     </section>
   );

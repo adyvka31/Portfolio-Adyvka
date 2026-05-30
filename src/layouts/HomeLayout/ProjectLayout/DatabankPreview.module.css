@@ -64,7 +64,7 @@
 .version {
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: clamp(0.65rem, 1.5vw, 0.75rem);
-  color: var(--ink-300);
+  color: var(--ink-200);
   flex-shrink: 0;
 }
 
