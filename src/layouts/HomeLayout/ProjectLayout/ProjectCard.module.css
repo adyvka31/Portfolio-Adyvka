@@ -33,15 +33,8 @@
   transform: scale(0.95) translateY(10px);
   pointer-events: none;
   visibility: hidden;
-  /* Posisi absolute opsional jika card yang hidden mengambil ruang grid, 
-     tapi jika layout filter butuh card ini hilang total tanpa merusak grid, 
-     solusi JavaScript untuk 'mount/unmount' komponen lebih baik daripada CSS hide */
-  display: none; /* Pertahankan jika framework filter layout memang mewajibkannya, tapi animasinya akan terpotong */
+  display: none;
 }
-
-/* CATATAN: Jika Anda membuat fitur "Filter Portfolio" (misal: "Show Web Only"), 
-   dan Anda ingin animasinya halus, hapus `display: none` di atas, dan biarkan grid
-   ter-adjust secara dinamis via library animasi seperti Framer Motion (AnimatePresence) */
 
 /* ---- Span variants on a 6-col grid ---- */
 .spanLg {
@@ -51,16 +44,8 @@
 }
 
 @media (min-width: 768px) {
-  .spanLg {
-    grid-column: span 4 / span 4;
-    grid-row: span 2 / span 2;
-  }
   .spanMd {
-    grid-column: span 3 / span 3;
     min-height: clamp(200px, 25vh, 220px);
-  }
-  .spanSm {
-    grid-column: span 2 / span 2;
   }
 }
 

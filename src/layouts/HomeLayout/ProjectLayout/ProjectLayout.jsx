@@ -63,14 +63,28 @@ function ProjectLayout() {
 
         <div className={styles.grid}>
           {featuredProjects.map((project, idx) => (
-            <ProjectCard
+            <NativeReveal
               key={project.id}
-              project={project}
-              visible={
-                activeFilter === "all" || project.category === activeFilter
+              delay={(idx % 3) * 0.15}
+              className="reveal-slide-up"
+              style={
+                project.span === "lg"
+                  ? {
+                      gridColumn: "span 4 / span 4",
+                      gridRow: "span 2 / span 2",
+                    }
+                  : project.span === "md"
+                    ? { gridColumn: "span 3 / span 3" }
+                    : { gridColumn: "span 2 / span 2" }
               }
-              revealDelay={(idx % 3) * 0.1}
-            />
+            >
+              <ProjectCard
+                project={project}
+                visible={
+                  activeFilter === "all" || project.category === activeFilter
+                }
+              />
+            </NativeReveal>
           ))}
         </div>
 
