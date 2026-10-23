@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRightIcon } from "../Icons/Icons";
 import styles from "./PrevNextNav.module.css";
 
 export default function PrevNextNav({ prev, next, baseUrl }) {

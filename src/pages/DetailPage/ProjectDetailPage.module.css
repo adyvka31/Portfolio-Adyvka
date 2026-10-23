@@ -1,0 +1,934 @@
+/* src/pages/DetailPage/ProjectDetailPage.module.css */
+
+/* ==========================================================================
+   STICKY SUBNAV / JUMP BAR
+   ========================================================================== */
+.subnav {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 40;
+  background: rgba(7, 7, 8, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.625rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.subnavInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.375rem 0.625rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.backBtn:hover {
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.06);
+}
+
+.navPills {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  overflow-x: auto;
+  padding: 0.125rem 0;
+  scrollbar-width: none;
+}
+
+.navPills::-webkit-scrollbar {
+  display: none;
+}
+
+.navPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.navPill:hover,
+.navPillActive {
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.08);
+  border-color: rgba(124, 242, 255, 0.25);
+}
+
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: #34d399;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  white-space: nowrap;
+}
+
+.statusPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+}
+
+/* ==========================================================================
+   TAGS & QUICK ACTION STRIP
+   ========================================================================== */
+.tagsStrip {
+  padding: 1.5rem 1.5rem 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.tagsInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.linksRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--accent-glow);
+  padding: 0.5rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(124, 242, 255, 0.05);
+  border: 1px solid rgba(124, 242, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.linkBtn:hover {
+  background: rgba(124, 242, 255, 0.12);
+  border-color: rgba(124, 242, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   SHOWCASE / MOCKUP SECTION
+   ========================================================================== */
+.showcaseSection {
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+.showcaseInner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.previewCard {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(124, 242, 255, 0.15);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+  background: var(--ink-900);
+}
+
+/* ==========================================================================
+   KEY METRICS / KPI GRID
+   ========================================================================== */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .kpiGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kpiGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.kpiCard {
+  padding: 1.25rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpiValue {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.kpiLabel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-100);
+  margin-bottom: 0.35rem;
+}
+
+.kpiNote {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ==========================================================================
+   CONTENT SECTIONS & CONTAINERS
+   ========================================================================== */
+.section {
+  padding: 4.5rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionAlt {
+  background: rgba(10, 10, 14, 0.4);
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 2.75rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.sectionLead {
+  font-size: 1.0625rem;
+  color: var(--ink-200);
+  max-width: 48rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================================================
+   PILLARS / HIGHLIGHTS BENTO
+   ========================================================================== */
+.pillarGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .pillarGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pillarCard {
+  padding: 1.75rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pillarIconBox {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(124, 242, 255, 0.08);
+  border: 1px solid rgba(124, 242, 255, 0.2);
+  color: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillarTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.pillarDesc {
+  font-size: 0.9375rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   ARCHITECTURE VISUALIZER
+   ========================================================================== */
+.archDiagramWrap {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.archMetaBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.archBadge {
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(124, 242, 255, 0.2);
+}
+
+.archLayersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .archLayersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .archLayersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.archLayerCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.archLayerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.archLayerName {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.archLayerBadge {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(124, 242, 255, 0.15);
+  white-space: nowrap;
+}
+
+.archLayerDesc {
+  font-size: 0.875rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   FEATURES EXPLORER (BENTO GRID)
+   ========================================================================== */
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.featureCard {
+  padding: 1.75rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  border-color: rgba(124, 242, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.featureTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.featureNumber {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.1em;
+}
+
+.featureBadge {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--ink-200);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.featureDesc {
+  font-size: 0.9375rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--ink-100);
+  line-height: 1.5;
+}
+
+.featureItemIcon {
+  color: var(--accent-glow);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   APPROVAL WORKFLOW PIPELINE
+   ========================================================================== */
+.pipelineWrap {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.workflowStages {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .workflowStages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stageCard {
+  padding: 1.75rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  background: rgba(15, 15, 18, 0.7);
+  border: 1px solid var(--line);
+  transition: all 0.3s ease;
+}
+
+.stageCardActive {
+  border-color: rgba(124, 242, 255, 0.4);
+  box-shadow: 0 0 25px rgba(124, 242, 255, 0.1);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stageLevel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.08em;
+}
+
+.stageRoleBadge {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(124, 242, 255, 0.08);
+  border: 1px solid rgba(124, 242, 255, 0.25);
+  color: var(--accent-glow);
+  font-weight: 500;
+}
+
+.stageTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.stageDesc {
+  font-size: 0.875rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stageActionBox {
+  margin-top: auto;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(124, 242, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-bright);
+}
+
+.lockNoticeCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.lockNoticeIcon {
+  color: #f59e0b;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.lockNoticeTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin: 0 0 0.35rem;
+}
+
+.lockNoticeDesc {
+  font-size: 0.875rem;
+  color: var(--ink-100);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   TECH STACK MATRIX
+   ========================================================================== */
+.techMatrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .techMatrix {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.techGroupCard {
+  padding: 1.75rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.techGroupTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.techGroupTitle::before {
+  content: "◆";
+  color: var(--accent-glow);
+  font-size: 0.7rem;
+}
+
+.techItemList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.techItemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.techItemRow:hover {
+  background: rgba(124, 242, 255, 0.04);
+  border-color: rgba(124, 242, 255, 0.15);
+}
+
+.techItemName {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8125rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.techItemRole {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* ==========================================================================
+   MONOREPO DIRECTORY & SCHEMAS
+   ========================================================================== */
+.dirSchemaWrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .dirSchemaWrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.terminalCard {
+  border-radius: 14px;
+  background: var(--ink-950);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.terminalHead {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.terminalDots {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.terminalDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink-500);
+}
+
+.terminalTitle {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+}
+
+.terminalBody {
+  padding: 1.25rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--ink-100);
+  max-height: 28rem;
+  overflow-y: auto;
+}
+
+.terminalTreeItem {
+  padding: 0.25rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.terminalTreeBullet {
+  color: var(--accent-glow);
+  flex-shrink: 0;
+}
+
+.schemaList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.schemaCard {
+  padding: 1.25rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.schemaName {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8125rem;
+  color: var(--accent-bright);
+  font-weight: 600;
+  margin: 0;
+}
+
+.schemaPurpose {
+  font-size: 0.8125rem;
+  color: var(--ink-200);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   API ENDPOINTS & ENTERPRISE SECURITY
+   ========================================================================== */
+.apiSecurityGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .apiSecurityGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.endpointGroup {
+  margin-bottom: 1.25rem;
+}
+
+.endpointGroupTitle {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+}
+
+.endpointList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.endpointRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+}
+
+.methodBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.methodGet {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.methodPost {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.methodPatch {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.methodDelete {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.endpointPath {
+  color: #fff;
+  flex-grow: 1;
+}
+
+.endpointDesc {
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.securityGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.securityCard {
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.securityIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.securityTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 0.35rem;
+}
+
+.securityDesc {
+  font-size: 0.875rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   STANDARD CASE STUDY (FALLBACK / CORE SUMMARY)
+   ========================================================================== */
+.caseStudyWrap {
+  padding: 4rem 1.5rem;
+}

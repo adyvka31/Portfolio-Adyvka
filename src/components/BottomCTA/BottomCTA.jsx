@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import NativeReveal from "../Reveal/NativeReveal";
 import { ArrowRightIcon } from "../Icons/Icons";
 import styles from "./BottomCTA.module.css";

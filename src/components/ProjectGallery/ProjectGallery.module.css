@@ -1,0 +1,523 @@
+/* src/components/ProjectGallery/ProjectGallery.module.css */
+
+.gallerySection {
+  padding: 4.5rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+
+.lead {
+  font-size: 1.0625rem;
+  color: var(--ink-200);
+  max-width: 46rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   INTERACTIVE TAB SELECTOR BAR
+   ========================================================================== */
+.tabBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 1rem;
+  margin-bottom: 1rem;
+  scrollbar-width: none;
+}
+
+.tabBar::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tabBtn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tabBtnActive {
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.08);
+  border-color: rgba(124, 242, 255, 0.3);
+  font-weight: 500;
+}
+
+.tabIndex {
+  color: var(--accent-glow);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   MACOS BROWSER FRAME & CAROUSEL
+   ========================================================================== */
+.windowFrame {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ink-950);
+  border: 1px solid rgba(124, 242, 255, 0.15);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
+  position: relative;
+}
+
+.windowChrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(20, 20, 24, 0.9);
+  border-bottom: 1px solid var(--line);
+  gap: 1rem;
+}
+
+.windowControls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.windowDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background: #ff5f56;
+}
+
+.dotYellow {
+  background: #ffbd2e;
+}
+
+.dotGreen {
+  background: #27c93f;
+}
+
+.urlBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 1rem;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-100);
+  flex-grow: 1;
+  max-width: 28rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.urlSecure {
+  color: #34d399;
+  margin-right: 0.4rem;
+  font-size: 0.7rem;
+}
+
+.windowActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: var(--ink-200);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.actionBtn:hover {
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.1);
+  border-color: rgba(124, 242, 255, 0.3);
+}
+
+/* ==========================================================================
+   IMAGE VIEWPORT & SLIDER
+   ========================================================================== */
+.viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  background: #050507;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.slideTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.slideImage:hover {
+  transform: scale(1.01);
+}
+
+/* Navigation Overlay Arrows */
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10, 10, 14, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.navArrow:hover {
+  background: rgba(124, 242, 255, 0.15);
+  border-color: rgba(124, 242, 255, 0.4);
+  color: var(--accent-glow);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.navArrowLeft {
+  left: 1rem;
+}
+
+.navArrowRight {
+  right: 1rem;
+}
+
+/* ==========================================================================
+   INFO FOOTER & CAPTION CARD
+   ========================================================================== */
+.infoPanel {
+  padding: 1.5rem 1.75rem;
+  background: rgba(15, 15, 18, 0.95);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .infoPanel {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-grow: 1;
+}
+
+.infoMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.25rem;
+}
+
+.infoCounter {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.infoTag {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--ink-200);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.infoTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.infoDesc {
+  font-size: 0.875rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 48rem;
+}
+
+.featurePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.featurePill {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--ink-100);
+  background: rgba(124, 242, 255, 0.04);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(124, 242, 255, 0.15);
+}
+
+/* Slide Dots */
+.dotsWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dotActive {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--accent-glow);
+  box-shadow: 0 0 10px rgba(124, 242, 255, 0.5);
+}
+
+/* ==========================================================================
+   THUMBNAILS FILMSTRIP
+   ========================================================================== */
+.filmstrip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .filmstrip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.thumbCard {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--ink-950);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: left;
+  padding: 0;
+}
+
+.thumbCard:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.thumbCardActive {
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 16px rgba(124, 242, 255, 0.2);
+}
+
+.thumbImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  background: #000;
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbMeta {
+  padding: 0.5rem 0.75rem;
+  background: rgba(15, 15, 18, 0.95);
+  border-top: 1px solid var(--line);
+}
+
+.thumbTitle {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--ink-100);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL (FULLSCREEN)
+   ========================================================================== */
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.lightboxContent {
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(124, 242, 255, 0.25);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95);
+  background: var(--ink-950);
+}
+
+.lightboxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: rgba(20, 20, 24, 0.95);
+  border-bottom: 1px solid var(--line);
+  gap: 1rem;
+}
+
+.lightboxTitle {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8125rem;
+  color: #fff;
+  margin: 0;
+}
+
+.lightboxCloseBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--ink-100);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightboxCloseBtn:hover {
+  color: #fff;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.lightboxImageWrap {
+  overflow: auto;
+  max-height: calc(90vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050507;
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: calc(90vh - 4.5rem);
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

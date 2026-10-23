@@ -17,7 +17,6 @@ import aigeneratorImg from "../assets/aigenerator.webp?w=400;800&quality=70&form
 import newsImg from "../assets/news.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import qrscannerImg from "../assets/qrscanner.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import todoImg from "../assets/todo.webp?w=400;800&quality=70&format=avif;webp&as=picture";
-import payrollServiceImg from "../assets/payroll-service.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import javaislandImg from "../assets/javaisland.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import fitsmartImg from "../assets/fitsmart.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import coffeeeShopImg from "../assets/coffeee-shop.webp?w=400;800&quality=70&format=avif;webp&as=picture";
@@ -476,6 +475,15 @@ export const extraCertificatesOnlyForPage = [
       "Sertifikasi partisipasi aktif dalam kegiatan komunitas dan workshop GDG.",
     image: gdgImg,
     tags: ["GDG", "Google", "Community"],
+  },
+  {
+    title: "English Proficiency Assessment",
+    institution: "English Language Course",
+    year: "2024",
+    description:
+      "Sertifikasi kompetensi kefasihan berbahasa Inggris untuk komunikasi profesional dan kolaborasi global.",
+    image: englishImg,
+    tags: ["English", "Language", "Communication"],
   },
 ];
 
