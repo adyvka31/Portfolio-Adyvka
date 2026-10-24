@@ -10,7 +10,14 @@ import {
 } from "../Icons/Icons";
 import styles from "./ProjectGallery.module.css";
 
-export default function ProjectGallery({ items = [] }) {
+export default function ProjectGallery({
+  items = [],
+  id = "live-product",
+  sectionNumber = "02",
+  label = "PRODUCTION INTERFACES",
+  title = "The Live System in Action",
+  lead = "Explore high-fidelity production interfaces of the Databank Ecosystem — from operational analytics dashboards and role governance matrices to vendor PO workflows and high-throughput virtualized data tables.",
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
@@ -45,14 +52,6 @@ export default function ProjectGallery({ items = [] }) {
   }, [nextSlide, prevSlide]);
 
   // Touch handlers
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
-
   const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return;
     const diff = touchStartX.current - touchEndX.current;
@@ -62,23 +61,29 @@ export default function ProjectGallery({ items = [] }) {
     touchEndX.current = null;
   };
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
   if (!items || items.length === 0) return null;
 
   const current = items[currentIndex];
 
   return (
-    <section id="gallery" className={styles.gallerySection} aria-label="System Screenshots">
+    <section id={id} className={styles.gallerySection} aria-label="System Screenshots">
       <div className={styles.container}>
         <NativeReveal>
           <div className={styles.header}>
-            <SectionLabel number="04" label="PRODUCTION INTERFACES" />
+            <SectionLabel number={sectionNumber} label={label} />
             <h2 className={`${styles.title} text-fade`}>
-              Interactive System{" "}
-              <span className="font-serif text-glow">Documentation</span>
+              {title.split(" in Action")[0]}{" "}
+              <span className="font-serif text-glow">in Action</span>
             </h2>
-            <p className={styles.lead}>
-              Explore high-fidelity production interfaces of the Databank Ecosystem — from operational analytics dashboards and role governance matrices to vendor PO workflows and high-throughput virtualized data tables.
-            </p>
+            <p className={styles.lead}>{lead}</p>
           </div>
         </NativeReveal>
 

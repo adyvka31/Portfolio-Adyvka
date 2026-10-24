@@ -14,7 +14,7 @@ export const projectDetails = {
       { label: "Company", value: "PT Intisel Prodaktifakom" },
       { label: "Timeline", value: "Jan 2026 – Present" },
       { label: "Team", value: "4 Engineers" },
-      { label: "Status", value: "In Production" },
+      { label: "Status", value: "In Active Development" },
       { label: "Architecture", value: "Decoupled Monorepo" },
     ],
     gallery: [
@@ -78,9 +78,9 @@ export const projectDetails = {
         note: "Lag-free virtualized table rendering via React Virtuoso",
       },
       {
-        value: "99.97%",
-        label: "System Uptime",
-        note: "Over 30 days initial production deployment window",
+        value: "Active",
+        label: "Build Status",
+        note: "Core modules in active engineering delivery",
       },
       {
         value: "4,328",
@@ -445,8 +445,8 @@ export const projectDetails = {
       {
         title: "Results",
         body: [
-          "99.97% uptime over the first 30 days.",
-          "18% reduction in monthly close time (finance module).",
+          "Core modules under active engineering delivery across inventory, outsource, and HR domains.",
+          "18% reduction in monthly close time during internal workflow trials.",
           "4,328 SKUs migrated with zero reconciliation errors.",
         ],
       },

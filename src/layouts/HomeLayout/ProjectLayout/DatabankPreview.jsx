@@ -44,9 +44,9 @@ function DatabankPreview() {
         </div>
 
         <div className={styles.metric}>
-          <dt className={styles.metricLabel}>UPTIME</dt>
-          <dd className={`font-serif ${styles.metricValue}`}>99.97%</dd>
-          <dd className={`${styles.metricDelta} ${styles.deltaUp}`}>30d</dd>
+          <dt className={styles.metricLabel}>STATUS</dt>
+          <dd className={`font-serif ${styles.metricValue}`}>Active</dd>
+          <dd className={`${styles.metricDelta} ${styles.deltaUp}`}>In Dev</dd>
         </div>
       </dl>
 

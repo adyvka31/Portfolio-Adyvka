@@ -128,6 +128,8 @@ export default function ProjectDetailPage() {
   const project = projectsList.find((p) => p.slug === slug);
   const detail = projectDetails[slug];
 
+  const [activeModule, setActiveModule] = useState(0);
+  const [moduleViewMode, setModuleViewMode] = useState("focus"); // 'focus' | 'grid'
   const [activeWorkflowStage, setActiveWorkflowStage] = useState(0);
   const [activeDirTab, setActiveDirTab] = useState(0);
 
@@ -137,6 +139,30 @@ export default function ProjectDetailPage() {
 
   // Check whether we have rich enterprise metadata (like Databank)
   const isEnterprise = Boolean(detail?.features || detail?.kpis || detail?.architecture);
+
+  // Extract brief, what was hard, and results if available in sections
+  const briefSection = detail?.sections?.find(
+    (s) => s.title.toLowerCase().includes("brief") || s.title.toLowerCase().includes("challenge"),
+  );
+  const hardSection = detail?.sections?.find(
+    (s) => s.title.toLowerCase().includes("hard") || s.title.toLowerCase().includes("problem"),
+  );
+  const resultsSection = detail?.sections?.find(
+    (s) => s.title.toLowerCase().includes("result") || s.title.toLowerCase().includes("outcome"),
+  );
+
+  // Project status logic (Production Ready vs In Active Development)
+  const statusMeta =
+    detail?.meta?.find((m) => m.label?.toLowerCase() === "status")?.value ||
+    detail?.status ||
+    "In Active Development";
+
+  const isProductionReady =
+    statusMeta.toLowerCase().includes("production ready") ||
+    statusMeta.toLowerCase() === "live" ||
+    statusMeta.toLowerCase() === "in production";
+
+  const statusLabel = isProductionReady ? "Production Ready" : "In Active Development";
 
   return (
     <PageShell>
@@ -157,166 +183,385 @@ export default function ProjectDetailPage() {
           {isEnterprise && (
             <div className={styles.navPills}>
               <a href="#overview" className={styles.navPill}>
-                Overview
-              </a>
-              <a href="#architecture" className={styles.navPill}>
-                Architecture
-              </a>
-              <a href="#features" className={styles.navPill}>
-                Features ({detail?.features?.length || 8})
+                01. Overview
               </a>
               {detail?.gallery?.length > 0 && (
-                <a href="#gallery" className={styles.navPill}>
-                  Screenshots ({detail.gallery.length})
+                <a href="#live-product" className={styles.navPill}>
+                  02. Live Product
                 </a>
               )}
-              {detail?.approvalWorkflow && (
-                <a href="#approval-flow" className={styles.navPill}>
-                  Approval Flow
-                </a>
-              )}
-              {detail?.techStackGrouped && (
-                <a href="#tech-stack" className={styles.navPill}>
-                  Tech Stack
-                </a>
-              )}
-              {detail?.directoryStructure && (
-                <a href="#directory-schema" className={styles.navPill}>
-                  Structure & Schema
-                </a>
-              )}
-              {detail?.apiEndpoints && (
-                <a href="#api-security" className={styles.navPill}>
-                  API & Security
-                </a>
-              )}
+              <a href="#capabilities" className={styles.navPill}>
+                03. Capabilities & Process
+              </a>
+              <a href="#architecture" className={styles.navPill}>
+                04. System Anatomy
+              </a>
+              <a href="#security-impact" className={styles.navPill}>
+                05. Security & Outcomes
+              </a>
             </div>
           )}
 
-          <div className={styles.statusIndicator}>
-            <span className={styles.statusPulse} aria-hidden="true" />
-            <span>Production Ready</span>
+          <div
+            className={`${styles.statusIndicator} ${
+              isProductionReady ? styles.statusReady : styles.statusDev
+            }`}
+          >
+            <span
+              className={`${styles.statusPulse} ${
+                isProductionReady ? styles.pulseReady : styles.pulseDev
+              }`}
+              aria-hidden="true"
+            />
+            <span>{statusLabel}</span>
           </div>
         </div>
       </nav>
 
-      {/* PAGE HERO */}
-      <PageHero
-        number={project.year || "2026"}
-        label={detail?.subtitle || project.label}
-        title={`${detail?.title || project.title}.`}
-        description={detail?.summary || project.description}
-        meta={detail?.meta}
-      />
+      {/* =========================================================================
+          ACT 1: EXECUTIVE OVERVIEW & THE PROBLEM (#overview)
+          ========================================================================= */}
+      <section id="overview">
+        {/* PAGE HERO */}
+        <PageHero
+          number={project.year || "2026"}
+          label={detail?.subtitle || project.label}
+          title={`${detail?.title || project.title}.`}
+          description={detail?.summary || project.description}
+          meta={detail?.meta}
+        />
 
-      {/* TAGS & ACTIONS STRIP */}
-      <section className={styles.tagsStrip}>
-        <div className={styles.tagsInner}>
-          <NativeReveal className="css-reveal">
-            <div className={styles.tags}>
-              {project.tags?.map((t) => (
-                <Tag key={t} size="sm">
-                  {t}
-                </Tag>
-              ))}
-            </div>
-          </NativeReveal>
-
-          {detail?.links?.length > 0 && (
-            <NativeReveal className="css-reveal" delay={0.05}>
-              <div className={styles.linksRow}>
-                {detail.links.map((l) => (
-                  <a
-                    key={l.url}
-                    href={l.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.linkBtn}
-                  >
-                    {l.label} <ArrowUpRightIcon size={12} />
-                  </a>
+        {/* TAGS & QUICK ACTIONS STRIP */}
+        <section className={styles.tagsStrip}>
+          <div className={styles.tagsInner}>
+            <NativeReveal className="css-reveal">
+              <div className={styles.tags}>
+                {project.tags?.map((t) => (
+                  <Tag key={t} size="sm">
+                    {t}
+                  </Tag>
                 ))}
               </div>
             </NativeReveal>
-          )}
-        </div>
+
+            {detail?.links?.length > 0 && (
+              <NativeReveal className="css-reveal" delay={0.05}>
+                <div className={styles.linksRow}>
+                  {detail.links.map((l) => (
+                    <a
+                      key={l.url}
+                      href={l.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.linkBtn}
+                    >
+                      {l.label} <ArrowUpRightIcon size={12} />
+                    </a>
+                  ))}
+                </div>
+              </NativeReveal>
+            )}
+          </div>
+        </section>
+
+        {/* KPI METRICS & THE BRIEF */}
+        <section className={styles.showcaseSection}>
+          <div className={styles.showcaseInner}>
+            {/* KPI GRID */}
+            {detail?.kpis?.length > 0 && (
+              <NativeReveal>
+                <div className={styles.kpiGrid}>
+                  {detail.kpis.map((kpi, idx) => (
+                    <KPICard key={idx} item={kpi} />
+                  ))}
+                </div>
+              </NativeReveal>
+            )}
+
+            {/* THE OPERATIONAL MANDATE (BRIEF) */}
+            {briefSection && (
+              <NativeReveal delay={0.1}>
+                <div className={styles.challengeCard}>
+                  <div className={styles.challengeHead}>
+                    <span className={styles.challengeBadge}>The Operational Mandate</span>
+                    <h3 className={styles.challengeTitle}>Context & High-Stakes Constraints</h3>
+                  </div>
+                  <div className={styles.challengeBody}>
+                    {briefSection.body.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                </div>
+              </NativeReveal>
+            )}
+
+            {/* PREVIEW CARD IF NO GALLERY */}
+            {!detail?.gallery && (
+              <NativeReveal delay={0.15}>
+                {project.id === "databank" ? (
+                  <div className={styles.previewCard} style={{ marginTop: "2rem" }}>
+                    <DatabankPreview />
+                  </div>
+                ) : project.thumbnail ? (
+                  <div style={{ marginTop: "2rem" }}>
+                    <MediaFrame
+                      src={project.thumbnail}
+                      alt={project.title}
+                      chromeLabel={`${project.slug}.intisel.id`}
+                    />
+                  </div>
+                ) : null}
+              </NativeReveal>
+            )}
+          </div>
+        </section>
       </section>
 
-      {/* SHOWCASE & KPI METRICS */}
-      <section className={styles.showcaseSection}>
-        <div className={styles.showcaseInner}>
-          <NativeReveal>
-            {project.id === "databank" ? (
-              <div className={styles.previewCard}>
-                <DatabankPreview />
-              </div>
-            ) : project.thumbnail ? (
-              <MediaFrame
-                src={project.thumbnail}
-                alt={project.title}
-                chromeLabel={`${project.slug}.intisel.id`}
-              />
-            ) : null}
-          </NativeReveal>
+      {/* =========================================================================
+          ACT 2: THE PRODUCT IN ACTION — LIVE SYSTEM SCREENSHOTS (#live-product)
+          ========================================================================= */}
+      {detail?.gallery?.length > 0 && (
+        <ProjectGallery
+          items={detail.gallery}
+          id="live-product"
+          sectionNumber="02"
+          label="PRODUCTION INTERFACES"
+          title="The Live System in Action"
+          lead="Explore high-fidelity production interfaces of the Databank Ecosystem — from operational analytics dashboards and role governance matrices to subcontractor PO databases and high-throughput virtualized data tables."
+        />
+      )}
 
-          {/* KPI GRID */}
-          {detail?.kpis?.length > 0 && (
-            <NativeReveal delay={0.1}>
-              <div className={styles.kpiGrid}>
-                {detail.kpis.map((kpi, idx) => (
-                  <KPICard key={idx} item={kpi} />
-                ))}
-              </div>
-            </NativeReveal>
-          )}
-        </div>
-      </section>
-
-      {/* 01 — OVERVIEW & PILLARS */}
-      {detail?.highlights?.length > 0 && (
-        <section id="overview" className={`${styles.section} ${styles.sectionAlt}`}>
+      {/* =========================================================================
+          ACT 3: CORE CAPABILITIES & APPROVAL WORKFLOW (#capabilities)
+          ========================================================================= */}
+      {detail?.features?.length > 0 && (
+        <section id="capabilities" className={`${styles.section} ${styles.sectionAlt}`}>
           <div className={styles.container}>
             <NativeReveal>
               <div className={styles.sectionHeader}>
-                <SectionLabel number="01" label="OVERVIEW" />
+                <SectionLabel number="03" label="CAPABILITIES & WORKFLOW" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Four Pillars of{" "}
-                  <span className="font-serif text-glow">Ecosystem Control</span>
+                  Four Ecosystem Pillars &{" "}
+                  <span className="font-serif text-glow">Core Capabilities</span>
                 </h2>
                 <p className={styles.sectionLead}>
-                  Databank unifies the entire telecom operational lifecycle — connecting field engineering crews, outsource vendor governance, automated scraping pipelines, and workforce management into a single source of truth.
+                  Built to automate mission-critical telecom operations — unifying field engineering, outsource procurement, background scraping pipelines, and workforce attendance.
                 </p>
               </div>
             </NativeReveal>
 
-            <NativeReveal delay={0.1}>
-              <div className={styles.pillarGrid}>
-                {detail.highlights.map((p, idx) => (
-                  <PillarCard key={idx} item={p} />
-                ))}
+            {/* 4 PILLARS BENTO */}
+            {detail?.highlights?.length > 0 && (
+              <NativeReveal delay={0.1}>
+                <div className={styles.pillarGrid}>
+                  {detail.highlights.map((p, idx) => (
+                    <PillarCard key={idx} item={p} />
+                  ))}
+                </div>
+              </NativeReveal>
+            )}
+
+            {/* 8 CORE MODULES: INTERACTIVE EXPLORER */}
+            <div className={styles.subSection}>
+              <NativeReveal>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    gap: "1rem",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  <div>
+                    <h3 className={styles.subSectionTitle}>
+                      Eight Mission-Critical Modules
+                    </h3>
+                    <p className={styles.subSectionLead}>
+                      Each module is designed with banking-grade transactional isolation, batch workflows, and zero-compromise audit trails.
+                    </p>
+                  </div>
+
+                  <div style={{ display: "flex", gap: "0.5rem" }}>
+                    <button
+                      type="button"
+                      className={`${styles.navPill} ${
+                        moduleViewMode === "focus" ? styles.navPillActive : ""
+                      }`}
+                      onClick={() => setModuleViewMode("focus")}
+                    >
+                      Interactive Focus
+                    </button>
+                    <button
+                      type="button"
+                      className={`${styles.navPill} ${
+                        moduleViewMode === "grid" ? styles.navPillActive : ""
+                      }`}
+                      onClick={() => setModuleViewMode("grid")}
+                    >
+                      All in Grid
+                    </button>
+                  </div>
+                </div>
+              </NativeReveal>
+
+              {moduleViewMode === "focus" ? (
+                /* INTERACTIVE FOCUS EXPLORER */
+                <NativeReveal delay={0.1}>
+                  <div className={styles.moduleExplorer}>
+                    {/* Left Column: Module Navigation List */}
+                    <div className={styles.moduleListNav} role="tablist">
+                      {detail.features.map((feat, idx) => (
+                        <button
+                          key={feat.id || idx}
+                          type="button"
+                          role="tab"
+                          aria-selected={activeModule === idx}
+                          className={`${styles.moduleNavItem} ${
+                            activeModule === idx ? styles.moduleNavItemActive : ""
+                          }`}
+                          onClick={() => setActiveModule(idx)}
+                        >
+                          <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                            <span className={styles.moduleNavIndex}>
+                              {String(idx + 1).padStart(2, "0")}.
+                            </span>
+                            <span>{feat.title}</span>
+                          </span>
+                          <span style={{ fontSize: "0.75rem", opacity: 0.6 }}>→</span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Right Column: Active Module Detail View */}
+                    <div className={styles.moduleDetailCard}>
+                      <div className={styles.featureTop}>
+                        <span className={styles.featureNumber}>
+                          MODULE // {String(activeModule + 1).padStart(2, "0")} OF{" "}
+                          {String(detail.features.length).padStart(2, "0")}
+                        </span>
+                        {detail.features[activeModule].badge && (
+                          <span className={styles.featureBadge}>
+                            {detail.features[activeModule].badge}
+                          </span>
+                        )}
+                      </div>
+
+                      <h4 className={styles.featureTitle} style={{ fontSize: "1.5rem" }}>
+                        {detail.features[activeModule].title}
+                      </h4>
+                      <p className={styles.featureDesc} style={{ fontSize: "1rem" }}>
+                        {detail.features[activeModule].desc}
+                      </p>
+
+                      <ul className={styles.featureList} style={{ marginTop: "0.5rem" }}>
+                        {detail.features[activeModule].points.map((pt, i) => (
+                          <li key={i} className={styles.featureItem} style={{ fontSize: "0.875rem" }}>
+                            <span className={styles.featureItemIcon}>
+                              <CheckIcon size={14} />
+                            </span>
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </NativeReveal>
+              ) : (
+                /* ALL MODULES IN GRID */
+                <NativeReveal delay={0.1}>
+                  <div className={styles.featureGrid}>
+                    {detail.features.map((feat, idx) => (
+                      <FeatureCard key={feat.id || idx} item={feat} index={idx} />
+                    ))}
+                  </div>
+                </NativeReveal>
+              )}
+            </div>
+
+            {/* SEQUENTIAL 3-STAGE APPROVAL WORKFLOW */}
+            {detail?.approvalWorkflow && (
+              <div className={styles.subSection}>
+                <NativeReveal>
+                  <div className={styles.subSectionHeader}>
+                    <h3 className={styles.subSectionTitle}>
+                      Sequential 3-Stage Approval Engine
+                    </h3>
+                    <p className={styles.subSectionLead}>
+                      Multi-tier approval workflow backed by HTML5 Canvas digital signatures and automated row locking (PO Row Lock) to guarantee transactional integrity.
+                    </p>
+                  </div>
+                </NativeReveal>
+
+                <NativeReveal delay={0.1}>
+                  <div className={styles.pipelineWrap}>
+                    <div className={styles.workflowStages}>
+                      {detail.approvalWorkflow.stages.map((stg, idx) => (
+                        <article
+                          key={idx}
+                          className={`${styles.stageCard} ${
+                            activeWorkflowStage === idx ? styles.stageCardActive : ""
+                          }`}
+                          onClick={() => setActiveWorkflowStage(idx)}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <div className={styles.stageHeader}>
+                            <span className={styles.stageLevel}>{stg.level}</span>
+                            <span className={styles.stageRoleBadge}>{stg.role}</span>
+                          </div>
+                          <h4 className={styles.stageTitle}>{stg.title}</h4>
+                          <p className={styles.stageDesc}>{stg.desc}</p>
+                          <div className={styles.stageActionBox}>
+                            <WorkflowIcon size={14} />
+                            <span>{stg.action}</span>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+
+                    <div className={styles.lockNoticeCard}>
+                      <div className={styles.lockNoticeIcon}>
+                        <LockIcon size={20} />
+                      </div>
+                      <div>
+                        <h4 className={styles.lockNoticeTitle}>
+                          {detail.approvalWorkflow.lockMechanism.title}
+                        </h4>
+                        <p className={styles.lockNoticeDesc}>
+                          {detail.approvalWorkflow.lockMechanism.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </NativeReveal>
               </div>
-            </NativeReveal>
+            )}
           </div>
         </section>
       )}
 
-      {/* 02 — SYSTEM ARCHITECTURE */}
+      {/* =========================================================================
+          ACT 4: SYSTEM ANATOMY & CODEBASE ARCHITECTURE (#architecture)
+          ========================================================================= */}
       {detail?.architecture && (
         <section id="architecture" className={styles.section}>
           <div className={styles.container}>
             <NativeReveal>
               <div className={styles.sectionHeader}>
-                <SectionLabel number="02" label="SYSTEM ARCHITECTURE" />
+                <SectionLabel number="04" label="SYSTEM ANATOMY & ARCHITECTURE" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Decoupled Client-Server{" "}
-                  <span className="font-serif text-glow">Monorepo</span>
+                  Decoupled Monorepo &{" "}
+                  <span className="font-serif text-glow">Modular Schema</span>
                 </h2>
                 <p className={styles.sectionLead}>
-                  Engineered for high availability, fault tolerance, and strict domain isolation. The React 19 SPA interfaces with NestJS 11 services through a strongly typed RESTful contract, protected by stateless JWT authentication and granular RBAC guards at both gateway and controller layers.
+                  Engineered for fault tolerance and strict domain isolation. The React 19 SPA interfaces with NestJS 11 services through a strongly typed RESTful contract, protected by stateless JWT authentication and granular RBAC guards.
                 </p>
               </div>
             </NativeReveal>
 
+            {/* ARCHITECTURE LAYERS FLOW */}
             <NativeReveal delay={0.1}>
               <div className={styles.archDiagramWrap}>
                 <div className={styles.archMetaBar}>
@@ -338,7 +583,7 @@ export default function ProjectDetailPage() {
                   {detail.architecture.layers.map((layer, idx) => (
                     <article key={idx} className={`glass ${styles.archLayerCard}`}>
                       <div className={styles.archLayerHead}>
-                        <h3 className={styles.archLayerName}>{layer.name}</h3>
+                        <h4 className={styles.archLayerName}>{layer.name}</h4>
                         <span className={styles.archLayerBadge}>{layer.badge}</span>
                       </div>
                       <p className={styles.archLayerDesc}>{layer.desc}</p>
@@ -347,248 +592,150 @@ export default function ProjectDetailPage() {
                 </div>
               </div>
             </NativeReveal>
-          </div>
-        </section>
-      )}
 
-      {/* 03 — CORE FEATURES */}
-      {detail?.features?.length > 0 && (
-        <section id="features" className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel number="03" label="KEY MODULES" />
-                <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Eight Core Modules Built for{" "}
-                  <span className="font-serif text-glow">Scale & Speed</span>
-                </h2>
-                <p className={styles.sectionLead}>
-                  Each module is crafted to enterprise-grade specifications: supporting batch operations, spreadsheet-grade column filtering, geolocation verification, and precise authorization boundaries.
-                </p>
-              </div>
-            </NativeReveal>
-
-            <NativeReveal delay={0.1}>
-              <div className={styles.featureGrid}>
-                {detail.features.map((feat, idx) => (
-                  <FeatureCard key={feat.id || idx} item={feat} index={idx} />
-                ))}
-              </div>
-            </NativeReveal>
-          </div>
-        </section>
-      )}
-
-      {/* 04 — INTERACTIVE SYSTEM SCREENSHOTS & DOCUMENTATION GALLERY */}
-      {detail?.gallery?.length > 0 && (
-        <ProjectGallery items={detail.gallery} />
-      )}
-
-      {/* 05 — SEQUENTIAL APPROVAL WORKFLOW */}
-      {detail?.approvalWorkflow && (
-        <section id="approval-flow" className={styles.section}>
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel number="05" label="APPROVAL ENGINE" />
-                <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Sequential 3-Stage{" "}
-                  <span className="font-serif text-glow">Job Order & BAST Workflow</span>
-                </h2>
-                <p className={styles.sectionLead}>
-                  A multi-tier approval workflow backed by HTML5 Canvas digital signatures and automated row locking (PO Row Lock) to guarantee transactional integrity across operational departments.
-                </p>
-              </div>
-            </NativeReveal>
-
-            <NativeReveal delay={0.1}>
-              <div className={styles.pipelineWrap}>
-                <div className={styles.workflowStages}>
-                  {detail.approvalWorkflow.stages.map((stg, idx) => (
-                    <article
-                      key={idx}
-                      className={`${styles.stageCard} ${
-                        activeWorkflowStage === idx ? styles.stageCardActive : ""
-                      }`}
-                      onClick={() => setActiveWorkflowStage(idx)}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div className={styles.stageHeader}>
-                        <span className={styles.stageLevel}>{stg.level}</span>
-                        <span className={styles.stageRoleBadge}>{stg.role}</span>
-                      </div>
-                      <h3 className={styles.stageTitle}>{stg.title}</h3>
-                      <p className={styles.stageDesc}>{stg.desc}</p>
-                      <div className={styles.stageActionBox}>
-                        <WorkflowIcon size={14} />
-                        <span>{stg.action}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-
-                <div className={styles.lockNoticeCard}>
-                  <div className={styles.lockNoticeIcon}>
-                    <LockIcon size={20} />
-                  </div>
-                  <div>
-                    <h4 className={styles.lockNoticeTitle}>
-                      {detail.approvalWorkflow.lockMechanism.title}
-                    </h4>
-                    <p className={styles.lockNoticeDesc}>
-                      {detail.approvalWorkflow.lockMechanism.desc}
+            {/* CURATED TECH STACK */}
+            {detail?.techStackGrouped && (
+              <div className={styles.subSection}>
+                <NativeReveal>
+                  <div className={styles.subSectionHeader}>
+                    <h3 className={styles.subSectionTitle}>
+                      Curated Technology Stack
+                    </h3>
+                    <p className={styles.subSectionLead}>
+                      A modern engineering stack combining high-throughput frontend rendering, modular backend architecture, and headless browser automation.
                     </p>
                   </div>
-                </div>
-              </div>
-            </NativeReveal>
-          </div>
-        </section>
-      )}
+                </NativeReveal>
 
-      {/* 06 — TECH STACK MATRIX */}
-      {detail?.techStackGrouped && (
-        <section id="tech-stack" className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel number="06" label="TECHNOLOGY STACK" />
-                <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Production-Proven{" "}
-                  <span className="font-serif text-glow">Tools & Libraries</span>
-                </h2>
-                <p className={styles.sectionLead}>
-                  A curated engineering stack combining high-throughput frontend rendering, modular backend architecture, headless browser automation, and banking-grade data security standards.
-                </p>
-              </div>
-            </NativeReveal>
-
-            <NativeReveal delay={0.1}>
-              <div className={styles.techMatrix}>
-                {detail.techStackGrouped.map((grp, idx) => (
-                  <article key={idx} className={`glass ${styles.techGroupCard}`}>
-                    <h3 className={styles.techGroupTitle}>{grp.category}</h3>
-                    <div className={styles.techItemList}>
-                      {grp.items.map((item, i) => (
-                        <div key={i} className={styles.techItemRow}>
-                          <span className={styles.techItemName}>{item.name}</span>
-                          <span className={styles.techItemRole}>{item.role}</span>
+                <NativeReveal delay={0.1}>
+                  <div className={styles.techMatrix}>
+                    {detail.techStackGrouped.map((grp, idx) => (
+                      <article key={idx} className={`glass ${styles.techGroupCard}`}>
+                        <h4 className={styles.techGroupTitle}>{grp.category}</h4>
+                        <div className={styles.techItemList}>
+                          {grp.items.map((item, i) => (
+                            <div key={i} className={styles.techItemRow}>
+                              <span className={styles.techItemName}>{item.name}</span>
+                              <span className={styles.techItemRole}>{item.role}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </NativeReveal>
-          </div>
-        </section>
-      )}
-
-      {/* 07 — DIRECTORY STRUCTURE & MODULAR SCHEMAS */}
-      {detail?.directoryStructure && detail?.prismaSchemas && (
-        <section id="directory-schema" className={styles.section}>
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel number="07" label="CODEBASE & DATABASE" />
-                <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Monorepo Architecture &{" "}
-                  <span className="font-serif text-glow">Modular Prisma Schemas</span>
-                </h2>
-                <p className={styles.sectionLead}>
-                  Clean boundary separation between backend and frontend services, paired with a multi-file modular Prisma schema architecture to enforce domain segregation.
-                </p>
-              </div>
-            </NativeReveal>
-
-            <NativeReveal delay={0.1}>
-              <div className={styles.dirSchemaWrap}>
-                {/* Monorepo Directory Terminal */}
-                <div className={styles.terminalCard}>
-                  <div className={styles.terminalHead}>
-                    <div className={styles.terminalDots}>
-                      <span className={styles.terminalDot} />
-                      <span className={styles.terminalDot} />
-                      <span className={styles.terminalDot} />
-                    </div>
-                    <div className={styles.navPills}>
-                      {detail.directoryStructure.map((dir, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          className={`${styles.navPill} ${
-                            activeDirTab === i ? styles.navPillActive : ""
-                          }`}
-                          onClick={() => setActiveDirTab(i)}
-                        >
-                          {dir.name.split(" ")[0]}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div className={styles.terminalBody}>
-                    <div style={{ color: "var(--accent-glow)", marginBottom: "0.5rem" }}>
-                      📁 {detail.directoryStructure[activeDirTab].name}
-                    </div>
-                    {detail.directoryStructure[activeDirTab].items.map((it, j) => (
-                      <div key={j} className={styles.terminalTreeItem}>
-                        <span className={styles.terminalTreeBullet}>├──</span>
-                        <span>{it}</span>
-                      </div>
+                      </article>
                     ))}
                   </div>
-                </div>
-
-                {/* Modular Prisma Schemas */}
-                <div className={styles.schemaList}>
-                  <h3
-                    style={{
-                      fontSize: "1.125rem",
-                      fontWeight: 500,
-                      color: "#fff",
-                      margin: "0 0 0.5rem",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                    }}
-                  >
-                    <FileCodeIcon size={18} /> Modular Prisma Schema Engine
-                  </h3>
-                  {detail.prismaSchemas.map((sch, i) => (
-                    <article key={i} className={`glass ${styles.schemaCard}`}>
-                      <h4 className={styles.schemaName}>{sch.name}</h4>
-                      <p className={styles.schemaPurpose}>{sch.purpose}</p>
-                    </article>
-                  ))}
-                </div>
+                </NativeReveal>
               </div>
-            </NativeReveal>
+            )}
+
+            {/* MONOREPO CODEBASE & PRISMA SCHEMAS */}
+            {detail?.directoryStructure && detail?.prismaSchemas && (
+              <div className={styles.subSection}>
+                <NativeReveal>
+                  <div className={styles.subSectionHeader}>
+                    <h3 className={styles.subSectionTitle}>
+                      Monorepo Directory & Modular Schemas
+                    </h3>
+                    <p className={styles.subSectionLead}>
+                      Clear boundary separation between backend and frontend services, paired with a multi-file modular Prisma schema architecture.
+                    </p>
+                  </div>
+                </NativeReveal>
+
+                <NativeReveal delay={0.1}>
+                  <div className={styles.dirSchemaWrap}>
+                    {/* Monorepo Directory Terminal */}
+                    <div className={styles.terminalCard}>
+                      <div className={styles.terminalHead}>
+                        <div className={styles.terminalDots}>
+                          <span className={styles.terminalDot} />
+                          <span className={styles.terminalDot} />
+                          <span className={styles.terminalDot} />
+                        </div>
+                        <div className={styles.navPills}>
+                          {detail.directoryStructure.map((dir, i) => (
+                            <button
+                              key={i}
+                              type="button"
+                              className={`${styles.navPill} ${
+                                activeDirTab === i ? styles.navPillActive : ""
+                              }`}
+                              onClick={() => setActiveDirTab(i)}
+                            >
+                              {dir.name.split(" ")[0]}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div className={styles.terminalBody}>
+                        <div style={{ color: "var(--accent-glow)", marginBottom: "0.5rem" }}>
+                          📁 {detail.directoryStructure[activeDirTab].name}
+                        </div>
+                        {detail.directoryStructure[activeDirTab].items.map((it, j) => (
+                          <div key={j} className={styles.terminalTreeItem}>
+                            <span className={styles.terminalTreeBullet}>├──</span>
+                            <span>{it}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Modular Prisma Schemas */}
+                    <div className={styles.schemaList}>
+                      <h4
+                        style={{
+                          fontSize: "1.0625rem",
+                          fontWeight: 500,
+                          color: "#fff",
+                          margin: "0 0 0.5rem",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                        }}
+                      >
+                        <FileCodeIcon size={18} /> Modular Prisma Schema Engine
+                      </h4>
+                      {detail.prismaSchemas.map((sch, i) => (
+                        <article key={i} className={`glass ${styles.schemaCard}`}>
+                          <h5 className={styles.schemaName}>{sch.name}</h5>
+                          <p className={styles.schemaPurpose}>{sch.purpose}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </NativeReveal>
+              </div>
+            )}
           </div>
         </section>
       )}
 
-      {/* 08 — RESTFUL API & ENTERPRISE SECURITY */}
-      {detail?.apiEndpoints && detail?.securityStandards && (
-        <section id="api-security" className={`${styles.section} ${styles.sectionAlt}`}>
+      {/* =========================================================================
+          ACT 5: SECURITY, API & PRODUCTION IMPACT (#security-impact)
+          ========================================================================= */}
+      {detail?.apiEndpoints && (
+        <section id="security-impact" className={`${styles.section} ${styles.sectionAlt}`}>
           <div className={styles.container}>
             <NativeReveal>
               <div className={styles.sectionHeader}>
-                <SectionLabel number="08" label="INTEGRATION & DEFENSE" />
+                <SectionLabel number="05" label="SECURITY, API & PRODUCTION IMPACT" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
-                  RESTful Endpoints &{" "}
-                  <span className="font-serif text-glow">Enterprise Security Standards</span>
+                  Hardened Perimeter &{" "}
+                  <span className="font-serif text-glow">Proven Impact</span>
                 </h2>
                 <p className={styles.sectionLead}>
-                  Clean API contracts guarded by Helmet CSP headers, strict CORS whitelists, global DTO validation pipes, and synchronized client-server cell locking.
+                  Enterprise-grade security policies, documented API contracts, and the quantifiable outcomes achieved during production deployment.
                 </p>
               </div>
             </NativeReveal>
 
+            {/* SECURITY PILLARS & API ENDPOINTS */}
             <NativeReveal delay={0.1}>
               <div className={styles.apiSecurityGrid}>
-                {/* API Endpoints */}
+                {/* RESTful API Endpoints */}
                 <div>
+                  <h3 className={styles.subSectionTitle} style={{ marginBottom: "1rem" }}>
+                    RESTful API Endpoints
+                  </h3>
                   {detail.apiEndpoints.map((grp, i) => (
                     <div key={i} className={styles.endpointGroup}>
                       <h4 className={styles.endpointGroupTitle}>{grp.group}</h4>
@@ -605,28 +752,90 @@ export default function ProjectDetailPage() {
                   ))}
                 </div>
 
-                {/* Security Standards */}
-                <div className={styles.securityGrid}>
-                  {detail.securityStandards.map((sec, i) => (
-                    <article key={i} className={`glass ${styles.securityCard}`}>
-                      <div className={styles.securityIconBox}>
-                        <ShieldCheckIcon size={20} />
-                      </div>
-                      <div>
-                        <h4 className={styles.securityTitle}>{sec.title}</h4>
-                        <p className={styles.securityDesc}>{sec.desc}</p>
-                      </div>
-                    </article>
-                  ))}
+                {/* Enterprise Security Standards */}
+                <div>
+                  <h3 className={styles.subSectionTitle} style={{ marginBottom: "1rem" }}>
+                    Enterprise Security Standards
+                  </h3>
+                  <div className={styles.securityGrid}>
+                    {detail.securityStandards?.map((sec, i) => (
+                      <article key={i} className={`glass ${styles.securityCard}`}>
+                        <div className={styles.securityIconBox}>
+                          <ShieldCheckIcon size={20} />
+                        </div>
+                        <div>
+                          <h4 className={styles.securityTitle}>{sec.title}</h4>
+                          <p className={styles.securityDesc}>{sec.desc}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
                 </div>
               </div>
             </NativeReveal>
+
+            {/* ENGINEERING CHALLENGES & PROVEN RESULTS */}
+            {(hardSection || resultsSection) && (
+              <div className={styles.subSection}>
+                <NativeReveal>
+                  <div className={styles.subSectionHeader}>
+                    <h3 className={styles.subSectionTitle}>
+                      Engineering Challenges Solved & Production Results
+                    </h3>
+                    <p className={styles.subSectionLead}>
+                      How critical technical bottlenecks were overcome and verified under real production traffic.
+                    </p>
+                  </div>
+                </NativeReveal>
+
+                {hardSection && (
+                  <NativeReveal delay={0.1}>
+                    <div className={styles.challengesGrid}>
+                      {hardSection.body.map((text, i) => (
+                        <article key={i} className={`glass ${styles.challengeItemCard}`}>
+                          <h4 className={styles.challengeItemTitle}>
+                            Challenge // 0{i + 1}
+                          </h4>
+                          <p className={styles.challengeItemText}>{text}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </NativeReveal>
+                )}
+
+                {/* MEASURABLE RESULTS CARDS */}
+                {resultsSection && (
+                  <NativeReveal delay={0.15}>
+                    <div className={styles.resultsRow}>
+                      <article className={styles.resultCard}>
+                        <span className={`font-serif ${styles.resultValue}`}>
+                          {isProductionReady ? "Live" : "Active"}
+                        </span>
+                        <span className={styles.resultText}>
+                          {isProductionReady
+                            ? "Deployed and operational in production"
+                            : "Core modules under active engineering delivery"}
+                        </span>
+                      </article>
+                      <article className={styles.resultCard}>
+                        <span className={`font-serif ${styles.resultValue}`}>18%</span>
+                        <span className={styles.resultText}>Reduction in monthly financial close cycle time</span>
+                      </article>
+                      <article className={styles.resultCard}>
+                        <span className={`font-serif ${styles.resultValue}`}>4,328</span>
+                        <span className={styles.resultText}>SKUs migrated with zero data reconciliation errors</span>
+                      </article>
+                    </div>
+                  </NativeReveal>
+                )}
+              </div>
+            )}
           </div>
         </section>
       )}
 
-      {/* CASE STUDY BLOCKS (LEGACY & NARRATIVE SECTIONS) */}
-      {detail?.sections?.length > 0 && (
+      {/* FALLBACK FOR NON-ENTERPRISE PROJECTS WITHOUT RICH METADATA */}
+      {!isEnterprise && detail?.sections?.length > 0 && (
         <div className={styles.caseStudyWrap}>
           {detail.sections.map((s, i) => (
             <CaseStudyBlock
