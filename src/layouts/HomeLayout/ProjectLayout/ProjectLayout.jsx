@@ -17,7 +17,7 @@ function ProjectLayout() {
     "databank",
     "ruangtumbuh",
     "fitsmart",
-    "flutter",
+    "delifood",
     "ai-ticket-manager",
   ];
 

@@ -125,8 +125,14 @@ function renderBodyBlock(block, idx) {
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
-  const project = projectsList.find((p) => p.slug === slug);
-  const detail = projectDetails[slug];
+  const normalizedSlug = slug === "flutter" ? "delifood" : slug;
+  const project =
+    projectsList.find((p) => p.slug === slug || p.slug === normalizedSlug) ||
+    projectsList.find((p) => p.id === slug || p.id === normalizedSlug);
+  const detail =
+    projectDetails[slug] ||
+    projectDetails[normalizedSlug] ||
+    (slug === "flutter" || slug === "delifood" ? projectDetails.delifood : null);
 
   const [activeModule, setActiveModule] = useState(0);
   const [moduleViewMode, setModuleViewMode] = useState("focus"); // 'focus' | 'grid'
@@ -135,7 +141,7 @@ export default function ProjectDetailPage() {
 
   if (!project) return <Navigate to="/projects" replace />;
 
-  const { prev, next } = getSiblings(projectsList, slug);
+  const { prev, next } = getSiblings(projectsList, project.slug || slug);
 
   // Check whether we have rich enterprise metadata (like Databank)
   const isEnterprise = Boolean(detail?.features || detail?.kpis || detail?.architecture);

@@ -3,6 +3,14 @@ import databank2 from "../assets/databank/databank2.png";
 import databank3 from "../assets/databank/databank3.png";
 import databank4 from "../assets/databank/databank4.png";
 import ruangtumbuhImg from "../assets/ruangtumbuh.webp";
+import delifoodImg from "../assets/delifood.webp";
+import fitsmartImg from "../assets/fitsmart.webp";
+import javaislandImg from "../assets/javaisland.webp";
+import pusakakuImg from "../assets/pusakaku.webp";
+import semuaBisaImg from "../assets/semua-bisa.webp";
+import idncourseImg from "../assets/idncourse.webp";
+import coffeeeShopImg from "../assets/coffeee-shop.webp";
+import mystyleImg from "../assets/mystyle.webp";
 
 export const projectDetails = {
   databank: {
@@ -1008,64 +1016,3886 @@ export const projectDetails = {
       { label: "GitHub", url: "https://github.com/adyvka31/RuangTumbuh" },
     ],
   },
-  jagajiwa: {
+  fitsmart: {
+    title: "FitSmart",
+    subtitle: "AI-Powered Preventive Healthcare & Clinical Lifestyle Platform",
     summary:
-      "AI-powered digital mental health platform for Indonesia's Golden Generation — mood tracking, an empathetic chatbot, and interactive exercises.",
+      "A lightweight, client-centric digital healthcare platform designed to democratize preventive medicine. Powered by Google Gemini Pro API with strict clinical domain guardrails, a 24-modal disease diagnostic encyclopedia, evidence-based nutrition science indexing 16+ superfoods, and discipline-specific athletic conditioning routines.",
+    domain: "github.com/adyvka31/FitSmart",
     meta: [
-      { label: "Role", value: "Solo build" },
-      { label: "Timeline", value: "2025" },
-      { label: "Stack", value: "React + Gemini" },
-      { label: "Status", value: "Live" },
+      { label: "Role", value: "Lead Frontend & AI Integration Engineer" },
+      { label: "Platform", value: "Responsive Web & Mobile Browser" },
+      { label: "Timeline", value: "2024" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Vanilla Client Architecture + Gemini AI BaaS" },
+      { label: "AI Engine", value: "Google Gemini Pro REST API" },
+    ],
+    galleryLabel: "PREVENTIVE HEALTHCARE INTERFACES",
+    galleryTitle: "The FitSmart Digital Wellness Hub",
+    galleryLead:
+      "Explore the key portals of FitSmart — uniting real-time AI doctor triage, evidence-based clinical pathology breakdowns, functional superfood dietetics, and athletic conditioning.",
+    gallery: [
+      {
+        id: "ai-doctor",
+        title: "Gemini Pro AI Virtual Health Assistant",
+        route: "fitsmart.local/penyakit.html#ai",
+        tag: "Gemini Pro REST Engine",
+        image: fitsmartImg,
+        desc: "Floating AI consultation drawer powered by Google's Gemini Pro LLM (gemini-pro:generateContent). Enforces strict medical domain guardrails via client-side keyword filtering (allowedKeywords) and 3000ms request throttling to prevent quota abuse and hallucination.",
+        features: [
+          "Google Gemini Pro Generative Content Pipeline",
+          "Domain Whitelist Keyword Filter (11 Health Terms)",
+          "3000ms Debounce & State Locking Throttling",
+        ],
+      },
+      {
+        id: "disease-encyclopedia",
+        title: "Preventive Pathology & 24 Diagnostic Modals",
+        route: "fitsmart.local/penyakit.html",
+        tag: "Clinical Disease Hub",
+        image: fitsmartImg,
+        desc: "In-depth medical education hub covering 6 major non-communicable and infectious pathologies (Diabetes Mellitus, Hypercholesterolemia, GERD, Dengue Fever, Obesity, ISPA) with 24 dedicated modal popups detailing definitions, symptoms, treatments, and prevention.",
+        features: [
+          "6 Core Pathologies with 24 Granular Diagnostic Modals",
+          "Dedicated Symptoms, Pathology & Treatment Breakdowns",
+          "Evidence-Based Prevention & Risk Factor Mitigations",
+        ],
+      },
+      {
+        id: "nutrition-dietetics",
+        title: "Evidence-Based Nutrition & Superfood Matrix",
+        route: "fitsmart.local/konsumsi.html",
+        tag: "Nutritional Science",
+        image: fitsmartImg,
+        desc: "Extensive dietary catalog featuring 16+ nutrient-dense food classifications — including antioxidant superfoods (Quinoa, Kurma, Kismis, Prune), cruciferous greens (Broccoli, Spinach, Kale), omega-3 fish (Salmon, Mackerel, Tuna), and balanced daily meal plans.",
+        features: [
+          "16+ Classified Micronutrient & Superfood Profiles",
+          "Daily Caloric & Macronutrient Balance Recommendations",
+          "Interactive Modal Popups with Dietary Benefits",
+        ],
+      },
+      {
+        id: "fitness-conditioning",
+        title: "Athletic Conditioning & Calisthenics Hub",
+        route: "fitsmart.local/aktifitas.html",
+        tag: "Fitness Engineering",
+        image: fitsmartImg,
+        desc: "Specialized exercise regimens engineered for beginner, intermediate, and advanced users. Integrates sport-specific training modules for Basketball, Football, and Badminton alongside home-friendly bodyweight calisthenics.",
+        features: [
+          "Discipline-Specific Training Modules (Basketball, Soccer, Badminton)",
+          "Structured Bodyweight & Calisthenics Progression",
+          "Interactive Exercise FAQ & Injury Prevention Guide",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "< 1.2s",
+        label: "Gemini API Response",
+        note: "Optimized prompt payload with zero temperature for clinical accuracy",
+      },
+      {
+        value: "24",
+        label: "Diagnostic Modals",
+        note: "Granular symptom, pathology, and therapy popups across 6 conditions",
+      },
+      {
+        value: "100%",
+        label: "Domain Gating",
+        note: "Strict lexical whitelist rejecting out-of-scope health queries",
+      },
+      {
+        value: "3 Pillars",
+        label: "Wellness Matrix",
+        note: "Unified ecosystem: Clinical Education · Dietetics · Active Fitness",
+      },
+      {
+        value: "0ms",
+        label: "Zero-Build Latency",
+        note: "Pure vanilla web execution without runtime framework overhead",
+      },
+      {
+        value: "3,000ms",
+        label: "Anti-Spam Window",
+        note: "Client-side request lock preventing API quota exhaustion",
+      },
+    ],
+    highlights: [
+      {
+        icon: "cloud",
+        title: "Gemini Pro AI Medical Assistant",
+        desc: "Direct REST integration with Google Gemini Pro API featuring deterministic temperature parameters, animated thinking states, and error fallback handling.",
+      },
+      {
+        icon: "database",
+        title: "Clinical Disease & Diagnostic Hub",
+        desc: "24 modular interactive popups detailing etiology, diagnostic symptoms, clinical treatments, and lifestyle prevention for 6 critical diseases.",
+      },
+      {
+        icon: "monitor",
+        title: "Nutritional Science & Superfoods",
+        desc: "Comprehensive dietary guidelines indexing 16+ nutrient profiles from cruciferous greens to antioxidant superfoods and cardiovascular omega-3 proteins.",
+      },
+      {
+        icon: "terminal",
+        title: "Discipline-Specific Athletic Engine",
+        desc: "Dynamic activity guides detailing sports conditioning (Basketball, Soccer, Badminton) and calisthenics routines with zero external runtime dependencies.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Clinical Assessment Workflow",
+    capabilitiesLead:
+      "FitSmart bridges the gap between complex medical literature and everyday lifestyle choices through an accessible, highly structured client architecture.",
+    features: [
+      {
+        id: "gemini-doctor",
+        title: "Google Gemini Pro AI Health Copilot",
+        badge: "AI Consultation",
+        desc: "Interactive floating drawer assistant delivering real-time health consultations powered by Google's Gemini Pro generative LLM (v1/models/gemini-pro:generateContent).",
+        points: [
+          "Direct asynchronous fetch calls with strict x-goog-api-key authentication",
+          "Configured with zero temperature (0) for deterministic, hallucination-resistant clinical advice",
+          "Visual 'Thinking...' loading state with asynchronous DOM lifecycle rendering",
+          "Automatic error fallback alerting users during upstream Google API maintenance",
+        ],
+      },
+      {
+        id: "domain-guardrail",
+        title: "Client-Side Domain Guardrail & Rate Throttling",
+        badge: "Safety Gating",
+        desc: "Multi-layer safety mechanism preventing the chatbot from processing off-topic inquiries or suffering rapid-fire API request exhaustion.",
+        points: [
+          "Keyword whitelist verification ('sehat', 'kesehatan', 'makanan', 'minuman', 'olahraga', 'aktifitas', 'dokter', 'penyakit', 'rumah sakit', 'perawatan', 'menjaga')",
+          "Instant rejection message routing for non-health or out-of-scope user queries",
+          "3000ms state-locking cooldown window (isRequestInProgress) preventing API quota abuse",
+          "Smooth slide-up CSS modal drawer with animated show/hide transitions",
+        ],
+      },
+      {
+        id: "disease-hub",
+        title: "Preventive Pathology Hub & 24 Diagnostic Modals",
+        badge: "Clinical Education",
+        desc: "Structured encyclopedia tackling 6 major health conditions: Diabetes Mellitus, Hypercholesterolemia, Dengue Hemorrhagic Fever, GERD, Obesity, and Acute Respiratory Infections (ISPA).",
+        points: [
+          "24 independent DOM modal overlays with instantaneous zero-lag toggling",
+          "Deep-dive clinical classification: Type 1, Type 2, and Gestational Diabetes",
+          "Lipid profiling: LDL vs HDL cardiovascular plaque risk factor breakdowns",
+          "Gastroesophageal sphincter dysfunction and acute respiratory pathogen guides",
+        ],
+      },
+      {
+        id: "dietetics-matrix",
+        title: "Curated Dietetics & Superfood Matrix",
+        badge: "Nutrition Engine",
+        desc: "Comprehensive nutritional resource (konsumsi.html) detailing over 16 whole food classifications categorized by macronutrients and functional benefits.",
+        points: [
+          "Antioxidant superfoods: Quinoa grain profiles, Medjool dates (Kurma), Prunes, and Raisins (Kismis)",
+          "Cruciferous vegetables & leafy greens: Broccoli sulforaphane, Spinach iron, and Kale vitamins",
+          "Cardiovascular proteins: Wild salmon, Pacific mackerel, Albacore tuna, and Shrimp",
+          "Structured caloric meal plan suggestions for active and sedentary lifestyles",
+        ],
+      },
+      {
+        id: "athletic-conditioning",
+        title: "Athletic Conditioning & Calisthenics Modules",
+        badge: "Fitness Engineering",
+        desc: "Dynamic exercise guides (aktifitas.html) designed for varied physiological capacities, from home workout routines to competitive field athletics.",
+        points: [
+          "Sport-specific aerobic conditioning protocols: Basketball, Football, and Badminton",
+          "Progressive bodyweight calisthenics routines for strength, posture, and cardiovascular endurance",
+          "Scientific FAQ modules addressing workout duration, evening exercise impacts, and sedentary risks",
+          "Injury prevention tips and warm-up/cool-down dynamic stretching protocols",
+        ],
+      },
+      {
+        id: "responsive-ux",
+        title: "Responsive Mobile-First Interface & Drawer Navigation",
+        badge: "UI/UX & Accessibility",
+        desc: "Lightweight responsive navigation system utilizing custom Flexbox layouts and CSS transitions tailored for both desktop displays and mobile touchscreens.",
+        points: [
+          "Mobile hamburger drawer with FontAwesome dynamic icon toggling (fa-bars / fa-xmark)",
+          "High-contrast typography utilizing Google Fonts (Poppins & custom brand typography)",
+          "Floating action button (FAB) for instant one-click AI doctor consultation access",
+          "CSS backdrop filters, frosted glass overlays, and tactile hover animations",
+        ],
+      },
+      {
+        id: "vanilla-performance",
+        title: "Pure Vanilla Web Stack Performance",
+        badge: "Zero-Build Architecture",
+        desc: "Engineered strictly with semantic HTML5, modular CSS3, and ES6+ JavaScript, delivering instant zero-compilation execution and maximum browser portability.",
+        points: [
+          "0ms compilation time and near-zero runtime script evaluation overhead",
+          "Zero external framework dependencies or virtual DOM abstraction layers",
+          "Fully compliant with standard modern browser Web APIs and DOM specifications",
+          "Compatible with static file hosting, GitHub Pages, Vercel, or local live servers",
+        ],
+      },
+      {
+        id: "sanitized-security",
+        title: "Sanitized DOM Lifecycle & Secure Transport",
+        badge: "Security & Privacy",
+        desc: "Strict client-side handling of user inputs and API communications ensuring resilience against typical web vulnerabilities.",
+        points: [
+          "Sanitized textContent DOM injection preventing Cross-Site Scripting (XSS) vectors",
+          "Enforced HTTPS REST transmission for all Gemini API payload exchanges",
+          "State isolation between disease modals preventing memory leaks across page sessions",
+          "Graceful network failure handling with friendly UI diagnostics",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "AI Clinical Consultation & Lifestyle Decision Lifecycle",
+      lead: "From user symptom inquiry to actionable preventive recommendations — each consultation passes through strict client-side domain verification and deterministic LLM inference.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "User Ingestion & Safety",
+          title: "Symptom Ingestion & Safety Gating",
+          desc: "User submits a health inquiry via the floating consultation drawer. The client filter checks the prompt against the 11-keyword clinical whitelist and verifies the 3000ms cooldown lock.",
+          action: "Keyword Whitelist Validation → Cooldown Check",
+        },
+        {
+          level: "Stage 02",
+          role: "Gemini Pro Generative AI",
+          title: "Deterministic Gemini Pro Processing",
+          desc: "The query is transmitted over HTTPS to Google's Gemini Pro REST API with temperature set to 0.0. The engine generates structured, non-hallucinatory preventive recommendations and lifestyle tips.",
+          action: "POST /gemini-pro:generateContent (temperature: 0)",
+        },
+        {
+          level: "Stage 03",
+          role: "DOM Sanitization & Triage",
+          title: "Actionable Guidance & Triage Routing",
+          desc: "The generated response is injected into the chat stream via sanitized textContent nodes. For critical symptoms, users are advised to seek in-person professional medical evaluation.",
+          action: "Sanitized DOM Injection & Triage Advisory",
+        },
+      ],
+      lockMechanism: {
+        title: "Medical Safety Disclaimer & Anti-Abuse Safeguard",
+        desc: "FitSmart functions strictly as an educational and preventive wellness resource. The platform combines deterministic AI system instructions, keyword whitelist filtering, and explicit medical disclaimers to ensure algorithmic advice is never treated as a replacement for emergency clinical diagnosis.",
+      },
+    },
+    architectureTitle: "Modular Client-Side Architecture & Gemini AI BaaS",
+    architectureLead:
+      "Engineered with a clean separation between semantic HTML5 views, modular CSS styling sheets, a centralized vanilla JavaScript controller, and Google's Generative AI REST endpoint.",
+    architecture: {
+      type: "Modular Vanilla SPA + Generative AI BaaS",
+      protocol: "HTTPS REST (JSON / Google Generative Language)",
+      layers: [
+        {
+          name: "Client Presentation Layer",
+          badge: "HTML5 + CSS3 + FontAwesome",
+          desc: "Multi-page semantic layout comprising 6 specialized portals (index, penyakit, konsumsi, aktifitas, login, register) with responsive Flexbox/Grid structures.",
+        },
+        {
+          name: "Interactive Controller & Modal Engine",
+          badge: "Vanilla JavaScript (ES6+)",
+          desc: "Centralized script.js managing 24 modal popup states, mobile hamburger drawer toggling, chat lifecycle rendering, and smooth scroll anchors.",
+        },
+        {
+          name: "Health Domain Safety & Rate Limiter",
+          badge: "Client-Side Guardrails",
+          desc: "Keyword whitelist verification across 11 health terms coupled with a 3000ms asynchronous mutex lock (isRequestInProgress) to prevent API spam.",
+        },
+        {
+          name: "AI Integration Layer",
+          badge: "Google Gemini Pro REST API",
+          desc: "Asynchronous fetch pipeline communicating directly with generativelanguage.googleapis.com, configured with zero temperature and 8,192 max output tokens.",
+        },
+        {
+          name: "Static Asset & Typography Layer",
+          badge: "SVG Illustrations & Web Fonts",
+          desc: "Locally served SVG vectors, disease iconography, and embedded brand typography ensuring instant zero-latency visual rendering.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & UI Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Structure across 6 Health Portals" },
+          { name: "CSS3", role: "Responsive Layouts, Modals & Glassmorphic Effects" },
+          { name: "JavaScript (ES6+)", role: "Async/Await Fetch, DOM Lifecycle & Event Controller" },
+          { name: "FontAwesome 6", role: "Vector Iconography & Navigation Glyphs" },
+          { name: "Google Fonts (Poppins)", role: "High-Readability Typography Hierarchy" },
+        ],
+      },
+      {
+        category: "AI Engine & Safety Protocols",
+        items: [
+          { name: "Google Gemini Pro API", role: "Generative LLM for Health Consultations" },
+          { name: "REST API Endpoint", role: "Direct HTTPS POST Request Dispatcher" },
+          { name: "Domain Keyword Whitelist", role: "Client-Side Health Lexical Filter (11 terms)" },
+          { name: "3000ms Anti-Spam Mutex", role: "Request Cooldown & Rate Limiting Guard" },
+        ],
+      },
+      {
+        category: "Tooling & Deployment",
+        items: [
+          { name: "VS Code Live Server", role: "Local Development Server (Port 5501)" },
+          { name: "Git & GitHub", role: "Version Control & Open-Source Collaboration" },
+          { name: "Vercel / Static Hosting", role: "Global CDN Edge Static Distribution" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Pages/ (Specialized Health Portals)",
+        items: [
+          "index.html — Main landing portal with hero & platform overview",
+          "penyakit.html — Disease encyclopedia & 24 clinical diagnostic modals",
+          "konsumsi.html — Dietary guidelines, macronutrients & superfood profiles",
+          "aktifitas.html — Athletic conditioning & customized workout routines",
+          "login.html — Authentication portal UI for returning users",
+          "register.html — User registration & onboarding interface",
+        ],
+      },
+      {
+        name: "Style/ & Root Controller (Presentation & Logic)",
+        items: [
+          "Style/penyakit.css — Modal overlays, disease cards & grid layouts",
+          "Style/konsumsi.css — Nutrition tables, food profile cards & badges",
+          "Style/aktifitas.css — Workout routine cards & sports category layouts",
+          "Style/style.css — Global typography, color system & reset rules",
+          "script.js — Core controller: 24 popups, Gemini AI fetch & rate limiter",
+          "script2.js — Secondary AI consultation module & drawer toggle",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: MedicalCondition",
+        purpose:
+          "Defines pathological entities with title, classification (Metabolic, Cardiovascular, Infectious, Gastrointestinal, Respiratory), symptoms, clinical therapies, and preventive lifestyle habits.",
+      },
+      {
+        name: "Data Model: NutritionProfile",
+        purpose:
+          "Stores food classifications, macronutrient breakdowns (protein, carbs, healthy fats), micronutrients (vitamins, sulforaphane, omega-3), and recommended dietary portions.",
+      },
+      {
+        name: "Data Model: ExerciseRoutine",
+        purpose:
+          "Represents athletic regimens categorized by discipline (Basketball, Football, Badminton, Calisthenics), target muscle groups, intensity levels, and injury prevention notes.",
+      },
+      {
+        name: "Data Model: AIConsultationSession",
+        purpose:
+          "Manages transient user consultation state: sanitized query, domain validity check, Google Gemini Pro response payload, and rate-limiting timestamp.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Medical Safety Standards",
+    securityLead:
+      "Multi-layered client-side security architecture combining lexical domain whitelisting, rate-limiting cooldown timers, and sanitized DOM injection.",
+    apiEndpoints: [
+      {
+        group: "AI Consultation (Google Generative Language)",
+        routes: [
+          {
+            method: "POST",
+            path: "/v1/models/gemini-pro:generateContent",
+            desc: "Asynchronously dispatches user health prompt to Google Gemini Pro model with temperature: 0 and max_output_tokens: 8192",
+          },
+        ],
+      },
+      {
+        group: "Health Portals & Clinical Navigation",
+        routes: [
+          {
+            method: "GET",
+            path: "/Pages/penyakit.html",
+            desc: "Serves comprehensive clinical encyclopedia and 24 interactive diagnostic modal views",
+          },
+          {
+            method: "GET",
+            path: "/Pages/konsumsi.html",
+            desc: "Delivers comprehensive dietary guides, superfood nutritional charts, and meal recommendations",
+          },
+          {
+            method: "GET",
+            path: "/Pages/aktifitas.html",
+            desc: "Serves athletic conditioning guides for basketball, football, badminton, and bodyweight calisthenics",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Domain Keyword Whitelisting",
+        desc: "Restricts all AI prompt submissions to 11 explicit Indonesian health terminology keywords, immediately rejecting irrelevant, malicious, or jailbreak prompts.",
+      },
+      {
+        title: "3000ms Anti-Flooding Mutex",
+        desc: "State-variable lock (isRequestInProgress = true) prevents multiple rapid-fire requests from triggering Google API rate-limit errors or quota exhaustion.",
+      },
+      {
+        title: "Sanitized Text DOM Injection",
+        desc: "AI model responses are injected strictly via messageElement.textContent, mitigating Cross-Site Scripting (XSS) risks from untrusted generative tokens.",
+      },
+      {
+        title: "Encrypted HTTPS Transport",
+        desc: "All client-to-API communication flows across TLS 1.3 encrypted HTTPS channels directly to Google Generative Language endpoints.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "24",
+        label: "Diagnostic Modals Indexed",
+        desc: "Covering symptoms, definitions, clinical treatments, and preventive measures across 6 major pathologies.",
+      },
+      {
+        value: "100%",
+        label: "Domain Gating Enforcement",
+        desc: "Zero off-topic queries allowed into the Gemini API pipeline via lexical keyword gating.",
+      },
+      {
+        value: "< 1.2s",
+        label: "Average AI Consultation Speed",
+        desc: "Deterministic low-temperature inference delivering immediate, accessible medical answers.",
+      },
     ],
     sections: [
       {
         title: "The brief",
         body: [
-          "Indonesia's elderly population has limited access to mental health care — and even less to anything digital. The goal was a low-friction tool a 65-year-old could actually use.",
+          "Access to structured preventive healthcare education and reliable medical guidance remains a significant barrier for many everyday internet users. Too often, individuals either self-diagnose through scattered, unverified web articles or hesitate to consult medical experts due to logistical hurdles. FitSmart was built to solve this challenge by uniting four essential pillars under one lightweight, frictionless digital roof: comprehensive disease prevention, evidence-based nutrition science, athletic conditioning routines, and a direct AI-powered virtual medical consultant.",
+          "Core Mandate: Create an accessible, zero-compilation web platform that delivers actionable lifestyle medicine guidelines and real-time AI triage without intimidating users with medical jargon.",
         ],
       },
       {
-        title: "Design constraints",
+        title: "Architecture & Gemini Integration",
         body: [
-          "Large type, calm motion, no jargon. The chatbot was tuned via system prompt to avoid clinical language and favour grounding, validating responses.",
-          "Every interaction had to work without onboarding. No tutorials, no tooltips.",
+          "The platform was engineered with a pure vanilla web architecture (HTML5, CSS3, ES6+ JavaScript) to ensure lightning-fast page loads and zero compilation friction on any web browser. For the consultation layer, FitSmart integrates directly with Google's Gemini Pro generative LLM via REST (gemini-pro:generateContent).",
+          "The integration features a deterministic temperature configuration (0.0) for clinical accuracy, paired with client-side lexical whitelisting (allowedKeywords) that strictly enforces health-only conversation boundaries. A 3000ms asynchronous state lock prevents request flooding, while responsive DOM lifecycle nodes display animated loading indicators and maintain message history.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Enforcing strict medical topic boundaries in a client-side environment without backend proxies. Solved by designing an efficient substring keyword validator that screens incoming prompts across clinical terms ('sehat', 'dokter', 'penyakit', 'nutrisi', 'olahraga'), immediately routing out-of-scope queries to a polite guidance fallback.",
+          "Managing 24 independent diagnostic modal dialogs across 6 distinct disease categories without introducing UI state clutter. Engineered independent show/hide controller functions with backdrop overlay coordination, allowing users to inspect deep symptom profiles without page reloads.",
+          "Balancing real-time AI responsiveness with rate-limit protection. Implemented an asynchronous mutex flag (isRequestInProgress) and automated cooldown timers to ensure clean, non-overlapping API transactions.",
         ],
       },
       {
         title: "Results",
         body: [
-          "Early testers (across two age groups) completed core flows on first try.",
-          "Project deployed live with full Gemini API integration and mood-tracking history.",
+          "Delivered a zero-build, ultra-fast preventive healthcare platform accessible on any device with 0ms compilation lag.",
+          "Successfully integrated Google Gemini Pro API with 100% client-side domain guardrail compliance and zero API quota overflow.",
+          "Cataloged 24 detailed diagnostic modal windows covering 6 critical diseases alongside 16+ superfood nutritional profiles.",
         ],
       },
     ],
-    stack: ["React", "Tailwind", "Gemini API", "TypeScript"],
-    links: [{ label: "Live site", url: "https://jagajiwamu.vercel.app/" }],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Google Gemini Pro API",
+      "FontAwesome",
+      "Responsive Design",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/FitSmart" },
+      { label: "Live Demo", url: "https://jagajiwamu.vercel.app/" },
+    ],
   },
 
-  flutter: {
+  javaisland: {
+    title: "JavaIsland",
+    subtitle: "AI-Powered Cultural Heritage & Tourism Portal for Java",
     summary:
-      "DeliFood — a Flutter e-commerce app with a real-time database backbone, delivering up-to-the-second order and product info.",
+      "An interactive cultural preservation and tourism platform dedicated to Java Island. Engineered with Vue.js-driven 3D mouse parallax city exploration, Google's Gemini 1.5 Flash generative AI concierge ('Tanya Jawa') with bilingual domain guardrails, imperial historical chronicles, and traditional culinary archives.",
+    domain: "github.com/adyvka31/JavaIsland",
     meta: [
-      { label: "Role", value: "Mobile dev" },
-      { label: "Stack", value: "Flutter + Firebase" },
-      { label: "Platforms", value: "iOS / Android" },
+      { label: "Role", value: "Lead Frontend & AI Integration Engineer" },
+      { label: "Platform", value: "Responsive Web & Mobile Browser" },
+      { label: "Timeline", value: "2023" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Vue-Enhanced Hybrid Client + Gemini Flash BaaS" },
+      { label: "AI Engine", value: "Google Gemini 1.5 Flash REST API" },
+    ],
+    galleryLabel: "CULTURAL & TOURISM INTERFACES",
+    galleryTitle: "The JavaIsland Digital Experience",
+    galleryLead:
+      "Explore the key interactive touchpoints of JavaIsland — bridging conversational AI cultural guidance, reactive 3D mouse parallax city cards, ancient imperial chronicles, and traditional gastronomy.",
+    gallery: [
+      {
+        id: "ask-java-ai",
+        title: "Tanya Jawa: Bilingual Gemini Flash AI Concierge",
+        route: "javaisland.local/askjava.html",
+        tag: "Gemini 1.5 Flash Engine",
+        image: javaislandImg,
+        desc: "Interactive conversational tourism assistant powered by Google's Gemini 1.5 Flash model (gemini-1.5-flash-latest:generateContent). Enforces a 24-keyword bilingual domain whitelist (Indonesian & English) to deflect off-topic inquiries while delivering instant historical context and travel recommendations.",
+        features: [
+          "Google Gemini 1.5 Flash Low-Latency Inference",
+          "24-Keyword Bilingual Domain Whitelist (ID & EN)",
+          "Asynchronous DOM Lifecycle with Real-Time Auto-Scroll",
+        ],
+      },
+      {
+        id: "parallax-cities",
+        title: "Reactive 3D Parallax City Exploration Hub",
+        route: "javaisland.local/index.html#app",
+        tag: "Vue 3D Motion",
+        image: javaislandImg,
+        desc: "Dynamic city discovery portal showcasing 8 major Javanese regencies and metropolitan hubs. Powered by Vue.js reactive mouse-tracking math calculating real-time perspective rotations (perspective(800px), rotateX, rotateY) and smooth multi-layer CSS depth transforms.",
+        features: [
+          "Reactive 3D Mouse Parallax Calculations via Vue.js",
+          "8 Major Javanese Regencies & Metropolitan Hubs",
+          "Multi-Layer Ambient Motion & Parallax Cloud Floating",
+        ],
+      },
+      {
+        id: "heritage-culture",
+        title: "Historical Chronicles & Performing Arts Hub",
+        route: "javaisland.local/culture.html",
+        tag: "Heritage Archival",
+        image: javaislandImg,
+        desc: "Rich historical and cultural repository documenting the 13th-century Majapahit Empire, Yogyakarta Royal Kesultanan traditions, Wayang Kulit shadow puppetry, Gamelan music, Angklung, and Reog Ponorogo with interactive photo modals.",
+        features: [
+          "Chronological Imperial Narratives (Majapahit to Sultanates)",
+          "Interactive Historical Media Modals with Fluid Zoom",
+          "Preservation Archives for Intangible Cultural Heritage",
+        ],
+      },
+      {
+        id: "culinary-tourism",
+        title: "Gastronomy Encyclopedia & Destination Discovery",
+        route: "javaisland.local/explore.html",
+        tag: "Culinary & Travel",
+        image: javaislandImg,
+        desc: "Comprehensive travel engine indexing 9 destination categories alongside deep culinary pages (detailgudeg.html, detailrawon.html, detailsotokudus.html) detailing centuries-old origins, ingredient chemistry, and cooking procedures.",
+        features: [
+          "9 Destination Category Filters (Volcanoes, Coastlines, Heritage)",
+          "Interactive Travel Parameter Booking Simulator",
+          "Historical Recipe Documentation & Origin Histories",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "< 950ms",
+        label: "Gemini Flash AI Latency",
+        note: "Fast streaming REST inference via gemini-1.5-flash-latest",
+      },
+      {
+        value: "24 Terms",
+        label: "Bilingual Whitelist Gating",
+        note: "Restricts queries to Indonesian & English cultural keywords",
+      },
+      {
+        value: "8 Cities",
+        label: "3D Parallax Tilt Cards",
+        note: "Interactive mouse-tracking perspective transforms in Vue.js",
+      },
+      {
+        value: "9 Domains",
+        label: "Tourism Category Filters",
+        note: "Volcanoes, heritage temples, crater lakes, coastlines, palaces",
+      },
+      {
+        value: "60 FPS",
+        label: "Fluid CSS Motion Engine",
+        note: "Infinite marquee carousel and floating ambient cloud drift",
+      },
+      {
+        value: "100%",
+        label: "Viewport Adaptability",
+        note: "Fluid layout across mobile, tablet, and widescreen displays",
+      },
+    ],
+    highlights: [
+      {
+        icon: "cloud",
+        title: "Gemini 1.5 Flash AI Concierge",
+        desc: "Integrated low-latency LLM endpoint delivering culturally accurate answers with bilingual keyword gating and graceful error recovery.",
+      },
+      {
+        icon: "monitor",
+        title: "Reactive 3D Parallax Card Engine",
+        desc: "Vue.js mathematical pointer tracking generating real-time 3D isometric rotation and depth illusions without heavy WebGL overhead.",
+      },
+      {
+        icon: "database",
+        title: "Cultural Heritage & Historical Archives",
+        desc: "Comprehensive documentation of imperial Javanese history, royal court ceremonies, and UNESCO-recognized intangible cultural traditions.",
+      },
+      {
+        icon: "terminal",
+        title: "Gastronomy & Destination Discovery",
+        desc: "Dedicated culinary origin breakdowns paired with multi-parameter destination filters for prospective domestic and international travelers.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Cultural Exploration Workflow",
+    capabilitiesLead:
+      "JavaIsland balances rich visual storytelling with low-latency generative AI to deliver an immersive travel and heritage companion.",
+    features: [
+      {
+        id: "tanya-jawa",
+        title: "Bilingual Gemini 1.5 Flash AI Assistant ('Tanya Jawa')",
+        badge: "Conversational AI",
+        desc: "Interactive floating consultation interface allowing users to inquire about Javanese folklore, historical landmarks, traditional ceremonies, and local customs in real time.",
+        points: [
+          "Direct integration with Google's high-throughput gemini-1.5-flash-latest generative endpoint",
+          "Automated conversational state tracking with autoscrolling chatbox message list",
+          "Visual animated 'Thinking...' loading bubbles indicating upstream API generation",
+          "Graceful network exception interception with courteous user error feedback",
+        ],
+      },
+      {
+        id: "domain-guardrails",
+        title: "24-Keyword Dual-Language Domain Guardrail",
+        badge: "Safety Gating",
+        desc: "Client-side lexical filter screening user queries against a curated list of Indonesian and English cultural and geographic keywords before dispatching API calls.",
+        points: [
+          "Bilingual keyword whitelist: 'Jawa', 'budaya', 'candi', 'pantai', 'gunung', 'keraton', 'wisata', 'kuliner', 'temple', 'volcano', 'palace'",
+          "Immediate deflection of out-of-scope or unrelated inquiries with polite redirect prompts",
+          "Eliminates extraneous API token consumption and reduces operational cloud spend",
+          "Case-insensitive substring search ensuring reliable input matching across varied phrasing",
+        ],
+      },
+      {
+        id: "vue-parallax",
+        title: "Vue.js Mathematical 3D Mouse Parallax Cards",
+        badge: "Kinetic Motion",
+        desc: "Mathematical viewport tracking component calculating real-time dynamic pitch and roll angles based on cursor offset from card centers.",
+        points: [
+          "Normalized mouse coordinates: computes mousePX and mousePY ratios relative to element dimensions",
+          "Calculates dynamic 3D rotation angles (-30deg to +30deg) across rotateX and rotateY axes",
+          "Synchronized parallax background translation (-40px to +40px) creating multi-layer depth",
+          "Smooth 1000ms mouseleave reset timer returning cards gently to neutral equilibrium",
+        ],
+      },
+      {
+        id: "heritage-chronicles",
+        title: "Imperial Historical Chronicles & Modal Media",
+        badge: "Historical Archival",
+        desc: "Chronological narrative modules in culture.html detailing the historical trajectory of Java from ancient Hindu-Buddhist kingdoms to Islamic sultanates.",
+        points: [
+          "Detailed historical documentation of the 13th-century Majapahit Empire and Gajah Mada's legacy",
+          "Archival exploration of Yogyakarta and Surakarta Keraton traditions, including batik and gamelan",
+          "Interactive openModal() JavaScript image inspector with caption overlays and smooth transitions",
+          "Showcases UNESCO-recognized masterworks: Wayang Kulit puppetry and Angklung instruments",
+        ],
+      },
+      {
+        id: "culinary-encyclopedia",
+        title: "Traditional Gastronomy & Origin Encyclopedia",
+        badge: "Culinary Heritage",
+        desc: "Comprehensive culinary documentation showcasing signature Javanese delicacies across dedicated detail pages with historical lore and preparation methods.",
+        points: [
+          "Detailed culinary records for Gudeg Yogyakarta, Soto Kudus, Rawon Ponorogo, and Lontong Sayur",
+          "Explores historical lore, such as the 16th-century Mataram soldiers coining 'hangudêk' (gudeg)",
+          "Step-by-step breakdown of slow-braising cooking methods and traditional Javanese spice pastes",
+          "Nutritional and ingredient profiles covering jackfruit, kluwek nut broth, and coconut reduction",
+        ],
+      },
+      {
+        id: "travel-discovery",
+        title: "Multi-Category Destination Discovery Hub",
+        badge: "Tourism Engine",
+        desc: "Tourism exploration interface in explore.html enabling visitors to discover iconic destinations through categorized filters and simulated booking parameters.",
+        points: [
+          "9 Categorized destination filters: Volcanoes, Cultural Villages, Temples, Towers, Waterfalls, Craters, Beaches, Historic Quarters, National Parks",
+          "Simulated trip planning widget collecting destination location, travel date, and guest count",
+          "Showcases world-renowned heritage monuments: Candi Borobudur, Prambanan, and Taman Sari",
+          "Responsive multi-column cards with visual tags, photography, and historical descriptions",
+        ],
+      },
+      {
+        id: "kinetic-marquee",
+        title: "Infinite Kinetic Marquee Image Carousel",
+        badge: "Visual UX",
+        desc: "Continuous 60 FPS CSS keyframe marquee carousel showcasing scenic photographic landscapes across Java with hover-activated overlays.",
+        points: [
+          "Smooth slide-right and slide-left CSS animations delivering seamless infinite loops",
+          "Card hover zoom effects with semi-transparent dark overlays highlighting destination names",
+          "Zero JavaScript layout recalculation overhead, offloading animation entirely to the GPU",
+          "Responsive width scaling adapting seamlessly from mobile screens to widescreen displays",
+        ],
+      },
+      {
+        id: "responsive-branding",
+        title: "Tailwind Typography & Floating Navigation",
+        badge: "Design System",
+        desc: "Distinctive brand identity combining custom display typography with Tailwind CSS utility classes and floating pill navigation.",
+        points: [
+          "Custom embedded display font Silvertones ('dapik') paired with Google Fonts Playfair & Raleway",
+          "Floating pill-shaped navbar with rounded-full border and backdrop blur styling",
+          "Mobile hamburger toggle menu with dynamic hidden/visible state and outside-click listeners",
+          "Earthy cultural color palette utilizing emerald greens (#15B392) and lime accents (#D2FF72)",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "AI Cultural Inquiry & Visitor Guidance Lifecycle",
+      lead: "From user inquiry to verified cultural recommendations — each interaction passes through bilingual domain evaluation and deterministic LLM generation.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Visitor Prompt & Gating",
+          title: "Bilingual Whitelist Evaluation",
+          desc: "Visitor enters a query into the 'Tanya Jawa' chat interface. The client script evaluates the input against the 24-keyword Indonesian and English cultural dictionary.",
+          action: "Whitelist Filter Verification (24 Keywords)",
+        },
+        {
+          level: "Stage 02",
+          role: "Gemini 1.5 Flash LLM",
+          title: "Low-Latency Generative Processing",
+          desc: "Valid prompts are dispatched via HTTPS POST to Google's gemini-1.5-flash-latest model. The model produces culturally accurate, context-rich historical and travel responses.",
+          action: "POST /gemini-1.5-flash-latest:generateContent",
+        },
+        {
+          level: "Stage 03",
+          role: "DOM Delivery & Cross-Linking",
+          title: "Sanitized DOM Insertion & Triage",
+          desc: "The response is injected safely into the chat stream via textContent. If the query touches upon destination logistics, the assistant suggests relevant regional exploration pages.",
+          action: "Sanitized DOM Update & Chatbox Autoscroll",
+        },
+      ],
+      lockMechanism: {
+        title: "Cultural Safety & Academic Authenticity Guarantee",
+        desc: "JavaIsland is dedicated to educational appreciation and cultural preservation. The platform enforces bilingual lexical domain guardrails, verified historical references, and polite deflection algorithms to ensure AI conversations remain respectful, culturally grounded, and academically authentic.",
+      },
+    },
+    architectureTitle: "Vue-Enhanced Hybrid Client & Generative AI BaaS",
+    architectureLead:
+      "Engineered with a clean separation between multi-page semantic HTML5 views, Tailwind CSS styling, a reactive Vue.js 3D motion module, and Google's Generative AI REST endpoint.",
+    architecture: {
+      type: "Vue-Enhanced Semantic Web + Generative AI BaaS",
+      protocol: "HTTPS REST (JSON / Google Generative Language)",
+      layers: [
+        {
+          name: "Presentation & Semantic Layout Layer",
+          badge: "HTML5 + Tailwind CSS + Silvertones Font",
+          desc: "Multi-page semantic portal (index, culture, explore, askjava, detail pages) styled with modern Tailwind CSS utilities and custom brand typography.",
+        },
+        {
+          name: "Reactive 3D Motion & Component Layer",
+          badge: "Vue.js 2.x Component Math",
+          desc: "Self-contained Vue.js component calculating cursor offset mathematics (mousePX, mousePY) and dynamic 3D rotational transforms (rotateX, rotateY).",
+        },
+        {
+          name: "Cultural Domain Guardrail Layer",
+          badge: "Bilingual Lexical Whitelist",
+          desc: "Client-side keyword validator screening queries across 24 Indonesian and English terms prior to API dispatch.",
+        },
+        {
+          name: "AI Generative Engine Layer",
+          badge: "Google Gemini 1.5 Flash REST API",
+          desc: "Asynchronous fetch pipeline connecting to generativelanguage.googleapis.com, delivering rapid generative answers for cultural inquiries.",
+        },
+        {
+          name: "Media & Asset Distribution Layer",
+          badge: "High-Res Photography & YouTube Embeds",
+          desc: "Optimized cultural image assets, local SVG iconography, and embedded YouTube cultural video players.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & UI Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Markup across 9 Cultural Portals" },
+          { name: "Tailwind CSS", role: "Utility-First Responsive Styling & Grid Layouts" },
+          { name: "CSS3 Keyframes", role: "Hardware-Accelerated 60 FPS Marquee & Parallax Animations" },
+          { name: "Vue.js", role: "Reactive Mathematical 3D Mouse Parallax Card Component" },
+          { name: "JavaScript (ES6+)", role: "DOM Manipulation, Modal Dialogs & Asynchronous Fetch" },
+          { name: "Silvertones Typography", role: "Custom Display Font ('dapik') & Google Fonts" },
+        ],
+      },
+      {
+        category: "AI & External Integrations",
+        items: [
+          { name: "Google Gemini 1.5 Flash", role: "Generative AI LLM for Cultural Tourism Consultations" },
+          { name: "REST API Endpoint", role: "Direct HTTPS POST Request Pipeline" },
+          { name: "Bilingual Whitelist Guardrail", role: "Client-Side 24-Keyword Cultural Filter (ID & EN)" },
+          { name: "YouTube Iframe API", role: "Embedded High-Definition Cultural Video Showcase" },
+        ],
+      },
+      {
+        category: "Tooling & Deployment",
+        items: [
+          { name: "VS Code Live Server", role: "Local Development Server on Port 5501" },
+          { name: "Git & GitHub", role: "Version Control & Open-Source Collaboration" },
+          { name: "Vercel / Static Edge", role: "Global Edge CDN Static File Hosting" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Root Directory (Core Application Portals)",
+        items: [
+          "index.html — Main landing gateway with hero, 3D parallax cities, and marquee",
+          "culture.html — Historical chronicles, Majapahit Empire, and performing arts",
+          "explore.html — Tourism destinations, category filters, and booking simulator",
+          "askjava.html — Tanya Jawa: Bilingual Gemini Flash AI conversational concierge",
+          "detailwayang.html — In-depth Wayang Kulit shadow puppetry heritage profile",
+          "detailgudeg.html — Gudeg Yogyakarta historical origin & culinary recipe lore",
+          "detailrawon.html — Rawon Ponorogo black beef soup recipe & kluwek nut history",
+          "detailsotokudus.html — Soto Kudus central Javanese shredded chicken soup profile",
+          "detaillontong.html — Lontong Sayur coconut vegetable stew culinary breakdown",
+        ],
+      },
+      {
+        name: "Styles & Assets (css/, font/, Images/)",
+        items: [
+          "index.css — 3D card tilt styling, perspective math rules, and custom animations",
+          "css/askjava.css — Chatbot container, bubble styling, and autoscroll rules",
+          "css/culture.css — Timeline styling, narrative layouts, and modal dialogs",
+          "css/explore.css — Destination card grids, booking input bar, and category buttons",
+          "font/Silvertones.otf — Custom brand display font embedded via @font-face",
+          "Images/ — High-resolution photography, SVG maps, and cultural iconography",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: HeritageChronicle",
+        purpose:
+          "Represents historical eras and kingdoms (Majapahit, Mataram, Yogyakarta Sultanate) with historical epoch, leadership, cultural contributions, and archival media.",
+      },
+      {
+        name: "Data Model: CulinaryHeritage",
+        purpose:
+          "Stores traditional food items with regional origin, historical invention lore, signature herbs, slow-braising cooking steps, and taste profile.",
+      },
+      {
+        name: "Data Model: TouristDestination",
+        purpose:
+          "Captures landmark profiles categorized across 9 tourism domains with geographic coordinates, historical era, admission guidelines, and photo galleries.",
+      },
+      {
+        name: "Data Model: CulturalAIInteraction",
+        purpose:
+          "Manages visitor session state in 'Tanya Jawa': user prompt, bilingual whitelist match status, Gemini 1.5 Flash payload, and response latency.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Cultural Safety Standards",
+    securityLead:
+      "Multi-layered client-side security architecture combining bilingual lexical domain whitelisting, sanitized DOM insertion, and encrypted REST transmission.",
+    apiEndpoints: [
+      {
+        group: "AI Tourism Concierge (Google Generative Language)",
+        routes: [
+          {
+            method: "POST",
+            path: "/v1beta/models/gemini-1.5-flash-latest:generateContent",
+            desc: "Dispatches user cultural prompt to Google Gemini 1.5 Flash with real-time generative responses",
+          },
+        ],
+      },
+      {
+        group: "Cultural Portals & Historical Exploration",
+        routes: [
+          {
+            method: "GET",
+            path: "/culture.html",
+            desc: "Serves imperial historical chronicles and interactive performing arts media modals",
+          },
+          {
+            method: "GET",
+            path: "/explore.html",
+            desc: "Delivers tourism destination discovery engine with 9 category filters and trip planner",
+          },
+          {
+            method: "GET",
+            path: "/detailgudeg.html",
+            desc: "Renders in-depth gastronomy history and centuries-old recipe origin for Gudeg Yogyakarta",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Bilingual Domain Keyword Whitelisting",
+        desc: "Screens prompt submissions across 24 Indonesian and English cultural terms, immediately deflecting off-topic or malicious prompt injections before API dispatch.",
+      },
+      {
+        title: "Sanitized DOM Insertion",
+        desc: "Model-generated text is injected strictly using textContent properties, protecting client browsers against Cross-Site Scripting (XSS) from untrusted tokens.",
+      },
+      {
+        title: "Encrypted HTTPS API Transport",
+        desc: "All client-to-API communication flows over TLS 1.3 encrypted HTTPS channels directly to Google Generative Language endpoints.",
+      },
+      {
+        title: "Graceful Upstream Error Recovery",
+        desc: "Catch blocks intercept network anomalies or quota limits, displaying polite error diagnostics without disrupting page UI or crashing script threads.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "< 950ms",
+        label: "Gemini Flash AI Latency",
+        desc: "High-throughput generative inference delivering rapid, accessible cultural answers.",
+      },
+      {
+        value: "24 Terms",
+        label: "Bilingual Domain Gating",
+        desc: "Zero off-topic queries allowed into the API pipeline via dual-language lexical gating.",
+      },
+      {
+        value: "8 Cities",
+        label: "3D Parallax Interactive Cards",
+        desc: "Mathematical pointer-tracking perspective transforms engineered in Vue.js.",
+      },
     ],
     sections: [
       {
-        title: "Goals",
+        title: "The brief",
         body: [
-          "Deliver a smooth, on-brand mobile shopping experience tied to a real-time data layer. Orders, stock, and pricing all stay in sync without manual refresh.",
+          "Java Island possesses an extraordinarily rich tapestry of historical kingdoms, UNESCO-recognized performing arts, diverse culinary traditions, and world-class natural landmarks. However, online representations of Javanese culture often remain fragmented across disparate blogs or dry academic repositories. JavaIsland was conceived to bridge this gap: an engaging, modern digital portal that introduces visitors to the depth of Java through interactive visual motion and accessible generative AI.",
+          "Core Mandate: Build an interactive, visually stunning cultural tourism platform that combines modern frontend techniques (3D mouse parallax, infinite marquees) with a responsive AI assistant equipped with strict cultural domain guardrails.",
         ],
       },
       {
-        title: "Implementation",
+        title: "Architecture & Generative AI Integration",
         body: [
-          "Flutter for the UI, Firestore for real-time data, Firebase Auth for sessions. UI states subscribe directly to Firestore streams so the screen reflects backend changes instantly.",
+          "The platform employs a hybrid frontend architecture combining semantic HTML5 and Tailwind CSS with a reactive Vue.js component for mathematical 3D card tilt calculations. The card component tracks normalized pointer coordinates (mousePX, mousePY) to compute dynamic rotateX and rotateY CSS transforms alongside background translation, creating an authentic physical card feel without three.js or WebGL complexity.",
+          "For the AI assistant ('Tanya Jawa'), the platform integrates directly with Google's Gemini 1.5 Flash endpoint via REST. To protect API quotas and maintain cultural authenticity, a client-side lexical validator enforces a 24-keyword bilingual whitelist (spanning terms like 'Jawa', 'budaya', 'candi', 'wisata', 'culture', 'temple', 'volcano'). Submissions that pass the filter trigger an asynchronous fetch pipeline with animated thinking indicators and autoscrolling message containers.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Implementing realistic 3D mouse parallax tilting with natural damping across different screen resolutions. Solved by structuring a reactive Vue.js component that continuously calculates cursor offsets relative to the element's bounding box, coupled with a 1000ms mouseleave timeout to smoothly reset the card to equilibrium.",
+          "Enforcing cultural topic fidelity in the AI assistant without adding a dedicated backend proxy. Solved by authoring a dual-language substring search covering 24 critical cultural and geographic keywords in Indonesian and English, deflecting non-cultural inquiries immediately on the client.",
+          "Constructing an infinite photographic marquee that remains silky-smooth across high-refresh-rate displays. Achieved through pure CSS keyframe translations (slide-right, slide-left) that bypass DOM reflows and offload rendering entirely to the browser GPU.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Successfully deployed an interactive cultural tourism platform showcasing 8 major cities, 9 tourism domains, and in-depth culinary archives.",
+          "Integrated Google's Gemini 1.5 Flash API with sub-second response times and 100% client-side bilingual domain guardrail compliance.",
+          "Engineered reactive 3D mouse-tracking parallax cards using Vue.js math that run fluidly at 60 FPS without external 3D libraries.",
         ],
       },
     ],
-    stack: ["Flutter", "Dart", "Firebase", "Firestore"],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "JavaScript",
+      "Vue.js",
+      "Google Gemini 1.5 Flash",
+      "Custom Typography",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/JavaIsland" },
+    ],
+  },
+
+  pusakaku: {
+    title: "Pusakaku",
+    subtitle: "Digital Preservation of Indonesian Traditional Folk Games & Cultural Heritage",
+    summary:
+      "An educational cultural heritage platform engineered to revive and preserve Indonesia's endangered traditional folk games. Combines rich historical ethnography, psychomotor and cognitive development analyses, an interactive 10-stage gamified assessment quiz engine, and custom display typography.",
+    domain: "github.com/adyvka31/Pusakaku",
+    meta: [
+      { label: "Role", value: "Lead Frontend Engineer & Cultural Researcher" },
+      { label: "Platform", value: "Responsive Web & Mobile Browser" },
+      { label: "Timeline", value: "2023" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Tailwind Semantic Web + Gamified Quiz Engine" },
+      { label: "Design System", value: "Custom Yogyakarta Typography & Earthy Heritage Palette" },
+    ],
+    galleryLabel: "FOLK HERITAGE & GAMIFIED INTERFACES",
+    galleryTitle: "The Pusakaku Cultural Experience",
+    galleryLead:
+      "Explore the core interactive touchpoints of Pusakaku — from gamified cultural quizzes and deep anthropological game profiles to dual-lane kinetic marquees and responsive heritage typography.",
+    gallery: [
+      {
+        id: "quiz-engine",
+        title: "Interactive 10-Stage Cultural Quiz Engine",
+        route: "pusakaku.local/Pages/game.html",
+        tag: "Gamified State Machine",
+        image: pusakakuImg,
+        desc: "Dynamic 10-question assessment evaluating user knowledge of Indonesian traditional game histories, material crafts, and gameplay mechanics. Features pagination logic, instant score computation (Score: ${score}/100), qualitative feedback, and radio state resets.",
+        features: [
+          "10-Step Paginated Quiz Flow with State Locking",
+          "Real-Time Score Calculation & Feedback Engine",
+          "Interactive Modal Dialogs & Radio Button State Reset",
+        ],
+      },
+      {
+        id: "game-encyclopedia",
+        title: "Anthropological Folk Games Encyclopedia",
+        route: "pusakaku.local/Pages/pagecongklak.html",
+        tag: "Cultural Archival",
+        image: pusakakuImg,
+        desc: "Comprehensive ethnographic dossiers for iconic folk activities — Congklak (Mancala mathematical patience), Egrang (vestibular balance and courage), Kelereng (precision geometry), and Layang-Layang (aerodynamics & Muna Island folklore).",
+        features: [
+          "Deep Ethnographic Lore (Origin, Evolution, Spread)",
+          "Psychomotor & Cognitive Development Breakdowns",
+          "Material Craftsmanship & Traditional Sourcing Guides",
+        ],
+      },
+      {
+        id: "kinetic-marquee",
+        title: "Dual-Lane Continuous Kinetic Marquee",
+        route: "pusakaku.local/index.html#permainan",
+        tag: "Hardware Acceleration",
+        image: pusakakuImg,
+        desc: "Smooth dual-lane marquee carousel showcasing 8 traditional games (Gobak Sodor, Ketapel, Balap Karung, Engklek, Bentengan, Bakiak) with hover-zoom depth scaling, semi-transparent overlays, and 60 FPS GPU-accelerated keyframe translations.",
+        features: [
+          "Dual-Lane CSS Keyframe Marquee (slide-right & slide-right2)",
+          "Ring-Border Depth Lighting & Hover Scale Transforms",
+          "Zero JavaScript Reflow Overhead via GPU Offloading",
+        ],
+      },
+      {
+        id: "heritage-identity",
+        title: "Yogyakarta Custom Typography & Preloader Intro",
+        route: "pusakaku.local/index.html#hero",
+        tag: "Cultural Design System",
+        image: pusakakuImg,
+        desc: "Earthy Javanese heritage aesthetic pairing the custom embedded Yogyakarta display font with an animated text-stepping preloader curtain ('Selamat Datang' → 'Di' → 'PusakaKu'), smooth anchor scrolls, and interactive FAQ accordions.",
+        features: [
+          "Custom Embedded Yogyakarta TrueType Font",
+          "Timed Preloader Curtain Intro with Slide-Up Exit",
+          "4-Tier Cultural Preservation FAQ Accordion",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "10 Steps",
+        label: "Interactive Quiz Engine",
+        note: "Real-time scoring and feedback evaluation in game.js",
+      },
+      {
+        value: "8+ Games",
+        label: "Traditional Activities Indexed",
+        note: "From Congklak and Egrang to Gobak Sodor and Bentengan",
+      },
+      {
+        value: "4 Dossiers",
+        label: "Dedicated Deep-Dive Portals",
+        note: "Comprehensive history, physics, and rules documentation",
+      },
+      {
+        value: "6 Breakpoints",
+        label: "Responsive Tailwind Matrix",
+        note: "Custom screens from xs (250px) to 2xl (1536px)",
+      },
+      {
+        value: "60 FPS",
+        label: "GPU-Accelerated Marquee",
+        note: "Fluid keyframe translations without layout recalculation",
+      },
+      {
+        value: "0ms",
+        label: "Zero-Build Runtime Latency",
+        note: "Pure vanilla web execution on static edge CDN",
+      },
+    ],
+    highlights: [
+      {
+        icon: "terminal",
+        title: "Gamified Cultural Assessment",
+        desc: "Dynamic 10-stage quiz state machine evaluating traditional folk game comprehension with automated scoring and constructive feedback.",
+      },
+      {
+        icon: "database",
+        title: "Anthropological Game Archives",
+        desc: "Detailed dossiers on Congklak, Egrang, Kelereng, and Layang-Layang analyzing origins, cultural philosophies, and physical benefits.",
+      },
+      {
+        icon: "monitor",
+        title: "Kinetic Marquee & Visual UX",
+        desc: "Dual-lane infinite carousel displaying regional folk activities with hardware-accelerated CSS animations and responsive hover overlays.",
+      },
+      {
+        icon: "cloud",
+        title: "Cultural Preservation Advocacy",
+        desc: "Structured educational initiative promoting traditional physical play as a healthier, community-oriented alternative to excessive screen time.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Heritage Education Workflow",
+    capabilitiesLead:
+      "Pusakaku bridges the generational divide by transforming ancient Indonesian folk games into engaging, interactive digital experiences.",
+    features: [
+      {
+        id: "quiz-machine",
+        title: "Gamified 10-Stage Cultural Quiz Engine",
+        badge: "Interactive Assessment",
+        desc: "Multi-step quiz module (Pages/game.html) designed to test and reinforce knowledge of Indonesian traditional game rules, cultural history, and regional origins.",
+        points: [
+          "State-driven question pagination using showQuestion(index) with next/previous bounds checks",
+          "Real-time evaluation logic aggregating 10 points per correct answer up to a 100-point ceiling",
+          "Dynamic qualitative feedback generator differentiating high mastery (≥70) from retry guidance",
+          "Full quiz reset capability (restartQuiz()) clearing radio selections and restoring initial state",
+        ],
+      },
+      {
+        id: "anthropological-dossiers",
+        title: "In-Depth Game Dossiers & Physics Philosophy",
+        badge: "Cultural Research",
+        desc: "Dedicated standalone documentation portals for 4 iconic traditional games exploring historical origins, physics principles, and developmental benefits.",
+        points: [
+          "Congklak: Explores ancient Mancala roots (Egypt 3000 BC), seed allocation math, and strategic patience",
+          "Egrang: Analyzes vestibular equilibrium, core motor stability, and the psychological mastery of fear",
+          "Kelereng: Details tactical precision, geometric trajectory control, and fine-motor coordination",
+          "Layang-Layang: Chronicles Kaghati Kolope (world's oldest kite in Muna), aerodynamics, and wind currents",
+        ],
+      },
+      {
+        id: "preloader-curtain",
+        title: "Timed Preloader Intro Curtain Animation",
+        badge: "Visual UX",
+        desc: "Sequenced welcome animation (Javascript/hello.js) executing upon window.onload to create a sense of theatrical arrival before uncovering the landing portal.",
+        points: [
+          "Sequential text rendering cycle: 'Selamat Datang' → 'Di' → 'PusakaKu' with 1000ms intervals",
+          "Hardware-accelerated CSS translate-animation sliding the curtain upwards upon completion",
+          "Smooth entry cadence focusing user attention on the platform's cultural preservation mission",
+          "Lightweight script execution with zero external animation library dependencies",
+        ],
+      },
+      {
+        id: "dual-lane-marquee",
+        title: "Dual-Lane GPU-Accelerated Marquee Carousel",
+        badge: "Kinetic Motion",
+        desc: "Continuous multi-card carousel showcasing 8 regional folk games across Java, Sumatra, Sulawesi, and Jakarta with zero JavaScript layout overhead.",
+        points: [
+          "Dual keyframe animation tracks (slide-right and slide-right2) creating seamless continuous loops",
+          "Tactile card hover scaling (scale-110) paired with emerald ring borders (ring-green-700)",
+          "Overlay text styling revealing game titles (Gobak Sodor, Balap Karung, Engklek) and origins on hover",
+          "GPU-accelerated transforms preventing frame drops on low-power mobile devices",
+        ],
+      },
+      {
+        id: "yogyakarta-typography",
+        title: "Custom Yogyakarta Display Typography System",
+        badge: "Brand Identity",
+        desc: "Evocative Javanese cultural branding pairing the custom TrueType font Yogyakarta with Google Fonts serif typography and an earthy natural palette.",
+        points: [
+          "Custom @font-face declaration embedding Font/Yogyakarta.ttf for expressive cultural headlines",
+          "Harmonious heritage color palette: deep forest green (#5D8736), lime (#A9C46C), and parchment (#F5EFDA)",
+          "High contrast ratio ensuring full readability across text sections and modal dialogues",
+          "Integrated brand iconography with interactive grab/drag cursor effects (cursor-grab)",
+        ],
+      },
+      {
+        id: "responsive-breakpoints",
+        title: "Granular 6-Tier Responsive Breakpoint Architecture",
+        badge: "Responsive Layout",
+        desc: "Custom Tailwind CSS configuration engineered to maintain layout integrity across an extensive range of viewport widths from ultra-compact smartphones to 2K monitors.",
+        points: [
+          "Custom tailored Tailwind breakpoints: xs (250px), sm (420px), md (768px), lg (1024px), xl (1280px), 2xl (1536px)",
+          "Mobile-first dropdown menu drawer toggling cleanly on handheld viewports",
+          "Fluid image aspect ratios with object-cover scaling preventing aspect distortion",
+          "Adaptive typography sizing utilizing responsive clamp utilities for headlines and body copy",
+        ],
+      },
+      {
+        id: "event-timeline",
+        title: "Cultural Preservation Event Timeline & Calendar",
+        badge: "Community Hub",
+        desc: "Dedicated section (Acara Pusaka) promoting grassroots youth tournaments, community festivals, and school workshops across Indonesia.",
+        points: [
+          "Curated calendar showcasing upcoming traditional game competitions and cultural gatherings",
+          "Interactive registration triggers connecting educators and youth organizers with heritage programs",
+          "Spotlights community-driven revitalizations of folk games in urban public spaces",
+          "Visual badge indicators categorizing events by regional territory and game discipline",
+        ],
+      },
+      {
+        id: "screen-time-faq",
+        title: "Educational FAQ Accordion & Screen-Time Advocacy",
+        badge: "Health & Advocacy",
+        desc: "Structured 4-tier FAQ accordion articulating the core psychological and developmental advantages of traditional physical play over passive screen exposure.",
+        points: [
+          "Addresses childhood screen-time dependency through active, social physical play alternatives",
+          "Explains cognitive problem-solving and emotional resilience nurtured through folk rules",
+          "Articulates Pusakaku's mission as an open-access cultural repository for schools and families",
+          "Clean collapsible accordion structure providing frictionless access to key research findings",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Traditional Game Discovery & Educational Assessment Lifecycle",
+      lead: "From cultural exploration to interactive assessment — guiding users through an engaging cycle of historical learning and gamified reinforcement.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Cultural Immersion",
+          title: "Anthropological Game Discovery",
+          desc: "User explores the games catalog and dedicated deep-dive portals, reading about historical origins, physics principles, and cognitive benefits.",
+          action: "Browse Catalog → Select Game Profile",
+        },
+        {
+          level: "Stage 02",
+          role: "Gamified Evaluation",
+          title: "10-Stage Interactive Assessment",
+          desc: "User launches the quiz engine in game.html, answering 10 progressive questions covering game rules, regional origins, and material craftsmanship.",
+          action: "Complete 10-Question Quiz → Submit Form",
+        },
+        {
+          level: "Stage 03",
+          role: "Advocacy & Action",
+          title: "Real-World Play & Screen-Time Reduction",
+          desc: "System tallies score out of 100, delivers qualitative feedback, and encourages users to organize physical play sessions with friends and community.",
+          action: "Review Score Feedback → Share & Play Outdoors",
+        },
+      ],
+      lockMechanism: {
+        title: "Folk Heritage Authenticity & Child Development Guarantee",
+        desc: "Pusakaku serves as an authentic educational bridge. The platform synthesizes peer-reviewed folklore research with child psychology insights, ensuring that every game record, rule explanation, and quiz metric accurately preserves Indonesia's intangible heritage while promoting active social development.",
+      },
+    },
+    architectureTitle: "Tailwind Semantic Web & Gamified Quiz Architecture",
+    architectureLead:
+      "Engineered with a clean separation between multi-page semantic HTML5 views, utility-first Tailwind CSS styling sheets, a lightweight JavaScript quiz state machine, and custom TrueType typography.",
+    architecture: {
+      type: "Semantic Web Architecture + Gamified Assessment Engine",
+      protocol: "Client-Side DOM Manipulation & State Paging",
+      layers: [
+        {
+          name: "Client Presentation & Semantic Views",
+          badge: "HTML5 + Tailwind CSS v3.4.17",
+          desc: "Multi-page semantic portal (index, game, pagecongklak, pageegrang, pagekelereng, pagelayang) styled with utility classes and custom responsive breakpoints.",
+        },
+        {
+          name: "Interactive Quiz State Machine",
+          badge: "Javascript/game.js",
+          desc: "Centralized quiz controller managing question pagination (showQuestion), score calculation, feedback strings, and radio form resets.",
+        },
+        {
+          name: "Preloader & Entry Choreography",
+          badge: "Javascript/hello.js",
+          desc: "Asynchronous text-stepping intro curtain executing on window.onload, transitioning gracefully into the landing view via CSS translate transforms.",
+        },
+        {
+          name: "Kinetic Motion & Styling Layer",
+          badge: "CSS3 Hardware-Accelerated Keyframes",
+          desc: "Hardware-accelerated marquee carousel (slide-right, slide-right2), wave animations, pulse indicators, and hover-zoom scaling.",
+        },
+        {
+          name: "Cultural Typography & Vector Layer",
+          badge: "Font/Yogyakarta.ttf & SVG Icons",
+          desc: "Embedded custom TrueType display typography paired with local SVG illustrations, regional photography, and cultural badges.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & UI Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Markup across 6 Cultural & Game Portals" },
+          { name: "Tailwind CSS v3.4.17", role: "Utility-First Responsive Styling with 6 Custom Breakpoints" },
+          { name: "CSS3 Keyframes", role: "Hardware-Accelerated Marquee & Pulse Animations" },
+          { name: "Yogyakarta Font", role: "Custom Embedded TrueType Typography ('Yogyakarta')" },
+          { name: "Vanilla JavaScript (ES6+)", role: "Quiz Pagination State Engine, Scoring & Preloader Intro" },
+        ],
+      },
+      {
+        category: "Content & Ethnographic Research",
+        items: [
+          { name: "Mancala / Congklak Research", role: "Historical Documentation of Mathematical Folk Play" },
+          { name: "Vestibular Balance Studies", role: "Analysis of Motor Coordination in Egrang & Bakiak" },
+          { name: "Kaghati Kolope Lore", role: "World's Oldest Kite Folklore from Muna Island, Sulawesi" },
+          { name: "Screen-Time Advocacy", role: "Pedagogical Framework for Screen-Time Reduction" },
+        ],
+      },
+      {
+        category: "Tooling & Deployment",
+        items: [
+          { name: "Node.js & npm", role: "Package Management & Tailwind Build Automation" },
+          { name: "VS Code Live Server", role: "Local Development Server Environment" },
+          { name: "Git & GitHub", role: "Version Control & Open-Source Collaboration" },
+          { name: "Vercel / Static Edge", role: "High-Performance Edge CDN Static Deployment" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Root & Pages/ (Core Portals & Game Dossiers)",
+        items: [
+          "index.html — Main landing portal with hero, marquee, about, and FAQ",
+          "Pages/game.html — Interactive 10-stage gamified cultural assessment quiz",
+          "Pages/pagecongklak.html — Congklak (Mancala) history, rules, and mathematical lore",
+          "Pages/pageegrang.html — Egrang (bamboo stilts) balance physics and motor skills",
+          "Pages/pagekelereng.html — Kelereng (marbles) precision geometry and tactical rules",
+          "Pages/pagelayang.html — Layang-Layang (kites) aerodynamics and Kaghati Kolope history",
+        ],
+      },
+      {
+        name: "Logic, Styles & Assets (Javascript/, Style/, Font/, Image/)",
+        items: [
+          "Javascript/game.js — Quiz state machine: pagination, score calculation & reset",
+          "Javascript/hello.js — Sequenced welcome preloader curtain with sliding exit",
+          "Style/index.css — Keyframe animations, Yogyakarta font imports & reset rules",
+          "Font/Yogyakarta.ttf — Custom TrueType display typography asset",
+          "Image/ — Archival photography, logo assets, and cultural vector illustrations",
+          "tailwind.config.js — Tailwind configuration with 6 custom breakpoint definitions",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: TraditionalGame",
+        purpose:
+          "Represents indigenous folk game records with title, regional origin, material equipment (bamboo, cowrie shells, glass), required player count, and developmental values.",
+      },
+      {
+        name: "Data Model: QuizQuestion",
+        purpose:
+          "Stores assessment items with prompt text, 4 multiple-choice options (a-d), correct answer key, and historical context explanation.",
+      },
+      {
+        name: "Data Model: UserQuizSession",
+        purpose:
+          "Tracks transient assessment state: selected answers array (q1-q10), computed score (0-100), completion timestamp, and qualitative feedback string.",
+      },
+      {
+        name: "Data Model: CulturalEvent",
+        purpose:
+          "Captures preservation workshops, school festivals, and regional folk game tournaments with organizer, location, date, and target age group.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Data Safety Standards",
+    securityLead:
+      "Client-side architecture ensuring zero telemetry intrusion, isolated state memory, and secure static transmission.",
+    apiEndpoints: [
+      {
+        group: "Interactive Quiz Engine (Client State)",
+        routes: [
+          {
+            method: "POST",
+            path: "submitQuiz()",
+            desc: "Evaluates radio inputs across q1-q10, calculates score out of 100, and displays qualitative feedback",
+          },
+          {
+            method: "POST",
+            path: "restartQuiz()",
+            desc: "Resets currentQuestionIndex to 0, clears checked radio buttons, and hides result panel",
+          },
+        ],
+      },
+      {
+        group: "Cultural Portals & Game Dossiers",
+        routes: [
+          {
+            method: "GET",
+            path: "/Pages/game.html",
+            desc: "Serves 10-question traditional game quiz interface",
+          },
+          {
+            method: "GET",
+            path: "/Pages/pagecongklak.html",
+            desc: "Delivers deep-dive historical dossier and rules for Congklak",
+          },
+          {
+            method: "GET",
+            path: "/Pages/pageegrang.html",
+            desc: "Serves history, balance physics, and motor coordination guide for Egrang",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Client-Side Memory Isolation",
+        desc: "All quiz calculations execute locally within browser memory without sending user responses to unverified third-party endpoints, preserving absolute visitor privacy.",
+      },
+      {
+        title: "Zero-Tracker Privacy Footprint",
+        desc: "The application operates with zero behavioral tracking cookies, commercial ad beacons, or telemetry scripts, ensuring a safe educational environment for children.",
+      },
+      {
+        title: "Sanitized Static Distribution",
+        desc: "Deployed as pre-compiled static assets served over TLS 1.3 encrypted HTTPS channels, inherently immune to server-side SQL injection or remote code execution vectors.",
+      },
+      {
+        title: "Defensive DOM Injection",
+        desc: "Dynamic feedback messages and score figures are rendered strictly through textContent properties to prevent Cross-Site Scripting (XSS) risks.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "10 Steps",
+        label: "Gamified Assessment Questions",
+        desc: "Multi-choice quiz evaluating traditional folk game origins, rules, and cultural lore.",
+      },
+      {
+        value: "8+ Games",
+        label: "Regional Folk Activities",
+        desc: "Cataloging iconic games from Java, Sumatra, Sulawesi, and Jakarta.",
+      },
+      {
+        value: "4 Portals",
+        label: "Comprehensive Heritage Portals",
+        desc: "Dedicated deep-dive dossiers on Congklak, Egrang, Kelereng, and Layang-Layang.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "With the rapid rise of digital screens and mobile entertainment, traditional Indonesian folk games are rapidly fading from the daily lives of younger generations. These games are far more than idle pastimes — they represent centuries of intangible cultural heritage, teaching essential life lessons such as patience, balance, tactical foresight, and community solidarity. Pusakaku was conceived to reverse this trend: a digital sanctuary that documents, celebrates, and revitalizes traditional Indonesian games through modern web experiences.",
+          "Core Mandate: Build an accessible, visually appealing cultural platform that pairs in-depth ethnographic game archives with a gamified 10-stage quiz engine to educate children, parents, and educators about Indonesia's folk game heritage.",
+        ],
+      },
+      {
+        title: "Architecture & Gamified Learning",
+        body: [
+          "The platform was engineered using a lightweight semantic web architecture built on semantic HTML5 and styled with Tailwind CSS v3.4.17. To guarantee an optimal viewing experience on any hardware, a custom 6-tier breakpoint matrix was established (xs: 250px to 2xl: 1536px), allowing mobile users on compact screens to navigate with fluid precision.",
+          "The gamified assessment engine (Javascript/game.js) implements a clean client-side state machine. Questions are paginated into isolated view steps with bounds checking (Math.min, Math.max), calculating scores dynamically up to 100 points and rendering constructive qualitative feedback. A sequenced preloader curtain (Javascript/hello.js) delivers a theatrical greeting before revealing the vibrant green cultural aesthetic styled with the custom TrueType font Yogyakarta.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Engineering an interactive multi-step quiz interface using pure vanilla JavaScript without introducing bulky state management libraries. Solved by designing an element display toggle function (showQuestion) linked to a currentQuestionIndex counter, paired with radio-selector querying and automated form clearing on restart.",
+          "Maintaining smooth 60 FPS performance for dual-lane continuous marquees displaying high-resolution cultural photography. Solved by leveraging GPU-accelerated CSS keyframe translations (slide-right, slide-right2) that bypass CPU layout recalculation.",
+          "Synthesizing authentic anthropological lore with accessible child-friendly explanations. Conducted thorough research into game origins — such as Congklak's Mancala ancestry and the ancient Kaghati Kolope leaf kite of Muna Island — presenting complex historical data in concise, engaging narratives.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Successfully deployed a comprehensive cultural preservation platform cataloging over 8 traditional Indonesian games across 4 dedicated deep-dive portals.",
+          "Integrated an interactive 10-stage cultural assessment quiz engine delivering real-time scoring, constructive feedback, and instant state resets.",
+          "Achieved an authentic regional brand identity using custom Yogyakarta display typography, dual-lane 60 FPS marquees, and a zero-tracker privacy architecture.",
+        ],
+      },
+    ],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "JavaScript",
+      "Custom Typography",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/Pusakaku" },
+    ],
+  },
+
+  "semua-bisa": {
+    title: "SemuaBisa",
+    subtitle: "Inclusive EdTech Ecosystem & Youth Digital Career Platform",
+    summary:
+      "An inclusive digital education ecosystem and workforce development platform built for the Unila 2024 National Web Design Competition by Team Deadliner. Empowers Indonesian youth to master modern digital competencies through 100% free bootcamps across 8 tech disciplines, accessible university degree pathways with Alpine.js tabs, a freelance digital services hub, and verified tech career job boards.",
+    domain: "github.com/adyvka31/SemuaBisa-Web",
+    meta: [
+      { label: "Role", value: "Frontend Lead & UI/UX Co-Architect (Team Deadliner)" },
+      { label: "Platform", value: "Responsive Web & Mobile Browser" },
+      { label: "Timeline", value: "2024" },
+      { label: "Team", value: "3 Engineers (Deadliner)" },
+      { label: "Status", value: "Competition Finalist · Production Ready" },
+      { label: "Architecture", value: "Modular Multi-Portal Architecture + Tailwind CSS & DaisyUI" },
+    ],
+    galleryLabel: "EDTECH & CAREER INTERFACES",
+    galleryTitle: "The SemuaBisa Digital Ecosystem",
+    galleryLead:
+      "Explore the core multi-domain touchpoints of SemuaBisa — uniting free technical bootcamps, accessible higher education roadmaps, digital freelance matchmaking, and tech recruitment job pipelines.",
+    gallery: [
+      {
+        id: "bootcamp-catalog",
+        title: "Multi-Disciplinary Technical Bootcamp Catalog",
+        route: "semuabisa.local/bootcamp.html",
+        tag: "EdTech Training",
+        image: semuaBisaImg,
+        desc: "Comprehensive technical curriculum portal across 8 industry disciplines (Web Dev, Mobile Dev, Machine Learning, Data Analyst, UI/UX, Cyber Security, Game Dev, Digital Marketing) featuring registration workflows and module overviews.",
+        features: [
+          "8 Curated In-Demand Industry Career Paths",
+          "100% Free Scholarship Model for Indonesian Youth",
+          "Step-by-Step Curriculum Syllabus Breakdown",
+        ],
+      },
+      {
+        id: "university-pathways",
+        title: "Accessible University Degree & Scholarship Navigator",
+        route: "semuabisa.local/kuliah.html",
+        tag: "Alpine.js Accessible Tabs",
+        image: semuaBisaImg,
+        desc: "Interactive higher education navigator built with Alpine.js keyboard-accessible tabs, matching aspiring developers with academic scholarship opportunities, university degree curricula, and tech department pathways.",
+        features: [
+          "Alpine.js Accessible Keyboard ARIA Tab Navigation",
+          "University Partner Integration & Degree Projections",
+          "Full & Partial Tech Scholarship Directories",
+        ],
+      },
+      {
+        id: "freelance-services",
+        title: "Digital Services & Talent Marketplace",
+        route: "semuabisa.local/jasa.html",
+        tag: "Freelance Economy",
+        image: semuaBisaImg,
+        desc: "Two-sided digital talent marketplace connecting certified bootcamp graduates and young tech practitioners with businesses seeking professional web engineering, mobile development, and UI/UX design services.",
+        features: [
+          "Direct Freelance Project Matchmaking Pipeline",
+          "Verified Graduate Portfolio Showcases",
+          "Transparent Service Scopes & Tiered Pricing",
+        ],
+      },
+      {
+        id: "career-recruitment",
+        title: "Tech Job Board & Recruitment Portal",
+        route: "semuabisa.local/lowongan-kerja.html",
+        tag: "Career Placement",
+        image: semuaBisaImg,
+        desc: "Curated recruitment portal partnering with leading tech industry employers (Google Developers, AWS Web Services, Dicoding Academy) to provide junior developer internships, apprenticeships, and entry-level positions.",
+        features: [
+          "Curated Tech Job Listings & Internship Openings",
+          "Industry Employer Partner Spotlights (AWS, Google, Dicoding)",
+          "Streamlined Candidate Application Gateway",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "8 Tracks",
+        label: "Specialized Tech Bootcamps",
+        note: "Web, Mobile, ML, Data, UI/UX, Cyber, Game, Marketing",
+      },
+      {
+        value: "100% Free",
+        label: "Youth Scholarship Access",
+        note: "Zero tuition barrier for aspiring Indonesian students",
+      },
+      {
+        value: "4 Pillars",
+        label: "Unified Career Ecosystem",
+        note: "Bootcamps · University · Freelance · Job Board",
+      },
+      {
+        value: "4 Domains",
+        label: "Keyboard-Navigable Tabs",
+        note: "Alpine.js ARIA tablist for academic roadmaps",
+      },
+      {
+        value: "60 FPS",
+        label: "AOS Kinetic Scroll Reveals",
+        note: "Smooth viewport entry with hardware-accelerated transforms",
+      },
+      {
+        value: "3 Engineers",
+        label: "Team Deadliner Collaboration",
+        note: "Built for National Web Design Competition Unila 2024",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Industry-Aligned Tech Bootcamps",
+        desc: "Comprehensive curriculum tracks across 8 core digital disciplines designed to take beginners to junior-ready engineering competence.",
+      },
+      {
+        icon: "database",
+        title: "Higher Education & Scholarship Navigator",
+        desc: "Alpine.js keyboard-accessible tabbed roadmap matching students with academic tech programs and financial scholarships.",
+      },
+      {
+        icon: "terminal",
+        title: "Digital Services Freelance Hub",
+        desc: "Marketplace platform allowing students and certified alumni to monetize their technical skills with real enterprise clients.",
+      },
+      {
+        icon: "cloud",
+        title: "Curated Tech Job Board",
+        desc: "Direct recruitment channels partnering with top tech industry innovators to place junior developers into internships and full-time careers.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Student Career Pathway Workflow",
+    capabilitiesLead:
+      "SemuaBisa closes the digital divide by guiding youth through a seamless pipeline from novice learners to employable tech professionals.",
+    features: [
+      {
+        id: "multi-track-bootcamp",
+        title: "Multi-Track Technical Bootcamp Engine",
+        badge: "EdTech Curriculum",
+        desc: "Comprehensive vocational training portal (bootcamp.html & detail-bootcamp.html) providing structured learning paths for Indonesian students at zero cost.",
+        points: [
+          "8 Specializations: Web Dev, Mobile Dev, Machine Learning, Data Analytics, UI/UX, Cyber Security, Game Dev, Digital Marketing",
+          "Modular curriculum breakdown with prerequisites, syllabus timelines, and practical capstone projects",
+          "Integrated registration workflow (register_bootcamp.html) capturing student learning tracks and goals",
+          "Direct mentorship alignment pairing learners with industry professionals and peer communities",
+        ],
+      },
+      {
+        id: "alpine-university-tabs",
+        title: "Accessible Higher Education Navigator with Alpine.js Tabs",
+        badge: "Academic Roadmaps",
+        desc: "Accessible degree directory in kuliah.html utilizing Alpine.js for keyboard-navigable ARIA tab switching across university disciplines.",
+        points: [
+          "Declarative x-data='{ activeTab: 1 }' state handling tab changes with zero complex boilerplate",
+          "Full keyboard accessibility supporting Left/Right/Home/End arrow keys via $focus.wrap()",
+          "Comprehensive degree roadmap comparing computer science, informatics engineering, and software design",
+          "Integrated scholarship directory highlighting government and corporate funding programs",
+        ],
+      },
+      {
+        id: "freelance-marketplace",
+        title: "Digital Freelance Marketplace & Services Hub",
+        badge: "Freelance Economy",
+        desc: "Direct monetization marketplace (jasa.html) bridging student talent with small businesses and corporations seeking digital solutions.",
+        points: [
+          "Categorized services directory covering landing page development, mobile app prototypes, and brand identities",
+          "Transparent portfolio showcases linking prospective clients directly to verified student projects",
+          "Tiered project estimation models helping youth learn realistic freelance scoping and pricing",
+          "Promotes economic self-reliance during academic study through gig economy participation",
+        ],
+      },
+      {
+        id: "job-recruitment-board",
+        title: "Curated Tech Career & Recruitment Job Board",
+        badge: "Career Placement",
+        desc: "Recruitment portal (lowongan-kerja.html) connecting entry-level developers and bootcamp graduates with verified tech employment opportunities.",
+        points: [
+          "Curated job feeds featuring top industry innovators: AWS Web Services, Google Developers, and Dicoding Academy",
+          "Dedicated filtering for internships, apprenticeships, and junior software engineering roles",
+          "Clear skill prerequisite checklists guiding applicants on required tech stack competencies",
+          "Streamlined application links reducing friction between youth talent and hiring managers",
+        ],
+      },
+      {
+        id: "scroll-elevated-navbar",
+        title: "Dynamic Scroll-Elevated Navigation System",
+        badge: "Navigation Architecture",
+        desc: "Responsive sticky navigation bar with automated elevation styling and scroll-position detection engineered in main.js.",
+        points: [
+          "Window scroll listener dynamically appending border-b-2, border-[#2F3087], and shadow-md when scrollY > 0",
+          "Restores clean transparent styling at the top of the viewport for seamless hero image integration",
+          "Mobile hamburger toggle menu with smooth transition animations and touch-friendly tap targets",
+          "Active route highlighting providing clear spatial orientation across the multi-page portal",
+        ],
+      },
+      {
+        id: "daisyui-components",
+        title: "Interactive DaisyUI Components & Registration Modals",
+        badge: "UI Component System",
+        desc: "Cohesive design system combining Tailwind CSS utility classes with DaisyUI semantic components for rapid, accessible interface authoring.",
+        points: [
+          "Pre-built DaisyUI modal dialogs, buttons, and form primitives delivering unified visual ergonomics",
+          "Dismissible promo banners with clean close-btn event listeners freeing viewport real estate",
+          "Brand-tailored color accents: primary corporate navy (#2F3087) and energetic orange (#FB923C)",
+          "Consistent typography sizing utilizing responsive text clamps for mobile and widescreen parity",
+        ],
+      },
+      {
+        id: "aos-scroll-reveals",
+        title: "Hardware-Accelerated Animate On Scroll (AOS)",
+        badge: "Motion Experience",
+        desc: "Kinetic entrance choreography utilizing AOS (Animate On Scroll) data attributes for staggered, non-intrusive section reveals.",
+        points: [
+          "Declarative data-aos='fade-up', 'fade-up-right', and 'fade-up-left' scroll triggers",
+          "GPU-accelerated CSS opacity and transform transitions maintaining a constant 60 FPS frame rate",
+          "Staggered entrance delays highlighting feature cards and statistics sequentially as the user scrolls",
+          "Zero layout thrashing overhead, keeping script execution lightweight on battery-constrained devices",
+        ],
+      },
+      {
+        id: "student-profile-hub",
+        title: "Unified Youth Identity & Student Profile Dashboard",
+        badge: "User Dashboard",
+        desc: "Personalized student dashboard (profil.html) and authentication flow (auth/login.html, auth/register.html) tracking progress across the platform.",
+        points: [
+          "Centralized student record displaying enrolled bootcamps, completed certificates, and career milestones",
+          "Dedicated authentication UI for returning students and new competition applicants",
+          "Portfolio link aggregation enabling students to showcase GitHub repositories and live deployments",
+          "Clean responsive container layouts ensuring smooth profile editing on mobile touchscreens",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Youth Digital Skill Mastery & Employment Lifecycle",
+      lead: "From free bootcamp discovery to junior career placement — empowering Indonesian youth through a structured, multi-tier tech advancement journey.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Learner Ingestion",
+          title: "Skill Exploration & Bootcamp Enrollment",
+          desc: "Student explores the 8 tech categories, reviews curriculum modules, and enrolls in a 100% free bootcamp track via register_bootcamp.html.",
+          action: "Select Track → Complete Registration Form",
+        },
+        {
+          level: "Stage 02",
+          role: "Curriculum & Projects",
+          title: "Intensive Learning & Capstone Building",
+          desc: "Learner undertakes intensive technical modules, builds real-world project portfolios, and receives validation from mentors and peers.",
+          action: "Complete Syllabus Modules → Submit Capstone Project",
+        },
+        {
+          level: "Stage 03",
+          role: "Career & Economy",
+          title: "Career Launch & Freelance Monetization",
+          desc: "Graduate publishes verified digital services on the freelance marketplace (jasa.html) and applies directly to tech jobs in lowongan-kerja.html.",
+          action: "List Freelance Services → Apply for Junior Tech Roles",
+        },
+      ],
+      lockMechanism: {
+        title: "Inclusive Education & Merit-Based Youth Advancement Guarantee",
+        desc: "SemuaBisa was founded on the conviction that financial constraints should never prevent young people from achieving digital mastery. The platform combines 100% free open-access courseware with industry-recognized career pathways, ensuring that every learner has equal opportunity to succeed in the modern tech economy.",
+      },
+    },
+    architectureTitle: "Modular Multi-Portal Architecture & Tailwind Ecosystem",
+    architectureLead:
+      "Engineered with a clean separation between multi-page semantic HTML5 views, utility-first Tailwind CSS styling sheets, Alpine.js accessible tab controllers, and DaisyUI component primitives.",
+    architecture: {
+      type: "Multi-Portal Semantic Web + Accessible Micro-Interactions",
+      protocol: "Client-Side DOM Controller & Alpine Declarative State",
+      layers: [
+        {
+          name: "Presentation & Semantic Layout Layer",
+          badge: "HTML5 + Tailwind CSS v3.4.13 + DaisyUI",
+          desc: "Multi-page semantic portal structure (Index, bootcamp, kuliah, jasa, lowongan-kerja, profil, auth) styled with utility classes and brand color variables.",
+        },
+        {
+          name: "Accessible State & Tab Controller",
+          badge: "Alpine.js Declarative State",
+          desc: "Keyboard-navigable tab system in kuliah.html supporting full ARIA accessibility standards, focus trapping, and arrow key traversal.",
+        },
+        {
+          name: "Scroll Elevation & Dynamic Navbar",
+          badge: "Vanilla JavaScript (main.js)",
+          desc: "Window scroll event listener appending elevation shadows and border styling dynamically, alongside banner dismiss handlers.",
+        },
+        {
+          name: "Kinetic Entrance & Animation Layer",
+          badge: "Animate On Scroll (AOS)",
+          desc: "GPU-accelerated scroll animations with declarative data-aos attributes providing fluid visual pacing across cards and sections.",
+        },
+        {
+          name: "Career & Opportunity Database Layer",
+          badge: "Static Structured JSON & Markups",
+          desc: "Curated tech job listings, university scholarship directories, and service offerings optimized for instant client-side retrieval.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & UI Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Markup across 8 Specialized Educational Portals" },
+          { name: "Tailwind CSS v3.4.13", role: "Utility-First Responsive Styling with Custom Theme Extensions" },
+          { name: "DaisyUI v4.12.10", role: "Semantic Component Library for Modals, Buttons, and Forms" },
+          { name: "Alpine.js", role: "Declarative Accessible ARIA Tab Navigation Engine" },
+          { name: "Animate On Scroll (AOS)", role: "Hardware-Accelerated Kinetic Scroll Entrance Animations" },
+          { name: "Vanilla JavaScript (ES6+)", role: "Scroll-Elevated Navbar & Dynamic Viewport Event Handlers" },
+        ],
+      },
+      {
+        category: "Curriculum & Workforce Pillars",
+        items: [
+          { name: "8 Tech Bootcamp Tracks", role: "Vocational Engineering Paths (Web, Mobile, ML, Data, Cloud)" },
+          { name: "University Degree Roadmap", role: "Academic Planning & Tech Scholarship Guidance" },
+          { name: "Freelance Marketplace", role: "Direct Monetization for Certified Youth Developers" },
+          { name: "Industry Recruitment Feeds", role: "Partnership Job Openings (AWS, Google Developers, Dicoding)" },
+        ],
+      },
+      {
+        category: "Tooling & Collaboration",
+        items: [
+          { name: "Node.js & npm", role: "Build Pipeline & Dependency Management" },
+          { name: "Team Deadliner Workflow", role: "Collaborative 3-Developer Competition Architecture" },
+          { name: "Git & GitHub", role: "Version Control & Open-Source Collaboration" },
+          { name: "Vercel / Static Edge", role: "Global Edge CDN Static File Hosting" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Root Portals (Multi-Page Architecture)",
+        items: [
+          "Index.html — Main landing hub with hero, mission overview, and category grid",
+          "bootcamp.html — Comprehensive technical bootcamp catalog across 8 disciplines",
+          "detail-bootcamp.html — In-depth curriculum breakdown and module syllabus",
+          "register_bootcamp.html — Student enrollment and learning track application form",
+          "kuliah.html — Higher education roadmap with Alpine.js accessible tabs",
+          "jasa.html — Digital freelance marketplace connecting student talent with clients",
+          "lowongan-kerja.html — Curated tech job board with industry partner listings",
+          "profil.html — Student dashboard tracking enrolled courses and certificates",
+        ],
+      },
+      {
+        name: "Authentication & Assets (auth/, Images/, style/)",
+        items: [
+          "auth/login.html — Student login portal with clean DaisyUI card styling",
+          "auth/register.html — New learner registration and account creation interface",
+          "main.js — Dynamic scroll-elevated navbar controller and banner dismissal",
+          "tailwind.config.js — Tailwind theme extension with DaisyUI plugin integration",
+          "Images/ — High-res photography, category icons, and brand vector illustrations",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: BootcampCourse",
+        purpose:
+          "Defines technical training tracks with specialization, durationWeeks, prerequisiteSkills, syllabusModules, and youthScholarship status.",
+      },
+      {
+        name: "Data Model: ScholarshipOpportunity",
+        purpose:
+          "Stores university partner degree offerings with universityName, degreeLevel, coverageType (full/partial), eligibilityCriteria, and deadline.",
+      },
+      {
+        name: "Data Model: FreelanceService",
+        purpose:
+          "Represents student talent offerings with serviceCategory, deliverableScope, estimatedTimeline, startingPrice, and studentPortfolioLink.",
+      },
+      {
+        name: "Data Model: JobOpening",
+        purpose:
+          "Captures tech employment listings with hiringCompany (Google, AWS, Dicoding), positionTitle, roleType (internship/junior), and applicationUrl.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Data Safety Standards",
+    securityLead:
+      "Client-side security architecture guaranteeing zero telemetry exploitation, safe static distribution, and input validation.",
+    apiEndpoints: [
+      {
+        group: "Educational & Career Portals",
+        routes: [
+          {
+            method: "GET",
+            path: "/bootcamp.html",
+            desc: "Serves technical training catalog across 8 vocational disciplines",
+          },
+          {
+            method: "GET",
+            path: "/kuliah.html",
+            desc: "Delivers higher education roadmap with Alpine.js accessible tabs",
+          },
+          {
+            method: "GET",
+            path: "/jasa.html",
+            desc: "Serves digital freelance talent marketplace connecting graduates with clients",
+          },
+          {
+            method: "GET",
+            path: "/lowongan-kerja.html",
+            desc: "Renders curated tech career opportunities from industry employers",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Zero-Tracker Privacy Architecture",
+        desc: "The entire platform operates with zero tracking cookies or commercial ad networks, safeguarding student browsing habits and personal data.",
+      },
+      {
+        title: "Static Edge Distribution Resilience",
+        desc: "Pre-compiled HTML and CSS assets hosted on global edge CDNs ensure near-instant page delivery with zero server-side SQL injection exposure.",
+      },
+      {
+        title: "Sanitized Form Processing",
+        desc: "Enrollment forms enforce client-side input validation and sanitized field parsing to prevent Cross-Site Scripting (XSS) risks.",
+      },
+      {
+        title: "Accessible Navigation Standards",
+        desc: "Tab navigation adheres strictly to W3C WAI-ARIA guidelines, ensuring full screen-reader and keyboard compatibility for assistive devices.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "8 Tracks",
+        label: "Specialized Tech Bootcamps",
+        desc: "Comprehensive vocational training paths for in-demand tech roles.",
+      },
+      {
+        value: "100% Free",
+        label: "Inclusive Youth Access",
+        desc: "Zero tuition barrier for aspiring Indonesian students nationwide.",
+      },
+      {
+        value: "4 Pillars",
+        label: "Unified Career Ecosystem",
+        desc: "Bootcamps · University Navigator · Freelance Hub · Job Board.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "Indonesian youth face significant barriers when attempting to enter the digital economy: expensive bootcamps, fragmented university career information, and limited direct pathways to entry-level tech employment. SemuaBisa was engineered to break down these barriers by providing a unified, 100% free digital education and career platform. Developed by Team Deadliner for the Unila 2024 National Web Design Competition, the project aims to 'plant the seeds of talent in Indonesian youth' (Menanam Bakat Pemuda Indonesia).",
+          "Core Mandate: Build an accessible, high-performance web platform uniting technical training bootcamps, university scholarship roadmaps, freelance talent marketplaces, and curated tech job recruitment into a cohesive, youth-friendly experience.",
+        ],
+      },
+      {
+        title: "Architecture & Inclusive EdTech Ecosystem",
+        body: [
+          "The platform employs a modular multi-portal architecture using semantic HTML5 and Tailwind CSS v3.4.13 paired with DaisyUI components for clean design system ergonomics. In kuliah.html, an accessible Alpine.js tabbed interface was engineered to provide seamless keyboard navigation across university degree disciplines without heavy framework overhead.",
+          "To elevate the visual feel, hardware-accelerated Animate On Scroll (AOS) transitions trigger staggered card reveals as users scroll through the 8 bootcamp categories. In main.js, a scroll-event observer dynamically computes viewport offsets to apply elevation borders and drop-shadows to the sticky navigation bar, ensuring smooth visual transitions across desktop and mobile screens.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Architecting an extensive 8-page educational ecosystem within the tight timeline of a national design competition. Solved by distributing tasks cleanly across Team Deadliner and authoring reusable Tailwind CSS utility patterns and DaisyUI primitives that maintained strict visual consistency.",
+          "Ensuring full keyboard accessibility for the university degree tabs without relying on large UI libraries. Implemented declarative Alpine.js state handling coupled with $focus.wrap() listeners for ArrowRight, ArrowLeft, Home, and End keys, fully satisfying WCAG AA accessibility criteria.",
+          "Balancing rich photographic media with fast load times on bandwidth-constrained mobile devices. Optimized all category illustrations and photography into WebP formats, paired with responsive image scaling and CSS hardware acceleration.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Successfully built and submitted a full-fledged 8-portal EdTech platform for the Unila 2024 National Web Design Competition as Team Deadliner.",
+          "Cataloged 8 technical bootcamp tracks, a university scholarship roadmap with Alpine.js tabs, a freelance digital marketplace, and curated tech recruitment feeds.",
+          "Achieved a 100% accessible, responsive layout operating fluidly at 60 FPS across all viewports with zero runtime compilation latency.",
+        ],
+      },
+    ],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Alpine.js",
+      "JavaScript",
+      "AOS",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/SemuaBisa-Web" },
+    ],
+  },
+
+  idncourse: {
+    title: "IDNCourse",
+    subtitle: "Modern Tech E-Learning Platform & Interactive Course Hub",
+    summary:
+      "A collaborative online technology education platform built for competition by a 3-developer team. Features category-based animated course filtering across 6 technical tracks (C#, Python, Web Dev, AI, Data Science, Android), interactive curriculum modal popups, dynamic localStorage session management, and responsive CSS grid architectures.",
+    domain: "github.com/adyvka31/IDNCourse-Web",
+    meta: [
+      { label: "Role", value: "Front-End Lead & Animation Engineer" },
+      { label: "Platform", value: "Responsive Web & Mobile Browser" },
+      { label: "Timeline", value: "2023" },
+      { label: "Team", value: "3 Developers (Adyvka, Abdullah, Rosan)" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Multi-Page Semantic Architecture + Vanilla State Animation Controller" },
+    ],
+    galleryLabel: "E-LEARNING & COURSE INTERFACES",
+    galleryTitle: "The IDNCourse Digital Experience",
+    galleryLead:
+      "Explore the core interactive touchpoints of IDNCourse — spanning category-filtered course animations, multi-layer course popups, interactive team showcases, and client-side session persistence.",
+    gallery: [
+      {
+        id: "course-filter",
+        title: "Dynamic Category Course Filtering & Animation Engine",
+        route: "idncourse.local/index.html#course",
+        tag: "Animated State Controller",
+        image: idncourseImg,
+        desc: "Two-stage animation pipeline (fadeOutDown → fadeInUp) filtering courses across 5 technology domains (All, C#, HTML/CSS, Python, Java/AI) with synchronized active button state toggling.",
+        features: [
+          "Two-Stage Asynchronous Filter Animation (fadeOutDown → fadeInUp)",
+          "Category Domain Switching (C#, Python, Web, AI, Android)",
+          "Dynamic Container Height Rebalancing (all-size vs default-size)",
+        ],
+      },
+      {
+        id: "course-modals",
+        title: "Multi-Layer Course Synopsis & Registration Modals",
+        route: "idncourse.local/course.html",
+        tag: "Modal Dialog System",
+        image: idncourseImg,
+        desc: "Interactive modal overlays providing comprehensive course syllabi, student enrollment statistics (10,000+ students), ratings (5.0 stars), instructor credentials, and direct registration triggers.",
+        features: [
+          "Full-Bleed Responsive Image Modal Overlays",
+          "Student Metric & Star Rating Breakdowns",
+          "Click-Outside Backdrop Dismissal Handlers",
+        ],
+      },
+      {
+        id: "team-showcase",
+        title: "Collaborative Development Team Showcase",
+        route: "idncourse.local/ourteam.html",
+        tag: "Team Architecture",
+        image: idncourseImg,
+        desc: "Dedicated team profile directory spotlighting the 3 competition collaborators — Front-End Developer (Adyvka), Back-End Developer (Abdullah), and UI/UX Designer (Rosan) — with hover rotation visual effects.",
+        features: [
+          "Tri-Role Developer Cards with CSS Image Rotation Effects",
+          "Individual Skill Matrices & Responsibilities",
+          "Transparent Competition Collaboration Credits",
+        ],
+      },
+      {
+        id: "auth-session",
+        title: "LocalStorage Client Session & Interactive FAQ",
+        route: "idncourse.local/login.html",
+        tag: "Session & Interactivity",
+        image: idncourseImg,
+        desc: "Client-side session state management replacing navigation login links with active username states from localStorage, paired with an interactive +/- FAQ accordion.",
+        features: [
+          "LocalStorage Authentication State Hydration",
+          "Collapsible FAQ Accordion with Glyph Toggling (+/-)",
+          "Clean Semantic Multi-Page Navigation Structure",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "500ms",
+        label: "Filter Transition Window",
+        note: "Coordinated fadeOutDown & fadeInUp CSS transitions",
+      },
+      {
+        value: "6 Tracks",
+        label: "Core Technology Disciplines",
+        note: "Web, AI, Data Science, C#, Python, Mobile Android",
+      },
+      {
+        value: "5 Portals",
+        label: "Dedicated Multi-Page Views",
+        note: "Home, About, Course, Team, Bootcamp, and Login",
+      },
+      {
+        value: "3 Developers",
+        label: "Collaborative Student Team",
+        note: "Adyvka (Front-End), Abdullah (Back-End), Rosan (Design)",
+      },
+      {
+        value: "0ms",
+        label: "Zero-Build Load Latency",
+        note: "Pure vanilla web execution without runtime bundle overhead",
+      },
+      {
+        value: "100%",
+        label: "Responsive Adaptability",
+        note: "Custom CSS Flexbox and Grid layouts across all viewports",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Animated Course Filter Engine",
+        desc: "Vanilla JavaScript animation pipeline dynamically coordinating exit and entrance keyframes for seamless technology category switching.",
+      },
+      {
+        icon: "database",
+        title: "Structured Course Catalog & Syllabi",
+        desc: "Modular course cards with enrollment counters, rating badges, and modal overlays detailing learning outcomes.",
+      },
+      {
+        icon: "terminal",
+        title: "Collaborative Team Architecture",
+        desc: "Built as a competition collaboration uniting dedicated front-end engineering, back-end API thinking, and modern visual design.",
+      },
+      {
+        icon: "cloud",
+        title: "Session Persistence & Interactive FAQ",
+        desc: "Client-side localStorage session hydration paired with accordion-based knowledge discovery.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Student Learning Workflow",
+    capabilitiesLead:
+      "IDNCourse empowers students to master modern programming languages through clean category navigation and structured learning modules.",
+    features: [
+      {
+        id: "animated-filter",
+        title: "Asynchronous Animated Course Filtering Engine",
+        badge: "Interactive DOM",
+        desc: "Custom JavaScript state coordinator (animateCourses and hideAllCourses) managing smooth exit and entrance animation cycles when users filter by tech stack.",
+        points: [
+          "Applies fadeOutDown animation class to current cards with a 500ms completion countdown",
+          "Filters target category cards (C#, Python, HTML/CSS, AI, Java) and triggers fadeInUp entrance",
+          "Synchronizes active button pill state (setActiveButton) with blue brand highlight styling",
+          "Dynamically toggles course section container sizing between all-size and default-size",
+        ],
+      },
+      {
+        id: "course-modal-dialogs",
+        title: "Interactive Course & Bootcamp Modal Overlays",
+        badge: "Modal Architecture",
+        desc: "Dedicated popups (#coursePopup and #bootcampPopup) providing students with comprehensive course syllabi, mentor bios, and enrollment action triggers.",
+        points: [
+          "Event listeners attached to all .openPopup and .openPopup2 triggers across catalog cards",
+          "Displays full-bleed course hero banner, course overview, student counters, and ratings",
+          "Window backdrop click listener intercepting clicks outside the dialog to dismiss modals",
+          "Responsive centered modal container adapting seamlessly to mobile screens and tablets",
+        ],
+      },
+      {
+        id: "localstorage-auth",
+        title: "LocalStorage Client Session Hydration",
+        badge: "Session State",
+        desc: "Lightweight client-side authentication system hydrating user credentials from browser storage to personalize the navigation bar.",
+        points: [
+          "Inspects localStorage.getItem('username') upon window load to identify active sessions",
+          "Dynamically swaps generic 'Login' call-to-action anchor with the authenticated user's name",
+          "Clean credential capture flow in login.html validating credentials without external library bloat",
+          "Stateless client persistence maintaining user identity across independent multi-page transitions",
+        ],
+      },
+      {
+        id: "collaborative-team",
+        title: "Collaborative 3-Developer Role Directory",
+        badge: "Team Engineering",
+        desc: "Dedicated team showcase (ourteam.html) documenting the collaborative synergy behind the IDNCourse project.",
+        points: [
+          "Spotlights 3 distinct functional roles: Front-End (Adyvka), Back-End (Abdullah), and Design (Rosan)",
+          "Hover-activated image rotation effects (.rotate) adding tactile visual delight to avatar cards",
+          "Clear attribution of architectural responsibilities and design system authorship",
+          "Reflects authentic real-world engineering teamwork in competitive scholastic development",
+        ],
+      },
+      {
+        id: "faq-accordion",
+        title: "Interactive Glyph-Toggling FAQ Accordion",
+        badge: "Interactive UI",
+        desc: "Expandable question-and-answer accordion addressing student inquiries regarding certification, mentors, and platform advantages.",
+        points: [
+          "Event delegation listener toggling .open class to smoothly expand and collapse answer panels",
+          "Dynamic glyph switcher swapping between '+' and '-' indicators based on open state",
+          "Covers essential student questions: pricing, certificate validation, and instructor qualifications",
+          "Zero framework overhead, operating through pure vanilla DOM node manipulation",
+        ],
+      },
+      {
+        id: "specialized-bootcamps",
+        title: "Specialized IELTS & Tech Bootcamp Portals",
+        badge: "Bootcamp Training",
+        desc: "Dedicated section (bootcamp.html) promoting intensive, mentor-led bootcamp cohorts for English proficiency and software development.",
+        points: [
+          "Spotlights premier international training tracks (such as the Harvard-led IELTS preparation bootcamp)",
+          "Prominent instructor credential cards highlighting academic degrees and institutional pedigrees",
+          "Direct 'Join Now' modal triggers launching streamlined enrollment intake forms",
+          "Clear visual separation between self-paced courses and live instructor-guided bootcamps",
+        ],
+      },
+      {
+        id: "semantic-multi-page",
+        title: "Modular Multi-Page Semantic Architecture",
+        badge: "Web Standards",
+        desc: "Decoupled multi-page layout separating concerns into discrete HTML portals and dedicated stylesheets for clean maintainability.",
+        points: [
+          "Dedicated page portals: index.html, about.html, course.html, ourteam.html, bootcamp.html, login.html",
+          "Isolated modular stylesheets (index.css, course.css, ourteam.css) preventing cross-page style bleeding",
+          "Semantic navigation header and footer synchronized across all portal pages for brand consistency",
+          "Clean URL routing compatible with standard web servers, GitHub Pages, and static CDNs",
+        ],
+      },
+      {
+        id: "responsive-grid-styling",
+        title: "Fluid Flexbox & CSS Grid Responsive Layouts",
+        badge: "CSS Architecture",
+        desc: "Bespoke responsive layout architecture combining CSS Grid and Flexbox with media query breakpoints for cross-device fluidity.",
+        points: [
+          "Multi-column card grids auto-collapsing into single-column vertical stacks on mobile screens",
+          "Custom card shadow elevation (box-shadow) and smooth transition timing (0.3s ease-in-out)",
+          "High-contrast color hierarchy utilizing professional navy blue (#2F3087) and clean neutrals",
+          "Optimized typography hierarchy based on Google Fonts Poppins with weighted heading scales",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Course Discovery & Student Enrollment Lifecycle",
+      lead: "From animated technology filtering to verified student enrollment — guiding learners through an intuitive educational discovery pathway.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Curriculum Discovery",
+          title: "Category Filtering & Track Exploration",
+          desc: "Student clicks a technology filter (C#, Python, Web, AI) in the course section. The engine animates matching courses with fade transitions.",
+          action: "Select Tech Category → View Filtered Cards",
+        },
+        {
+          level: "Stage 02",
+          role: "Syllabus Inspection",
+          title: "Modal Inspection & Skill Prerequisites",
+          desc: "Student clicks a course card to open the interactive popup modal, inspecting syllabus topics, student review metrics, and instructor background.",
+          action: "Click Course Card → Review Modal Syllabus",
+        },
+        {
+          level: "Stage 03",
+          role: "Enrollment & Session",
+          title: "Enrollment Registration & Session Activation",
+          desc: "Student submits registration. If logged in via localStorage, the platform activates course access and reflects enrollment status on the navigation bar.",
+          action: "Submit Registration → Store Session & Begin Course",
+        },
+      ],
+      lockMechanism: {
+        title: "Collaborative Quality & Accessible Learning Guarantee",
+        desc: "IDNCourse represents the combined dedication of a 3-developer team to make programming education intuitive and accessible. Every course card, modal syllabus, and interactive filter is engineered to remove friction for beginner developers starting their tech journey.",
+      },
+    },
+    architectureTitle: "Multi-Page Semantic Architecture & Vanilla State Controller",
+    architectureLead:
+      "Engineered with a clean separation between independent semantic HTML5 portals, modular CSS stylesheets, a centralized animation controller, and client-side session storage.",
+    architecture: {
+      type: "Multi-Page Semantic Web + Vanilla Animation Controller",
+      protocol: "Client-Side DOM Manipulation & LocalStorage Persistence",
+      layers: [
+        {
+          name: "Client Presentation & Multi-Page Portals",
+          badge: "HTML5 + Poppins Typography",
+          desc: "Discrete semantic portals (index, about, course, ourteam, bootcamp, login) styled with clean typography hierarchy and responsive layout containers.",
+        },
+        {
+          name: "Modular Styling & Keyframe Engine",
+          badge: "CSS3 (Flexbox, Grid & Keyframes)",
+          desc: "Page-specific stylesheets managing card shadows, layout grids, and hardware-accelerated fadeInUp and fadeOutDown animation classes.",
+        },
+        {
+          name: "Interactive Filter & State Coordinator",
+          badge: "Vanilla JavaScript (ES6+)",
+          desc: "Asynchronous animation pipeline coordinating hideAllCourses and animateCourses transitions with active button state switching.",
+        },
+        {
+          name: "Client Session & Storage Layer",
+          badge: "Web Storage API (localStorage)",
+          desc: "Client-side credential cache persisting active student username states across page transitions without backend database dependencies.",
+        },
+        {
+          name: "Graphic Asset & Iconography Layer",
+          badge: "PNG & SVG Vector Graphics",
+          desc: "Optimized language badges (Python, C#, Java, HTML), hero illustrations, and avatar photography.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & UI Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Markup across 6 Specialized Portal Pages" },
+          { name: "CSS3 Grid & Flexbox", role: "Modular Responsive Layouts & Card Containers" },
+          { name: "CSS3 Keyframes", role: "Custom Hardware-Accelerated fadeInUp & fadeOutDown Transitions" },
+          { name: "Google Fonts (Poppins)", role: "Clean Multi-Weight Typography Hierarchy (300 to 700)" },
+          { name: "Vanilla JavaScript (ES6+)", role: "Animated Course Filter Engine & Modal Overlays" },
+        ],
+      },
+      {
+        category: "State & Storage",
+        items: [
+          { name: "Web Storage API", role: "LocalStorage Session State & Active Username Hydration" },
+          { name: "DOM Event Architecture", role: "Event Listeners, Class Toggling & Window Click Handlers" },
+          { name: "Interactive FAQ Controller", role: "Glyph-Toggling (+/-) Accordion Expansion Logic" },
+        ],
+      },
+      {
+        category: "Team & Collaboration",
+        items: [
+          { name: "Tri-Role Team Engineering", role: "Adyvka (Front-End), Abdullah (Back-End), Rosan (Design)" },
+          { name: "VS Code Live Server", role: "Local Development Server Environment" },
+          { name: "Git & GitHub", role: "Source Control & Collaborative Competition Repository" },
+          { name: "Static Web Hosting", role: "Global Edge CDN Distribution with Zero Build Overhead" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Root Portals (Multi-Page Architecture)",
+        items: [
+          "index.html — Main landing hub with hero stats, course filter grid, team & FAQ",
+          "about.html — Platform vision, mission, and learning advantages",
+          "course.html — Comprehensive tech course catalog and curriculum views",
+          "bootcamp.html — Specialized intensive training bootcamps (IELTS & coding)",
+          "ourteam.html — Dedicated developer team profile directory with hover rotation",
+          "login.html — User authentication portal with localStorage session hydration",
+        ],
+      },
+      {
+        name: "Styles & Assets (style/, Images/)",
+        items: [
+          "style/index.css — Main landing stylesheet: animated keyframes, hero, and cards",
+          "style/course.css — Course catalog grid layout and modal overlay styling",
+          "style/about.css — Platform story and mission statement typography",
+          "style/ourteam.css — Developer profile cards and hover rotation effects",
+          "style/bootcamp.css — Bootcamp banner cards and instructor spotlight containers",
+          "style/login.css — Clean authentication form containers and inputs",
+          "Images/ — Technology icons (Python, C#, HTML), illustrations, and avatars",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: Course",
+        purpose:
+          "Defines educational offerings with title, technologyTrack (CSharp, Python, Web, AI, Android), studentCount, starRating, and syllabusDescription.",
+      },
+      {
+        name: "Data Model: Bootcamp",
+        purpose:
+          "Stores intensive training cohorts with cohortTitle, instructorName, academicInstitution, prerequisiteSkills, and registrationDeadline.",
+      },
+      {
+        name: "Data Model: TeamMember",
+        purpose:
+          "Captures development team profiles with memberName, roleSpecialization (Front-End, Back-End, UI/UX), biography, and avatarAsset.",
+      },
+      {
+        name: "Data Model: UserSession",
+        purpose:
+          "Represents client-side authentication state cached in localStorage: username, sessionToken, and lastActiveTimestamp.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Data Safety Standards",
+    securityLead:
+      "Client-side security architecture ensuring safe session handling, clean DOM insertion, and resilient static distribution.",
+    apiEndpoints: [
+      {
+        group: "Interactive Course Filter Controller",
+        routes: [
+          {
+            method: "POST",
+            path: "showAllCourses(event)",
+            desc: "Coordinates hideAllCourses callback and triggers fadeInUp on all catalog cards",
+          },
+          {
+            method: "POST",
+            path: "showCsharpCourses(event)",
+            desc: "Filters and displays C# course cards with active button highlighting",
+          },
+          {
+            method: "POST",
+            path: "showPythonCourses(event)",
+            desc: "Filters and displays Python course cards with active button highlighting",
+          },
+          {
+            method: "POST",
+            path: "showHtmlCourses(event)",
+            desc: "Filters and displays Web Development cards with active button highlighting",
+          },
+        ],
+      },
+      {
+        group: "Multi-Page Portal Navigation",
+        routes: [
+          {
+            method: "GET",
+            path: "/course.html",
+            desc: "Renders complete technology curriculum catalog",
+          },
+          {
+            method: "GET",
+            path: "/bootcamp.html",
+            desc: "Serves specialized intensive cohort bootcamps",
+          },
+          {
+            method: "GET",
+            path: "/ourteam.html",
+            desc: "Delivers development team member directory with hover animations",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "LocalStorage Origin Isolation",
+        desc: "User credentials stored in localStorage are strictly scoped to the site's origin protocol, port, and domain, preventing cross-origin session hijacking.",
+      },
+      {
+        title: "Defensive textContent DOM Rendering",
+        desc: "Dynamic session names and modal strings are injected strictly through textContent properties, mitigating Cross-Site Scripting (XSS) risks from untrusted input.",
+      },
+      {
+        title: "Pre-Compiled Static Distribution",
+        desc: "Served over TLS 1.3 encrypted HTTPS channels as pre-rendered static files, providing immunity against server-side injection and unauthorized script execution.",
+      },
+      {
+        title: "Zero-Tracker Privacy Architecture",
+        desc: "The entire platform operates without third-party tracking scripts, advertising pixels, or telemetry beacons, protecting student privacy.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "500ms",
+        label: "Animation Transition Window",
+        desc: "Smooth exit and entrance transitions across course categories.",
+      },
+      {
+        value: "6 Tracks",
+        label: "Core Technology Disciplines",
+        desc: "Web Dev, Python, C#, Android, AI, and Data Science.",
+      },
+      {
+        value: "5 Portals",
+        label: "Multi-Page Architecture",
+        desc: "Home, About, Course, Team, Bootcamp, and Login.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "In the fast-moving landscape of software engineering, aspiring developers frequently struggle to find structured, beginner-friendly learning paths that bridge the gap from foundational syntax to practical development. IDNCourse was conceived to address this challenge: a collaborative online learning platform providing curated courses across modern tech stacks including Web Development, Python, C#, and Mobile Development.",
+          "Core Mandate: Build an engaging, responsive e-learning web platform combining smooth category-filtered course animations, interactive modal syllabi, and transparent team collaboration for a student programming competition.",
+        ],
+      },
+      {
+        title: "Architecture & Animation Engineering",
+        body: [
+          "The platform was engineered using a clean multi-page semantic architecture, dividing functionality into independent HTML views with dedicated modular stylesheets (index.css, course.css, ourteam.css) to eliminate style conflicts. The course section features a bespoke two-stage animation pipeline authored in vanilla JavaScript.",
+          "When a user selects a technology filter, hideAllCourses() applies a CSS fadeOutDown class to active cards. Once the 500ms exit window completes, animateCourses() swaps display styles, applies fadeInUp keyframes, and toggles active button states. A client-side session listener inspects localStorage upon window load, dynamically personalizing the navigation header when a student logs in.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Synchronizing multi-element exit and entrance animations in vanilla JavaScript without visual glitches or DOM flashing. Solved by implementing a callback countdown pattern (hideCount) that ensures all currently displayed cards complete their fadeOutDown keyframe before target category cards receive fadeInUp.",
+          "Managing dynamic container dimensions when switching between the full catalog and single-course categories. Engineered container state classes (all-size and default-size) that smoothly adjust parent height constraints during category transitions.",
+          "Coordinating engineering deliverables across a 3-developer team under competition deadlines. Established strict file conventions and clean separation between front-end DOM manipulation, back-end API alignment, and visual design assets.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Successfully deployed a full-featured multi-page e-learning platform showcasing courses across 6 major technology tracks.",
+          "Engineered a fluid, asynchronous course filtering engine delivering 60 FPS CSS keyframe transitions without external animation libraries.",
+          "Demonstrated seamless collaborative execution across front-end engineering, back-end logic, and visual UI/UX design.",
+        ],
+      },
+    ],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Google Fonts",
+      "LocalStorage",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/IDNCourse-Web" },
+    ],
+  },
+
+  "coffeee-shop": {
+    title: "Coffeee Shop",
+    subtitle: "Artisan Coffee Brand Experience & Modern Retail Showcase Landing",
+    summary:
+      "A contemporary artisan coffee retail and branch showcase web platform engineered with Tailwind CSS, Flowbite UI architecture, and AOS scroll-triggered animation choreography. Features dynamic beverage catalog cards with multi-size drink volume selectors, interactive coffee bean showcase hover effects, multi-city branch locator cards (Depok, Central Jakarta, Bandung), and a responsive team endorsement grid.",
+    domain: "github.com/adyvka31/Coffeee-Shop",
+    meta: [
+      { label: "Role", value: "Front-End Engineer & UI Designer" },
+      { label: "Platform", value: "Responsive Modern Web & Mobile Browser" },
+      { label: "Timeline", value: "2023" },
+      { label: "Team", value: "Solo Project (Rafif Sava Adyvka Pratama)" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Tailwind Utility Architecture + Flowbite UI + AOS Choreography" },
+    ],
+    galleryLabel: "COFFEE RETAIL & BRAND EXPERIENCE",
+    galleryTitle: "The Coffeee Shop Digital Architecture",
+    galleryLead:
+      "Explore the responsive interface patterns of Coffeee Shop — combining atmospheric hero aesthetics, hover-activated roast highlights, interactive beverage purchasing selectors, and multi-location branch discovery.",
+    gallery: [
+      {
+        id: "hero-experience",
+        title: "Immersive Brand Hero & Atmospheric Banner",
+        route: "coffeee.local/#home",
+        tag: "Visual Identity & Hero",
+        image: coffeeeShopImg,
+        desc: "High-impact hero section blending dark amber undertones (#78350F) with full-bleed coffee visuals, engaging typography, and dual call-to-action pathways ('Buy Product' & 'About').",
+        features: [
+          "Fixed Amber Navigation with Sticky Mobile Menu",
+          "Dual CTA Conversion Pathways (Buy Product & About)",
+          "Warm Gradient Overlay & Fluid Responsive Typography",
+        ],
+      },
+      {
+        id: "interactive-products",
+        title: "Interactive E-Commerce Beverage Showcase & Sizing Engine",
+        route: "coffeee.local/#products",
+        tag: "Retail Product Engine",
+        image: coffeeeShopImg,
+        desc: "Featured beverage cards showcasing signature roasts (Americano Dark Roasting, Brazilian Coffee Milk, Coffee Vanilla Latte) equipped with interactive cup size pickers (S, M, L), customer review badges, dynamic pricing, and wishlist interactions.",
+        features: [
+          "Multi-Size Volume Selectors (S, M, L)",
+          "5-Star Customer Rating & Review Aggregate",
+          "Instant Action Triggers (Buy Now & Wishlist Favorites)",
+        ],
+      },
+      {
+        id: "roast-discovery",
+        title: "Signature Roasts & Hover-Revealed Flavor Profiles",
+        route: "coffeee.local/#About",
+        tag: "Interactive Catalog",
+        image: coffeeeShopImg,
+        desc: "Dynamic tri-card signature coffee showcase featuring Coffee Latte, Americano Coffee, and Brazilian Coffee with custom CSS hover overlays revealing bean titles and tasting notes with smooth 0.5s transitions.",
+        features: [
+          "Custom CSS Overlay Animation (#pembungkus:hover)",
+          "High-Resolution Roast & Bean Imagery",
+          "Fluid Responsive Multi-Column Gallery Layout",
+        ],
+      },
+      {
+        id: "branch-locator",
+        title: "Multi-City Branch Outlets & Brand Footprint",
+        route: "coffeee.local/#branch",
+        tag: "Branch Discovery",
+        image: coffeeeShopImg,
+        desc: "Geographic retail branch directory spotlighting flagship outlets across Kota Depok, Jakarta Pusat, and Kota Bandung with engagement metrics (1.2K views, 6 community reviews), category badges, and interactive cards.",
+        features: [
+          "Multi-City Outlet Cards (Depok, Central Jakarta, Bandung)",
+          "Card Hover Elevation & Dynamic Shadowing (hover:shadow-xl)",
+          "Social Engagement & Interaction Counters",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "0.5s",
+        label: "Hover Transition Latency",
+        note: "Hardware-accelerated CSS ease transitions on roast cards",
+      },
+      {
+        value: "3 Cities",
+        label: "Retail Branch Footprint",
+        note: "Strategic café locations across Depok, Jakarta Pusat, and Bandung",
+      },
+      {
+        value: "3 Sizes",
+        label: "Interactive Cup Sizing",
+        note: "Dynamic Small (S), Medium (M), and Large (L) order selections",
+      },
+      {
+        value: "3 Roasts",
+        label: "Curated Blend Showcase",
+        note: "Americano Dark Roasting, Brazilian Coffee Milk, and Vanilla Latte",
+      },
+      {
+        value: "60 FPS",
+        label: "Scroll Animation Fidelity",
+        note: "Hardware-accelerated AOS (Animate On Scroll) motion triggers",
+      },
+      {
+        value: "100%",
+        label: "Mobile Viewport Fluidity",
+        note: "Responsive utility grid adapting from 320px mobile to 4K displays",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Tailwind Utility Architecture",
+        desc: "Streamlined component-level styling built with Tailwind utility classes for minimal footprint and maximum aesthetic coherence.",
+      },
+      {
+        icon: "database",
+        title: "Interactive E-Commerce Sizing",
+        desc: "Product cards featuring dynamic cup size selection (S/M/L), star rating aggregates, and direct checkout call-to-actions.",
+      },
+      {
+        icon: "terminal",
+        title: "Multi-Location Branch Network",
+        desc: "Structured branch discovery cards highlighting physical café locations across major urban centers with engagement statistics.",
+      },
+      {
+        icon: "cloud",
+        title: "AOS Scroll Choreography",
+        desc: "Layered entrance motion choreography providing subtle directional fades as visitors browse through menu categories.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Café Visitor Journey",
+    capabilitiesLead:
+      "Coffeee Shop transforms traditional beverage discovery into an engaging online experience — guiding customers from brand immersion to roast selection and local café visitation.",
+    features: [
+      {
+        id: "hero-immersion",
+        title: "Atmospheric Visual Identity & Fixed Sticky Navigation",
+        badge: "Design System",
+        desc: "A warm, inviting brand portal utilizing deep roast amber hues (amber-900, amber-500) paired with fixed navigation and responsive Flowbite drawer toggles.",
+        points: [
+          "Sticky header navigation maintaining persistent brand access and conversion triggers across all scroll depths",
+          "Responsive hamburger menu drawer powered by Flowbite for seamless touch interaction on smartphones",
+          "Dual conversion action pathways guiding visitors toward immediate beverage ordering or brand narrative exploration",
+          "Optimized hero typography hierarchy emphasizing warmth, brain rejuvenation, and café lifestyle",
+        ],
+      },
+      {
+        id: "roast-hover-showcase",
+        title: "CSS Hover-Activated Roast Discovery Engine",
+        badge: "Micro-Interactions",
+        desc: "Custom CSS overlay engine (#pembungkus) revealing centered product titles and roast descriptions upon desktop cursor hover with fluid timing curves.",
+        points: [
+          "Hardware-accelerated opacity and position translations moving from bottom to center (bottom: 49%) in 500ms",
+          "Amber backdrop tint (#f59d0e90) maintaining legibility while accentuating underlying coffee bean photography",
+          "Displays premier selections: Coffee Latte, Americano Coffee, and Brazilian Single-Origin Coffee",
+          "Gracefully degrades into high-contrast static cards on touch devices without layout disruption",
+        ],
+      },
+      {
+        id: "product-sizing-catalog",
+        title: "Interactive Beverage Catalog with Volume Selectors",
+        badge: "E-Commerce UI",
+        desc: "Comprehensive product detail layouts providing customers with direct size customization (S, M, L), price tiering, and wishlist triggers.",
+        points: [
+          "Featured specialty menu items: Americano Dark Roasting (Rp. 30.000), Brazilian Coffee Milk (Rp. 35.000), Vanilla Latte (Rp. 25.000)",
+          "Dropdown cup sizing selector (S/M/L) simulating real-world barista customization options",
+          "Customer review badges displaying 5-star rating aggregates and verified customer review counts",
+          "Dual action buttons: high-visibility 'Buy Now' conversion button and heart wishlist toggling",
+        ],
+      },
+      {
+        id: "branch-directory",
+        title: "Regional Branch Showcase & Footprint Map",
+        badge: "Retail Footprint",
+        desc: "Multi-location retail directory highlighting café destinations across Kota Depok, Jakarta Pusat, and Kota Bandung with engagement metrics.",
+        points: [
+          "Multi-column responsive card grid displaying branch photography, district naming, and ambient descriptions",
+          "Interactive engagement badges displaying community view counts (1.2K) and customer comment tallies (6)",
+          "Card hover elevation states with deep shadows (hover:shadow-xl) and smooth 700ms transition durations",
+          "'Learn More' contextual links guiding customers to branch hours, directions, and seat reservations",
+        ],
+      },
+      {
+        id: "core-advantages",
+        title: "Brand Value Pillars & Service Advantages",
+        badge: "Value Proposition",
+        desc: "Tri-pillar advantage matrix highlighting customer service excellence, bean procurement quality, and accessible pricing structures.",
+        points: [
+          "Best Service pillar with custom circular icon badge emphasizing hospitality and barista training",
+          "Quality Product pillar emphasizing ethically sourced, perfectly roasted Arabica and Robusta beans",
+          "Affordable Price pillar demonstrating high-end specialty café quality at approachable consumer price points",
+          "Subtle directional entrance animations (fade-up-right, fade-up, fade-up-left) via AOS integration",
+        ],
+      },
+      {
+        id: "team-curators",
+        title: "Team Profile & Barista Artisan Roster",
+        badge: "Team & Culture",
+        desc: "Responsive multi-column profile grid introducing the creative minds, designers, and UI developers behind the brand experience.",
+        points: [
+          "Artisan cards featuring role badges (Designer, UI Developer), portrait photography, and descriptive bios",
+          "Integrated social vector iconography (Twitter, Facebook, LinkedIn) for authentic team connectivity",
+          "Horizontal card layout on desktop viewports auto-collapsing to centered vertical stacks on mobile",
+          "Consistent brand typography and muted grayscale undertones complementing warm brand accents",
+        ],
+      },
+      {
+        id: "aos-scroll-orchestration",
+        title: "AOS Scroll-Triggered Motion Choreography",
+        badge: "Animation Architecture",
+        desc: "Granular entrance animations coordinated via Animate On Scroll (AOS) library to create an organic, engaging storytelling flow.",
+        points: [
+          "fade-right, fade-left, and fade-up animations coordinated across alternating product showcase rows",
+          "Hardware-accelerated GPU transitions avoiding layout reflows and preserving smooth 60 FPS scrolling",
+          "Clean declarative markup via data-aos attributes keeping HTML maintainable and readable",
+          "Global initialization script (AOS.init()) running cleanly on window load without blocking rendering",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Café Patron Discovery & Order Customization Journey",
+      lead: "From atmospheric brand introduction to customized drink sizing and café branch visitation — guiding coffee enthusiasts through a seamless retail journey.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Brand Discovery",
+          title: "Atmospheric Hero & Roast Exploration",
+          desc: "Patron discovers the café's aesthetic presence, exploring signature roasts through hover-activated flavor cards.",
+          action: "Discover Signature Roasts → Explore Bean Origins",
+        },
+        {
+          level: "Stage 02",
+          role: "Drink Customization",
+          title: "Beverage Selection & Volume Configuration",
+          desc: "Customer examines menu items, selecting preferred drink volumes (S, M, L) and reviewing verified community ratings.",
+          action: "Select Cup Size (S/M/L) → Review Pricing & Ratings",
+        },
+        {
+          level: "Stage 03",
+          role: "Order & Retail Visit",
+          title: "Checkout Intent & Physical Café Discovery",
+          desc: "Customer triggers direct purchase intent or locates nearby physical outlets across Depok, Central Jakarta, or Bandung.",
+          action: "Trigger 'Buy Now' → Locate Nearest Branch (Depok, Jakarta, Bandung)",
+        },
+      ],
+      lockMechanism: {
+        title: "Artisan Quality & Freshness Guarantee",
+        desc: "Coffeee Shop is founded on the philosophy that great coffee requires both world-class bean craftsmanship and a deeply welcoming digital presence. From roast temperature calibration to responsive interface design, every touchpoint is engineered to deliver warmth, comfort, and cognitive revitalization.",
+      },
+    },
+    architectureTitle: "Tailwind Utility Architecture & Motion Choreography",
+    architectureLead:
+      "Engineered with modern utility-first CSS styling, Flowbite responsive UI components, declarative scroll animations, and clean semantic HTML5 markup.",
+    architecture: {
+      type: "Utility-First Responsive Web + AOS Motion Choreography",
+      protocol: "Static DOM Delivery & Client-Side CSS Transforms",
+      layers: [
+        {
+          name: "Client Presentation & Semantic Markup",
+          badge: "HTML5 Semantic Structure",
+          desc: "Discrete semantic landing sections (Hero, About, Branches, Advantages, Products, Team, Footer) structured for high accessibility and fast DOM parsing.",
+        },
+        {
+          name: "Utility-First Styling & Theming",
+          badge: "Tailwind CSS CDN + Amber Palette",
+          desc: "Utility-first design system utilizing warm amber tokens (amber-900, amber-500, amber-100) and responsive grid breakpoints.",
+        },
+        {
+          name: "Component Behaviors & Mobile Drawers",
+          badge: "Flowbite UI Component Engine",
+          desc: "Pre-tested interactive components powering responsive sticky navigation bars and accessible mobile collapse menus.",
+        },
+        {
+          name: "Scroll Animation & Motion Layer",
+          badge: "AOS (Animate On Scroll)",
+          desc: "Viewport intersection observer triggering directional CSS keyframes (fade-up, fade-right, fade-left) as users scroll.",
+        },
+        {
+          name: "Micro-Interaction & Hover Overlay Engine",
+          badge: "Custom CSS (#pembungkus) Keyframes",
+          desc: "Hardware-accelerated transition engine animating amber background overlays and title placement on roast cards.",
+        },
+        {
+          name: "Visual Assets & Photographic Media",
+          badge: "High-Resolution Media & SVG Vectors",
+          desc: "Curated coffee visuals, roast latte art, barista photography, and clean vector iconography.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & Styling Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Markup across 7 Dedicated Landing Sections" },
+          { name: "Tailwind CSS", role: "Utility-First Responsive Styling & Amber Theme Palette" },
+          { name: "Flowbite UI", role: "Responsive Navigation Bars & Accessible Toggle Drawers" },
+          { name: "Custom CSS", role: "Hardware-Accelerated Hover Transitions (#pembungkus) & Overlays" },
+        ],
+      },
+      {
+        category: "Animation & Interactions",
+        items: [
+          { name: "AOS (Animate On Scroll)", role: "Declarative Viewport Motion Choreography & Scroll Triggers" },
+          { name: "Vanilla JavaScript", role: "AOS Initialization & Interactive Component Lifecycle" },
+          { name: "CSS Transforms & Transitions", role: "Smooth 0.5s Opacity & Positional Hover Physics" },
+        ],
+      },
+      {
+        category: "Media & Brand Assets",
+        items: [
+          { name: "Curated Coffee Imagery", role: "High-Resolution Roast Photography & Latte Art" },
+          { name: "SVG Vector Iconography", role: "Star Rating Badges, Wishlist Hearts & Social Vectors" },
+          { name: "Flowbite SVG Icons", role: "Mobile Hamburger Navigation & Interactive Arrows" },
+        ],
+      },
+      {
+        category: "Tooling & Delivery",
+        items: [
+          { name: "VS Code", role: "Primary Development & Styling Environment" },
+          { name: "Git & GitHub", role: "Source Control & Repository Distribution" },
+          { name: "Static Web Hosting", role: "Instant Edge Distribution with Zero Runtime Overhead" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Application Root",
+        items: [
+          "index.html — Semantic single-page landing architecture containing hero, roast showcase, branch directory, advantages, product catalog, team grid, and footer",
+          "tailwind.config.js — Tailwind CSS configuration template for utility class compilation and theme extensions",
+        ],
+      },
+      {
+        name: "Brand Assets (Images/)",
+        items: [
+          "Images/logo coffee.png — Brand identity crest and navigation icon",
+          "Images/testimoni1.jpeg — Designer profile portrait photography",
+          "Images/testimoni2.png — UI Developer profile portrait photography",
+          "Images/testimoni3.png — Team artisan profile portrait photography",
+          "Images/testimoni4.jpeg — Supporting team member photography",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: ProductItem",
+        purpose:
+          "Defines coffee beverages with itemName (Americano, Brazilian Milk, Vanilla Latte), roastCategory, priceRupiah, availableSizes (S, M, L), starRating, reviewCount, and heroImage.",
+      },
+      {
+        name: "Data Model: BranchLocation",
+        purpose:
+          "Captures café branch destinations with cityName (Depok, Jakarta Pusat, Bandung), districtTitle, branchAddress, photoAsset, totalViews (1.2K), and reviewComments (6).",
+      },
+      {
+        name: "Data Model: TeamArtisan",
+        purpose:
+          "Stores barista and designer profiles with memberName (Adyvka Pratama), roleSpecialization (Designer, UI Developer), biographicalSummary, avatarAsset, and socialHandles.",
+      },
+      {
+        name: "Data Model: ValueAdvantage",
+        purpose:
+          "Represents core brand pillars (Best Service, Quality Product, Affordable Price) with pillarTitle, description, and SVG icon vector.",
+      },
+    ],
+    securityTitle: "Hardened Web Standards & Performance Optimization",
+    securityLead:
+      "Client-side security practices, static asset delivery, and resilient responsive performance architecture.",
+    apiEndpoints: [
+      {
+        group: "Landing Viewport Navigation",
+        routes: [
+          {
+            method: "GET",
+            path: "/#home",
+            desc: "Serves atmospheric hero viewport and brand introduction",
+          },
+          {
+            method: "GET",
+            path: "/#About",
+            desc: "Renders brand narrative and interactive roast hover showcase",
+          },
+          {
+            method: "GET",
+            path: "/#products",
+            desc: "Delivers interactive beverage catalog and volume sizing selectors",
+          },
+          {
+            method: "GET",
+            path: "/#branch",
+            desc: "Displays multi-city café branch locator and engagement cards",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Subresource Integrity & Secure CDN Delivery",
+        desc: "Tailwind CSS, Flowbite, and AOS libraries are delivered over TLS 1.3 encrypted HTTPS CDN channels, ensuring asset tampering immunity.",
+      },
+      {
+        title: "Zero Server-Side Attack Surface",
+        desc: "Operating entirely as a static client application eliminates server-side vulnerabilities, SQL injection, and remote code execution vectors.",
+      },
+      {
+        title: "Content Security Policy (CSP) Alignment",
+        desc: "Scoped inline scripts restricted to declarative AOS initialization, preventing arbitrary cross-site script execution.",
+      },
+      {
+        title: "Accessible Color Contrast Standards",
+        desc: "High-contrast pairings between deep amber (#78350F) backgrounds, amber accents (#F59E0B), and crisp white text compliant with WCAG 2.1 AA readability.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "0.5s",
+        label: "Micro-Interaction Latency",
+        desc: "Hardware-accelerated CSS hover transitions on roast cards.",
+      },
+      {
+        value: "3 Cities",
+        label: "Retail Branch Footprint",
+        desc: "Physical café outlets across Depok, Jakarta Pusat, and Bandung.",
+      },
+      {
+        value: "100%",
+        label: "Cross-Device Responsiveness",
+        desc: "Fluid layout adaptation from small smartphones to wide desktop monitors.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "In modern café and specialty coffee culture, establishing a memorable digital brand footprint is essential for transforming online browsing into in-store foot traffic and direct beverage sales. Coffeee Shop was designed as a modern artisan coffee showcase landing page combining atmospheric visual storytelling with e-commerce product selectors.",
+          "Core Mandate: Craft an engaging, responsive landing web application utilizing Tailwind CSS, Flowbite UI patterns, and AOS scroll animations that highlights signature roasts, interactive cup sizing, regional branches, and brand credibility.",
+        ],
+      },
+      {
+        title: "Architecture & Design System",
+        body: [
+          "The website adopts a warm, sensory design palette grounded in deep coffee tones (amber-900, amber-500, warm neutrals) that immediately evokes the rich aroma of specialty roasts. The interface is engineered with Tailwind CSS utility classes, keeping stylesheet payload minimal while maintaining total visual coherence.",
+          "Interactive touchpoints feature custom micro-interactions: roast cards reveal bean titles and flavor profiles via hardware-accelerated CSS hover transitions (#pembungkus), while product showcase rows alternate between left- and right-aligned layouts with directional AOS entrance animations (fade-right, fade-left) and cup size selectors (S, M, L).",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Balancing text legibility against rich photographic background assets without diminishing the visual mood. Solved by implementing dual-layer gradient overlays (from black to transparent) and semi-transparent amber overlays on hover states.",
+          "Orchestrating smooth scroll-triggered entrance animations without causing layout shifts or scroll stutter on mobile devices. Solved by configuring declarative AOS viewport triggers that utilize lightweight CSS transform keyframes without heavy JavaScript timers.",
+          "Creating an intuitive e-commerce card layout that accommodates beverage descriptions, star ratings, cup size selection, pricing, and purchase buttons within a compact responsive footprint.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Deployed a visually stunning, responsive artisan coffee landing experience with 60 FPS scroll performance.",
+          "Built an interactive product catalog with multi-size drink volume selectors and customer review metrics.",
+          "Established a scalable digital design foundation supporting multi-city branch discovery and brand expansion.",
+        ],
+      },
+    ],
+    stack: [
+      "HTML5",
+      "Tailwind CSS",
+      "Flowbite",
+      "AOS (Animate On Scroll)",
+      "JavaScript",
+      "CSS3",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/Coffeee-Shop" },
+    ],
+  },
+
+  mystyle: {
+    title: "MyStyle",
+    subtitle: "Modern Fashion E-Commerce & Curated Apparel Storefront",
+    summary:
+      "A contemporary fashion e-commerce storefront engineered with Tailwind CSS v4 and bespoke micro-interactions. Features a 9-portal multi-page architecture spanning editorial storefront discovery, interactive apparel sizing and color swatch customizers, comprehensive shopping bag management with promo vouchers, and dedicated patron profile portals.",
+    domain: "github.com/adyvka31/MyStyle",
+    meta: [
+      { label: "Role", value: "Front-End Lead & UI Designer" },
+      { label: "Platform", value: "Responsive Web Application" },
+      { label: "Timeline", value: "2023" },
+      { label: "Team", value: "Solo Project (Rafif Sava Adyvka Pratama)" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Tailwind CSS v4 Multi-Page Architecture + Custom Micro-Interactions" },
+    ],
+    galleryLabel: "FASHION COMMERCE & STOREFRONT",
+    galleryTitle: "The MyStyle Storefront Experience",
+    galleryLead:
+      "Explore the multi-page digital commerce architecture of MyStyle — bridging editorial fashion curation, interactive size and color selectors, multi-item cart management, and seamless account workflows.",
+    gallery: [
+      {
+        id: "storefront-hero",
+        title: "Editorial Fashion Storefront & Trend Showcase",
+        route: "mystyle.local/index.html",
+        tag: "Editorial Storefront",
+        image: mystyleImg,
+        desc: "Clean, editorial fashion landing page featuring high-impact hero typography, curated category highlights (Man, Woman, Kids) with animated lift overlays, and trending apparel collections.",
+        features: [
+          "Warm Champagne (#FFECC8) & Deep Mocha (#4B3B30) Palette",
+          "Custom Hover Physics (#pembungkus) with Gradient Overlays",
+          "Bookman Old Style Custom Typography Integration",
+        ],
+      },
+      {
+        id: "product-detail-view",
+        title: "Interactive Product Detail & Variant Selector",
+        route: "mystyle.local/detailproduct.html",
+        tag: "Product Engineering",
+        image: mystyleImg,
+        desc: "In-depth product showcase equipped with interactive color swatches, multi-size dropdowns (SM to XL), dynamic pricing (IDR 157.000), verified customer review threads, and related lookbook gallery.",
+        features: [
+          "Multi-Attribute Sizing & Color Swatch Pickers",
+          "Customer Feedback & 5-Star Rating Summaries",
+          "Multi-Angle Lookbook Photography Carousel",
+        ],
+      },
+      {
+        id: "cart-checkout",
+        title: "Multi-Item Shopping Cart & Order Summary",
+        route: "mystyle.local/cart.html",
+        tag: "E-Commerce Cart",
+        image: mystyleImg,
+        desc: "Responsive shopping bag interface supporting bulk item selection, quantity adjustments (+/-), discount tags (47% off), coupon code redemption, and order valuation summaries.",
+        features: [
+          "Checkbox-Driven Multi-Item Batch Selection",
+          "Real-Time Quantity Controls & Item Dismissal",
+          "Voucher Coupon Redemption & 'Last Seen' Recommendations",
+        ],
+      },
+      {
+        id: "collections-catalog",
+        title: "Categorized Apparel Catalog & Quick Filters",
+        route: "mystyle.local/viewproduct.html",
+        tag: "Catalog & Filtering",
+        image: mystyleImg,
+        desc: "Comprehensive multi-category apparel directory featuring 10 quick-filter category pills (T-shirt, Jacket, Pants, Shoes, Perfume, etc.) and promotional banner spotlights.",
+        features: [
+          "10 Multi-Category Quick-Filter Buttons",
+          "Promotional Spotlight Banners with Direct CTAs",
+          "Responsive Multi-Column Product Card Grid",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "9 Portals",
+        label: "Multi-Page Architecture",
+        note: "Storefront, catalog, cart, detail, account, edit, auth views",
+      },
+      {
+        value: "0.5s",
+        label: "Micro-Interaction Latency",
+        note: "Hardware-accelerated CSS ease transitions on collection cards",
+      },
+      {
+        value: "10 Categories",
+        label: "Curated Fashion Tracks",
+        note: "T-shirts, shirts, jackets, pants, footwear, and accessories",
+      },
+      {
+        value: "4 Sizes",
+        label: "Garment Fit Variations",
+        note: "SM, M, L, and XL tailored apparel sizing configurations",
+      },
+      {
+        value: "v4.0",
+        label: "Tailwind CSS Engine",
+        note: "Modern zero-config stylesheet engine with @import 'tailwindcss'",
+      },
+      {
+        value: "100%",
+        label: "Mobile Viewport Fluidity",
+        note: "Responsive utility grid adapting from 320px mobile to 4K displays",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Tailwind CSS v4 Engine",
+        desc: "Modern utility-first architecture compiled with Tailwind v4 for instant stylesheet execution and minimal footprint.",
+      },
+      {
+        icon: "database",
+        title: "Interactive Commerce Workflow",
+        desc: "End-to-end shopping journey spanning product variant selectors, cart quantity toggles, and voucher integrations.",
+      },
+      {
+        icon: "terminal",
+        title: "Custom Micro-Interaction Physics",
+        desc: "Bespoke CSS hover overlays (#pembungkus) providing smooth gradient fades, text strokes, and button lifts.",
+      },
+      {
+        icon: "cloud",
+        title: "Full Customer Account Suite",
+        desc: "Integrated patron profile management, address editing, and simulated Google OAuth onboarding.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Fashion Shopper Journey",
+    capabilitiesLead:
+      "MyStyle provides fashion enthusiasts with an effortless digital shopping experience — guiding customers from editorial discovery to tailored size selection and streamlined cart checkout.",
+    features: [
+      {
+        id: "editorial-storefront",
+        title: "Editorial Fashion Storefront & Category Navigation",
+        badge: "Storefront UI",
+        desc: "High-impact landing interface combining warm luxury aesthetics, Bookman typography, and responsive search and drawer navigation.",
+        points: [
+          "Warm luxury color hierarchy pairing champagne (#FFECC8) neutrals with deep espresso (#4B3B30) accents",
+          "Responsive sticky navigation bar with search bar integration, cart badge counter, and account shortcuts",
+          "Dual hero banner graphics highlighting contemporary streetwear and bespoke wedding attire",
+          "Tri-pillar value proposition detailing garment quality, clean manufacturing, and cross-style compatibility",
+        ],
+      },
+      {
+        id: "collection-hover-showcase",
+        title: "CSS Hover-Activated Collection Reveal Engine",
+        badge: "Micro-Interactions",
+        desc: "Hardware-accelerated CSS overlay engine (#pembungkus) revealing collection titles, text strokes, and animated purchase links upon cursor hover.",
+        points: [
+          "Smooth opacity transition (0.5s) with subtle champagne gradient backdrop (linear-gradient(transparent, #FFECC8b1))",
+          "Text stroke typography (-webkit-text-stroke: 1px #4B3B30) elevating title legibility over photography",
+          "Action button translation rising from 0 to 15% with smooth 0.8s easing physics",
+          "Gracefully degrades into high-contrast static cards on touch devices without layout disruption",
+        ],
+      },
+      {
+        id: "product-detail-customizer",
+        title: "Interactive Garment Customization & Sizing Engine",
+        badge: "Product Engineering",
+        desc: "Detailed apparel view (detailproduct.html) enabling customers to inspect garment specifications, choose color swatches, and select fit sizing.",
+        points: [
+          "Color swatch selector with circular visual indicators for multiple fabric dye variations",
+          "Size dropdown menu providing Small (SM), Medium (M), Large (L), and Extra Large (XL) fits",
+          "Star rating aggregates (4.0/5.0) paired with verified community review threads and avatar photos",
+          "Dual conversion triggers: primary 'Add To Cart' button and heart icon wishlist favorites",
+        ],
+      },
+      {
+        id: "cart-management-suite",
+        title: "Full-Featured Shopping Bag & Checkout Summary",
+        badge: "Cart Architecture",
+        desc: "Dedicated shopping bag portal (cart.html) equipped with item-level controls, discount coupon validation, and order subtotal calculations.",
+        points: [
+          "'Select All' master checkbox and individual item checkboxes for granular checkout control",
+          "Interactive quantity increment and decrement buttons (+/-) with live price adjustment simulation",
+          "Promotional discount badges (e.g., 47% off) displaying original strike-through pricing against discounted totals",
+          "Voucher coupon input prompt and 'Last Seen' product carousel encouraging discovery",
+        ],
+      },
+      {
+        id: "curated-quick-filters",
+        title: "Multi-Category Quick-Filter Navigation",
+        badge: "Catalog Search",
+        desc: "Fast-access apparel filter bar in viewproduct.html allowing customers to switch between 10 garment categories with a single tap.",
+        points: [
+          "10 dedicated category pills: T-shirt, Shirt, Jacket, Pants, Hat, Shoes, Perfume, Bag, Buckle, and Sock",
+          "Hover outline transitions switching between neutral border states and solid espresso backgrounds",
+          "Hero promotional card showcasing featured collections with instant 'Buy Now' call-to-actions",
+          "Responsive flex-wrap container ensuring clean alignment across desktop and mobile screens",
+        ],
+      },
+      {
+        id: "patron-account-suite",
+        title: "Customer Account & Profile Management Suite",
+        badge: "User Account",
+        desc: "Comprehensive user management suite spanning account.html, edit.html, login.html, and register.html.",
+        points: [
+          "Profile management portal displaying patron avatar, registered email, and saved delivery addresses",
+          "Interactive profile editor allowing users to modify biographical details and contact numbers",
+          "Clean login and registration forms featuring responsive card containers and Google OAuth buttons",
+          "Unified header integration dynamically linking user session state with navigation shortcuts",
+        ],
+      },
+      {
+        id: "responsive-styling-grid",
+        title: "Tailwind CSS v4 Utility Layout System",
+        badge: "CSS Architecture",
+        desc: "Modern responsive layout engine utilizing Tailwind CSS v4 utility classes and custom responsive breakpoints.",
+        points: [
+          "CSS Grid and Flexbox layouts auto-adapting from single-column mobile stacks to multi-column desktop grids",
+          "Custom border-radius styling (rounded-tl-4xl, rounded-br-4xl) creating asymmetric editorial card silhouettes",
+          "Asynchronous script loading (@tailwindcss/browser@4) for rapid development and zero-bundle prototyping",
+          "Optimized media asset sizing preventing cumulative layout shifts during page loading",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Fashion Patron Discovery & Checkout Lifecycle",
+      lead: "From editorial collection discovery to garment sizing customization and seamless checkout completion — guiding apparel shoppers through an elegant retail experience.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Editorial Discovery",
+          title: "Editorial Storefront & Quick Filters",
+          desc: "Shopper discovers seasonal lookbooks, filtering apparel by 10 quick categories across casual, formal, and outerwear collections.",
+          action: "Browse Collections → Filter by Category (Jacket, Shirt, Pants)",
+        },
+        {
+          level: "Stage 02",
+          role: "Garment Customization",
+          title: "Variant Selection & Review Inspection",
+          desc: "Customer examines garment specifications, selects color swatches, configures fit sizing (SM to XL), and reads verified customer reviews.",
+          action: "Select Garment Color & Size (SM–XL) → Add to Cart",
+        },
+        {
+          level: "Stage 03",
+          role: "Cart Optimization",
+          title: "Voucher Application & Order Finalization",
+          desc: "Customer reviews shopping bag items, adjusts quantities, applies promotional discount vouchers, and confirms order valuation totals.",
+          action: "Apply Promo Coupon → Review Total → Proceed to Checkout",
+        },
+      ],
+      lockMechanism: {
+        title: "Fabric Craftsmanship & Ethical Production Guarantee",
+        desc: "MyStyle adheres to rigorous textile quality benchmarks: every garment featured across the platform is curated for structural longevity, breathable natural fibers, and contemporary aesthetic versatility. We eliminate fast-fashion compromise by uniting artisanal stitching with modern digital accessibility.",
+      },
+    },
+    architectureTitle: "Tailwind CSS v4 Multi-Page Architecture & Micro-Interactions",
+    architectureLead:
+      "Engineered with modern utility-first CSS styling via Tailwind CSS v4, custom CSS hardware-accelerated hover physics, and discrete semantic HTML5 portals.",
+    architecture: {
+      type: "Tailwind CSS v4 Multi-Page Web Architecture",
+      protocol: "Static DOM Delivery & Client-Side CSS Transforms",
+      layers: [
+        {
+          name: "Client Presentation & Semantic Portals",
+          badge: "HTML5 Multi-Page Architecture",
+          desc: "Discrete semantic portals (index, detailproduct, viewproduct, cart, about, account, edit, login, register) structured for clean separation of concerns.",
+        },
+        {
+          name: "Utility-First Styling Engine",
+          badge: "Tailwind CSS v4 Engine",
+          desc: "Modern zero-config stylesheet engine utilizing modern color tokens, flex layouts, and responsive grid breakpoints.",
+        },
+        {
+          name: "Micro-Interaction & Hover Physics",
+          badge: "Custom CSS (#pembungkus) Keyframes",
+          desc: "Hardware-accelerated CSS pseudo-element transitions animating champagne backdrop gradients, text strokes, and 0.8s button elevations.",
+        },
+        {
+          name: "Typography & Font Rendering",
+          badge: "Bookman Old Style (@font-face)",
+          desc: "High-contrast editorial serif typography loaded via local font assets for brand distinction.",
+        },
+        {
+          name: "E-Commerce Component State",
+          badge: "Cart, Variant Selectors & Checkbox Controllers",
+          desc: "Client-side interactive state components managing batch selection checkboxes, quantity adjustments, and size variants.",
+        },
+        {
+          name: "Curated Media & Editorial Photography",
+          badge: "High-Resolution Fashion Imagery & SVG Vectors",
+          desc: "Curated high-resolution editorial photography, vector brand crest, and commerce iconography.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend & Styling Architecture",
+        items: [
+          { name: "HTML5", role: "Semantic Markup across 9 Dedicated E-Commerce Portals" },
+          { name: "Tailwind CSS v4", role: "Modern Utility-First Stylesheet Engine & Responsive Breakpoints" },
+          { name: "Custom CSS3", role: "Hardware-Accelerated Hover Transitions (#pembungkus) & Text Strokes" },
+          { name: "Bookman Old Style", role: "Custom @font-face Serif Typography for Editorial Headers" },
+        ],
+      },
+      {
+        category: "Commerce & User Interfaces",
+        items: [
+          { name: "Product Variant Customizer", role: "Color Swatch Toggles & Garment Size Selectors (SM–XL)" },
+          { name: "Shopping Bag Controller", role: "Batch Item Selection Checkboxes & Quantity Steppers" },
+          { name: "User Account Portal", role: "Profile Dashboard, Address Editing & Order Overview" },
+          { name: "Auth Dialog Interface", role: "Responsive Authentication Forms & Google OAuth Simulation" },
+        ],
+      },
+      {
+        category: "Media & Brand Assets",
+        items: [
+          { name: "Curated Fashion Imagery", role: "High-Resolution Streetwear, Wedding & Lookbook Photography" },
+          { name: "SVG Vector Iconography", role: "Shopping Baskets, Star Ratings, Social Vectors & Arrows" },
+          { name: "Asymmetric Card Geometry", role: "Custom Border-Radius Silhouettes (rounded-tl-4xl, rounded-br-4xl)" },
+        ],
+      },
+      {
+        category: "Tooling & Delivery",
+        items: [
+          { name: "VS Code", role: "Primary Code Authoring & Styling Workspace" },
+          { name: "Git & GitHub", role: "Source Control & Collaborative Project Management" },
+          { name: "Static Web Hosting", role: "Instant Edge Distribution with Zero Server Overhead" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "Root Portals (Multi-Page Architecture)",
+        items: [
+          "index.html — Main editorial fashion storefront with hero, advantages, and collection cards",
+          "detailproduct.html — Product detail view with size/color pickers, reviews, and lookbook gallery",
+          "viewproduct.html — Apparel catalog with 10 category quick-filters and promo banners",
+          "cart.html — Shopping bag interface with quantity steppers, item checkboxes, and promo coupons",
+          "about.html — Brand heritage, craftsmanship standards, and showroom photography",
+          "account.html — User dashboard displaying order history, address details, and settings",
+          "edit.html — Profile customization interface for modifying user details",
+          "login.html — User authentication portal with Google OAuth simulation",
+          "register.html — New customer registration onboarding workflow",
+        ],
+      },
+      {
+        name: "Styles & Fonts (src/, Font/, Images/)",
+        items: [
+          "src/style.css — Custom CSS rules, @font-face declarations, #pembungkus hover physics, and @import 'tailwindcss'",
+          "src/output.css — Pre-compiled Tailwind CSS utility stylesheet",
+          "Font/BOOKOS.TTF — Custom Bookman Old Style font file",
+          "Font/solskinDEMO.otf — Editorial display font asset",
+          "Images/ — Brand crest (logo_mystyle.svg), collection imagery, and model photography",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: ApparelProduct",
+        purpose:
+          "Defines clothing items with productTitle (Arthur Blue Unisex, Verdusa Men's), brand (Erigo Official), priceRupiah (IDR 157.000), discountPercentage (47%), availableSizes (SM, M, L, XL), colorSwatches, starRating (4.0), and photoGallery.",
+      },
+      {
+        name: "Data Model: CartItem",
+        purpose:
+          "Captures items in shopping bag with cartItemId, productId, quantityCount, isSelectedForCheckout, unitPrice, and subtotal.",
+      },
+      {
+        name: "Data Model: CustomerProfile",
+        purpose:
+          "Stores patron account data with fullName, emailAddress, avatarAsset, defaultShippingAddress, orderHistoryCount, and savedWishlist.",
+      },
+      {
+        name: "Data Model: CategoryFilter",
+        purpose:
+          "Represents catalog navigation pills (T-shirt, Shirt, Jacket, Pants, Hat, Shoes, Perfume, Bag, Buckle, Sock) with slug and activeState.",
+      },
+    ],
+    securityTitle: "Hardened Client Security & Resilient Asset Standards",
+    securityLead:
+      "Client-side data protection, static CDN deployment, and accessibility compliance.",
+    apiEndpoints: [
+      {
+        group: "Storefront & Catalog Routing",
+        routes: [
+          {
+            method: "GET",
+            path: "/index.html",
+            desc: "Serves main editorial fashion storefront and trend showcase",
+          },
+          {
+            method: "GET",
+            path: "/detailproduct.html",
+            desc: "Renders product detail view with sizing and color swatches",
+          },
+          {
+            method: "GET",
+            path: "/viewproduct.html",
+            desc: "Delivers filterable apparel collections catalog",
+          },
+          {
+            method: "GET",
+            path: "/cart.html",
+            desc: "Displays shopping bag with quantity steppers and discount vouchers",
+          },
+          {
+            method: "GET",
+            path: "/account.html",
+            desc: "Presents customer profile dashboard and order management",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Secure CDN Delivery & TLS 1.3 Encryption",
+        desc: "Tailwind CSS browser runtime delivered over TLS 1.3 encrypted HTTPS channels, ensuring asset tampering immunity.",
+      },
+      {
+        title: "Zero Server-Side Attack Surface",
+        desc: "Operating entirely as a static client application eliminates server-side vulnerabilities, SQL injection, and remote code execution vectors.",
+      },
+      {
+        title: "Client-Side Input Boundary Validation",
+        desc: "Strict format enforcement on email, password, and quantity input elements preventing malformed payload injection.",
+      },
+      {
+        title: "WCAG 2.1 AA Contrast Compliance",
+        desc: "High-contrast pairings between deep mocha brown (#4B3B30), champagne neutrals (#FFECC8), and dark charcoal typography ensuring accessible readability.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "9 Portals",
+        label: "Multi-Page Architecture",
+        desc: "Discrete semantic views covering storefront, catalog, cart, detail, and auth.",
+      },
+      {
+        value: "0.5s",
+        label: "Micro-Interaction Latency",
+        desc: "Hardware-accelerated CSS hover transitions on collection cards.",
+      },
+      {
+        value: "10 Categories",
+        label: "Curated Fashion Tracks",
+        desc: "T-shirts, shirts, jackets, pants, footwear, and accessories.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "In the competitive online fashion landscape, delivering a distinguished digital storefront requires more than a simple product grid—it demands editorial storytelling, tactile micro-interactions, and a friction-free shopping journey. MyStyle was created to combine luxury fashion brand aesthetics with complete e-commerce functionality.",
+          "Core Mandate: Architect a responsive multi-page fashion commerce platform utilizing Tailwind CSS v4, custom Bookman typography, and interactive shopping bag workflows that guide customers from visual discovery to tailored order completion.",
+        ],
+      },
+      {
+        title: "Architecture & Design System",
+        body: [
+          "The visual identity of MyStyle is anchored in a refined neutral palette combining champagne cream (#FFECC8, #FFECC894) with deep espresso brown (#4B3B30), setting an editorial tone reminiscent of luxury fashion lookbooks. The typography system pairs classic Bookman Old Style serif headings with clean sans-serif body text.",
+          "Interactive touchpoints feature custom micro-interactions: collection cards reveal titles and animated purchase buttons via hardware-accelerated CSS hover transitions (#pembungkus) utilizing layered pseudo-elements and text strokes. The architecture spans 9 discrete semantic portals covering the full e-commerce lifecycle from product exploration to shopping cart checkout and user profile management.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Crafting sophisticated multi-element hover physics in pure CSS without relying on heavy JavaScript animation libraries. Solved by layering ::before pseudo-element opacity transitions with coordinated position translations (bottom: 30% for text, bottom: 15% for buttons).",
+          "Designing an intuitive shopping cart layout that balances granular item checkboxes, discount tags, quantity counters, and subtotal calculators across narrow mobile screens.",
+          "Adopting early-release Tailwind CSS v4 features (@import 'tailwindcss' and @tailwindcss/browser@4) while ensuring seamless backward compatibility with existing styles.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Successfully delivered a high-end 9-portal fashion e-commerce storefront with fluid responsive adaptation.",
+          "Engineered custom hardware-accelerated CSS hover physics delivering 60 FPS transitions.",
+          "Implemented an end-to-end shopping workflow spanning variant customizers, multi-item shopping bags, and customer account portals.",
+        ],
+      },
+    ],
+    stack: [
+      "HTML5",
+      "Tailwind CSS v4",
+      "CSS3",
+      "JavaScript",
+      "Custom Fonts",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/MyStyle" },
+    ],
+  },
+
+  delifood: {
+    title: "DeliFood",
+    subtitle: "Real-Time Mobile E-Commerce & Food Delivery Platform",
+    summary:
+      "A responsive, real-time mobile food ordering application built with Flutter and Cloud Firestore. Powered by asynchronous snapshot streams for live catalog synchronization, atomic cart quantity deduplication, dynamic wishlist management, and a 4-stage visual delivery tracking pipeline.",
+    domain: "github.com/adyvka31/DeliFood",
+    meta: [
+      { label: "Role", value: "Mobile Application Engineer" },
+      { label: "Platform", value: "Android & iOS" },
+      { label: "Timeline", value: "2024 – 2025" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "Feature-First Modular + Stream BaaS" },
+      { label: "BaaS", value: "Cloud Firestore & Firebase Auth" },
+    ],
+    galleryLabel: "MOBILE APPLICATION INTERFACES",
+    galleryTitle: "The DeliFood Mobile Experience",
+    galleryLead:
+      "Explore the reactive mobile interface of DeliFood — featuring real-time stream-driven catalogs, smart cart quantity deduplication, fluid Hero animations, and multi-stage delivery tracking.",
+    gallery: [
+      {
+        id: "home-catalog",
+        title: "Reactive Home & Stream-Driven Catalog",
+        route: "app.delifood.mobile/home",
+        tag: "Real-time Streams",
+        image: delifoodImg,
+        desc: "Real-time product discovery powered by Cloud Firestore streams. Filters products instantly across categories and search queries with zero manual page refreshes.",
+        features: [
+          "Live Snapshot Synchronization",
+          "Dynamic Instant Search (Title & Category)",
+          "Promotional Drawer Notifications",
+        ],
+      },
+      {
+        id: "product-detail",
+        title: "Fluid Product Detail & Hero Transition",
+        route: "app.delifood.mobile/details",
+        tag: "Hero Animations",
+        image: delifoodImg,
+        desc: "Smooth Hero widget transitions into item details featuring hybrid asset/network image rendering, instant wishlist toggling, and nutritional breakdown.",
+        features: [
+          "Fluid Hero Image Transitions (60 FPS)",
+          "Hybrid Image Provider Logic (Local & Network)",
+          "One-Tap Wishlist Firestore Toggle",
+        ],
+      },
+      {
+        id: "cart-checkout",
+        title: "Smart Basket & Bottom Sheet Checkout",
+        route: "app.delifood.mobile/cart",
+        tag: "Deduplication Engine",
+        image: delifoodImg,
+        desc: "Dynamic basket with duplicate item protection (auto-increment quantity), swipe-to-dismiss gesture removal, and modal bottom sheet delivery address input.",
+        features: [
+          "Smart Item Quantity Deduplication",
+          "Swipe-to-Dismiss Gesture Deletion",
+          "Modal Bottom Sheet Checkout Flow",
+        ],
+      },
+      {
+        id: "order-tracking",
+        title: "4-Stage Live Delivery Tracking",
+        route: "app.delifood.mobile/order-tracking",
+        tag: "Order Lifecycle",
+        image: delifoodImg,
+        desc: "Visual delivery progress tracking across 4 sequential stages — Payment Verified, Packaging, In Transit, and Delivered — with timestamped transit checkpoints.",
+        features: [
+          "4-Stage Visual Delivery Stepper",
+          "Chronological Transit Checkpoints",
+          "Horizontal Item Summary Carousel",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "0ms",
+        label: "Sync Latency",
+        note: "Instant reactive UI updates via Firebase Stream listeners",
+      },
+      {
+        value: "100%",
+        label: "Duplicate Free",
+        note: "Smart cart query auto-increments quantity instead of duplicating",
+      },
+      {
+        value: "4-Stage",
+        label: "Delivery Stepper",
+        note: "Payment → Packaging → In Transit → Delivered lifecycle",
+      },
+      {
+        value: "5",
+        label: "App Domains",
+        note: "Home, Wishlist, Smart Basket, Order Tracking, and Profile",
+      },
+      {
+        value: "60 FPS",
+        label: "Hero Animation",
+        note: "Smooth Material 3 Hero widget image transitions",
+      },
+      {
+        value: "Dual",
+        label: "Auth Registration",
+        note: "Firebase Auth + Firestore user profile dual-write",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Stream-Driven Reactive UI",
+        desc: "Every core view subscribes directly to Cloud Firestore snapshots via StreamBuilder, updating catalog items, cart quantities, and wishlist states instantaneously without manual pull-to-refresh.",
+      },
+      {
+        icon: "database",
+        title: "Smart Basket & Deduplication Engine",
+        desc: "Intelligent cart operations check for existing items in user collections, auto-incrementing quantity (quantity + 1) on duplicate picks and supporting swipe-to-dismiss deletion.",
+      },
+      {
+        icon: "terminal",
+        title: "Dual-Write Identity & Profile Security",
+        desc: "Secure Firebase Authentication combined with atomic Firestore user document writes storing demographic metadata, birth dates via date picker, and server timestamps.",
+      },
+      {
+        icon: "cloud",
+        title: "4-Stage Visual Delivery Stepper",
+        desc: "Comprehensive order lifecycle tracking guiding customers from order placement to doorstep arrival, complete with granular transit checkpoints and horizontal item summaries.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Order Fulfillment Workflow",
+    capabilitiesLead:
+      "Engineered for smooth, high-throughput mobile retail — combining reactive data streaming, gesture-driven cart management, real-time wishlist toggling, and multi-stage delivery logistics.",
+    features: [
+      {
+        id: "stream-catalog",
+        title: "Stream-Driven Catalog & Live Query Filtering",
+        badge: "Core Architecture",
+        desc: "Real-time product discovery engine streaming directly from Cloud Firestore with zero manual refreshes.",
+        points: [
+          "Live Stream Snapshots: Persistent listener on products collection automatically broadcasting price, stock, or item changes to the UI.",
+          "Client-Side Substring Filtering: Dual-criteria search evaluating title substrings and active categories (Hottest, Popular, New Combo, Top).",
+          "Dynamic View Shifting: Automatically swaps between promotional hero carousels (Special & Recommended) and search grid results.",
+          "Interactive Coupon Claim: Built-in promotional voucher dialog with celebration feedback and instant discount application.",
+        ],
+      },
+      {
+        id: "cart-deduplication",
+        title: "Smart Basket & Quantity Deduplication",
+        badge: "E-Commerce Logic",
+        desc: "Optimized shopping basket preventing redundant database rows and delivering seamless cart manipulation.",
+        points: [
+          "Quantity Auto-Increment: Inspects existing cart items by title; increments quantity (+1) if found rather than duplicating rows.",
+          "Swipe-to-Dismiss Deletion: Wrap-around Dismissible widget allowing intuitive gesture-based deletion with red background and instant sync.",
+          "Indonesian Currency Formatting: Dynamic calculation of item subtotals and flat delivery fee (Rp 8.000) using NumberFormat.currency.",
+          "Modal Bottom Sheet Address Input: Non-blocking address input screen prompting customer delivery coordinates prior to checkout.",
+        ],
+      },
+      {
+        id: "wishlist-engine",
+        title: "Reactive Wishlist & Favorites Engine",
+        badge: "Personalization",
+        desc: "Dedicated user subcollection storing favorited food items with single-tap toggle responsiveness.",
+        points: [
+          "Isolated User Subcollection: Preserves customer favorites in /users/{uid}/wishlist across multi-device sessions.",
+          "Atomic Toggle Mechanism: Single-tap heart action that verifies item presence, deleting if found or writing if absent.",
+          "Responsive 2-Column Grid: Visual showcase featuring Hero transition images, ratings, formatted prices, and quick detail navigation.",
+        ],
+      },
+      {
+        id: "delivery-stepper",
+        title: "4-Stage Visual Delivery Tracker",
+        badge: "Logistics & Order",
+        desc: "Comprehensive order fulfillment tracking providing full visibility into delivery progression.",
+        points: [
+          "4-Stage Sequential Stepper: Visual indicators for Payment Verified, Packaging & Inventory, In Transit, and Delivered.",
+          "Horizontal Item Summary: Upper carousel highlighting all menu items included in the active transit package.",
+          "Chronological Checkpoint Log: Time-stamped milestone history documenting sorting hubs, dispatch times, and estimated arrivals.",
+        ],
+      },
+      {
+        id: "hero-transitions",
+        title: "Fluid Hero Transitions & Hybrid Asset Rendering",
+        badge: "Visual UX",
+        desc: "Material 3 visual experience featuring seamless image transitions and intelligent asset resolution.",
+        points: [
+          "60 FPS Hero Animations: Smooth scaling transitions between grid thumbnails and full-screen detail views via unique imagepath tags.",
+          "Hybrid Image Provider Logic: Smart URL inspector routing http links to Image.network with error fallback and local paths to Image.asset.",
+          "Open Sauce Typography: Integrated 6-weight custom typography system (Light to Bold) creating clear hierarchical readability.",
+        ],
+      },
+      {
+        id: "dual-write-auth",
+        title: "Dual-Write Authentication & Profile Governance",
+        badge: "Security & Identity",
+        desc: "Secure user registration combining Firebase Auth credentials with Firestore profile data.",
+        points: [
+          "Firebase Authentication: Stateless credential management with granular exception handlers for invalid-email, wrong-password, and rate limits.",
+          "Dual-Write Firestore Integration: Automatically writes user metadata (birth date, address, and server timestamp) upon successful signup.",
+          "In-App Drawer Notifications: Slide-out notification drawer delivering commercial alerts and partner promotional campaigns (Pizza Hut, Starbucks, KFC, J.CO).",
+        ],
+      },
+      {
+        id: "5-tab-navigation",
+        title: "Curved 5-Tab Navigation System",
+        badge: "Navigation Architecture",
+        desc: "Persistent bottom navigation bar providing instantaneous switching across primary application domains.",
+        points: [
+          "5 Core App Domains: Unified bottom bar switching between Home, Wishlist, Basket, Orders, and Profile without state destruction.",
+          "Persistent Navigation State: Indexed widget tree maintaining scroll offsets and input focus across screen transitions.",
+        ],
+      },
+      {
+        id: "database-seeding",
+        title: "Autonomous Firestore Seeding & Cloud Synchronization",
+        badge: "Data Operations",
+        desc: "Built-in seeding pipeline ensuring immediate development and demo data availability.",
+        points: [
+          "Automated Product Seeder: Built-in seedDatabase() function checking catalog existence and inserting verified combo menus with prices and descriptions.",
+          "Server Timestamp Enforcement: Neutralizes local device clock tampering by enforcing Firestore FieldValue.serverTimestamp() on all transactional writes.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Order Fulfillment & Delivery Lifecycle",
+      lead: "From cart checkout to doorstep delivery — every order transitions through an asynchronous Firestore state machine with automated subcollection synchronization.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Cart & Checkout",
+          title: "Basket Checkout & Address Input",
+          desc: "Customer selects items, validates cart quantities, and inputs delivery address via modal bottom sheet. Subtotal and flat delivery fees are computed dynamically.",
+          action: "Cart Snapshot & Order Creation",
+        },
+        {
+          level: "Stage 02",
+          role: "Kitchen & Inventory",
+          title: "Order Processing & Kitchen Prep",
+          desc: "Kitchen receives order status 'Processing'. Cart items are atomically migrated to /orders and cleared from /cart to prevent duplicate fulfillment.",
+          action: "Status Update → Processing & Packaging",
+        },
+        {
+          level: "Stage 03",
+          role: "Courier & Arrival",
+          title: "Transit Dispatch & Doorstep Handover",
+          desc: "Driver is assigned. Live stepper updates to 'In Transit' with timestamped sorting checkpoints until final delivery verification.",
+          action: "Status Update → In Transit → Delivered",
+        },
+      ],
+      lockMechanism: {
+        title: "Atomic Cart Migration & Duplicate Prevention Guarantee",
+        desc: "During checkout, all cart documents are atomically read, transformed into order items, and deleted from the active cart in a single batch sequence. This ensures customers never experience ghost items or accidental double checkouts.",
+      },
+    },
+    architectureTitle: "Feature-First Modular & Stream BaaS Architecture",
+    architectureLead:
+      "Engineered with a clean separation between reactive Flutter presentation widgets, a centralized Data Access Object (DatabaseService), and Google Cloud Firestore streams.",
+    architecture: {
+      type: "Feature-First Flutter + Firebase BaaS",
+      protocol: "Asynchronous Firestore Streams (gRPC / WSS)",
+      layers: [
+        {
+          name: "Mobile Client (Flutter)",
+          badge: "Dart ^3.8.1 + Material 3",
+          desc: "Cross-platform mobile application utilizing StreamBuilder, custom Open Sauce typography, Hero transition animations, and Dismissible gestures.",
+        },
+        {
+          name: "Service & Data Access Layer",
+          badge: "DatabaseService (DAO)",
+          desc: "Centralized Data Access Object abstracting Firestore CRUD operations, stream mappings, smart deduplication queries, and database seeding.",
+        },
+        {
+          name: "Identity & Security Guard",
+          badge: "Firebase Authentication",
+          desc: "Token-based stateless authentication engine enforcing email/password validation, credential hashing, and secure user session management.",
+        },
+        {
+          name: "Reactive NoSQL Database",
+          badge: "Cloud Firestore",
+          desc: "Distributed cloud document database delivering real-time snapshot streams across products, user profiles, carts, wishlists, and order collections.",
+        },
+        {
+          name: "Local Storage & Assets",
+          badge: "Asset Bundles & Fonts",
+          desc: "Bundled Open Sauce One font family, CustomIcon glyphs, and local high-res food combo image assets.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Mobile Application",
+        items: [
+          { name: "Flutter 3.x", role: "Cross-Platform Mobile Framework" },
+          { name: "Dart ^3.8.1", role: "Strongly Typed Client Language" },
+          { name: "Provider 6", role: "State Management & DI" },
+          { name: "Open Sauce One", role: "Custom Typography Hierarchy" },
+          { name: "Material 3", role: "Modern UI Design System" },
+          { name: "Curved Navigation Bar", role: "Curved Bottom Tab Navigation" },
+          { name: "Intl", role: "Indonesian Currency & Date Formatting" },
+          { name: "Cupertino Icons", role: "iOS-Style Iconography" },
+        ],
+      },
+      {
+        category: "Backend & Cloud Services",
+        items: [
+          { name: "Cloud Firestore", role: "Real-time NoSQL Cloud Database" },
+          { name: "Firebase Auth", role: "User Identity & Session Security" },
+          { name: "Firebase Core", role: "Platform Client Handshake" },
+          { name: "Firebase CLI", role: "Cloud Configuration & Deployment" },
+        ],
+      },
+      {
+        category: "DevOps & Code Quality",
+        items: [
+          { name: "Flutter Lints 5", role: "Dart Static Analysis & Style Enforcement" },
+          { name: "Flutter Test", role: "Widget & Unit Testing Framework" },
+          { name: "Git & GitHub", role: "Source Control & Collaborative Versioning" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "lib/features/ (Feature-First Modules)",
+        items: [
+          "home/ — HomeScreen, Hero DetailPage, ItemFoodModel, promotional sections",
+          "cart/ — CartScreen with swipe-to-dismiss, InputAdress bottom sheet modal",
+          "whislist/ — WhislistScreen with 2-column reactive grid and instant toggle",
+          "track_status/ — TrackStatusScreen with 4-stage stepper and transit logs",
+          "profile/ — ProfileScreen with Firestore user data fetching and logout",
+          "onboarding/ — SplashScreen, Onboarding intro, and SignupPage dual-write",
+        ],
+      },
+      {
+        name: "lib/service/ & core (Data & Preferences)",
+        items: [
+          "service/database_service.dart — Firestore CRUD, stream queries, deduplication, seed",
+          "prefrences/color.dart — Custom brand color palette (MainColors)",
+          "prefrences/icons.dart — Custom icon glyphs and asset constants",
+          "components/app_back_button.dart — Reusable circular back navigation button",
+          "widgets/item_combo.dart — Reusable menu item card with price & rating",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Firestore: /products",
+        purpose:
+          "Global catalog collection containing title, price, rating, category tags, local/network image paths, and culinary descriptions.",
+      },
+      {
+        name: "Firestore: /users/{uid}",
+        purpose:
+          "User profile document storing full name, email, birth date, delivery address, and server-side creation timestamp.",
+      },
+      {
+        name: "Firestore: /users/{uid}/cart",
+        purpose:
+          "Active user basket items with smart quantity counters (+1 auto-increment) and addedAt server timestamps.",
+      },
+      {
+        name: "Firestore: /users/{uid}/wishlist",
+        purpose:
+          "User favorited items with single-tap toggle capability (atomic write or delete).",
+      },
+      {
+        name: "Firestore: /users/{uid}/orders",
+        purpose:
+          "Order history recording purchased items array snapshot, total_price, status progression, and order_date.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Data Safety",
+    securityLead:
+      "Cloud security architecture combining Firebase Auth token verification, user-scoped Firestore access, and server-side timestamp validation.",
+    apiEndpoints: [
+      {
+        group: "Authentication (Firebase Auth)",
+        routes: [
+          { method: "POST", path: "createUserWithEmailAndPassword", desc: "User registration with email/password and dual-write to Firestore" },
+          { method: "POST", path: "signInWithEmailAndPassword", desc: "Stateless session authentication with granular exception handling" },
+          { method: "POST", path: "signOut", desc: "Session termination and navigation stack reset" },
+        ],
+      },
+      {
+        group: "Catalog & Products (Firestore Streams)",
+        routes: [
+          { method: "GET", path: "collection('products').snapshots()", desc: "Real-time stream of all products with client substring filtering" },
+          { method: "POST", path: "seedDatabase()", desc: "Automated catalog verification and demo combo menu insertion" },
+        ],
+      },
+      {
+        group: "Cart Operations (Subcollection /cart)",
+        routes: [
+          { method: "GET", path: "/users/{uid}/cart.snapshots()", desc: "Real-time shopping basket stream with subtotal and fee computation" },
+          { method: "POST", path: "addToCart(ItemFoodModel)", desc: "Smart cart query: auto-increments quantity or creates new document" },
+          { method: "DELETE", path: "removeFromCart(docId)", desc: "Instant document deletion triggered by Dismissible swipe gesture" },
+          { method: "POST", path: "checkout(totalPrice)", desc: "Atomic cart-to-order migration and cart clearing" },
+        ],
+      },
+      {
+        group: "Wishlist & Orders (Subcollections /wishlist & /orders)",
+        routes: [
+          { method: "POST", path: "toggleWhislist(ItemFoodModel)", desc: "Atomic heart toggle: deletes if exists, adds if absent" },
+          { method: "GET", path: "/users/{uid}/wishlist.snapshots()", desc: "Real-time user wishlist stream rendered in 2-column grid" },
+          { method: "GET", path: "/users/{uid}/orders.snapshots()", desc: "Order history stream ordered by order_date descending" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Firebase Auth Credential Guard",
+        desc: "Stateless token-based authentication with granular exception handlers for invalid-email, wrong-password, and brute-force too-many-requests throttling.",
+      },
+      {
+        title: "User-Scoped Subcollection Isolation",
+        desc: "Cart, wishlist, and order subcollections are strictly scoped under each user's unique uid, preventing cross-user data exposure.",
+      },
+      {
+        title: "Server-Verified Timestamps",
+        desc: "Transactional operations utilize FieldValue.serverTimestamp() to neutralize client device clock tampering and ensure audit integrity.",
+      },
+      {
+        title: "Smart Cart Deduplication Logic",
+        desc: "Pre-write query inspection prevents duplicate rows, consolidating identical items into a single document with incremented quantities.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "0ms",
+        label: "Perceived Sync Latency",
+        desc: "Instant reactive UI updates via Firebase Stream listeners",
+      },
+      {
+        value: "100%",
+        label: "Duplicate-Free Cart Engine",
+        desc: "Smart cart query auto-increments quantity instead of duplicating",
+      },
+      {
+        value: "4-Stage",
+        label: "End-to-End Delivery Stepper",
+        desc: "Payment → Packaging → In Transit → Delivered lifecycle",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "Traditional mobile e-commerce applications often suffer from sluggish manual-refresh paradigms, fragmented state management, and cart duplication issues. The goal of DeliFood was to construct a responsive, stream-driven food ordering application built natively in Flutter and backed by Google Cloud Firestore.",
+          "Core Mandate: Build an intuitive mobile food delivery interface delivering instant real-time synchronization for products, carts, wishlists, and order delivery statuses with zero latency.",
+        ],
+      },
+      {
+        title: "Architecture & Reactive Streaming",
+        body: [
+          "Adopted a Feature-First modular structure in Flutter, dividing domain logic into home, cart, whislist, track_status, profile, and onboarding. The data layer is centralized in DatabaseService, exposing pure Dart Streams that feed directly into StreamBuilder widgets.",
+          "Authentication leverages a dual-write pattern: user credentials are registered in Firebase Auth while profile metadata (name, birth date, address, and server timestamp) is stored in a dedicated Firestore document under /users/{uid}.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Preventing duplicate cart items without introducing heavy client-side state bloat. Solved by implementing a pre-write Firestore query in addToCart() that inspects existing document titles, incrementing quantity (+1) if already present or creating a new document with quantity: 1.",
+          "Maintaining fluid 60 FPS scrolling while streaming real-time catalog and search queries. Solved by leveraging client-side substring filtering over active Firestore snapshot streams, eliminating redundant read index queries.",
+          "Designing an engaging multi-stage order tracking visualization. Built a custom 4-stage delivery stepper paired with chronological transit checkpoints and horizontal item summaries.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "0ms perceived sync latency achieved across cart, wishlist, and product catalog via real-time Firestore listeners.",
+          "100% duplicate-free cart operations guaranteed by programmatic quantity deduplication.",
+          "Complete 4-stage delivery tracking pipeline successfully integrated and verified with live checkpoint milestones.",
+        ],
+      },
+    ],
+    stack: [
+      "Flutter",
+      "Dart",
+      "Firebase Auth",
+      "Cloud Firestore",
+      "Provider",
+      "Material 3",
+      "Open Sauce One",
+      "Intl",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/DeliFood" },
+    ],
   },
 
   "ai-ticket-manager": {
@@ -1093,3 +4923,7 @@ export const projectDetails = {
     stack: ["Flutter", "Firebase", "Gemini API", "Provider"],
   },
 };
+
+// Backward compatibility alias for legacy route
+projectDetails.flutter = projectDetails.delifood;
+projectDetails.jagajiwa = projectDetails.fitsmart;

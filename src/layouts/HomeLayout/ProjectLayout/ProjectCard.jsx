@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Tag from "../../../components/Tag/Tag";
 import { ArrowUpRightIcon } from "../../../components/Icons/Icons";
 import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
@@ -41,7 +42,12 @@ function ProjectCard({ project, visible }) {
               {project.label}
             </div>
             <h3 className={isFlagship ? styles.titleLg : styles.titleSm}>
-              {project.title}
+              <Link
+                to={`/projects/${project.slug || project.id}`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                {project.title}
+              </Link>
             </h3>
             <p className={styles.description}>{project.description}</p>
           </div>
@@ -68,18 +74,29 @@ function ProjectCard({ project, visible }) {
           ))}
         </ul>
 
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Link
+            to={`/projects/${project.slug || project.id}`}
             className={styles.viewLink}
-            aria-label={`View ${project.title} project live`}
+            aria-label={`View ${project.title} project details`}
           >
-            View
+            Details
             <ArrowUpRightIcon size={11} />
-          </a>
-        )}
+          </Link>
+          {project.link && project.link !== "#" && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.viewLink}
+              style={{ opacity: 0.65 }}
+              aria-label={`View ${project.title} external source or live demo`}
+            >
+              Source
+              <ArrowUpRightIcon size={11} />
+            </a>
+          )}
+        </div>
         {!project.link && project.year && !isFlagship && (
           <span
             className={styles.yearSm}
