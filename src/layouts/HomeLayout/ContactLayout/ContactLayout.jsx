@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import profilePhoto from "../../../assets/profile3.webp?w=400;800&quality=75&format=avif;webp&as=picture";
@@ -79,7 +79,7 @@ export default function ContactLayout() {
       } else {
         setFormStatus("ERROR");
       }
-    } catch (error) {
+    } catch {
       setFormStatus("ERROR");
     }
   };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LogoMark from "../LogoMark/LogoMark";
-import { ArrowUpRightIcon, GithubIcon } from "../Icons/Icons"; // Pastikan GithubIcon tersedia
+import { ArrowUpRightIcon } from "../Icons/Icons";
 import { personalInfo } from "../../data/portfolio";
 import styles from "./Navbar.module.css";
 
@@ -50,6 +50,7 @@ export default function Navbar() {
 
   // Close menu on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
   }, [location.pathname]);
 

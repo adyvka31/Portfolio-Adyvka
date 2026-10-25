@@ -233,7 +233,11 @@ export default function ProjectGallery({
 
         {/* THUMBNAILS FILMSTRIP TRACK */}
         <NativeReveal delay={0.15}>
-          <div className={styles.filmstrip} role="group" aria-label="Screenshot thumbnails">
+          <div
+            className={`${styles.filmstrip} ${items.length === 5 ? styles.filmstrip5 : ""}`}
+            role="group"
+            aria-label="Screenshot thumbnails"
+          >
             {items.map((item, idx) => (
               <button
                 key={item.id || idx}

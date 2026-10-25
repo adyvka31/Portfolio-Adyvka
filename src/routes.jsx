@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 // src/routes.jsx
 import { lazy } from "react";
 import App from "./App.jsx";

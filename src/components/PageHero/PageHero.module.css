@@ -156,25 +156,55 @@
   margin: clamp(2.5rem, 5vw, 3.5rem) 0 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   max-width: 48rem;
   width: 100%;
 }
 
 @media (min-width: 768px) {
   .meta {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Specialized 5-Item Meta Grid (Projects Act I) */
+.meta5 {
+  max-width: 68rem;
+}
+
+@media (max-width: 639px) {
+  .meta5 > .metaItem:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .meta5 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .meta5 > .metaItem:nth-child(1) { grid-column: span 3; }
+  .meta5 > .metaItem:nth-child(2) { grid-column: span 3; }
+  .meta5 > .metaItem:nth-child(3) { grid-column: span 2; }
+  .meta5 > .metaItem:nth-child(4) { grid-column: span 2; }
+  .meta5 > .metaItem:nth-child(5) { grid-column: span 2; }
+}
+
+@media (min-width: 1024px) {
+  .meta5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
 .metaItem {
+  min-width: 0;
+  box-sizing: border-box;
   background: var(--ink-950); /* Memberi ilusi border 1px lewat gap container */
-  padding: clamp(1rem, 2.5vw, 1.25rem);
+  padding: clamp(0.875rem, 2vw, 1.25rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,7 +215,7 @@
 
 .metaLabel {
   font-family: "Geist Mono", ui-monospace, monospace;
-  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  font-size: clamp(0.65rem, 1.5vw, 0.725rem);
   color: var(--ink-200);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -193,12 +223,12 @@
 }
 
 .metaValue {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-size: clamp(0.875rem, 1.6vw, 1.05rem);
   font-weight: 500;
   color: #fff;
   margin: 0;
-  white-space: nowrap; /* Cegah teks value patah ke bawah di layar HP sempit */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%; /* Proteksi dari overflow */
+  white-space: normal; /* Mengizinkan teks panjang turun rapi tanpa terpotong */
+  line-height: 1.35;
+  word-break: break-word;
+  max-width: 100%;
 }

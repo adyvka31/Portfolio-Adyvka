@@ -159,8 +159,8 @@ export default function ProjectDetailPage() {
 
   // Project status logic (Production Ready vs In Active Development)
   const statusMeta =
-    detail?.meta?.find((m) => m.label?.toLowerCase() === "status")?.value ||
     detail?.status ||
+    detail?.meta?.find((m) => m.label?.toLowerCase() === "status")?.value ||
     "In Active Development";
 
   const isProductionReady =

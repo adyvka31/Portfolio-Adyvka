@@ -378,6 +378,25 @@
   }
 }
 
+/* Specialized 5-Item Filmstrip Grid */
+@media (max-width: 639px) {
+  .filmstrip5 > .thumbCard:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .filmstrip5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .filmstrip5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
 .thumbCard {
   border-radius: 10px;
   overflow: hidden;
