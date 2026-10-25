@@ -2,6 +2,7 @@ import databank1 from "../assets/databank/databank1.png";
 import databank2 from "../assets/databank/databank2.png";
 import databank3 from "../assets/databank/databank3.png";
 import databank4 from "../assets/databank/databank4.png";
+import ruangtumbuhImg from "../assets/ruangtumbuh.webp";
 
 export const projectDetails = {
   databank: {
@@ -468,45 +469,542 @@ export const projectDetails = {
   },
 
   ruangtumbuh: {
+    title: "RuangTumbuh",
+    subtitle: "Time Banking Educational Ecosystem & Mentorship Platform",
     summary:
-      "Course-booking platform connecting students with tutors. Monorepo with shared types and a real-time scheduling engine.",
+      "A peer-to-peer educational platform built on the Time Banking paradigm — where one hour of learning any discipline holds equal value to one hour of teaching. Powered by atomic PostgreSQL time-wallet transactions, real-time Socket.io communication, an interactive Matter.js 2D physics engine, and Google Gemini AI assistance.",
+    domain: "ruang-tumbuh.vercel.app",
     meta: [
-      { label: "Role", value: "Full Stack" },
-      { label: "Timeline", value: "2025" },
-      { label: "Stack", value: "Express + React" },
-      { label: "Status", value: "Open source" },
+      { label: "Role", value: "Project Lead & Server Architect" },
+      { label: "Cohort", value: "Bangkit Academy (CC26-PS050)" },
+      { label: "Timeline", value: "2025 – 2026" },
+      { label: "Team", value: "5 Engineers" },
+      { label: "Status", value: "Production Ready" },
+      { label: "Architecture", value: "pnpm Workspaces Monorepo" },
+    ],
+    galleryLabel: "PRODUCTION INTERFACES",
+    galleryTitle: "The RuangTumbuh Experience",
+    galleryLead:
+      "Explore the core interfaces of RuangTumbuh — from the interactive 2D physics landing canvas and cashless course catalog to real-time WebSocket communication and the Gemini AI copilot.",
+    gallery: [
+      {
+        id: "interactive-hero",
+        title: "Kinetic Hero & 2D Physics Canvas",
+        route: "ruang-tumbuh.vercel.app",
+        tag: "Matter.js + Lenis",
+        image: ruangtumbuhImg,
+        desc: "Interactive landing experience featuring real-time 2D rigid-body gravity physics, smooth inertia scrolling with Lenis, and fluid multi-layer spring micro-interactions.",
+        features: [
+          "Interactive 2D Physics Canvas via Matter.js",
+          "Smooth Inertia Scrolling with Lenis",
+          "Framer Motion Spring Micro-Interactions",
+        ],
+      },
+      {
+        id: "time-wallet-catalog",
+        title: "Dynamic Course Catalog & Time Wallet",
+        route: "ruang-tumbuh.vercel.app/courses",
+        tag: "Time Banking System",
+        image: ruangtumbuhImg,
+        desc: "Comprehensive course discovery across 26 disciplines. Students exchange learning time balances rather than conventional currency, backed by atomic escrow holds.",
+        features: [
+          "26 Curated Disciplines with Infinite Scroll",
+          "Debounced Real-Time Search (250ms)",
+          "Atomic Time Wallet Escrow Deduction",
+        ],
+      },
+      {
+        id: "realtime-chat",
+        title: "WebSocket Community & 1-on-1 Chat",
+        route: "ruang-tumbuh.vercel.app/messages",
+        tag: "Socket.io Engine",
+        image: ruangtumbuhImg,
+        desc: "Authenticated real-time messaging pipeline enabling private 1-on-1 mentorship conversations and 5 topic-focused community channels with instant PostgreSQL persistence.",
+        features: [
+          "JWT Handshake Authentication via Socket.io",
+          "Private 1-on-1 Mentorship Rooms",
+          "5 Specialized Topic-Based Communities",
+        ],
+      },
+      {
+        id: "gemini-assistant",
+        title: "AI Copilot & Unified Calendar",
+        route: "ruang-tumbuh.vercel.app/dashboard",
+        tag: "Google Gemini AI",
+        image: ruangtumbuhImg,
+        desc: "Embedded Gemini AI assistant answering platform questions and recommending mentors, paired with an integrated calendar consolidating bookings and mentoring sessions.",
+        features: [
+          "Google Gemini Flash Generative Model",
+          "Unified WIB Timezone Calendar Aggregator",
+          "Interactive Learning Analytics & Stats",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "1 : 1",
+        label: "Time Value Parity",
+        note: "1 hour of design = 1 hour of physics across all courses",
+      },
+      {
+        value: "100%",
+        label: "Atomic Guarantee",
+        note: "Zero partial writes or balance drift via prisma.$transaction",
+      },
+      {
+        value: "26",
+        label: "Curated Disciplines",
+        note: "Dynamic courses across engineering, design, and science",
+      },
+      {
+        value: "<200ms",
+        label: "p95 API Latency",
+        note: "High-throughput Express 5 backend deployed on Railway",
+      },
+      {
+        value: "30 Min",
+        label: "Session Safeguard",
+        note: "Automated idle logout guarding active time balances",
+      },
+      {
+        value: "100%",
+        label: "Contract Parity",
+        note: "Shared Zod schemas across client forms and server parsers",
+      },
+    ],
+    highlights: [
+      {
+        icon: "database",
+        title: "Time Wallet Banking Engine",
+        desc: "A cashless peer-to-peer knowledge exchange. Every new user receives 30 free minutes upon signup, trading learning hours instead of currency with atomic escrow and instant refunds.",
+      },
+      {
+        icon: "monitor",
+        title: "Interactive 2D Physics & Kinetic UX",
+        desc: "Hero canvas powered by Matter.js rigid-body physics, Lenis smooth inertia scrolling, and Framer Motion spring micro-interactions creating a playful, engaging feel.",
+      },
+      {
+        icon: "terminal",
+        title: "Real-time Messaging & Community Hub",
+        desc: "JWT-authenticated WebSocket pipeline via Socket.io, supporting low-latency 1-on-1 private mentoring chat and 5 topic-focused public community groups.",
+      },
+      {
+        icon: "cloud",
+        title: "Google Gemini AI Copilot",
+        desc: "Embedded AI assistant leveraging gemini-flash-latest with custom system instructions to guide students, recommend mentors, and resolve time wallet queries.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Time Banking Workflow",
+    capabilitiesLead:
+      "Engineered to democratize peer education — combining transactional time banking, dynamic course syndication, unified calendar scheduling, and low-latency real-time collaboration.",
+    features: [
+      {
+        id: "time-wallet-engine",
+        title: "Time Wallet & Atomic Banking Engine",
+        badge: "Core Architecture",
+        desc: "Central time banking ledger governing cashless balance transactions between students and mentors with strict ACID compliance.",
+        points: [
+          "Initial Balance: Every newly registered account automatically receives 30 minutes of free learning credit (timeBalance: 30).",
+          "Atomic Escrow Deductions: Booking requests execute inside prisma.$transaction to verify timeBalance >= durationMinutes and lock funds atomically.",
+          "Automatic Mentor Remuneration: When a mentor accepts, the system issues a 6-character token and immediately credits the mentor's time wallet.",
+          "Instant Automated Refunds: Rejected or cancelled requests trigger immediate balance rollbacks, returning time credits to the student with zero delay.",
+          "Cryptographic Token Completion: Sesi tatap muka diselesaikan dengan memasukkan token verifikasi 6-karakter dari siswa untuk menandai sesi COMPLETED.",
+          "Session Review & Ratings: Siswa dapat memberikan ulasan tertulis dan rating bintang 1–5 atas sesi yang telah selesai.",
+        ],
+      },
+      {
+        id: "course-syllabus",
+        title: "Dynamic Course Catalog & Syllabus Engine",
+        badge: "Curriculum & Search",
+        desc: "Comprehensive learning repository featuring 26 disciplines, debounced query search, and continuous infinite scrolling.",
+        points: [
+          "26 Learning Categories: Spanning Frontend, Backend, AI, UI/UX, Mathematics, Physics, Foreign Languages, and Business.",
+          "Hierarchical Syllabus: Structured curriculum modules stored directly within JSON fields inside the PostgreSQL Course schema.",
+          "Debounced 250ms Search: Client-side debounce eliminating redundant network requests while searching across title, mentor, or tag.",
+          "Infinite Scroll via TanStack Query: Powered by useInfiniteQuery with automated stale-time caching for zero-flicker browsing.",
+          "Complete Mentor Lifecycle: Mentors can publish courses, update module curriculum, edit lesson objectives, or deprecate listings.",
+        ],
+      },
+      {
+        id: "calendar-aggregator",
+        title: "Unified Calendar & Schedule Aggregator",
+        badge: "Scheduling & Time",
+        desc: "Synchronized timetable consolidating course bookings and self-directed mentoring appointments into one calendar view.",
+        points: [
+          "Dual Schedule Aggregator: Merges both formal Course Bookings and 1-on-1 Self-Mentoring slots into an authoritative unified schedule.",
+          "Timezone Normalization (WIB): Automatic timezone alignment and real-time end-time calculation based on session duration.",
+          "Tri-Color Lifecycle States: Visual indicators representing Pending Confirmation (Amber), Upcoming (Cyan), and Completed (Emerald).",
+          "Double-Booking Prevention: Concurrency checks validating availability windows before confirming conflicting calendar slots.",
+        ],
+      },
+      {
+        id: "realtime-chat-hub",
+        title: "Real-time Chat & Learning Communities",
+        badge: "Socket.io Engine",
+        desc: "Event-driven WebSocket messaging architecture facilitating private mentorship coordination and public topic channels.",
+        points: [
+          "JWT Handshake Guard: Socket.io middleware (io.use) verifying token validity at connection time, terminating unauthorized clients.",
+          "Private 1-on-1 Mentorship Channels: On-demand secure chat rooms created between matched students and mentors (/api/chats/private).",
+          "5 Community Study Channels: Public groups tailored for Frontend, Backend, UI/UX Design, Data Science, and Mobile Development.",
+          "PostgreSQL Persistence: Messages sent via send_message are atomically committed to the database and broadcasted via receive_message.",
+        ],
+      },
+      {
+        id: "gemini-copilot",
+        title: "Google Gemini AI Copilot Assistant",
+        badge: "Artificial Intelligence",
+        desc: "Intelligent conversational assistant powered by Google's generative AI, integrated directly into the top navigation.",
+        points: [
+          "Powered by @google/generative-ai: Running the ultra-responsive gemini-flash-latest model for contextual assistance.",
+          "Custom System Instruction: Dedicated 'RuangTumbuh Bot' persona guiding users on time wallet rules, course discovery, and troubleshooting.",
+          "Kinetic Drawer UI: Multi-layer spring animation drawer built with Framer Motion, featuring live typing indicator and auto-scrolling.",
+        ],
+      },
+      {
+        id: "dashboard-analytics",
+        title: "Learning Dashboard & Profile Governance",
+        badge: "User Experience",
+        desc: "Holistic command center providing students and mentors with immediate visibility into time balances, schedules, and learning velocity.",
+        points: [
+          "Metrics Command Center: Real-time visual cards tracking remaining time balance, total learning minutes, and completed sessions.",
+          "Profile Management & Multer Uploads: Comprehensive bio, passions JSON, institution data, and avatar image uploads saved to /uploads.",
+          "30-Minute Inactivity Timeout: AuthContext listens for mouse, keyboard, and scroll activity, automatically logging out idle sessions to protect wallets.",
+        ],
+      },
+      {
+        id: "physics-kinetic-ux",
+        title: "Matter.js 2D Physics & Kinetic Landing Engine",
+        badge: "Interactive UI",
+        desc: "Playful landing page visual engine utilizing rigid-body 2D gravity physics and smooth inertia scrolling.",
+        points: [
+          "Matter.js 2D Rigid Bodies: Geometric shapes drop under gravitational simulation, reacting to cursor push, bounce, and collision forces.",
+          "Lenis Inertia Scrolling: Ultra-smooth momentum-based page scrolling eliminating micro-stutters during rapid wheel navigation.",
+          "Framer Motion Micro-Interactions: Fluid accordion collapses, card hover physics, and sticky narrative scroll stacks.",
+        ],
+      },
+      {
+        id: "shared-zod-monorepo",
+        title: "Shared Zod Contracts & Workspace Architecture",
+        badge: "Contract Parity",
+        desc: "Decoupled monorepo architecture leveraging @rutu/shared for synchronized cross-boundary data schemas.",
+        points: [
+          "Zero Code Duplication: Validation schemas (auth.schema.js) are authored once and shared across client forms and server parsers.",
+          "100% Contract Parity: Guarantees frontend inputs and backend route middlewares enforce identical constraints.",
+          "Type Inference & Sanitization: Automatic body stripping preventing unrecognized or unauthorized fields from reaching service logic.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Atomic Time Banking & Booking Lifecycle",
+      lead: "All time-wallet deductions and transfers execute inside isolated Prisma transactions to guarantee complete financial integrity without conventional currency.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Student Action",
+          title: "Course Booking & Escrow Hold",
+          desc: "Student selects a course slot. The system verifies timeBalance >= durationMinutes and executes an atomic escrow deduction.",
+          action: "prisma.$transaction Balance Deduction",
+        },
+        {
+          level: "Stage 02",
+          role: "Mentor Review",
+          title: "Application Acceptance & Token Issuance",
+          desc: "Mentor reviews the request. Upon approval, status transitions to ACCEPTED, a 6-character token is issued, and mentor wallet increments.",
+          action: "Wallet Credit & Token Generation",
+        },
+        {
+          level: "Stage 03",
+          role: "Session Completion",
+          title: "Token Validation & Star Review",
+          desc: "Following the session, the student inputs the 6-character token to mark the session COMPLETED, unlocking qualitative reviews and ratings.",
+          action: "Final Status Lock & Review Feedback",
+        },
+      ],
+      lockMechanism: {
+        title: "Atomic Rollback & Instant Refund Guarantee",
+        desc: "All wallet deductions are protected by Prisma transactions. If a mentor rejects the booking or the student cancels prior to acceptance, the system automatically rolls back the escrow, refunding the exact durationMinutes back to the student's balance instantly with zero race conditions.",
+      },
+    },
+    architectureTitle: "Decoupled Monorepo & Modular Service Architecture",
+    architectureLead:
+      "Organized as a pnpm workspace monorepo separating shared validation contracts, Express 5 backend services, and a React 19 frontend SPA with strict boundary isolation.",
+    architecture: {
+      type: "pnpm Workspaces Monorepo",
+      protocol: "RESTful JSON API + WebSocket (WSS)",
+      layers: [
+        {
+          name: "Frontend SPA",
+          badge: "React 19 + Vite 7",
+          desc: "Modern Single Page Application powered by TanStack React Query v5 caching, Matter.js 2D physics canvas, Framer Motion spring animations, and Lenis smooth scrolling.",
+        },
+        {
+          name: "Shared Contracts (@rutu/shared)",
+          badge: "Zod Schema Library",
+          desc: "Monorepo shared package ensuring 100% data contract parity between React Hook Form client validation and Express request body middleware without code duplication.",
+        },
+        {
+          name: "Gateway & Security",
+          badge: "Express 5 + Helmet",
+          desc: "Layered security perimeter featuring dual-tier rate limiting (15 req/15min auth, 300 req/5min global), Helmet HTTP header hardening, CORS whitelisting, and JWT middleware.",
+        },
+        {
+          name: "Core Business Services",
+          badge: "Express 5 + Socket.io",
+          desc: "Modular service architecture dividing domain logic: BookingService (atomic wallet), CourseService (infinite catalog), ScheduleService (WIB aggregator), and Socket.io server.",
+        },
+        {
+          name: "Storage & AI Cloud",
+          badge: "PostgreSQL + Gemini AI",
+          desc: "PostgreSQL database managed by Prisma ORM with connection pooling, coupled with Google Generative AI API (gemini-flash-latest) and Multer local disk storage.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend Application",
+        items: [
+          { name: "React 19", role: "Core UI Library" },
+          { name: "Vite 7", role: "High-speed Build Tool & Dev Server" },
+          { name: "TanStack React Query v5", role: "Server State & Auto Cache Invalidation" },
+          { name: "React Router v6", role: "Client-side Routing" },
+          { name: "Matter.js", role: "2D Physics Rigid-Body Canvas" },
+          { name: "Framer Motion 12", role: "Spring Motion & Slide-in Drawers" },
+          { name: "Lenis Scroll", role: "Smooth Inertia Momentum Scrolling" },
+          { name: "Bootstrap 5 & React-Bootstrap", role: "Grid System & Responsive Layout" },
+          { name: "React Hook Form + Zod", role: "Type-safe Form State & Validation" },
+        ],
+      },
+      {
+        category: "Backend & Gateway",
+        items: [
+          { name: "Node.js 22 LTS", role: "High-performance Server Runtime" },
+          { name: "Express 5", role: "Modular RESTful Web Engine" },
+          { name: "Socket.io 4", role: "Authenticated Real-time WebSocket Protocol" },
+          { name: "Prisma 7 ORM", role: "Type-safe ORM & Automated Migrations" },
+          { name: "PostgreSQL", role: "Relational ACID-Compliant Database" },
+          { name: "@google/generative-ai", role: "Gemini AI Copilot Integration" },
+          { name: "Passport / JWT & Bcryptjs", role: "Stateless Auth & Password Hashing (10 rounds)" },
+          { name: "Express Rate Limit & Helmet", role: "Brute-force Mitigation & HTTP Headers" },
+          { name: "Winston & Daily Rotate File", role: "Structured Logging (14-day retention)" },
+          { name: "Multer", role: "Multipart Avatar Upload Storage" },
+        ],
+      },
+      {
+        category: "DevOps, Container & Testing",
+        items: [
+          { name: "pnpm Workspaces", role: "Monorepo Workspace Orchestration" },
+          { name: "Docker & Docker Compose", role: "Multi-container Orchestration (DB, API, Frontend)" },
+          { name: "Multi-Stage Nginx Alpine", role: "Ultra-lightweight Production Frontend Image" },
+          { name: "Vitest & React Testing Library", role: "Client-side Unit & Component Testing" },
+          { name: "Jest & Supertest", role: "Backend API Integration Testing" },
+          { name: "Husky & Lint-staged", role: "Automated Pre-commit Code Verification" },
+          { name: "GitHub Actions", role: "CI/CD Automated Build & Verification Pipeline" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "rutu-backend/ (Express 5 + Prisma ORM)",
+        items: [
+          "src/controllers/ — Auth, user, booking, course, schedule, chat, and chatbot controllers",
+          "src/services/ — BookingService ($transaction), CourseService, ScheduleService, Gemini AI",
+          "src/middleware/ — Rate limiter (auth/global), Helmet, CORS whitelist, JWT verification, Multer",
+          "src/sockets/ — Socket.io real-time chat gateway with JWT handshake authorization",
+          "prisma/ — PostgreSQL schema definitions, migrations, and community seed scripts",
+        ],
+      },
+      {
+        name: "rutu-frontend/ (React 19 + TanStack Query + Vite 7)",
+        items: [
+          "src/pages/ — Landing (Matter.js), Courses (infinite query), Dashboard, Messages, Schedule",
+          "src/hooks/ — useSearchCourses (debounce), useMatterPhysics, useSocketChat, useAuth",
+          "src/components/ — ChatbotPanel (Gemini), Navigation, CourseCards, ScheduleCalendar",
+          "src/context/ — AuthContext with 30-min inactivity timeout and user state",
+          "src/services/ — Axios API clients with Bearer token interceptors",
+        ],
+      },
+      {
+        name: "packages/shared/ (@rutu/shared)",
+        items: [
+          "src/schemas/auth.schema.js — Shared Zod login & registration schemas",
+          "src/schemas/course.schema.js — Shared course and module validation schemas",
+          "package.json — Shared internal package consumed by frontend and backend",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "User & UserSkill",
+        purpose:
+          "User credentials, bcrypt password, timeBalance (Time Wallet integer), location, bio, passions JSON, and linked tutoring skills.",
+      },
+      {
+        name: "Course & CourseBooking",
+        purpose:
+          "Course catalog entries with hierarchical JSON curriculum modules, linked to student bookings, 6-character verification tokens, and ratings.",
+      },
+      {
+        name: "Booking & Review",
+        purpose:
+          "1-on-1 mentoring requests, scheduled times, duration in minutes, meeting links, status enums, and qualitative post-session feedback.",
+      },
+      {
+        name: "ChatRoom, Message & Participant",
+        purpose:
+          "Direct 1-on-1 and topic-based community chat rooms, persistent message history, and user channel participation.",
+      },
+      {
+        name: "Notification",
+        purpose:
+          "In-app activity notifications dispatching alerts for booking updates, session verification tokens, and chat mentions.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Security Safeguards",
+    securityLead:
+      "Multi-layered defense architecture protecting time-wallet balances, mitigating automated abuse, and enforcing strict data isolation.",
+    apiEndpoints: [
+      {
+        group: "Authentication (/api/auth)",
+        routes: [
+          { method: "POST", path: "/api/auth/register", desc: "User registration with shared Zod validation & 30-min balance bonus" },
+          { method: "POST", path: "/api/auth/login", desc: "Authenticate credentials and issue stateless JWT Bearer token" },
+        ],
+      },
+      {
+        group: "User & Dashboard (/api/users)",
+        routes: [
+          { method: "GET", path: "/api/users/search", desc: "Query users by name or email for collaboration" },
+          { method: "GET", path: "/api/users/:id", desc: "Retrieve user profile, passions, and learning velocity" },
+          { method: "GET", path: "/api/users/:id/dashboard", desc: "Fetch learning dashboard metrics, active balance, and upcoming sessions" },
+          { method: "PUT", path: "/api/users/:id", desc: "Update profile metadata and upload avatar image (Multer + JWT)" },
+        ],
+      },
+      {
+        group: "Course Management (/api/courses)",
+        routes: [
+          { method: "GET", path: "/api/courses", desc: "Paginated course catalog with category filter and debounced search" },
+          { method: "POST", path: "/api/courses", desc: "Create new course with hierarchical syllabus modules (JWT Required)" },
+          { method: "GET", path: "/api/courses/:id", desc: "Retrieve comprehensive course curriculum and mentor profile" },
+          { method: "PUT", path: "/api/courses/:id", desc: "Edit course details, syllabus modules, or requirements (JWT Required)" },
+          { method: "DELETE", path: "/api/courses/:id", desc: "Deprecate or remove course from active catalog (JWT Required)" },
+        ],
+      },
+      {
+        group: "Time Banking & Booking (/api/bookings)",
+        routes: [
+          { method: "POST", path: "/api/bookings", desc: "Request course booking with atomic time wallet escrow deduction (JWT Required)" },
+          { method: "GET", path: "/api/bookings/student", desc: "Retrieve student's sent booking requests and session statuses (JWT Required)" },
+          { method: "GET", path: "/api/bookings/tutor", desc: "Retrieve mentor's incoming student booking requests (JWT Required)" },
+          { method: "PATCH", path: "/api/bookings/:id/status", desc: "Accept, reject, or cancel booking with automated refund (JWT Required)" },
+          { method: "POST", path: "/api/bookings/:id/complete", desc: "Finalize session via 6-character student verification token (JWT Required)" },
+          { method: "POST", path: "/api/bookings/:id/feedback", desc: "Submit post-session 1-to-5 star rating and review (JWT Required)" },
+        ],
+      },
+      {
+        group: "Schedule & Calendar (/api/schedules)",
+        routes: [
+          { method: "GET", path: "/api/schedules/:id", desc: "Aggregated calendar combining course bookings and self-mentoring slots (JWT Required)" },
+          { method: "POST", path: "/api/schedules", desc: "Create custom self-mentoring availability slot (JWT Required)" },
+          { method: "PUT", path: "/api/schedules/:id", desc: "Update schedule timing and session duration (JWT Required)" },
+          { method: "DELETE", path: "/api/schedules/:id", desc: "Remove schedule entry from calendar (JWT Required)" },
+        ],
+      },
+      {
+        group: "Real-time Chat & AI (/api/chats & /api/chatbot)",
+        routes: [
+          { method: "GET", path: "/api/chats/rooms", desc: "List user's active private and community conversation channels (JWT Required)" },
+          { method: "GET", path: "/api/chats/:roomId/messages", desc: "Fetch historical message stream for specified chat room (JWT Required)" },
+          { method: "POST", path: "/api/chats/private", desc: "Initialize or fetch private 1-on-1 mentorship chat room (JWT Required)" },
+          { method: "GET", path: "/api/chats/search-groups", desc: "Search public community discussion channels (JWT Required)" },
+          { method: "POST", path: "/api/chatbot", desc: "Query Google Gemini AI assistant for guidance and mentor recommendations" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Tiered Rate Limiting Protection",
+        desc: "Auth limiter restricts login/registration to 15 requests per 15 minutes to thwart brute-force attacks; global limiter restricts general traffic to 300 requests per 5 minutes.",
+      },
+      {
+        title: "Prisma ACID Transactions ($transaction)",
+        desc: "All Time Wallet debits and credits execute inside isolated atomic transactions to prevent race conditions, double-spending, and partial ledger write corruption.",
+      },
+      {
+        title: "WebSocket JWT Handshake Authorization",
+        desc: "Socket.io middleware validates JWT credentials before establishing the WSS connection, blocking unauthenticated socket connections at the transport layer.",
+      },
+      {
+        title: "Inactivity Session Safeguard",
+        desc: "Client-side activity listener triggers automatic session revocation after 30 minutes of idle time to safeguard open time wallets on public or shared terminals.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "100%",
+        label: "Transactional Integrity",
+        desc: "Zero double-deductions via Prisma atomic transactions",
+      },
+      {
+        value: "<200ms",
+        label: "p95 API Latency",
+        desc: "Sub-200ms response under high concurrency load",
+      },
+      {
+        value: "26",
+        label: "Course Categories",
+        desc: "Dynamic modules across engineering, design, and science",
+      },
     ],
     sections: [
       {
         title: "The brief",
         body: [
-          "Students needed a way to find verified tutors and book lessons without phone tag. Tutors needed a calendar that respected their other commitments.",
+          "Traditional tutoring platforms impose significant financial barriers, restricting access to quality education. The vision for RuangTumbuh was to democratize knowledge exchange through the Time Banking philosophy: 1 hour of learning graphic design holds the exact same value as 1 hour of learning physics.",
+          "Engineering Mandate: Build a secure, cashless educational platform where users exchange skills using a decentralized Time Wallet, backed by atomic transaction safety, real-time messaging, and an engaging kinetic user experience.",
         ],
       },
       {
-        title: "Approach",
+        title: "Architecture & Time Banking",
         body: [
-          "Pnpm workspaces with shared Zod schemas between client and server. Scheduling uses optimistic concurrency on a single PostgreSQL transaction to prevent double-bookings.",
+          "Adopted a pnpm workspace monorepo dividing the project into @rutu/shared (Zod data validation contracts), rutu-backend (Express 5 with Prisma ORM and Socket.io), and rutu-frontend (React 19 with TanStack Query and Matter.js).",
+          "The Time Wallet engine operates on strict transaction atomicity: when a student books a session, the duration is locked in escrow using prisma.$transaction. If accepted, the mentor is credited and a 6-character verification token is issued; if cancelled or rejected, an instant refund is executed.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Preventing double-spending and race conditions during concurrent booking requests. Solved by wrapping all wallet debits and escrow holds within isolated PostgreSQL transactions via prisma.$transaction, guaranteeing ACID compliance.",
+          "Synchronizing WebSocket real-time chat with persistent database storage while ensuring connection security. Built an authenticated Socket.io gateway requiring JWT verification during the initial WSS handshake (io.use).",
+          "Designing an interactive 2D physics hero experience that runs smoothly without degrading mobile performance. Leveraged Matter.js with constrained canvas boundaries and Lenis smooth momentum scrolling.",
         ],
       },
       {
         title: "Results",
         body: [
-          "Test coverage at 78% (Jest + Vitest). Sub-200ms p95 API response under load.",
+          "Sub-200ms p95 API response times verified under load on Railway production infrastructure.",
+          "100% transactional consistency achieved across concurrent booking simulations with zero balance drift.",
+          "Successfully indexed 26 diverse learning disciplines with debounced real-time search.",
         ],
       },
     ],
     stack: [
-      "React",
-      "Vite",
-      "Express",
+      "React 19",
+      "Vite 7",
+      "Express 5",
       "PostgreSQL",
-      "Prisma",
-      "Vitest",
-      "Jest",
+      "Prisma ORM",
+      "Socket.io",
+      "Google Gemini AI",
+      "TanStack Query",
+      "Matter.js",
+      "Framer Motion",
+      "Lenis Scroll",
+      "Zod",
       "Docker",
     ],
     links: [
+      { label: "Live Demo", url: "https://ruang-tumbuh.vercel.app/" },
+      { label: "Backend API", url: "https://ruangtumbuh-production.up.railway.app/" },
       { label: "GitHub", url: "https://github.com/adyvka31/RuangTumbuh" },
     ],
   },

@@ -307,7 +307,7 @@ export default function ProjectDetailPage() {
                     <MediaFrame
                       src={project.thumbnail}
                       alt={project.title}
-                      chromeLabel={`${project.slug}.intisel.id`}
+                      chromeLabel={detail?.domain || `${project.slug}.vercel.app`}
                     />
                   </div>
                 ) : null}
@@ -325,9 +325,12 @@ export default function ProjectDetailPage() {
           items={detail.gallery}
           id="live-product"
           sectionNumber="02"
-          label="PRODUCTION INTERFACES"
-          title="The Live System in Action"
-          lead="Explore high-fidelity production interfaces of the Databank Ecosystem — from operational analytics dashboards and role governance matrices to subcontractor PO databases and high-throughput virtualized data tables."
+          label={detail?.galleryLabel || "PRODUCTION INTERFACES"}
+          title={detail?.galleryTitle || "The Live System in Action"}
+          lead={
+            detail?.galleryLead ||
+            "Explore high-fidelity production interfaces — from operational analytics dashboards and role governance matrices to vendor workflows and real-time collaboration tools."
+          }
         />
       )}
 
@@ -341,11 +344,16 @@ export default function ProjectDetailPage() {
               <div className={styles.sectionHeader}>
                 <SectionLabel number="03" label="CAPABILITIES & WORKFLOW" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Four Ecosystem Pillars &{" "}
-                  <span className="font-serif text-glow">Core Capabilities</span>
+                  {detail?.capabilitiesTitle || (
+                    <>
+                      Four Ecosystem Pillars &{" "}
+                      <span className="font-serif text-glow">Core Capabilities</span>
+                    </>
+                  )}
                 </h2>
                 <p className={styles.sectionLead}>
-                  Built to automate mission-critical telecom operations — unifying field engineering, outsource procurement, background scraping pipelines, and workforce attendance.
+                  {detail?.capabilitiesLead ||
+                    "Built to automate mission-critical operations — unifying field engineering, outsource procurement, background pipelines, and interactive workflows."}
                 </p>
               </div>
             </NativeReveal>
@@ -486,10 +494,11 @@ export default function ProjectDetailPage() {
                 <NativeReveal>
                   <div className={styles.subSectionHeader}>
                     <h3 className={styles.subSectionTitle}>
-                      Sequential 3-Stage Approval Engine
+                      {detail.approvalWorkflow.title || "Sequential 3-Stage Approval Engine"}
                     </h3>
                     <p className={styles.subSectionLead}>
-                      Multi-tier approval workflow backed by HTML5 Canvas digital signatures and automated row locking (PO Row Lock) to guarantee transactional integrity.
+                      {detail.approvalWorkflow.lead ||
+                        "Multi-tier approval workflow backed by HTML5 Canvas digital signatures and automated row locking (PO Row Lock) to guarantee transactional integrity."}
                     </p>
                   </div>
                 </NativeReveal>
@@ -552,11 +561,16 @@ export default function ProjectDetailPage() {
               <div className={styles.sectionHeader}>
                 <SectionLabel number="04" label="SYSTEM ANATOMY & ARCHITECTURE" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Decoupled Monorepo &{" "}
-                  <span className="font-serif text-glow">Modular Schema</span>
+                  {detail?.architectureTitle || (
+                    <>
+                      Decoupled Monorepo &{" "}
+                      <span className="font-serif text-glow">Modular Schema</span>
+                    </>
+                  )}
                 </h2>
                 <p className={styles.sectionLead}>
-                  Engineered for fault tolerance and strict domain isolation. The React 19 SPA interfaces with NestJS 11 services through a strongly typed RESTful contract, protected by stateless JWT authentication and granular RBAC guards.
+                  {detail?.architectureLead ||
+                    "Engineered for fault tolerance and strict domain isolation. The React 19 SPA interfaces with backend services through a strongly typed RESTful contract, protected by stateless JWT authentication and granular guards."}
                 </p>
               </div>
             </NativeReveal>
@@ -719,11 +733,16 @@ export default function ProjectDetailPage() {
               <div className={styles.sectionHeader}>
                 <SectionLabel number="05" label="SECURITY, API & PRODUCTION IMPACT" />
                 <h2 className={`${styles.sectionTitle} text-fade`}>
-                  Hardened Perimeter &{" "}
-                  <span className="font-serif text-glow">Proven Impact</span>
+                  {detail?.securityTitle || (
+                    <>
+                      Hardened Perimeter &{" "}
+                      <span className="font-serif text-glow">Proven Impact</span>
+                    </>
+                  )}
                 </h2>
                 <p className={styles.sectionLead}>
-                  Enterprise-grade security policies, documented API contracts, and the quantifiable outcomes achieved during production deployment.
+                  {detail?.securityLead ||
+                    "Enterprise-grade security policies, documented API contracts, and the quantifiable outcomes achieved during production deployment."}
                 </p>
               </div>
             </NativeReveal>
@@ -807,24 +826,35 @@ export default function ProjectDetailPage() {
                 {resultsSection && (
                   <NativeReveal delay={0.15}>
                     <div className={styles.resultsRow}>
-                      <article className={styles.resultCard}>
-                        <span className={`font-serif ${styles.resultValue}`}>
-                          {isProductionReady ? "Live" : "Active"}
-                        </span>
-                        <span className={styles.resultText}>
-                          {isProductionReady
-                            ? "Deployed and operational in production"
-                            : "Core modules under active engineering delivery"}
-                        </span>
-                      </article>
-                      <article className={styles.resultCard}>
-                        <span className={`font-serif ${styles.resultValue}`}>18%</span>
-                        <span className={styles.resultText}>Reduction in monthly financial close cycle time</span>
-                      </article>
-                      <article className={styles.resultCard}>
-                        <span className={`font-serif ${styles.resultValue}`}>4,328</span>
-                        <span className={styles.resultText}>SKUs migrated with zero data reconciliation errors</span>
-                      </article>
+                      {detail?.metricOutcomes ? (
+                        detail.metricOutcomes.map((m, i) => (
+                          <article key={i} className={styles.resultCard}>
+                            <span className={`font-serif ${styles.resultValue}`}>{m.value}</span>
+                            <span className={styles.resultText}>{m.label}</span>
+                          </article>
+                        ))
+                      ) : (
+                        <>
+                          <article className={styles.resultCard}>
+                            <span className={`font-serif ${styles.resultValue}`}>
+                              {isProductionReady ? "Live" : "Active"}
+                            </span>
+                            <span className={styles.resultText}>
+                              {isProductionReady
+                                ? "Deployed and operational in production"
+                                : "Core modules under active engineering delivery"}
+                            </span>
+                          </article>
+                          <article className={styles.resultCard}>
+                            <span className={`font-serif ${styles.resultValue}`}>18%</span>
+                            <span className={styles.resultText}>Reduction in monthly financial close cycle time</span>
+                          </article>
+                          <article className={styles.resultCard}>
+                            <span className={`font-serif ${styles.resultValue}`}>4,328</span>
+                            <span className={styles.resultText}>SKUs migrated with zero data reconciliation errors</span>
+                          </article>
+                        </>
+                      )}
                     </div>
                   </NativeReveal>
                 )}
