@@ -172,31 +172,62 @@
   }
 }
 
-/* Specialized 5-Item Meta Grid (Projects Act I) */
+/* Specialized 5-Item Meta Grid (1 Row on Desktop/Tablet) */
 .meta5 {
   max-width: 68rem;
 }
 
 @media (max-width: 639px) {
-  .meta5 > .metaItem:last-child:nth-child(odd) {
+  .meta.meta5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .meta.meta5 > .metaItem:last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-  .meta5 {
+@media (min-width: 640px) and (max-width: 767px) {
+  .meta.meta5 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
-  .meta5 > .metaItem:nth-child(1) { grid-column: span 3; }
-  .meta5 > .metaItem:nth-child(2) { grid-column: span 3; }
-  .meta5 > .metaItem:nth-child(3) { grid-column: span 2; }
-  .meta5 > .metaItem:nth-child(4) { grid-column: span 2; }
-  .meta5 > .metaItem:nth-child(5) { grid-column: span 2; }
+  .meta.meta5 > .metaItem:nth-child(1) { grid-column: span 3; }
+  .meta.meta5 > .metaItem:nth-child(2) { grid-column: span 3; }
+  .meta.meta5 > .metaItem:nth-child(3) { grid-column: span 2; }
+  .meta.meta5 > .metaItem:nth-child(4) { grid-column: span 2; }
+  .meta.meta5 > .metaItem:nth-child(5) { grid-column: span 2; }
 }
 
-@media (min-width: 1024px) {
-  .meta5 {
+@media (min-width: 768px) {
+  .meta.meta5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* Specialized 6-Item Meta Grid (3x2 Layout) */
+.meta6 {
+  max-width: 60rem;
+}
+
+@media (max-width: 639px) {
+  .meta.meta6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) {
+  .meta.meta6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Specialized 4-Item Meta Grid */
+.meta4 {
+  max-width: 54rem;
+}
+
+@media (min-width: 768px) {
+  .meta4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

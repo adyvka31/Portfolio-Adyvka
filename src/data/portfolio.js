@@ -17,6 +17,7 @@ import aigeneratorImg from "../assets/aigenerator.webp?w=400;800&quality=70&form
 import newsImg from "../assets/news.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import qrscannerImg from "../assets/qrscanner.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import todoImg from "../assets/todo.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import quranImg from "../assets/quran.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import javaislandImg from "../assets/javaisland.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import fitsmartImg from "../assets/fitsmart.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import coffeeeShopImg from "../assets/coffeee-shop.webp?w=400;800&quality=70&format=avif;webp&as=picture";
@@ -309,15 +310,22 @@ export const projects = [
   },
   {
     id: "ai-ticket-manager",
-    category: "ai",
-    span: "md",
-    label: "FLUTTER • GOOGLE AI",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · AI & PRODUCTIVITY",
     title: "AI Ticket Manager",
-    year: "2025",
+    year: "2024",
     description:
-      "A mobile application for smart ticket management with Gemini API integration. Allows users to store real-time ticket data and receive automated AI-based analytics summaries.",
-    tags: ["Flutter", "Firebase", "Gemini API", "Provider"],
-    link: "#",
+      "Cross-platform intelligent task and ticket management mobile application built with Flutter, Firebase Authentication, and Cloud Firestore. Powered by Google Gemini AI for automated task summarization, contextual prompt instructions, real-time sync, and multi-tenant isolation.",
+    tags: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Gemini API",
+      "Provider",
+      "Cloud Firestore",
+    ],
+    link: "https://github.com/adyvka31/AI-Generator-App",
     thumbnail: aigeneratorImg,
   },
 
@@ -325,12 +333,12 @@ export const projects = [
     id: "attendance-app",
     category: "mobile",
     span: "sm",
-    label: "MOBILE · PRODUCTIVITY",
+    label: "MOBILE · BIOMETRICS & PRODUCTIVITY",
     title: "Attendance App",
     year: "2024",
     description:
-      "Cross-platform attendance digitization app built with Flutter. Uses real-time camera access and Firebase backend to streamline check-in flows for organizations.",
-    tags: ["Flutter", "Dart", "Firebase"],
+      "Cross-platform mobile attendance and task management application built with Flutter, Firebase, and Google ML Kit. Features on-device biometric face verification, real-time Firestore task streaming, and reactive GetX theme switching.",
+    tags: ["Flutter", "Dart", "Firebase", "Google ML Kit", "GetX", "Camera API"],
     link: "https://github.com/adyvka31/Attendance-App",
     thumbnail: todoImg,
   },
@@ -338,12 +346,12 @@ export const projects = [
     id: "qr-scanner",
     category: "mobile",
     span: "sm",
-    label: "MOBILE · UTILITIES",
+    label: "MOBILE · EVENT TICKETING & SCANNER",
     title: "QR Guest Manager",
     year: "2024",
     description:
-      "QR Scanner and guest registration manager built with Flutter. Integrates Firebase for secure real-time data storage, streamlining event check-in workflows.",
-    tags: ["Flutter", "Dart", "Firebase"],
+      "High-speed event ticketing and guest check-in mobile application built with Flutter, Firebase, and Dio REST API. Features live camera barcode scanning via mobile_scanner, dynamic QR vector generation, and duplicate-prevention check-in workflows.",
+    tags: ["Flutter", "Dart", "Firebase", "Mobile Scanner", "Dio", "QR Flutter"],
     link: "https://github.com/adyvka31/QR_Scanner_App",
     thumbnail: qrscannerImg,
   },
@@ -351,12 +359,12 @@ export const projects = [
     id: "news-app",
     category: "mobile",
     span: "sm",
-    label: "MOBILE · NEWS",
+    label: "MOBILE · NEWS & MEDIA",
     title: "News App",
     year: "2024",
     description:
-      "Cross-platform news reader app that demonstrates real-time REST API integration, clean state management, and a well-structured business logic layer.",
-    tags: ["Flutter", "Dart", "REST API"],
+      "Cross-platform digital journalism and news curation mobile app built with Flutter and GetX reactive state management. Ingests live CNN Indonesia REST streams with real-time substring search, calendar date filtering, dynamic dark mode, and persistent bookmark curation.",
+    tags: ["Flutter", "Dart", "GetX", "REST API", "Lottie", "HTTP"],
     link: "https://github.com/adyvka31/News-App",
     thumbnail: newsImg,
   },
@@ -364,20 +372,20 @@ export const projects = [
     id: "quran-app",
     category: "mobile",
     span: "sm",
-    label: "MOBILE · LIFESTYLE",
+    label: "MOBILE · ISLAMIC & LIFESTYLE",
     title: "Quran App",
     year: "2024",
     description:
-      "Cross-platform Quran reader focused on clean UI, responsive performance, and structured separation of business logic — making daily reading seamless and accessible.",
-    tags: ["Flutter", "Dart", "C++"],
+      "Modern digital Al-Quran mobile application built with Flutter, GetX reactive state management, and REST API integration. Features 114 surah directory browsing, responsive search, full ayat reader with Arabic typography and HTML transliteration, dynamic dark mode, and persistent bookmark curation.",
+    tags: ["Flutter", "Dart", "GetX", "REST API", "HTML", "HTTP"],
     link: "https://github.com/adyvka31/Quran-App",
+    thumbnail: quranImg,
   },
 ];
 
 export const projectFilters = [
   { id: "web", label: "Web" },
   { id: "mobile", label: "Mobile" },
-  { id: "ai", label: "AI" },
 ];
 
 export const extraCertificatesOnlyForPage = [

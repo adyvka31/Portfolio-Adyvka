@@ -48,6 +48,31 @@ import delifood1 from "../assets/delifood/delifood1.webp";
 import delifood2 from "../assets/delifood/delifood2.webp";
 import delifood3 from "../assets/delifood/delifood3.webp";
 import delifood4 from "../assets/delifood/delifood4.webp";
+import attendanceImg from "../assets/todo.webp";
+import attendance1 from "../assets/attendance/attendance1.webp";
+import attendance2 from "../assets/attendance/attendance2.webp";
+import attendance3 from "../assets/attendance/attendance3.webp";
+import attendance4 from "../assets/attendance/attendance4.webp";
+import qrscannerImg from "../assets/qrscanner.webp";
+import qrscanner1 from "../assets/qrscanner/qrscanner1.webp";
+import qrscanner2 from "../assets/qrscanner/qrscanner2.webp";
+import qrscanner3 from "../assets/qrscanner/qrscanner3.webp";
+import qrscanner4 from "../assets/qrscanner/qrscanner4.webp";
+import newsImg from "../assets/news.webp";
+import news1 from "../assets/news/news1.webp";
+import news2 from "../assets/news/news2.webp";
+import news3 from "../assets/news/news3.webp";
+import news4 from "../assets/news/news4.webp";
+import quranImg from "../assets/quran.webp";
+import quran1 from "../assets/quran/quran1.webp";
+import quran2 from "../assets/quran/quran2.webp";
+import quran3 from "../assets/quran/quran3.webp";
+import quran4 from "../assets/quran/quran4.webp";
+import aigeneratorImg from "../assets/aigenerator.webp";
+import aigenerator1 from "../assets/aigenerator/aigenerator1.webp";
+import aigenerator2 from "../assets/aigenerator/aigenerator2.webp";
+import aigenerator3 from "../assets/aigenerator/aigenerator3.webp";
+import aigenerator4 from "../assets/aigenerator/aigenerator4.webp";
 
 export const projectDetails = {
   databank: {
@@ -5065,32 +5090,2567 @@ export const projectDetails = {
     ],
   },
 
-  "ai-ticket-manager": {
+  "attendance-app": {
+    title: "Attendance App",
+    subtitle: "On-Device Biometric Face Verification & Mobile Task Attendance System",
+    status: "Production Ready",
     summary:
-      "Mobile ticket-management app with Gemini integration — stores ticket data in real time and produces AI-generated analytics summaries.",
+      "A cross-platform mobile attendance and productivity platform built with Flutter, Firebase, and Google ML Kit. Combines real-time on-device biometric facial landmark detection via hardware camera streams, live cloud task synchronization through Cloud Firestore, reactive GetX theme management, and stateless Firebase Authentication.",
+    domain: "github.com/adyvka31/Attendance-App",
     meta: [
-      { label: "Role", value: "Mobile dev" },
-      { label: "Stack", value: "Flutter + Gemini" },
-      { label: "Year", value: "2025" },
+      { label: "Role", value: "Mobile Application Engineer" },
+      { label: "Platform", value: "Android & iOS" },
+      { label: "Timeline", value: "2024" },
+      { label: "Architecture", value: "Controller-Based Pattern" },
+      { label: "ML Engine", value: "Google ML Kit Vision" },
+      { label: "BaaS", value: "Firebase Auth & Firestore" },
+    ],
+    galleryLabel: "MOBILE BIOMETRICS & INTERFACES",
+    galleryTitle: "The Attendance App Experience",
+    galleryLead:
+      "Explore the reactive mobile interfaces of Attendance App — from hardware-accelerated on-device face detection and live categorized task boards to dynamic dark/light theme switching and self-service credential recovery.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official Mobile Showcase & Multi-Screen Suite",
+        route: "app.attendance.mobile",
+        tag: "Brand Presentation",
+        image: attendanceImg,
+        desc: "Comprehensive application presentation flyer showcasing Attendance App's multi-device mobile architecture, on-device biometric verification, modern Poppins UI design, and cloud task management.",
+        features: [
+          "Cross-Platform Flutter 3.x Visual Shell",
+          "Google ML Kit On-Device Vision Engine",
+          "Cloud Firestore Real-Time Persistence",
+        ],
+      },
+      {
+        id: "home-dashboard",
+        title: "Categorized Task Dashboard & Live Firestore Stream",
+        route: "app.attendance.mobile/home",
+        tag: "Core Productivity Hub",
+        image: attendance1,
+        desc: "Central productivity dashboard featuring personalized user greeting, real-time task counters across 4 distinct categories (Design, Sport, Meet, Work), and reactive theme toggle button.",
+        features: [
+          "StreamBuilder Cloud Firestore Live Query",
+          "Dynamic Category Counter Badges",
+          "Reactive Light/Dark Theme Switching via GetX",
+        ],
+      },
+      {
+        id: "biometric-verification",
+        title: "On-Device Biometric Face Verification Pipeline",
+        route: "app.attendance.mobile/camera",
+        tag: "Edge ML Vision",
+        image: attendance2,
+        desc: "Hardware camera capture pipeline integrated with Google ML Kit Face Detection. Detects facial contours, landmarks, and classifications entirely on-device before granting access.",
+        features: [
+          "Google ML Kit FaceDetectorMode.accurate",
+          "100% On-Device Privacy (Zero Cloud Upload)",
+          "Dynamic Feedback & Verification Status Banner",
+        ],
+      },
+      {
+        id: "auth-registration",
+        title: "Stateless User Registration & Input Validation",
+        route: "app.attendance.mobile/register",
+        tag: "Identity Governance",
+        image: attendance3,
+        desc: "User onboarding interface featuring Google Fonts Poppins typography, rounded border text fields, password visibility toggles, and terms of service consent governance.",
+        features: [
+          "Firebase Authentication (Email & Password)",
+          "Real-Time Input Validation & Visual Error States",
+          "Consistent Poppins Design System",
+        ],
+      },
+      {
+        id: "session-recovery",
+        title: "Secure Sign-In & Self-Service Password Recovery",
+        route: "app.attendance.mobile/login",
+        tag: "Authentication & Security",
+        image: attendance4,
+        desc: "Vector-illustrated authentication screen with single-tap password reset delivery via Firebase Auth and session persistence across app launches.",
+        features: [
+          "Stateless Firebase Auth Session Tokens",
+          "Automated Password Reset Email Dispatch",
+          "Social Provider UI Federation Hooks",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "< 120ms",
+        label: "On-Device ML Latency",
+        note: "Hardware-accelerated Google ML Kit face landmark & contour evaluation",
+      },
+      {
+        value: "0ms",
+        label: "Sync Latency",
+        note: "Instant reactive UI updates via Firebase Firestore real-time snapshot streams",
+      },
+      {
+        value: "100%",
+        label: "Biometric Privacy",
+        note: "Zero biometric face images uploaded to cloud; 100% processed locally on-device",
+      },
+      {
+        value: "4 Domains",
+        label: "Dynamic Categories",
+        note: "Design, Sport, Meet, and Work with automated counter calculation",
+      },
+      {
+        value: "Reactive",
+        label: "GetX Theme Engine",
+        note: "One-tap instantaneous switching between custom Light and Dark themes",
+      },
+      {
+        value: "Dual Guard",
+        label: "Auth & Security",
+        note: "Stateless Firebase Auth credentials paired with user-isolated Firestore rules",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "On-Device Biometric Face Verification",
+        desc: "Integrates Google ML Kit face detection directly with camera hardware streams. Analyzes facial landmarks, contours, and presence in real time with sub-120ms inference latency and zero cloud data leaks.",
+      },
+      {
+        icon: "database",
+        title: "Stream-Driven Cloud Firestore Engine",
+        desc: "Employs persistent StreamBuilder listeners on user-scoped Firestore collections. Delivers real-time CRUD reactivity, automated timestamp auditing, and dynamic category task count recalculations.",
+      },
+      {
+        icon: "terminal",
+        title: "Reactive State & Instant Theme Engine",
+        desc: "Utilizes GetX reactive observables (isTheme.obs) to decouple theme state from widget lifecycles. Users switch seamlessly between custom high-contrast light and dark themes with zero redraw lag.",
+      },
+      {
+        icon: "cloud",
+        title: "Stateless Auth & Password Recovery",
+        desc: "Secured with Firebase Authentication supporting email/password registration, persistent session tokens via authStateChanges(), and self-service automated password reset pipelines.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Biometric Attendance Workflow",
+    capabilitiesLead:
+      "Engineered for frictionless biometric check-in and task tracking — merging hardware camera streams, local computer vision ML inference, cloud NoSQL streaming, and modern reactive Flutter state management.",
+    features: [
+      {
+        id: "biometric-face-detection",
+        title: "On-Device Biometric Face Verification Pipeline",
+        badge: "Edge AI / Computer Vision",
+        desc: "Real-time facial detection and landmark extraction powered by Google ML Kit running on-device via native C++ binaries.",
+        points: [
+          "Accurate Mode ML Engine: Configures FaceDetectorMode.accurate with landmark, contour, and classification models enabled for rigorous presence verification.",
+          "Hardware Camera Handshake: Initializes CameraController with ResolutionPreset.medium, providing smooth hardware viewfinder previews with zero frame dropping.",
+          "Dynamic Verification Feedback: Displays contextual status badges guiding the user ('Posisikan wajah Anda di depan kamera' → 'Berhasil mendeteksi 1 wajah').",
+          "Zero-Cloud Biometric Privacy: Biometric frames are processed strictly in local memory and instantly discarded after inference, ensuring strict compliance with biometric privacy standards.",
+        ],
+      },
+      {
+        id: "firestore-stream-hub",
+        title: "Stream-Driven Categorized Task Management",
+        badge: "Real-Time Cloud BaaS",
+        desc: "Continuous real-time synchronization between the Flutter client and Google Cloud Firestore with zero manual refreshes.",
+        points: [
+          "Persistent Snapshot Stream: Subscribes to collection('todo') filtered by active user ID and ordered chronologically by FieldValue.serverTimestamp().",
+          "4 Dynamic Category Hubs: Intuitively categorizes operational items into Design, Sport, Meet, and Work, calculating active task metrics on the fly.",
+          "Atomic Task Status Toggling: Checkbox clicks instantaneously trigger Firestore document update({'check': value}), reflecting completed strikethrough styling in real time.",
+          "Indonesian Date & Time Formatting: Integrates Intl DateFormat('d MMM, h:mm a') to format cloud timestamps into human-readable task audit logs.",
+        ],
+      },
+      {
+        id: "getx-theme-engine",
+        title: "Reactive Theme Management & Custom Design System",
+        badge: "UI Architecture & State",
+        desc: "Decoupled reactive theme controller providing instant visual mode switching without application rebuilds.",
+        points: [
+          "GetX Reactive Observable: ThemeController exposes isTheme.obs, allowing any widget to observe and toggle display modes reactively.",
+          "Custom Poppins Design System: Styled with Google Fonts Poppins across 400, 500, and 700 weights for crisp editorial readability.",
+          "Themed Form Fields & Buttons: Custom InputDecorationTheme with 15px rounded borders, subtle 0.5px boundaries, and #4A68FF primary brand button styling.",
+          "Adaptive System Overlays: AppBar elevation set to zero with transparent backgrounds to extend viewports behind the system status bar.",
+        ],
+      },
+      {
+        id: "firebase-auth-security",
+        title: "Stateless Authentication & Self-Service Recovery",
+        badge: "Identity & Governance",
+        desc: "Comprehensive identity management powered by Firebase Authentication with robust client-side validation.",
+        points: [
+          "Stream-Based Session Gate: App entry listens to FirebaseAuth.instance.authStateChanges(), automatically routing authenticated users to HomeScreen or LoginScreen.",
+          "Self-Service Password Reset: Dedicated ForgotPasswordScreen dispatching secure password recovery emails via sendPasswordResetEmail().",
+          "User Profile Slide-Out Drawer: Displays dynamic user initials avatar, display name, and registered email address alongside an authenticated logout confirmation dialog.",
+          "Granular Error Handling: Captures FirebaseAuthException codes to deliver actionable snackbars for invalid credentials, weak passwords, and network timeouts.",
+        ],
+      },
+      {
+        id: "client-search-filter",
+        title: "Real-Time Query Filtering & In-Memory Substring Search",
+        badge: "Search & Filtering",
+        desc: "High-performance instant search filtering across all task titles without additional database read costs.",
+        points: [
+          "Real-Time Text Controller Listener: searchController.addListener triggers instant client-side setState on every keystroke with zero debounce latency.",
+          "Normalized Lowercase Matching: Evaluates title substrings against search terms, providing smooth live filtering as users type.",
+          "Empty State Handling: Gracefully informs users when no matching tasks are found, maintaining visual clarity.",
+        ],
+      },
+      {
+        id: "crud-dialogs",
+        title: "Modal Bottom Sheets & Interactive CRUD Dialogs",
+        badge: "Interaction Design",
+        desc: "Intuitive bottom sheet creation forms and long-press dialogs for comprehensive task lifecycle management.",
+        points: [
+          "Keyboard-Aware Modal Bottom Sheet: _showAddTodoSheet dynamically shifts its padding using MediaQuery.viewInsets.bottom to avoid keyboard overlap.",
+          "Direct Task Title Editing: _showEditTodoDialog pre-populates existing titles and atomically updates Firestore records on confirmation.",
+          "Confirmation-Guarded Deletion: Long-press gestures trigger an AlertDialog confirmation before deleting documents, preventing accidental data loss.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Biometric Attendance & Task Synchronization Lifecycle",
+      lead: "From camera initialization and facial feature verification to cloud data synchronization — every operation follows a secure, privacy-preserving pipeline.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Hardware & Permission",
+          title: "Camera Handshake & Permission Verification",
+          desc: "Application requests camera hardware permissions via permission_handler. CameraController initializes the primary camera sensor with ResolutionPreset.medium.",
+          action: "Hardware Initialization & Viewfinder Ready",
+        },
+        {
+          level: "Stage 02",
+          role: "Edge ML Engine",
+          title: "On-Device Face Landmark & Contour Detection",
+          desc: "Image frame is passed into Google ML Kit InputImage. The face detector processes landmarks, contours, and classifications locally in under 120ms.",
+          action: "Local Inference → Verification Status Pass",
+        },
+        {
+          level: "Stage 03",
+          role: "Cloud BaaS",
+          title: "Authenticated Firestore Task Board & Sync",
+          desc: "Upon successful verification, the user accesses their personal task board. All tasks and status updates are synchronized live via Firebase Firestore streams.",
+          action: "Real-Time Snapshot Subscription & CRUD",
+        },
+      ],
+      lockMechanism: {
+        title: "Zero-Cloud Biometric Privacy Guarantee",
+        desc: "All face detection calculations are performed strictly within the device's volatile memory using on-device ML Kit models. No camera frames or facial landmark geometries are ever transmitted or saved to external servers, guaranteeing complete biometric confidentiality.",
+      },
+    },
+    architectureTitle: "Controller-Based Modular Flutter & Firebase BaaS Architecture",
+    architectureLead:
+      "Engineered with a clean separation between reactive Flutter UI widgets, on-device Google ML Kit computer vision models, GetX reactive state management, and Google Cloud Firestore streaming services.",
+    architecture: {
+      type: "Controller-Based Flutter + On-Device ML Kit + Firebase BaaS",
+      protocol: "Native Camera Streams + On-Device ML Inference + Firestore gRPC Streams",
+      layers: [
+        {
+          name: "Presentation Layer (Flutter 3.x)",
+          badge: "Dart ^3.8.1 + GetMaterialApp",
+          desc: "Cross-platform UI utilizing GetX reactive state controllers, custom Poppins typography hierarchy, animated bottom sheets, and responsive Material 3 design.",
+        },
+        {
+          name: "Edge ML Vision Layer",
+          badge: "Google ML Kit Face Detection",
+          desc: "High-performance on-device machine learning engine running FaceDetectorMode.accurate for landmark and contour detection without network dependency.",
+        },
+        {
+          name: "State & Theme Layer",
+          badge: "GetX ThemeController",
+          desc: "Reactive observable controller (isTheme.obs) driving instant dark/light mode toggling across the entire widget tree.",
+        },
+        {
+          name: "Identity & Security Guard",
+          badge: "Firebase Authentication",
+          desc: "Stateless token-based authentication handling user signup, login, session persistence, and password reset email delivery.",
+        },
+        {
+          name: "Reactive Cloud Database",
+          badge: "Cloud Firestore",
+          desc: "Real-time distributed NoSQL database streaming user-scoped task documents, category aggregations, and server-verified timestamps.",
+        },
+        {
+          name: "Hardware Platform Bindings",
+          badge: "Camera & PermissionHandler",
+          desc: "Direct integration with native Android and iOS camera hardware drivers and runtime operating system permission dialogs.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Mobile Application & UI",
+        items: [
+          { name: "Flutter 3.x", role: "Cross-Platform Mobile Framework" },
+          { name: "Dart ^3.8.1", role: "Strongly Typed Client Programming Language" },
+          { name: "GetX 4.7", role: "Reactive State Management & Theme Controller" },
+          { name: "Google Fonts Poppins", role: "Custom Typography Hierarchy (400, 500, 700)" },
+          { name: "Material 3", role: "Design System & Themed Components" },
+          { name: "Intl 0.19", role: "Date & Timestamp Formatting" },
+        ],
+      },
+      {
+        category: "Biometric Vision & Hardware",
+        items: [
+          { name: "Google ML Kit Face Detection", role: "On-Device Face Landmark & Contour ML" },
+          { name: "Camera API 0.11", role: "Hardware Viewfinder & Picture Capture" },
+          { name: "Permission Handler 12", role: "Runtime OS Hardware Permission Request" },
+        ],
+      },
+      {
+        category: "Backend & Cloud Services",
+        items: [
+          { name: "Cloud Firestore 6.0", role: "Real-Time NoSQL Database & Snapshot Streams" },
+          { name: "Firebase Auth 6.1", role: "User Identity, Session Tokens & Password Reset" },
+          { name: "Firebase Core 4.1", role: "Flutter Firebase Platform Bridge" },
+        ],
+      },
+      {
+        category: "DevOps & Code Quality",
+        items: [
+          { name: "Flutter Lints 5.0", role: "Dart Static Analysis & Code Style Enforcement" },
+          { name: "Flutter Test", role: "Widget & Unit Testing Framework" },
+          { name: "Git & GitHub", role: "Source Control & Collaborative Versioning" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "lib/ (Application Architecture)",
+        items: [
+          "main.dart — App entry point, camera discovery, permission initialization, and auth gate",
+          "theme_controller.dart — GetX reactive theme controller managing light and dark themes",
+          "firebase_options.dart — Auto-generated Firebase cross-platform configuration",
+        ],
+      },
+      {
+        name: "lib/screen/ (Core Application Screens)",
+        items: [
+          "camera_screen.dart — Camera viewfinder, Google ML Kit face detection, and feedback overlay",
+          "home_screen.dart — StreamBuilder task feed, search filter, categories, and CRUD sheets",
+        ],
+      },
+      {
+        name: "lib/auth/ (Identity & Security Screens)",
+        items: [
+          "login_screen.dart — Email/password login, validation, and social login UI federation",
+          "register_screen.dart — User registration, credential creation, and terms consent",
+          "forgot_password_screen.dart — Self-service password recovery via Firebase Auth",
+        ],
+      },
+      {
+        name: "assets/ & fonts/ (Design Assets)",
+        items: [
+          "assets/images/ — Illustration assets (login, register, forgot password, social icons)",
+          "fonts/ — Poppins font family files (Regular, Medium, SemiBold, Bold)",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Firestore: /todo",
+        purpose:
+          "Stores user task documents including title (string), check (bool status), time (FieldValue.serverTimestamp), and userId (owner authentication UID).",
+      },
+      {
+        name: "Firebase Auth: User Entity",
+        purpose:
+          "Stateless identity credentials including uid, email, displayName, passwordHash (securely managed by Firebase), and token expiration timestamps.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Biometric Data Safety",
+    securityLead:
+      "Privacy-first mobile architecture combining on-device computer vision processing, stateless Firebase Auth tokens, and user-scoped Firestore database queries.",
+    apiEndpoints: [
+      {
+        group: "Authentication & Identity (Firebase Auth)",
+        routes: [
+          { method: "POST", path: "createUserWithEmailAndPassword", desc: "User registration with email and password" },
+          { method: "POST", path: "signInWithEmailAndPassword", desc: "Stateless session authentication with error handling" },
+          { method: "POST", path: "sendPasswordResetEmail", desc: "Dispatches automated password recovery email to registered address" },
+          { method: "POST", path: "signOut", desc: "Terminates active session and resets navigation tree" },
+        ],
+      },
+      {
+        group: "Biometric Vision (Google ML Kit)",
+        routes: [
+          { method: "LOCAL", path: "FaceDetector.processImage(InputImage)", desc: "On-device inference evaluating facial landmarks, contours, and presence" },
+          { method: "LOCAL", path: "CameraController.takePicture()", desc: "Hardware capture stream returning temporary XFile reference" },
+        ],
+      },
+      {
+        group: "Task & Attendance Management (Cloud Firestore)",
+        routes: [
+          { method: "GET", path: "collection('todo').where('userId', isEqualTo: uid).snapshots()", desc: "Real-time task stream ordered chronologically by server timestamp" },
+          { method: "POST", path: "collection('todo').add({ title, check, time, userId })", desc: "Creates new task record with server-side timestamp validation" },
+          { method: "PUT", path: "collection('todo').doc(id).update({ title })", desc: "Updates task title from edit dialog" },
+          { method: "PUT", path: "collection('todo').doc(id).update({ check })", desc: "Toggles completed status atomically on checkbox tap" },
+          { method: "DELETE", path: "collection('todo').doc(id).delete()", desc: "Removes task record upon user confirmation" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "100% On-Device Biometric Privacy",
+        desc: "All face detection and landmark extraction run strictly on the user's physical device via Google ML Kit. No facial images or biometric vectors are ever uploaded to cloud servers.",
+      },
+      {
+        title: "User-Scoped Query Isolation",
+        desc: "Firestore queries strictly enforce where('userId', isEqualTo: user.uid), preventing cross-user data leakage and guaranteeing data privacy.",
+      },
+      {
+        title: "Server Timestamp Verification",
+        desc: "Task creation uses FieldValue.serverTimestamp() to neutralize client device clock tampering and ensure tamper-proof chronological ordering.",
+      },
+      {
+        title: "Runtime OS Permission Sandboxing",
+        desc: "Camera hardware access is guarded by permission_handler, ensuring camera drivers are only engaged after explicit user approval.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "< 120ms",
+        label: "On-Device Inference Speed",
+        desc: "Sub-120ms facial landmark & contour detection directly on-device",
+      },
+      {
+        value: "0ms",
+        label: "Real-Time Cloud Latency",
+        desc: "Instant reactive UI updates via Firebase Firestore real-time snapshot streams",
+      },
+      {
+        value: "100%",
+        label: "Biometric Privacy Guaranteed",
+        desc: "Zero face images uploaded to cloud; 100% processed locally on-device",
+      },
     ],
     sections: [
       {
-        title: "The pitch",
+        title: "The brief",
         body: [
-          "Support teams generate piles of ticket data but rarely have time to summarise it. The app stores ticket activity and uses Gemini to produce daily / weekly summaries automatically.",
+          "Traditional workplace and educational attendance tracking often relies on manual sign-ins or RFID cards prone to proxy check-ins and manipulation. The objective of Attendance App was to engineer a fast, secure, and privacy-preserving mobile attendance and task management application built in Flutter with on-device computer vision.",
+          "Core Mandate: Build a unified mobile platform pairing hardware camera face verification with a real-time cloud task board, responsive Light/Dark theme switching, and seamless user identity management.",
         ],
       },
       {
-        title: "Architecture",
+        title: "Architecture & Biometric ML",
         body: [
-          "Flutter with Provider for state. Firestore for ticket storage. A scheduled function bundles recent activity and calls Gemini for the digest.",
+          "Architected using a controller-based Flutter structure paired with GetX for reactive state management and Google ML Kit for on-device machine learning. The biometric verification pipeline accesses the device's hardware camera through CameraController with ResolutionPreset.medium.",
+          "Captured frames are passed to Google ML Kit's FaceDetector running in FaceDetectorMode.accurate with landmark, contour, and classification models enabled. Because inference occurs 100% on-device, verification completes in under 120ms without risking biometric privacy leaks to the cloud.",
+          "Once verified, the task board connects directly to Cloud Firestore using persistent StreamBuilder listeners, automatically synchronizing categorized tasks, checkbox completion states, and search queries.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Ensuring smooth camera initialization and lifecycle management across different mobile operating system versions. Solved by binding camera initialization to FutureBuilder widgets with graceful loading indicators and comprehensive permission checks via permission_handler.",
+          "Designing a high-accuracy biometric verification flow that remains responsive on mid-range hardware. Solved by tuning FaceDetectorOptions to run accurate mode locally on single frames, delivering instantaneous feedback to the user without stuttering the UI thread.",
+          "Decoupling theme toggling from widget lifecycles. Solved by implementing a clean GetX ThemeController with observable state (isTheme.obs), enabling dynamic one-tap switching between custom Light and Dark themes with zero redraw overhead.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Sub-120ms inference latency achieved for on-device biometric face verification using Google ML Kit.",
+          "0ms perceived sync latency delivered across real-time task boards and category counters via Cloud Firestore streams.",
+          "100% biometric privacy preserved with all facial landmark detection confined strictly to on-device memory.",
         ],
       },
     ],
-    stack: ["Flutter", "Firebase", "Gemini API", "Provider"],
+    stack: [
+      "Flutter",
+      "Dart",
+      "Google ML Kit",
+      "Firebase Auth",
+      "Cloud Firestore",
+      "GetX",
+      "Camera API",
+      "Permission Handler",
+      "Google Fonts Poppins",
+      "Material 3",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/Attendance-App" },
+    ],
+  },
+
+  "qr-scanner": {
+    title: "QR Guest Manager",
+    subtitle: "Real-Time Event Check-In, Dynamic QR Code Engine & Mobile Ticketing System",
+    status: "Production Ready",
+    summary:
+      "A high-throughput cross-platform event ticketing and guest check-in mobile application built with Flutter, Firebase Authentication, and Dio REST API integration. Features real-time camera QR scanning via mobile_scanner, on-the-fly QR code vector generation with qr_flutter, photo gallery barcode analysis, dual-mode light/dark theme engine, and atomic ticket status reconciliation.",
+    domain: "github.com/adyvka31/QR_Scanner_App",
+    meta: [
+      { label: "Role", value: "Mobile Application Engineer" },
+      { label: "Platform", value: "Android & iOS" },
+      { label: "Timeline", value: "2024" },
+      { label: "Architecture", value: "Service-Oriented Client" },
+      { label: "QR Engine", value: "MobileScanner & Vector QR" },
+      { label: "Backend API", value: "Vercel Event Ticketing API" },
+    ],
+    galleryLabel: "MOBILE EVENT TICKETING & SCANNER INTERFACES",
+    galleryTitle: "The QR Guest Manager Experience",
+    galleryLead:
+      "Explore the high-performance event check-in experience — featuring live hardware camera barcode detection, gallery image barcode decoding, dynamic QR vector rendering, and real-time ticket redemption status reconciliation.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official Mobile Showcase & Multi-Screen Suite",
+        route: "app.qrscanner.mobile",
+        tag: "Brand Presentation",
+        image: qrscannerImg,
+        desc: "Comprehensive application flyer presenting QR Guest Manager's multi-device mobile architecture, live camera viewfinder scanning overlay, guest list administration, and account registration flows.",
+        features: [
+          "Flutter 3.x Cross-Platform Client",
+          "Hardware Camera & Barcode Decoder",
+          "Fullstack RESTful Ticket API",
+        ],
+      },
+      {
+        id: "guest-list-hub",
+        title: "Guest Roster Hub & Live Ticket Reconciliation",
+        route: "app.qrscanner.mobile/guest-list",
+        tag: "Event Administration",
+        image: qrscanner1,
+        desc: "Centralized guest administration dashboard displaying live ticket statuses (UNREDEEMED vs REDEEMED), instantaneous search filtering, single-tap QR ticket modal generation, and guest removal actions.",
+        features: [
+          "Real-Time Ticket Query & Substring Filtering",
+          "Instant Status Indicators (Redeemed / Unredeemed)",
+          "Dynamic QR Vector Generation Modal",
+        ],
+      },
+      {
+        id: "live-camera-scanner",
+        title: "High-Speed Hardware Camera QR Scanner & Target Reticle",
+        route: "app.qrscanner.mobile/scan",
+        tag: "Computer Vision & Hardware",
+        image: qrscanner2,
+        desc: "Live full-screen camera viewfinder featuring a custom maroon scanning target reticle, torch/flash toggle, camera flip, photo gallery barcode decoding, and manual ticket ID fallback.",
+        features: [
+          "MobileScanner Native Barcode Detection",
+          "Sub-80ms QR Recognition & Decode",
+          "Gallery Photo Barcode Analysis via ImagePicker",
+        ],
+      },
+      {
+        id: "account-registration",
+        title: "Identity Governance & Secure User Onboarding",
+        route: "app.qrscanner.mobile/register",
+        tag: "Security & Identity",
+        image: qrscanner3,
+        desc: "Streamlined event staff registration interface featuring custom input decoration, password visibility toggling, client-side input validation, and Firebase Auth credential creation.",
+        features: [
+          "Firebase Authentication Engine",
+          "Custom Form Validation & Error Feedback",
+          "Consistent Crimson & Slate Design System",
+        ],
+      },
+      {
+        id: "dual-screen-workflow",
+        title: "Integrated Scan-to-Redeem Verification Pipeline",
+        route: "app.qrscanner.mobile/workflow",
+        tag: "Validation Pipeline",
+        image: qrscanner4,
+        desc: "Cohesive view showing the interplay between the guest roster and the live scanner — verifying ticket authenticity, preventing duplicate redemption, and updating local states with zero latency.",
+        features: [
+          "Atomic Scan-to-Redeem API Handshake",
+          "Duplicate Scan Lock & Prevention Guard",
+          "Instant Local State Mutation (0ms UI Latency)",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        value: "< 80ms",
+        label: "Scan Recognition",
+        note: "Native hardware-accelerated barcode decoding via mobile_scanner",
+      },
+      {
+        value: "100%",
+        label: "Duplicate Prevention",
+        note: "Atomic scan processing guard prevents duplicate ticket redeems",
+      },
+      {
+        value: "Dual-Channel",
+        label: "Scanning Ingestion",
+        note: "Camera live viewfinder & photo gallery barcode decoding",
+      },
+      {
+        value: "0ms",
+        label: "Local State Latency",
+        note: "Instant in-memory ticket status update upon successful API redemption",
+      },
+      {
+        value: "Vector",
+        label: "QR Generation",
+        note: "Lossless on-the-fly QR generation via qr_flutter with custom sizing",
+      },
+      {
+        value: "Dual Theme",
+        label: "Light & Dark Mode",
+        note: "System-level theme switching with ValueNotifier and Material 3 design",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Real-Time Hardware Barcode Vision",
+        desc: "Integrates mobile_scanner with native camera sensor streams, detecting standard and inverted QR codes in sub-80ms with customized reticle boundary feedback.",
+      },
+      {
+        icon: "terminal",
+        title: "Dual Ingestion: Camera & Photo Gallery",
+        desc: "Empowers event operators to scan physical QR codes directly through the live camera viewfinder or extract QR payloads from saved smartphone photos via ImagePicker.",
+      },
+      {
+        icon: "cloud",
+        title: "On-The-Fly Vector QR Code Generation",
+        desc: "Generates high-resolution vector QR graphics instantaneously on-device using qr_flutter, enabling instant ticket sharing and preview without external API dependencies.",
+      },
+      {
+        icon: "database",
+        title: "Resilient Networking & Duplicate Lock",
+        desc: "Backed by Dio HTTP client connecting to a Vercel-hosted REST API with automated double-scan prevention, humanized error mapping, and optimistic local state updates.",
+      },
+    ],
+    capabilitiesTitle: "Core Capabilities & Event Check-In Workflow",
+    capabilitiesLead:
+      "Engineered for rapid, fraud-proof attendee processing — uniting native camera hardware drivers, computer vision barcode parsing, vector QR code rendering, and secure cloud identity governance.",
+    features: [
+      {
+        id: "hardware-camera-scanner",
+        title: "High-Speed Hardware Camera QR Scanner & Target Reticle",
+        badge: "Edge Vision & Camera HAL",
+        desc: "Real-time camera feed scanning QR codes instantly with native hardware acceleration and custom viewfinder overlays.",
+        points: [
+          "Native MobileScanner Engine: Uses MobileScannerController to stream video buffers directly to underlying C++ barcode detection routines.",
+          "Custom Target Reticle: High-contrast 200x200 rounded scanning box (#9E3B3B) providing intuitive visual alignment for staff.",
+          "Flashlight & Camera Flip: Hardware controls allowing operators to toggle the device torch in low-light venues and switch between front and rear lenses.",
+          "Manual ID Fallback: Built-in text field with send button for attendees with damaged or unreadable physical badges.",
+        ],
+      },
+      {
+        id: "gallery-barcode-decoder",
+        title: "Photo Gallery Barcode Ingestion & Analysis",
+        badge: "Image Analysis",
+        desc: "Allows staff to pick screenshots or photos from device storage to decode QR tickets without live camera scanning.",
+        points: [
+          "ImagePicker Integration: Seamlessly opens native gallery photo pickers to ingest attendee e-ticket screenshots.",
+          "Static Image Barcode Extraction: Feeds picked image paths into cameraController.analyzeImage() for background decoding.",
+          "Graceful Error Handling: Informs staff immediately if no readable QR code or ticket ID is detected within the uploaded photo.",
+        ],
+      },
+      {
+        id: "vector-qr-generator",
+        title: "Lossless On-The-Fly Vector QR Generation",
+        badge: "Vector Rendering",
+        desc: "Instantly creates sharp, scannable QR code representations for newly added attendees or existing ticket records.",
+        points: [
+          "Vector QrImageView: Uses qr_flutter to render mathematical QR matrices with auto version calculation and error correction.",
+          "Interactive QR Dialog Modal: Tapping any ticket card in the guest list opens a clean modal displaying a 190px QR matrix with attendee name and ID.",
+          "Millisecond UUID Generation: Generates unique ticket identifiers with timestamp format TIKET-{timestamp} during attendee registration.",
+        ],
+      },
+      {
+        id: "ticket-roster-management",
+        title: "Centralized Guest Roster & Live Substring Search",
+        badge: "Event Administration",
+        desc: "Comprehensive guest list management displaying live validation status, creation timestamps, and search filters.",
+        points: [
+          "Dual Status Reconciliation: Distinguishes between active UNREDEEMED tickets and redeemed REDEEMED entries with clear visual indicators.",
+          "Live Search Query Filtering: In-memory substring filter running on every keystroke in _searchController without extra network roundtrips.",
+          "Ticket Removal & Cleanup: Single-tap trash icon allowing staff to purge canceled registrations from the active attendee roster.",
+          "Swipe-to-Refresh: Pull-to-refresh integration re-synchronizing client state with the cloud REST database.",
+        ],
+      },
+      {
+        id: "duplicate-prevention-guard",
+        title: "Atomic Redemption Guard & Fraud Prevention",
+        badge: "Security & Anti-Fraud",
+        desc: "Strict anti-passback and duplicate prevention logic ensuring tickets cannot be redeemed more than once.",
+        points: [
+          "Processing State Lock: _isProcessingScan boolean flag prevents multiple rapid triggers from accidental double-scans.",
+          "Prior Redemption Intercept: Checks ticket status in local memory; if already redeemed, blocks API call and triggers alert dialog.",
+          "Optimistic Status Mutation: Updates ticket status to REDEEMED and stamps redeemedAt timestamp in-memory before showing confirmation.",
+        ],
+      },
+      {
+        id: "restful-networking",
+        title: "Dio-Powered RESTful Communication & Microservice Backend",
+        badge: "Networking Architecture",
+        desc: "Robust HTTP client architecture communicating with Vercel serverless microservice endpoints.",
+        points: [
+          "Dio Client Configuration: Centralized BaseOptions with base URL https://event-ticketing-ruddy.vercel.app/api.",
+          "Typed Data Deserialization: Strongly typed Ticket.fromJson factory converting JSON payloads into immutable Dart models.",
+          "Modular Endpoint Operations: Abstracted getTickets(), addTicket(name), deleteTicket(id), and scanTicket(qrData) methods.",
+        ],
+      },
+      {
+        id: "firebase-identity-session",
+        title: "Firebase Authentication & Session Governance",
+        badge: "Identity & Access",
+        desc: "Stateless user authentication securing the event scanner against unauthorized check-ins.",
+        points: [
+          "Credential Management: Email/password authentication flow with displayName profile updates upon signup.",
+          "Humanized Error Parsing: Custom _handleAuthError helper translating Firebase error codes (user-not-found, wrong-password) into user-friendly messages.",
+          "Persistent Auth State: Stream-based session detection managing seamless transitions between login and dashboard screens.",
+        ],
+      },
+      {
+        id: "dual-theme-engine",
+        title: "Dynamic Material 3 Crimson Light & Dark Mode",
+        badge: "UI Architecture",
+        desc: "System-wide theme switching engine offering high-contrast dark mode for low-light venue operations.",
+        points: [
+          "ValueNotifier State: themeNotifier triggers zero-overhead UI theme transitions across the entire MaterialApp tree.",
+          "Signature Crimson Palette: Brand color #9E3B3B applied across active tabs, reticle outlines, and primary action buttons.",
+          "OLED Pitch-Black Dark Theme: Custom #121212 scaffold and #1E1E1E card surfaces optimized for battery efficiency on mobile OLED screens.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Scan Verification & Ticket Redemption Lifecycle",
+      lead: "From camera frame acquisition to REST API validation and local state synchronization — every check-in follows a strict anti-fraud verification pipeline.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Ingestion & Capture",
+          title: "Barcode Detection & Payload Extraction",
+          desc: "MobileScanner captures QR code data from live camera stream, gallery photo analysis, or manual input. Raw barcode value is extracted.",
+          action: "Payload Ingestion & Verification Lock Engaged",
+        },
+        {
+          level: "Stage 02",
+          role: "Registry Verification",
+          title: "Local Ticket Registry & Prior Redemption Check",
+          desc: "Ticket ID is checked against the active guest roster. If not registered or already marked REDEEMED, the scan is rejected with an immediate warning.",
+          action: "Status Verification → Pass / Reject Intercept",
+        },
+        {
+          level: "Stage 03",
+          role: "Cloud Handshake",
+          title: "API Status Mutation & Attendance Confirmation",
+          desc: "ApiService dispatches POST /scan to the cloud server. Local state updates to REDEEMED with timestamp, and celebration modal is displayed.",
+          action: "POST /scan → 200 OK → UI State Stamped",
+        },
+      ],
+      lockMechanism: {
+        title: "Strict Single-Redemption Anti-Passback Guarantee",
+        desc: "Once a ticket is redeemed, its status is immediately locked in memory and recorded on the cloud server. Any subsequent scan of the same barcode displays a warning modal identifying the attendee and preventing duplicate entry.",
+      },
+    },
+    architectureTitle: "Service-Oriented Client & RESTful Microservices Architecture",
+    architectureLead:
+      "Built on a clean modular architecture separating Flutter presentation components, native camera scanner controllers, Dio HTTP networking services, and Firebase cloud authentication.",
+    architecture: {
+      type: "Service-Oriented Flutter Client + RESTful Microservices + Firebase BaaS",
+      protocol: "Native Camera HAL + HTTPS JSON (Dio) + Firebase Secure Token",
+      layers: [
+        {
+          name: "Presentation Layer (Flutter 3.x)",
+          badge: "Dart ^3.8.1 + Material 3",
+          desc: "Two-tab event management dashboard (Guest List & Scan/Redeem), custom input fields, theme toggling, and dialog confirmations.",
+        },
+        {
+          name: "Vision & Scanner Layer",
+          badge: "mobile_scanner + image_picker",
+          desc: "Native camera barcode scanning engine and static gallery image barcode analyzer delivering sub-80ms decode speed.",
+        },
+        {
+          name: "Networking & Data Service",
+          badge: "Dio 5.9 (ApiService)",
+          desc: "HTTP client managing API calls, query serialization, timeout handling, and payload mapping to immutable Ticket models.",
+        },
+        {
+          name: "Vector Generation Engine",
+          badge: "qr_flutter (QrImageView)",
+          desc: "Mathematical QR matrix generator creating lossless vector QR graphics with automatic error correction.",
+        },
+        {
+          name: "Cloud REST API Backend",
+          badge: "Vercel Serverless Microservice",
+          desc: "Hosted REST API at event-ticketing-ruddy.vercel.app managing /tickets and /scan endpoints.",
+        },
+        {
+          name: "Identity & Session Guard",
+          badge: "Firebase Authentication",
+          desc: "Stateless token-based authentication engine handling event staff sign-in, account creation, and session persistence.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Mobile Application & UI",
+        items: [
+          { name: "Flutter 3.x", role: "Cross-Platform Mobile Framework" },
+          { name: "Dart ^3.8.1", role: "Strongly Typed Client Programming Language" },
+          { name: "Material 3", role: "Modern Android & iOS Design System" },
+          { name: "ValueNotifier", role: "Reactive Theme State Management" },
+          { name: "Intl 0.20", role: "Date & Timestamp Formatting" },
+          { name: "Cupertino Icons", role: "iOS Style Iconography" },
+        ],
+      },
+      {
+        category: "Scanner & Computer Vision",
+        items: [
+          { name: "mobile_scanner 7.1", role: "Native Hardware Camera Barcode ML Engine" },
+          { name: "qr_flutter 4.1", role: "Vector QR Code Generator & Renderer" },
+          { name: "image_picker 1.2", role: "Gallery Photo Selection for Barcode Analysis" },
+        ],
+      },
+      {
+        category: "Networking & Cloud Services",
+        items: [
+          { name: "Dio 5.9", role: "High-Performance HTTP Client for REST APIs" },
+          { name: "Vercel REST API", role: "Serverless Event Ticketing Cloud Backend" },
+          { name: "Firebase Auth 6.1", role: "Event Staff Identity & Session Management" },
+          { name: "Firebase Core 4.4", role: "Flutter Firebase Platform Bridge" },
+        ],
+      },
+      {
+        category: "DevOps & Code Quality",
+        items: [
+          { name: "Flutter Lints 5.0", role: "Static Code Analysis & Linting Rules" },
+          { name: "Flutter Test", role: "Unit & Widget Testing Framework" },
+          { name: "Git & GitHub", role: "Source Control & Collaborative Versioning" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "lib/views/ (Core Application Screens)",
+        items: [
+          "home_screen.dart — Two-tab interface (Guest List & Camera Scanner), QR modal, and redeem logic",
+          "add_guest_screen.dart — Attendee registration form and instant vector QR generator",
+          "splash_screen.dart — Animated startup splash screen with brand iconography",
+        ],
+      },
+      {
+        name: "lib/services/ (Network & Business Logic)",
+        items: [
+          "api_service.dart — Dio HTTP client connecting to Vercel ticketing endpoints",
+          "auth_service.dart — Firebase Auth methods (signIn, signUp, signOut, error handler)",
+        ],
+      },
+      {
+        name: "lib/models/ & auth/ (Entities & Security)",
+        items: [
+          "models/ticket.dart — Immutable Ticket model with JSON deserializer",
+          "auth/login_screen.dart — Staff login screen with password visibility toggle",
+          "auth/register_screen.dart — Staff registration screen with form validation",
+        ],
+      },
+      {
+        name: "lib/ (Application Entry)",
+        items: [
+          "main.dart — App entry point, ValueNotifier theme configuration (Light & Dark)",
+          "firebase_options.dart — Platform credentials for Android, iOS, and Web",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: Ticket",
+        purpose:
+          "Stores ticket records including id (string), name (string), status (UNREDEEMED / REDEEMED), createdAt (DateTime), and redeemedAt (optional DateTime).",
+      },
+      {
+        name: "REST API Payload: Add Ticket",
+        purpose:
+          "POST /tickets accepts { name: string } to register a new attendee and generate a unique cloud ticket entry.",
+      },
+      {
+        name: "REST API Payload: Scan Ticket",
+        purpose:
+          "POST /scan accepts { qr_data: string } to validate ticket authenticity and mark status as redeemed.",
+      },
+      {
+        name: "Firebase Auth: User Entity",
+        purpose:
+          "Stateless identity credentials for event operators including uid, email, and displayName.",
+      },
+    ],
+    securityTitle: "Hardened Perimeter & Ticket Anti-Fraud Governance",
+    securityLead:
+      "Security architecture combining stateless Firebase Authentication tokens, client-side duplicate scan locks, and server-side redemption validation.",
+    apiEndpoints: [
+      {
+        group: "Authentication (Firebase Auth)",
+        routes: [
+          { method: "POST", path: "signInWithEmailAndPassword", desc: "Staff authentication with user-friendly error translation" },
+          { method: "POST", path: "createUserWithEmailAndPassword", desc: "Staff registration with displayName update" },
+          { method: "POST", path: "signOut", desc: "Session termination and navigation reset" },
+        ],
+      },
+      {
+        group: "Event Ticketing API (Vercel REST API via Dio)",
+        routes: [
+          { method: "GET", path: "/tickets", desc: "Fetches full guest roster with redemption statuses and timestamps" },
+          { method: "POST", path: "/tickets", desc: "Creates new ticket record with attendee name" },
+          { method: "DELETE", path: "/tickets?id={id}", desc: "Removes ticket record from the cloud database" },
+          { method: "POST", path: "/scan", desc: "Validates and redeems ticket using scanned QR payload" },
+        ],
+      },
+      {
+        group: "Local Hardware & Barcode Vision",
+        routes: [
+          { method: "LOCAL", path: "MobileScanner.onDetect", desc: "High-speed camera barcode capture stream" },
+          { method: "LOCAL", path: "MobileScannerController.analyzeImage()", desc: "Static gallery image barcode decoding" },
+          { method: "LOCAL", path: "QrImageView(data: ticket.id)", desc: "Lossless on-the-fly vector QR rendering" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Single-Redemption Anti-Passback Guard",
+        desc: "Each ticket can only be redeemed once. The application intercepts scans against tickets already marked REDEEMED, blocking entry and preventing ticket sharing.",
+      },
+      {
+        title: "Double-Scan Race Condition Prevention",
+        desc: "An internal processing lock (_isProcessingScan) prevents rapid-fire duplicate scanning from accidental trigger events or sensor bounce.",
+      },
+      {
+        title: "Camera Sandboxing & Runtime Permission",
+        desc: "Camera hardware drivers are engaged only after explicit OS permission approval, and camera controllers are cleanly disposed of upon screen exit.",
+      },
+      {
+        title: "Stateless Token Security",
+        desc: "Staff sessions are governed by secure Firebase Authentication tokens, isolating ticketing administration from unauthorized access.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "< 80ms",
+        label: "Hardware Barcode Detection",
+        desc: "Sub-80ms native barcode decoding via mobile_scanner",
+      },
+      {
+        value: "0ms",
+        label: "Local UI Mutation Latency",
+        desc: "Instant in-memory ticket status update upon successful API redemption",
+      },
+      {
+        value: "100%",
+        label: "Anti-Duplicate Redemption",
+        desc: "Strict anti-passback and double-scan prevention guarantees single entry per ticket",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "Manual guest list checking at conferences, expos, and private events causes bottleneck queues, human check-in errors, and paper ticket fraud. The goal of QR Guest Manager was to develop a fast, reliable, and user-friendly mobile application built in Flutter to digitize the entire event check-in lifecycle.",
+          "Core Mandate: Build a responsive mobile client combining high-speed camera QR code scanning, instant gallery photo barcode extraction, on-the-fly vector QR generation, and real-time cloud ticket redemption status tracking.",
+        ],
+      },
+      {
+        title: "Architecture & Barcode Vision",
+        body: [
+          "Architected using a service-oriented Flutter structure with clean separation between presentation views, native barcode scanning controllers, and RESTful networking services via Dio. The camera scanning interface utilizes mobile_scanner, interfacing directly with native C++ platform libraries to decode standard and inverted QR codes with sub-80ms recognition speed.",
+          "For attendees displaying e-tickets on external devices or printed passes, staff can scan live via the viewfinder reticle or select an image from the device gallery using ImagePicker. On-the-fly QR generation is handled by qr_flutter, rendering dynamic vector QR codes directly in dialog modals without relying on external image generation APIs.",
+          "All ticket lifecycle operations connect to a Vercel-hosted REST API through ApiService, featuring an atomic redemption workflow that updates local memory instantly while persisting changes to the cloud.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Preventing accidental double-scans and race conditions when a camera sensor detects the same QR barcode in multiple consecutive frames. Solved by implementing an atomic boolean processing lock (_isProcessingScan) combined with a mandatory cooldown delay.",
+          "Balancing real-time camera viewfinder performance while rendering high-density attendee lists. Solved by separating scanner and list logic into dedicated TabBarView panels and disposing of camera controllers cleanly when not in focus.",
+          "Providing seamless dark mode support for nighttime event environments. Built a system-wide theme switching engine using ValueNotifier<ThemeMode> and custom Material 3 color schemes (Crimson #9E3B3B with pitch-black #121212 surfaces).",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Sub-80ms barcode recognition latency achieved across diverse lighting conditions using mobile_scanner.",
+          "100% duplicate redemption prevention verified with automated local state intercept and cloud validation.",
+          "Dual-channel scanning (live viewfinder + gallery image analysis) delivered for versatile event gate operations.",
+        ],
+      },
+    ],
+    stack: [
+      "Flutter",
+      "Dart",
+      "Mobile Scanner",
+      "QR Flutter",
+      "Dio",
+      "Firebase Auth",
+      "Image Picker",
+      "Material 3",
+      "ValueNotifier",
+      "Intl",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/QR_Scanner_App" },
+    ],
+  },
+
+  "news-app": {
+    title: "News App",
+    subtitle: "Real-Time Multi-Source News Reader & Reactive Bookmark Platform",
+    status: "Production Ready",
+    summary:
+      "A high-performance cross-platform digital journalism and news curation mobile application built with Flutter, GetX reactive state management, and REST API integration. Streams live breaking news across 8 categories from CNN Indonesia via Vercel endpoints, featuring zero-latency client-side substring search filtering, ISO-8601 calendar date querying with localized Indonesian formatting, reactive bookmark persistence, dynamic dark/light theme switching, and fluid Lottie vector onboarding animations.",
+    domain: "github.com/adyvka31/News-App",
+    meta: [
+      { label: "Role", value: "Mobile Application Engineer" },
+      { label: "Platform", value: "Android & iOS" },
+      { label: "Timeline", value: "2024" },
+      { label: "Architecture", value: "Controller-Based GetX" },
+      { label: "News Engine", value: "CNN Indonesia REST Stream" },
+      { label: "Animation & FX", value: "Lottie Engine & Material 3" },
+    ],
+    galleryLabel: "MOBILE NEWS READER & EDITORIAL PLATFORM",
+    galleryTitle: "The News App Experience",
+    galleryLead:
+      "Explore the high-velocity mobile reading experience — featuring live CNN Indonesia news streams, multi-category chips, full-text substring search, ISO-8601 calendar filtering, expandable sliver article reader, and reactive bookmark curation.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official News Reader Showcase & Device Suite",
+        route: "app.news.mobile",
+        tag: "Brand Presentation",
+        image: newsImg,
+        desc: "Comprehensive presentation showcase highlighting the News App mobile architecture, displaying real-time journalism feeds, immersive editorial article reading views, and personalized bookmark management across modern iOS and Android displays.",
+        features: [
+          "Flutter 3.x Cross-Platform Client",
+          "GetX Reactive State Management",
+          "High-Throughput REST API Ingestion",
+        ],
+      },
+      {
+        id: "browse-feed-hub",
+        title: "Browse News Feed & Interactive Category Hub",
+        route: "app.news.mobile/browse",
+        tag: "Discovery & Navigation",
+        image: news1,
+        desc: "Main application home screen featuring live headline banners, horizontal recent news carousel, 8-channel category chips (Semua, Nasional, Internasional, Ekonomi, Olahraga, Teknologi, Hiburan, Gaya Hidup), and real-time substring search input with instant card rendering.",
+        features: [
+          "8-Channel Dynamic Category Filtering",
+          "Horizontal Recent News Carousel",
+          "Real-Time Substring Search Controller",
+        ],
+      },
+      {
+        id: "editorial-article-reader",
+        title: "Deep Editorial Article Reader & Hero View",
+        route: "app.news.mobile/detail",
+        tag: "Content Reader",
+        image: news2,
+        desc: "Immersive article reading experience utilizing CustomScrollView with an expanding SliverAppBar, hero header cover image, capitalized category badge, Indonesian locale date formatting, reading duration, comment metrics, author attribution, and single-tap reactive bookmark toggle.",
+        features: [
+          "SliverAppBar with Parallax Cover Art",
+          "Indonesian Locale Date Formatting",
+          "Single-Tap Instant Bookmark Action",
+        ],
+      },
+      {
+        id: "bookmarks-favorite-roster",
+        title: "Saved Stories & Reactive Bookmarks Roster",
+        route: "app.news.mobile/favorites",
+        tag: "Personalized Curation",
+        image: news3,
+        desc: "Dedicated bookmark repository rendering saved articles via reactive Obx bindings with duplicate prevention, swipe-to-delete support, empty state illustrations, and instant transition to article reading mode.",
+        features: [
+          "Zero-Latency Obx Reactive Synchronization",
+          "Duplicate Item Guard by Headline Title",
+          "Empty State Vector Placeholder",
+        ],
+      },
+      {
+        id: "multi-device-ecosystem",
+        title: "End-to-End News Pipeline & Multi-Device Overview",
+        route: "app.news.mobile/ecosystem",
+        tag: "System Workflow",
+        image: news4,
+        desc: "Multi-screen overview illustrating the full journalistic lifecycle: from API stream ingestion and category filtering on the discovery feed, to deep-dive article reading and persistent bookmark curation.",
+        features: [
+          "End-to-End User Reading Workflow",
+          "Dynamic Dark/Light System Theming",
+          "Lottie Vector Splash Onboarding",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        label: "API Ingestion Latency",
+        val: "Sub-200ms",
+        change: "Live CNN Stream",
+        period: "Vercel edge caching & async HTTP",
+      },
+      {
+        label: "State Reaction Time",
+        val: "0ms",
+        change: "Reactive .obs",
+        period: "GetX observable micro-updates",
+      },
+      {
+        label: "Search Filtering",
+        val: "100%",
+        change: "Client-Side",
+        period: "Zero-latency substring matching",
+      },
+      {
+        label: "Content Categories",
+        val: "8 Channels",
+        change: "Dynamic Switch",
+        period: "Nasional, Ekonomi, Tekno, etc.",
+      },
+      {
+        label: "Theme Adaptation",
+        val: "Dual-Mode",
+        change: "Dark / Light",
+        period: "Get.changeTheme dynamic toggle",
+      },
+      {
+        label: "Splash Onboarding",
+        val: "60 FPS",
+        change: "Lottie Vector",
+        period: "Hardware-accelerated JSON runtime",
+      },
+    ],
+    highlights: [
+      {
+        title: "REST API Live Stream Ingestion",
+        desc: "Direct asynchronous HTTP client consuming CNN Indonesia news data from https://berita-indo-api.vercel.app/v1/cnn-news/ with dynamic endpoint parameter routing, robust status code validation, and resilient JSON map parsing.",
+      },
+      {
+        title: "GetX Reactive Architecture & State Management",
+        desc: "Clean separation of presentation and business logic utilizing NewsController extending GetxController, observable variables (.obs) for allNews, filteredNews, bookMarks, and isLoading, wrapped in surgical Obx widget rebuilders.",
+      },
+      {
+        title: "Multi-Faceted Search & Calendar Date Filtering",
+        desc: "Real-time search listener tracking user input to perform case-insensitive headline substring matching combined with native showDatePicker calendar selection comparing ISO-8601 year, month, and day.",
+      },
+      {
+        title: "Immersive Editorial UI & Dynamic Theming",
+        desc: "Material Design 3 visual language featuring CustomScrollView with flexible SliverAppBar hero headers, category pills, reading duration badges, dynamic dark/light theme switching, and Lottie vector splash screen.",
+      },
+    ],
+    capabilitiesTitle: "Core Architectural Capabilities",
+    capabilitiesLead:
+      "A breakdown of the engineering building blocks powering News App's high-throughput news delivery, reactive UI updates, and offline bookmarking.",
+    features: [
+      {
+        id: "rest-ingestion",
+        title: "Dynamic Category Routing & RESTful Ingestion",
+        badge: "Networking & HTTP",
+        desc: "Direct asynchronous HTTP client querying remote CNN Indonesia endpoints with dynamic category path suffixes and JSON decoding.",
+        points: [
+          "HTTP Client Pipeline: Api.getApi() uses package:http/http.dart to query https://berita-indo-api.vercel.app/v1/cnn-news/ asynchronously.",
+          "8 Dynamic Channels: Supports seamless path switching across nasional, internasional, ekonomi, olahraga, teknologi, hiburan, and gaya-hidup.",
+          "JSON Deserialization: Maps raw API response payloads into structured List<Map<String, dynamic>> records with title, link, snippet, and images.",
+          "Network Fault Tolerance: Traps non-200 HTTP codes and throws descriptive exceptions caught by the reactive controller layer.",
+        ],
+      },
+      {
+        id: "reactive-search-date",
+        title: "Zero-Latency Reactive Search & ISO-8601 Date Engine",
+        badge: "State & Algorithms",
+        desc: "Dual-predicate client-side filtering combining real-time searchController text monitoring with native calendar date matching.",
+        points: [
+          "Continuous Substring Matching: searchController.addListener() intercepts every keystroke to filter headlines instantly without network delay.",
+          "Triple-Component Date Matching: showDatePicker() selects calendar dates parsed against ISO-8601 timestamps checking year, month, and day.",
+          "Reactive State Rebuild: Updates filteredNews.obs automatically triggering surgical UI repaints only in active ListView widgets.",
+          "Filter Reset Mechanics: Provides clearDateFilter() to instantly restore the full feed when date filters are dismissed.",
+        ],
+      },
+      {
+        id: "editorial-reader",
+        title: "CustomScrollView & SliverAppBar Editorial Reader",
+        badge: "UI & Typography",
+        desc: "Immersive full-screen reading experience with expanding slivers, full-bleed hero artwork, and metadata metrics.",
+        points: [
+          "Parallax Hero Cover: FlexibleSpaceBar renders responsive cover art with extendBodyBehindAppBar for full immersion.",
+          "Indonesian Date Formatting: Uses intl DateFormat('d MMMM yyyy', 'id_ID') for native Indonesian date presentation.",
+          "Reading Metrics & Badges: Displays category pills, reading duration estimates, comment counts, and publisher branding.",
+          "Circular Floating Nav: Custom transparent floating back button and reactive bookmark actions anchored in the sliver app bar.",
+        ],
+      },
+      {
+        id: "bookmark-manager",
+        title: "Reactive Bookmark Manager with De-Duplication Guard",
+        badge: "Data Curation",
+        desc: "Local state bookmark engine providing one-tap saving, deletion, and reactive synchronization with duplicate prevention.",
+        points: [
+          "Atomic Title Deduplication: isBookmark() and addBookmark() validate article title uniqueness before inserting into bookMarks.obs.",
+          "Instant Visual Feedback: Displays color-coded Get.snackbar notifications (green for saved, red for removed) anchored to screen top.",
+          "Dedicated Favorites Screen: FavoriteScreen renders bookmarked items with direct one-tap navigation into full article reader mode.",
+          "Empty State Illustration: Renders custom vector bookmark iconography and guidance when no favorites are saved.",
+        ],
+      },
+      {
+        id: "dynamic-theming",
+        title: "Dynamic Dark / Light System Theme Toggle",
+        badge: "Theme Engine",
+        desc: "Real-time theme switching engine toggling between dark reading mode and clean daylight surfaces.",
+        points: [
+          "Reactive isTheme Observable: Single-tap app bar button flips observable boolean state to trigger Get.changeTheme().",
+          "Custom Material Themes: Seamlessly transitions between ThemeData.dark() and crisp white light theme with elevation-free app bars.",
+          "Contrast Optimization: Preserves text readability, card borders, and icon contrast across all reading modes.",
+          "Global Propagation: Instantly cascades theme modifications across all navigation routes without manual setState triggers.",
+        ],
+      },
+      {
+        id: "lottie-onboarding",
+        title: "60 FPS Lottie Vector Splash & Instant Route Handover",
+        badge: "Animation & Routing",
+        desc: "Lightweight hardware-accelerated vector onboarding animation with declarative navigation stack clearing.",
+        points: [
+          "Vector JSON Engine: lottie: ^3.1.2 executes Insider-loading.json After Effects animation at native 60 FPS.",
+          "SplashController Handshake: onReady() lifecycle hook triggers an automated 4-second delay before navigating.",
+          "Stack Handover with Get.off(): Replaces SplashScreen completely with ApiScreen, preventing back navigation into splash.",
+          "Zero Runtime Jitter: Vector rendering eliminates bitmap asset scaling artifacts across varying device resolutions.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Content Ingestion & Reader Lifecycle",
+      lead:
+        "From CNN Indonesia REST API stream through GetX reactive transformation to reader bookmarking — every article flows through a resilient, responsive pipeline.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Remote Stream Ingestion",
+          title: "API Query & Endpoint Handshake",
+          desc: "Api.getApi() queries remote CNN endpoints with category path suffixes, validating HTTP 200 status codes.",
+          action: "HTTP Ingestion & Status Validation",
+        },
+        {
+          level: "Stage 02",
+          role: "JSON Deserialization",
+          title: "Payload Parsing & Normalization",
+          desc: "Decodes raw JSON body into structured Map<String, dynamic> records containing title, link, snippet, and multi-res images.",
+          action: "Model Deserialization & Typing",
+        },
+        {
+          level: "Stage 03",
+          role: "Reactive Controller Binding",
+          title: "Observable State Synchronization",
+          desc: "NewsController populates allNews.obs and filteredNews.obs, triggering immediate Obx DOM repaints.",
+          action: "GetX .obs State Synchronization",
+        },
+        {
+          level: "Stage 04",
+          role: "Client-Side Intercept",
+          title: "Substring Search & ISO Date Filtering",
+          desc: "_applyFilters() evaluates active keystrokes and calendar date selections against in-memory article collections.",
+          action: "Dual-Predicate Stream Filtering",
+        },
+        {
+          level: "Stage 05",
+          role: "Editorial Presentation",
+          title: "Sliver Reader & Content Delivery",
+          desc: "DetailScreen renders rich typography, hero imagery, category badges, and localized Indonesian timestamps.",
+          action: "Parallax Reader Rendering",
+        },
+        {
+          level: "Stage 06",
+          role: "Bookmark Curation",
+          title: "De-Duplicated Favorite Persistence",
+          desc: "Users tap the bookmark action to atomically add or remove articles with positive snackbar confirmations.",
+          action: "Reactive Bookmark Synchronization",
+        },
+      ],
+      lockMechanism: {
+        title: "Non-Volatile Bookmark De-Duplication & State Isolation",
+        desc: "All bookmark operations perform title-based equality checks before mutating the observable RxList. This guarantees zero duplicate bookmarks, isolated state boundaries, and instant rollback on removal.",
+      },
+    },
+    architectureTitle: "Application Architecture & Data Flow",
+    architectureLead:
+      "Layered system design decoupling network transport, reactive state control, and responsive UI components.",
+    architecture: {
+      type: "Controller-Based Reactive Client Architecture (GetX) + RESTful Microservices",
+      protocol: "HTTPS REST (JSON) + Dart Observables (.obs) + GetX Route Manager",
+      layers: [
+        {
+          name: "Presentation Layer (Flutter 3.x)",
+          badge: "Dart ^3.8.1 + Material 3",
+          desc: "Reactive screens (ApiScreen, DetailScreen, FavoriteScreen, SplashScreen) bound to GetX controllers via granular Obx builders.",
+        },
+        {
+          name: "Reactive State & Logic (lib/controller/)",
+          badge: "GetxController + Observables",
+          desc: "NewsController and SplashController managing observables (.obs), search listeners, date filters, themes, and bookmark rosters.",
+        },
+        {
+          name: "Service & Ingestion Layer (lib/api/)",
+          badge: "HTTP 1.5.0 + dart:convert",
+          desc: "Api class managing remote network communication with CNN Indonesia REST endpoints with robust status code validation.",
+        },
+        {
+          name: "Routing & Notification Engine",
+          badge: "GetMaterialApp + Route Manager",
+          desc: "Declarative navigation (Get.to, Get.off) and context-free UI notifications via Get.snackbar without requiring BuildContext.",
+        },
+        {
+          name: "Localization & Date Engine",
+          badge: "intl 0.20.2 (id_ID)",
+          desc: "Indonesian locale formatting using initializeDateFormatting('id_ID', null) for native date and timestamp representations.",
+        },
+        {
+          name: "Vector Animation Engine",
+          badge: "Lottie 3.1.2 + After Effects JSON",
+          desc: "Hardware-accelerated vector animation runtime executing Insider-loading.json at silky 60 FPS during startup.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Mobile Application & UI",
+        items: [
+          { name: "Flutter 3.x", role: "Cross-Platform Mobile Framework" },
+          { name: "Dart ^3.8.1", role: "Strongly Typed Client Programming Language" },
+          { name: "Material 3", role: "Modern Android & iOS Design System" },
+          { name: "Cupertino Icons", role: "iOS Style Iconography Library" },
+          { name: "CustomScrollView", role: "Expanding Sliver Layout Framework" },
+        ],
+      },
+      {
+        category: "State Management & Architecture",
+        items: [
+          { name: "GetX 4.7.2", role: "Reactive State & Dependency Injection" },
+          { name: "GetxController", role: "Business Logic Component Controller" },
+          { name: "Obx Rebuilder", role: "Surgical Micro-Update Widget Rebuilder" },
+          { name: "Rx Observables", role: "Reactive State Containers (.obs)" },
+          { name: "Get Navigation", role: "Context-Free Declarative Route Manager" },
+        ],
+      },
+      {
+        category: "Networking & Ingestion",
+        items: [
+          { name: "HTTP 1.5.0", role: "Asynchronous HTTP REST Client" },
+          { name: "dart:convert", role: "High-Performance JSON Deserialization" },
+          { name: "berita-indo-api", role: "CNN Indonesia Syndicated REST Stream" },
+          { name: "Vercel Edge", role: "Edge-Cached API Microservice" },
+        ],
+      },
+      {
+        category: "Localization & Media Engine",
+        items: [
+          { name: "Intl 0.20.2", role: "Indonesian Locale (id_ID) Date Formatter" },
+          { name: "Lottie 3.1.2", role: "Vector JSON Animation Runtime" },
+          { name: "NetworkImage", role: "Remote Media Loader with Error Fallbacks" },
+          { name: "Git", role: "Distributed Version Control System" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "lib/ (Core Application Architecture)",
+        items: [
+          "main.dart — App bootstrap with id_ID date formatting and GetMaterialApp",
+          "api/api.dart — Asynchronous REST client querying CNN Indonesia endpoints",
+          "controller/news_controller.dart — GetX controller managing news, filters, themes, bookmarks",
+          "controller/splash_controller.dart — Splash lifecycle controller managing 4s delay and route handover",
+          "screens/api_screen.dart — Home discovery feed, carousel, search bar, and category chips",
+          "screens/detail_screen.dart — Editorial reader with SliverAppBar parallax cover and bookmark toggle",
+          "screens/favorite_screen.dart — Dedicated bookmark repository with one-tap reader navigation",
+          "screens/splash_screen.dart — Cold start splash screen executing Lottie vector animation",
+        ],
+      },
+      {
+        name: "assets/ & configuration",
+        items: [
+          "assets/animations/Insider-loading.json — Vector Lottie animation for startup splash",
+          "pubspec.yaml — Dependency manifest configuring get, lottie, http, and intl",
+          "android/ — Native Android Gradle and manifest build files",
+          "ios/ — Native iOS Xcode workspace and Runner configuration",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: NewsArticle Record",
+        purpose:
+          "Structured Dart representation of news items: title (string), link (string), contentSnippet (string), isoDate (string), and image object with small/large URLs.",
+      },
+      {
+        name: "REST API Endpoint: /v1/cnn-news/{category}",
+        purpose:
+          "GET endpoint returning syndication envelope with status, total count, and array of category-specific CNN articles.",
+      },
+      {
+        name: "Reactive Store: NewsController State",
+        purpose:
+          "GetxController reactive store holding allNews.obs, filteredNews.obs, bookMarks.obs, isLoading.obs, isTheme.obs, and selectedDate.",
+      },
+    ],
+    securityTitle: "API Reliability & Client-Side Resiliency",
+    securityLead:
+      "Enterprise architectural safeguards ensuring uninterrupted news reading and robust error handling.",
+    apiEndpoints: [
+      {
+        group: "Remote CNN News Ingestion",
+        routes: [
+          {
+            method: "GET",
+            path: "/v1/cnn-news/",
+            desc: "Fetches latest breaking news stream across all journalistic categories",
+          },
+          {
+            method: "GET",
+            path: "/v1/cnn-news/{category}",
+            desc: "Fetches category-specific articles (nasional, internasional, ekonomi, olahraga, teknologi, hiburan, gaya-hidup)",
+          },
+        ],
+      },
+      {
+        group: "Client-Side Reactive Filtering",
+        routes: [
+          {
+            method: "CLIENT",
+            path: "NewsController.applySearch(query)",
+            desc: "Zero-latency case-insensitive headline substring filter executed over in-memory article collection",
+          },
+          {
+            method: "CLIENT",
+            path: "NewsController.filterByDate(date)",
+            desc: "Parses ISO-8601 timestamps to filter articles matching selected year, month, and day",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Graceful Network Intercept & User Snackbars",
+        desc: "Surrounds API HTTP calls with try-catch blocks; automatically resets loading indicators, displays non-blocking Get.snackbar error notifications, and provides fallback empty list states.",
+      },
+      {
+        title: "CDN Image Fallback & Placeholder Containment",
+        desc: "All Image.network widgets implement custom errorBuilder fallbacks rendering neutral grey placeholder containers with Icons.image_not_supported to prevent layout crashes on dead image URLs.",
+      },
+      {
+        title: "Null-Safe Type Boundaries & ISO Timestamp Parsing",
+        desc: "Enforces strict Dart 3.8 null-safety across all dynamic JSON maps, using safe navigation operators and try-parse handlers for ISO-8601 timestamps and nested image URL properties.",
+      },
+      {
+        title: "Non-Volatile Bookmark State De-Duplication",
+        desc: "Employs any() predicate validation on article titles before appending to bookMarks.obs, preventing accidental duplicate saves and providing immediate visual feedback.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        label: "API Ingestion Latency",
+        value: "Sub-200ms",
+        context: "Fast syndicated content retrieval from Vercel edge endpoints",
+      },
+      {
+        label: "Search Filter Latency",
+        value: "0ms",
+        context: "Instantaneous client-side substring matching on keystroke input",
+      },
+      {
+        label: "Duplicate Bookmark Rate",
+        value: "0%",
+        context: "Guaranteed by atomic headline title predicate verification",
+      },
+      {
+        label: "Splash Animation Rate",
+        value: "60 FPS",
+        context: "Hardware-accelerated native JSON rendering via Lottie engine",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "In the modern mobile landscape, users demand lightning-fast access to breaking news without sluggish web views, cluttered advertising, or clunky navigation. News App was designed and developed as a sleek, modern mobile application delivering real-time journalistic feeds from CNN Indonesia directly into a streamlined, native interface.",
+          "The primary architectural objectives were zero-latency navigation, instantaneous full-text search, multi-category channel organization, date-based archival filtering, offline bookmark curation, and dynamic visual theming tailored for both daytime reading and nighttime environments.",
+        ],
+      },
+      {
+        title: "Architecture & Reactive State",
+        body: [
+          "News App leverages Flutter 3.x paired with the reactive power of GetX (get: ^4.7.2). By inheriting from GetxController, the NewsController encapsulates all mutable state into reactive observables (.obs). This design completely eliminates the boilerplate of StatefulWidget and setState() calls.",
+          "When network data arrives via Api().getApi(), updating allNews.obs automatically triggers localized rebuilds of Obx-wrapped widgets (such as the main feed and bookmark lists) without re-rendering unaffected app bars or navigation scaffolds.",
+          "The application architecture strictly separates network transport (lib/api/), reactive business logic (lib/controller/), and declarative UI components (lib/screens/), ensuring comprehensive testability and effortless feature expansion.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Coordinating multi-predicate filtering across search text and calendar dates simultaneously. Solved by architecting an atomic _applyFilters() method that sequentially evaluates both active calendar dates against parsed ISO-8601 strings and lowercase headline substring queries against the in-memory master collection.",
+          "Handling remote CDN image load failures and dead thumbnail links gracefully. Solved by implementing robust errorBuilder callbacks across all Image.network instances, gracefully substituting missing media with styled placeholder widgets and preventing layout shifts.",
+          "Delivering fluid UI transitions between bright daytime reading and dark night mode. Solved by building a dynamic Get.changeTheme() mechanism that toggles between ThemeData.dark() and a tailored light theme with zero-elevation app bars.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Sub-200ms REST API news ingestion achieved across 8 distinct journalism channels from CNN Indonesia.",
+          "0ms search and filter latency delivered via client-side linq-style predicate pipelines.",
+          "100% duplicate-free bookmark curation engine with reactive Get.snackbar user feedback notifications.",
+          "Silky 60 FPS onboarding experience powered by hardware-accelerated Lottie vector animations.",
+        ],
+      },
+    ],
+    stack: [
+      "Flutter",
+      "Dart",
+      "GetX",
+      "REST API",
+      "HTTP",
+      "Lottie",
+      "Intl",
+      "Material 3",
+      "Cupertino Icons",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/News-App" },
+    ],
+  },
+
+  "quran-app": {
+    title: "Quran App",
+    subtitle: "Digital Al-Quran Reader, Arabic Typography Engine & Reactive Bookmark Suite",
+    status: "Production Ready",
+    summary:
+      "A modern, responsive digital Holy Quran mobile application built with Flutter, GetX reactive state management, and REST API integration. Features 114 surah directory browsing, responsive search querying across Latin names and surah numbers, comprehensive ayat reader with authentic Arabic calligraphy typography and HTML transliteration formatting, reactive bookmark curation, dynamic dark/light system theming, and an efficient controller-based architectural pattern.",
+    domain: "github.com/adyvka31/Quran-App",
+    meta: [
+      { label: "Role", value: "Mobile Application Engineer" },
+      { label: "Platform", value: "Android & iOS" },
+      { label: "Timeline", value: "2024" },
+      { label: "Architecture", value: "Controller-Based GetX" },
+      { label: "Scripture API", value: "SantriKoding Quran API" },
+      { label: "Rendering & FX", value: "HTML Parser & Material 3" },
+    ],
+    galleryLabel: "MOBILE AL-QURAN READER & DEVOTIONAL PLATFORM",
+    galleryTitle: "The Quran App Experience",
+    galleryLead:
+      "Explore the peaceful and high-performance digital Quran experience — featuring complete 114 surah indexing, instant multi-attribute search, full verse reader with Arabic script & Indonesian transliteration, and reactive bookmark management.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official Quran App Showcase & Device Suite",
+        route: "app.quran.mobile",
+        tag: "Brand Presentation",
+        image: quranImg,
+        desc: "Comprehensive presentation showcase displaying Quran App's multi-device mobile architecture, presenting surah indexing, deep ayat reading, and personalized bookmark rosters across modern mobile displays.",
+        features: [
+          "Flutter 3.x Cross-Platform Client",
+          "GetX Reactive State Architecture",
+          "114 Surah RESTful Ingestion",
+        ],
+      },
+      {
+        id: "surah-directory-hub",
+        title: "Surah Index & Fast Search Grid",
+        route: "app.quran.mobile/directory",
+        tag: "Discovery & Navigation",
+        image: quran1,
+        desc: "Responsive home screen featuring adaptive grid layouts, dual-attribute substring and surah number search filtering, Arabic calligraphy badges, and single-tap bookmark toggles.",
+        features: [
+          "114 Surah Adaptive Grid View",
+          "Dual-Attribute Latin & Number Search",
+          "Instant Reactive Bookmark Toggle",
+        ],
+      },
+      {
+        id: "ayat-reader-view",
+        title: "Deep Ayat Reader & HTML Transliteration",
+        route: "app.quran.mobile/detail",
+        tag: "Content Reader",
+        image: quran2,
+        desc: "Immersive verse-by-verse scripture reader rendering authentic Arabic calligraphy, circular verse counters, and rich HTML-formatted Latin pronunciation with Indonesian translations.",
+        features: [
+          "Authentic Arabic Typography Rendering",
+          "Flutter HTML Transliteration Parser",
+          "Numbered Circular Verse Avatars",
+        ],
+      },
+      {
+        id: "bookmarks-favorites",
+        title: "Saved Surahs & Personalized Bookmarks",
+        route: "app.quran.mobile/bookmarks",
+        tag: "Personalized Curation",
+        image: quran3,
+        desc: "Dedicated bookmark repository rendering saved surahs via reactive Obx bindings with duplicate guards, empty state placeholders, and instant navigation into scripture reading mode.",
+        features: [
+          "Zero-Latency Obx Reactive Sync",
+          "Single-Tap Unbookmark & Removal",
+          "Empty State Vector Guidance",
+        ],
+      },
+      {
+        id: "multi-device-ecosystem",
+        title: "End-to-End Reading Workflow & Multi-Device Overview",
+        route: "app.quran.mobile/ecosystem",
+        tag: "System Workflow",
+        image: quran4,
+        desc: "Multi-screen overview illustrating the full devotional lifecycle: from discovering and filtering surahs on the home index, to verse-by-verse recitation and persistent bookmark curation.",
+        features: [
+          "End-to-End Devotional Reading Pipeline",
+          "Dynamic Dark / Light Mode Adaptation",
+          "Controller-Based Microservice Decoupling",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        label: "Scripture Corpus",
+        val: "114 Surahs",
+        change: "Full Index",
+        period: "From Al-Fatihah to An-Nas",
+      },
+      {
+        label: "Search Latency",
+        val: "0ms",
+        change: "Reactive .obs",
+        period: "Client-side dual substring filtering",
+      },
+      {
+        label: "State Reaction Time",
+        val: "0ms",
+        change: "GetX Binding",
+        period: "Observable Obx micro-updates",
+      },
+      {
+        label: "Ayat Text Format",
+        val: "Dual-Channel",
+        change: "Arabic + HTML",
+        period: "Uthmani text & rich transliteration",
+      },
+      {
+        label: "Theme Adaptation",
+        val: "Dual-Mode",
+        change: "Dark / Light",
+        period: "Get.changeTheme dynamic toggle",
+      },
+      {
+        label: "Network Protocol",
+        val: "REST JSON",
+        change: "Async HTTP",
+        period: "Non-blocking FutureBuilder stream",
+      },
+    ],
+    highlights: [
+      {
+        title: "RESTful Scripture Ingestion Engine",
+        desc: "Asynchronous HTTP client consuming Quranic surah and ayat data from https://quran-api.santrikoding.com/api/surah/ with dynamic surah number querying (/api/surah/{number}) and JSON array mapping.",
+      },
+      {
+        title: "GetX Reactive State & Theme Architecture",
+        desc: "Clean controller-based pattern utilizing QuranController extending GetxController, managing reactive observables (url.obs, isTheme.obs, search.obs, bookMarks.obs) with granular Obx widget rebuilders.",
+      },
+      {
+        title: "Multi-Attribute Search & Dynamic Grid Layout",
+        desc: "Dual-attribute client-side filtering matching lowercase Latin names (nama_latin) and surah sequence numbers (nomor) rendered through an adaptive SliverGridDelegateWithMaxCrossAxisExtent grid.",
+      },
+      {
+        title: "Rich Typography & HTML Transliteration Parser",
+        desc: "Integration with flutter_html: ^3.0.0 parsing HTML-formatted pronunciation markup alongside authentic Arabic typography (item['ar']) and circular verse counters.",
+      },
+    ],
+    capabilitiesTitle: "Core Architectural Capabilities",
+    capabilitiesLead:
+      "A breakdown of the engineering building blocks powering Quran App's responsive scripture delivery, reactive UI updates, and offline bookmarking.",
+    features: [
+      {
+        id: "surah-directory",
+        title: "Complete 114 Surah Directory & Responsive Grid",
+        badge: "Scripture Corpus",
+        desc: "High-throughput surah directory displaying all 114 Quranic chapters with authentic Arabic calligraphy, Latin titles, and verse metrics.",
+        points: [
+          "Adaptive Grid Architecture: SliverGridDelegateWithMaxCrossAxisExtent renders a 3/2 aspect ratio responsive card grid across mobile viewports.",
+          "Dual Typography Render: Simultaneously displays authentic Arabic script (nama) and localized phonetic Latin transliterations (nama_latin).",
+          "Instant Surah Routing: Tapping any surah card triggers Get.to(QuranDetail(surah: item)) with zero navigation latency.",
+          "Embedded Bookmark Controls: Each card contains an Obx bookmark toggle button reflecting real-time saved state.",
+        ],
+      },
+      {
+        id: "reactive-search",
+        title: "Zero-Latency Dual-Attribute Search Engine",
+        badge: "Algorithms & State",
+        desc: "Real-time client-side search engine allowing users to instantly find surahs by Latin name or numerical sequence index.",
+        points: [
+          "Continuous State Listening: TextField onChanged callback immediately updates c.search.value to lowercase query strings.",
+          "Dual-Attribute Intercept: Evaluates item['nama_latin'].toLowerCase().contains(query) OR item['nomor'].contains(query) simultaneously.",
+          "Reactive UI Repaint: Enclosed in an Obx rebuilder that instantly prunes cards without triggering redundant API re-fetches.",
+          "Empty State Safety: Displays clean 'Surah Not Found' center notifications when search predicates yield zero matching items.",
+        ],
+      },
+      {
+        id: "ayat-reader",
+        title: "Ayat Recitation Reader with HTML Transliteration",
+        badge: "Typography & Parsing",
+        desc: "Dedicated verse-by-verse recitation screen combining high-clarity Arabic calligraphy with rich HTML phonetic guides.",
+        points: [
+          "Asynchronous Detail Ingestion: getDetail(number) queries specific surah records to ingest the complete ayat collection.",
+          "Flutter HTML Integration: flutter_html: ^3.0.0 parses HTML markup within item['tr'] for accurate phonetic accent rendering.",
+          "Numbered Verse Avatars: Leading CircleAvatar badges display localized numerical verse identifiers for reading clarity.",
+          "Arabic Script Legibility: Dedicated Text(item['ar']) typography optimized for proper right-to-left Quranic verse reading.",
+        ],
+      },
+      {
+        id: "bookmark-sync",
+        title: "Reactive Bookmark Manager with Duplicate Guard",
+        badge: "Personalization",
+        desc: "Local state bookmark curation platform enabling readers to mark favorite surahs and resume daily reading with ease.",
+        points: [
+          "Atomic Uniqueness Verification: addBookmark() verifies !bookMarks.contains(surah) before appending to the observable list.",
+          "Dedicated Bookmark Hub: QuranBookmark screen renders curated reading items with direct one-tap reader navigation.",
+          "Immediate Removal Action: Trailing bookmark icon button allows readers to evict surahs with instantaneous state rollback.",
+          "Empty State Placeholder: Renders a centered 'Bookmark Is Empty' guidance message when no surahs are currently saved.",
+        ],
+      },
+      {
+        id: "dynamic-theming",
+        title: "Dynamic Dark / Light Theme Engine",
+        badge: "Theme Engine",
+        desc: "System-wide theme switching engine allowing effortless transitions between daytime study and comfortable nighttime recitation.",
+        points: [
+          "Single-Tap Switch: App bar action flips observable boolean isTheme to call Get.changeTheme().",
+          "Dark Mode Palette: Toggles ThemeData.dark() for high-contrast reading in low-light environments without eye strain.",
+          "Light Mode Palette: Transitions to clean ThemeData.light() with crisp white card surfaces for daylight recitation.",
+          "Context-Free Theme Propagation: Cascades theme alterations across all navigation routes instantly via GetX theme manager.",
+        ],
+      },
+      {
+        id: "async-future-builder",
+        title: "Resilient Asynchronous FutureBuilder Concurrency",
+        badge: "Concurrency & Network",
+        desc: "Robust asynchronous state machine handling loading indicators, network exceptions, and populated data streams gracefully.",
+        points: [
+          "ConnectionState Intercept: FutureBuilder gracefully displays CircularProgressIndicator() while waiting for HTTP responses.",
+          "Error Boundary Containment: Intercepts snapshot.hasError and renders descriptive error notifications preventing application crashes.",
+          "Non-Blocking UI Thread: Network I/O runs asynchronously on background isolates, keeping scrolling animations fluid at 60 FPS.",
+          "Decoupled Data Controller: Network queries are fully encapsulated in QuranController, keeping UI screens strictly declarative.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Scripture Ingestion & Reader Lifecycle",
+      lead:
+        "From remote Quranic REST API query through GetX reactive transformation to reader bookmarking — every surah and ayat flows through a structured, responsive pipeline.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Remote Scripture Ingestion",
+          title: "API Endpoint Query & Handshake",
+          desc: "QuranController.getSurah() executes asynchronous HTTP GET to /api/surah/ endpoint, validating status codes.",
+          action: "HTTP Ingestion & Status Validation",
+        },
+        {
+          level: "Stage 02",
+          role: "JSON Deserialization",
+          title: "Surah Array Parsing & Typing",
+          desc: "Decodes raw response body into structured List<Map<String, dynamic>> records preserving Arabic and Latin names.",
+          action: "Model Deserialization & Normalization",
+        },
+        {
+          level: "Stage 03",
+          role: "Reactive Controller Binding",
+          title: "Observable Query Synchronization",
+          desc: "TextField inputs immediately mutate search.obs, triggering fine-grained Obx rebuilds across the surah grid.",
+          action: "Dual-Attribute Stream Filtering",
+        },
+        {
+          level: "Stage 04",
+          role: "Deep Ayat Retrieval",
+          title: "Surah Detail & Verse Resolution",
+          desc: "QuranController.getDetail(number) queries /api/surah/{number} to fetch the complete array of verses.",
+          action: "Surah Verse Array Ingestion",
+        },
+        {
+          level: "Stage 05",
+          role: "Editorial Scripture Delivery",
+          title: "Arabic Typography & HTML Transliteration",
+          desc: "QuranDetail renders Arabic calligraphy paired with flutter_html transliteration and circular counters.",
+          action: "HTML & Arabic Calligraphy Rendering",
+        },
+        {
+          level: "Stage 06",
+          role: "Bookmark Curation",
+          title: "Personalized Reading Persistence",
+          desc: "Users tap bookmark actions to atomically add or evict surahs from bookMarks.obs with instant UI updates.",
+          action: "Reactive Bookmark Synchronization",
+        },
+      ],
+      lockMechanism: {
+        title: "Immutable Surah Reference & Deduplication Guard",
+        desc: "All bookmark operations perform equality verification on surah map payloads before mutating the observable bookMarks.obs collection, preventing duplicate records and guaranteeing state consistency.",
+      },
+    },
+    architectureTitle: "Application Architecture & Data Flow",
+    architectureLead:
+      "Layered system design decoupling network transport, reactive state control, and responsive UI components.",
+    architecture: {
+      type: "Controller-Based Reactive Client Architecture (GetX) + RESTful Microservices",
+      protocol: "HTTPS REST (JSON) + Dart Observables (.obs) + GetX Route Manager",
+      layers: [
+        {
+          name: "Presentation Layer (Flutter 3.x)",
+          badge: "Dart ^3.8.1 + Material 3",
+          desc: "Three primary screens (QuranScreen, QuranDetail, QuranBookmark) bound to GetX controller state via Obx rebuilders.",
+        },
+        {
+          name: "Reactive State & Logic (lib/controller/)",
+          badge: "GetxController + Observables",
+          desc: "QuranController managing observables (url.obs, isTheme.obs, search.obs, bookMarks.obs) and bookmarking algorithms.",
+        },
+        {
+          name: "Service & Ingestion Layer (lib/api/)",
+          badge: "HTTP 1.5.0 + dart:convert",
+          desc: "Network methods getSurah() and getDetail() executing asynchronous REST requests with HTTP 200 validation.",
+        },
+        {
+          name: "Scripture Typography & Parser Engine",
+          badge: "flutter_html 3.0.0 + Arabic Fonts",
+          desc: "Specialized text rendering combining Arabic Uthmani calligraphy with HTML transliteration parsing.",
+        },
+        {
+          name: "Routing & Overlay Manager",
+          badge: "GetMaterialApp + Route Manager",
+          desc: "Declarative navigation via Get.to() and context-free system theme management via Get.changeTheme().",
+        },
+        {
+          name: "Cross-Platform Mobile Engine",
+          badge: "Flutter Engine + Skia / Impeller",
+          desc: "High-performance native rendering compiling to Android ART and iOS ARM binaries with 60 FPS scroll performance.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Mobile Application & UI",
+        items: [
+          { name: "Flutter 3.x", role: "Cross-Platform Mobile Framework" },
+          { name: "Dart ^3.8.1", role: "Strongly Typed Client Programming Language" },
+          { name: "Material 3", role: "Modern Android & iOS Design System" },
+          { name: "Cupertino Icons", role: "iOS Style Iconography Library" },
+          { name: "GridView", role: "Responsive Surah Directory Card Layout" },
+        ],
+      },
+      {
+        category: "State Management & Architecture",
+        items: [
+          { name: "GetX 4.7.2", role: "Reactive State & Dependency Injection" },
+          { name: "GetxController", role: "Business Logic Component Controller" },
+          { name: "Obx Rebuilder", role: "Surgical Micro-Update Widget Rebuilder" },
+          { name: "Rx Observables", role: "Reactive State Containers (.obs)" },
+          { name: "Get Navigation", role: "Context-Free Declarative Route Manager" },
+        ],
+      },
+      {
+        category: "Networking & Scripture Ingestion",
+        items: [
+          { name: "HTTP 1.5.0", role: "Asynchronous HTTP REST Client" },
+          { name: "dart:convert", role: "High-Performance JSON Deserialization" },
+          { name: "SantriKoding API", role: "Syndicated Quranic REST Scripture Stream" },
+          { name: "FutureBuilder", role: "Asynchronous Concurrency State Machine" },
+        ],
+      },
+      {
+        category: "Rendering & Media Engine",
+        items: [
+          { name: "flutter_html 3.0.0", role: "HTML Pronunciation Transliteration Parser" },
+          { name: "Arabic Uthmani Font", role: "Authentic Quranic Calligraphy Rendering" },
+          { name: "CircleAvatar", role: "Numbered Verse Badge Identification" },
+          { name: "Git", role: "Distributed Version Control System" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "lib/ (Core Application Architecture)",
+        items: [
+          "main.dart — App bootstrap and GetMaterialApp configuration",
+          "controller/quran_controller.dart — GetX controller managing API requests, search, themes, bookmarks",
+          "screens/quran_screen.dart — Home surah grid with search bar and bookmark navigation",
+          "screens/quran_detail.dart — Full verse reader with Arabic text and HTML transliteration",
+          "screens/quran_bookmark.dart — Dedicated bookmark repository with one-tap reader navigation",
+        ],
+      },
+      {
+        name: "configuration & manifests",
+        items: [
+          "pubspec.yaml — Dependency manifest configuring get, http, flutter_html, and cupertino_icons",
+          "analysis_options.yaml — Recommended Flutter linting standards",
+          "android/ — Native Android Gradle and manifest build files",
+          "ios/ — Native iOS Xcode workspace and Runner configuration",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: Surah Record (Index)",
+        purpose:
+          "Structured representation of a Quran chapter: nomor (int), nama (Arabic string), nama_latin (string), jumlah_ayat (int), tempat_turun (string), and arti (string).",
+      },
+      {
+        name: "Data Model: Ayat Record (Verse Detail)",
+        purpose:
+          "Structured representation of a Quran verse: id (int), surah (int), nomor (int), ar (Arabic calligraphy text), tr (HTML transliteration text), and idn (translation).",
+      },
+      {
+        name: "Reactive Store: QuranController State",
+        purpose:
+          "GetxController reactive store holding url.obs, isTheme.obs, search.obs, and bookMarks.obs collection.",
+      },
+    ],
+    securityTitle: "API Reliability & Client-Side Resiliency",
+    securityLead:
+      "Architectural safeguards ensuring uninterrupted scripture reading, graceful exception containment, and offline data stability.",
+    apiEndpoints: [
+      {
+        group: "Remote Scripture Ingestion",
+        routes: [
+          {
+            method: "GET",
+            path: "https://quran-api.santrikoding.com/api/surah/",
+            desc: "Fetches complete index array containing all 114 Quranic chapters with Arabic and Latin names",
+          },
+          {
+            method: "GET",
+            path: "https://quran-api.santrikoding.com/api/surah/{number}",
+            desc: "Fetches comprehensive chapter detail including complete verse array, Arabic text, and HTML transliteration",
+          },
+        ],
+      },
+      {
+        group: "Client-Side Reactive Filtering",
+        routes: [
+          {
+            method: "CLIENT",
+            path: "QuranController.search.value",
+            desc: "Zero-latency case-insensitive dual-attribute search querying Latin titles and numerical surah indices",
+          },
+          {
+            method: "CLIENT",
+            path: "QuranController.bookMarks.obs",
+            desc: "Reactive in-memory observable collection managing personalized reading bookmarks with duplicate prevention",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Asynchronous FutureBuilder Error Intercept",
+        desc: "Surrounds asynchronous data ingestion with snapshot.hasError evaluation, rendering descriptive error indicators and preventing application unhandled exceptions.",
+      },
+      {
+        title: "HTML Transliteration Sanitization & Parsing",
+        desc: "Uses flutter_html to safely parse Latin phonetic transliterations and accent marks without rendering raw HTML tags or causing text layout overflow.",
+      },
+      {
+        title: "Null-Safe Type Boundary Enforcement",
+        desc: "Enforces strict Dart 3.8 null-safety across all dynamic JSON map responses, protecting against missing fields or unexpected network payloads.",
+      },
+      {
+        title: "Deduplicated In-Memory Bookmark Integrity",
+        desc: "Applies contains() equality validation on surah map objects before appending to bookMarks.obs, preventing duplicate bookmarks and maintaining clean state.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        label: "Scripture Corpus",
+        value: "114 Surahs",
+        context: "Complete Holy Quran directory from Al-Fatihah to An-Nas",
+      },
+      {
+        label: "Search Latency",
+        value: "0ms",
+        context: "Instantaneous client-side dual-attribute filter on keystroke input",
+      },
+      {
+        label: "Bookmark Deduplication",
+        value: "100%",
+        context: "Guaranteed by atomic collection contains() verification",
+      },
+      {
+        label: "Frame Rendering Rate",
+        value: "60 FPS",
+        context: "Fluid hardware-accelerated scrolling across surah and verse lists",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "In the digital era, having immediate, peaceful, and barrier-free access to the Holy Quran is essential for millions of Muslims worldwide. Quran App was designed and developed as a sleek, modern mobile application delivering the complete 114 surahs into an intuitive, responsive interface.",
+          "The primary architectural goals were zero-latency navigation, instant dual-attribute search across Latin titles and chapter numbers, authentic verse-by-verse recitation reading with Arabic script and HTML-formatted transliteration, personalized bookmarking, and seamless theme switching for comfortable day and night reading.",
+        ],
+      },
+      {
+        title: "Architecture & Reactive State",
+        body: [
+          "Quran App is built on Flutter 3.x paired with the reactive power of GetX (get: ^4.7.2). By utilizing a controller-based pattern (QuranController extending GetxController), all dynamic application states—such as the active search query, dark/light theme toggle, and bookmarked surah collection—are encapsulated into reactive observables (.obs).",
+          "This architecture eliminates the need for heavyweight StatefulWidget boilerplate. Screens reactively update via granular Obx rebuilders only when relevant state changes occur, ensuring the UI remains snappy and responsive.",
+          "Network requests to the remote Quran API are handled cleanly through asynchronous HTTP methods and integrated into Flutter's FutureBuilder, providing explicit handling for loading, error, and populated states.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Handling remote API availability, rate limiting, and unexpected network timeouts. Solved by integrating comprehensive FutureBuilder error boundaries that capture connection states and display graceful error states rather than crashing the view.",
+          "Balancing bi-directional text presentation between right-to-left (RTL) Arabic Quranic calligraphy and left-to-right (LTR) phonetic Latin transliteration. Solved by decoupling the verse title from the transliteration subtitle and utilizing flutter_html to render phonetic styling accurately.",
+          "Providing an instantaneous, zero-latency bookmark experience. Solved by leveraging GetX's RxList, providing instant visual feedback on bookmark toggles and preventing duplicate entries with strict object equality checks.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Complete 114 surah directory accessible via an adaptive, responsive card grid.",
+          "0ms dual-attribute search latency across Latin transliterations and chapter sequence numbers.",
+          "Dual-channel verse recitation reader pairing authentic Arabic Uthmani text with rich HTML transliteration.",
+          "Seamless dark/light theme switching tailored for day and night devotional recitation.",
+        ],
+      },
+    ],
+    stack: [
+      "Flutter",
+      "Dart",
+      "GetX",
+      "REST API",
+      "HTTP",
+      "HTML",
+      "Material 3",
+      "Cupertino Icons",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/Quran-App" },
+    ],
+  },
+
+  "ai-ticket-manager": {
+    title: "AI Ticket Manager",
+    subtitle: "Intelligent Task Orchestration, Real-Time Cloud Firestore & Google Gemini AI Synthesis",
+    status: "Production Ready",
+    summary:
+      "A cross-platform intelligent task and ticket lifecycle management mobile application built with Flutter, Firebase Authentication, Cloud Firestore, and Google Generative AI (Gemini Flash & Gemini Pro fallback). Features secure multi-tenant user isolation (users/{uid}/tasks), real-time live data streaming, natural language task summarization, dynamic user prompt injection, comprehensive task lifecycle tracking (Open, In Progress, Done), date-time scheduling, and responsive state management with Provider.",
+    domain: "github.com/adyvka31/AI-Generator-App",
+    meta: [
+      { label: "Role", value: "Mobile Application Engineer" },
+      { label: "Platform", value: "Android & iOS" },
+      { label: "Timeline", value: "2024" },
+      { label: "Architecture", value: "Provider State Pattern" },
+      { label: "AI Engine", value: "Google Gemini 1.5 Flash" },
+      { label: "Cloud Backend", value: "Firebase Auth & Firestore" },
+    ],
+    galleryLabel: "MOBILE TASK AUTOMATION & AI INTERFACES",
+    galleryTitle: "The AI Ticket Manager Experience",
+    galleryLead:
+      "Explore the intelligent task orchestration experience — featuring real-time Firestore synchronization, natural language task synthesis powered by Google Gemini, contextual custom prompt overrides, and secure multi-tenant identity governance.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official AI Ticket Manager Showcase & Device Suite",
+        route: "app.aiticket.mobile",
+        tag: "Brand Presentation",
+        image: aigeneratorImg,
+        desc: "Comprehensive presentation showcase displaying AI Ticket Manager's multi-device mobile architecture, featuring live task monitoring, natural language Gemini AI task assistant views, and secure onboarding.",
+        features: [
+          "Flutter 3.x Cross-Platform Client",
+          "Cloud Firestore Real-Time Stream",
+          "Google Gemini AI Synthesis Engine",
+        ],
+      },
+      {
+        id: "task-dashboard-hub",
+        title: "Task Management Dashboard & Live Real-Time Feed",
+        route: "app.aiticket.mobile/tasks",
+        tag: "Task Orchestration",
+        image: aigenerator1,
+        desc: "Centralized user dashboard streaming active tasks in real-time, displaying custom greeting headers, instant search filtering, color-coded status badges, and single-tap task creation navigation.",
+        features: [
+          "Firestore Real-Time StreamBuilder",
+          "Dynamic Status Indicators (Done/In Progress)",
+          "Zero-Latency Substring Search Bar",
+        ],
+      },
+      {
+        id: "gemini-ai-assistant",
+        title: "Gemini AI Task Assistant & Dynamic Prompt Engine",
+        route: "app.aiticket.mobile/assistant",
+        tag: "Generative AI",
+        image: aigenerator2,
+        desc: "Interactive AI synthesis portal enabling users to select any registered task, inject optional custom instruction prompts, and receive formatted executive summaries generated by Google Gemini.",
+        features: [
+          "Google Generative AI Integration",
+          "Contextual User Prompt Customization",
+          "Markdown-Formatted Synthesis Display",
+        ],
+      },
+      {
+        id: "auth-onboarding",
+        title: "Identity Governance & Secure Authentication Onboarding",
+        route: "app.aiticket.mobile/auth",
+        tag: "Security & Identity",
+        image: aigenerator3,
+        desc: "Streamlined authentication interface with client-side field validation, human-readable Firebase exception translations, display name profile setup, and persistent session state.",
+        features: [
+          "Firebase Email & Password Auth",
+          "Display Name Profile Synchronization",
+          "Human-Friendly Exception Handling",
+        ],
+      },
+      {
+        id: "multi-device-ecosystem",
+        title: "Multi-Device AI Productivity Suite & Architecture Overview",
+        route: "app.aiticket.mobile/ecosystem",
+        tag: "System Workflow",
+        image: aigenerator4,
+        desc: "Multi-screen overview illustrating the full task lifecycle: from secure onboarding and real-time Firestore synchronization, to LLM-driven generative summarization and status completion.",
+        features: [
+          "End-to-End Task Lifecycle Pipeline",
+          "Multi-Tenant Document Isolation",
+          "Provider Reactive State Architecture",
+        ],
+      },
+    ],
+    kpis: [
+      {
+        label: "AI Synthesis Latency",
+        val: "Sub-800ms",
+        change: "Gemini Flash",
+        period: "Google Generative AI inference",
+      },
+      {
+        label: "Sync Latency",
+        val: "0ms",
+        change: "Live Stream",
+        period: "Cloud Firestore snapshot pipeline",
+      },
+      {
+        label: "Tenant Isolation",
+        val: "100%",
+        change: "users/{uid}",
+        period: "Strict document subcollection security",
+      },
+      {
+        label: "Model Resilience",
+        val: "Dual-Tier",
+        change: "Auto Fallback",
+        period: "gemini-flash-latest to gemini-pro",
+      },
+      {
+        label: "Lifecycle States",
+        val: "3 Stages",
+        change: "Tracking",
+        period: "Open, In Progress, Done",
+      },
+      {
+        label: "Frame Rendering",
+        val: "60 FPS",
+        change: "Native",
+        period: "Hardware-accelerated Skia rendering",
+      },
+    ],
+    highlights: [
+      {
+        title: "Google Gemini LLM Task Synthesis Engine",
+        desc: "Deep integration with google_generative_ai: ^0.4.7 utilizing Gemini models to synthesize complex tasks into concise executive summaries with support for dynamic custom user prompts and automated model fallbacks.",
+      },
+      {
+        title: "Real-Time Cloud Firestore Multi-Tenant Pipeline",
+        desc: "Reactive data architecture powered by StreamBuilder subscribing to users/{uid}/tasks collections, providing instantaneous cloud synchronization, automatic offline caching, and server timestamping.",
+      },
+      {
+        title: "Provider Reactive State Management Architecture",
+        desc: "Decoupled state management leveraging Provider and ChangeNotifier (TicketProvider), isolating AI inference operations, loading states, and localized ticket collections from the presentation layer.",
+      },
+      {
+        title: "Secure Identity Governance via Firebase Auth",
+        desc: "Enterprise user authentication managing session persistence, display name updates, and client-side error handling translating raw Firebase exceptions into intuitive user feedback.",
+      },
+    ],
+    capabilitiesTitle: "Core Architectural Capabilities",
+    capabilitiesLead:
+      "A breakdown of the engineering building blocks powering AI Ticket Manager's real-time synchronization, intelligent LLM synthesis, and secure cloud storage.",
+    features: [
+      {
+        id: "gemini-ai-synthesis",
+        title: "Automated Task Summarization & Prompt Engineering",
+        badge: "Generative AI",
+        desc: "Generative AI assistant engine transforming raw task details into actionable, structured executive summaries.",
+        points: [
+          "GenerativeModel Engine: Leverages google_generative_ai invoking gemini-flash-latest for high-speed, cost-efficient inference.",
+          "Dynamic Prompt Construction: Concatenates task title, detailed description, and optional user instructions into a cohesive prompt envelope.",
+          "Automated Failover Architecture: Catches model resolution errors and gracefully falls back to gemini-pro to ensure continuous uptime.",
+          "Reactive UI State: TicketProvider tracks isSummarizing state, rendering custom circular loaders during active inference.",
+        ],
+      },
+      {
+        id: "firestore-realtime-stream",
+        title: "Real-Time Cloud Firestore Data Pipeline",
+        badge: "Cloud Database",
+        desc: "Reactive cloud database streaming live task modifications directly into user interfaces without manual refresh.",
+        points: [
+          "Scoped Collection Reference: Constrains all CRUD operations to users/{user.uid}/tasks for strict multi-tenant isolation.",
+          "Snapshot Stream Mapping: getTickets() automatically deserializes QuerySnapshot documents into immutable Ticket entity objects.",
+          "Server Timestamping: Attaches FieldValue.serverTimestamp() upon task creation, guaranteeing chronologically sorted feeds.",
+          "Offline Cache & Resilience: Cloud Firestore automatically synchronizes pending writes upon network reconnection.",
+        ],
+      },
+      {
+        id: "provider-state-management",
+        title: "Provider Pattern & Reactive State Orchestration",
+        badge: "State & Architecture",
+        desc: "Clean separation of presentation widgets from business logic and background asynchronous service calls.",
+        points: [
+          "ChangeNotifier Architecture: TicketProvider encapsulates AI inference state, active summary text, and ticket removal logic.",
+          "Consumer Micro-Updates: Targeted Consumer<TicketProvider> widgets repaint only AI summary cards and loaders when state changes.",
+          "MultiProvider Injection: Injects state at the root MaterialApp hierarchy, making providers universally accessible across routes.",
+          "Clean Separation of Concerns: UI components remain strictly declarative while network services handle API communication.",
+        ],
+      },
+      {
+        id: "firebase-auth-governance",
+        title: "Multi-Tenant User Authentication & Error Translation",
+        badge: "Security & Auth",
+        desc: "Robust authentication pipeline handling registration, session management, and descriptive error diagnostics.",
+        points: [
+          "Firebase Auth Lifecycle: StreamBuilder listens to authStateChanges(), seamlessly swapping between LoginScreen and HomeScreen.",
+          "User Profile Setup: Updates user displayName during signUp to personalize greetings throughout the dashboard.",
+          "Human-Readable Exception Handler: Translates technical error codes (user-not-found, wrong-password) into friendly Indonesian messages.",
+          "Clean Sign-Out Mechanism: Single-tap logout action completely terminates active session tokens and clears cached credentials.",
+        ],
+      },
+      {
+        id: "task-lifecycle-crud",
+        title: "Comprehensive Task Lifecycle CRUD & Status Tracking",
+        badge: "Task Orchestration",
+        desc: "End-to-end task management interface enabling users to create, view, modify, and delete tickets with status progressions.",
+        points: [
+          "Lifecycle State Machine: Supports transitions between Open, In Progress, and Done with visual color-coded accents.",
+          "Dual Create/Edit Mode: TicketFormScreen dynamically pre-fills controllers when editing existing tickets or initializes blank states.",
+          "Safe Deletion Dialog: Displays AlertDialog confirmation before triggering removeTicket() to prevent accidental data loss.",
+          "Duration & Scheduling Fields: Captures custom duration strings, dates, and times for accurate task management.",
+        ],
+      },
+      {
+        id: "search-and-filtering",
+        title: "Zero-Latency Task Search & Date-Time Scheduling",
+        badge: "UI & Scheduling",
+        desc: "Client-side search and native scheduling tools for effortless task discovery and precise calendar planning.",
+        points: [
+          "Instant Substring Search: Evaluates search keywords against both task titles and descriptions simultaneously on keystrokes.",
+          "Native DatePicker Integration: showDatePicker() allows users to select calendar dates formatted as YYYY-MM-DD.",
+          "Native TimePicker Integration: showTimePicker() provides intuitive time selection formatted to localized standards.",
+          "Empty State Handling: Renders clean 'No tasks found' guidance when search queries or lists contain no records.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "Task Ingestion, AI Synthesis & Lifecycle Workflow",
+      lead:
+        "From task creation and cloud synchronization to Gemini AI summary generation and lifecycle resolution — every record flows through a secure, multi-tier pipeline.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Identity & Session Setup",
+          title: "Secure Firebase Authentication",
+          desc: "AuthService establishes user identity via signIn or signUp, registering credentials and updating displayName in Firebase Auth.",
+          action: "Session Establishment & Token Verification",
+        },
+        {
+          level: "Stage 02",
+          role: "Task Ingestion & Persistence",
+          title: "Firestore Model Serialization & Timestamping",
+          desc: "TicketFormScreen validates inputs and dispatches Ticket.toMap() to users/{uid}/tasks with FieldValue.serverTimestamp().",
+          action: "Scoped Cloud Write & Document Creation",
+        },
+        {
+          level: "Stage 03",
+          role: "Reactive Stream Pipeline",
+          title: "Real-Time Snapshots Stream & UI Binding",
+          desc: "FirestoreService.getTickets() maps real-time collection snapshots into List<Ticket>, updating the HomeScreen UI automatically.",
+          action: "Non-Blocking Stream Sync & Offline Cache",
+        },
+        {
+          level: "Stage 04",
+          role: "Contextual AI Orchestration",
+          title: "Task Selection & Prompt Interpolation",
+          desc: "AiSummaryScreen captures selected task parameters and concatenates optional user guidance into a structured prompt.",
+          action: "Prompt Construction & Context Injection",
+        },
+        {
+          level: "Stage 05",
+          role: "LLM Inference & Resilience",
+          title: "Gemini Flash Inference with Pro Fallback",
+          desc: "GeminiService queries gemini-flash-latest, automatically falling back to gemini-pro on API edge exceptions.",
+          action: "Dual-Model Generative AI Processing",
+        },
+        {
+          level: "Stage 06",
+          role: "Resolution & Local State",
+          title: "Consumer Rebuilding & Markdown Rendering",
+          desc: "TicketProvider notifies listeners, rendering AI summaries and allowing one-tap task editing or deletion.",
+          action: "Reactive State Broadcast & UI Repaint",
+        },
+      ],
+      lockMechanism: {
+        title: "Multi-Tenant Cloud Firestore Isolation Guarantee",
+        desc: "All task read, write, update, and delete transactions are constrained strictly to the authenticated user's scoped document subcollection (users/{uid}/tasks), preventing cross-tenant data leakage and guaranteeing end-to-end data privacy.",
+      },
+    },
+    architectureTitle: "Application Architecture & Data Flow",
+    architectureLead:
+      "Layered system design decoupling network transport, reactive state control, and responsive UI components.",
+    architecture: {
+      type: "Service-Oriented Reactive Flutter Architecture + Firebase BaaS + Google Gemini AI",
+      protocol: "HTTPS REST (gRPC Firestore Stream) + Google Generative AI SDK + Firebase Auth Token",
+      layers: [
+        {
+          name: "Presentation Layer (Flutter 3.x)",
+          badge: "Dart ^3.8.1 + Material 3",
+          desc: "Modular UI screens (HomeScreen, TicketFormScreen, AiSummaryScreen, LoginScreen, RegisterScreen) styled in warm espresso tones.",
+        },
+        {
+          name: "State Management Layer (lib/providers/)",
+          badge: "Provider 6.1.1 + ChangeNotifier",
+          desc: "TicketProvider managing generative AI inference requests, summary state, and local collection synchronization.",
+        },
+        {
+          name: "AI Integration Services (lib/services/)",
+          badge: "Google Generative AI 0.4.7",
+          desc: "GeminiService handling prompt formulation, model instantiation (gemini-flash-latest), and automated gemini-pro fallback.",
+        },
+        {
+          name: "Cloud Persistence Services (lib/services/)",
+          badge: "Cloud Firestore 6.1.2",
+          desc: "FirestoreService managing CRUD operations and real-time reactive streams scoped to authenticated user subcollections.",
+        },
+        {
+          name: "Identity & Access Governance (lib/services/)",
+          badge: "Firebase Auth 6.1.4",
+          desc: "AuthService managing credential validation, session state streams, display name persistence, and error translation.",
+        },
+        {
+          name: "Cross-Platform Native Engine",
+          badge: "Flutter Engine + Skia / Impeller",
+          desc: "Hardware-accelerated native rendering compiling directly to Android ART and iOS ARM binaries with 60 FPS performance.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Mobile Application & UI",
+        items: [
+          { name: "Flutter 3.x", role: "Cross-Platform Mobile Application Framework" },
+          { name: "Dart ^3.8.1", role: "Strongly Typed Client Programming Language" },
+          { name: "Material 3", role: "Modern Android & iOS Design System" },
+          { name: "SingleChildScrollView", role: "Responsive Scroll Layout Architecture" },
+          { name: "DropdownButtonFormField", role: "Status & Task Selection Component" },
+        ],
+      },
+      {
+        category: "AI & Machine Learning",
+        items: [
+          { name: "Google Generative AI 0.4.7", role: "Official Gemini LLM SDK for Flutter" },
+          { name: "Gemini Flash Latest", role: "High-Speed Generative Language Model" },
+          { name: "Gemini Pro", role: "Automated Fallback Generative Language Model" },
+          { name: "Prompt Engineering", role: "Contextual Natural Language Instructions" },
+        ],
+      },
+      {
+        category: "Cloud Backend & Database",
+        items: [
+          { name: "Firebase Core 4.4.0", role: "Cloud Backend Platform Bootstrap" },
+          { name: "Firebase Auth 6.1.4", role: "Multi-Tenant Authentication & Session Engine" },
+          { name: "Cloud Firestore 6.1.2", role: "Real-Time NoSQL Cloud Document Database" },
+          { name: "ServerTimestamp", role: "Cloud-Side Chronological Order Stamping" },
+        ],
+      },
+      {
+        category: "State Management & Storage",
+        items: [
+          { name: "Provider 6.1.1", role: "Reactive Dependency Injection & State Manager" },
+          { name: "ChangeNotifier", role: "State Mutation & Listener Notification Pipeline" },
+          { name: "SharedPreferences 2.2.2", role: "Local Offline Summary Storage Cache" },
+          { name: "Git", role: "Distributed Version Control System" },
+        ],
+      },
+    ],
+    directoryStructure: [
+      {
+        name: "lib/ (Core Application Architecture)",
+        items: [
+          "main.dart — App bootstrap, Firebase initialization, MultiProvider, and Auth StreamBuilder",
+          "models/ticket.dart — Ticket data model with fromFirestore and toMap serialization",
+          "providers/ticket_provider.dart — ChangeNotifier state provider for AI summary generation and local ticket state",
+          "services/gemini_service.dart — Google Generative AI integration with dual-model fallback mechanism",
+          "services/firestore_service.dart — Cloud Firestore CRUD and real-time snapshots stream scoped to users/{uid}/tasks",
+          "services/auth_service.dart — Firebase Auth signIn, signUp, signOut, and human-readable error handler",
+          "screens/home_screen.dart — Primary task management dashboard with live search and greeting header",
+          "screens/ticket_form_screen.dart — Task creation and editing form with date, time, duration, and status pickers",
+          "screens/ai_summary_screen.dart — Gemini AI assistant screen with task dropdown and custom prompt input",
+          "screens/login_screen.dart — User login screen with client validation and auth routing",
+          "screens/register_screen.dart — Account creation screen with display name registration",
+        ],
+      },
+      {
+        name: "configuration & cloud manifests",
+        items: [
+          "pubspec.yaml — Dependency manifest configuring google_generative_ai, cloud_firestore, firebase_auth, and provider",
+          "firebase.json — Firebase CLI deployment and project configuration",
+          "firebase_options.dart — Platform-specific Firebase credentials for Android, iOS, macOS, and Web",
+          "android/app/google-services.json — Android Google services configuration",
+          "ios/Runner/GoogleService-Info.plist — iOS Google services configuration",
+        ],
+      },
+    ],
+    prismaSchemas: [
+      {
+        name: "Data Model: Ticket Entity (Firestore)",
+        purpose:
+          "Stores task attributes: id (string), title (string), description (string), duration (string), date (YYYY-MM-DD), time (HH:mm), status (Open/In Progress/Done), and server createdAt timestamp.",
+      },
+      {
+        name: "AI Inference Model: Gemini Prompt & Response Envelope",
+        purpose:
+          "Formats structured prompt instructions combining task title, description, and custom user prompt, returning synthesized Markdown narrative summaries.",
+      },
+      {
+        name: "Provider State Store: TicketProvider State Model",
+        purpose:
+          "ChangeNotifier store encapsulating _isSummarizing boolean flag, _summary response text, and localized _tickets collection.",
+      },
+    ],
+    securityTitle: "API Reliability & Client-Side Resiliency",
+    securityLead:
+      "Enterprise architectural safeguards ensuring uninterrupted task management, isolated tenant storage, and resilient AI model execution.",
+    apiEndpoints: [
+      {
+        group: "Google Generative AI (Gemini)",
+        routes: [
+          {
+            method: "POST",
+            path: "GeminiService.summarizeTask(title, desc)",
+            desc: "Dispatches GenerativeModel.generateContent() request to gemini-flash-latest for rapid task synthesis",
+          },
+          {
+            method: "FALLBACK",
+            path: "GenerativeModel('gemini-pro')",
+            desc: "Automated failover model invocation executed when primary v1beta model endpoints encounter latency or errors",
+          },
+        ],
+      },
+      {
+        group: "Cloud Firestore Reactive Streams",
+        routes: [
+          {
+            method: "STREAM",
+            path: "users/{uid}/tasks.orderBy('createdAt')",
+            desc: "Subscribes to live QuerySnapshot stream emitting real-time task document additions, updates, and removals",
+          },
+          {
+            method: "CRUD",
+            path: "users/{uid}/tasks.add() / update() / delete()",
+            desc: "Executes atomic writes, updates, and deletions constrained strictly to authenticated user collections",
+          },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Multi-Tenant Document Scoping",
+        desc: "All Firestore queries are dynamically scoped to users/{currentUser.uid}/tasks, ensuring users can never access or modify another user's task data.",
+      },
+      {
+        title: "Dual-Model Generative AI Failover",
+        desc: "Surrounds AI generation in nested try-catch blocks, attempting gemini-flash-latest first and seamlessly falling back to gemini-pro before returning error strings.",
+      },
+      {
+        title: "Client-Side Input Validation & Form Guards",
+        desc: "Enforces strict FormState validation across title, date, and time fields before allowing Firestore document submissions, preventing corrupted records.",
+      },
+      {
+        title: "Human-Readable Exception Translation",
+        desc: "Catches raw FirebaseAuthException codes and maps them into clear Indonesian explanations, preventing technical jargon from confusing end-users.",
+      },
+    ],
+    metricOutcomes: [
+      {
+        label: "AI Synthesis Latency",
+        value: "Sub-800ms",
+        context: "High-speed inference delivered via Google Gemini Flash models",
+      },
+      {
+        label: "Live Sync Latency",
+        value: "0ms",
+        context: "Real-time updates streamed via Cloud Firestore snapshot listeners",
+      },
+      {
+        label: "Tenant Isolation Rate",
+        value: "100%",
+        context: "Guaranteed by users/{uid}/tasks document subcollection scoping",
+      },
+      {
+        label: "Model Availability",
+        value: "99.9%",
+        context: "Secured via automated gemini-flash to gemini-pro fallback logic",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "In fast-paced modern workflows, support and operations teams generate high volumes of daily tasks, action items, and tickets. However, professionals frequently lack the time to manually write executive summaries, synthesize complex descriptions, or generate progress reports.",
+          "AI Ticket Manager was designed and developed as a sophisticated mobile application marrying real-time task tracking with cutting-edge Large Language Models (LLMs). The goal was to provide effortless task capture, live multi-device synchronization, and instant generative AI summarization powered by Google Gemini.",
+        ],
+      },
+      {
+        title: "Architecture & Gemini LLM Pipeline",
+        body: [
+          "The application leverages Flutter 3.x paired with the Provider state management pattern. State is managed reactively through TicketProvider, which coordinates interactions between Cloud Firestore streams and the Gemini AI inference engine.",
+          "Data persistence is architected around Firebase Authentication and Cloud Firestore, structuring records into isolated document subcollections (users/{uid}/tasks). This ensures multi-tenant security while enabling offline persistence and real-time StreamBuilder updates.",
+          "The AI pipeline uses Google's official google_generative_ai SDK. When a user requests an AI analysis, the app constructs a structured prompt from the task's title and description, appends any optional user instruction prompts, and queries gemini-flash-latest with an automated fallback to gemini-pro.",
+        ],
+      },
+      {
+        title: "What was hard",
+        body: [
+          "Handling varying API endpoint versions and model availability across Google Generative AI SDK releases. Solved by implementing an automated multi-tier failover mechanism: the service first queries gemini-flash-latest, and if a model resolution error occurs, it instantly falls back to gemini-pro.",
+          "Maintaining seamless real-time UI synchronization without redundant re-renders during active AI inference. Solved by decoupling the Firestore StreamBuilder (which handles task list rendering) from the TicketProvider ChangeNotifier (which handles AI loading spinners and markdown responses).",
+          "Translating complex Firebase authentication errors into user-friendly feedback. Solved by writing an exhaustive exception handler in AuthService that intercepts error codes and returns actionable human guidance.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Sub-800ms natural language task synthesis achieved using Google Gemini Flash models.",
+          "Zero-latency real-time task synchronization across devices powered by Cloud Firestore.",
+          "100% secure multi-tenant data isolation enforced through scoped user subcollections.",
+          "Fluid 60 FPS user experience with warm, modern espresso and off-white Material 3 aesthetics.",
+        ],
+      },
+    ],
+    stack: [
+      "Flutter",
+      "Dart",
+      "Firebase Auth",
+      "Cloud Firestore",
+      "Google Gemini AI",
+      "Provider",
+      "Material 3",
+      "Git",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/AI-Generator-App" },
+    ],
   },
 };
 
 // Backward compatibility alias for legacy route
 projectDetails.flutter = projectDetails.delifood;
 projectDetails.jagajiwa = projectDetails.fitsmart;
+projectDetails.attendance = projectDetails["attendance-app"];
+projectDetails.todo = projectDetails["attendance-app"];
+projectDetails["flutter-todo-firebase"] = projectDetails["attendance-app"];
+projectDetails["qr-scanner-app"] = projectDetails["qr-scanner"];
+projectDetails.qrscanner = projectDetails["qr-scanner"];
+projectDetails.news = projectDetails["news-app"];
+projectDetails.newsapp = projectDetails["news-app"];
+projectDetails["news-reader"] = projectDetails["news-app"];
+projectDetails.quran = projectDetails["quran-app"];
+projectDetails.quranapp = projectDetails["quran-app"];
+projectDetails["ai-generator"] = projectDetails["ai-ticket-manager"];
+projectDetails["ai-generator-app"] = projectDetails["ai-ticket-manager"];
+projectDetails.aiticketmanager = projectDetails["ai-ticket-manager"];

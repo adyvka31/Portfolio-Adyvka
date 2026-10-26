@@ -54,7 +54,7 @@ export default function PageHero({
         {meta && (
           <NativeReveal delay={0.18} className="reveal-slide-up">
             <dl
-              className={`${styles.meta} ${meta.length === 5 ? styles.meta5 : ""} ${meta.length === 4 ? styles.meta4 : ""}`}
+              className={`${styles.meta} ${meta.length === 6 ? styles.meta6 : ""} ${meta.length === 5 ? styles.meta5 : ""} ${meta.length === 4 ? styles.meta4 : ""}`}
               aria-label="Hero Metadata"
             >
               {meta.map((item, i) => (

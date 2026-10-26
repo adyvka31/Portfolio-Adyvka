@@ -455,7 +455,7 @@ export default function ProjectDetailPage() {
                           MODULE // {String(activeModule + 1).padStart(2, "0")} OF{" "}
                           {String(detail.features.length).padStart(2, "0")}
                         </span>
-                        {detail.features[activeModule].badge && (
+                        {detail.features[activeModule]?.badge && (
                           <span className={styles.featureBadge}>
                             {detail.features[activeModule].badge}
                           </span>
@@ -463,22 +463,24 @@ export default function ProjectDetailPage() {
                       </div>
 
                       <h4 className={styles.featureTitle} style={{ fontSize: "1.5rem" }}>
-                        {detail.features[activeModule].title}
+                        {detail.features[activeModule]?.title}
                       </h4>
                       <p className={styles.featureDesc} style={{ fontSize: "1rem" }}>
-                        {detail.features[activeModule].desc}
+                        {detail.features[activeModule]?.desc}
                       </p>
 
-                      <ul className={styles.featureList} style={{ marginTop: "0.5rem" }}>
-                        {detail.features[activeModule].points.map((pt, i) => (
-                          <li key={i} className={styles.featureItem} style={{ fontSize: "0.875rem" }}>
-                            <span className={styles.featureItemIcon}>
-                              <CheckIcon size={14} />
-                            </span>
-                            <span>{pt}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {detail.features[activeModule]?.points && detail.features[activeModule].points.length > 0 && (
+                        <ul className={styles.featureList} style={{ marginTop: "0.5rem" }}>
+                          {detail.features[activeModule].points.map((pt, i) => (
+                            <li key={i} className={styles.featureItem} style={{ fontSize: "0.875rem" }}>
+                              <span className={styles.featureItemIcon}>
+                                <CheckIcon size={14} />
+                              </span>
+                              <span>{pt}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </NativeReveal>
@@ -511,44 +513,48 @@ export default function ProjectDetailPage() {
 
                 <NativeReveal delay={0.1}>
                   <div className={styles.pipelineWrap}>
-                    <div className={styles.workflowStages}>
-                      {detail.approvalWorkflow.stages.map((stg, idx) => (
-                        <article
-                          key={idx}
-                          className={`${styles.stageCard} ${
-                            activeWorkflowStage === idx ? styles.stageCardActive : ""
-                          }`}
-                          onClick={() => setActiveWorkflowStage(idx)}
-                          role="button"
-                          tabIndex={0}
-                        >
-                          <div className={styles.stageHeader}>
-                            <span className={styles.stageLevel}>{stg.level}</span>
-                            <span className={styles.stageRoleBadge}>{stg.role}</span>
-                          </div>
-                          <h4 className={styles.stageTitle}>{stg.title}</h4>
-                          <p className={styles.stageDesc}>{stg.desc}</p>
-                          <div className={styles.stageActionBox}>
-                            <WorkflowIcon size={14} />
-                            <span>{stg.action}</span>
-                          </div>
-                        </article>
-                      ))}
-                    </div>
+                    {detail.approvalWorkflow.stages && (
+                      <div className={styles.workflowStages}>
+                        {detail.approvalWorkflow.stages.map((stg, idx) => (
+                          <article
+                            key={idx}
+                            className={`${styles.stageCard} ${
+                              activeWorkflowStage === idx ? styles.stageCardActive : ""
+                            }`}
+                            onClick={() => setActiveWorkflowStage(idx)}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <div className={styles.stageHeader}>
+                              <span className={styles.stageLevel}>{stg.level}</span>
+                              <span className={styles.stageRoleBadge}>{stg.role}</span>
+                            </div>
+                            <h4 className={styles.stageTitle}>{stg.title}</h4>
+                            <p className={styles.stageDesc}>{stg.desc}</p>
+                            <div className={styles.stageActionBox}>
+                              <WorkflowIcon size={14} />
+                              <span>{stg.action}</span>
+                            </div>
+                          </article>
+                        ))}
+                      </div>
+                    )}
 
-                    <div className={styles.lockNoticeCard}>
-                      <div className={styles.lockNoticeIcon}>
-                        <LockIcon size={20} />
+                    {detail.approvalWorkflow.lockMechanism && (
+                      <div className={styles.lockNoticeCard}>
+                        <div className={styles.lockNoticeIcon}>
+                          <LockIcon size={20} />
+                        </div>
+                        <div>
+                          <h4 className={styles.lockNoticeTitle}>
+                            {detail.approvalWorkflow.lockMechanism.title}
+                          </h4>
+                          <p className={styles.lockNoticeDesc}>
+                            {detail.approvalWorkflow.lockMechanism.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className={styles.lockNoticeTitle}>
-                          {detail.approvalWorkflow.lockMechanism.title}
-                        </h4>
-                        <p className={styles.lockNoticeDesc}>
-                          {detail.approvalWorkflow.lockMechanism.desc}
-                        </p>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </NativeReveal>
               </div>
@@ -600,7 +606,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 <div className={styles.archLayersGrid}>
-                  {detail.architecture.layers.map((layer, idx) => (
+                  {detail.architecture.layers?.map((layer, idx) => (
                     <article key={idx} className={`glass ${styles.archLayerCard}`}>
                       <div className={styles.archLayerHead}>
                         <h4 className={styles.archLayerName}>{layer.name}</h4>
@@ -633,7 +639,7 @@ export default function ProjectDetailPage() {
                       <article key={idx} className={`glass ${styles.techGroupCard}`}>
                         <h4 className={styles.techGroupTitle}>{grp.category}</h4>
                         <div className={styles.techItemList}>
-                          {grp.items.map((item, i) => (
+                          {grp.items?.map((item, i) => (
                             <div key={i} className={styles.techItemRow}>
                               <span className={styles.techItemName}>{item.name}</span>
                               <span className={styles.techItemRole}>{item.role}</span>
@@ -672,30 +678,36 @@ export default function ProjectDetailPage() {
                           <span className={styles.terminalDot} />
                         </div>
                         <div className={styles.navPills}>
-                          {detail.directoryStructure.map((dir, i) => (
-                            <button
-                              key={i}
-                              type="button"
-                              className={`${styles.navPill} ${
-                                activeDirTab === i ? styles.navPillActive : ""
-                              }`}
-                              onClick={() => setActiveDirTab(i)}
-                            >
-                              {dir.name.split(" ")[0]}
-                            </button>
-                          ))}
+                          {Array.isArray(detail.directoryStructure) &&
+                            detail.directoryStructure.map((dir, i) => (
+                              <button
+                                key={i}
+                                type="button"
+                                className={`${styles.navPill} ${
+                                  activeDirTab === i ? styles.navPillActive : ""
+                                }`}
+                                onClick={() => setActiveDirTab(i)}
+                              >
+                                {dir.name ? dir.name.split(" ")[0] : `Tab ${i + 1}`}
+                              </button>
+                            ))}
                         </div>
                       </div>
                       <div className={styles.terminalBody}>
-                        <div style={{ color: "var(--accent-glow)", marginBottom: "0.5rem" }}>
-                          📁 {detail.directoryStructure[activeDirTab].name}
-                        </div>
-                        {detail.directoryStructure[activeDirTab].items.map((it, j) => (
-                          <div key={j} className={styles.terminalTreeItem}>
-                            <span className={styles.terminalTreeBullet}>├──</span>
-                            <span>{it}</span>
-                          </div>
-                        ))}
+                        {Array.isArray(detail.directoryStructure) &&
+                          detail.directoryStructure[activeDirTab] && (
+                            <>
+                              <div style={{ color: "var(--accent-glow)", marginBottom: "0.5rem" }}>
+                                📁 {detail.directoryStructure[activeDirTab].name}
+                              </div>
+                              {detail.directoryStructure[activeDirTab].items?.map((it, j) => (
+                                <div key={j} className={styles.terminalTreeItem}>
+                                  <span className={styles.terminalTreeBullet}>├──</span>
+                                  <span>{it}</span>
+                                </div>
+                              ))}
+                            </>
+                          )}
                       </div>
                     </div>
 
@@ -716,8 +728,8 @@ export default function ProjectDetailPage() {
                       </h4>
                       {detail.prismaSchemas.map((sch, i) => (
                         <article key={i} className={`glass ${styles.schemaCard}`}>
-                          <h5 className={styles.schemaName}>{sch.name}</h5>
-                          <p className={styles.schemaPurpose}>{sch.purpose}</p>
+                          <h5 className={styles.schemaName}>{sch.name || sch.title}</h5>
+                          <p className={styles.schemaPurpose}>{sch.purpose || sch.desc || sch.schema}</p>
                         </article>
                       ))}
                     </div>
@@ -761,20 +773,21 @@ export default function ProjectDetailPage() {
                   <h3 className={styles.subSectionTitle} style={{ marginBottom: "1rem" }}>
                     RESTful API Endpoints
                   </h3>
-                  {detail.apiEndpoints.map((grp, i) => (
-                    <div key={i} className={styles.endpointGroup}>
-                      <h4 className={styles.endpointGroupTitle}>{grp.group}</h4>
-                      <div className={styles.endpointList}>
-                        {grp.routes.map((rt, j) => (
-                          <div key={j} className={styles.endpointRow}>
-                            <MethodBadge method={rt.method} />
-                            <span className={styles.endpointPath}>{rt.path}</span>
-                            <span className={styles.endpointDesc}>{rt.desc}</span>
-                          </div>
-                        ))}
+                  {Array.isArray(detail.apiEndpoints) &&
+                    detail.apiEndpoints.map((grp, i) => (
+                      <div key={i} className={styles.endpointGroup}>
+                        <h4 className={styles.endpointGroupTitle}>{grp.group || grp.category}</h4>
+                        <div className={styles.endpointList}>
+                          {grp.routes?.map((rt, j) => (
+                            <div key={j} className={styles.endpointRow}>
+                              <MethodBadge method={rt.method} />
+                              <span className={styles.endpointPath}>{rt.path}</span>
+                              <span className={styles.endpointDesc}>{rt.desc}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
 
                 {/* Enterprise Security Standards */}
