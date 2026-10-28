@@ -72,6 +72,7 @@ export default function ProjectGallery({
   if (!items || items.length === 0) return null;
 
   const current = items[currentIndex];
+  const isMobileSlide = Boolean(current.isMobile);
 
   return (
     <section id={id} className={styles.gallerySection} aria-label="System Screenshots">
@@ -110,20 +111,32 @@ export default function ProjectGallery({
           </div>
         </NativeReveal>
 
-        {/* MACOS BROWSER FRAME */}
+        {/* WINDOW FRAME (ADAPTIVE MACOS BROWSER / MOBILE FRAME) */}
         <NativeReveal delay={0.1}>
           <div className={styles.windowFrame}>
             {/* Chrome Header */}
             <div className={styles.windowChrome}>
               <div className={styles.windowControls} aria-hidden="true">
-                <span className={`${styles.windowDot} ${styles.dotRed}`} />
-                <span className={`${styles.windowDot} ${styles.dotYellow}`} />
-                <span className={`${styles.windowDot} ${styles.dotGreen}`} />
+                {isMobileSlide ? (
+                  <span className={styles.mobileBadge}>
+                    <span className={styles.mobileDot} />
+                    <span>Mobile Screen</span>
+                  </span>
+                ) : (
+                  <>
+                    <span className={`${styles.windowDot} ${styles.dotRed}`} />
+                    <span className={`${styles.windowDot} ${styles.dotYellow}`} />
+                    <span className={`${styles.windowDot} ${styles.dotGreen}`} />
+                  </>
+                )}
               </div>
 
-              <div className={styles.urlBar} title={current.route || "databank.intisel.id"}>
-                <span className={styles.urlSecure}>🔒</span>
-                <span>{current.route || "databank.intisel.id"}</span>
+              <div
+                className={styles.urlBar}
+                title={current.route || (isMobileSlide ? "mobile.app" : "databank.intisel.id")}
+              >
+                <span className={styles.urlSecure}>{isMobileSlide ? "📱" : "🔒"}</span>
+                <span>{current.route || (isMobileSlide ? "mobile.app" : "databank.intisel.id")}</span>
               </div>
 
               <div className={styles.windowActions}>
@@ -141,7 +154,7 @@ export default function ProjectGallery({
 
             {/* Viewport Slider */}
             <div
-              className={styles.viewport}
+              className={`${styles.viewport} ${isMobileSlide ? styles.viewportMobile : ""}`}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -174,16 +187,31 @@ export default function ProjectGallery({
               </button>
 
               {/* Main Slide Image */}
-              <div className={styles.slideTrack}>
-                <Image
-                  key={current.id || currentIndex}
-                  src={current.image}
-                  alt={current.title}
-                  className={styles.slideImage}
-                  width={2940}
-                  height={1674}
-                  priority={currentIndex === 0}
-                />
+              <div className={`${styles.slideTrack} ${isMobileSlide ? styles.slideTrackMobile : ""}`}>
+                {isMobileSlide ? (
+                  <div className={styles.phoneFrame}>
+                    <div className={styles.phoneIsland} aria-hidden="true" />
+                    <Image
+                      key={current.id || currentIndex}
+                      src={current.image}
+                      alt={current.title}
+                      className={styles.phoneImage}
+                      width={430}
+                      height={900}
+                      priority={currentIndex === 0}
+                    />
+                  </div>
+                ) : (
+                  <Image
+                    key={current.id || currentIndex}
+                    src={current.image}
+                    alt={current.title}
+                    className={styles.slideImage}
+                    width={2940}
+                    height={1674}
+                    priority={currentIndex === 0}
+                  />
+                )}
               </div>
             </div>
 
@@ -244,17 +272,23 @@ export default function ProjectGallery({
                 type="button"
                 className={`${styles.thumbCard} ${
                   currentIndex === idx ? styles.thumbCardActive : ""
-                }`}
+                } ${item.isMobile ? styles.thumbCardMobile : ""}`}
                 onClick={() => goToSlide(idx)}
                 aria-label={`Thumbnail ${idx + 1}: ${item.title}`}
               >
-                <div className={styles.thumbImageWrap}>
+                <div
+                  className={`${styles.thumbImageWrap} ${
+                    item.isMobile ? styles.thumbImageWrapMobile : ""
+                  }`}
+                >
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className={styles.thumbImage}
-                    width={600}
-                    height={340}
+                    className={`${styles.thumbImage} ${
+                      item.isMobile ? styles.thumbImageMobile : ""
+                    }`}
+                    width={item.isMobile ? 180 : 600}
+                    height={item.isMobile ? 360 : 340}
                   />
                 </div>
                 <div className={styles.thumbMeta}>
@@ -281,7 +315,7 @@ export default function ProjectGallery({
           >
             <div className={styles.lightboxHeader}>
               <h4 className={styles.lightboxTitle}>
-                {current.title} — {current.route || "databank.intisel.id"}
+                {current.title} — {current.route || (isMobileSlide ? "mobile.app" : "databank.intisel.id")}
               </h4>
               <button
                 type="button"
@@ -293,11 +327,17 @@ export default function ProjectGallery({
               </button>
             </div>
 
-            <div className={styles.lightboxImageWrap}>
+            <div
+              className={`${styles.lightboxImageWrap} ${
+                current.isMobile ? styles.lightboxImageWrapMobile : ""
+              }`}
+            >
               <img
                 src={current.image}
                 alt={current.title}
-                className={styles.lightboxImage}
+                className={`${styles.lightboxImage} ${
+                  current.isMobile ? styles.lightboxImageMobile : ""
+                }`}
               />
             </div>
           </div>

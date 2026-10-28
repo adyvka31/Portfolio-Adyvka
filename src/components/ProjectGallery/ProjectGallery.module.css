@@ -192,12 +192,107 @@
   background: #050507;
   overflow: hidden;
   cursor: zoom-in;
+  transition: all 0.3s ease;
+}
+
+.viewportMobile {
+  aspect-ratio: auto;
+  height: 620px;
+  min-height: 540px;
+  max-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(8, 8, 12, 0.98) 75%
+  );
+  padding: 1.75rem 1rem;
 }
 
 .slideTrack {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.slideTrackMobile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SMARTPHONE DEVICE FRAME */
+.phoneFrame {
+  position: relative;
+  height: 100%;
+  max-height: 560px;
+  aspect-ratio: 9 / 19.5;
+  border-radius: 36px;
+  background: #000;
+  border: 4px solid #1c1c22;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 25px 60px -15px rgba(0, 0, 0, 0.9),
+    0 0 40px -10px rgba(124, 242, 255, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.phoneFrame:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow:
+    0 0 0 1px rgba(124, 242, 255, 0.3),
+    0 30px 70px -15px rgba(0, 0, 0, 0.95),
+    0 0 50px -5px rgba(124, 242, 255, 0.25);
+}
+
+.phoneIsland {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 16px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 5;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.phoneImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* MOBILE STATUS BADGE IN WINDOW CHROME */
+.mobileBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.6875rem;
+  color: var(--accent-glow);
+  background: rgba(124, 242, 255, 0.08);
+  border: 1px solid rgba(124, 242, 255, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.mobileDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #27c93f;
+  box-shadow: 0 0 6px #27c93f;
 }
 
 .slideImage {
@@ -426,11 +521,32 @@
   background: #000;
 }
 
+.thumbImageWrapMobile {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(10, 10, 14, 0.95) 75%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+}
+
 .thumbImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.thumbImageMobile {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .thumbMeta {
@@ -525,11 +641,30 @@
   background: #050507;
 }
 
+.lightboxImageWrapMobile {
+  padding: 1.5rem;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(5, 5, 7, 0.98) 75%
+  );
+}
+
 .lightboxImage {
   max-width: 100%;
   max-height: calc(90vh - 4.5rem);
   object-fit: contain;
   display: block;
+}
+
+.lightboxImageMobile {
+  max-height: calc(88vh - 4.5rem);
+  width: auto;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 28px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9);
 }
 
 @keyframes fadeIn {
@@ -538,5 +673,23 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 639px) {
+  .viewportMobile {
+    height: 480px;
+    min-height: 400px;
+    padding: 1rem 0.5rem;
+  }
+  .phoneFrame {
+    max-height: 440px;
+    border-radius: 28px;
+    border-width: 3px;
+  }
+  .phoneIsland {
+    width: 52px;
+    height: 13px;
+    top: 7px;
   }
 }

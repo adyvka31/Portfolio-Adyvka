@@ -1,3 +1,18 @@
+import richobahariImg from "../assets/richobahari.webp";
+import richobahari1 from "../assets/richobahari/richobahari1.webp";
+import richobahari2 from "../assets/richobahari/richobahari2.webp";
+import richobahari3 from "../assets/richobahari/richobahari3.webp";
+import richobahari4 from "../assets/richobahari/richobahari4.webp";
+import terastaniImg from "../assets/terastani.webp";
+import terastani1 from "../assets/terastani/terastani1.webp";
+import terastani2 from "../assets/terastani/terastani2.webp";
+import terastani3 from "../assets/terastani/terastani3.webp";
+import terastani4 from "../assets/terastani/terastani4.webp";
+import kepkImg from "../assets/kepk.webp";
+import kepk1 from "../assets/kepk/kepk1.webp";
+import kepk2 from "../assets/kepk/kepk2.webp";
+import kepk3 from "../assets/kepk/kepk3.webp";
+import kepk4 from "../assets/kepk/kepk4.webp";
 import databankImg from "../assets/databank.webp";
 import databank1 from "../assets/databank/databank1.png";
 import databank2 from "../assets/databank/databank2.png";
@@ -44,37 +59,1461 @@ import mystyle2 from "../assets/mystyle/mystyle2.webp";
 import mystyle3 from "../assets/mystyle/mystyle3.webp";
 import mystyle4 from "../assets/mystyle/mystyle4.webp";
 import delifoodImg from "../assets/delifood.webp";
-import delifood1 from "../assets/delifood/delifood1.webp";
-import delifood2 from "../assets/delifood/delifood2.webp";
-import delifood3 from "../assets/delifood/delifood3.webp";
-import delifood4 from "../assets/delifood/delifood4.webp";
+import delifood1 from "../assets/delifood/delifood1.png";
+import delifood2 from "../assets/delifood/delifood2.png";
+import delifood3 from "../assets/delifood/delifood3.png";
+import delifood4 from "../assets/delifood/delifood4.png";
 import attendanceImg from "../assets/todo.webp";
-import attendance1 from "../assets/attendance/attendance1.webp";
-import attendance2 from "../assets/attendance/attendance2.webp";
-import attendance3 from "../assets/attendance/attendance3.webp";
-import attendance4 from "../assets/attendance/attendance4.webp";
+import attendance1 from "../assets/attendance/attendance1.png";
+import attendance2 from "../assets/attendance/attendance2.png";
+import attendance3 from "../assets/attendance/attendance3.png";
+import attendance4 from "../assets/attendance/attendance4.png";
 import qrscannerImg from "../assets/qrscanner.webp";
 import qrscanner1 from "../assets/qrscanner/qrscanner1.webp";
 import qrscanner2 from "../assets/qrscanner/qrscanner2.webp";
 import qrscanner3 from "../assets/qrscanner/qrscanner3.webp";
-import qrscanner4 from "../assets/qrscanner/qrscanner4.webp";
 import newsImg from "../assets/news.webp";
 import news1 from "../assets/news/news1.webp";
 import news2 from "../assets/news/news2.webp";
 import news3 from "../assets/news/news3.webp";
-import news4 from "../assets/news/news4.webp";
 import quranImg from "../assets/quran.webp";
 import quran1 from "../assets/quran/quran1.webp";
 import quran2 from "../assets/quran/quran2.webp";
 import quran3 from "../assets/quran/quran3.webp";
-import quran4 from "../assets/quran/quran4.webp";
 import aigeneratorImg from "../assets/aigenerator.webp";
-import aigenerator1 from "../assets/aigenerator/aigenerator1.webp";
-import aigenerator2 from "../assets/aigenerator/aigenerator2.webp";
-import aigenerator3 from "../assets/aigenerator/aigenerator3.webp";
-import aigenerator4 from "../assets/aigenerator/aigenerator4.webp";
+import aigenerator1 from "../assets/aigenerator/aigenerator1.png";
+import aigenerator2 from "../assets/aigenerator/aigenerator2.png";
+import aigenerator3 from "../assets/aigenerator/aigenerator3.png";
 
 export const projectDetails = {
+  richobahari: {
+    title: "CV. Richo Bahari",
+    subtitle: "Corporate Profile & Industrial Engineering Project Catalog",
+    status: "Production Live",
+    summary:
+      "Official corporate web platform and digital portfolio for CV. Richo Bahari, a General Contractor and Industrial Engineering firm operating across West Java and Jabodetabek. Built with Next.js 16, React 19, and Tailwind CSS v4 to showcase civil construction, industrial MEP, steel fabrication, and heavy-duty storage racking under K3 Zero Accident standards.",
+    domain: "richobahari.com",
+    meta: [
+      { label: "Role", value: "Lead Frontend Engineer & UI/UX Architect" },
+      { label: "Client", value: "CV. Richo Bahari (CentraDev Team)" },
+      { label: "Timeline", value: "2025 – 2026" },
+      { label: "Tech Stack", value: "Next.js 16 + React 19 + Tailwind CSS v4" },
+      { label: "Standards", value: "K3 Zero Accident & ISO 9001 QA Compliant" },
+    ],
+    galleryLabel: "INDUSTRIAL ENGINEERING SHOWCASE",
+    galleryTitle: "The Richo Bahari Corporate Experience",
+    galleryLead:
+      "A visual walkthrough of CV. Richo Bahari's digital profile, featuring executive presentation collateral, core engineering capabilities, verified client case studies, and mobile field accessibility.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official Executive Overview & Marketing Flyer",
+        route: "richobahari.com",
+        tag: "Official Web Preview & Marketing Flyer",
+        image: richobahariImg,
+        desc: "Executive marketing presentation flyer highlighting core capabilities, client track record, and turnkey industrial execution workflow.",
+        features: [
+          "Official 4:5 Executive Marketing Flyer",
+          "K3 Zero Accident Industrial Commitment",
+          "Integrated Turnkey General Contractor Services",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "homepage-hero",
+        title: "Corporate Landing & Executive Hero Showcase",
+        route: "richobahari.com/#home",
+        tag: "Brand Identity & Value Proposition",
+        image: richobahari1,
+        desc: "High-impact landing interface featuring technical blueprint grids, floating capability badges, and streamlined consultation CTAs.",
+        features: [
+          "Next.js 16 High-Performance Server Rendering",
+          "Dynamic Kinetic Grid & Hero Floating Badges",
+          "Instant WhatsApp & Email Consultation Pipeline",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "services-architecture",
+        title: "Comprehensive 5-Pillar Industrial Services",
+        route: "richobahari.com/#services",
+        tag: "Core Engineering Capabilities",
+        image: richobahari2,
+        desc: "Interactive service matrix detailing Civil Construction, Industrial MEP, Steel Fabrication, and Storage Racking Solutions.",
+        features: [
+          "Turnkey Project Management Matrix",
+          "Civil Rigid Pavement & Infrastructure Specs",
+          "Heavy-Duty Storage Pallet Racking Solutions",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "projects-catalog",
+        title: "Real-World Field & Workshop Project Catalog",
+        route: "richobahari.com/#projects",
+        tag: "Project Portfolio & Case Studies",
+        image: richobahari3,
+        desc: "Curated portfolio catalog highlighting completed worksite deliveries and case studies for leading manufacturing clients.",
+        features: [
+          "Client Portfolio: PT Selatan Jaya, NGK Ceramics, Sanwa Musen",
+          "Structured Case Studies (Challenge, Solution, Results)",
+          "High-Definition Project Gallery & Site Documentation",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "mobile-experience",
+        title: "Ultra-Responsive Mobile Field Interface",
+        route: "m.richobahari.com",
+        tag: "Mobile-First Accessibility",
+        image: richobahari4,
+        desc: "Mobile-first interface optimized for plant managers and field supervisors inspecting technical project data on smartphone screens.",
+        features: [
+          "Tailwind CSS v4 Mobile-First Grid System",
+          "Zero-Lag Kinetic Touch Interactions",
+          "One-Tap Direct WhatsApp Engineering Hotline",
+        ],
+        isMobile: true,
+      },
+    ],
+    kpis: [
+      {
+        value: "Zero Acc.",
+        label: "K3 Safety Record",
+        note: "Absolute zero-accident commitment across all field sites",
+      },
+      {
+        value: "5 Pillars",
+        label: "Industrial Services",
+        note: "Civil, Mechanical, Electrical, Fabrication, and Racking",
+      },
+      {
+        value: "100%",
+        label: "Next.js 16 App Router",
+        note: "Cutting-edge React 19 & Tailwind v4 with React Compiler",
+      },
+      {
+        value: "2 Prov.",
+        label: "Operational Hubs",
+        note: "Serving West Java (Sukabumi, Cikarang) and Jabodetabek",
+      },
+      {
+        value: "Turnkey",
+        label: "Delivery Model",
+        note: "Single point of accountability from survey to handover",
+      },
+      {
+        value: "< 1.2s",
+        label: "Page Load Time",
+        note: "Sub-second LCP optimized via Next.js server components",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Corporate Credibility & Modern Identity",
+        desc: "Digital flagship presenting engineering capabilities, safety standards, and worksite credibility.",
+      },
+      {
+        icon: "database",
+        title: "Structured Industrial Case Studies",
+        desc: "Verified project breakdowns (roads, racks, factories, and jigs) with client names, challenges, and measurable results.",
+      },
+      {
+        icon: "terminal",
+        title: "Next.js 16 & React 19 Architecture",
+        desc: "Server-side rendering, Tailwind CSS v4, and automatic React memoization for fast load times and clean SEO.",
+      },
+      {
+        icon: "cloud",
+        title: "K3 Zero Accident & Safety Standards",
+        desc: "Highlights strict safety protocols and standard operating procedures required by multinational industrial clients.",
+      },
+    ],
+    architecture: {
+      type: "Modern Corporate SSR / SSG Web Application",
+      protocol: "HTTPS / CDN Edge Distribution",
+      layers: [
+        {
+          name: "Frontend UI Layer",
+          badge: "Next.js 16 + React 19 + Tailwind 4",
+          desc: "App Router architecture with server components, client interactivity hooks, and Plus Jakarta Sans & Space Grotesk technical typography.",
+        },
+        {
+          name: "Component System",
+          badge: "Atomic UI + Bento Masonry",
+          desc: "Modular UI library with kinetic magnetic buttons, technical grid backgrounds, service cards, and interactive project dialogs.",
+        },
+        {
+          name: "Data & Content Layer",
+          badge: "TypeScript Repositories + AVIF",
+          desc: "Statically typed project data models with high-efficiency AVIF and WebP image optimization preventing bandwidth waste.",
+        },
+        {
+          name: "Deployment & Infrastructure",
+          badge: "Vercel Edge Network / AWS",
+          desc: "Global CDN distribution with automated continuous integration, instant cache invalidation, and sub-second cold starts.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend Core & Framework",
+        items: [
+          { name: "Next.js 16.2", role: "React Server Components & App Router" },
+          { name: "React 19.2", role: "Modern UI Library with React Compiler" },
+          { name: "TypeScript 5", role: "End-to-End Strict Type Safety" },
+          { name: "Tailwind CSS v4", role: "High-Performance Modern CSS Framework" },
+          { name: "@tailwindcss/postcss", role: "Vite/Next PostCSS Compilation Plugin" },
+          { name: "Babel React Compiler", role: "Automatic Memoization & Zero Re-render" },
+        ],
+      },
+      {
+        category: "Design System & UI Components",
+        items: [
+          { name: "Space Grotesk", role: "Technical Architectural Heading Typography" },
+          { name: "Plus Jakarta Sans", role: "High-Legibility Modern Corporate Body Font" },
+          { name: "Lucide Icons", role: "Consistent Vector Engineering Iconography" },
+          { name: "Bento Masonry Grid", role: "Modern Dynamic Project Portfolio Layout" },
+          { name: "Kinetic Buttons", role: "Smooth Magnetic Hover Micro-Interactions" },
+        ],
+      },
+      {
+        category: "Asset Optimization & Performance",
+        items: [
+          { name: "next/image", role: "Automated Responsive Image Delivery" },
+          { name: "AVIF & WebP Media", role: "Next-Gen Worksite Photography Compression" },
+          { name: "next/font", role: "Zero Layout Shift (CLS) Local Font Preloading" },
+          { name: "PostCSS", role: "CSS Processing & Optimization Engine" },
+        ],
+      },
+      {
+        category: "Industrial Engineering EPC Domain",
+        items: [
+          { name: "Civil Construction", role: "Rigid Pavement, Structural Concrete & Roads" },
+          { name: "Mechanical & MEP", role: "Industrial Piping, Power Panels & HVAC" },
+          { name: "Steel Fabrication", role: "Structural Steel Frames & Work Platforms" },
+          { name: "Storage Racking", role: "Heavy-Duty Pallet Racks & Safety Barriers" },
+        ],
+      },
+    ],
+    featuresTitle: "4 Core Industrial Engineering Pillars",
+    featuresLead:
+      "Integrated general contracting capabilities delivering turnkey civil infrastructure, industrial MEP, precision steel fabrication, and high-performance digital channels.",
+    features: [
+      {
+        id: "civil-and-infrastructure",
+        title: "Civil Construction & Rigid Pavement",
+        badge: "Civil Engineering",
+        desc: "Heavy-duty civil infrastructure including concrete factory roads, structural foundations, and industrial drainage.",
+        points: [
+          "Rigid Pavement Roads: High-durability concrete paving designed for heavy container and industrial logistics traffic.",
+          "Industrial Facilities: Factory floor casting, structural concrete framing, site grading, and perimeter water management.",
+          "Turnkey Execution: End-to-end site surveying, soil testing, excavation, and structural warranty handover.",
+        ],
+      },
+      {
+        id: "industrial-mep-piping",
+        title: "Industrial MEP & Mechanical Services",
+        badge: "Mechanical & Electrical",
+        desc: "Comprehensive mechanical, electrical, and plumbing engineering tailored for manufacturing plants.",
+        points: [
+          "Factory Power Distribution: High/low voltage cabling, distribution panels, and industrial equipment hookups.",
+          "Industrial Piping Systems: High-pressure fluid, chemical, and compressed air distribution pipelines.",
+          "HVAC & Plant Ventilation: Industrial ventilation ducting, exhaust systems, and climate control installations.",
+        ],
+      },
+      {
+        id: "steel-fabrication-racking",
+        title: "Steel Fabrication & Heavy-Duty Racking",
+        badge: "Fabrication & Storage",
+        desc: "Precision structural steel manufacturing and high-density warehouse storage systems.",
+        points: [
+          "Structural Steel Frameworks: Custom factory canopies, wide-span trusses, and elevated mezzanine platforms.",
+          "Selective Pallet Racking: Heavy-duty vertical storage systems with forklift collision column protection.",
+          "Precision Workshop Jigs: Custom manufacturing fixtures and assembly jigs engineered to millimetric tolerances.",
+        ],
+      },
+      {
+        id: "corporate-ux-performance",
+        title: "Next.js 16 Performance & Direct Consultation",
+        badge: "Modern Web Platform",
+        desc: "High-performance corporate digital presence built for speed, SEO, and fast client inquiries.",
+        points: [
+          "Next.js 16 & React 19: Server Component rendering with sub-second LCP and zero client bundle bloat.",
+          "Interactive Bento Showcase: Clean categorization of past projects with challenge-solution-result summaries.",
+          "Direct WhatsApp & Lead Funnel: Instant one-tap consultation pipeline connecting clients with lead estimators.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "6-Stage Industrial EPC Execution Lifecycle",
+      lead: "Sequential turnkey project delivery model ensuring continuous safety compliance, structural quality testing, and formal client handover certification.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Client & Engineering Team",
+          title: "Field Consultation & Site Survey",
+          desc: "On-site dimensional survey, existing facility condition audit, soil testing, and formulation of industrial facility requirements.",
+          action: "Technical Site Survey & Meeting Minutes",
+        },
+        {
+          level: "Stage 02",
+          role: "Engineering Team & Drafter",
+          title: "Engineering Design & CAD Drafting",
+          desc: "Preparation of 2D/3D working drawings, structural load calculations, and industrial material specifications.",
+          action: "Engineering Drawing & Blueprint Approval",
+        },
+        {
+          level: "Stage 03",
+          role: "Project Estimator & Client",
+          title: "Cost Estimation & Budget Schedule (RAB)",
+          desc: "Transparent Bill of Quantities (BOQ) calculation, S-curve timeline scheduling, and SPK service contract issuance.",
+          action: "SPK Contract Issuance & Execution",
+        },
+        {
+          level: "Stage 04",
+          role: "Project Manager & Field Crew",
+          title: "Machinery Mobilization & Construction",
+          desc: "Mobilization of heavy machinery, precision workshop steel fabrication, and on-site construction under strict K3 safety standards.",
+          action: "Physical Execution & Daily K3 Safety Log",
+        },
+        {
+          level: "Stage 05",
+          role: "Quality Assurance & K3 Officer",
+          title: "Quality Inspection & Load Testing",
+          desc: "Concrete slump testing, warehouse racking load deflection testing, structural weld inspection, and snag-list clearance.",
+          action: "QA Audit & K3 Safety Certification",
+        },
+        {
+          level: "Stage 06",
+          role: "Leadership & Enterprise Client",
+          title: "Official Handover (BAST) & Warranty",
+          desc: "Official Handover Certificate (BAST) signing, facility maintenance manual delivery, and structural warranty activation.",
+          action: "BAST Certificate Issuance & Warranty Activation",
+        },
+      ],
+      lockMechanism: {
+        title: "K3 Zero Accident & Phase-Gate Engineering Protocol",
+        desc: "Each civil construction and steel fabrication phase requires verified safety (K3) signoff and material testing before advancing to the next operational phase.",
+      },
+    },
+    directoryStructure: [
+      {
+        name: "richo-bahari-cp/ (Next.js 16 App Router)",
+        items: [
+          "src/app/page.tsx — Executive landing page integrating all core sections",
+          "src/app/home/ — Modular sections: Hero, About, Services, Projects, Values, Contact",
+          "src/app/proyek/ — Dynamic project showcase routes with detailed case studies",
+          "src/app/layanan/ & kapabilitas/ — Deep-dive service line and equipment breakdowns",
+          "src/components/ui/ — Reusable atomic design components (Button, Cards, Badges)",
+          "src/lib/projects.ts — Strongly-typed portfolio database with client case studies",
+          "src/assets/ — Optimized AVIF and WebP project photographs from actual job sites",
+        ],
+      },
+      {
+        name: "flyer-designs/ (Marketing Collateral & Visual Assets)",
+        items: [
+          "flyer-web-preview.html — 1080x1350 4:5 executive marketing presentation flyer",
+          "thumbnail-landscape.html — 1280x720 16:9 widescreen presentation banner",
+          "flyer-a4.html — Printable ISO 216 A4 corporate capability brochure",
+          "richo_bahari_web_preview_flyer.png — High-resolution rendered marketing flyer",
+          "screenshots/ — High-definition desktop and mobile UI captures",
+        ],
+      },
+    ],
+    schemaEngineTitle: "Industrial Data Schemas & Deployment Catalogs",
+    prismaSchemas: [
+      {
+        name: "civil_construction_projects",
+        purpose: "Project registry for rigid pavement roads, reinforced foundations, industrial plant buildings, drainage systems, and factory landscapes.",
+      },
+      {
+        name: "storage_racking_deployments",
+        purpose: "Warehouse racking deployments: heavy-duty selective pallet racks, cantilevers, mezzanines, and column collision safety guards.",
+      },
+      {
+        name: "mechanical_electrical_piping",
+        purpose: "Industrial piping specifications, high-voltage power substations, distribution panels, and industrial ventilation systems.",
+      },
+      {
+        name: "steel_fabrication_catalog",
+        purpose: "Archive for structural steel frameworks, wide-span canopies, elevated work platforms, storage tanks, and precision manufacturing jigs.",
+      },
+    ],
+    apiEndpoints: [
+      {
+        group: "Page Routes & SSR Navigation (/)",
+        routes: [
+          { method: "GET", path: "/", desc: "Executive corporate landing page with bento services & project teasers" },
+          { method: "GET", path: "/tentang", desc: "Corporate profile, vision, mission, and legal engineering credentials" },
+          { method: "GET", path: "/layanan", desc: "Comprehensive breakdown of 5 core EPC & contractor capabilities" },
+          { method: "GET", path: "/proyek", desc: "Interactive project gallery filtering by Civil, Racking, and Fabrication" },
+          { method: "GET", path: "/kapabilitas", desc: "Heavy machinery fleet, workshop facilities, and human capital specs" },
+          { method: "GET", path: "/kontak", desc: "Direct engineering consultation form, office map, and phone hotlines" },
+        ],
+      },
+      {
+        group: "Industrial Case Studies (/proyek/[id])",
+        routes: [
+          { method: "GET", path: "/proyek/pengerjaan-jalan", desc: "Case study: Rigid pavement road construction for PT Selatan Jaya" },
+          { method: "GET", path: "/proyek/rak-palet-selektif", desc: "Case study: Heavy-duty storage pallet racking for PT Acommerce" },
+          { method: "GET", path: "/proyek/pengerjaan-taman", desc: "Case study: Industrial landscaping & drainage for PT NGK Ceramics" },
+          { method: "GET", path: "/proyek/jig-engineering", desc: "Case study: Precision inspection & assembly jigs for PT Sanwa Musen" },
+        ],
+      },
+      {
+        group: "Lead Intake & Instant Contact",
+        routes: [
+          { method: "POST", path: "/api/contact", desc: "Secure contact inquiry submission and engineering consultation request" },
+          { method: "GET", path: "https://wa.me/6282122758359", desc: "Direct WhatsApp hotline connection to lead project estimator" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Enterprise SSL / HTTPS Perimeter",
+        desc: "End-to-end transport layer security encrypting all client communications, consultation inquiries, and corporate documentation.",
+      },
+      {
+        title: "Static Site Generation (SSG) & Edge Security",
+        desc: "Pre-rendered Next.js pages deployed on CDN edge servers with no exposed database surface, providing protection against web vulnerabilities.",
+      },
+      {
+        title: "Form Sanitization & Anti-Spam Pipeline",
+        desc: "Server-side input validation protecting corporate inquiry forms from invalid data and spam submissions.",
+      },
+      {
+        title: "Asset Optimization & Clean Dependencies",
+        desc: "Strictly pinned dependencies and native image optimization delivering fast load times and clean maintenance.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "CV. Richo Bahari is a trusted General Contractor and Industrial Engineering firm with operations anchored in Sukabumi, Cikarang, and the broader West Java / Jabodetabek manufacturing corridor, serving enterprise clients such as PT Selatan Jaya Prima Perkasa and PT NGK Ceramics Indonesia.",
+          "The company needed a modern digital flagship to showcase its 5 core engineering service pillars, document verified field case studies with challenge-solution-result frameworks, and uphold its proud K3 Zero Accident safety record.",
+        ],
+      },
+      {
+        title: "Architecture & Engineering Patterns",
+        body: [
+          "Built on Next.js 16 (App Router), React 19, and Tailwind CSS v4, combining React Server Components for optimal SEO and rapid loading with interactive client islands featuring kinetic buttons, technical blueprint grids, and filterable bento masonry grids.",
+          "Project case studies are architected through a strongly-typed TypeScript content repository with high-efficiency AVIF and WebP image optimization, ensuring crisp worksite photography without degrading mobile loading performance.",
+        ],
+      },
+      {
+        title: "Challenges & Breakthroughs",
+        body: [
+          "Heavy Industrial Photography vs. Mobile Speed: Addressed high-resolution worksite documentation through responsive `next/image` pipelines and AVIF compression, achieving sub-second page loads across industrial networks.",
+          "Balancing Technical Rigor & Marketing Clarity: Developed a unified design system combining architectural monospace headings, high-contrast badges, and tactile marketing flyers (1080x1350 4:5 format) that translate complex EPC capabilities into clear value propositions.",
+        ],
+      },
+      {
+        title: "Results & Business Impact",
+        body: [
+          "Successfully launched to production as CV. Richo Bahari's primary digital credential when bidding for tier-1 factory construction and warehouse expansion tenders.",
+          "Drives immediate inbound inquiries via integrated direct WhatsApp hotlines and optimized contact funnels.",
+        ],
+      },
+    ],
+    metricOutcomes: [
+      { value: "Zero Acc.", label: "K3 Workplace Safety Standards Maintained" },
+      { value: "5 Pillars", label: "Integrated Turnkey Industrial Capabilities" },
+      { value: "100%", label: "TypeScript & Next.js 16 Architecture" },
+      { value: "Top Tier", label: "Clients Served (NGK Ceramics, Sanwa Musen, etc.)" },
+    ],
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS v4",
+      "TypeScript",
+      "React Compiler",
+      "PostCSS",
+      "Vercel",
+      "Industrial EPC",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/CentraDev-Team/RichoBahariCompro" },
+    ],
+  },
+  terastani: {
+    title: "TerasTani",
+    subtitle: "Decentralized Urban Micro-Farm Operating System & AI Precision Agriculture",
+    status: "Production Ready",
+    summary:
+      "A decentralized urban micro-farm operating system designed to reduce post-harvest loss and retail fragmentation. Aligned with UN SDGs (2, 11, 12, 13), TerasTani aggregates balcony and yard harvests within 200–500m into communal RW crate hubs with AI leaf spectrometry and smart escrow settlement.",
+    domain: "terastani.id",
+    meta: [
+      { label: "Role", value: "Full Stack Engineer & System Architect" },
+      { label: "Purpose", value: "National Agricultural & Food Security Innovation" },
+      { label: "Timeline", value: "Oct 2026" },
+      { label: "Architecture", value: "Clean Layered Architecture (Monorepo pnpm)" },
+      { label: "Design System", value: "Tactile Editorial Neo-Brutalism & Botanical Luxury" },
+    ],
+    galleryLabel: "DECENTRALIZED URBAN AGRI OS",
+    galleryTitle: "The TerasTani Operating Ecosystem",
+    galleryLead:
+      "An interactive walkthrough of the TerasTani platform: IoT microclimate telemetry, AI agronomic simulation, browser canvas leaf spectrometry, and communal crate logistics with smart escrow finance.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official Platform Architecture & Overview",
+        route: "terastani.id/platform/overview",
+        tag: "Brand Architecture & SDGs Alignment",
+        image: terastaniImg,
+        desc: "Platform architecture overview highlighting zero-mile urban harvest aggregation and UN SDGs alignment.",
+        features: [
+          "UN SDGs 2, 11, 12, 13 Alignment",
+          "Walking Distance Consolidation (200-500m)",
+          "Clean Layered Monorepo Architecture",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "iot-overview-telemetry",
+        title: "Real-Time Dashboard & Sensor IoT RW Telemetry",
+        route: "app.terastani.id/dashboard/overview",
+        tag: "Microclimate IoT & Aggregation",
+        image: terastani1,
+        desc: "Live telemetry console displaying cluster microclimate metrics, communal crate capacity, and real-time QR deposit feeds.",
+        features: [
+          "Live IoT Sensor Telemetry (BH1750, SHT31, DHT22)",
+          "84% Crate Capacity Aggregation Monitoring",
+          "Parallel Background Sync (Zero-FOUC)",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "precision-ai-calculator",
+        title: "Precision AI Land Calculator & Crop Simulation",
+        route: "app.terastani.id/dashboard/calculator",
+        tag: "Agronomic AI Simulation",
+        image: terastani2,
+        desc: "Agronomic calculation engine simulating planting density, nutrient mix, and revenue across 4 urban structural environments.",
+        features: [
+          "Multi-Structure Lahan Simulation (Balcony, Yard, Rooftop, Vertical)",
+          "Calibrated AB Mix & Tonnage Estimation Algorithms",
+          "Persistent PostgreSQL Cultivation Plot Management",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "computer-vision-spectrometry",
+        title: "Computer Vision AI Leaf Spectrometry & Grading Engine",
+        route: "app.terastani.id/dashboard/vision",
+        tag: "Computer Vision & Quality Assurance",
+        image: terastani3,
+        desc: "Browser canvas pixel spectrometry assessing leaf SPAD index and chlorosis to award commercial quality grades (Grade A+ to D).",
+        features: [
+          "Live Canvas Pixel Spectrometry & SPAD Indexing",
+          "Real-Time Chlorosis & Pest Infection Ratios",
+          "8-Tier Commercial Grading with Price-Lock Contract",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "lumbung-smart-escrow",
+        title: "Lumbung RW Communal Crate, QR Ticket, & Smart Escrow Finance",
+        route: "app.terastani.id/dashboard/lumbung-finance",
+        tag: "Logistics & Financial Settlement",
+        image: terastani4,
+        desc: "Communal crate management, scannable QR deposit passes, cold-chain fleet dispatch, and automated escrow payout.",
+        features: [
+          "Scannable Digital QR Deposit Passes (TT-RW07-XXXXXX)",
+          "Smart Escrow Settlement Protecting Micro-Cultivators",
+          "Cold-Chain Logistics Fleet Manifest Tracking",
+        ],
+        isMobile: false,
+      },
+    ],
+    kpis: [
+      {
+        value: "200-500m",
+        label: "Walking Radius",
+        note: "Zero-mile micro-transport connecting home gardens to RW hub",
+      },
+      {
+        value: "Grade A+",
+        label: "Computer Vision AI",
+        note: "Canvas pixel spectrometry estimating SPAD & leaf chlorosis",
+      },
+      {
+        value: "Smart Escrow",
+        label: "Financial Settlement",
+        note: "Locked distributor funds automatically disbursed upon weighing",
+      },
+      {
+        value: "4 SDGs",
+        label: "Global Alignment",
+        note: "SDG 2 (Zero Hunger), 11 (Cities), 12 (Production), 13 (Climate)",
+      },
+      {
+        value: "4 Land Types",
+        label: "Precision Agronomy",
+        note: "Balconies, residential yards, concrete rooftops, and vertical walls",
+      },
+      {
+        value: "1-Click",
+        label: "Role Switcher",
+        note: "Seamless perspective toggle: Citizen Cultivator to Partner Distributor",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Decentralized Hub Crate Topology",
+        desc: "Aggregates small residential harvests into bulk commercial crates within a 200–500m walking radius.",
+      },
+      {
+        icon: "terminal",
+        title: "Computer Vision Leaf Spectrometry",
+        desc: "In-browser canvas color-space analysis evaluating leaf vitality and locking purchase prices without external GPU APIs.",
+      },
+      {
+        icon: "database",
+        title: "Smart Escrow Financial Security",
+        desc: "Locks distributor funds in advance and automatically releases payouts to grower wallets upon weighing verification.",
+      },
+      {
+        icon: "cloud",
+        title: "Live IoT Microclimate Telemetry",
+        desc: "Streams temperature, humidity, light, and pH data with parallel background fetchers to eliminate loading flicker.",
+      },
+    ],
+    architecture: {
+      type: "Clean Layered Monorepo Architecture (pnpm workspace)",
+      protocol: "Versioned RESTful JSON API (/api/v1) with JWT Bearer",
+      layers: [
+        {
+          name: "Frontend Client SPA",
+          badge: "React 19 + Vite 8 + Tailwind 4",
+          desc: "Single-Page Application styled with Tactile Editorial Neo-Brutalism, incorporating AuthContext role switcher, and resilient Axios interceptors.",
+        },
+        {
+          name: "Gateway & Security Middleware",
+          badge: "Express 5 + CORS + JWT + Rate Limiter",
+          desc: "High-resolution latency logging, strict CORS origin whitelisting, fail-fast input sanitizers, and JWT role-based access control.",
+        },
+        {
+          name: "Business Logic & Service Layer",
+          badge: "Domain Services",
+          desc: "Decoupled domain services executing mathematical agronomic calculations, plant spectrometry processing, and multi-tier escrow state transitions.",
+        },
+        {
+          name: "Persistence & Data Layer",
+          badge: "PostgreSQL 15 + Supabase Pooler",
+          desc: "High-performance relational database with PgBouncer connection pooling, parameterized SQL queries, and idempotent competition seeders.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Frontend Web Application",
+        items: [
+          { name: "React 19", role: "Latest Component Architecture & Hooks" },
+          { name: "Vite 8", role: "High-Speed Asset Bundler & HMR" },
+          { name: "Tailwind CSS v4", role: "Utility-First CSS & Neo-Brutalist System" },
+          { name: "HTML5 Canvas", role: "Real-time Pixel Spectrometry Engine" },
+          { name: "Axios", role: "HTTP Client with Bearer Interceptors" },
+          { name: "Lucide & Tabler Icons", role: "Tactile Editorial Vector Iconography" },
+        ],
+      },
+      {
+        category: "Backend RESTful API",
+        items: [
+          { name: "Node.js 20+", role: "High-Performance Server Runtime" },
+          { name: "Express 5", role: "RESTful HTTP Engine & Middleware Router" },
+          { name: "Clean Layered Architecture", role: "Decoupled Controllers, Services & Repos" },
+          { name: "JSON Web Tokens (JWT)", role: "Stateless Authentication & Role Verification" },
+          { name: "Input Sanitization", role: "Fail-Fast Payload Validation Rules" },
+        ],
+      },
+      {
+        category: "Database & Cloud Infrastructure",
+        items: [
+          { name: "PostgreSQL 15", role: "Relational Master Data & Ledger Storage" },
+          { name: "Supabase Cloud", role: "Managed Database & PgBouncer Connection Pool" },
+          { name: "Parameterized SQL", role: "SQL Injection Proof Repository Layer" },
+          { name: "pnpm Workspaces", role: "Efficient Monorepo Dependency Management" },
+        ],
+      },
+      {
+        category: "Precision Agronomy & Smart Finance",
+        items: [
+          { name: "Leaf SPAD Algorithm", role: "Chlorophyll Index & Health Estimation" },
+          { name: "Land Capacity Engine", role: "Density & Nutrient Calculation Formulas" },
+          { name: "Smart Escrow Ledger", role: "Locked Distributor Payout Contract" },
+          { name: "IoT Sensor Aggregator", role: "Microclimate Telemetry Processor" },
+        ],
+      },
+    ],
+    featuresTitle: "5 Mission-Critical Operating Modules",
+    featuresLead:
+      "A decentralized civic food system combining microclimate IoT telemetry, client-side computer vision spectrometry, zero-mile communal crate logistics, and smart escrow settlement.",
+    features: [
+      {
+        id: "overview-iot",
+        title: "IoT Microclimate Telemetry & Cluster Dashboard",
+        badge: "Microclimate IoT",
+        desc: "Live command center tracking environmental conditions across neighborhood clusters.",
+        points: [
+          "Real-Time Sensor Telemetry: Streams solar radiation (BH1750), ambient temperature, humidity (SHT31), and nutrient pH.",
+          "Crate Capacity Aggregation: Monitors communal crate fill levels across registered local micro-growers.",
+          "Role Switcher: 1-click toggle to preview perspectives for Cultivator, Distributor, and RW Administrator.",
+        ],
+      },
+      {
+        id: "land-calculator",
+        title: "Precision Agronomic Land & Crop Calculator",
+        badge: "Agronomic AI",
+        desc: "Simulation engine optimizing residential spaces into high-yield hydroponic plots.",
+        points: [
+          "4 Urban Structure Models: Custom algorithms for Apartment Balconies, Residential Yards, Rooftops, and Vertical Walls.",
+          "Nutrient & Density Calculations: Estimates hole density and precise AB Mix nutrient requirements.",
+          "Yield & Revenue Forecasting: Estimates monthly harvest tonnage and profits based on commercial quality grades.",
+        ],
+      },
+      {
+        id: "computer-vision",
+        title: "Computer Vision Leaf Spectrometry & Grading",
+        badge: "AI Quality Assurance",
+        desc: "Browser-based leaf inspection providing objective, fraud-proof crop grading.",
+        points: [
+          "In-Browser Canvas Spectrometry: Analyzes RGB color distributions directly in the browser at 60 FPS.",
+          "SPAD Chlorophyll & Chlorosis Index: Measures leaf health, nitrogen levels, and pest infection ratios.",
+          "8-Tier Commercial Grading: Certifies harvests from Grade A+ to D, locking contract purchase prices prior to dispatch.",
+        ],
+      },
+      {
+        id: "communal-crate",
+        title: "Lumbung RW Communal Crate & QR Passes",
+        badge: "Decentralized Logistics",
+        desc: "Zero-mile aggregation hub turning backyard harvests into commercial wholesale volume.",
+        points: [
+          "Walking-Distance Aggregation: Convenient 200–500m neighborhood drop-off points eliminating transport costs.",
+          "Scannable QR Deposit Passes: Generates unique QR passes binding crop variety, weight, and AI quality grade.",
+          "Cold-Crate Preservation: Monitors crate temperatures (4.5°C) to maintain cellular turgor before fleet pickup.",
+        ],
+      },
+      {
+        id: "smart-escrow",
+        title: "Smart Escrow Settlement & Financial Ledger",
+        badge: "FinTech & Settlement",
+        desc: "Trustless financial ledger safeguarding cultivators against delayed payments or unfair deductions.",
+        points: [
+          "Escrow Fund Locking: Distributor funds are locked upon quota reservation and released upon digital scale verification.",
+          "Instant Wallet Credit: Funds transfer directly to cultivator wallets upon QR check-in at the weighing station.",
+          "Multi-Channel Withdrawal: Direct payout integration to Indonesian banks (BCA, Mandiri, BRI) and digital e-wallets.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "6-Stage Decentralized Aggregation & Escrow Settlement",
+      lead:
+        "End-to-end zero-mile agricultural lifecycle from algorithmic land planning and AI leaf grading to communal crate drop-off and automated escrow disbursement.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Citizen Cultivator",
+          title: "AI Land Simulation & Guided Cultivation",
+          desc: "Cultivators calculate planting hole density via the AI Land Calculator and track microclimates via neighborhood IoT telemetry.",
+          action: "Land Simulation & IoT Monitoring",
+        },
+        {
+          level: "Stage 02",
+          role: "Cultivator & AI Vision",
+          title: "Morning Harvest & Spectrometry Grading",
+          desc: "Fresh leaves are scanned using in-browser Computer Vision to compute the SPAD chlorophyll index and lock in Grade A+ certification.",
+          action: "Spectrometry Scan & Quality Lock",
+        },
+        {
+          level: "Stage 03",
+          role: "TerasTani Platform",
+          title: "Digital QR Deposit Pass Issuance",
+          desc: "The platform issues a cryptographic QR deposit ticket (format TT-RW07-XXXXXX) with locked forward contract purchase pricing.",
+          action: "Scannable QR Pass Issuance",
+        },
+        {
+          level: "Stage 04",
+          role: "Citizen Cultivator",
+          title: "Zero-Mile Hub Aggregation (200–500m)",
+          desc: "Cultivators transport fresh crops to the neighborhood Lumbung RW drop-off point and place them into cold storage crates (4.5°C).",
+          action: "Zero-Mile Consolidation Without Transit Fees",
+        },
+        {
+          level: "Stage 05",
+          role: "RW Hub Manager",
+          title: "Weight Verification & Smart Escrow Payout",
+          desc: "The hub manager scans the QR ticket and weighs the produce; the system automatically triggers escrow disbursement into the grower's digital wallet.",
+          action: "QR Verification & Instant Escrow Release",
+        },
+        {
+          level: "Stage 06",
+          role: "Partner Distributor",
+          title: "Cold-Chain Logistics Fleet Dispatch",
+          desc: "Refrigerated distributor transport trucks collect consolidated bulk yields (500–1,000 kg) for delivery to commercial retail and supermarket networks.",
+          action: "Wholesale Cold-Chain Distribution",
+        },
+      ],
+      lockMechanism: {
+        title: "Smart Escrow Fund Locking & Automated Scale Release",
+        desc: "Distributor procurement funds are locked in advance inside escrow contracts and automatically credited to grower digital wallets immediately upon physical scale verification at the neighborhood hub.",
+      },
+    },
+    directoryStructure: [
+      {
+        name: "tera-backend/ (Express 5 + Clean Layered Architecture)",
+        items: [
+          "src/controllers/ — HTTP handlers (auth, dashboard, harvest, quota, wallet)",
+          "src/services/ — AuthService, LandCalculator, PlantVision, SmartEscrow",
+          "src/repositories/ — Isolated PostgreSQL queries with parameterized SQL",
+          "src/routes/ — Versioned /api/v1 routing (14 specialized API endpoints)",
+          "src/middlewares/ — JWT auth, RBAC, latency logger, fail-fast validator",
+          "src/config/ — Database connection pool (pg.Pool), constants, env parser",
+          "src/seed/ — Idempotent database seeder for jury competition evaluation",
+        ],
+      },
+      {
+        name: "tera-frontend/ (React 19 + Vite 8 + Tailwind CSS v4)",
+        items: [
+          "src/features/dashboard/ — OverviewTab, CalculatorTab, VisionTab, LumbungTab, FinanceTab",
+          "src/components/common/ — Tactile modals, QRCodeImage, Button, Badge, MetricCard",
+          "src/components/layout/ — Header (IoT telemetry sync pill), Sidebar, RoleSwitcher",
+          "src/context/AuthContext.jsx — Session state & 1-click cultivator/distributor role switcher",
+          "src/utils/plantVisionEngine.js — Canvas pixel spectrometry & SPAD chlorophyll index",
+          "src/api/ — Axios singleton with Bearer tokens & 401 automatic recovery",
+        ],
+      },
+    ],
+    schemaEngineTitle: "Decentralized Agri Data Models & Ledgers",
+    prismaSchemas: [
+      {
+        name: "users & user_wallets & wallet_transactions",
+        purpose: "Identity management for citizen cultivators and commercial distributors, digital wallet balances, locked escrow balances, and immutable financial transaction ledgers.",
+      },
+      {
+        name: "clusters & sensor_logs",
+        purpose: "Lumbung RW communal hub registry, cooling crate capacity metrics, and continuous 24/7 environmental IoT sensor telemetry logs.",
+      },
+      {
+        name: "harvest_submissions & qr_tickets",
+        purpose: "Citizen micro-harvest records, Computer Vision AI quality certification grades (Grade A+ through D), cryptographic QR tokens, and scale verification statuses.",
+      },
+      {
+        name: "distributor_quotas & fleet_schedules",
+        purpose: "Wholesale bulk procurement quotas, locked forward contract pricing, and refrigerated logistics fleet delivery manifests.",
+      },
+      {
+        name: "land_calculations & user_missions",
+        purpose: "Persistent agricultural plot models stored in PostgreSQL, along with community gamification quest progression and XP rewards.",
+      },
+    ],
+    apiEndpoints: [
+      {
+        group: "Authentication & User Identity (/api/v1/auth)",
+        routes: [
+          { method: "POST", path: "/api/v1/auth/login", desc: "Email and password authentication issuing signed JWT Bearer tokens" },
+          { method: "POST", path: "/api/v1/auth/register", desc: "User registration for Citizen Cultivators and Commercial Partner Distributors" },
+          { method: "GET", path: "/api/v1/auth/me", desc: "Fetch active session profile, wallet balances, and accumulated gamification XP" },
+        ],
+      },
+      {
+        group: "IoT Telemetry & Cluster RW (/api/v1/clusters & /sensors)",
+        routes: [
+          { method: "GET", path: "/api/v1/health", desc: "Express server health diagnostic and Supabase PostgreSQL pool verification" },
+          { method: "GET", path: "/api/v1/clusters", desc: "Catalog of all registered RW communal hubs and real-time crate fill capacities" },
+          { method: "GET", path: "/api/v1/sensors/latest", desc: "Environmental IoT sensor streams (solar radiation, ambient temp, pH, humidity)" },
+        ],
+      },
+      {
+        group: "AI Land Calculator & Plots (/api/v1/calculator)",
+        routes: [
+          { method: "GET", path: "/api/v1/calculator/my", desc: "Retrieve all saved hydroponic plot models for the authenticated cultivator" },
+          { method: "POST", path: "/api/v1/calculator/save", desc: "Persist AI land simulation parameters and activate active plot monitoring" },
+          { method: "DELETE", path: "/api/v1/calculator/:id", desc: "Remove completed or archived agricultural plots from the active dashboard" },
+        ],
+      },
+      {
+        group: "Harvest Submissions & QR Passes (/api/v1/harvests)",
+        routes: [
+          { method: "GET", path: "/api/v1/harvests/my", desc: "Historical digital QR deposit passes and hub verification statuses" },
+          { method: "POST", path: "/api/v1/harvests/submit", desc: "Issue new digital QR deposit passes for communal cold-crate delivery" },
+        ],
+      },
+      {
+        group: "B2B Quota Exchange & Logistics Fleets (/api/v1/quotas & /fleets)",
+        routes: [
+          { method: "GET", path: "/api/v1/quotas", desc: "Wholesale procurement quotas available for commercial distributor reservation" },
+          { method: "POST", path: "/api/v1/quotas/:id/book", desc: "Reserve neighborhood harvest quotas backed by automated escrow fund locking" },
+          { method: "GET", path: "/api/v1/fleets", desc: "Real-time dispatch schedules and tracking for refrigerated cold-chain trucks" },
+          { method: "PATCH", path: "/api/v1/fleets/:id/status", desc: "Update fleet logistics status (Scheduled, In Transit, Arrived, Completed)" },
+        ],
+      },
+      {
+        group: "Smart Escrow Finance & Gamification (/api/v1/wallet & /gamification)",
+        routes: [
+          { method: "GET", path: "/api/v1/wallet", desc: "Detailed breakdown of available balance, locked escrow funds, and ledger audit history" },
+          { method: "POST", path: "/api/v1/wallet/withdraw", desc: "Disburse wallet funds to Indonesian bank accounts (BCA, Mandiri, BRI) or e-wallets" },
+          { method: "GET", path: "/api/v1/gamification/missions", desc: "Daily and weekly agricultural quests with XP reward completion tracking" },
+          { method: "POST", path: "/api/v1/gamification/claim", desc: "Claim XP rewards upon verified completion of cultivation and harvest milestones" },
+          { method: "GET", path: "/api/v1/gamification/leaderboard", desc: "District-wide community leaderboard of top neighborhood micro-cultivators" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Stateless JWT Bearer Authentication & RBAC",
+        desc: "Stateless authentication protocol utilizing signed JSON Web Tokens (JWT) with cryptographic secret keys and dynamic role-based access control.",
+      },
+      {
+        title: "Fail-Fast Input Sanitization & Payload Validation",
+        desc: "Rigorous input sanitization pipelines validating data types, string boundaries, and numeric ranges prior to executing service layer transactions.",
+      },
+      {
+        title: "Parameterized SQL Queries (Supabase PostgreSQL)",
+        desc: "All database queries in the repository layer utilize strict parameter binding with pg.Pool, fully preventing SQL injection vulnerabilities.",
+      },
+      {
+        title: "Isolated Smart Escrow Ledger Architecture",
+        desc: "Strict segregation between liquid wallet balances and escrowed funds prevents double-spending and ensures guaranteed grower disbursements.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "Urban farming in major cities suffers from fragmentation: home growers produce high-quality micro-harvests (5–15 kg) but lack retail market access, while commercial buyers face high logistics costs and middlemen markups.",
+          "TerasTani bridges this gap with an operating system that consolidates neighborhood harvests within 200–500m walking radius into communal RW hubs, backed by AI leaf quality grading and smart escrow financial settlement.",
+        ],
+      },
+      {
+        title: "Architecture & Engineering Patterns",
+        body: [
+          "Organized as a pnpm monorepo with an Express 5 backend following Clean Layered Architecture (Controllers, Services, Repositories) and a React 19 frontend using Tailwind CSS v4.",
+          "Computer vision spectrometry runs entirely client-side on HTML5 Canvas to assess chlorophyll SPAD index without expensive GPU backends, while Supabase PostgreSQL handles relational ledgers and IoT telemetry.",
+        ],
+      },
+      {
+        title: "Challenges & Breakthroughs",
+        body: [
+          "Client-Side Leaf Spectrometry: Engineered in-browser color-space algorithms to accurately evaluate leaf chlorosis and SPAD health indices directly from smartphone camera photos.",
+          "Zero-Flicker Telemetry: Implemented `Promise.allSettled` parallel background synchronization to load complex IoT metrics, cluster capacities, and wallet balances smoothly.",
+        ],
+      },
+      {
+        title: "Results & Innovation Impact",
+        body: [
+          "Developed as a national digital agriculture and food security competition project for 2026.",
+          "Creates a zero-mile circular food model that cuts urban carbon footprints while guaranteeing fair prices for neighborhood micro-growers.",
+        ],
+      },
+    ],
+    metricOutcomes: [
+      { value: "200-500m", label: "Zero-Mile Walking Radius Eliminating Transport Cost" },
+      { value: "Grade A+", label: "AI Computer Vision Leaf Chlorophyll SPAD Certification" },
+      { value: "100%", label: "Guaranteed Payout Settlement via Smart Escrow Contracts" },
+      { value: "4 SDGs", label: "Direct Alignment with UN Sustainable Goals (2, 11, 12, 13)" },
+    ],
+    stack: [
+      "React 19",
+      "Vite 8",
+      "Tailwind CSS v4",
+      "Node.js 20",
+      "Express 5",
+      "PostgreSQL",
+      "Supabase",
+      "Computer Vision AI",
+      "Smart Escrow",
+      "IoT Telemetry",
+      "pnpm",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/TerasTani" },
+    ],
+  },
+  kepk: {
+    title: "SIM KEPK FK UMJ",
+    subtitle: "Web-Based Academic Research Ethics Management & WHO/CIOMS Clearance Platform",
+    status: "Production Ready",
+    summary:
+      "A full-stack academic research ethics governance platform developed for the Faculty of Medicine, Universitas Muhammadiyah Jakarta (FK UMJ). Standardized to WHO/CIOMS 2016 and national KEPPKN guidelines, it digitizes the full ethical clearance lifecycle from submission to post-approval.",
+    meta: [
+      { label: "Role", value: "Full Stack Engineer & Server Architect" },
+      { label: "Client", value: "Faculty of Medicine, Universitas Muhammadiyah Jakarta" },
+      { label: "Timeline", value: "4-Month Contract (2025 – 2026)" },
+      { label: "Team", value: "Athallah Muhammad (Partner), Haidar Miqdad (Mentor & PM)" },
+      { label: "Architecture", value: "Clean Architecture + Service Layer + Strategy Resolver" },
+    ],
+    galleryLabel: "ENTERPRISE ETHICS INTERFACES",
+    galleryTitle: "The KEPK FK UMJ Governance System",
+    galleryLead:
+      "A complete walkthrough of the KEPK FK UMJ system: multi-subtype protocol submission, administrative completeness audit, workload-guarded reviewer assignment, and chapter-by-chapter AJAX evaluation.",
+    gallery: [
+      {
+        id: "hero-showcase",
+        title: "Official Platform Architecture & Overview",
+        route: "kepk.fkkumj.ac.id",
+        tag: "Official Client Contract & Platform Architecture",
+        image: kepkImg,
+        desc: "Platform architecture overview illustrating the end-to-end WHO/CIOMS 2016 ethical clearance lifecycle and automated PDF issuance.",
+        features: [
+          "WHO / CIOMS 2016 & KEPPKN Standards Compliance",
+          "Service Layer Pattern & Dynamic Subtype Resolver",
+          "Automated A4 Ethical Clearance PDF Generator",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "researcher-submission-portal",
+        title: "Researcher Portal & 3-Stage Protocol Wizard",
+        route: "kepk.fkkumj.ac.id/research/create",
+        tag: "Multi-Subtype Protocol Submission",
+        image: kepk1,
+        desc: "3-stage protocol drafting wizard with 4 research subtypes, 10 document upload categories, and a 41-item WHO/CIOMS self-assessment.",
+        features: [
+          "3-Stage Step-by-Step Wizard with Progressive Draft Mode",
+          "4 Research Subtypes (Clinical, Non-Clinical, Animal, Social)",
+          "41-Item WHO/CIOMS 2016 Self-Assessment Matrix",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "secretariat-verification-classification",
+        title: "Secretariat Document Verification & 3-Tier Classification",
+        route: "kepk.fkkumj.ac.id/secretariat/verification",
+        tag: "Quality Audit & Path Triaging",
+        image: kepk2,
+        desc: "Administrative verification console for document auditing and 3-tier study triaging (Exempted, Expedited, Full Board).",
+        features: [
+          "Multi-Document Completeness Audit Interface",
+          "3-Tier Path Classification (Exempted, Expedited, Full Board)",
+          "One-Click Completeness Revision Dispatcher",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "reviewer-workload-guard",
+        title: "Reviewer Appointment Engine & 24h Workload Guard",
+        route: "kepk.fkkumj.ac.id/secretariat/appointments",
+        tag: "Reviewer Governance & Load Balancing",
+        image: kepk3,
+        desc: "Algorithmic reviewer assignment engine enforcing Full Board quorums and a 24-hour cooldown to prevent reviewer fatigue.",
+        features: [
+          "24-Hour Reviewer Workload Lockout Guard",
+          "Full Board Committee Rule Enforcement (>= 3 Reviewers)",
+          "Automated Plenary Session Scheduler",
+        ],
+        isMobile: false,
+      },
+      {
+        id: "chapter-ajax-review-post-approval",
+        title: "Interactive Chapter-by-Chapter AJAX Review & Post-Approval Lifecycle",
+        route: "kepk.fkkumj.ac.id/reviewer/tasks",
+        tag: "Interactive Audit & Post-Approval",
+        image: kepk4,
+        desc: "Chapter-by-chapter AJAX evaluation interface for ethics reviewers and post-approval tracking for amendments and SAE reports.",
+        features: [
+          "Real-Time Chapter-by-Chapter AJAX Review",
+          "Automated Correction Matrix (ResearchCorrection)",
+          "Post-Approval Modules (Amendments, Extensions, SAEs)",
+        ],
+        isMobile: false,
+      },
+    ],
+    kpis: [
+      {
+        value: "100%",
+        label: "WHO/CIOMS Compliance",
+        note: "Full alignment with CIOMS 2016 7 ethical standards & 41 criteria",
+      },
+      {
+        value: "4-Stage",
+        label: "Research Subtypes",
+        note: "Clinical Trials, Non-Clinical, Animal Testing (3R), and Community Social",
+      },
+      {
+        value: "24-Hour",
+        label: "Workload Guard",
+        note: "Automated cooldown prevents reviewer fatigue and conflict of interest",
+      },
+      {
+        value: "6 Roles",
+        label: "Granular RBAC",
+        note: "Admin, Chairman, Vice Chair, Secretariat, Reviewer, and Researcher",
+      },
+      {
+        value: "10 Berkas",
+        label: "Attachment Verification",
+        note: "Proposal, informed consent, instruments, budget, CV, and bank slips",
+      },
+      {
+        value: "A4 DomPDF",
+        label: "Official Certification",
+        note: "Instant tamper-evident Ethical Clearance PDF with dynamic QR verification",
+      },
+    ],
+    highlights: [
+      {
+        icon: "monitor",
+        title: "Dynamic Subtype Strategy Pattern",
+        desc: "Uses Strategy Resolver to route Clinical, Non-Clinical, Animal, and Social protocols to specialized validation pipelines.",
+      },
+      {
+        icon: "database",
+        title: "Draft Mode & Relational Integrity",
+        desc: "Allows progressive form saving with nullable fields, protected by MySQL transactions and 24 backed medical enums.",
+      },
+      {
+        icon: "terminal",
+        title: "Chapter-by-Chapter AJAX Evaluation",
+        desc: "Enables ethics reviewers to score and critique individual protocol sections asynchronously without page reloads.",
+      },
+      {
+        icon: "cloud",
+        title: "Institutional Reviewer Guardrails",
+        desc: "Enforces a 24-hour assignment cooldown and a minimum 3-reviewer quorum for high-risk Full Board studies.",
+      },
+    ],
+    architecture: {
+      type: "Service-Layer Clean Architecture (MVC)",
+      protocol: "RESTful HTTP & AJAX Endpoints (CSRF & Fortify Secured)",
+      layers: [
+        {
+          name: "Frontend UI Layer",
+          badge: "Blade + Tailwind CSS v4 + Vite 7",
+          desc: "Fast, responsive user interface styled with Tailwind CSS v4 and @tailwindcss/vite, featuring SweetAlert2 interactive modals and Axios asynchronous protocol chapter updates.",
+        },
+        {
+          name: "HTTP & Authorization Layer",
+          badge: "Fortify 2FA + Spatie RBAC 6.21",
+          desc: "Secure entry point with 16-digit NIK registration, two-factor authentication (2FA), and dynamic role-based access control governing 6 distinct institutional personas.",
+        },
+        {
+          name: "Service & Domain Layer",
+          badge: "Service Layer + Strategy Resolver",
+          desc: "Decoupled business logic via BaseResearchCreationService and subtype-specific handlers (Clinical, NonClinical, Animal, Social), strictly typed with 24 medical backed enums.",
+        },
+        {
+          name: "Persistence & Data Layer",
+          badge: "MySQL 8.x + MariaDB + Eloquent",
+          desc: "Structured relational database schema with JSON column attributes, foreign key cascades, soft deletes, and atomic DB transactions ensuring zero protocol corruption.",
+        },
+        {
+          name: "Export & Reporting Engine",
+          badge: "Barryvdh DomPDF + Maatwebsite Excel",
+          desc: "Automated server-side rendering for official A4 Ethical Clearance PDF certificates with verification QR codes and batch administrative spreadsheet exports.",
+        },
+      ],
+    },
+    techStackGrouped: [
+      {
+        category: "Backend Core & Framework",
+        items: [
+          { name: "Laravel 12.x", role: "Modern PHP MVC Framework" },
+          { name: "PHP 8.2+", role: "Typed Server-Side Language Engine" },
+          { name: "Eloquent ORM", role: "Active Record & Relational Data Layer" },
+          { name: "Service Layer Pattern", role: "Decoupled Business Logic Architecture" },
+          { name: "Strategy Resolver", role: "Dynamic Subtype Request & Service Mapping" },
+          { name: "24 Backed Enums", role: "Medical-Grade Type Safety & State Enums" },
+        ],
+      },
+      {
+        category: "Database & Security",
+        items: [
+          { name: "MySQL 8.x / MariaDB", role: "Relational Database with JSON Attributes" },
+          { name: "Laravel Fortify 1.30", role: "16-Digit NIK Auth, Sessions & 2FA" },
+          { name: "Spatie Permission 6.21", role: "6-Tier RBAC & Granular Permissions" },
+          { name: "DB Transactions", role: "Atomic Multi-Table Submission Safety" },
+          { name: "CSRF & SQL Injection Guards", role: "Built-in Framework Perimeter Security" },
+        ],
+      },
+      {
+        category: "Frontend Styling & Interactivity",
+        items: [
+          { name: "Tailwind CSS v4", role: "High-Performance Modern CSS Framework" },
+          { name: "@tailwindcss/vite", role: "Instant Vite Compilation Plugin" },
+          { name: "Blade Templating", role: "Server-Rendered UI with View Composers" },
+          { name: "SweetAlert2 11.23", role: "Interactive Dialogs & Decision Confirmations" },
+          { name: "Axios", role: "AJAX Chapter Review Submissions" },
+          { name: "Vite 7.x", role: "Lightning-Fast Asset Bundling" },
+        ],
+      },
+      {
+        category: "Document Generation & DevOps",
+        items: [
+          { name: "Barryvdh DomPDF 3.1", role: "Official A4 Ethical Clearance PDF Generator" },
+          { name: "Maatwebsite Excel 3.1", role: "Administrative Spreadsheet Export Engine" },
+          { name: "Pest PHP 4.0 & PHPUnit", role: "Comprehensive Unit & Feature Testing" },
+          { name: "Laravel Pint", role: "PHP Code Style Standardization" },
+          { name: "Laravel Debugbar & Pail", role: "Query Performance & Real-Time Logging" },
+          { name: "AWS Cloud Infrastructure", role: "Production Cloud Hosting & Storage" },
+        ],
+      },
+    ],
+    featuresTitle: "4 Core Governance & Review Modules",
+    featuresLead:
+      "A standardized academic research ethics platform managing protocol drafting, administrative triage, reviewer appointment, and tamper-evident certification.",
+    features: [
+      {
+        id: "researcher-wizard",
+        title: "Researcher Portal & 3-Stage Protocol Wizard",
+        badge: "Submission Engine",
+        desc: "Self-service protocol submission portal with progressive draft saving and specialized medical forms.",
+        points: [
+          "Progressive Draft Mode: Researchers can pause and resume lengthy submissions without validation blockers.",
+          "4 Specialized Subtypes: Dynamically serves tailored Form B modules: Clinical, Non-Clinical, Animal Testing (3R), and Social Research.",
+          "WHO/CIOMS Self-Assessment: 41-question checklist mapped directly to the 7 international CIOMS 2016 ethical standards.",
+        ],
+      },
+      {
+        id: "secretariat-verification",
+        title: "Secretariat Verification & 3-Tier Classification",
+        badge: "Administrative Triage",
+        desc: "Administrative gatekeeping console for auditing document completeness and classifying study risk levels.",
+        points: [
+          "Completeness Verification: Audits 10 mandatory document categories (proposals, consent forms, instruments, payment vouchers).",
+          "3-Tier Pathway Classification: Triages protocols into Exempted (minimal risk), Expedited (low risk), or Full Board (plenary committee).",
+          "Revision Request Flow: Direct feedback channel for sending dossiers back to researchers for administrative completeness revisions.",
+        ],
+      },
+      {
+        id: "reviewer-appointment",
+        title: "Reviewer Assignment & 24-Hour Workload Guard",
+        badge: "Reviewer Governance",
+        desc: "Automated committee assignment engine enforcing institutional workload quotas and fairness.",
+        points: [
+          "24-Hour Workload Cooldown: Automatically locks out reviewers assigned to another protocol within the preceding 24 hours.",
+          "Full Board Quorum Enforcement: Enforces mandatory minimum of 3 reviewers and plenary scheduling for high-risk studies.",
+          "Workload Transparency: Live committee dashboard tracking active workloads, pending reviews, and turnaround metrics.",
+        ],
+      },
+      {
+        id: "interactive-review",
+        title: "Chapter AJAX Evaluation & DomPDF Certification",
+        badge: "Evaluation & Certification",
+        desc: "Granular section-by-section review workspace and automated official document generation.",
+        points: [
+          "Chapter-by-Chapter AJAX Scoring: Reviewers evaluate chapters asynchronously via Axios and SweetAlert2 without page reloads.",
+          "Correction Matrix: Researchers address requested revisions through a structured point-by-point response matrix.",
+          "Automated A4 DomPDF Certificates: Generates official Universitas Muhammadiyah Jakarta Ethical Clearance certificates with verification QR codes.",
+        ],
+      },
+    ],
+    approvalWorkflow: {
+      title: "5-Stage WHO/CIOMS Ethical Clearance Governance Lifecycle",
+      lead:
+        "End-to-end medical research governance workflow enforcing 24-hour reviewer workload cooldowns, multi-stage audits, and automated A4 DomPDF certification.",
+      stages: [
+        {
+          level: "Stage 01",
+          role: "Lead Researcher",
+          title: "3-Stage Protocol Submission & Self-Assessment",
+          desc: "Researchers complete subtype-specific protocol questionnaires, upload 10 mandatory supporting dossiers, and finish 41-question WHO/CIOMS self-assessments.",
+          action: "Multi-Step Form Wizard & Draft Submission",
+        },
+        {
+          level: "Stage 02",
+          role: "Ethics Secretariat",
+          title: "Administrative Completeness Verification",
+          desc: "Secretariat staff review submitted files, consent forms, and administrative vouchers to certify dossiers as Verified or return for revision.",
+          action: "Administrative Audit & Completeness Certification",
+        },
+        {
+          level: "Stage 03",
+          role: "Secretariat & Leadership",
+          title: "Path Classification & Reviewer Appointment",
+          desc: "Protocols are classified into Exempted, Expedited, or Full Board paths, followed by reviewer assignments governed by a 24-hour workload guard.",
+          action: "Risk Pathway Triaging & Reviewer Quorum Guard",
+        },
+        {
+          level: "Stage 04",
+          role: "Ethics Reviewers",
+          title: "Chapter-by-Chapter Asynchronous Review",
+          desc: "Reviewers independently evaluate protocol chapters via AJAX, submitting scores and qualitative notes before rendering an ethical verdict.",
+          action: "Asynchronous Section Scoring & Ethical Recommendation",
+        },
+        {
+          level: "Stage 05",
+          role: "Ethics Committee Chairman",
+          title: "Final Clearance Seal & DomPDF Generation",
+          desc: "Committee leadership issues executive sign-off, automatically generating official A4 DomPDF Ethical Clearance certificates with verification QR codes.",
+          action: "Executive Seal & Automated Certificate Generation",
+        },
+      ],
+      lockMechanism: {
+        title: "24-Hour Reviewer Workload Guard & Plenary Quorum Lockout",
+        desc: "The system enforces an automated 24-hour assignment lockout for active reviewers and requires a mandatory minimum of 3 reviewers for Full Board plenary protocols.",
+      },
+    },
+    directoryStructure: [
+      {
+        name: "kepk-backend/ (Laravel 12.x Architecture)",
+        items: [
+          "app/Services/ResearchCreation/ — BaseResearchCreationService & Subtype Services",
+          "app/Services/ResearchCreation/ResearchSubtypeResolver.php — Dynamic Strategy Resolver",
+          "app/Http/Controllers/ — VerifyController, PathClassificationController, AppointmentReviewerController",
+          "app/Http/Controllers/ReviewTaskController.php — AJAX chapter evaluation & comments",
+          "app/Http/Controllers/PostApproval/ — Amendment, FinalReport, EthicsExtension, SaeReport",
+          "app/Http/Requests/Store/ — BaseStoreResearchRequest & subtype draft-mode validation",
+          "app/Enums/ — 24 medical backed enums (ClinicalTrialPhase, VulnerableType, TriState, Sponsor)",
+          "app/View/Composers/RoleComposer.php — Zero-cost view injection for RBAC navigation",
+          "database/migrations/ — Relational schema, JSON attributes, foreign keys cascade",
+        ],
+      },
+      {
+        name: "kepk-frontend/ (Blade + Tailwind CSS v4 + Vite)",
+        items: [
+          "resources/views/research/create/ — 3-stage protocol wizard & Form B subtype partials",
+          "resources/views/secretariat/ — Verification audits, path triaging, and reviewer assignment",
+          "resources/views/reviewer/ — Chapter-by-chapter AJAX evaluation workspace",
+          "resources/views/pdf/ — DomPDF official A4 Ethical Clearance template with dynamic QR",
+          "resources/views/post-approval/ — Amendments, annual extensions, and SAE forms",
+          "resources/js/ — SweetAlert2 modals, Axios chapter submitters, and Alpine interactivity",
+        ],
+      },
+    ],
+    schemaEngineTitle: "Medical Ethics Protocol & Review Schema Models",
+    prismaSchemas: [
+      {
+        name: "researches & research_protocols",
+        purpose: "Master study protocols, WHO/CIOMS self-assessment scores, multi-stage draft states, and investigator metadata.",
+      },
+      {
+        name: "form_b_clinical / non_clinical / animal / social",
+        purpose: "Specialized medical data tables: Belmont ethical principles, clinical trial phases I-IV, 3R animal welfare, and community consent protocols.",
+      },
+      {
+        name: "review_tasks & chapter_reviews",
+        purpose: "Secretariat reviewer assignments, 24-hour cooldown timestamps, chapter-by-chapter status/comment records, and ethical decisions.",
+      },
+      {
+        name: "research_corrections & revisions",
+        purpose: "Interactive revision matrix storing researcher response notes, document upload revisions, and resubmission tracking.",
+      },
+      {
+        name: "post_approval_governance (amendments, sae, extensions)",
+        purpose: "Audited post-clearance modules: protocol amendments, serious adverse event (SAE) incident alerts, annual renewals, and final reports.",
+      },
+    ],
+    apiEndpoints: [
+      {
+        group: "Authentication & Identity (/auth)",
+        routes: [
+          { method: "POST", path: "/register", desc: "16-digit NIK researcher self-registration via Laravel Fortify" },
+          { method: "POST", path: "/login", desc: "Session-based authenticated access with rate limiting" },
+          { method: "POST", path: "/user/two-factor-authentication", desc: "Two-Factor Authentication (2FA) toggle & secret generation" },
+        ],
+      },
+      {
+        group: "Protocol Submission & Wizard (/research)",
+        routes: [
+          { method: "GET", path: "/research/create", desc: "Multi-stage protocol submission wizard (Form A, B, C, D, E)" },
+          { method: "POST", path: "/research/store-draft", desc: "Save progressive protocol draft without strict validation constraints" },
+          { method: "POST", path: "/research/store", desc: "Full validation submission triggering dynamic Subtype Resolver" },
+          { method: "POST", path: "/research/{id}/attachments", desc: "Upload & categorize 10 mandatory supporting files" },
+          { method: "POST", path: "/research/{id}/self-assessment", desc: "Store 41-question WHO/CIOMS 7-standard evaluation scores" },
+        ],
+      },
+      {
+        group: "Secretariat Audit & Classification (/secretariat)",
+        routes: [
+          { method: "POST", path: "/verify/{id}/completeness", desc: "Approve completeness or issue completeness_revision status" },
+          { method: "POST", path: "/path-classification/{id}", desc: "Classify protocol into Exempted, Expedited, or Full Board" },
+          { method: "POST", path: "/appointment-reviewer/{id}", desc: "Assign reviewers with 24-hour cooldown & Full Board quorum validation" },
+        ],
+      },
+      {
+        group: "Reviewer Tasks & Decisions (/reviewer)",
+        routes: [
+          { method: "GET", path: "/review-task/{id}", desc: "Interactive chapter-by-chapter evaluation console" },
+          { method: "POST", path: "/review-task/{id}/chapter-review", desc: "AJAX submission of chapter score and qualitative comments" },
+          { method: "POST", path: "/review-task/{id}/decision", desc: "Submit final verdict: Approved (Layak Etik), Revision, or Rejected" },
+        ],
+      },
+      {
+        group: "Certification & Post-Approval (/post-approval)",
+        routes: [
+          { method: "GET", path: "/research/{id}/export-pdf", desc: "Generate tamper-evident A4 DomPDF Ethical Clearance Certificate" },
+          { method: "POST", path: "/research-amendment/{id}", desc: "Submit protocol amendment proposal with alteration rationale" },
+          { method: "POST", path: "/research-ethics-extension/{id}", desc: "Apply for 12-month ethical clearance validity renewal" },
+          { method: "POST", path: "/research-sae/{id}/report", desc: "File urgent Serious Adverse Event (SAE) clinical trial alert" },
+          { method: "POST", path: "/research-final-report/{id}", desc: "Submit final study dossier for ethical archival closure" },
+        ],
+      },
+    ],
+    securityStandards: [
+      {
+        title: "Laravel Fortify 16-Digit NIK & 2FA",
+        desc: "Enforces strict Indonesian National Identification Number (NIK) formatting upon user registration paired with Fortify two-factor authentication for sensitive review actions.",
+      },
+      {
+        title: "Spatie Role-Based Access Control (RBAC)",
+        desc: "Defines 6 granular system roles with strict policy gates, ensuring complete segregation of duties between researchers, secretariat staff, and ethics reviewers.",
+      },
+      {
+        title: "Atomic Database Transactions",
+        desc: "All multi-step protocol submissions, file attachments, and reviewer appointments execute inside DB transactions to guarantee zero partial data corruption.",
+      },
+      {
+        title: "Parameterized ORM & Anti-CSRF Armor",
+        desc: "Eloquent ORM prepared statements eliminate SQL injection vulnerabilities, while Laravel CSRF tokens safeguard all form requests and asynchronous Axios AJAX dispatches.",
+      },
+    ],
+    sections: [
+      {
+        title: "The brief",
+        body: [
+          "The Faculty of Medicine at Universitas Muhammadiyah Jakarta (FK UMJ) required an end-to-end digital platform to replace manual paperwork and legacy tools in managing research ethics reviews.",
+          "Developed over a four-month contract, the system modernizes the ethical clearance lifecycle while enforcing compliance with WHO/CIOMS 2016 and Indonesian national KEPPKN guidelines.",
+        ],
+      },
+      {
+        title: "Architecture & Engineering Patterns",
+        body: [
+          "Built on Laravel 12.x and PHP 8.2 using a clean service layer and Strategy Resolver (`ResearchSubtypeResolver`) to route Clinical, Non-Clinical, Animal, and Social protocols to dedicated services.",
+          "The system enforces data integrity with 24 medical backed enums, atomic database transactions, and an asynchronous Blade + Tailwind CSS v4 frontend using Axios and SweetAlert2.",
+        ],
+      },
+      {
+        title: "Challenges & Breakthroughs",
+        body: [
+          "Balancing Rigorous Commitments: Successfully delivered a production-ready medical governance system within a 4-month timeline alongside academic responsibilities and monthly stakeholder reviews.",
+          "Preventing Reviewer Burnout: Engineered an automated 24-hour assignment cooldown to balance reviewer workloads and ensure thorough protocol evaluations.",
+        ],
+      },
+      {
+        title: "Results & Production Impact",
+        body: [
+          "Successfully deployed to production for the Faculty of Medicine at Universitas Muhammadiyah Jakarta.",
+          "Achieved 100% compliance with WHO/CIOMS 2016 standards and significantly accelerated review cycles with automated A4 PDF certificate generation.",
+        ],
+      },
+    ],
+    metricOutcomes: [
+      { value: "100%", label: "WHO/CIOMS 2016 Ethical Standards Compliance" },
+      { value: "4 Mos", label: "Production Delivery Across Busy Academic Schedule" },
+      { value: "6 Roles", label: "Role-Based Access Governance Enforced" },
+      { value: "0 Errs", label: "Reconciliation & Data Loss During Verification Trials" },
+    ],
+    stack: [
+      "Laravel 12",
+      "PHP 8.2",
+      "Tailwind CSS v4",
+      "MySQL",
+      "Laravel Fortify",
+      "Spatie RBAC",
+      "DomPDF",
+      "SweetAlert2",
+      "Axios",
+      "Pest PHP",
+      "AWS Cloud",
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/adyvka31/kepk-backend" },
+    ],
+  },
   databank: {
     title: "Databank Ecosystem",
     subtitle: "Enterprise Telecom & Vendor Management System",
@@ -281,6 +1720,9 @@ export const projectDetails = {
         ],
       },
     ],
+    featuresTitle: "8 Mission-Critical Enterprise Modules",
+    featuresLead:
+      "From multi-tier inventory to mobile warehouse dispatch — every workflow is backed by cryptographic audit trails and real-time ledger consistency.",
     features: [
       {
         id: "databank-mgmt",
@@ -704,8 +2146,8 @@ export const projectDetails = {
           "Atomic Escrow Deductions: Booking requests execute inside prisma.$transaction to verify timeBalance >= durationMinutes and lock funds atomically.",
           "Automatic Mentor Remuneration: When a mentor accepts, the system issues a 6-character token and immediately credits the mentor's time wallet.",
           "Instant Automated Refunds: Rejected or cancelled requests trigger immediate balance rollbacks, returning time credits to the student with zero delay.",
-          "Cryptographic Token Completion: Sesi tatap muka diselesaikan dengan memasukkan token verifikasi 6-karakter dari siswa untuk menandai sesi COMPLETED.",
-          "Session Review & Ratings: Siswa dapat memberikan ulasan tertulis dan rating bintang 1–5 atas sesi yang telah selesai.",
+          "Cryptographic Token Completion: Mentorship sessions are finalized by entering the 6-character verification token provided by the student to mark the session as COMPLETED.",
+          "Session Review & Ratings: Students provide written feedback and a 1-to-5 star rating upon completing each verified session.",
         ],
       },
       {
@@ -4616,6 +6058,7 @@ export const projectDetails = {
         route: "app.delifood.mobile",
         tag: "Official Brand Presentation",
         image: delifoodImg,
+        isMobile: false,
         desc: "Official mobile application presentation flyer showcasing DeliFood's on-demand culinary delivery architecture, modern iOS & Android UI design, and real-time cloud ordering.",
         features: [
           "Cross-Platform Flutter Visual Architecture",
@@ -4624,55 +6067,59 @@ export const projectDetails = {
         ],
       },
       {
-        id: "app-screen-flow",
-        title: "Comprehensive Mobile Screen Flow & UI Overview",
-        route: "app.delifood.mobile#screens",
-        tag: "Mobile Experience",
+        id: "auth-onboarding",
+        title: "Customer Authentication & Onboarding Portal",
+        route: "app.delifood.mobile/auth",
+        tag: "Authentication & Identity",
         image: delifood1,
-        desc: "Complete high-fidelity overview of DeliFood's mobile screens — splash screen, customer auth onboarding, food discovery feed, cart management, and real-time order tracking.",
+        isMobile: true,
+        desc: "Streamlined customer entry screen featuring welcoming typography, email & password validation, demographic selection (gender dropdown), and instant login/registration navigation.",
         features: [
-          "User Authentication & Welcome Onboarding",
-          "Special Deals & Recommended Combo Carousels",
-          "Live Multi-Stage Order Tracking Timeline",
+          "Secure Email & Password Form Validation",
+          "Interactive Gender Demographic Dropdown",
+          "One-Tap Login & Registration Switcher",
         ],
       },
       {
-        id: "gourmet-culinary",
-        title: "Gourmet Culinary Showcase & Dish Presentation",
-        route: "app.delifood.mobile/details",
-        tag: "Menu Photography",
+        id: "culinary-discovery-feed",
+        title: "Culinary Discovery Feed & Promotional Deals",
+        route: "app.delifood.mobile/feed",
+        tag: "Discovery & Catalog",
         image: delifood2,
-        desc: "High-resolution food presentation highlighting Thai basil minced chicken with crispy fried egg over steamed jasmine rice, illustrating DeliFood's mouth-watering menu visuals.",
+        isMobile: true,
+        desc: "Vibrant home marketplace featuring geo-location header, debounced food search with filter sheet, 40% promotional banner carousel, and dynamic recommended combos with one-tap cart addition and wishlist bookmarking.",
         features: [
-          "High-Resolution Culinary Assets & Detail Cards",
-          "Nutritional Values & Dietary Classification",
-          "Visual Food Appetite Appeal Engineering",
+          "Real-Time Geo-Location Header & Search",
+          "Dynamic 40% Promotional Offer Carousel",
+          "One-Tap Add-to-Cart & Wishlist Toggles",
         ],
       },
       {
-        id: "rapid-logistics",
-        title: "3D Rapid Courier Logistics & Delivery Dispatch",
-        route: "app.delifood.mobile/delivery",
-        tag: "Last-Mile Logistics",
+        id: "product-detail-customizer",
+        title: "Product Detail View & Portion Selector",
+        route: "app.delifood.mobile/detail",
+        tag: "Product & Customization",
         image: delifood3,
-        desc: "Playful 3D courier character illustration representing DeliFood's real-time scooter dispatch, time tracking, and rapid temperature-controlled food delivery service.",
+        isMobile: true,
+        desc: "In-depth nutritional and dish specification view with high-res photo carousel, health classification tag, interactive portion counter (-/+), ingredient transparency, and dual checkout actions (Buy Now / Add To Basket).",
         features: [
-          "Rapid 30-Minute Food Delivery Guarantee",
-          "Real-Time Courier Dispatch Mechanics",
-          "3D Animated Courier Mascot Brand Identity",
+          "Multi-Angle Food Photo Lookbook (+10)",
+          "Dynamic Quantity Counter & Subtotal Sync",
+          "Immediate Buy Now & Basket Insertion Pipeline",
         ],
       },
       {
-        id: "customer-fulfillment",
-        title: "Cashless Handover & Customer Order Fulfillment",
-        route: "app.delifood.mobile/fulfillment",
-        tag: "Order Fulfillment",
+        id: "delivery-status-timeline",
+        title: "Real-Time Delivery Timeline & Multi-Stage Tracking",
+        route: "app.delifood.mobile/tracking",
+        tag: "Order Logistics",
         image: delifood4,
-        desc: "Customer parcel handover and payment completion illustration, highlighting DeliFood's frictionless cash-on-delivery and digital wallet payment integrations.",
+        isMobile: true,
+        desc: "Live order fulfillment tracking pipeline rendering active items, 4-phase visual progress stepper, and reverse-chronological status timeline with timestamps from packing to final arrival.",
         features: [
-          "Frictionless Handover & Contactless Delivery",
-          "Integrated Cash & Digital Wallet Payments",
-          "End-to-End Fulfillment Verification",
+          "4-Stage Visual Fulfillment Progress Stepper",
+          "Chronological Milestone Timestamp Log",
+          "Persistent Active Order Summary Card",
         ],
       },
     ],
@@ -5116,6 +6563,7 @@ export const projectDetails = {
         route: "app.attendance.mobile",
         tag: "Brand Presentation",
         image: attendanceImg,
+        isMobile: false,
         desc: "Comprehensive application presentation flyer showcasing Attendance App's multi-device mobile architecture, on-device biometric verification, modern Poppins UI design, and cloud task management.",
         features: [
           "Cross-Platform Flutter 3.x Visual Shell",
@@ -5124,55 +6572,59 @@ export const projectDetails = {
         ],
       },
       {
+        id: "auth-registration",
+        title: "Account Registration & Employee Onboarding",
+        route: "app.attendance.mobile/signup",
+        tag: "User Onboarding",
+        image: attendance1,
+        isMobile: true,
+        desc: "Modern registration screen featuring custom vector clipboard artwork, form input validation for employee credentials, legal compliance consent, and direct link to sign-in.",
+        features: [
+          "Vector Asset Onboarding Illustration",
+          "Client-Side Input Format Validation",
+          "Seamless Route Transition to Sign-In",
+        ],
+      },
+      {
+        id: "auth-signin",
+        title: "Secure Sign-In & Social OAuth Authentication",
+        route: "app.attendance.mobile/signin",
+        tag: "Security & Access",
+        image: attendance2,
+        isMobile: true,
+        desc: "Multi-provider authentication portal supporting standard username/password credentials alongside one-tap Google and Facebook OAuth sign-in, with password visibility toggling.",
+        features: [
+          "Dual OAuth Federated Login (Google & Facebook)",
+          "Secure Obscured Password Toggle",
+          "Password Recovery Navigation Link",
+        ],
+      },
+      {
         id: "home-dashboard",
         title: "Categorized Task Dashboard & Live Firestore Stream",
-        route: "app.attendance.mobile/home",
+        route: "app.attendance.mobile/dashboard",
         tag: "Core Productivity Hub",
-        image: attendance1,
-        desc: "Central productivity dashboard featuring personalized user greeting, real-time task counters across 4 distinct categories (Design, Sport, Meet, Work), and reactive theme toggle button.",
+        image: attendance3,
+        isMobile: true,
+        desc: "Central productivity command center streaming real-time Firestore tasks, category chips with live item counters (Design, Sport, Meet), interactive task completion checkboxes, dark/light theme toggle, and quick add FAB.",
         features: [
-          "StreamBuilder Cloud Firestore Live Query",
-          "Dynamic Category Counter Badges",
-          "Reactive Light/Dark Theme Switching via GetX",
+          "Firestore StreamBuilder Live Task Sync",
+          "Interactive Task Completion Checkbox State",
+          "Category-Based Filter Chips with Task Counts",
         ],
       },
       {
         id: "biometric-verification",
-        title: "On-Device Biometric Face Verification Pipeline",
+        title: "On-Device Biometric Face Verification Camera",
         route: "app.attendance.mobile/camera",
-        tag: "Edge ML Vision",
-        image: attendance2,
-        desc: "Hardware camera capture pipeline integrated with Google ML Kit Face Detection. Detects facial contours, landmarks, and classifications entirely on-device before granting access.",
-        features: [
-          "Google ML Kit FaceDetectorMode.accurate",
-          "100% On-Device Privacy (Zero Cloud Upload)",
-          "Dynamic Feedback & Verification Status Banner",
-        ],
-      },
-      {
-        id: "auth-registration",
-        title: "Stateless User Registration & Input Validation",
-        route: "app.attendance.mobile/register",
-        tag: "Identity Governance",
-        image: attendance3,
-        desc: "User onboarding interface featuring Google Fonts Poppins typography, rounded border text fields, password visibility toggles, and terms of service consent governance.",
-        features: [
-          "Firebase Authentication (Email & Password)",
-          "Real-Time Input Validation & Visual Error States",
-          "Consistent Poppins Design System",
-        ],
-      },
-      {
-        id: "session-recovery",
-        title: "Secure Sign-In & Self-Service Password Recovery",
-        route: "app.attendance.mobile/login",
-        tag: "Authentication & Security",
+        tag: "Biometric Verification",
         image: attendance4,
-        desc: "Vector-illustrated authentication screen with single-tap password reset delivery via Firebase Auth and session persistence across app launches.",
+        isMobile: true,
+        desc: "Front-facing hardware camera integration for real-time employee attendance check-in, verifying identity on-device with ML Kit face detection before logging timestamped records.",
         features: [
-          "Stateless Firebase Auth Session Tokens",
-          "Automated Password Reset Email Dispatch",
-          "Social Provider UI Federation Hooks",
+          "Real-Time Front Camera Viewfinder Stream",
+          "Google ML Kit On-Device Face Detection",
+          "Instant Attendance Validation & Clock-In",
         ],
       },
     ],
@@ -5599,6 +7051,7 @@ export const projectDetails = {
         route: "app.qrscanner.mobile",
         tag: "Brand Presentation",
         image: qrscannerImg,
+        isMobile: false,
         desc: "Comprehensive application flyer presenting QR Guest Manager's multi-device mobile architecture, live camera viewfinder scanning overlay, guest list administration, and account registration flows.",
         features: [
           "Flutter 3.x Cross-Platform Client",
@@ -5607,55 +7060,45 @@ export const projectDetails = {
         ],
       },
       {
-        id: "guest-list-hub",
-        title: "Guest Roster Hub & Live Ticket Reconciliation",
-        route: "app.qrscanner.mobile/guest-list",
-        tag: "Event Administration",
-        image: qrscanner1,
-        desc: "Centralized guest administration dashboard displaying live ticket statuses (UNREDEEMED vs REDEEMED), instantaneous search filtering, single-tap QR ticket modal generation, and guest removal actions.",
-        features: [
-          "Real-Time Ticket Query & Substring Filtering",
-          "Instant Status Indicators (Redeemed / Unredeemed)",
-          "Dynamic QR Vector Generation Modal",
-        ],
-      },
-      {
-        id: "live-camera-scanner",
-        title: "High-Speed Hardware Camera QR Scanner & Target Reticle",
-        route: "app.qrscanner.mobile/scan",
-        tag: "Computer Vision & Hardware",
-        image: qrscanner2,
-        desc: "Live full-screen camera viewfinder featuring a custom maroon scanning target reticle, torch/flash toggle, camera flip, photo gallery barcode decoding, and manual ticket ID fallback.",
-        features: [
-          "MobileScanner Native Barcode Detection",
-          "Sub-80ms QR Recognition & Decode",
-          "Gallery Photo Barcode Analysis via ImagePicker",
-        ],
-      },
-      {
         id: "account-registration",
-        title: "Identity Governance & Secure User Onboarding",
+        title: "Gate Attendant Registration & Authentication",
         route: "app.qrscanner.mobile/register",
         tag: "Security & Identity",
-        image: qrscanner3,
-        desc: "Streamlined event staff registration interface featuring custom input decoration, password visibility toggling, client-side input validation, and Firebase Auth credential creation.",
+        image: qrscanner1,
+        isMobile: true,
+        desc: "Dedicated staff onboarding and authentication interface designed with crimson brand accents, clean field placeholders, and secure registration for event check-in personnel.",
         features: [
-          "Firebase Authentication Engine",
-          "Custom Form Validation & Error Feedback",
+          "Role-Based Attendant Registration",
+          "Client-Side Input Validation",
           "Consistent Crimson & Slate Design System",
         ],
       },
       {
-        id: "dual-screen-workflow",
-        title: "Integrated Scan-to-Redeem Verification Pipeline",
-        route: "app.qrscanner.mobile/workflow",
-        tag: "Validation Pipeline",
-        image: qrscanner4,
-        desc: "Cohesive view showing the interplay between the guest roster and the live scanner — verifying ticket authenticity, preventing duplicate redemption, and updating local states with zero latency.",
+        id: "guest-list-hub",
+        title: "Guest List Roster & Dynamic Redemption Status",
+        route: "app.qrscanner.mobile/guest-list",
+        tag: "Event Administration",
+        image: qrscanner2,
+        isMobile: true,
+        desc: "Live attendee roster displaying real-time check-in status with high-contrast REDEEMED and UNREDEEMED status badges, quick attendee deletion, and tab navigation.",
         features: [
-          "Atomic Scan-to-Redeem API Handshake",
-          "Duplicate Scan Lock & Prevention Guard",
-          "Instant Local State Mutation (0ms UI Latency)",
+          "Real-Time Ticket Query & Substring Filtering",
+          "Instant Status Indicators (Redeemed / Unredeemed)",
+          "Dual-Tab Seamless Interface (List vs Scan)",
+        ],
+      },
+      {
+        id: "live-camera-scanner",
+        title: "Live Viewfinder Scanner & Gallery Barcode Decoder",
+        route: "app.qrscanner.mobile/scan",
+        tag: "Computer Vision & Hardware",
+        image: qrscanner3,
+        isMobile: true,
+        desc: "High-speed camera scanner powered by mobile_scanner with centered targeting reticle, native photo gallery barcode import, and manual Ticket ID fallback input bar.",
+        features: [
+          "MobileScanner Native Barcode Detection",
+          "Sub-80ms QR Recognition & Decode",
+          "Gallery Photo Barcode Analysis via ImagePicker",
         ],
       },
     ],
@@ -6112,6 +7555,7 @@ export const projectDetails = {
         route: "app.news.mobile",
         tag: "Brand Presentation",
         image: newsImg,
+        isMobile: false,
         desc: "Comprehensive presentation showcase highlighting the News App mobile architecture, displaying real-time journalism feeds, immersive editorial article reading views, and personalized bookmark management across modern iOS and Android displays.",
         features: [
           "Flutter 3.x Cross-Platform Client",
@@ -6125,6 +7569,7 @@ export const projectDetails = {
         route: "app.news.mobile/browse",
         tag: "Discovery & Navigation",
         image: news1,
+        isMobile: true,
         desc: "Main application home screen featuring live headline banners, horizontal recent news carousel, 8-channel category chips (Semua, Nasional, Internasional, Ekonomi, Olahraga, Teknologi, Hiburan, Gaya Hidup), and real-time substring search input with instant card rendering.",
         features: [
           "8-Channel Dynamic Category Filtering",
@@ -6138,6 +7583,7 @@ export const projectDetails = {
         route: "app.news.mobile/detail",
         tag: "Content Reader",
         image: news2,
+        isMobile: true,
         desc: "Immersive article reading experience utilizing CustomScrollView with an expanding SliverAppBar, hero header cover image, capitalized category badge, Indonesian locale date formatting, reading duration, comment metrics, author attribution, and single-tap reactive bookmark toggle.",
         features: [
           "SliverAppBar with Parallax Cover Art",
@@ -6151,24 +7597,12 @@ export const projectDetails = {
         route: "app.news.mobile/favorites",
         tag: "Personalized Curation",
         image: news3,
+        isMobile: true,
         desc: "Dedicated bookmark repository rendering saved articles via reactive Obx bindings with duplicate prevention, swipe-to-delete support, empty state illustrations, and instant transition to article reading mode.",
         features: [
           "Zero-Latency Obx Reactive Synchronization",
           "Duplicate Item Guard by Headline Title",
           "Empty State Vector Placeholder",
-        ],
-      },
-      {
-        id: "multi-device-ecosystem",
-        title: "End-to-End News Pipeline & Multi-Device Overview",
-        route: "app.news.mobile/ecosystem",
-        tag: "System Workflow",
-        image: news4,
-        desc: "Multi-screen overview illustrating the full journalistic lifecycle: from API stream ingestion and category filtering on the discovery feed, to deep-dive article reading and persistent bookmark curation.",
-        features: [
-          "End-to-End User Reading Workflow",
-          "Dynamic Dark/Light System Theming",
-          "Lottie Vector Splash Onboarding",
         ],
       },
     ],
@@ -6630,6 +8064,7 @@ export const projectDetails = {
         route: "app.quran.mobile",
         tag: "Brand Presentation",
         image: quranImg,
+        isMobile: false,
         desc: "Comprehensive presentation showcase displaying Quran App's multi-device mobile architecture, presenting surah indexing, deep ayat reading, and personalized bookmark rosters across modern mobile displays.",
         features: [
           "Flutter 3.x Cross-Platform Client",
@@ -6643,6 +8078,7 @@ export const projectDetails = {
         route: "app.quran.mobile/directory",
         tag: "Discovery & Navigation",
         image: quran1,
+        isMobile: true,
         desc: "Responsive home screen featuring adaptive grid layouts, dual-attribute substring and surah number search filtering, Arabic calligraphy badges, and single-tap bookmark toggles.",
         features: [
           "114 Surah Adaptive Grid View",
@@ -6651,42 +8087,31 @@ export const projectDetails = {
         ],
       },
       {
+        id: "bookmarks-favorites",
+        title: "Saved Surahs & Personalized Bookmarks",
+        route: "app.quran.mobile/bookmarks",
+        tag: "Personalized Curation",
+        image: quran2,
+        isMobile: true,
+        desc: "Dedicated bookmark repository rendering saved surahs via reactive Obx bindings with circular number badges, authentic Arabic typography, and instant navigation into scripture reading mode.",
+        features: [
+          "Zero-Latency Obx Reactive Sync",
+          "Single-Tap Unbookmark & Removal",
+          "Circular Surah Index Number Avatars",
+        ],
+      },
+      {
         id: "ayat-reader-view",
         title: "Deep Ayat Reader & HTML Transliteration",
         route: "app.quran.mobile/detail",
         tag: "Content Reader",
-        image: quran2,
+        image: quran3,
+        isMobile: true,
         desc: "Immersive verse-by-verse scripture reader rendering authentic Arabic calligraphy, circular verse counters, and rich HTML-formatted Latin pronunciation with Indonesian translations.",
         features: [
           "Authentic Arabic Typography Rendering",
           "Flutter HTML Transliteration Parser",
           "Numbered Circular Verse Avatars",
-        ],
-      },
-      {
-        id: "bookmarks-favorites",
-        title: "Saved Surahs & Personalized Bookmarks",
-        route: "app.quran.mobile/bookmarks",
-        tag: "Personalized Curation",
-        image: quran3,
-        desc: "Dedicated bookmark repository rendering saved surahs via reactive Obx bindings with duplicate guards, empty state placeholders, and instant navigation into scripture reading mode.",
-        features: [
-          "Zero-Latency Obx Reactive Sync",
-          "Single-Tap Unbookmark & Removal",
-          "Empty State Vector Guidance",
-        ],
-      },
-      {
-        id: "multi-device-ecosystem",
-        title: "End-to-End Reading Workflow & Multi-Device Overview",
-        route: "app.quran.mobile/ecosystem",
-        tag: "System Workflow",
-        image: quran4,
-        desc: "Multi-screen overview illustrating the full devotional lifecycle: from discovering and filtering surahs on the home index, to verse-by-verse recitation and persistent bookmark curation.",
-        features: [
-          "End-to-End Devotional Reading Pipeline",
-          "Dynamic Dark / Light Mode Adaptation",
-          "Controller-Based Microservice Decoupling",
         ],
       },
     ],
@@ -7144,6 +8569,7 @@ export const projectDetails = {
         route: "app.aiticket.mobile",
         tag: "Brand Presentation",
         image: aigeneratorImg,
+        isMobile: false,
         desc: "Comprehensive presentation showcase displaying AI Ticket Manager's multi-device mobile architecture, featuring live task monitoring, natural language Gemini AI task assistant views, and secure onboarding.",
         features: [
           "Flutter 3.x Cross-Platform Client",
@@ -7152,37 +8578,12 @@ export const projectDetails = {
         ],
       },
       {
-        id: "task-dashboard-hub",
-        title: "Task Management Dashboard & Live Real-Time Feed",
-        route: "app.aiticket.mobile/tasks",
-        tag: "Task Orchestration",
-        image: aigenerator1,
-        desc: "Centralized user dashboard streaming active tasks in real-time, displaying custom greeting headers, instant search filtering, color-coded status badges, and single-tap task creation navigation.",
-        features: [
-          "Firestore Real-Time StreamBuilder",
-          "Dynamic Status Indicators (Done/In Progress)",
-          "Zero-Latency Substring Search Bar",
-        ],
-      },
-      {
-        id: "gemini-ai-assistant",
-        title: "Gemini AI Task Assistant & Dynamic Prompt Engine",
-        route: "app.aiticket.mobile/assistant",
-        tag: "Generative AI",
-        image: aigenerator2,
-        desc: "Interactive AI synthesis portal enabling users to select any registered task, inject optional custom instruction prompts, and receive formatted executive summaries generated by Google Gemini.",
-        features: [
-          "Google Generative AI Integration",
-          "Contextual User Prompt Customization",
-          "Markdown-Formatted Synthesis Display",
-        ],
-      },
-      {
         id: "auth-onboarding",
         title: "Identity Governance & Secure Authentication Onboarding",
         route: "app.aiticket.mobile/auth",
         tag: "Security & Identity",
-        image: aigenerator3,
+        image: aigenerator1,
+        isMobile: true,
         desc: "Streamlined authentication interface with client-side field validation, human-readable Firebase exception translations, display name profile setup, and persistent session state.",
         features: [
           "Firebase Email & Password Auth",
@@ -7191,16 +8592,31 @@ export const projectDetails = {
         ],
       },
       {
-        id: "multi-device-ecosystem",
-        title: "Multi-Device AI Productivity Suite & Architecture Overview",
-        route: "app.aiticket.mobile/ecosystem",
-        tag: "System Workflow",
-        image: aigenerator4,
-        desc: "Multi-screen overview illustrating the full task lifecycle: from secure onboarding and real-time Firestore synchronization, to LLM-driven generative summarization and status completion.",
+        id: "task-dashboard-hub",
+        title: "Task Management Dashboard & Live Real-Time Feed",
+        route: "app.aiticket.mobile/tasks",
+        tag: "Task Orchestration",
+        image: aigenerator2,
+        isMobile: true,
+        desc: "Centralized user dashboard streaming active tasks in real-time, displaying custom greeting headers, instant search filtering, task deletion actions, and direct access to Gemini AI Assistant.",
         features: [
-          "End-to-End Task Lifecycle Pipeline",
-          "Multi-Tenant Document Isolation",
-          "Provider Reactive State Architecture",
+          "Firestore Real-Time StreamBuilder",
+          "Dynamic Task List with Timestamp Scheduling",
+          "Direct Launch to Gemini AI Assistant",
+        ],
+      },
+      {
+        id: "gemini-ai-assistant",
+        title: "Gemini AI Task Assistant & Dynamic Prompt Engine",
+        route: "app.aiticket.mobile/assistant",
+        tag: "Generative AI",
+        image: aigenerator3,
+        isMobile: true,
+        desc: "Interactive AI synthesis portal enabling users to select any registered task, inject optional custom instruction prompts, and receive formatted executive summaries generated by Google Gemini.",
+        features: [
+          "Google Generative AI Integration",
+          "Contextual User Prompt Customization",
+          "Markdown-Formatted Synthesis Display",
         ],
       },
     ],
@@ -7654,3 +9070,11 @@ projectDetails.quranapp = projectDetails["quran-app"];
 projectDetails["ai-generator"] = projectDetails["ai-ticket-manager"];
 projectDetails["ai-generator-app"] = projectDetails["ai-ticket-manager"];
 projectDetails.aiticketmanager = projectDetails["ai-ticket-manager"];
+projectDetails["kepk-umj"] = projectDetails.kepk;
+projectDetails["sim-kepk"] = projectDetails.kepk;
+projectDetails["kepk-backend"] = projectDetails.kepk;
+projectDetails["terastani-app"] = projectDetails.terastani;
+projectDetails["teras-tani"] = projectDetails.terastani;
+projectDetails["richo-bahari"] = projectDetails.richobahari;
+projectDetails["richobahari-cp"] = projectDetails.richobahari;
+projectDetails["richo-bahari-cp"] = projectDetails.richobahari;

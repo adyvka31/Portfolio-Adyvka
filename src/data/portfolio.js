@@ -10,6 +10,9 @@ import barmusImg from "../assets/barmusImg.webp?w=400;800&quality=70&format=avif
 
 import cvPdfFile from "../assets/RafifSavaAdyvkaPratama_CV.pdf";
 
+import richobahariImg from "../assets/richobahari.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import terastaniImg from "../assets/terastani.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import kepkImg from "../assets/kepk.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import databankImg from "../assets/databank.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import ruangtumbuhImg from "../assets/ruangtumbuh.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import delifoodImg from "../assets/delifood.webp?w=400;800&quality=70&format=avif;webp&as=picture";
@@ -111,12 +114,83 @@ export const marqueeStack = [
 export const projects = [
   // ── FEATURED / EXISTING ──────────────────────────────────────────
   {
+    id: "richobahari",
+    category: "web",
+    span: "lg",
+    label: "WEBSITE · CORPORATE CONTRACTOR & INDUSTRIAL",
+    title: "CV. Richo Bahari",
+    year: "2025",
+    description:
+      "Corporate profile and interactive project catalog for CV. Richo Bahari (General Contractor & Industrial Services). Showcases civil construction, MEP, steel fabrication, and industrial racking built with Next.js 16, React 19, and Tailwind CSS v4.",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS v4",
+      "TypeScript",
+      "React Compiler",
+      "PostCSS",
+      "SEO & SSG",
+      "Industrial EPC",
+    ],
+    hasPreview: true,
+    link: "https://github.com/CentraDev-Team/RichoBahariCompro",
+    thumbnail: richobahariImg,
+  },
+  {
+    id: "terastani",
+    category: "web",
+    span: "lg",
+    label: "WEBSITE · DECENTRALIZED URBAN AGRI OS",
+    title: "TerasTani",
+    year: "2026",
+    description:
+      "Decentralized urban agriculture platform connecting residential harvests to communal RW crate hubs, powered by IoT microclimate telemetry, AI leaf spectrometry, and smart escrow settlement.",
+    tags: [
+      "React 19",
+      "Vite 8",
+      "Node.js 20",
+      "Express 5",
+      "PostgreSQL",
+      "Supabase",
+      "Tailwind CSS v4",
+      "Computer Vision AI",
+      "Smart Escrow",
+      "IoT Telemetry",
+    ],
+    hasPreview: true,
+    link: "https://github.com/adyvka31/TerasTani",
+    thumbnail: terastaniImg,
+  },
+  {
+    id: "kepk",
+    category: "web",
+    span: "lg",
+    label: "WEBSITE · RESEARCH ETHICS & GOVERNANCE",
+    title: "SIM KEPK FK UMJ",
+    year: "2025",
+    description:
+      "Full-stack research ethics governance system for FK UMJ, automating ethical clearance workflows, WHO/CIOMS 2016 compliance, reviewer workload limits, and official PDF certification.",
+    tags: [
+      "Laravel 12",
+      "PHP 8.2",
+      "Tailwind CSS v4",
+      "MySQL",
+      "Fortify 2FA",
+      "Spatie RBAC",
+      "DomPDF",
+      "AWS Cloud",
+    ],
+    hasPreview: true,
+    link: "https://github.com/adyvka31/kepk-backend",
+    thumbnail: kepkImg,
+  },
+  {
     id: "databank",
     category: "web",
     span: "lg",
     label: "WEBSITE · ENTERPRISE ERP",
     title: "Databank ERP",
-    year: "2025 →",
+    year: "2025",
     description:
       "Enterprise resource planning system at PT Intisel Prodaktifakom. Owns inventory, finance, and HR modules used daily across the org. Built on React + NestJS with a strictly typed PostgreSQL data layer.",
     tags: [
@@ -160,7 +234,7 @@ export const projects = [
     id: "fitsmart",
     category: "web",
     span: "sm",
-    label: "WEB APP · PREVENTIVE HEALTH & AI",
+    label: "WEBSITE · PREVENTIVE HEALTH & AI",
     title: "FitSmart",
     year: "2024",
     description:
@@ -173,7 +247,7 @@ export const projects = [
     id: "javaisland",
     category: "web",
     span: "md",
-    label: "WEB APP · CULTURAL HERITAGE & AI",
+    label: "WEBSITE · CULTURAL HERITAGE & AI",
     title: "JavaIsland",
     year: "2023",
     description:
@@ -193,7 +267,7 @@ export const projects = [
     id: "pusakaku",
     category: "web",
     span: "sm",
-    label: "WEB APP · FOLK HERITAGE & GAMIFIED LEARNING",
+    label: "WEBSITE · FOLK HERITAGE & GAMIFIED LEARNING",
     title: "Pusakaku",
     year: "2023",
     description:
@@ -213,7 +287,7 @@ export const projects = [
     id: "semua-bisa",
     category: "web",
     span: "sm",
-    label: "WEB APP · EDTECH & YOUTH CAREER ECOSYSTEM",
+    label: "WEBSITE · EDTECH & YOUTH CAREER ECOSYSTEM",
     title: "SemuaBisa",
     year: "2024",
     description:
@@ -233,7 +307,7 @@ export const projects = [
     id: "idncourse",
     category: "web",
     span: "sm",
-    label: "WEB APP · TECH EDUCATION & COURSE HUB",
+    label: "WEBSITE · TECH EDUCATION & COURSE HUB",
     title: "IDNCourse",
     year: "2023",
     description:
@@ -252,7 +326,7 @@ export const projects = [
     id: "coffeee-shop",
     category: "web",
     span: "sm",
-    label: "WEB APP · ARTISAN COFFEE & RETAIL",
+    label: "WEBSITE · ARTISAN COFFEE & RETAIL",
     title: "Coffeee Shop",
     year: "2023",
     description:
@@ -272,7 +346,7 @@ export const projects = [
     id: "mystyle",
     category: "web",
     span: "sm",
-    label: "WEB APP · FASHION COMMERCE & STOREFRONT",
+    label: "WEBSITE · FASHION COMMERCE & STOREFRONT",
     title: "MyStyle",
     year: "2023",
     description:

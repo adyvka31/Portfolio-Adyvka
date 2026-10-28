@@ -352,14 +352,14 @@ export default function ProjectDetailPage() {
                 <h2 className={`${styles.sectionTitle} text-fade`}>
                   {detail?.capabilitiesTitle || (
                     <>
-                      Four Ecosystem Pillars &{" "}
+                      {detail?.highlights?.length ? `${detail.highlights.length} Architectural Pillars` : "System Pillars"} &{" "}
                       <span className="font-serif text-glow">Core Capabilities</span>
                     </>
                   )}
                 </h2>
                 <p className={styles.sectionLead}>
                   {detail?.capabilitiesLead ||
-                    "Built to automate mission-critical operations — unifying field engineering, outsource procurement, background pipelines, and interactive workflows."}
+                    "Built to automate mission-critical operations — unifying domain workflows, core services, and interactive user experiences."}
                 </p>
               </div>
             </NativeReveal>
@@ -375,7 +375,7 @@ export default function ProjectDetailPage() {
               </NativeReveal>
             )}
 
-            {/* 8 CORE MODULES: INTERACTIVE EXPLORER */}
+            {/* CORE MODULES: INTERACTIVE EXPLORER */}
             <div className={styles.subSection}>
               <NativeReveal>
                 <div
@@ -390,10 +390,14 @@ export default function ProjectDetailPage() {
                 >
                   <div>
                     <h3 className={styles.subSectionTitle}>
-                      Eight Mission-Critical Modules
+                      {detail?.featuresTitle ||
+                        (detail?.features?.length
+                          ? `${detail.features.length} Mission-Critical Modules`
+                          : "Core System Modules")}
                     </h3>
                     <p className={styles.subSectionLead}>
-                      Each module is designed with banking-grade transactional isolation, batch workflows, and zero-compromise audit trails.
+                      {detail?.featuresLead ||
+                        "Each module is engineered with robust transactional boundaries, modular isolation, and comprehensive audit trails."}
                     </p>
                   </div>
 
@@ -496,17 +500,20 @@ export default function ProjectDetailPage() {
               )}
             </div>
 
-            {/* SEQUENTIAL 3-STAGE APPROVAL WORKFLOW */}
+            {/* OPERATIONAL EXECUTION & APPROVAL WORKFLOW */}
             {detail?.approvalWorkflow && (
               <div className={styles.subSection}>
                 <NativeReveal>
                   <div className={styles.subSectionHeader}>
                     <h3 className={styles.subSectionTitle}>
-                      {detail.approvalWorkflow.title || "Sequential 3-Stage Approval Engine"}
+                      {detail.approvalWorkflow.title ||
+                        (detail.approvalWorkflow.stages?.length
+                          ? `Sequential ${detail.approvalWorkflow.stages.length}-Stage Execution Lifecycle`
+                          : "Operational & Approval Workflow")}
                     </h3>
                     <p className={styles.subSectionLead}>
                       {detail.approvalWorkflow.lead ||
-                        "Multi-tier approval workflow backed by HTML5 Canvas digital signatures and automated row locking (PO Row Lock) to guarantee transactional integrity."}
+                        "Multi-tier operational workflow enforcing phased execution, role verification, and automated state safeguards to guarantee integrity."}
                     </p>
                   </div>
                 </NativeReveal>
@@ -575,14 +582,14 @@ export default function ProjectDetailPage() {
                 <h2 className={`${styles.sectionTitle} text-fade`}>
                   {detail?.architectureTitle || (
                     <>
-                      Decoupled Monorepo &{" "}
-                      <span className="font-serif text-glow">Modular Schema</span>
+                      System Architecture &{" "}
+                      <span className="font-serif text-glow">Modular Topology</span>
                     </>
                   )}
                 </h2>
                 <p className={styles.sectionLead}>
                   {detail?.architectureLead ||
-                    "Engineered for fault tolerance and strict domain isolation. The React 19 SPA interfaces with backend services through a strongly typed RESTful contract, protected by stateless JWT authentication and granular guards."}
+                    "Engineered for high availability, fault tolerance, and clear domain separation across frontend interfaces, service layers, and data stores."}
                 </p>
               </div>
             </NativeReveal>
@@ -625,10 +632,11 @@ export default function ProjectDetailPage() {
                 <NativeReveal>
                   <div className={styles.subSectionHeader}>
                     <h3 className={styles.subSectionTitle}>
-                      Curated Technology Stack
+                      {detail?.techStackTitle || "Curated Technology Stack"}
                     </h3>
                     <p className={styles.subSectionLead}>
-                      A modern engineering stack combining high-throughput frontend rendering, modular backend architecture, and headless browser automation.
+                      {detail?.techStackLead ||
+                        "A modern engineering stack combining high-throughput user interfaces, modular backend architecture, and resilient data layers."}
                     </p>
                   </div>
                 </NativeReveal>
@@ -659,10 +667,11 @@ export default function ProjectDetailPage() {
                 <NativeReveal>
                   <div className={styles.subSectionHeader}>
                     <h3 className={styles.subSectionTitle}>
-                      Monorepo Directory & Modular Schemas
+                      {detail?.directoryTitle || "Codebase Structure & Data Models"}
                     </h3>
                     <p className={styles.subSectionLead}>
-                      Clear boundary separation between backend and frontend services, paired with a multi-file modular Prisma schema architecture.
+                      {detail?.directoryLead ||
+                        "Clear boundary separation between system components, paired with modular schemas and structured repositories."}
                     </p>
                   </div>
                 </NativeReveal>
@@ -724,7 +733,7 @@ export default function ProjectDetailPage() {
                           gap: "0.5rem",
                         }}
                       >
-                        <FileCodeIcon size={18} /> Modular Prisma Schema Engine
+                        <FileCodeIcon size={18} /> {detail?.schemaEngineTitle || "Database Entities & Schema Models"}
                       </h4>
                       {detail.prismaSchemas.map((sch, i) => (
                         <article key={i} className={`glass ${styles.schemaCard}`}>
@@ -771,7 +780,7 @@ export default function ProjectDetailPage() {
                 {/* RESTful API Endpoints */}
                 <div>
                   <h3 className={styles.subSectionTitle} style={{ marginBottom: "1rem" }}>
-                    RESTful API Endpoints
+                    {detail?.apiTitle || "API Endpoints & Routing Architecture"}
                   </h3>
                   {Array.isArray(detail.apiEndpoints) &&
                     detail.apiEndpoints.map((grp, i) => (
@@ -793,7 +802,7 @@ export default function ProjectDetailPage() {
                 {/* Enterprise Security Standards */}
                 <div>
                   <h3 className={styles.subSectionTitle} style={{ marginBottom: "1rem" }}>
-                    Enterprise Security Standards
+                    {detail?.securityStandardsTitle || "Enterprise Security & Governance Standards"}
                   </h3>
                   <div className={styles.securityGrid}>
                     {detail.securityStandards?.map((sec, i) => (
@@ -818,10 +827,11 @@ export default function ProjectDetailPage() {
                 <NativeReveal>
                   <div className={styles.subSectionHeader}>
                     <h3 className={styles.subSectionTitle}>
-                      Engineering Challenges Solved & Production Results
+                      {detail?.challengesTitle || "Engineering Challenges & Production Results"}
                     </h3>
                     <p className={styles.subSectionLead}>
-                      How critical technical bottlenecks were overcome and verified under real production traffic.
+                      {detail?.challengesLead ||
+                        "How critical technical bottlenecks were overcome and verified under real production conditions."}
                     </p>
                   </div>
                 </NativeReveal>
@@ -856,7 +866,7 @@ export default function ProjectDetailPage() {
                         <>
                           <article className={styles.resultCard}>
                             <span className={`font-serif ${styles.resultValue}`}>
-                              {isProductionReady ? "Live" : "Active"}
+                              {isProductionReady ? "Production Live" : "Active"}
                             </span>
                             <span className={styles.resultText}>
                               {isProductionReady
@@ -865,12 +875,12 @@ export default function ProjectDetailPage() {
                             </span>
                           </article>
                           <article className={styles.resultCard}>
-                            <span className={`font-serif ${styles.resultValue}`}>18%</span>
-                            <span className={styles.resultText}>Reduction in monthly financial close cycle time</span>
+                            <span className={`font-serif ${styles.resultValue}`}>100%</span>
+                            <span className={styles.resultText}>Architecture contract verified with zero regression</span>
                           </article>
                           <article className={styles.resultCard}>
-                            <span className={`font-serif ${styles.resultValue}`}>4,328</span>
-                            <span className={styles.resultText}>SKUs migrated with zero data reconciliation errors</span>
+                            <span className={`font-serif ${styles.resultValue}`}>Verified</span>
+                            <span className={styles.resultText}>Production performance and security benchmarks met</span>
                           </article>
                         </>
                       )}
