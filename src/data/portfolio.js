@@ -644,26 +644,34 @@ export const aiFeatures = [
 // ============================================
 export const experiences = [
   {
-    period: "May 2026 - Present",
-    role: "Frontend Developer - Freelance",
-    company: "PT Rico Bahari",
+    period: "Jul 2026 — Jan 2027",
+    role: "Full Stack Developer - Internship",
+    company: "PT Ardyanda Digital Inovasi",
     description:
-      "Completed Harvard's CS50 — the foundational computer science curriculum covering algorithms, data structures, and systems thinking.",
+      "Engineering internal business suites (payroll, loans, financial ledgers) and client platforms across healthcare, mosque management, and CMS. Elevated from backend intern to full-stack engineer, client stakeholder liaison, and company MC.",
     current: true,
   },
   {
-    period: "Jan - May 2026",
-    role: "Software Engineer - Contract",
+    period: "Feb 2026 — Present",
+    role: "Full Stack Engineer - Freelance",
     company: "PT Intisel Prodaktifakom",
     description:
-      "Engineering the Databank ERP system. Architecting React frontends, NestJS services, and PostgreSQL schemas that handle real production load. Driving code quality through reviews, testing, and CI/CD discipline.",
+      "Leading end-to-end development of the Databank ERP system. Architected NestJS backend, PostgreSQL schemas, and dynamic RBAC from scratch, and extended freelance contract through 2026 for Huawei ISDP data synchronization.",
+    current: true,
+  },
+  {
+    period: "May 2026 — Aug 2026",
+    role: "Frontend Developer - Freelance",
+    company: "CV. Richo Bahari",
+    description:
+      "Engineering modern corporate web platforms and interactive industrial catalogs for civil construction, MEP, steel fabrication, and logistics fleet operations across West Java.",
   },
   {
     period: "Jul 2025 — Jan 2026",
     role: "Full Stack Engineer - Contract",
     company: "Universitas Muhammadiyah Jakarta",
     description:
-      "Built and shipped e-commerce platforms, internal dashboards, and SaaS prototypes for clients under tight deadlines. Owned the entire lifecycle — from spec to deploy.",
+      "Engineered an enterprise Academic Research Management System for the Faculty of Medicine, digitizing the complete WHO/CIOMS ethical clearance review workflow.",
   },
 ];
 
