@@ -1,15 +1,22 @@
+import { Link } from "react-router-dom";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import Tag from "../../../components/Tag/Tag";
 import { experiences } from "../../../data/portfolio";
 import styles from "./ExperienceLayout.module.css";
 
-function TimelineItem({ item, index }) {
+function TimelineItem({ item, index, isLast }) {
   const isLeft = index % 2 === 0;
 
   return (
-    /* NativeReveal membungkus tanpa merusak struktur, karena kita pakai display: contents di CSS */
-    <NativeReveal delay={index * 0.1} className="reveal-slide-up">
+    <NativeReveal
+      delay={index * 0.1}
+      className={`reveal-slide-up ${styles.timelineItemWrapper}`}
+      style={{
+        gridColumn: isLeft ? 1 : 2,
+        gridRow: `${index + 1} / span 2`,
+      }}
+    >
       <article
         className={`${styles.item} ${isLeft ? styles.leftSide : styles.rightSide}`}
         aria-label={`Experience at ${item.company}`}
@@ -19,7 +26,7 @@ function TimelineItem({ item, index }) {
           aria-hidden="true"
         />
 
-        <div className={styles.itemCard}>
+        <div className={`${styles.itemCard} ${isLast ? styles.fadedCard : ""}`}>
           <header className={styles.itemHeader}>
             <div
               className={`${styles.period} ${item.current ? styles.periodCurrent : ""}`}
@@ -45,9 +52,6 @@ function TimelineItem({ item, index }) {
             )}
           </div>
         </div>
-
-        {/* Spacer untuk mengisi kolom Grid yang kosong */}
-        <div className={styles.spacer} aria-hidden="true" />
       </article>
     </NativeReveal>
   );
@@ -81,8 +85,16 @@ function ExperienceLayout() {
               key={item.period + item.role}
               item={item}
               index={idx}
+              isLast={idx === experiences.length - 1}
             />
           ))}
+        </div>
+
+        {/* Explore All Experiences Button (Matching Recognition Section) */}
+        <div className={styles.seeMoreWrapper}>
+          <Link to="/experience" className={styles.seeMoreBtn}>
+            Explore All Experiences
+          </Link>
         </div>
       </div>
     </section>

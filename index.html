@@ -4,19 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <!-- Google tag (gtag.js) - Deferred loading to avoid LCP/FCP competition -->
+    <!-- Google tag (gtag.js) - Deferred loading on user interaction / idle to maximize performance -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-PKG14RYTBS');
 
-      window.addEventListener('load', function() {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PKG14RYTBS';
-        document.head.appendChild(s);
-      });
+      (function() {
+        var loaded = false;
+        function loadGTM() {
+          if (loaded) return;
+          loaded = true;
+          ['scroll', 'pointerdown', 'touchstart', 'keydown'].forEach(function(e) {
+            window.removeEventListener(e, loadGTM, { passive: true });
+          });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PKG14RYTBS';
+          document.head.appendChild(s);
+        }
+        ['scroll', 'pointerdown', 'touchstart', 'keydown'].forEach(function(e) {
+          window.addEventListener(e, loadGTM, { passive: true, once: true });
+        });
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            setTimeout(loadGTM, 3500);
+          });
+        } else {
+          setTimeout(loadGTM, 4000);
+        }
+      })();
     </script>
     <!-- Preload Critical Fonts (Eliminates request chaining latency) -->
     <link rel="preload" href="/assets/fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
