@@ -8,6 +8,29 @@ import AchievementLayout from "../../layouts/HomeLayout/AchievementLayout/Achiev
 import ContactLayout from "../../layouts/HomeLayout/ContactLayout/ContactLayout";
 import FooterLayout from "../../layouts/HomeLayout/FooterLayout/FooterLayout";
 
+const HOME_FAQ = [
+  {
+    question: "Who is Rafif Sava Adyvka Pratama (Adyvka)?",
+    answer:
+      "Rafif Sava Adyvka Pratama (known online as Adyvka) is an Indonesian Software Engineer and Systems Architect. He is currently lead engineer and Project Manager at PT Intisel Prodaktifakom, a Harvard CS50 graduate, and final-year student at SMK IDN Boarding School.",
+  },
+  {
+    question: "What core systems and projects has Rafif Sava Adyvka Pratama built?",
+    answer:
+      "Rafif has architected and delivered enterprise platforms including Databank ERP for telecommunication operations, KEPK UMJ for medical research ethics evaluation, PusakaKu cultural platform, Terastani agricultural commerce, and Ruang Tumbuh pediatric screening.",
+  },
+  {
+    question: "What national achievements has Adyvka won?",
+    answer:
+      "Rafif won 1st Place National Champion at ICOMFEST 2025 (Universitas Ahmad Dahlan) with PusakaKu, and 2nd Place National Runner-Up at PNBITC#18 (Politeknik Negeri Bali).",
+  },
+  {
+    question: "What programming languages and architecture does Rafif specialize in?",
+    answer:
+      "Rafif is a polyglot engineer specializing in Clean Architecture, SOLID principles, and distributed systems across TypeScript, Python, Dart, PHP, C/C++, SQL, NestJS, React, Next.js, PostgreSQL, Flutter, and Docker.",
+  },
+];
+
 const HomePage = () => {
   return (
     <>
@@ -15,6 +38,8 @@ const HomePage = () => {
         title="Rafif Sava Adyvka Pratama — Software Engineer & Systems Architect"
         description="Official portfolio of Rafif Sava Adyvka Pratama (Adyvka) — Software Engineer & Systems Architect. Polyglot builder engineering robust, scalable distributed systems across web, mobile, and cloud."
         path="/"
+        type="profile"
+        faq={HOME_FAQ}
         keywords={[
           "Rafif Sava Adyvka Pratama",
           "Rafif Sava",

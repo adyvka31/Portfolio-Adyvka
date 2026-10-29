@@ -103,6 +103,11 @@ export default function CertificateDetailPage() {
         type="article"
         keywords={certificateKeywords}
         schema={certificateSchema}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Certificates", item: "/certificates" },
+          { name: effectiveTitle, item: `/certificates/${effectiveSlug}` },
+        ]}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

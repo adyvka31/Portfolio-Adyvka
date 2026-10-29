@@ -101,6 +101,14 @@ export default function TeachingDetailPage({
         type="article"
         keywords={teachingKeywords}
         schema={teachingSchema}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Experience", item: "/experience" },
+          {
+            name: `${effectiveTitle} at ${effectiveInstitution}`,
+            item: `/experience/${effectiveSlug}`,
+          },
+        ]}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

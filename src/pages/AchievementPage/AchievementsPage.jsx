@@ -78,6 +78,14 @@ export default function AchievementsPage() {
     "Software Development Awards",
   ];
 
+  const achievementItems = allAchievements
+    .filter((a) => a.slug !== "dummy-new-achievement")
+    .map((a) => ({
+      name: a.title,
+      description: a.description,
+      url: `/achievements/${a.slug}`,
+    }));
+
   return (
     <PageShell>
       <SEO
@@ -85,6 +93,11 @@ export default function AchievementsPage() {
         description="National awards, software competition victories, and technological recognitions earned by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/achievements"
         keywords={achievementCollectionKeywords}
+        itemList={achievementItems}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Achievements", item: "/achievements" },
+        ]}
       />
       <PageHero
         number="04"

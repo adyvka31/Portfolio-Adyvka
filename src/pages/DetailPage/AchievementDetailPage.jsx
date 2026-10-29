@@ -121,6 +121,11 @@ export default function AchievementDetailPage({
         type="article"
         keywords={achievementKeywords}
         schema={achievementSchema}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Achievements", item: "/achievements" },
+          { name: effectiveTitle, item: `/achievements/${effectiveSlug}` },
+        ]}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

@@ -36,10 +36,9 @@ const CORE_KEYWORDS = [
 ];
 
 /**
- * Enhanced React 19 native SEO component.
- * Hoists meta, link, script, and title elements directly to <head>.
- * Supports deep Schema.org JSON-LD @graph for Google Knowledge Graph,
- * Bing, and AI Search Engines (Perplexity, SGE, ChatGPT Search).
+ * Enterprise-grade SEO component for React 19 & SSG.
+ * Outputs rich OpenGraph, Twitter Cards, Google Knowledge Graph (@graph JSON-LD),
+ * ProfilePage schema, BreadcrumbList, ItemList, and FAQPage schemas.
  */
 export default function SEO({
   title,
@@ -50,6 +49,9 @@ export default function SEO({
   noIndex = false,
   keywords = [],
   schema = null,
+  breadcrumbs = null,
+  faq = null,
+  itemList = null,
   publishedTime,
   modifiedTime,
 }) {
@@ -90,6 +92,39 @@ export default function SEO({
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     image: `${SITE_URL}/og-image.jpg`,
+    gender: "Male",
+    nationality: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    knowsLanguage: ["id", "en"],
+    worksFor: {
+      "@type": "Organization",
+      name: "PT Intisel Prodaktifakom",
+      url: "https://intisel.id",
+    },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Software Engineer & Systems Architect",
+      occupationLocation: {
+        "@type": "AdministrativeArea",
+        name: "West Java, Indonesia",
+      },
+      skills: [
+        "Clean Architecture",
+        "System Design",
+        "Distributed Systems",
+        "TypeScript",
+        "Python",
+        "Dart",
+        "PHP",
+        "C++",
+        "NestJS",
+        "React",
+        "PostgreSQL",
+        "Docker",
+      ],
+    },
     sameAs: [
       "https://github.com/adyvka31",
       "https://www.linkedin.com/in/adyvka-pratama/",
@@ -150,6 +185,64 @@ export default function SEO({
   };
 
   const graph = [personEntity, websiteEntity, webPageEntity];
+
+  // If this is a profile page (Home or About), attach Google ProfilePage entity
+  if (type === "profile" || path === "" || path === "/" || path === "/about") {
+    graph.push({
+      "@type": "ProfilePage",
+      "@id": `${url}#profile`,
+      url: url,
+      name: fullTitle,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      mainEntity: { "@id": `${SITE_URL}/#person` },
+      inLanguage: "en-US",
+    });
+  }
+
+  // BreadcrumbList Schema
+  if (breadcrumbs && Array.isArray(breadcrumbs) && breadcrumbs.length > 0) {
+    graph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: breadcrumbs.map((b, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: b.name,
+        item: b.item.startsWith("http") ? b.item : `${SITE_URL}${b.item}`,
+      })),
+    });
+  }
+
+  // ItemList Schema (For collection pages: projects, achievements, certificates)
+  if (itemList && Array.isArray(itemList) && itemList.length > 0) {
+    graph.push({
+      "@type": "ItemList",
+      "@id": `${url}#itemlist`,
+      itemListElement: itemList.map((item, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: item.name,
+        description: item.description,
+        url: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
+      })),
+    });
+  }
+
+  // FAQPage Schema (For direct Q&A answering in Google SGE & AI Overviews)
+  if (faq && Array.isArray(faq) && faq.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    });
+  }
 
   // Incorporate custom page-specific schema if provided
   if (schema) {

@@ -118,6 +118,12 @@ export default function ProjectsPage() {
     "Clean Architecture Projects",
   ];
 
+  const projectItems = projectsList.map((p) => ({
+    name: p.title,
+    description: p.description,
+    url: `/projects/${p.slug}`,
+  }));
+
   return (
     <PageShell>
       <SEO
@@ -125,6 +131,11 @@ export default function ProjectsPage() {
         description="Comprehensive portfolio of enterprise systems, software platforms, and mobile apps engineered and shipped by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/projects"
         keywords={projectCollectionKeywords}
+        itemList={projectItems}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Projects", item: "/projects" },
+        ]}
       />
       <PageHero
         number="02"

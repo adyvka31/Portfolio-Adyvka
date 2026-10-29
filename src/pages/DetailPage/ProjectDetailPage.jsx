@@ -203,6 +203,11 @@ export default function ProjectDetailPage() {
         type="article"
         keywords={projectKeywords}
         schema={projectSchema}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Projects", item: "/projects" },
+          { name: projectTitle, item: `/projects/${project.slug}` },
+        ]}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

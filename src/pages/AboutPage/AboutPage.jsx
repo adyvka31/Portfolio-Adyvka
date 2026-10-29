@@ -309,6 +309,10 @@ export default function AboutPage() {
           "Harvard CS50 Alumni",
           "Software Architect Indonesia",
         ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "About", item: "/about" },
+        ]}
       />
       <PageHero
         number="01"

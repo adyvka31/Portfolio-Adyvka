@@ -139,6 +139,14 @@ export default function ExperienceDetailPage() {
         type="article"
         keywords={experienceKeywords}
         schema={experienceSchema}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Experience", item: "/experience" },
+          {
+            name: `${experience.role} at ${experience.company}`,
+            item: `/experience/${experience.slug}`,
+          },
+        ]}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

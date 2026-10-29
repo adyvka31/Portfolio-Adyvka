@@ -140,6 +140,24 @@ export default function ExperiencePage() {
     "Software Engineer Career",
   ];
 
+  const experienceItems = [
+    ...experiencesList.map((e) => ({
+      name: `${e.role} at ${e.company}`,
+      description: e.description,
+      url: `/experience/${e.slug}`,
+    })),
+    ...allTeachingExperiences.map((t) => ({
+      name: `${t.title} at ${t.institution}`,
+      description: t.description,
+      url: `/experience/${t.slug}`,
+    })),
+    ...allLeadershipExperiences.map((l) => ({
+      name: `${l.title} at ${l.institution}`,
+      description: l.description,
+      url: `/experience/${l.slug}`,
+    })),
+  ];
+
   return (
     <PageShell>
       <SEO
@@ -147,6 +165,11 @@ export default function ExperiencePage() {
         description="Professional engineering timeline, corporate roles, technical educator outreach, and leadership experiences of Rafif Sava Adyvka Pratama (Adyvka)."
         path="/experience"
         keywords={experienceCollectionKeywords}
+        itemList={experienceItems}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Experience", item: "/experience" },
+        ]}
       />
       <PageHero
         number="03"

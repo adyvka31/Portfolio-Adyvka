@@ -122,6 +122,14 @@ export default function LeadershipDetailPage({
         type="article"
         keywords={leadershipKeywords}
         schema={leadershipSchema}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Experience", item: "/experience" },
+          {
+            name: `${effectiveTitle} at ${effectiveInstitution}`,
+            item: `/experience/${effectiveSlug}`,
+          },
+        ]}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

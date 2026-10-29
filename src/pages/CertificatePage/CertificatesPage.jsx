@@ -110,6 +110,12 @@ export default function CertificatesPage() {
     "Verified Developer Credentials",
   ];
 
+  const certificateItems = items.map((c) => ({
+    name: c.title,
+    description: c.description || `Issued by ${c.institution || c.issuer}`,
+    url: `/certificates/${c.slug}`,
+  }));
+
   return (
     <PageShell>
       <SEO
@@ -117,6 +123,11 @@ export default function CertificatesPage() {
         description="Verified credentials and engineering certifications earned by Rafif Sava Adyvka Pratama (Adyvka) from Harvard CS50, Dicoding, AWS, and DQLab."
         path="/certificates"
         keywords={certificateCollectionKeywords}
+        itemList={certificateItems}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Certificates", item: "/certificates" },
+        ]}
       />
       <PageHero
         number="05"

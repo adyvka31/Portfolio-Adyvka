@@ -2,9 +2,25 @@
 User-agent: *
 Allow: /
 
-# Prevent indexing error and dummy pages
+# AI Search & LLM Engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Prevent indexing errors and test items
 Disallow: /404
 Disallow: /achievements/dummy-new-achievement
 
-# Sitemap location
+# Sitemaps & Knowledge Base
 Sitemap: https://adyvka-pratama.netlify.app/sitemap.xml
