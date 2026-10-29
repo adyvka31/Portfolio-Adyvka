@@ -3,83 +3,19 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
-import NativeReveal from "../../components/Reveal/NativeReveal"; // ✅ Import NativeReveal
+import NativeReveal from "../../components/Reveal/NativeReveal";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
-import Tag from "../../components/Tag/Tag";
-import { useCardSpotlight } from "../../hooks/useCardSpotlight";
+import Card from "../../components/Card/Card";
 import {
   experiencesList,
   allTeachingExperiences,
   allLeadershipExperiences,
 } from "../../data/portfolio";
 import styles from "./ExperiencePage.module.css";
-import Image from "../../components/Image/Image";
 
 function ExperienceBentoCard({ item }) {
-  const spotlight = useCardSpotlight();
-  const linkHref = item.slug ? `/experience/${item.slug}` : null;
-
-  return (
-    <article
-      className={`card glass ${styles.card} ${linkHref ? styles.cardClickable : ""}`}
-      {...spotlight}
-      aria-label={`Experience: ${item.title}`}
-    >
-      {linkHref && (
-        <Link
-          to={linkHref}
-          className={styles.bentoLinkOverlay}
-          aria-label={`View details for ${item.title} at ${item.institution}`}
-        />
-      )}
-      <div className={styles.imageContainer}>
-        <Image
-          src={item.image}
-          alt={item.title}
-          className={styles.cardImage}
-          width={600}
-          height={400}
-        />
-        <div className={styles.imageOverlay} aria-hidden="true" />
-        <span className={styles.yearBadge} aria-label={`Year ${item.year}`}>
-          {item.year}
-        </span>
-      </div>
-
-      <div className={styles.cardBody}>
-        <div className={styles.head}>
-          <div className={styles.institutionWrapper}>
-            <span className={styles.institution}>— {item.institution}</span>
-          </div>
-          {item.icon && (
-            <span className={styles.icon} aria-hidden="true">
-              {item.icon}
-            </span>
-          )}
-        </div>
-
-        <h3 className={styles.title}>{item.title}</h3>
-        <p className={styles.description}>{item.description}</p>
-
-        <div className={styles.cardBottomRow}>
-          <ul className={styles.tagWrapper} aria-label="Skills and technologies">
-            {item.tags?.map((tag) => (
-              <li key={tag} style={{ listStyle: "none" }}>
-                <Tag size="xs">{tag}</Tag>
-              </li>
-            ))}
-          </ul>
-          {linkHref && (
-            <span className={styles.cardCta} aria-hidden="true">
-              <span>Read story</span>
-              <span className={styles.cardCtaArrow}>→</span>
-            </span>
-          )}
-        </div>
-      </div>
-    </article>
-  );
+  return <Card variant="bento" item={item} />;
 }
 
 export default function ExperiencePage() {

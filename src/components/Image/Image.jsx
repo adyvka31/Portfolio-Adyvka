@@ -3,12 +3,14 @@ import "./Image.css";
 
 export default function Image({
   src,
-  alt,
+  alt = "",
   width,
   height,
   priority = false,
   className = "",
+  containerClassName = "",
   sizes = "(max-width: 768px) 100vw, 50vw",
+  style,
   ...rest
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,51 +25,61 @@ export default function Image({
     }
   }, []);
 
-  const loadingClass = isLoaded ? "img-loaded" : "img-skeleton";
-  const combinedClassName = `${className} ${loadingClass}`.trim();
-
-  if (isPicture) {
-    return (
-      <picture style={{ display: "contents" }}>
-        {Object.entries(src.sources).map(([format, srcSet]) => (
-          <source
-            key={format}
-            srcSet={srcSet}
-            type={`image/${format}`}
-            sizes={sizes}
+  return (
+    <div
+      className={`img-skeleton-container ${isLoaded ? "is-loaded" : "is-loading"} ${containerClassName}`.trim()}
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
+        display: "block",
+        ...style,
+      }}
+    >
+      {!isLoaded && !priority && (
+        <div className="img-skeleton-shimmer" aria-hidden="true" />
+      )}
+      {isPicture ? (
+        <picture style={{ display: "contents" }}>
+          {Object.entries(src.sources).map(([format, srcSet]) => (
+            <source
+              key={format}
+              srcSet={srcSet}
+              type={`image/${format}`}
+              sizes={sizes}
+            />
+          ))}
+          <img
+            ref={imgRef}
+            src={src.img.src}
+            alt={alt}
+            width={width || src.img.w}
+            height={height || src.img.h}
+            loading={priority ? "eager" : "lazy"}
+            decoding={priority ? "sync" : "async"}
+            fetchPriority={priority ? "high" : "low"}
+            className={`img-element ${isLoaded ? "img-loaded" : "img-loading"} ${className}`.trim()}
+            onLoad={() => setIsLoaded(true)}
+            {...rest}
           />
-        ))}
+        </picture>
+      ) : (
         <img
           ref={imgRef}
-          src={src.img.src}
+          src={src}
           alt={alt}
-          width={width || src.img.w}
-          height={height || src.img.h}
+          width={width}
+          height={height}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
-          fetchPriority={priority ? "high" : "auto"}
-          className={combinedClassName}
+          fetchPriority={priority ? "high" : "low"}
+          sizes={sizes}
+          className={`img-element ${isLoaded ? "img-loaded" : "img-loading"} ${className}`.trim()}
           onLoad={() => setIsLoaded(true)}
           {...rest}
         />
-      </picture>
-    );
-  }
-
-  return (
-    <img
-      ref={imgRef}
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      loading={priority ? "eager" : "lazy"}
-      decoding={priority ? "sync" : "async"}
-      fetchPriority={priority ? "high" : "auto"}
-      sizes={sizes}
-      className={combinedClassName}
-      onLoad={() => setIsLoaded(true)}
-      {...rest}
-    />
+      )}
+    </div>
   );
 }

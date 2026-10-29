@@ -1,44 +1,51 @@
-.img-skeleton {
+.img-skeleton-container {
   background-color: rgba(255, 255, 255, 0.03);
-  color: transparent; 
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* 2. Efek cahaya berjalan dipindah ke pseudo-element (layer terpisah) */
-.img-skeleton::after {
-  content: "";
+.img-skeleton-shimmer {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    transparent 25%,
+    rgba(255, 255, 255, 0.02) 0%,
     rgba(255, 255, 255, 0.08) 50%,
-    transparent 75%
+    rgba(255, 255, 255, 0.02) 100%
   );
-  transform: translateX(-100%);
-  animation: skeleton-shimmer 1.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  background-size: 200% 100%;
+  animation: img-shimmer 1.8s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* --- Tampilan saat gambar selesai dimuat --- */
-.img-loaded {
-  background: transparent;
-  animation: img-fade-in 0.4s ease-out forwards;
-}
-
-/* --- KEYFRAMES BEBAS LAG (GPU ACCELERATED) --- */
-
-@keyframes skeleton-shimmer {
+@keyframes img-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
   100% {
-    transform: translateX(100%);
+    background-position: -200% 0;
   }
 }
 
-@keyframes img-fade-in {
-  from {
-    opacity: 0;
+.img-element {
+  display: block;
+}
+
+.img-loading {
+  opacity: 0;
+}
+
+.img-loaded {
+  opacity: 1;
+  transition: opacity 0.35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-skeleton-shimmer {
+    animation: none;
   }
-  to {
-    opacity: 1;
+  .img-loaded {
+    transition: none;
   }
 }

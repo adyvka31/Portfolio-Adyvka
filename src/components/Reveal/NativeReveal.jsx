@@ -6,7 +6,6 @@ export default function NativeReveal({
   as: Component = "div",
   delay = 0,
   threshold = 0.15,
-  stagger,
   ...props
 }) {
   const ref = useRef(null);

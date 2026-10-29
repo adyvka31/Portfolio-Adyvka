@@ -1,80 +1,14 @@
 import SEO from "../../components/SEO/SEO";
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import NativeReveal from "../../components/Reveal/NativeReveal";
-import Tag from "../../components/Tag/Tag";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
-import { SearchIcon, ArrowUpRightIcon } from "../../components/Icons/Icons";
+import Card from "../../components/Card/Card";
+import EmptyState from "../../components/EmptyState/EmptyState";
+import { SearchIcon } from "../../components/Icons/Icons";
 import { projectsList, projectFilters } from "../../data/portfolio";
 import styles from "./ProjectPage.module.css";
-import Image from "../../components/Image/Image";
-
-function ProjectCard({ project }) {
-  return (
-    <Link
-      to={`/projects/${project.slug}`}
-      className={`card glass ${styles.cardModern}`}
-    >
-      {/* IMAGE AREA */}
-      <div className={styles.cardImageWrap}>
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          className={styles.cardImage}
-          width={600}
-          height={400}
-        />
-
-        <div className={styles.cardOverlay}>
-          <div className={styles.overlayGradient} />
-          <div className={styles.overlayContent}>
-            <span className={styles.deployText}>View Live Deploy</span>
-            <div className={styles.deployButton}>
-              <ArrowUpRightIcon size={18} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.cardBody}>
-        <div className={styles.cardMetaRow}>
-          <span>{project.label}</span>
-          {project.year && <span>{project.year}</span>}
-        </div>
-
-        <h3 className={styles.cardTitleModern}>{project.title}</h3>
-        <p className={styles.cardDescModern}>{project.description}</p>
-
-        <div className={styles.cardFooterModern}>
-          <div className={styles.cardTagsModern}>
-            {project.tags.slice(0, 3).map((tag) => (
-              <Tag key={tag} size="xs">
-                {tag}
-              </Tag>
-            ))}
-          </div>
-
-          <div className={styles.cardActionWrap}>
-            <a
-              href={project.link || `/projects/${project.slug}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cardActionButton}
-              onClick={(e) => {
-                if (project.link) e.stopPropagation();
-              }}
-            >
-              <span className={styles.cardActionText}>Source</span>
-              <ArrowUpRightIcon size={14} />
-            </a>
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("web");
@@ -183,18 +117,20 @@ export default function ProjectsPage() {
           <div className={styles.gridInner}>
             {filtered.length === 0 ? (
               <NativeReveal delay={0.1} className="reveal-slide-up">
-                <p className={styles.empty}>No projects match that filter.</p>
+                <EmptyState
+                  title="No projects found"
+                  message="No projects match the selected filter or search query."
+                />
               </NativeReveal>
             ) : (
               <div className={styles.grid}>
                 {filtered.map((p, i) => (
-                  /* Setiap kartu memanggil NativeReveal secara mandiri agar delay berfungsi sebagai stagger */
                   <NativeReveal
                     key={p.slug}
                     delay={i * 0.1}
                     className="reveal-slide-up"
                   >
-                    <ProjectCard project={p} />
+                    <Card variant="project" item={p} />
                   </NativeReveal>
                 ))}
               </div>

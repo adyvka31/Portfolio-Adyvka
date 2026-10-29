@@ -332,12 +332,13 @@ export default function ProjectGallery({
                 current.isMobile ? styles.lightboxImageWrapMobile : ""
               }`}
             >
-              <img
+              <Image
                 src={current.image}
                 alt={current.title}
                 className={`${styles.lightboxImage} ${
                   current.isMobile ? styles.lightboxImageMobile : ""
                 }`}
+                priority={true}
               />
             </div>
           </div>

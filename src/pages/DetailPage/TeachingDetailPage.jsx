@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate, Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
@@ -9,12 +9,8 @@ import NativeReveal from "../../components/Reveal/NativeReveal";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
 import Tag from "../../components/Tag/Tag";
 import Image from "../../components/Image/Image";
-import {
-  MaximizeIcon,
-  XIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "../../components/Icons/Icons";
+import Lightbox from "../../components/Lightbox/Lightbox";
+import { MaximizeIcon } from "../../components/Icons/Icons";
 import { allTeachingExperiences, getSiblings } from "../../data/portfolio";
 import { teachingDetails } from "../../data/teachingDetails";
 import { SITE_URL } from "../../data/siteConfig";
@@ -36,25 +32,6 @@ export default function TeachingDetailPage({
   const detail = propDetail || (slug ? teachingDetails[slug] : null);
 
   const [activePhotoIdx, setActivePhotoIdx] = useState(null);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (activePhotoIdx === null || !detail?.documentation) return;
-      if (e.key === "Escape") setActivePhotoIdx(null);
-      if (e.key === "ArrowLeft") {
-        setActivePhotoIdx((prev) =>
-          prev > 0 ? prev - 1 : detail.documentation.length - 1,
-        );
-      }
-      if (e.key === "ArrowRight") {
-        setActivePhotoIdx((prev) =>
-          prev < detail.documentation.length - 1 ? prev + 1 : 0,
-        );
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activePhotoIdx, detail?.documentation]);
 
   if (!item && !detail) {
     return <Navigate to="/experience" replace />;
@@ -366,88 +343,13 @@ export default function TeachingDetailPage({
       <PrevNextNav prev={prev} next={next} baseUrl="/experience" />
       <BottomCTA />
 
-      {/* FULLSCREEN LIGHTBOX MODAL */}
-      {activePhotoIdx !== null && detail?.documentation?.[activePhotoIdx] && (
-        <div
-          className={styles.lightboxBackdrop}
-          onClick={() => setActivePhotoIdx(null)}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className={styles.lightboxContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className={styles.lightboxHeader}>
-              <div className={styles.lightboxMeta}>
-                <span className={styles.lightboxTag}>
-                  {detail.documentation[activePhotoIdx].tag || "Field Record"}
-                </span>
-                <span className={styles.lightboxCounter}>
-                  {activePhotoIdx + 1} / {detail.documentation.length}
-                </span>
-              </div>
-              <button
-                className={styles.lightboxCloseBtn}
-                onClick={() => setActivePhotoIdx(null)}
-                aria-label="Close image modal"
-              >
-                <XIcon size={18} />
-              </button>
-            </div>
-
-            <div className={styles.lightboxImageWrap}>
-              <img
-                src={
-                  typeof detail.documentation[activePhotoIdx].image === "object"
-                    ? detail.documentation[activePhotoIdx].image.img?.src ||
-                      detail.documentation[activePhotoIdx].image
-                    : detail.documentation[activePhotoIdx].image
-                }
-                alt={detail.documentation[activePhotoIdx].title}
-                className={styles.lightboxImage}
-              />
-              {detail.documentation.length > 1 && (
-                <>
-                  <button
-                    className={`${styles.lightboxNavBtn} ${styles.lightboxNavPrev}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setActivePhotoIdx((prev) =>
-                        prev > 0 ? prev - 1 : detail.documentation.length - 1,
-                      );
-                    }}
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeftIcon size={20} />
-                  </button>
-                  <button
-                    className={`${styles.lightboxNavBtn} ${styles.lightboxNavNext}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setActivePhotoIdx((prev) =>
-                        prev < detail.documentation.length - 1 ? prev + 1 : 0,
-                      );
-                    }}
-                    aria-label="Next image"
-                  >
-                    <ChevronRightIcon size={20} />
-                  </button>
-                </>
-              )}
-            </div>
-
-            <div className={styles.lightboxFooter}>
-              <h4 className={styles.lightboxTitle}>
-                {detail.documentation[activePhotoIdx].title}
-              </h4>
-              <p className={styles.lightboxDesc}>
-                {detail.documentation[activePhotoIdx].desc}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* REUSABLE FULLSCREEN LIGHTBOX MODAL */}
+      <Lightbox
+        items={detail?.documentation}
+        activeIndex={activePhotoIdx}
+        onClose={() => setActivePhotoIdx(null)}
+        onNavigate={setActivePhotoIdx}
+      />
     </PageShell>
   );
 }

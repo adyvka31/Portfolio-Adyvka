@@ -648,3 +648,16 @@ textarea {
     transparent 40%
   );
 }
+
+/* ============================================
+   PERFORMANCE & CONTENT VISIBILITY OPTIMIZATIONS
+   ============================================ */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 450px;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}

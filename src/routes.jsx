@@ -34,7 +34,7 @@ const CertificatesPage = lazy(
 const CertificateDetailPage = lazy(
   () => import("./pages/DetailPage/CertificateDetailPage"),
 );
-const NotFoundPage = lazy(() => import("./pages/NotFoudPage/NotFoundPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 export const routes = [
   {

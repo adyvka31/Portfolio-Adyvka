@@ -2,60 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-import Tag from "../../../components/Tag/Tag";
-import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
+import Card from "../../../components/Card/Card";
 import { recognitionData } from "../../../data/portfolio";
-import Image from "../../../components/Image/Image";
 import styles from "./AchievementLayout.module.css";
 
 function AchievementCard({ item, faded }) {
-  const spotlight = useCardSpotlight();
-  return (
-    <article
-      className={`card glass ${styles.card} ${faded ? styles.fadedCard : ""}`}
-      {...spotlight}
-      aria-label={`Achievement: ${item.title}`}
-    >
-      <div className={styles.imageContainer}>
-        <Image
-          src={item.image}
-          alt={`Illustration for ${item.title}`}
-          className={styles.cardImage}
-          width={600}
-          height={400}
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px"
-        />
-        <div className={styles.imageOverlay} aria-hidden="true" />
-        <span
-          className={styles.yearBadge}
-          aria-label={`Awarded in ${item.year}`}
-        >
-          {item.year}
-        </span>
-      </div>
-      <div className={styles.cardBody}>
-        <div className={styles.head}>
-          <div className={styles.institutionWrapper}>
-            <span className={styles.institution}>— {item.institution}</span>
-          </div>
-          <span className={styles.icon} aria-hidden="true">
-            {item.icon}
-          </span>
-        </div>
-        <h3 className={styles.title}>{item.title}</h3>
-        <p className={styles.description}>{item.description}</p>
-
-        {/* SENIOR FIX: Semantic ul untuk tags */}
-        <ul className={styles.tagWrapper} aria-label="Related categories">
-          {item.tags?.map((tag) => (
-            <li key={tag} style={{ listStyle: "none" }}>
-              <Tag size="xs">{tag}</Tag>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </article>
-  );
+  return <Card variant="bento" item={item} faded={faded} />;
 }
 
 function AchievementLayout() {

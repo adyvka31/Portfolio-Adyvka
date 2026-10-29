@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { imagetools } from "vite-imagetools";
 import { getAllRoutes } from "./src/data/routesManifest.js";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), imagetools()],
   ssgOptions: {
-    includedRoutes(paths, routes) {
+    includedRoutes() {
       return getAllRoutes();
     },
   },

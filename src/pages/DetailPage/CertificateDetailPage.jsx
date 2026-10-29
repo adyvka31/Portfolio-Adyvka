@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate, Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
@@ -8,7 +8,8 @@ import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import NativeReveal from "../../components/Reveal/NativeReveal";
 import Tag from "../../components/Tag/Tag";
 import Image from "../../components/Image/Image";
-import { ArrowUpRightIcon, MaximizeIcon, XIcon } from "../../components/Icons/Icons";
+import Lightbox from "../../components/Lightbox/Lightbox";
+import { ArrowUpRightIcon, MaximizeIcon } from "../../components/Icons/Icons";
 import { allCertificates, getSiblings } from "../../data/portfolio";
 import { certificateDetails } from "../../data/certificateDetails";
 import { SITE_URL } from "../../data/siteConfig";
@@ -39,15 +40,6 @@ export default function CertificateDetailPage() {
   const detail = resolvedKey ? certificateDetails[resolvedKey] : null;
 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (!isLightboxOpen) return;
-      if (e.key === "Escape") setIsLightboxOpen(false);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isLightboxOpen]);
 
   if (!cert && !detail) return <Navigate to="/certificates" replace />;
 
@@ -394,44 +386,20 @@ export default function CertificateDetailPage() {
       <PrevNextNav prev={prev} next={next} baseUrl="/certificates" />
       <BottomCTA />
 
-      {/* FULLSCREEN LIGHTBOX MODAL */}
-      {isLightboxOpen && cert?.image && (
-        <div
-          className={local.lightboxBackdrop}
-          onClick={() => setIsLightboxOpen(false)}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className={local.lightboxContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className={local.lightboxHeader}>
-              <h3 className={local.lightboxTitle}>
-                {effectiveTitle} · {effectiveIssuer}
-              </h3>
-              <button
-                className={local.lightboxCloseBtn}
-                onClick={() => setIsLightboxOpen(false)}
-                aria-label="Close certificate modal"
-              >
-                <XIcon size={18} />
-              </button>
-            </div>
-            <div className={local.lightboxImageWrap}>
-              <img
-                src={
-                  typeof cert.image === "object"
-                    ? cert.image.img?.src || cert.image
-                    : cert.image
-                }
-                alt={effectiveTitle}
-                className={local.lightboxImg}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      {/* REUSABLE FULLSCREEN LIGHTBOX MODAL */}
+      <Lightbox
+        items={[
+          {
+            image: cert?.image,
+            title: effectiveTitle,
+            desc: effectiveIssuer,
+            tag: "Verified Credential",
+          },
+        ]}
+        activeIndex={isLightboxOpen ? 0 : null}
+        onClose={() => setIsLightboxOpen(false)}
+        onNavigate={() => {}}
+      />
     </PageShell>
   );
 }
