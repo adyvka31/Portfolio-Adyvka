@@ -1,4 +1,4 @@
-# robots.txt for https://adyvka-pratama.netlify.app/
+# robots.txt for https://adyvkapratama.my.id/
 User-agent: *
 Allow: /
 
@@ -23,4 +23,4 @@ Disallow: /404
 Disallow: /achievements/dummy-new-achievement
 
 # Sitemaps & Knowledge Base
-Sitemap: https://adyvka-pratama.netlify.app/sitemap.xml
+Sitemap: https://adyvkapratama.my.id/sitemap.xml

@@ -18,6 +18,7 @@ import {
 } from "../../components/Icons/Icons";
 import { allAchievements, getSiblings } from "../../data/portfolio";
 import { achievementDetails } from "../../data/achievementDetails";
+import { SITE_URL } from "../../data/siteConfig";
 import styles from "./AchievementDetailPage.module.css";
 
 export default function AchievementDetailPage({
@@ -99,7 +100,7 @@ export default function AchievementDetailPage({
 
   const achievementSchema = {
     "@type": "CreativeWork",
-    "@id": `https://adyvka-pratama.netlify.app/achievements/${effectiveSlug}#award`,
+    "@id": `${SITE_URL}/achievements/${effectiveSlug}#award`,
     name: effectiveTitle,
     headline: effectiveTitle,
     description: effectiveSummary,
@@ -108,7 +109,7 @@ export default function AchievementDetailPage({
       "@type": "Organization",
       name: effectiveInstitution,
     },
-    creator: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    creator: { "@id": `${SITE_URL}/#person` },
     keywords: achievementKeywords.join(", "),
   };
 

@@ -1,8 +1,9 @@
-const SITE_URL = "https://adyvka-pratama.netlify.app";
-const DEFAULT_OG_IMAGE = "/og-image.jpg";
-const DEFAULT_DESCRIPTION =
-  "Software Engineer & Systems Architect based in West Java, Indonesia. Polyglot developer specializing in clean architecture, enterprise platforms, and distributed systems across web, mobile, and cloud.";
-const SITE_NAME = "Rafif Sava Adyvka Pratama";
+import {
+  SITE_URL,
+  SITE_NAME,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_DESCRIPTION,
+} from "../../data/siteConfig";
 
 const CORE_KEYWORDS = [
   "Rafif Sava Adyvka Pratama",

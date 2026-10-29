@@ -30,6 +30,7 @@ import {
 
 import { projectsList, getSiblings } from "../../data/portfolio";
 import { projectDetails } from "../../data/projectDetails";
+import { SITE_URL } from "../../data/siteConfig";
 import styles from "./ProjectDetailPage.module.css";
 
 function renderPillarIcon(name) {
@@ -184,13 +185,13 @@ export default function ProjectDetailPage() {
 
   const projectSchema = {
     "@type": "SoftwareApplication",
-    "@id": `https://adyvka-pratama.netlify.app/projects/${project.slug}#software`,
+    "@id": `${SITE_URL}/projects/${project.slug}#software`,
     name: projectTitle,
     description: projectSummary,
     applicationCategory: "BusinessApplication, DeveloperApplication",
     operatingSystem: "Web, Cross-Platform, Cloud",
-    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
-    creator: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    author: { "@id": `${SITE_URL}/#person` },
+    creator: { "@id": `${SITE_URL}/#person` },
     keywords: projectKeywords.join(", "),
   };
 

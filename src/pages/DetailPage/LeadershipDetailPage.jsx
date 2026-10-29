@@ -17,6 +17,7 @@ import {
 } from "../../components/Icons/Icons";
 import { allLeadershipExperiences, getSiblings } from "../../data/portfolio";
 import { leadershipDetails } from "../../data/leadershipDetails";
+import { SITE_URL } from "../../data/siteConfig";
 import styles from "./LeadershipDetailPage.module.css";
 
 export default function LeadershipDetailPage({
@@ -102,10 +103,10 @@ export default function LeadershipDetailPage({
 
   const leadershipSchema = {
     "@type": "Article",
-    "@id": `https://adyvka-pratama.netlify.app/experience/${effectiveSlug}#leadership`,
+    "@id": `${SITE_URL}/experience/${effectiveSlug}#leadership`,
     headline: `${effectiveTitle} at ${effectiveInstitution}`,
     description: effectiveSummary,
-    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    author: { "@id": `${SITE_URL}/#person` },
     publisher: {
       "@type": "Organization",
       name: effectiveInstitution,

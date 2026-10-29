@@ -17,6 +17,7 @@ import {
 } from "../../components/Icons/Icons";
 import { allTeachingExperiences, getSiblings } from "../../data/portfolio";
 import { teachingDetails } from "../../data/teachingDetails";
+import { SITE_URL } from "../../data/siteConfig";
 import styles from "./TeachingDetailPage.module.css";
 
 export default function TeachingDetailPage({
@@ -81,10 +82,10 @@ export default function TeachingDetailPage({
 
   const teachingSchema = {
     "@type": "Article",
-    "@id": `https://adyvka-pratama.netlify.app/experience/${effectiveSlug}#teaching`,
+    "@id": `${SITE_URL}/experience/${effectiveSlug}#teaching`,
     headline: `${effectiveTitle} at ${effectiveInstitution}`,
     description: effectiveSummary,
-    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    author: { "@id": `${SITE_URL}/#person` },
     publisher: {
       "@type": "Organization",
       name: effectiveInstitution,

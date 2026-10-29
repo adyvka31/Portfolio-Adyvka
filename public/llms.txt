@@ -1,5 +1,5 @@
 # Rafif Sava Adyvka Pratama (Adyvka)
-> Official Portfolio & Developer Knowledge Base: https://adyvka-pratama.netlify.app
+> Official Portfolio & Developer Knowledge Base: https://adyvkapratama.my.id
 
 Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software Engineer & Systems Architect based in West Java, Indonesia. He specializes in designing resilient, highly scalable distributed systems, enterprise platforms, and multi-platform applications across web, mobile, and cloud infrastructure.
 
@@ -14,55 +14,55 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 ## Flagship Systems & Shipped Projects
 
 ### 1. Databank ERP Ecosystem
-- **URL**: https://adyvka-pratama.netlify.app/projects/databank
+- **URL**: https://adyvkapratama.my.id/projects/databank
 - **Role**: Lead Systems Engineer & Project Manager (PT Intisel Prodaktifakom)
 - **Stack**: React 19, NestJS 11, PostgreSQL 14+, Prisma ORM, Docker, Playwright, React Virtuoso
 - **Summary**: Enterprise telecommunication operations platform managing 50,000+ data rows lag-free, automated Huawei ISDP scraping bots, 3-stage sequential digital signature approval pipelines (PS/SS -> RPM -> SPM), 65 granular RBAC permissions, and GPS geofenced workforce attendance integrated into payroll.
 
 ### 2. KEPK UMJ (Health Research Ethics Committee)
-- **URL**: https://adyvka-pratama.netlify.app/projects/kepk
+- **URL**: https://adyvkapratama.my.id/projects/kepk
 - **Role**: Full Stack Engineer & Server Architect (Universitas Muhammadiyah Jakarta)
 - **Stack**: React, Vite, NestJS, PostgreSQL, Prisma, Docker, Biznet Cloud VPS
 - **Summary**: National health research ethics evaluation system managing clinical ethical clearances, 4-tier sequential review protocols, and cryptographic document verification deployed on self-hosted cloud VPS.
 
 ### 3. PusakaKu (Indonesian Cultural Heritage Platform)
-- **URL**: https://adyvka-pratama.netlify.app/projects/pusakaku
+- **URL**: https://adyvkapratama.my.id/projects/pusakaku
 - **Role**: Team Lead & Lead Developer (ICOMFEST 2025 Champion)
 - **Stack**: React, Tailwind CSS, Gamification Engine
 - **Summary**: 1st Place National Web Design Winner revitalizing 10+ endangered Indonesian traditional games through interactive ethnography and a 10-stage gamified assessment quiz engine.
 
 ### 4. Terastani (Smart Agricultural Marketplace)
-- **URL**: https://adyvka-pratama.netlify.app/projects/terastani
+- **URL**: https://adyvkapratama.my.id/projects/terastani
 - **Role**: Full Stack Engineer
 - **Stack**: Next.js, Node.js, PostgreSQL, Tailwind CSS
 - **Summary**: Agricultural B2B commerce network connecting local farming cooperatives directly with urban distribution networks with real-time price index tracking.
 
 ### 5. Ruang Tumbuh (Pediatric Development Screening)
-- **URL**: https://adyvka-pratama.netlify.app/projects/ruangtumbuh
+- **URL**: https://adyvkapratama.my.id/projects/ruangtumbuh
 - **Role**: Full Stack Engineer
 - **Stack**: Next.js, NestJS, PostgreSQL, Framer Motion
 - **Summary**: Clinical pediatric milestone screening platform standardizing developmental assessments according to national pediatric guidelines.
 
 ### All Shipped Projects Directory
-- Complete catalogue of 18 shipped platforms: https://adyvka-pratama.netlify.app/projects
+- Complete catalogue of 18 shipped platforms: https://adyvkapratama.my.id/projects
 
 ---
 
 ## National Awards & Competitions
 
 ### 1. 1st Place: National Web Design Competition (ICOMFEST 2025)
-- **URL**: https://adyvka-pratama.netlify.app/achievements/1st-place-national-web-design-competition
+- **URL**: https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition
 - **Institution**: Universitas Ahmad Dahlan (ICOMFEST 2025)
 - **Project**: PusakaKu
 - **Summary**: Awarded 1st Place National Champion among university and senior high teams nationwide. Led engineering architecture, public defense before the jury panel, and live platform demo.
 
 ### 2. 2nd Place: National Web Design Competition (PNBITC#18)
-- **URL**: https://adyvka-pratama.netlify.app/achievements/2nd-place-national-web-design-competition-pnbitc
+- **URL**: https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc
 - **Institution**: Politeknik Negeri Bali
 - **Summary**: National Runner-Up achieved during an intensive one-month development sprint balancing 12th-grade corporate internship duties.
 
 ### 3. Top 5 Finalist: National Web Development Competition (UNILA 2025)
-- **URL**: https://adyvka-pratama.netlify.app/achievements/finalist-national-web-dev-competition
+- **URL**: https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition
 - **Institution**: Universitas Lampung
 - **Summary**: Selected as Top 5 finalist for high-performance responsive web engineering.
 
@@ -71,12 +71,12 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 ## Professional & Leadership Experience
 
 ### 1. PT Intisel Prodaktifakom
-- **URL**: https://adyvka-pratama.netlify.app/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance
+- **URL**: https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance
 - **Role**: Full Stack Engineer & Project Manager
 - **Highlights**: Led architecture of Databank ERP, directed engineering sprints, managed code reviews, and deployed mission-critical micro-APIs.
 
 ### 2. Universitas Muhammadiyah Jakarta
-- **URL**: https://adyvka-pratama.netlify.app/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract
+- **URL**: https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract
 - **Role**: Full Stack Engineer & Server Architect
 - **Highlights**: Engineered the KEPK health ethics platform, automated multi-stage committee review workflows, and managed VPS production infrastructure.
 
@@ -95,13 +95,13 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 - **Dicoding Indonesia**: Back-End Development, React Web, JavaScript, Cloud Architecture
 - **DQLab**: Data Analyst Fundamentals (SQL, Statistical Computation)
 - **Skillvul**: C / C++ Programming Fundamentals
-- Complete certificate list: https://adyvka-pratama.netlify.app/certificates
+- Complete certificate list: https://adyvkapratama.my.id/certificates
 
 ---
 
 ## Official Social & Developer Links
 
-- **Website**: https://adyvka-pratama.netlify.app
+- **Website**: https://adyvkapratama.my.id
 - **GitHub**: https://github.com/adyvka31
 - **LinkedIn**: https://www.linkedin.com/in/adyvka-pratama/
 - **Contact Email**: rafifdyvka07@gmail.com

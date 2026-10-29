@@ -28,6 +28,7 @@ import {
 import { experienceDetails } from "../../data/experienceDetails";
 import { teachingDetails } from "../../data/teachingDetails";
 import { leadershipDetails } from "../../data/leadershipDetails";
+import { SITE_URL } from "../../data/siteConfig";
 import TeachingDetailPage from "./TeachingDetailPage";
 import LeadershipDetailPage from "./LeadershipDetailPage";
 import styles from "./ExperienceDetailPage.module.css";
@@ -119,10 +120,10 @@ export default function ExperienceDetailPage() {
 
   const experienceSchema = {
     "@type": "Article",
-    "@id": `https://adyvka-pratama.netlify.app/experience/${experience.slug}#experience`,
+    "@id": `${SITE_URL}/experience/${experience.slug}#experience`,
     headline: `${experience.role} at ${experience.company}`,
     description: detail?.summary || experience.description,
-    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    author: { "@id": `${SITE_URL}/#person` },
     publisher: {
       "@type": "Organization",
       name: experience.company,

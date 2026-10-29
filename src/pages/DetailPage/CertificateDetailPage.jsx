@@ -11,6 +11,7 @@ import Image from "../../components/Image/Image";
 import { ArrowUpRightIcon, MaximizeIcon, XIcon } from "../../components/Icons/Icons";
 import { allCertificates, getSiblings } from "../../data/portfolio";
 import { certificateDetails } from "../../data/certificateDetails";
+import { SITE_URL } from "../../data/siteConfig";
 import local from "./CertificateDetailPage.module.css";
 
 export default function CertificateDetailPage() {
@@ -82,7 +83,7 @@ export default function CertificateDetailPage() {
 
   const certificateSchema = {
     "@type": "EducationalOccupationalCredential",
-    "@id": `https://adyvka-pratama.netlify.app/certificates/${effectiveSlug}#credential`,
+    "@id": `${SITE_URL}/certificates/${effectiveSlug}#credential`,
     name: effectiveTitle,
     description: effectiveSummary,
     credentialCategory: "Professional Certification",
@@ -90,7 +91,7 @@ export default function CertificateDetailPage() {
       "@type": "Organization",
       name: effectiveIssuer,
     },
-    about: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    about: { "@id": `${SITE_URL}/#person` },
     keywords: certificateKeywords.join(", "),
   };
 
