@@ -106,6 +106,30 @@ export default function ExperienceDetailPage() {
 
   const { prev, next } = getSiblings(experiencesList, slug);
 
+  const experienceKeywords = [
+    experience.role,
+    experience.company,
+    `${experience.role} at ${experience.company}`,
+    `${experience.company} Rafif Sava Adyvka Pratama`,
+    `${experience.company} Adyvka`,
+    "Software Engineering Experience",
+    ...(experience.tags || []),
+    ...(detail?.stack || []),
+  ];
+
+  const experienceSchema = {
+    "@type": "Article",
+    "@id": `https://adyvka-pratama.netlify.app/experience/${experience.slug}#experience`,
+    headline: `${experience.role} at ${experience.company}`,
+    description: detail?.summary || experience.description,
+    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    publisher: {
+      "@type": "Organization",
+      name: experience.company,
+    },
+    keywords: experienceKeywords.join(", "),
+  };
+
   return (
     <PageShell>
       <SEO
@@ -113,6 +137,8 @@ export default function ExperienceDetailPage() {
         description={detail?.summary || experience.description}
         path={`/experience/${experience.slug}`}
         type="article"
+        keywords={experienceKeywords}
+        schema={experienceSchema}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

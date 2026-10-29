@@ -67,6 +67,31 @@ export default function TeachingDetailPage({
 
   const { prev, next } = getSiblings(allTeachingExperiences, effectiveSlug);
 
+  const teachingKeywords = [
+    effectiveTitle,
+    effectiveInstitution,
+    `${effectiveTitle} at ${effectiveInstitution}`,
+    `${effectiveInstitution} Rafif Sava Adyvka Pratama`,
+    `${effectiveInstitution} Adyvka`,
+    "Teaching Experience",
+    "Technical Instructor",
+    ...(item?.tags || []),
+    ...(detail?.stackCovered || []),
+  ];
+
+  const teachingSchema = {
+    "@type": "Article",
+    "@id": `https://adyvka-pratama.netlify.app/experience/${effectiveSlug}#teaching`,
+    headline: `${effectiveTitle} at ${effectiveInstitution}`,
+    description: effectiveSummary,
+    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    publisher: {
+      "@type": "Organization",
+      name: effectiveInstitution,
+    },
+    keywords: teachingKeywords.join(", "),
+  };
+
   return (
     <PageShell>
       <SEO
@@ -74,6 +99,8 @@ export default function TeachingDetailPage({
         description={effectiveSummary}
         path={`/experience/${effectiveSlug}`}
         type="article"
+        keywords={teachingKeywords}
+        schema={teachingSchema}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

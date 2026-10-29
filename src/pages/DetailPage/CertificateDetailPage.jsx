@@ -68,6 +68,32 @@ export default function CertificateDetailPage() {
     { label: "Credential Status", value: "Verified & Active" },
   ];
 
+  const certificateKeywords = [
+    effectiveTitle,
+    `${effectiveTitle} Rafif Sava Adyvka Pratama`,
+    `${effectiveTitle} Adyvka`,
+    effectiveIssuer,
+    `${effectiveIssuer} Rafif Sava`,
+    "Verified Credential",
+    "Professional Certification",
+    ...(cert?.skills || []),
+    ...(detail?.skillsCovered || []),
+  ];
+
+  const certificateSchema = {
+    "@type": "EducationalOccupationalCredential",
+    "@id": `https://adyvka-pratama.netlify.app/certificates/${effectiveSlug}#credential`,
+    name: effectiveTitle,
+    description: effectiveSummary,
+    credentialCategory: "Professional Certification",
+    recognizedBy: {
+      "@type": "Organization",
+      name: effectiveIssuer,
+    },
+    about: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    keywords: certificateKeywords.join(", "),
+  };
+
   return (
     <PageShell>
       <SEO
@@ -75,6 +101,8 @@ export default function CertificateDetailPage() {
         description={effectiveSummary}
         path={`/certificates/${effectiveSlug}`}
         type="article"
+        keywords={certificateKeywords}
+        schema={certificateSchema}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

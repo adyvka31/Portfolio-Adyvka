@@ -93,12 +93,38 @@ export default function ProjectsPage() {
     });
   }, [filter, query]);
 
+  const projectCollectionKeywords = [
+    "Projects Rafif Sava Adyvka Pratama",
+    "Adyvka Projects",
+    "Databank ERP",
+    "Terastani",
+    "KEPK UMJ",
+    "Ruang Tumbuh",
+    "Richo Bahari",
+    "FitSmart",
+    "JavaIsland",
+    "Pusakaku",
+    "Semua Bisa",
+    "IDN Course",
+    "Coffee Shop",
+    "MyStyle",
+    "DeliFood",
+    "AI Ticket Manager",
+    "Attendance App",
+    "QR Scanner",
+    "News App",
+    "Quran App",
+    "Software Engineering Portfolio",
+    "Clean Architecture Projects",
+  ];
+
   return (
     <PageShell>
       <SEO
         title="Projects — Rafif Sava Adyvka Pratama"
-        description="Explore the software engineering portfolio and shipped projects by Rafif Sava Adyvka Pratama, featuring web and mobile apps built with modern tech stacks."
+        description="Comprehensive portfolio of enterprise systems, software platforms, and mobile apps engineered and shipped by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/projects"
+        keywords={projectCollectionKeywords}
       />
       <PageHero
         number="02"

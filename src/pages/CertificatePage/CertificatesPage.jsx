@@ -99,12 +99,24 @@ function CertificateCard({ item }) {
 export default function CertificatesPage() {
   const items = allCertificates || [];
 
+  const certificateCollectionKeywords = [
+    "Certificates Rafif Sava Adyvka Pratama",
+    "Adyvka Certificates",
+    "Harvard CS50 Certificate",
+    "Dicoding Certificates",
+    "DQLab Data Analyst",
+    "Skillvul C++",
+    "AWS Cloud Practitioner",
+    "Verified Developer Credentials",
+  ];
+
   return (
     <PageShell>
       <SEO
         title="Certificates — Rafif Sava Adyvka Pratama"
-        description="Verified professional certifications and credentials earned by Rafif Sava Adyvka Pratama in software engineering, AI, and modern web development."
+        description="Verified credentials and engineering certifications earned by Rafif Sava Adyvka Pratama (Adyvka) from Harvard CS50, Dicoding, AWS, and DQLab."
         path="/certificates"
+        keywords={certificateCollectionKeywords}
       />
       <PageHero
         number="05"

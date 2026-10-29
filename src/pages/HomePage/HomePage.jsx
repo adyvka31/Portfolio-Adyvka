@@ -15,6 +15,20 @@ const HomePage = () => {
         title="Rafif Sava Adyvka Pratama — Software Engineer & Systems Architect"
         description="Official portfolio of Rafif Sava Adyvka Pratama (Adyvka) — Software Engineer & Systems Architect. Polyglot builder engineering robust, scalable distributed systems across web, mobile, and cloud."
         path="/"
+        keywords={[
+          "Rafif Sava Adyvka Pratama",
+          "Rafif Sava",
+          "Adyvka",
+          "Adyvka Pratama",
+          "Software Engineer",
+          "Systems Architect",
+          "Polyglot Developer",
+          "Full Stack Engineer",
+          "Portfolio Adyvka",
+          "Databank ERP",
+          "IDN Boarding School",
+          "Harvard CS50",
+        ]}
       />
       <main id="top" style={{ position: "relative" }}>
         <HeroLayout />

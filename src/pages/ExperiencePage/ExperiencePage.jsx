@@ -120,12 +120,33 @@ export default function ExperiencePage() {
 
   const otherExperiences = allLeadershipExperiences;
 
+  const experienceCollectionKeywords = [
+    "Experience Rafif Sava Adyvka Pratama",
+    "Adyvka Work Experience",
+    "PT Intisel Prodaktifakom",
+    "Universitas Muhammadiyah Jakarta",
+    "PT Ardyanda Digital Inovasi",
+    "CV Richo Bahari",
+    "SMA Lazuardi GCS",
+    "SMPN 45 Depok",
+    "Hajrabyadl",
+    "Al Anshar",
+    "Live In Rural Immersion",
+    "International Backpacker",
+    "IDN Student Council",
+    "Barisan Muda Voluntrip",
+    "IT Fest 2025",
+    "Tech Educator",
+    "Software Engineer Career",
+  ];
+
   return (
     <PageShell>
       <SEO
         title="Experiences — Rafif Sava Adyvka Pratama"
-        description="Professional timeline and work experience of Rafif Sava Adyvka Pratama. Featuring roles in Full Stack development, ERP engineering at PT Intisel, and tech education."
+        description="Professional engineering timeline, corporate roles, technical educator outreach, and leadership experiences of Rafif Sava Adyvka Pratama (Adyvka)."
         path="/experience"
+        keywords={experienceCollectionKeywords}
       />
       <PageHero
         number="03"

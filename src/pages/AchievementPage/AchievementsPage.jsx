@@ -67,12 +67,24 @@ function TextContentCard({ item }) {
 export default function AchievementsPage() {
   const storyItems = allAchievements;
 
+  const achievementCollectionKeywords = [
+    "Achievements Rafif Sava Adyvka Pratama",
+    "Adyvka Awards",
+    "PNBITC#18 Politeknik Negeri Bali",
+    "Icomfest 2025 National Web Design",
+    "1st Place National Web Design Competition",
+    "2nd Place National Web Design Competition",
+    "National Technology Competitions Indonesia",
+    "Software Development Awards",
+  ];
+
   return (
     <PageShell>
       <SEO
         title="Achievements — Rafif Sava Adyvka Pratama"
-        description="Awards, milestones, and recognitions earned by Rafif Sava Adyvka Pratama. A record of dedication and high standards in software development."
+        description="National awards, software competition victories, and technological recognitions earned by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/achievements"
+        keywords={achievementCollectionKeywords}
       />
       <PageHero
         number="04"

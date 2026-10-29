@@ -1,7 +1,10 @@
+# robots.txt for https://adyvka-pratama.netlify.app/
 User-agent: *
 Allow: /
 
-# Pastikan bot tidak meng-index halaman 404
+# Prevent indexing error and dummy pages
 Disallow: /404
+Disallow: /achievements/dummy-new-achievement
 
+# Sitemap location
 Sitemap: https://adyvka-pratama.netlify.app/sitemap.xml

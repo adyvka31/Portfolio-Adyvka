@@ -170,13 +170,39 @@ export default function ProjectDetailPage() {
 
   const statusLabel = isProductionReady ? "Production Ready" : "In Active Development";
 
+  const projectTitle = detail?.title || project.title;
+  const projectSummary = detail?.summary || project.description;
+  const projectKeywords = [
+    projectTitle,
+    `${projectTitle} Rafif Sava Adyvka Pratama`,
+    `${projectTitle} Adyvka`,
+    "Software Engineering",
+    "System Architecture",
+    ...(project.tags || []),
+    ...(detail?.techStack?.map((t) => (typeof t === "string" ? t : t.name)) || []),
+  ];
+
+  const projectSchema = {
+    "@type": "SoftwareApplication",
+    "@id": `https://adyvka-pratama.netlify.app/projects/${project.slug}#software`,
+    name: projectTitle,
+    description: projectSummary,
+    applicationCategory: "BusinessApplication, DeveloperApplication",
+    operatingSystem: "Web, Cross-Platform, Cloud",
+    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    creator: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    keywords: projectKeywords.join(", "),
+  };
+
   return (
     <PageShell>
       <SEO
-        title={`${detail?.title || project.title} — Rafif Sava Adyvka Pratama`}
-        description={detail?.summary || project.description}
+        title={`${projectTitle} — Rafif Sava Adyvka Pratama`}
+        description={projectSummary}
         path={`/projects/${project.slug}`}
         type="article"
+        keywords={projectKeywords}
+        schema={projectSchema}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

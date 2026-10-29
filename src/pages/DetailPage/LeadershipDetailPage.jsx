@@ -88,6 +88,31 @@ export default function LeadershipDetailPage({
 
   const { prev, next } = getSiblings(allLeadershipExperiences, effectiveSlug);
 
+  const leadershipKeywords = [
+    effectiveTitle,
+    effectiveInstitution,
+    `${effectiveTitle} at ${effectiveInstitution}`,
+    `${effectiveInstitution} Rafif Sava Adyvka Pratama`,
+    `${effectiveInstitution} Adyvka`,
+    "Leadership Experience",
+    "Community Experience",
+    ...(item?.tags || []),
+    ...(detail?.competencies || []),
+  ];
+
+  const leadershipSchema = {
+    "@type": "Article",
+    "@id": `https://adyvka-pratama.netlify.app/experience/${effectiveSlug}#leadership`,
+    headline: `${effectiveTitle} at ${effectiveInstitution}`,
+    description: effectiveSummary,
+    author: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    publisher: {
+      "@type": "Organization",
+      name: effectiveInstitution,
+    },
+    keywords: leadershipKeywords.join(", "),
+  };
+
   return (
     <PageShell>
       <SEO
@@ -95,6 +120,8 @@ export default function LeadershipDetailPage({
         description={effectiveSummary}
         path={`/experience/${effectiveSlug}`}
         type="article"
+        keywords={leadershipKeywords}
+        schema={leadershipSchema}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

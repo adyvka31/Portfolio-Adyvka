@@ -298,6 +298,17 @@ export default function AboutPage() {
         title="About — Rafif Sava Adyvka Pratama"
         description="Learn more about Rafif Sava Adyvka Pratama (Adyvka) — Software Engineer & Systems Architect specializing in clean architecture, polyglot development, and distributed systems."
         path="/about"
+        type="profile"
+        keywords={[
+          "About Rafif Sava Adyvka Pratama",
+          "Adyvka Biography",
+          "Adyvka Background",
+          "Rafif Sava Career",
+          "PT Intisel Databank ERP Lead",
+          "SMK IDN Boarding School",
+          "Harvard CS50 Alumni",
+          "Software Architect Indonesia",
+        ]}
       />
       <PageHero
         number="01"

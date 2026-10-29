@@ -86,6 +86,32 @@ export default function AchievementDetailPage({
 
   const { prev, next } = getSiblings(allAchievements, effectiveSlug);
 
+  const achievementKeywords = [
+    effectiveTitle,
+    `${effectiveTitle} Rafif Sava Adyvka Pratama`,
+    `${effectiveTitle} Adyvka`,
+    effectiveInstitution,
+    `${effectiveInstitution} Rafif Sava`,
+    "National Competition",
+    "Award Winner",
+    ...(item?.tags || []),
+  ];
+
+  const achievementSchema = {
+    "@type": "CreativeWork",
+    "@id": `https://adyvka-pratama.netlify.app/achievements/${effectiveSlug}#award`,
+    name: effectiveTitle,
+    headline: effectiveTitle,
+    description: effectiveSummary,
+    award: detail?.badge || "National Recognition",
+    provider: {
+      "@type": "Organization",
+      name: effectiveInstitution,
+    },
+    creator: { "@id": "https://adyvka-pratama.netlify.app/#person" },
+    keywords: achievementKeywords.join(", "),
+  };
+
   return (
     <PageShell>
       <SEO
@@ -93,6 +119,8 @@ export default function AchievementDetailPage({
         description={effectiveSummary}
         path={`/achievements/${effectiveSlug}`}
         type="article"
+        keywords={achievementKeywords}
+        schema={achievementSchema}
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}

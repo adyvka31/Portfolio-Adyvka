@@ -1,8 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { getAllRoutes } from "./src/data/routesManifest.js";
 
 export default defineConfig({
   plugins: [react()],
+  ssgOptions: {
+    includedRoutes(paths, routes) {
+      return getAllRoutes();
+    },
+  },
   build: {
     rollupOptions: {
       output: {
