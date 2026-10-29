@@ -24,7 +24,7 @@ function TextContentCard({ item }) {
 
       <p className={local.description}>
         {item.description ||
-          "Sebuah bukti nyata dari eksekusi teknis yang presisi, pemecahan masalah kompleks, dan dedikasi terhadap standar kualitas tertinggi."}
+          "A tangible testament to precise technical execution, complex problem solving, and an uncompromising commitment to engineering excellence."}
       </p>
 
       <ul className={local.tags} aria-label="Skills and topics">
@@ -65,7 +65,7 @@ function TextContentCard({ item }) {
 }
 
 export default function AchievementsPage() {
-  const storyItems = allAchievements.slice(0, 3);
+  const storyItems = allAchievements;
 
   return (
     <PageShell>

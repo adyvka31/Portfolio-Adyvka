@@ -111,7 +111,7 @@ export default function CertificatesPage() {
         label="Certificates"
         title="Verified knowledge."
         italicWord="Verified"
-        description="Koleksi sertifikasi dan lisensi profesional yang membuktikan kompetensi teknis, kredibilitas, dan komitmen saya terhadap pembelajaran berkelanjutan."
+        description="A curated collection of verified professional certifications and credentials demonstrating technical rigor, industry standards, and continuous learning."
       />
 
       <section className={local.gridSection} aria-label="Certificate Gallery">

@@ -10,22 +10,29 @@ import Tag from "../../components/Tag/Tag";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import {
   experiencesList,
-  recognitionData,
-  extraTeachingExperiences,
-  extraOtherExperiences,
+  allTeachingExperiences,
+  allLeadershipExperiences,
 } from "../../data/portfolio";
 import styles from "./ExperiencePage.module.css";
 import Image from "../../components/Image/Image";
 
 function ExperienceBentoCard({ item }) {
   const spotlight = useCardSpotlight();
+  const linkHref = item.slug ? `/experience/${item.slug}` : null;
 
   return (
     <article
-      className={`card glass ${styles.card}`}
+      className={`card glass ${styles.card} ${linkHref ? styles.cardClickable : ""}`}
       {...spotlight}
       aria-label={`Experience: ${item.title}`}
     >
+      {linkHref && (
+        <Link
+          to={linkHref}
+          className={styles.bentoLinkOverlay}
+          aria-label={`View details for ${item.title} at ${item.institution}`}
+        />
+      )}
       <div className={styles.imageContainer}>
         <Image
           src={item.image}
@@ -55,13 +62,21 @@ function ExperienceBentoCard({ item }) {
         <h3 className={styles.title}>{item.title}</h3>
         <p className={styles.description}>{item.description}</p>
 
-        <ul className={styles.tagWrapper} aria-label="Skills and technologies">
-          {item.tags?.map((tag) => (
-            <li key={tag} style={{ listStyle: "none" }}>
-              <Tag size="xs">{tag}</Tag>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.cardBottomRow}>
+          <ul className={styles.tagWrapper} aria-label="Skills and technologies">
+            {item.tags?.map((tag) => (
+              <li key={tag} style={{ listStyle: "none" }}>
+                <Tag size="xs">{tag}</Tag>
+              </li>
+            ))}
+          </ul>
+          {linkHref && (
+            <span className={styles.cardCta} aria-hidden="true">
+              <span>Read story</span>
+              <span className={styles.cardCtaArrow}>→</span>
+            </span>
+          )}
+        </div>
       </div>
     </article>
   );
@@ -84,17 +99,7 @@ export default function ExperiencePage() {
   };
 
   const workExperiences = experiencesList;
-
-  const baseTeachingExperiences = recognitionData.experience.filter(
-    (exp) =>
-      exp.title.toLowerCase().includes("instructor") ||
-      exp.title.toLowerCase().includes("teaching"),
-  );
-
-  const teachingExperiencesRaw = [
-    ...baseTeachingExperiences,
-    ...extraTeachingExperiences,
-  ];
+  const teachingExperiencesRaw = allTeachingExperiences;
 
   const teachingTabs = ["All", "Game Development", "Web Development", "Other"];
 
@@ -113,13 +118,7 @@ export default function ExperiencePage() {
     return true;
   });
 
-  const baseOther = recognitionData.experience.filter(
-    (exp) =>
-      !exp.title.toLowerCase().includes("instructor") &&
-      !exp.title.toLowerCase().includes("teaching"),
-  );
-
-  const otherExperiences = [...baseOther, ...extraOtherExperiences];
+  const otherExperiences = allLeadershipExperiences;
 
   return (
     <PageShell>

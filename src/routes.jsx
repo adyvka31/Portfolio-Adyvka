@@ -16,6 +16,12 @@ const ExperiencePage = lazy(
 const ExperienceDetailPage = lazy(
   () => import("./pages/DetailPage/ExperienceDetailPage"),
 );
+const TeachingDetailPage = lazy(
+  () => import("./pages/DetailPage/TeachingDetailPage"),
+);
+const LeadershipDetailPage = lazy(
+  () => import("./pages/DetailPage/LeadershipDetailPage"),
+);
 const AchievementsPage = lazy(
   () => import("./pages/AchievementPage/AchievementsPage"),
 );
@@ -41,6 +47,8 @@ export const routes = [
       { path: "projects/:slug", element: <ProjectDetailPage /> },
       { path: "experience", element: <ExperiencePage /> },
       { path: "experience/:slug", element: <ExperienceDetailPage /> },
+      { path: "teaching/:slug", element: <TeachingDetailPage /> },
+      { path: "leadership/:slug", element: <LeadershipDetailPage /> },
       { path: "achievements", element: <AchievementsPage /> },
       { path: "achievements/:slug", element: <AchievementDetailPage /> },
       { path: "certificates", element: <CertificatesPage /> },

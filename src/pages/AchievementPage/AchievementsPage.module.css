@@ -18,25 +18,6 @@
 .timelineLine {
   display: none;
 }
-@media (min-width: 1024px) {
-  .timelineLine {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 1px;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(124, 242, 255, 0.1) 20%,
-      rgba(124, 242, 255, 0.1) 80%,
-      transparent
-    );
-    z-index: 1;
-    transform: translateX(-50%);
-  }
-}
 
 .storyBlock {
   position: relative;
@@ -61,13 +42,13 @@
   pointer-events: none;
 }
 
-/* --- PERUBAHAN GRID: TEKS LEBIH LEBAR, GAMBAR LEBIH KECIL --- */
+/* --- LAYOUT 60:40 BERDAMPINGAN DENGAN TINGGI SEJAJAR (60 TEKS & 40 GAMBAR) --- */
 @media (min-width: 1024px) {
   .storyBlock {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    align-items: center;
-    gap: 0;
+    align-items: stretch; /* Menyamakan tinggi gambar dan card 100% sama rata */
+    gap: clamp(2rem, 3.5vw, 3.5rem);
   }
 
   .giantNumber {
@@ -76,15 +57,21 @@
   }
 
   .imageColumn {
-    grid-column: 1 / 6;
+    grid-column: 1 / 6; /* Gambar: 5 kolom (40%) */
     grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     z-index: 1;
   }
 
   .textColumn {
-    grid-column: 5 / 13;
+    grid-column: 6 / 13; /* Card Teks: 7 kolom (60%) */
     grid-row: 1;
-    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 2;
   }
 
   .storyBlock.reverse .giantNumber {
@@ -93,11 +80,13 @@
   }
 
   .storyBlock.reverse .imageColumn {
-    grid-column: 8 / 13;
+    grid-column: 8 / 13; /* Gambar: 5 kolom (40%) di sisi kanan */
+    grid-row: 1;
   }
 
   .storyBlock.reverse .textColumn {
-    grid-column: 1 / 9;
+    grid-column: 1 / 8; /* Card Teks: 7 kolom (60%) di sisi kiri */
+    grid-row: 1;
   }
 }
 
@@ -106,12 +95,22 @@
   display: block;
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.02);
   outline: none; /* Serahkan visual focus pada komponen utama */
+}
+
+@media (min-width: 1024px) {
+  .imageWrap {
+    aspect-ratio: unset; /* Lepaskan rasio kaku di desktop agar mengisi tinggi penuh card */
+    height: 100%;
+    min-height: 100%;
+    flex: 1 1 auto;
+    position: relative;
+  }
 }
 
 .imageWrap::after {
@@ -125,6 +124,8 @@
 }
 
 .image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -156,6 +157,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .meta {
@@ -217,7 +219,7 @@
 }
 
 .actionWrapper {
-  margin-top: 1.5rem;
+  margin-top: auto;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }

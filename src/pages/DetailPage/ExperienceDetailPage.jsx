@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate, Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
@@ -13,9 +14,22 @@ import {
   ArrowRightIcon,
   ArrowUpRightIcon,
   CheckIcon,
+  MaximizeIcon,
+  XIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "../../components/Icons/Icons";
-import { experiencesList, getSiblings } from "../../data/portfolio";
+import {
+  experiencesList,
+  allTeachingExperiences,
+  allLeadershipExperiences,
+  getSiblings,
+} from "../../data/portfolio";
 import { experienceDetails } from "../../data/experienceDetails";
+import { teachingDetails } from "../../data/teachingDetails";
+import { leadershipDetails } from "../../data/leadershipDetails";
+import TeachingDetailPage from "./TeachingDetailPage";
+import LeadershipDetailPage from "./LeadershipDetailPage";
 import styles from "./ExperienceDetailPage.module.css";
 
 function renderBodyBlock(block, idx) {
@@ -36,6 +50,57 @@ export default function ExperienceDetailPage() {
   const { slug } = useParams();
   const experience = experiencesList.find((e) => e.slug === slug);
   const detail = experienceDetails[slug];
+
+  const teachingItem = allTeachingExperiences.find((t) => t.slug === slug);
+  const teachingDetail = teachingDetails[slug];
+
+  if (!experience && (teachingItem || teachingDetail)) {
+    return <TeachingDetailPage item={teachingItem} detail={teachingDetail} slug={slug} />;
+  }
+
+  const leadershipItem =
+    allLeadershipExperiences.find((l) => l.slug === slug) ||
+    allLeadershipExperiences.find((l) => {
+      const lowerSlug = slug?.toLowerCase() || "";
+      return (
+        l.slug.toLowerCase().includes(lowerSlug) ||
+        (lowerSlug.includes("backpacker") && l.slug.includes("backpacker")) ||
+        (lowerSlug.includes("osis") && l.slug.includes("student-council")) ||
+        (lowerSlug.includes("barmus") && l.slug.includes("barmus")) ||
+        (lowerSlug.includes("survival") && l.slug.includes("survival")) ||
+        (lowerSlug.includes("itfest") && l.slug.includes("it-fest")) ||
+        (lowerSlug.includes("live") && l.slug.includes("live-in")) ||
+        (lowerSlug.includes("mission") && (l.slug.includes("live-in") || l.slug.includes("mission-impossible")))
+      );
+    });
+  const leadershipDetail =
+    (slug && leadershipDetails[slug]) ||
+    (leadershipItem?.slug && leadershipDetails[leadershipItem.slug]);
+
+  if (!experience && !teachingItem && (leadershipItem || leadershipDetail)) {
+    return <LeadershipDetailPage item={leadershipItem} detail={leadershipDetail} slug={slug} />;
+  }
+
+  const [activePhotoIdx, setActivePhotoIdx] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (activePhotoIdx === null || !detail?.documentation) return;
+      if (e.key === "Escape") setActivePhotoIdx(null);
+      if (e.key === "ArrowLeft") {
+        setActivePhotoIdx((prev) =>
+          prev > 0 ? prev - 1 : detail.documentation.length - 1
+        );
+      }
+      if (e.key === "ArrowRight") {
+        setActivePhotoIdx((prev) =>
+          prev < detail.documentation.length - 1 ? prev + 1 : 0
+        );
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activePhotoIdx, detail?.documentation]);
 
   if (!experience) return <Navigate to="/experience" replace />;
 
@@ -139,32 +204,35 @@ export default function ExperienceDetailPage() {
               </div>
             </NativeReveal>
 
-            {detail.story.quote && (
-              <NativeReveal delay={0.05}>
-                <blockquote className={styles.quoteCard}>
-                  <p className={styles.quoteText}>"{detail.story.quote}"</p>
-                  <footer className={styles.quoteAuthor}>
-                    — Rafif Sava Adyvka Pratama
-                  </footer>
-                </blockquote>
-              </NativeReveal>
-            )}
+            <div className={styles.storyWrap}>
+              {detail.story.quote && (
+                <NativeReveal delay={0.05}>
+                  <div className={styles.storyQuoteBox}>
+                    <blockquote className={styles.storyQuote}>
+                      "{detail.story.quote}"
+                    </blockquote>
+                  </div>
+                </NativeReveal>
+              )}
 
-            {detail.story.chapters && (
-              <NativeReveal delay={0.1}>
+              {detail.story.chapters && (
                 <div className={styles.storyGrid}>
                   {detail.story.chapters.map((ch, idx) => (
-                    <article key={idx} className={styles.storyCard}>
-                      <div className={styles.storyCardHeader}>
-                        <span className={styles.storyChapterNum}>{ch.chapter}</span>
-                        <h3 className={styles.storyChapterTitle}>{ch.title}</h3>
-                      </div>
-                      <p className={styles.storyContent}>{ch.content}</p>
-                    </article>
+                    <NativeReveal key={ch.chapter || idx} delay={idx * 0.08}>
+                      <article className={styles.storyCard}>
+                        <div className={styles.storyCardHeader}>
+                          <span className={styles.storyChapterNum}>
+                            Chapter {ch.chapter}
+                          </span>
+                          <h3 className={styles.storyChapterTitle}>{ch.title}</h3>
+                        </div>
+                        <p className={styles.storyContent}>{ch.content}</p>
+                      </article>
+                    </NativeReveal>
                   ))}
                 </div>
-              </NativeReveal>
-            )}
+              )}
+            </div>
           </div>
         </section>
       )}
@@ -251,30 +319,50 @@ export default function ExperienceDetailPage() {
         </section>
       )}
 
-      {/* ACT 4: CREDITS & MENTORSHIP */}
-      {detail?.credits && (
-        <section className={`${styles.section} ${styles.sectionAlt}`}>
+      {/* ON-SITE DOCUMENTATION & ARCHIVES */}
+      {detail?.documentation && detail.documentation.length > 0 && (
+        <section className={styles.section}>
           <div className={styles.container}>
             <NativeReveal>
               <div className={styles.sectionHeader}>
-                <SectionLabel number="04" label="COLLABORATION & MENTORSHIP" />
+                <SectionLabel number="04" label="ON-SITE DOCUMENTATION & ARCHIVES" />
                 <h2 className={styles.sectionTitle}>
-                  {detail.creditsTitle || "Team & Project Partners."}
+                  {detail.documentationTitle || "Field Records & On-Site Documentation."}
                 </h2>
                 <p className={styles.sectionLead}>
-                  {detail.creditsLead ||
-                    "Grateful for the guidance, partnership, and institutional trust that made this milestone possible."}
+                  {detail.documentationLead ||
+                    "Authentic glimpses into live client meetings, development sessions, team collaboration, and daily engineering environments."}
                 </p>
               </div>
             </NativeReveal>
 
             <NativeReveal delay={0.1}>
-              <div className={styles.creditsGrid}>
-                {detail.credits.map((c, idx) => (
-                  <article key={idx} className={styles.creditCard}>
-                    <div className={styles.creditRole}>{c.role}</div>
-                    <h3 className={styles.creditName}>{c.name}</h3>
-                    <p className={styles.creditDesc}>{c.desc}</p>
+              <div className={styles.docGrid}>
+                {detail.documentation.map((item, idx) => (
+                  <article
+                    key={item.id || idx}
+                    className={styles.docCard}
+                    onClick={() => setActivePhotoIdx(idx)}
+                  >
+                    <div className={styles.docMediaWrap}>
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        className={styles.docImage}
+                        width={640}
+                        height={400}
+                      />
+                      <div className={styles.docExpandBtn} aria-label="Expand image">
+                        <MaximizeIcon size={14} />
+                      </div>
+                      {item.tag && (
+                        <span className={styles.docBadge}>{item.tag}</span>
+                      )}
+                    </div>
+                    <div className={styles.docInfo}>
+                      <h3 className={styles.docTitle}>{item.title}</h3>
+                      <p className={styles.docDesc}>{item.desc}</p>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -396,6 +484,89 @@ export default function ExperienceDetailPage() {
 
       <PrevNextNav prev={prev} next={next} baseUrl="/experience" />
       <BottomCTA />
+
+      {/* FULLSCREEN LIGHTBOX MODAL */}
+      {activePhotoIdx !== null && detail?.documentation?.[activePhotoIdx] && (
+        <div
+          className={styles.lightboxBackdrop}
+          onClick={() => setActivePhotoIdx(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className={styles.lightboxContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className={styles.lightboxHeader}>
+              <div className={styles.lightboxMeta}>
+                <span className={styles.lightboxTag}>
+                  {detail.documentation[activePhotoIdx].tag || "Field Record"}
+                </span>
+                <span className={styles.lightboxCounter}>
+                  {activePhotoIdx + 1} / {detail.documentation.length}
+                </span>
+              </div>
+              <button
+                className={styles.lightboxCloseBtn}
+                onClick={() => setActivePhotoIdx(null)}
+                aria-label="Close image modal"
+              >
+                <XIcon size={18} />
+              </button>
+            </div>
+
+            <div className={styles.lightboxImageWrap}>
+              <img
+                src={
+                  typeof detail.documentation[activePhotoIdx].image === "object"
+                    ? detail.documentation[activePhotoIdx].image.img?.src ||
+                      detail.documentation[activePhotoIdx].image
+                    : detail.documentation[activePhotoIdx].image
+                }
+                alt={detail.documentation[activePhotoIdx].title}
+                className={styles.lightboxImage}
+              />
+              {detail.documentation.length > 1 && (
+                <>
+                  <button
+                    className={`${styles.lightboxNavBtn} ${styles.lightboxNavPrev}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActivePhotoIdx((prev) =>
+                        prev > 0 ? prev - 1 : detail.documentation.length - 1
+                      );
+                    }}
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeftIcon size={20} />
+                  </button>
+                  <button
+                    className={`${styles.lightboxNavBtn} ${styles.lightboxNavNext}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActivePhotoIdx((prev) =>
+                        prev < detail.documentation.length - 1 ? prev + 1 : 0
+                      );
+                    }}
+                    aria-label="Next image"
+                  >
+                    <ChevronRightIcon size={20} />
+                  </button>
+                </>
+              )}
+            </div>
+
+            <div className={styles.lightboxFooter}>
+              <h4 className={styles.lightboxTitle}>
+                {detail.documentation[activePhotoIdx].title}
+              </h4>
+              <p className={styles.lightboxDesc}>
+                {detail.documentation[activePhotoIdx].desc}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </PageShell>
   );
 }

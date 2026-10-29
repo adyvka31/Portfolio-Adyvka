@@ -2,6 +2,19 @@ import kepkImg from "../assets/kepk.webp";
 import databankImg from "../assets/databank.webp";
 import richobahariImg from "../assets/richobahari.webp";
 
+// Field & on-site documentation archives
+import ptardyanda1 from "../assets/ptardyanda/ptardyanda1.webp";
+import ptardyanda2 from "../assets/ptardyanda/ptardyanda2.webp";
+import ptardyanda3 from "../assets/ptardyanda/ptardyanda3.webp";
+
+import ptintisel1 from "../assets/ptintisel/ptintisel1.webp";
+import ptintisel2 from "../assets/ptintisel/ptintisel2.webp";
+import ptintisel3 from "../assets/ptintisel/ptintisel3.webp";
+
+import umj1 from "../assets/umj/umj1.webp";
+import umj2 from "../assets/umj/umj2.webp";
+import umj3 from "../assets/umj/umj3.webp";
+
 // Indexed by the slug generated in portfolio.js (slugify(`${company}-${role}`))
 export const experienceDetails = {
   "pt-ardyanda-digital-inovasi-full-stack-developer-internship": {
@@ -110,9 +123,9 @@ export const experienceDetails = {
         tag: "Frontend & Client Liaison",
         desc: "Supported frontend development across corporate websites, company profiles, and e-commerce platforms, representing the engineering team in client requirement syncs.",
         points: [
-          "Built responsive, accessible frontend views translating Figma UI/UX designs into pixel-perfect web interfaces",
-          "Represented the developer team in stakeholder alignment calls, clarifying technical feasibility and delivery roadmaps",
-          "Bridged communication gaps between business requirements, design prototypes, and backend data contracts",
+          "Developed responsive, accessible user interfaces following Figma component guidelines and brand design systems",
+          "Represented the development team in client stakeholder meetings to translate business requirements into technical specs",
+          "Collaborated closely with designers and project managers to ensure zero misalignment between design and code",
         ],
       },
       {
@@ -164,6 +177,32 @@ export const experienceDetails = {
         desc: "Designed a rigorous curriculum dedicating the final year to full-time enterprise immersion, pushing students to compete and excel in the real tech industry.",
       },
     ],
+    documentationTitle: "Corporate Life & Engineering Records",
+    documentationLead:
+      "A look into our daily engineering sprints, all-hands cultural celebrations, and the office environment at PT Ardyanda Digital Inovasi.",
+    documentation: [
+      {
+        id: "ardyanda-all-hands",
+        image: ptardyanda1,
+        tag: "All-Hands Culture",
+        title: "Company Batik Day & Department Gathering",
+        desc: "All-hands gathering with the entire engineering, design, and management family at the PT Ardyanda Digital Inovasi office.",
+      },
+      {
+        id: "ardyanda-workstation",
+        image: ptardyanda2,
+        tag: "Engineering Sprint",
+        title: "Local Development & Infrastructure Workstation",
+        desc: "Active development workstation running local builds, REST APIs, and enterprise cloud infrastructure for client systems.",
+      },
+      {
+        id: "ardyanda-independence-day-mc",
+        image: ptardyanda3,
+        tag: "17 Agustus & Company MC",
+        title: "Indonesian Independence Day & Master of Ceremonies",
+        desc: "Serving as Master of Ceremonies (MC) and core event committee during PT Ardyanda's Indonesian Independence Day celebration—leading festivities, engaging senior leadership and colleagues, and proving that an engineer's impact goes far beyond the terminal.",
+      },
+    ],
     privacyBanner: {
       badge: "Enterprise Confidentiality & NDA Standard",
       title: "Proprietary Enterprise & Client Infrastructure",
@@ -197,6 +236,9 @@ export const experienceDetails = {
   get "pt-ardyanda-digital-inovasi-full-stack-developer-intern"() {
     return this["pt-ardyanda-digital-inovasi-full-stack-developer-internship"];
   },
+  get "pt-ardyanda-digital-inovasi-full-stack-developer"() {
+    return this["pt-ardyanda-digital-inovasi-full-stack-developer-internship"];
+  },
   get "pt-ardyanda-digital-inovasi"() {
     return this["pt-ardyanda-digital-inovasi-full-stack-developer-internship"];
   },
@@ -208,7 +250,7 @@ export const experienceDetails = {
     subtitle: "CV. Richo Bahari (General Contractor & Industrial Engineering)",
     roleTitle: "Lead Frontend Engineer & UI/UX Architect",
     statusBadge: "Production Live (Freelance)",
-    period: "May 2026 — Present",
+    period: "May 2026 — Aug 2026",
     summary:
       "Commissioned by CentraDev to lead the frontend engineering and UI/UX architecture for CV. Richo Bahari, an established industrial general contractor operating across West Java and Jabodetabek. Transformed scattered PDF brochures and unorganized worksite photo archives into an enterprise-grade digital flagship built on Next.js 16, React 19, and Tailwind CSS v4—dignifying years of real physical labor, heavy steel fabrication, and strict K3 Zero Accident safety standards.",
     meta: [
@@ -216,7 +258,7 @@ export const experienceDetails = {
       { label: "Client / Entity", value: "CV. Richo Bahari (Industrial General Contractor)" },
       { label: "Agency / Team", value: "CentraDev Team" },
       { label: "Engagement", value: "Freelance (Production Live)" },
-      { label: "Period", value: "May 2026 — Present" },
+      { label: "Period", value: "May 2026 — Aug 2026" },
       { label: "Tech Stack", value: "Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript" },
     ],
     kpis: [
@@ -409,7 +451,7 @@ export const experienceDetails = {
       { label: "Organization", value: "PT Intisel Prodaktifakom (Telecom Contractor)" },
       { label: "Engagement", value: "Freelance (Extended from 3-Month UJIKOM to 9 Mos)" },
       { label: "Period", value: "Feb 2026 — Present · 9 mos (Active)" },
-      { label: "Team", value: "Rafif Sava Adyvka (Backend & PM), Moreno Ibrahim (Frontend)" },
+      { label: "Team", value: "Rafif Sava Adyvka (Full Stack), Moreno Ibrahim (Frontend)" },
       { label: "Tech Stack", value: "React, CSS Native, NestJS, Prisma ORM, PostgreSQL" },
     ],
     kpis: [
@@ -568,6 +610,32 @@ export const experienceDetails = {
         desc: "Challenged students to solve real-world problems for real industry clients rather than submitting theoretical toy assignments.",
       },
     ],
+    documentationTitle: "Field Coordination & Live Engineering",
+    documentationLead:
+      "Photographic archives documenting offline stakeholder progress meetings and live backend development for Databank ERP.",
+    documentation: [
+      {
+        id: "intisel-stakeholder-sync-1",
+        image: ptintisel1,
+        tag: "Stakeholder Coordination",
+        title: "Offline Client Meeting & Progress Review",
+        desc: "Progress alignment and sprint review session with PT Intisel's client representative alongside co-engineer Moreno Ibrahim.",
+      },
+      {
+        id: "intisel-huawei-sync",
+        image: ptintisel2,
+        tag: "Telecom Pipeline",
+        title: "Huawei ISDP Auto-Merge Bot Development",
+        desc: "Live development environment and terminal output running background synchronization of 58 telecom site records into PostgreSQL.",
+      },
+      {
+        id: "intisel-stakeholder-sync-2",
+        image: ptintisel3,
+        tag: "System Walkthrough",
+        title: "PO & Outsource Workflow Demonstration",
+        desc: "Direct walkthrough showcasing sequential Purchase Order approvals, billing reconciliation, and field vendor management directly to the client.",
+      },
+    ],
     stack: [
       "React",
       "CSS Native",
@@ -649,53 +717,31 @@ export const experienceDetails = {
         },
         {
           chapter: "02",
-          title: "Architectural Re-Engineering & Division of Work",
+          title: "The Reality Check & Architectural Shift",
           content:
-            "The project demanded rigorous technical execution. We were commissioned to build a full-stack Academic Research Management System from scratch, aimed at digitizing the workflow for the Faculty of Medicine's Research Ethics Committee (KEPK). Their legacy platform suffered from critical security flaws and severe performance bottlenecks, forcing my teammate and me to redesign the entire architecture. We divided the workload strategically—I focused on engineering the secure student submission portal and evaluation tools for lecturers, while we jointly developed a Role-Based Access Control (RBAC) system for the secretariat. By leveraging Laravel, Tailwind CSS, MySQL, and AWS infrastructure, we delivered a platform that was not only robust and highly secure but also intuitive for everyday academic users.",
+            "Our initial mission seemed straightforward: modernize an existing repository with UI enhancements. However, inspecting the legacy source code revealed severe security flaws, broken relational integrity, and unmaintainable technical debt. Making a critical architectural call, our 2-person team pitched a complete rebuild from scratch using Laravel 12, MySQL, and Tailwind CSS. We designed a normalized relational database schema from the ground up, built secure authentication with granular Spatie RBAC, and implemented structured state transitions.",
         },
         {
           chapter: "03",
-          title: "Production Delivery & Mindset Transformation",
+          title: "Production Deployment & Measurable Impact",
           content:
-            "Bringing this system to life required absolute dedication and countless late nights. Throughout the 4-month development process, I had to balance multiple projects, academic targets, a busy boarding school schedule, student organization leadership duties, and regular monthly offline synchronization meetings with university stakeholders. Seeing the platform go live and instantly streamline the university's entire ethical clearance process was a surreal reward. I stood there in disbelief, realizing that as an 11th-grade vocational student, my team and I had successfully fulfilled an enterprise-level contract—proving that taking on massive responsibilities unlocks latent potential.",
+            "After four months of rigorous development, testing, and continuous feedback loops with university administrators, we successfully deployed the production platform on AWS infrastructure. The medical faculty achieved a 100% paperless workflow for WHO/CIOMS 2016 ethical clearance, reducing certificate issuance turnaround from weeks to days. Beyond dramatically increasing the faculty's operational efficiency, this breakthrough proved that when you have the courage to shoulder massive responsibilities, you unlock potential you never knew you had.",
         },
       ],
     },
-    contributionsTitle: "Key Architectural Contributions.",
+    contributionsTitle: "Key Architectural Deliverables & Production Modules",
     contributionsLead:
-      "End-to-end responsibilities and modules delivered to digitize the university's medical ethics review workflow.",
+      "Core features and engineering systems engineered from scratch to digitize the medical research ethics lifecycle.",
     contributions: [
       {
-        id: "submission-portal",
-        title: "Research Submission Portal & Wizard",
-        tag: "Student & Investigator",
-        desc: "Designed and implemented a secure submission portal enabling students and researchers to submit protocols, select ethical review classifications, and track dossier reviews in real time.",
+        id: "multi-role-clearance",
+        title: "Multi-Role Ethical Clearance Lifecycle Workflow",
+        tag: "Core Workflow",
+        desc: "Architected a sequential ethical clearance submission pipeline supporting dynamic protocol routing between initial submission, administrative screening, expedited/full-board reviewer evaluation, and final ethical clearance certification.",
         points: [
-          "Progressive 3-stage draft mode allowing researchers to save progress without form validation blockers",
-          "Dynamic routing for 4 specialized research subtypes: Clinical, Non-Clinical, Animal Testing, and Social",
-          "Digital checklist and file manager for 10 mandatory supporting attachments (proposals, consent, vouchers)",
-        ],
-      },
-      {
-        id: "lecturer-evaluation",
-        title: "Lecturer Evaluation & Review Tools",
-        tag: "Faculty Reviewers",
-        desc: "Built structured assessment and review interfaces allowing faculty members to evaluate submitted proposals chapter by chapter, coordinate revision cycles, and determine ethical outcomes.",
-        points: [
-          "Chapter-by-chapter AJAX evaluation allowing asynchronous scoring and qualitative comments without reloads",
-          "Structured point-by-point correction matrix comparing original submissions with researcher answers",
-          "Tri-state recommendation workflow: Approved (Layak Etik), Needs Revision, or Rejected",
-        ],
-      },
-      {
-        id: "secretariat-workflow",
-        title: "Secretariat Workflow & Quorum Governance",
-        tag: "Administrative Engine",
-        desc: "Implemented a comprehensive workflow governance engine enabling secretariat staff to audit administrative completeness, classify risk pathways, and appoint review committees.",
-        points: [
-          "Administrative completeness audit separating submitted dossiers into Verified or Revision Needed",
-          "3-Tier risk pathway classification triaging protocols into Exempted, Expedited, or Full Board",
-          "24-Hour reviewer assignment cooldown guard preventing committee burnout and workload skew",
+          "Complete WHO/CIOMS 2016 7-standard protocol evaluation form with autosave and live validation",
+          "Automated reviewer assignment algorithm routing protocols based on department and expertise",
+          "Sequential multi-role state machine managing transitions between 6 user roles",
         ],
       },
       {
@@ -767,6 +813,32 @@ export const experienceDetails = {
         name: "Faculty of Medicine, UMJ",
         role: "Institutional Client & Ethics Committee",
         desc: "Entrusted two 11th-grade vocational students with modernizing the digital infrastructure for their Research Ethics Committee.",
+      },
+    ],
+    documentationTitle: "On-Site Presentations & Secretariat Sprints",
+    documentationLead:
+      "Capturing our ethics committee system presentation, on-site blade template coding, and database architecture sessions at the Faculty of Medicine.",
+    documentation: [
+      {
+        id: "umj-executive-presentation",
+        image: umj1,
+        tag: "Stakeholder Presentation",
+        title: "Executive Ethics Committee Platform Presentation",
+        desc: "Presenting the live SIM KEPK platform to medical faculty leadership, ethics committee members, and mentors in the official meeting room.",
+      },
+      {
+        id: "umj-secretariat-coding",
+        image: umj2,
+        tag: "On-Site Sprint",
+        title: "Secretariat Office View & Blade Template Engineering",
+        desc: "Live coding session inside the Research Ethics Committee secretariat office, surrounded by years of paper archives being digitized.",
+      },
+      {
+        id: "umj-database-architecture",
+        image: umj3,
+        tag: "Core Engineering",
+        title: "Database Migration & Permission Schema Architecture",
+        desc: "Architecting granular Spatie RBAC permission tables and migrations on MacBook during an on-site stakeholder synchronization meeting.",
       },
     ],
     stack: [

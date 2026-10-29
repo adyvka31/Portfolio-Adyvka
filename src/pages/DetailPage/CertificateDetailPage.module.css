@@ -1,0 +1,567 @@
+/* src/pages/DetailPage/CertificateDetailPage.module.css */
+
+/* ==========================================================================
+   SUBNAV STICKY BAR
+   ========================================================================== */
+.subnav {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 40;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(7, 7, 8, 0.85);
+  border-bottom: 1px solid var(--line);
+  transition: all 0.3s ease;
+}
+
+.subnavInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.backBtn {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8125rem;
+  color: var(--ink-200);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.backBtn:hover {
+  color: var(--accent-glow);
+  transform: translateX(-3px);
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+  padding: 0.35rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+}
+
+.statusPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+.subnavAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-200);
+  text-decoration: none;
+  padding: 0.35rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.subnavAction:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   CONTAINER HELPER
+   ========================================================================== */
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   FULL-WIDTH CERTIFICATE SHOWCASE SECTION
+   ========================================================================== */
+.certificateSection {
+  width: 100%;
+  padding: 1rem 0 2.5rem;
+}
+
+.fullWidthCertCard {
+  position: relative;
+  width: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: rgba(14, 14, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fullWidthCertCard:hover {
+  border-color: rgba(124, 242, 255, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(124, 242, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* CHROME BAR (MACOS / BROWSER STYLE) */
+.certChrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  background: rgba(20, 20, 24, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chromeDots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background: #ff5f56;
+}
+
+.dotYellow {
+  background: #ffbd2e;
+}
+
+.dotGreen {
+  background: #27c93f;
+}
+
+.chromeTitle {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-300);
+  letter-spacing: 0.02em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+
+.chromeRight {
+  display: flex;
+  align-items: center;
+}
+
+.verifiedPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* CERTIFICATE IMAGE WRAP (FULL-WIDTH PRESENTATION) */
+.certImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 640px;
+  background: #070709;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .certImageWrap {
+    aspect-ratio: 4 / 3;
+    max-height: 380px;
+  }
+}
+
+.certFullImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fullWidthCertCard:hover .certFullImage {
+  transform: scale(1.015);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 75%,
+    rgba(7, 7, 8, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+.expandBadge {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-100);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.fullWidthCertCard:hover .expandBadge {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* FOOTER METADATA STRIP */
+.certFooterStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(20, 20, 24, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footerLabel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--ink-300);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footerVal {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   DETAILS INFORMATION SECTION (GRID BELOW CERTIFICATE)
+   ========================================================================== */
+.detailsSection {
+  width: 100%;
+  padding-bottom: 5rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: 1.05fr 1.35fr;
+    gap: 2.5rem;
+  }
+}
+
+/* SPEC CARD */
+.specCard {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background: rgba(14, 14, 18, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.specRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specRow:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.specLabel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-300);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specValue {
+  font-size: 0.875rem;
+  color: var(--ink-100);
+  font-weight: 500;
+  text-align: right;
+}
+
+.skillsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.skillsLabel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-300);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skillsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.verifyBtn {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.verifyBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* RIGHT COLUMN: KNOWLEDGE & IMPACT */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panelCard {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background: rgba(14, 14, 18, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panelIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-glow);
+}
+
+.panelTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.highlightList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-200);
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  color: #10b981;
+}
+
+.applicationText {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink-200);
+  margin: 0;
+}
+
+/* ==========================================================================
+   FULLSCREEN LIGHTBOX MODAL
+   ========================================================================== */
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 64rem;
+  width: 100%;
+  background: rgba(14, 14, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.lightboxHeader {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lightboxTitle {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.lightboxCloseBtn {
+  background: transparent;
+  border: none;
+  color: var(--ink-200);
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lightboxCloseBtn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lightboxImageWrap {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #070709;
+}
+
+.lightboxImg {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

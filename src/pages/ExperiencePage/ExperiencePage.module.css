@@ -462,3 +462,67 @@
   overflow: hidden;
   flex: 1; /* Ensures tags are pushed down if description is short */
 }
+
+/* ==========================================================================
+   INTERACTIVE BENTO CARD LINK & CTA
+   ========================================================================== */
+.cardClickable {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cardClickable:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 242, 255, 0.25);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.bentoLinkOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: inherit;
+}
+
+.cardBottomRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  position: relative;
+  z-index: 6;
+}
+
+.cardBottomRow .tagWrapper {
+  margin: 0;
+  flex: 1;
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  white-space: nowrap;
+  padding-bottom: 0.25rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.cardClickable:hover .cardCta {
+  opacity: 1;
+}
+
+.cardCtaArrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.cardClickable:hover .cardCtaArrow {
+  transform: translateX(3px);
+}

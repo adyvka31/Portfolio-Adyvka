@@ -1,4 +1,3 @@
-/* SENIOR FIX: Fluid padding */
 .section {
   position: relative;
   padding: clamp(4rem, 10vw, 7rem) 1.5rem;
@@ -9,17 +8,15 @@
   margin: 0 auto;
 }
 
-/* SENIOR FIX: Mobile First Flexbox Layout */
 .header {
   display: flex;
-  flex-direction: column; /* HP: Atas-Bawah */
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
   gap: 1.5rem;
 }
 
-/* Tablet & Desktop: Kiri-Kanan */
 @media (min-width: 1024px) {
   .header {
     flex-direction: row;
@@ -32,25 +29,23 @@
   flex-direction: column;
 }
 
-/* SENIOR FIX: Fluid Typography & Hapus white-space: nowrap */
 .headline {
   margin: 0;
   font-size: clamp(2rem, 4.5vw + 1rem, 3.75rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  text-align: left; /* Normalisasikan ke kiri agar sejajar dengan label */
-  max-width: 18ch; /* Jaga agar panjang teks tidak terlalu melebar di layar ultrawide */
+  text-align: left;
+  max-width: 18ch;
 }
 
 .italic {
   font-style: italic;
 }
 
-/* SENIOR FIX: Flex-wrap agar filter tidak nabrak layar di mobile */
 .filters {
   display: flex;
-  flex-wrap: wrap; /* Krusial agar chip bisa turun baris jika layar sempit */
+  flex-wrap: wrap;
   gap: 0.5rem;
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: clamp(0.7rem, 1.5vw, 0.75rem);
@@ -81,49 +76,93 @@
 }
 
 .chipActive {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(124, 242, 255, 0.4);
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(124, 242, 255, 0.08);
 }
 
-/* Menggunakan Gap Dinamis untuk Bento Box Grid */
+/* Bento Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1rem, 3vw, 1.5rem);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
   margin-top: 0;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.allRepos {
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
-  display: flex;
-  justify-content: center;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .gridColSpan3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .gridColSpan2 {
+    grid-column: span 2 / span 2;
+  }
 }
 
-.allReposLink {
+.footerActions {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.allProjectsBtn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--ink-100);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
+  color: #0b0c10;
+  background: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   text-decoration: none;
 }
 
-.allReposLink:hover {
+.allProjectsBtn:hover {
+  background: #7cf2ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(124, 242, 255, 0.35);
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-200);
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+  text-decoration: none;
+}
+
+.githubLink:hover {
   color: #fff;
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.16);
   transform: translateY(-2px);
 }

@@ -143,8 +143,21 @@ function AchievementLayout() {
 
           {hasSecondRow && (
             <div className={styles.seeMoreWrapper}>
-              <Link to="/recognition" className={styles.seeMoreBtn}>
-                Explore All Achievements
+              <Link
+                to={
+                  activeTab === "achievement"
+                    ? "/achievements"
+                    : activeTab === "certificate"
+                    ? "/certificates"
+                    : "/experience"
+                }
+                className={styles.seeMoreBtn}
+              >
+                {activeTab === "achievement"
+                  ? "Explore All Achievements"
+                  : activeTab === "certificate"
+                  ? "Explore All Certificates"
+                  : "Explore All Experiences"}
               </Link>
             </div>
           )}

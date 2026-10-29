@@ -3,6 +3,7 @@ import osisImg from "../assets/osis.webp?w=400;800&quality=70&format=avif;webp&a
 import appDevImg from "../assets/app_dev_instructor.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import icomfestImg from "../assets/icomfest2025.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import unilaImg from "../assets/unila2025.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import pnbImg from "../assets/pnb/pnb2.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import cs50Img from "../assets/cs50.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import frontendImg from "../assets/frontend_web.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import backpackerImg from "../assets/backpackerImg.webp?w=400;800&quality=70&format=avif;webp&as=picture";
@@ -36,7 +37,7 @@ import hajrabyadlImg from "../assets/hajrabyadl.webp?w=400;800&quality=70&format
 import mtsyasmineImg from "../assets/mtsyasmine.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import semutsemutImg from "../assets/semutsemut.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import smpn45Img from "../assets/smpn45.webp?w=400;800&quality=70&format=avif;webp&as=picture";
-import eduraceImg from "../assets/edurace.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import liveinImg from "../assets/livein/livein3.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import itfestImg from "../assets/itfest.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import semarangImg from "../assets/semarang.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import posterImg from "../assets/poster.webp?w=400;800&quality=70&format=avif;webp&as=picture";
@@ -84,10 +85,10 @@ export const personalInfo = {
 // HERO METRICS
 // ============================================
 export const heroMetrics = [
-  { value: "3+", label: "Years as Developer" },
-  { value: "5", label: "Projects Completed" },
-  { value: "2", label: "Competitions Won" },
-  { value: "25", label: "Certificates Earned" },
+  { value: "3+", label: "Years Experience" },
+  { value: "18", label: "Shipped Projects" },
+  { value: "3", label: "National Awards" },
+  { value: "25+", label: "Certificates Earned" },
 ];
 
 // ============================================
@@ -734,22 +735,31 @@ export const recognitionData = {
   ],
   achievement: [
     {
+      title: "2nd Place: National Web Design Competition",
+      institution: "Politeknik Negeri Bali (PNBITC#18)",
+      year: "Oct 2026",
+      description:
+        "Awarded 2nd Place at the PNBITC#18 National Web Design Competition hosted by Politeknik Negeri Bali. Engineered a competition-grade web platform from scratch while managing a 12th-grade corporate internship, competing against university and high school teams nationwide.",
+      image: pnbImg,
+      tags: ["2nd Place", "Web Design", "PNBITC#18", "National Runner-Up", "Tailwind CSS"],
+    },
+    {
       title: "1st Place: National Web Design Competition",
-      institution: "Icomfest 2025",
+      institution: "ICOMFEST 2025",
       year: "Feb 2025",
       description:
-        "Juara 1 Kompetisi Desain Web Nasional di tingkat universitas.",
+        "1st Place National Champion at the ICOMFEST Web Design Competition at the collegiate level.",
       image: icomfestImg,
       tags: ["Frontend Development", "UI/UX Design", "Winner"],
     },
     {
       title: "Finalist: National Web Dev Competition",
-      institution: "Unila 2024",
-      year: "Nov 2024",
+      institution: "Universitas Lampung (UNILA)",
+      year: "Oct 2024",
       description:
-        "Juara 1 Kompetisi Desain Web Nasional di tingkat universitas.",
+        "Top 5 Grand Finalist (4th Place) at the UNILA National Web Dev Competition with 'SemuaBisa', standing as the sole vocational high school finalist competing against collegiate contenders.",
       image: unilaImg,
-      tags: ["Project Management", "Frontend Development"],
+      tags: ["4th Place", "Top 5 Finalist", "SemuaBisa", "Tailwind CSS"],
     },
   ],
   certificate: [
@@ -888,13 +898,13 @@ export const extraOtherExperiences = [
     image: itfestImg,
   },
   {
-    title: "Mission Impossible",
+    title: "Live In Rural Immersion",
     institution: "IDN Boarding School",
-    year: "17 Mar 2023",
+    year: "May 2024",
     description:
-      "Latihan simulasi bisnis dan negosiasi. Mempraktikkan pembelian produk ritel (minuman dan makanan ringan) dan menjualnya kembali di lapangan dengan strategi markup yang tepat untuk menggandakan modal awal.",
-    tags: ["Business Strategy", "Problem Solving", "Adaptability"],
-    image: eduraceImg,
+      "Living with a rural farming host family for a full week, fully integrating into traditional agriculture, tending warung, assisting daily routines, and deep cleaning the village mosque.",
+    tags: ["Community Empathy", "Traditional Agriculture", "Social Impact"],
+    image: liveinImg,
   },
 ];
 
@@ -927,33 +937,44 @@ export function getSiblings(list, slug) {
 // Flatten recognition for routing
 export const allAchievements = [
   {
-    // Slug ini harus sama dengan key yang ada di src/data/achievementDetails.js
+    slug: "2nd-place-national-web-design-competition-pnbitc",
+    title: "2nd Place: National Web Design Competition",
+    institution: "Politeknik Negeri Bali (PNBITC#18)",
+    year: "Oct 2026",
+    description:
+      "Awarded 2nd Place (National Runner-Up) at the prestigious PNBITC#18 hosted by Politeknik Negeri Bali. Engineered through an intensive one-month sprint alongside a demanding 12th-grade corporate internship, demonstrating competitive web architecture and design against hundreds of university and senior high teams nationwide.",
+    image: pnbImg,
+    tags: ["2nd Place", "National Runner-Up", "PNBITC#18", "React", "Tailwind CSS"],
+  },
+  {
     slug: "1st-place-national-web-design-competition",
-    title: "1st Place National Web Design Competition",
-    institution: "Icomfest 2025",
+    title: "1st Place: National Web Design Competition",
+    institution: "ICOMFEST 2025",
     year: "Feb 2025",
     description:
-      "Berhasil meraih juara 1 pada kompetisi desain web nasional Icomfest 2025 dengan menyisihkan 80+ tim. Penilaian difokuskan pada kualitas UX, performa kode, dan standar aksesibilitas (WCAG AA).",
+      "Won 1st Place at the ICOMFEST 2025 National Web Design Competition with 'PusakaKu'—an interactive digital preservation platform for Indonesian traditional folk games powered by ethnographic archives and a gamified assessment engine.",
     image: icomfestImg,
+    tags: ["Winner", "Web Design", "PusakaKu", "React", "Gamification"],
   },
   {
     slug: "finalist-national-web-dev-competition",
-    title: "Top 5 Finalist National Web Dev Competition",
-    institution: "Universitas Lampung",
+    title: "Top 5 Finalist: National Web Dev Competition",
+    institution: "Universitas Lampung (UNILA)",
     year: "Oct 2024",
     description:
-      "Terpilih sebagai salah satu dari 5 finalis terbaik dalam kompetisi pengembangan web tingkat nasional. Mengembangkan platform full-stack B2B marketplace untuk mengurangi limbah makanan.",
+      "Secured 4th Place (Top 5 Grand Finalist) at the Universitas Lampung National Web Development Competition. Developed 'SemuaBisa' e-learning platform, standing as the sole vocational high school (SMK) team competing directly against collegiate engineering finalists.",
     image: unilaImg,
+    tags: ["4th Place", "Top 5 Finalist", "SemuaBisa", "Tailwind CSS", "EdTech"],
   },
   {
-    // Ini adalah data dummy yang nanti bisa Anda ganti
     slug: "dummy-new-achievement",
     title: "Best Poster Award: Idul Adha Festival",
     institution: "IDN Boarding School",
-    year: "Des 2023",
+    year: "Dec 2023",
     description:
-      "Ini adalah data dummy. Nanti Anda bisa menggantinya dengan cerita lengkap mengenai pencapaian terbaru Anda. Ceritakan tentang tantangan yang Anda hadapi dan bagaimana Anda menyelesaikannya secara teknis.",
+      "Honored with the Best Poster Award at the IDN Boarding School Idul Adha Festival, recognized for editorial typography hierarchy, balanced negative space, and contemporary Islamic geometric aesthetics.",
     image: posterImg,
+    tags: ["Best Poster", "Graphic Design", "Typography", "Figma"],
   },
 ];
 
@@ -973,7 +994,31 @@ export const experiencesList = experiences.map((e) => ({
   slug: slugify(`${e.company}-${e.role}`),
 }));
 
-function slugify(s) {
+export const allTeachingExperiences = [
+  ...recognitionData.experience.filter(
+    (exp) =>
+      exp.title.toLowerCase().includes("instructor") ||
+      exp.title.toLowerCase().includes("teaching"),
+  ),
+  ...extraTeachingExperiences,
+].map((item) => ({
+  ...item,
+  slug: slugify(`${item.institution}-${item.title}`),
+}));
+
+export const allLeadershipExperiences = [
+  ...recognitionData.experience.filter(
+    (exp) =>
+      !exp.title.toLowerCase().includes("instructor") &&
+      !exp.title.toLowerCase().includes("teaching"),
+  ),
+  ...extraOtherExperiences,
+].map((item) => ({
+  ...item,
+  slug: slugify(`${item.institution}-${item.title}`),
+}));
+
+export function slugify(s) {
   return s
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
