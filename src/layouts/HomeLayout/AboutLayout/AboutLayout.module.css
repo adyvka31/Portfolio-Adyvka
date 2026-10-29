@@ -1,10 +1,10 @@
 .section {
   position: relative;
-  padding: clamp(6rem, 15vw, 13rem) 1.5rem clamp(4rem, 10vw, 7rem) 1.5rem;
+  padding: var(--section-py) var(--container-px);
 }
 
 .container {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 

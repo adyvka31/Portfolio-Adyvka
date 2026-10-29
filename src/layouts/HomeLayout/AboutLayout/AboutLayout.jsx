@@ -91,25 +91,25 @@ function AboutLayout() {
   const spotlight = useCardSpotlight();
 
   const aboutParagraphs = [
-    "I'm Rafif Sava Adyvka Pratama — a full-stack engineer based in West Java, Indonesia. I've spent the last few years shipping web and mobile products under tight deadlines, from ERP modules used internally by enterprise teams to e-commerce platforms with real revenue on the line.",
-    "My approach is opinionated: Clean Architecture, SOLID, type-safe boundaries, and relentless attention to the developer experience for whoever comes next. I care about *how* things are built almost as much as *what* gets built.",
-    "Outside of work, I graduated from Harvard's CS50, took first place at the national Icomfest 2025 web design competition, and volunteer teaching tech to students who'd otherwise never touch a keyboard.",
+    "I'm Rafif Sava Adyvka Pratama — a software engineer and systems architect based in West Java, Indonesia. I specialize in designing resilient, highly scalable systems across web, mobile, and cloud environments, architecting multi-tenant ERP platforms and enterprise digital infrastructure.",
+    "My engineering philosophy centers on polyglot problem solving, Clean Architecture, SOLID principles, and rigorous domain modeling. I believe programming languages and frameworks are deliberate tools chosen for specific system requirements — whether architecting high-throughput backend services, designing type-safe distributed systems, or engineering fluid multi-platform user interfaces.",
+    "Outside of architecting systems, I completed Harvard's CS50, earned 1st place in national software engineering competitions, and mentor emerging developers in computing fundamentals and algorithmic thinking.",
   ];
 
   const getCategoryIcon = (category) => {
     switch (category) {
-      case "Frontend":
-        return <MonitorIcon size={24} />;
-      case "Backend":
-        return <ServerIcon size={24} />;
-      case "Database":
-        return <DatabaseIcon size={24} />;
-      case "Tools & Testing":
+      case "Languages & Runtimes":
         return <TerminalIcon size={24} />;
-      case "Cloud & DevOps":
-        return <CloudIcon size={24} />;
-      case "Software Engineering":
+      case "Software Architecture":
         return <CubeIcon size={24} />;
+      case "Backend & Systems":
+        return <ServerIcon size={24} />;
+      case "Databases & Storage":
+        return <DatabaseIcon size={24} />;
+      case "Frontend & Mobile":
+        return <MonitorIcon size={24} />;
+      case "Cloud, DevOps & Infra":
+        return <CloudIcon size={24} />;
       default:
         return <CubeIcon size={24} />;
     }
@@ -117,67 +117,72 @@ function AboutLayout() {
 
   const skillsData = [
     {
-      category: "Frontend",
+      category: "Languages & Runtimes",
       items: [
-        "React",
-        "Next.js",
-        "Angular",
-        "Tailwind CSS",
         "TypeScript",
         "JavaScript",
-        "HTML5",
-        "CSS3",
-      ],
-    },
-    {
-      category: "Backend",
-      items: [
-        "NestJS",
+        "Python",
+        "Dart",
+        "PHP",
+        "C / C++",
+        "SQL",
         "Node.js",
-        "Express.js",
-        "Laravel",
-        "REST API",
-        "Authentication",
-        "RBAC",
       ],
     },
     {
-      category: "Database",
-      items: ["PostgreSQL", "MySQL", "Firebase Firestore", "Prisma ORM"],
-    },
-    {
-      category: "Tools & Testing",
-      items: [
-        "Git",
-        "GitHub",
-        "Postman",
-        "Figma",
-        "Jest",
-        "Cypress",
-        "Unit Testing",
-        "Integration Testing",
-      ],
-    },
-    {
-      category: "Cloud & DevOps",
-      items: [
-        "Docker Compose",
-        "OWASP",
-        "JWT",
-        "AWS",
-        "CI/CD",
-        "Cloud Deployment",
-        "Biznet Cloud",
-      ],
-    },
-    {
-      category: "Software Engineering",
+      category: "Software Architecture",
       items: [
         "Clean Architecture",
         "SOLID Principles",
-        "OOP",
         "System Design",
-        "Agile (Scrum)",
+        "Distributed Systems",
+        "OOP & Functional",
+        "Domain-Driven Design",
+        "Modular Monorepos",
+      ],
+    },
+    {
+      category: "Backend & Systems",
+      items: [
+        "NestJS",
+        "Express.js",
+        "Laravel",
+        "RESTful APIs",
+        "Microservices & Event-Driven",
+        "RBAC & Security",
+      ],
+    },
+    {
+      category: "Databases & Storage",
+      items: [
+        "PostgreSQL",
+        "MySQL",
+        "Prisma ORM",
+        "Firebase Firestore",
+        "Query Optimization",
+        "Data Modeling",
+      ],
+    },
+    {
+      category: "Frontend & Mobile",
+      items: [
+        "Next.js",
+        "React",
+        "Flutter",
+        "Tailwind CSS",
+        "State Management",
+        "Framer Motion",
+      ],
+    },
+    {
+      category: "Cloud, DevOps & Infra",
+      items: [
+        "Docker & Compose",
+        "CI/CD Pipelines",
+        "GitHub Actions",
+        "AWS Cloud",
+        "Linux / Bash",
+        "Security & OWASP",
       ],
     },
   ];

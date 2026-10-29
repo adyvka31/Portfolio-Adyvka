@@ -147,9 +147,10 @@ function HeroLayout() {
           {/* ✅ 3. Subhead menyusul (Delay: 0.2s) */}
           <NativeReveal delay={0.2} className="reveal-slide-up">
             <p className={styles.subhead}>
-              I'm Adyvka — a full-stack engineer crafting production systems
-              with React, NestJS, and PostgreSQL. Currently engineering an ERP
-              platform serving enterprise clients.
+              I'm Adyvka — a software engineer and polyglot builder focused on
+              clean architecture, resilient system design, and multi-platform
+              engineering. Currently architecting enterprise ERP systems and
+              digital infrastructure.
             </p>
           </NativeReveal>
 

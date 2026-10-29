@@ -3,21 +3,17 @@ import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import NativeReveal from "../../components/Reveal/NativeReveal";
-import { useCardSpotlight } from "../../hooks/useCardSpotlight";
-import { ArrowRightIcon } from "../../components/Icons/Icons";
-import { personalInfo } from "../../data/portfolio";
 import profilePhoto from "../../assets/profile2.webp";
 import styles from "./AboutPage.module.css";
-import storyImage from "../../assets/teach_teacher.webp";
 import Image from "../../components/Image/Image";
 
 /* ====== DATA ====== */
 const INTRO_FACTS = [
   { label: "Full name", value: "Rafif Sava Adyvka Pratama" },
-  { label: "Goes by", value: "Adyvka" },
-  { label: "Based in", value: "Depok, Indonesia" },
-  { label: "Now", value: "Full Stack + PM at PT Intisel" },
-  { label: "School", value: "SMK IDN Boarding · Year XII" },
+  { label: "Alias", value: "Adyvka" },
+  { label: "Location", value: "Depok, West Java, Indonesia" },
+  { label: "Current role", value: "Software Engineer & PM at PT Intisel" },
+  { label: "Education", value: "SMK IDN Boarding School (Year XII)" },
 ];
 
 const TRACKS = [
@@ -27,13 +23,13 @@ const TRACKS = [
     grade: "SMP · Year 1",
     tech: {
       label: "TECHNICAL",
-      title: "Web + Game Dev",
-      detail: "First HTML, first 2D / 3D game prototypes.",
+      title: "First Lines of Code",
+      detail: "Learned HTML, CSS, JavaScript, and initial 2D game prototypes.",
     },
     human: {
       label: "HUMAN",
-      title: "Started teaching peers",
-      detail: "School program: every student teaches what they learn.",
+      title: "Peer Mentoring",
+      detail: "Began teaching peers through school's student-to-student sharing model.",
     },
   },
   {
@@ -42,13 +38,13 @@ const TRACKS = [
     grade: "SMP · Year 2",
     tech: {
       label: "TECHNICAL",
-      title: "Design + Robotics",
-      detail: "UI/UX, animation, and robotics fundamentals.",
+      title: "UI/UX & Robotics",
+      detail: "Explored visual design systems, animation logic, and robotics.",
     },
     human: {
       label: "HUMAN",
-      title: "OSIS · Secretary-Treasurer",
-      detail: "First leadership role, plus business survival training.",
+      title: "OSIS Core Team",
+      detail: "First leadership experience managing student events and documentation.",
     },
   },
   {
@@ -57,13 +53,13 @@ const TRACKS = [
     grade: "SMP · Year 3",
     tech: {
       label: "TECHNICAL",
-      title: "App Dev + first paid client",
-      detail: "Shipped baperentcar.com — still live in production.",
+      title: "Production Client Web",
+      detail: "Shipped baperentcar.com — live car rental production deployment.",
     },
     human: {
       label: "HUMAN",
-      title: "Backpacker · SE Asia",
-      detail: "Singapore, Malaysia, Thailand. One week, school program.",
+      title: "International Backpacker",
+      detail: "Self-funded and navigated 3 countries (Singapore, Malaysia, Thailand).",
     },
   },
   {
@@ -72,14 +68,13 @@ const TRACKS = [
     grade: "SMK · Year 1",
     tech: {
       label: "TECHNICAL",
-      title: "Advanced Web Engineering",
-      detail: "Systems thinking, real architecture, modern stack.",
+      title: "Full Stack Systems",
+      detail: "Architectural patterns with modern TypeScript, React, and backend APIs.",
     },
     human: {
       label: "HUMAN",
-      title: "OSIS · Event Division Lead",
-      detail:
-        "Ran a one-week development training for faculty at SMPN 25 Depok.",
+      title: "Faculty Training & OSIS Lead",
+      detail: "Trained teachers at SMPN 25 Depok and led SMK OSIS Event Division.",
     },
   },
   {
@@ -88,13 +83,13 @@ const TRACKS = [
     grade: "SMK · Year 2",
     tech: {
       label: "TECHNICAL",
-      title: "Advanced App Engineering + First contract",
-      detail: "Full Stack at Universitas Muhammadiyah Jakarta.",
+      title: "Full Stack & Competitions",
+      detail: "Delivered systems for UMJ and national technology competitions.",
     },
     human: {
       label: "HUMAN",
-      title: "Semarang · Survival week",
-      detail: "Solo-dropped, manual labor, earned my own way home.",
+      title: "Village Community Live In",
+      detail: "Full week integrated with traditional farming families in rural Indonesia.",
     },
   },
   {
@@ -103,85 +98,111 @@ const TRACKS = [
     grade: "SMK · Year 3",
     tech: {
       label: "TECHNICAL",
-      title: "PT Intisel · Full Stack + PM",
-      detail: "Owning architecture and delivery for the Databank ERP.",
+      title: "Enterprise ERP Engineering",
+      detail: "Architecting and shipping Databank ERP at PT Intisel as Full Stack + PM.",
     },
     human: {
       label: "HUMAN",
-      title: "Mentoring juniors",
-      detail: "Code review, project meetings, technical onboarding.",
+      title: "Team Leadership & Mentoring",
+      detail: "Directing developer workflows, code reviews, and onboarding junior peers.",
     },
   },
 ];
 
 const TECH_STACK = [
   {
-    layer: "FRONTEND",
+    layer: "LANGUAGES & RUNTIMES",
     items: [
-      "React",
-      "Next.js",
       "TypeScript",
-      "Tailwind",
+      "JavaScript",
+      "Python",
+      "Dart",
+      "PHP",
+      "C / C++",
+      "SQL",
+      "Node.js",
+    ],
+  },
+  {
+    layer: "ARCHITECTURE & DESIGN",
+    items: [
+      "Clean Architecture",
+      "SOLID Principles",
+      "System Design & Anatomy",
+      "Distributed Systems",
+      "Modular Monorepos",
+      "RBAC & Security",
+    ],
+  },
+  {
+    layer: "BACKEND & PLATFORMS",
+    items: [
+      "NestJS",
+      "Express.js",
+      "Laravel",
+      "RESTful APIs",
+      "Event-Driven Patterns",
+      "Microservices",
+    ],
+  },
+  {
+    layer: "FRONTEND & MOBILE",
+    items: [
+      "Next.js",
+      "React",
+      "Flutter",
+      "Tailwind CSS",
       "Framer Motion",
       "Vite",
     ],
   },
   {
-    layer: "BACKEND",
-    items: ["NestJS", "Node.js", "Express", "REST APIs", "Auth", "RBAC"],
+    layer: "DATABASES & STORAGE",
+    items: [
+      "PostgreSQL",
+      "Prisma ORM",
+      "MySQL",
+      "Firebase Firestore",
+      "Query Optimization",
+    ],
   },
   {
-    layer: "DATABASE",
-    items: ["PostgreSQL", "Prisma ORM", "MySQL", "Firestore"],
-  },
-  { layer: "MOBILE", items: ["Flutter", "Dart", "Provider", "Firebase Auth"] },
-  {
-    layer: "TOOLS & INFRA",
-    items: ["Git", "Docker", "GitHub Actions", "Vercel", "Postman", "Figma"],
+    layer: "INFRASTRUCTURE & TOOLS",
+    items: [
+      "Docker & Compose",
+      "CI/CD Pipelines",
+      "GitHub Actions",
+      "AWS Cloud",
+      "Linux / Bash",
+      "Postman",
+    ],
   },
 ];
 
 const SOFT_SKILLS = [
   {
-    skill: "Public Speaking",
-    from: "Teaching since 13. Faculty training at SMPN 25 Depok at 16.",
+    skill: "Software & System Architecture",
+    from: "Designing resilient high-availability systems, domain boundaries, and multi-tenant platforms.",
   },
   {
-    skill: "Project Management",
-    from: "OSIS Event Division Lead. ERP delivery at PT Intisel.",
+    skill: "Polyglot Problem Solving",
+    from: "Selecting optimal languages and paradigms (OOP, Functional, Systems) tailored to each engineering constraint.",
   },
   {
-    skill: "Cross-cultural Fluency",
-    from: "SE Asia backpacker. English-heavy boarding curriculum.",
+    skill: "Engineering Leadership & PM",
+    from: "Head of OSIS Event Division; leading architecture and Databank ERP delivery at PT Intisel.",
   },
   {
-    skill: "Survival & Resilience",
-    from: "Earned my way home from a week of manual labor in Semarang.",
+    skill: "Technical Mentoring & Pedagogy",
+    from: "Teaching development since 13; trained educators at SMPN 25 Depok and guided junior developer cohorts.",
   },
   {
-    skill: "Empathy & Community",
-    from: "Volunteer work with elderly and children since SMP.",
-  },
-];
-
-const STORIES = [
-  {
-    eyebrow: "SMK · Survival week · Semarang",
-    title: "Seven days. One return ticket I had to earn.",
-    body: 'My school sends students alone to a city they don\'t know — one week, no safety net, you work for your food and earn your way home. I drew Semarang. For seven days I distributed telecommunications construction equipment to contractor sites. I came home with a permanent recalibration of what "hard work" actually means.',
-    image: storyImage,
+    skill: "Cross-cultural Adaptability",
+    from: "Selected out of hundreds for 3-country IDN International Backpacker program across ASEAN.",
   },
   {
-    eyebrow: "SMK Year 1 · SMPN 25 Depok",
-    title: "Teaching the teachers.",
-    body: "By 16 I'd been teaching peers for three years. But teaching teachers was different — standing in front of people who'd been teaching longer than I'd been alive, explaining how to think about software. That's when I learned the difference between knowing something and being able to hand it to someone else.",
-    image: storyImage,
-  },
-  {
-    eyebrow: "SMP · Business survival training",
-    title: "Aqua and ciki, twice the price.",
-    body: "The exercise was simple: take your pocket money, buy at retail, resell at a markup, and don't lie about it. I stocked snacks and water, then sold them where context made them valuable. Roughly doubled my money. A product is worth what you can articulate it's worth.",
-    image: storyImage,
+    skill: "Community & Resilience",
+    from: "1-week traditional village Live In program, living and farming alongside local agricultural communities.",
   },
 ];
 
@@ -189,47 +210,41 @@ const CURRENTLY = [
   {
     label: "BUILDING",
     title: "Databank ERP",
-    detail: "Full Stack + project lead on PT Intisel's ERP system.",
+    detail: "Full Stack & PM leading enterprise platform at PT Intisel.",
   },
   {
     label: "STUDYING",
-    title: "Final year, SMK",
-    detail: "Graduating June 2027. Classroom hours waived.",
+    title: "Final Year · SMK",
+    detail: "SMK IDN Boarding School, graduating June 2027.",
   },
   {
-    label: "LEARNING",
-    title: "Distributed systems",
-    detail: "Working through DDIA, prototyping event sourcing.",
+    label: "DEEPENING",
+    title: "System Architecture",
+    detail: "Designing resilient backend patterns, clean RBAC, and micro-APIs.",
   },
   {
-    label: "PLANNING",
-    title: "University abroad",
-    detail: "Hybrid path: engineering work + degree overseas.",
+    label: "EXPLORING",
+    title: "Global Engineering",
+    detail: "Hybrid career path: high-impact product engineering + degree overseas.",
   },
 ];
 
 const NEXT_INTENT = [
-  { label: "Goal", value: "Hybrid — engineering work plus university abroad" },
   {
-    label: "Stack",
-    value:
-      "TypeScript-first product stacks (React, Next, NestJS, Postgres, Flutter)",
+    label: "Role Focus",
+    value: "Software Engineer / Systems Architect (End-to-End Ownership)",
   },
   {
-    label: "Team shape",
-    value: "Small enough that one engineer can own a feature end to end",
+    label: "Core Stack",
+    value: "Polyglot: TypeScript, Python, Dart, PHP, C++, SQL, Cloud Infra",
   },
   {
-    label: "Geography",
-    value: "Remote-first, time-zone friendly to SE Asia or Europe",
+    label: "Specialization",
+    value: "Clean Architecture, Scalable Distributed Systems, Multi-Platform Engineering",
   },
   {
-    label: "Industry",
-    value: "Product companies over agencies — building things people return to",
-  },
-  {
-    label: "What I bring",
-    value: "Engineer, project manager, and teacher in one role",
+    label: "Environment",
+    value: "High-autonomy, engineering-driven teams building mission-critical software",
   },
 ];
 
@@ -261,20 +276,6 @@ function TrackRow({ row, last }) {
   );
 }
 
-function StoryCard({ story }) {
-  const spot = useCardSpotlight();
-  return (
-    <article
-      className={`card glass ${styles.storyCard} ${story.feature ? styles.storyFeature : ""}`}
-      {...spot}
-    >
-      <span className={styles.storyEyebrow}>{story.eyebrow}</span>
-      <h3 className={styles.storyTitle}>{story.title}</h3>
-      <p className={styles.storyBody}>{story.body}</p>
-    </article>
-  );
-}
-
 function CurrentSlot({ item }) {
   return (
     <article className={styles.currentSlot}>
@@ -295,7 +296,7 @@ export default function AboutPage() {
     <PageShell>
       <SEO
         title="About — Rafif Sava Adyvka Pratama"
-        description="Learn more about Rafif Sava Adyvka Pratama (Adyvka). Engineer by training, operator by curriculum, and teacher by habit based in Depok, Indonesia."
+        description="Learn more about Rafif Sava Adyvka Pratama (Adyvka) — Software Engineer & Systems Architect specializing in clean architecture, polyglot development, and distributed systems."
         path="/about"
       />
       <PageHero
@@ -303,49 +304,45 @@ export default function AboutPage() {
         label="About"
         title="Built early. Kept building."
         italicWord="Kept building"
-        description="I'm Rafif Sava Adyvka Pratama — Full Stack Engineer, Mobile Developer, and in my final year at SMK IDN Boarding School. I started writing HTML at thirteen. Today, at seventeen, I'm leading the build of an enterprise ERP at PT Intisel. The five years between those two points are what this page is actually about."
+        description="Software Engineer & Systems Architect crafting robust multi-platform systems. Final-year student at SMK IDN Boarding School, currently leading system architecture and ERP delivery at PT Intisel."
         meta={[
           { label: "Age", value: "17" },
-          { label: "Graduating", value: "Jun 2027" },
-          { label: "School", value: "SMK IDN Boarding" },
-          { label: "In tech since", value: "2021 · age 13" },
+          { label: "Discipline", value: "Software Engineering & Architecture" },
+          { label: "Core Stack", value: "Polyglot (TS, Python, Dart, PHP, C++)" },
+          { label: "Experience", value: "5+ Years · Est. 2021" },
         ]}
       />
 
+      {/* SECTION 1: INTRODUCTION & CAPABILITIES */}
       <section className={styles.section} aria-label="Introduction">
         <div className={styles.container}>
           <div className={styles.introWrap}>
             <div className={styles.introLeft}>
               <NativeReveal>
-                <span className={styles.sectionLabel}>— Introduction</span>
+                <span className={styles.sectionLabel}>— Profile</span>
               </NativeReveal>
               <NativeReveal delay={0.1}>
                 <h2 className={`font-serif ${styles.introQuote} text-glow`}>
-                  "Engineer by training, operator by curriculum, teacher by
-                  habit."
+                  "Engineer by training, operator by curriculum, teacher by habit."
                 </h2>
               </NativeReveal>
               <NativeReveal delay={0.2}>
                 <div className={styles.introBody}>
                   <p>
-                    I'm Rafif Sava Adyvka Pratama — everything I ship goes out
-                    as <em>Adyvka</em>. Based in West Java, Indonesia, I'm a
-                    Full Stack Engineer and Mobile Developer who works
-                    end-to-end across the modern product stack: React and Next
-                    on the frontend, NestJS and PostgreSQL on the backend,
-                    Flutter and Firebase when the screen gets smaller. At PT
-                    Intisel I currently lead the Databank ERP build as both
-                    Project Manager and lead engineer — owning architecture,
-                    delivery cadence, and code review across the team.
+                    I'm Rafif Sava Adyvka Pratama (known online as <em>Adyvka</em>) — a
+                    Software Engineer and Systems Architect based in West Java, Indonesia.
+                    I architect and build robust, high-performance systems spanning web, mobile,
+                    backend microservices, and cloud infrastructure. Rather than being confined
+                    to a single stack, I treat programming languages and frameworks as deliberate
+                    tools selected to solve specific technical challenges.
                   </p>
                   <p>
-                    Three things compound in how I work, and I keep doing all
-                    three because they sharpen each other: production
-                    engineering, project delivery, and teaching. I've shipped
-                    code under real deadlines since fifteen, led my school's
-                    student council event division for two years, and taught
-                    development to peers since thirteen and to faculty at SMPN
-                    25 Depok at sixteen.
+                    Currently at PT Intisel, I lead the Databank ERP build as lead systems
+                    engineer and Project Manager — establishing clean architecture, domain
+                    boundaries, database schema designs, and automated delivery pipelines.
+                    My engineering foundation is rooted in computational rigor (Harvard CS50,
+                    algorithms in C/C++ and Python), proven in national competitions, and reinforced
+                    by mentoring developers since age 13.
                   </p>
                 </div>
               </NativeReveal>
@@ -397,7 +394,7 @@ export default function AboutPage() {
           </div>
 
           <div className={styles.skillsIntegratedWrap}>
-            {/* LEFT COLUMN */}
+            {/* TECHNICAL STACK */}
             <div className={styles.skillsColumn}>
               <NativeReveal className="reveal-slide-up">
                 <div className={styles.skillsHeader}>
@@ -420,7 +417,7 @@ export default function AboutPage() {
                   <NativeReveal
                     key={row.layer}
                     className="reveal-slide-up"
-                    delay={index * 0.1}
+                    delay={index * 0.08}
                   >
                     <div className={styles.skillRow}>
                       <div className={styles.skillLabel}>
@@ -449,11 +446,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN */}
+            {/* CORE CAPABILITIES */}
             <div className={styles.skillsColumn}>
               <NativeReveal className="reveal-slide-up" delay={0.1}>
                 <div className={styles.skillsHeader}>
-                  <span className={styles.sectionLabel}>— Soft Skills</span>
+                  <span className={styles.sectionLabel}>— Core Capabilities</span>
 
                   <h2 className={`${styles.skillsTitle} text-fade`}>
                     <span className={`font-serif ${styles.italic} text-glow`}>
@@ -471,7 +468,7 @@ export default function AboutPage() {
                   <NativeReveal
                     key={row.skill}
                     className="reveal-slide-up"
-                    delay={index * 0.1}
+                    delay={index * 0.08}
                   >
                     <div className={styles.softCompactRow}>
                       <div className={styles.softCompactLabel}>
@@ -497,12 +494,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* SECTION 2: TIMELINE */}
       <section className={styles.section} aria-label="Timeline">
         <div className={styles.container}>
           <NativeReveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
               <span className={styles.sectionLabel}>
-                — Two Tracks, Five Years
+                — Two Tracks, Six Years
               </span>
               <h2 className={`${styles.sectionTitle} text-fade`}>
                 Every year, one of{" "}
@@ -512,8 +510,7 @@ export default function AboutPage() {
                 .
               </h2>
               <p className={styles.sectionLead}>
-                Technical on the left. Human on the right. They were never
-                separate — that's the point.
+                Technical progression on the left, human leadership on the right.
               </p>
             </div>
           </NativeReveal>
@@ -521,7 +518,7 @@ export default function AboutPage() {
           <div className={styles.trackList}>
             <span className={styles.trackSpine} aria-hidden="true" />
             {TRACKS.map((row, i) => (
-              <NativeReveal key={row.year} delay={0.1}>
+              <NativeReveal key={row.year} delay={0.08}>
                 <TrackRow row={row} last={i === TRACKS.length - 1} />
               </NativeReveal>
             ))}
@@ -529,37 +526,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.section} aria-label="Stories">
-        <div className={styles.container}>
-          <NativeReveal>
-            <div className={`${styles.sectionHead} ${styles.headLeft}`}>
-              <span className={styles.sectionLabel}>
-                — Stories Worth Telling
-              </span>
-              <h2 className={`${styles.sectionTitle} text-fade`}>
-                The moments that{" "}
-                <span className={`font-serif ${styles.italic} text-glow`}>
-                  recalibrated
-                </span>{" "}
-                me.
-              </h2>
-            </div>
-          </NativeReveal>
-
-          <NativeReveal stagger className={styles.storyGrid}>
-            {STORIES.map((s, index) => (
-              <div
-                key={s.title}
-                className="css-stagger-item"
-                style={{ transitionDelay: `${index * 0.15}s` }}
-              >
-                <StoryCard story={s} />
-              </div>
-            ))}
-          </NativeReveal>
-        </div>
-      </section>
-
+      {/* SECTION 3: CURRENT FOCUS */}
       <section className={styles.section} aria-label="Current Focus">
         <div className={styles.container}>
           <NativeReveal>
@@ -575,17 +542,15 @@ export default function AboutPage() {
             </div>
           </NativeReveal>
 
-          {/* ✅ NativeReveal STAGGER Group */}
           <NativeReveal
             delay={0.1}
-            stagger
             className={`glass ${styles.currentPanel}`}
           >
             {CURRENTLY.map((item, index) => (
               <div
                 key={item.label}
                 className="css-stagger-item"
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${index * 0.08}s` }}
               >
                 <CurrentSlot item={item} />
               </div>
@@ -594,6 +559,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* SECTION 4: FUTURE INTENT */}
       <section className={styles.section} aria-label="Future Intents">
         <div className={styles.container}>
           <div className={styles.nextWrap}>
@@ -608,21 +574,15 @@ export default function AboutPage() {
                   .
                 </h2>
                 <p className={styles.nextLead}>
-                  Graduating June 2027. Starting university abroad shortly after
-                  — without stepping away from engineering work. I'm looking for
-                  a team where that hybrid actually fits.
+                  Graduating June 2027. Seeking high-autonomy teams where I can
+                  take end-to-end ownership of engineering deliverables from
+                  database schema to user interface.
                 </p>
-                <a
-                  href={`mailto:${personalInfo.email}`}
-                  className={styles.nextCta}
-                >
-                  Reach out <ArrowRightIcon size={14} />
-                </a>
               </div>
             </NativeReveal>
 
             <NativeReveal
-              delay={0.2}
+              delay={0.15}
               as="dl"
               className={`glass ${styles.nextRight}`}
             >

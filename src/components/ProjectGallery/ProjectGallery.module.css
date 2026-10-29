@@ -1,17 +1,17 @@
 /* src/components/ProjectGallery/ProjectGallery.module.css */
 
 .gallerySection {
-  padding: 4.5rem 1.5rem;
+  padding: var(--section-py) var(--container-px);
   border-bottom: 1px solid var(--line);
 }
 
 .container {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
 .header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--section-header-mb);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

@@ -2,16 +2,17 @@
    GENERIC SECTION STYLES
    -------------------------------------------- */
 .section {
-  padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(5rem, 10vw, 8rem);
+  padding: var(--section-py) var(--container-px);
   position: relative;
+  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.08));
 }
 
 .firstSection {
-  padding-top: clamp(2rem, 5vw, 3rem);
+  padding-top: var(--section-py-hero);
 }
 
 .container {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 

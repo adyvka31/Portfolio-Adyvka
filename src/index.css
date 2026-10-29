@@ -28,6 +28,39 @@
   --line-strong: rgba(255, 255, 255, 0.1);
   --text: #ededf0;
   --muted: #8a8a93;
+
+  /* ============================================
+     LAYOUT & SPATIAL DESIGN TOKENS
+     ============================================ */
+  --container-max: 72rem;
+  --container-narrow: 56rem;
+  --container-px: 1.5rem;
+
+  /* Vertical Rhythm (Section Spacing) */
+  --section-py: clamp(3.5rem, 6vw, 5rem);
+  --section-py-hero: clamp(2.5rem, 4.5vw, 3.5rem);
+  --section-header-mb: clamp(2rem, 4vw, 3rem);
+  --grid-gap: clamp(1rem, 2.5vw, 1.5rem);
+
+  /* Sticky Subnav Bar */
+  --subnav-top: 4.5rem;
+  --subnav-bg: rgba(7, 7, 8, 0.85);
+  --subnav-blur: 16px;
+  --subnav-py: 0.875rem;
+
+  /* Border Radii Scale */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Surfaces & Glass Primitives */
+  --surface-card: rgba(255, 255, 255, 0.02);
+  --surface-card-hover: rgba(255, 255, 255, 0.04);
+  --surface-glass: rgba(14, 14, 18, 0.6);
 }
 
 /* ============================================

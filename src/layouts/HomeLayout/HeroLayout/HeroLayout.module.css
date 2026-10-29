@@ -316,18 +316,11 @@
 .actions {
   position: relative;
   z-index: 10;
-  margin-top: 3rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
   display: flex;
-  flex-direction: wrap;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-}
-
-@media (min-width: 640px) {
-  .actions {
-    flex-direction: row;
-    justify-content: center;
-  }
 }
 
 .primaryBtn {

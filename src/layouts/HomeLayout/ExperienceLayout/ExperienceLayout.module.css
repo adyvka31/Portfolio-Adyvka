@@ -1,11 +1,11 @@
 /* SENIOR FIX: Fluid Padding agar proporsional di mobile & desktop */
 .section {
   position: relative;
-  padding: clamp(4rem, 10vw, 7rem) 1.5rem;
+  padding: var(--section-py) var(--container-px);
 }
 
 .container {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 1.1;
-  margin: 0 0 clamp(5rem, 8vw, 6rem) 0;
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem) 0;
   text-align: left;
 }
 
@@ -42,7 +42,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-top: 5rem;
+  padding-top: 1rem;
 }
 
 @media (min-width: 768px) {

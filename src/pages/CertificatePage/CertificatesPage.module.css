@@ -1,19 +1,18 @@
 /* SENIOR FIX: Fluid Padding */
 .gridSection {
-  padding: clamp(2.5rem, 4.5vw, 3.5rem) 1.5rem 7rem;
+  padding: var(--section-py-hero) var(--container-px) clamp(5rem, 8vw, 7rem);
   position: relative;
 }
 
 .gridInner {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
-/* SENIOR FIX: Fluid Gap */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.25rem, 3vw, 2rem);
+  gap: var(--grid-gap);
 }
 
 @media (min-width: 768px) {

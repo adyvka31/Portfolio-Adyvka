@@ -1,7 +1,7 @@
 const SITE_URL = "https://adyvka-pratama.netlify.app";
 const DEFAULT_OG_IMAGE = "/og-image.jpg";
 const DEFAULT_DESCRIPTION =
-  "Full Stack Engineer & Mobile Developer based in West Java, Indonesia. Building production systems with React, NestJS, PostgreSQL, and Flutter.";
+  "Software Engineer & Systems Architect based in West Java, Indonesia. Polyglot developer specializing in clean architecture, enterprise platforms, and distributed systems across web, mobile, and cloud.";
 const SITE_NAME = "Rafif Sava Adyvka Pratama";
 
 /**
@@ -21,7 +21,7 @@ export default function SEO({
     ? title.includes(SITE_NAME)
       ? title
       : `${title} — ${SITE_NAME}`
-    : `${SITE_NAME} — Full Stack Engineer`;
+    : `${SITE_NAME} — Software Engineer & Systems Architect`;
 
   const url = `${SITE_URL}${path}`;
   const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
@@ -31,7 +31,7 @@ export default function SEO({
     "@type": "Person",
     name: SITE_NAME,
     alternateName: "Adyvka",
-    jobTitle: "Full Stack Engineer",
+    jobTitle: "Software Engineer & Systems Architect",
     url: SITE_URL,
     sameAs: [
       "https://github.com/adyvka31",

@@ -3,26 +3,19 @@
 ========================================= */
 
 .container {
-  padding: 7rem 1.5rem;
-  max-width: 72rem;
+  padding: var(--section-py-hero) var(--container-px) clamp(5rem, 8vw, 7rem);
+  max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--section-header-mb);
 }
 
 @media (max-width: 768px) {
   .container {
-    /* SENIOR FIX: Hanya memotong padding atas di mobile.
-       Kita gunakan 0.5rem untuk memberikan sedikit 'napas' 
-       agar tidak benar-benar menempel dengan PageHero. */
-    padding-top: 0.5rem;
-
-    /* Padding bawah tetap atau sesuaikan jika terasa terlalu jauh juga */
-    padding-bottom: 5rem;
-
-    /* Gap antar elemen internal (Search & Grid) bisa diperapat di mobile */
-    gap: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+    gap: 1.5rem;
   }
 }
 

@@ -66,11 +66,11 @@ import englishImg from "../assets/english.webp?w=400;800&quality=70&format=avif;
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
-  title: "Digital Craftsman // Fullstack Engineer",
-  role: "Full Stack Engineer",
+  title: "Software Engineer // Systems Architect & Polyglot Builder",
+  role: "Software Engineer & Systems Architect",
   location: "Depok, West Java, Indonesia",
   timezone: "UTC+07 — Working remotely",
-  currentRole: "Full Stack Engineer & Mobile Developer",
+  currentRole: "Software Engineer & Systems Architect",
   email: "rafifdyvka07@gmail.com",
   socials: {
     github: "https://github.com/adyvka31",
@@ -95,18 +95,21 @@ export const heroMetrics = [
 // MARQUEE TECH STACK
 // ============================================
 export const marqueeStack = [
+  "System Architecture",
+  "Clean Architecture",
+  "TypeScript",
+  "Python",
+  "Dart",
+  "PHP",
+  "C++",
+  "NestJS",
   "React",
   "Next.js",
-  "TypeScript",
-  "NestJS",
   "PostgreSQL",
-  "Tailwind",
   "Flutter",
-  "Laravel",
   "Docker",
-  "Firebase",
-  "Node.js",
-  "Figma",
+  "Distributed Systems",
+  "Laravel",
 ];
 
 // ============================================

@@ -1,7 +1,7 @@
 .main {
   position: relative;
   min-height: 100vh;
-  padding-top: 6rem; /* clears the navbar */
+  padding-top: clamp(4.5rem, 8vw, 6rem); /* clears the navbar smoothly on mobile & desktop */
 }
 .background {
   position: absolute;
