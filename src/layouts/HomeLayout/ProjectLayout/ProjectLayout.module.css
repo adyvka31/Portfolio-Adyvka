@@ -1,11 +1,13 @@
 .section {
   position: relative;
   padding: var(--section-py) var(--container-px);
+  overflow-x: clip;
 }
 
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
+  width: 100%;
 }
 
 .header {
@@ -84,20 +86,20 @@
 /* Bento Grid */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 1.5rem);
   margin-top: 0;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .gridColSpan3 {
@@ -107,6 +109,10 @@
   .gridColSpan2 {
     grid-column: span 2 / span 2;
   }
+}
+
+.grid > * {
+  min-width: 0;
 }
 
 .footerActions {

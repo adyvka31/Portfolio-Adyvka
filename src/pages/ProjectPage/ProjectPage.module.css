@@ -2,10 +2,22 @@
    MODERN PROJECT CARD
 ========================================= */
 
-.container {
+.mainSection {
   padding: var(--section-py-hero) var(--container-px) clamp(5rem, 8vw, 7rem);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.container {
   max-width: var(--container-max);
   margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--section-header-mb);
@@ -13,8 +25,6 @@
 
 @media (max-width: 768px) {
   .container {
-    padding-top: 1.5rem;
-    padding-bottom: 4rem;
     gap: 1.5rem;
   }
 }
@@ -101,20 +111,25 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem; /* Menyamakan gap antar card dengan halaman landing page */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--grid-gap);
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.grid > * {
+  min-width: 0;
+  width: 100%;
 }
 
 .empty {

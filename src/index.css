@@ -115,7 +115,7 @@
      ============================================ */
   --container-max: 72rem;
   --container-narrow: 56rem;
-  --container-px: 1.5rem;
+  --container-px: clamp(1rem, 3.5vw, 1.5rem);
 
   /* Vertical Rhythm (Section Spacing) */
   --section-py: clamp(3.5rem, 6vw, 5rem);
@@ -171,6 +171,12 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+#root {
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
@@ -179,7 +185,6 @@ body {
     system-ui,
     -apple-system,
     sans-serif;
-  overflow-x: hidden;
   line-height: 1.5;
 }
 

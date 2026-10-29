@@ -148,7 +148,7 @@
 }
 
 .headline {
-  font-size: clamp(3rem, 10vw, 8.5rem);
+  font-size: clamp(1.75rem, 8vw, 8.5rem);
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 0.85;
@@ -165,11 +165,11 @@
 
 .gapTop {
   display: inline-block;
-  width: 1.3em;
+  width: 0.6em;
 }
 .gapBottom {
   display: inline-block;
-  width: 1.5em;
+  width: 0.8em;
 }
 
 @media (min-width: 640px) {
@@ -250,7 +250,8 @@
   .heroBgPhotoContainer {
     top: 7rem;
     bottom: 4rem;
-    width: 130%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .heroBgPhoto {
@@ -289,8 +290,10 @@
   position: relative;
   z-index: 10;
   max-width: 64rem;
-  padding: 0 1.5rem;
+  width: 100%;
+  padding: 0 var(--container-px);
   text-align: center;
+  overflow-x: clip;
 }
 
 .italic {

@@ -5,7 +5,7 @@ import Tag from "../../../components/Tag/Tag";
 import { experiences } from "../../../data/portfolio";
 import styles from "./ExperienceLayout.module.css";
 
-function TimelineItem({ item, index, isLast }) {
+function TimelineItem({ item, index }) {
   const isLeft = index % 2 === 0;
 
   return (
@@ -26,7 +26,7 @@ function TimelineItem({ item, index, isLast }) {
           aria-hidden="true"
         />
 
-        <div className={`${styles.itemCard} ${isLast ? styles.fadedCard : ""}`}>
+        <div className={styles.itemCard}>
           <header className={styles.itemHeader}>
             <div
               className={`${styles.period} ${item.current ? styles.periodCurrent : ""}`}
@@ -85,7 +85,6 @@ function ExperienceLayout() {
               key={item.period + item.role}
               item={item}
               index={idx}
-              isLast={idx === experiences.length - 1}
             />
           ))}
         </div>

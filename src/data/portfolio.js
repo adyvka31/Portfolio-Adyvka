@@ -472,7 +472,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Canva / Course",
     year: "2023",
     description:
-      "Sertifikasi desain grafis untuk pembuatan aset visual dan pemasaran.",
+      "Certification in visual design principles, typography, and digital asset composition.",
     image: canvaImg,
     tags: ["Design", "Canva", "Creative"],
   },
@@ -481,7 +481,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2023",
     description:
-      "Sertifikasi dasar pemrograman menggunakan bahasa C untuk algoritma tingkat rendah.",
+      "Certification in foundational C programming, covering memory management, low-level algorithms, and data structures.",
     image: cdicodingImg,
     tags: ["C Programming", "Logic", "Backend"],
   },
@@ -490,7 +490,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Figma Course",
     year: "2023",
     description:
-      "Sertifikasi perancangan antarmuka pengguna dan pengalaman pengguna menggunakan Figma.",
+      "Certification in wireframing, interactive prototyping, and design system creation using Figma.",
     image: figmaImg,
     tags: ["UI/UX", "Figma", "Design"],
   },
@@ -499,7 +499,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "DQLab",
     year: "2024",
     description:
-      "Sertifikasi dasar pemrograman Python untuk keperluan pengolahan data sains.",
+      "Certification in foundational Python syntax, data manipulation, and exploratory data analysis.",
     image: pythondqlabImg,
     tags: ["Python", "DQLab", "Data Science"],
   },
@@ -508,7 +508,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2024",
     description:
-      "Sertifikasi pemahaman logika dasar, ES6, dan manipulasi DOM JavaScript.",
+      "Certification in core JavaScript fundamentals, ES6+ features, and interactive DOM manipulation.",
     image: javascriptImg,
     tags: ["JavaScript", "Frontend", "ES6"],
   },
@@ -517,7 +517,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Amazon Web Services (AWS)",
     year: "2024",
     description:
-      "Sertifikasi dasar komputasi awan, infrastruktur, dan layanan global AWS.",
+      "Certification in cloud computing architecture, global infrastructure, and core AWS cloud services.",
     image: awsImg,
     tags: ["AWS", "Cloud", "Infrastructure"],
   },
@@ -526,7 +526,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2025",
     description:
-      "Sertifikasi pengembangan antarmuka web modern dengan pustaka React.js.",
+      "Certification in modern web application engineering using React.js components, hooks, and state management.",
     image: reactImg,
     tags: ["React.js", "Frontend", "Web"],
   },
@@ -535,7 +535,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2024",
     description:
-      "Sertifikasi sintaksis dan logika pemrograman dasar menggunakan Python.",
+      "Certification in algorithmic problem-solving and structured programming with Python.",
     image: pythondicodingImg,
     tags: ["Python", "Programming", "Logic"],
   },
@@ -544,7 +544,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2024",
     description:
-      "Sertifikasi pembuatan struktur web dasar menggunakan HTML, CSS, dan Flexbox.",
+      "Certification in semantic web development using HTML5, modern CSS layouts, and Flexbox.",
     image: webbasicImg,
     tags: ["HTML", "CSS", "Frontend"],
   },
@@ -553,7 +553,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2023",
     description:
-      "Sertifikasi dasar pemecahan masalah algoritma dan logika komputasional.",
+      "Certification in computational logic, flowcharting, and algorithmic problem-solving methodologies.",
     image: logicdevImg,
     tags: ["Logic", "Algorithm", "Computer Science"],
   },
@@ -562,7 +562,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Skilvul",
     year: "2023",
     description:
-      "Sertifikasi penyelesaian modul algoritma dan struktur data dasar bahasa C.",
+      "Certification in algorithm development and core data structure implementations in C.",
     image: cskillvulImg,
     tags: ["C", "Skilvul", "Algorithm"],
   },
@@ -571,7 +571,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "AI Course",
     year: "2025",
     description:
-      "Sertifikasi rekayasa prompt untuk memaksimalkan hasil dari model bahasa besar (LLM).",
+      "Certification in advanced prompt engineering strategies to optimize generative LLM completions.",
     image: promptImg,
     tags: ["Prompt Engineering", "LLM", "AI"],
   },
@@ -580,7 +580,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Dicoding Indonesia",
     year: "2024",
     description:
-      "Sertifikasi pemahaman metodologi kerja, agile, dan jalur karier insinyur perangkat lunak.",
+      "Certification in professional software engineering workflows, agile methodologies, and SDLC standards.",
     image: softwaredevImg,
     tags: ["Career", "Software Engineering", "Agile"],
   },
@@ -589,7 +589,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Finance Course",
     year: "2023",
     description:
-      "Sertifikasi literasi keuangan dasar dan manajemen aset finansial.",
+      "Certification in personal financial literacy, budgeting frameworks, and asset management principles.",
     image: financialImg,
     tags: ["Finance", "Literacy", "Management"],
   },
@@ -598,7 +598,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "AI Academy",
     year: "2024",
     description:
-      "Sertifikasi pengenalan konsep kecerdasan buatan, machine learning, dan neural networks.",
+      "Certification in foundational artificial intelligence concepts, machine learning models, and neural networks.",
     image: aiImg,
     tags: ["AI", "Machine Learning", "Tech"],
   },
@@ -607,7 +607,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "Google Developer Groups",
     year: "2024",
     description:
-      "Sertifikasi partisipasi aktif dalam kegiatan komunitas dan workshop GDG.",
+      "Active participation certification in Google Developer Groups tech talks and technical workshops.",
     image: gdgImg,
     tags: ["GDG", "Google", "Community"],
   },
@@ -616,7 +616,7 @@ export const extraCertificatesOnlyForPage = [
     institution: "English Language Course",
     year: "2024",
     description:
-      "Sertifikasi kompetensi kefasihan berbahasa Inggris untuk komunikasi profesional dan kolaborasi global.",
+      "Verified English proficiency certification evaluating professional communication and global technical collaboration.",
     image: englishImg,
     tags: ["English", "Language", "Communication"],
   },
@@ -688,7 +688,8 @@ export const recognitionData = {
       title: "Web Development Instructor",
       institution: "SMA Lazuardi GCS",
       year: "Sep 2025",
-      description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
+      description:
+        "Mentored high school students in foundational web development, teaching modern HTML semantics, CSS flexbox/grid layout systems, and responsive design workflows.",
       image: webDevImg,
       tags: ["Web Development", "UI/UX Design", "25+ Students"],
     },
@@ -697,7 +698,7 @@ export const recognitionData = {
       institution: "IDN Student Council",
       year: "Jan 2025 - Mar 2026",
       description:
-        "Memimpin divisi acara OSIS selama dua tahun, mengelola perencanaan acara, penjangkauan sponsor, logistik, serta mendelegasikan tugas kepada tim untuk setiap acara besar di sekolah.",
+        "Led the Student Council Event Division for two consecutive terms, orchestrating end-to-end event production, sponsor acquisition, logistical pipelines, and cross-functional teams for major school ceremonies.",
       image: osisImg,
       tags: ["Leadership", "Event Management", "Time Management"],
     },
@@ -705,7 +706,8 @@ export const recognitionData = {
       title: "App Development Instructor",
       institution: "SMP INS Depok",
       year: "Oct 2023",
-      description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
+      description:
+        "Delivered interactive mobile app development workshops for junior high school students, introducing visual programming logic, UI components, and block-based architectures.",
       image: appDevImg,
       tags: ["App Development", "25+ Students"],
     },
@@ -714,7 +716,7 @@ export const recognitionData = {
       institution: "Singapore, Malaysia, Thailand",
       year: "Sep 2025",
       description:
-        "Melakukan perjalanan backpacker lintas negara (Singapura, Malaysia, Thailand) dalam satu minggu untuk melatih kefasihan lintas budaya, manajemen rute, dan adaptasi di lingkungan yang tidak pasti.",
+        "Completed a self-navigated multi-country backpacking expedition across Singapore, Malaysia, and Thailand within one week, strengthening cross-cultural agility, budget logistics, and rapid decision-making in volatile environments.",
       image: backpackerImg,
       tags: ["Public Speaking", "Cross-cultural Fluency"],
     },
@@ -722,7 +724,8 @@ export const recognitionData = {
       title: "Game Development Instructor",
       institution: "Semut-Semut The Natural School",
       year: "Oct 2023",
-      description: "Mengajar pemrograman dasar untuk siswa sekolah menengah.",
+      description:
+        "Instructed elementary and middle school students in computational thinking and 2D game mechanics through hands-on visual scripting and physics simulations.",
       image: semutsemutImg,
       tags: ["Game Development", "25+ Students"],
     },
@@ -731,7 +734,7 @@ export const recognitionData = {
       institution: "Barmus Voluntrip",
       year: "Feb 2026",
       description:
-        "Mengoordinasikan logistik, eksekusi lapangan, dan pelaporan pasca-acara untuk kegiatan sukarelawan komunitas guna menumbuhkan rasa empati terhadap masyarakat sekitar.",
+        "Coordinated field logistics, resource distribution, and community engagement for grassroots volunteer initiatives to empower marginalized local populations.",
       image: barmusImg,
       tags: ["Empathy Social", "Community"],
     },
@@ -771,7 +774,7 @@ export const recognitionData = {
       institution: "Harvard University",
       year: "Oct 2025",
       description:
-        "Sertifikat kelulusan kurikulum dasar ilmu komputer, algoritma, dan seni pemrograman.",
+        "Comprehensive computer science curriculum certification covering algorithms, data structures, memory management, and software engineering in C and Python.",
       image: cs50Img,
       tags: ["Computer Science", "Harvard", "C", "Python"],
     },
@@ -780,7 +783,7 @@ export const recognitionData = {
       institution: "Dicoding Indonesia × DBS Foundation",
       year: "Apr 2026",
       description:
-        "Sertifikasi intensif pengembangan aplikasi web dari arsitektur backend hingga antarmuka frontend.",
+        "Intensive full-stack development certification mastering end-to-end architectures from scalable backend APIs to responsive React frontends.",
       image: codingcampImg,
       tags: ["Web Development", "Backend", "Frontend"],
     },
@@ -789,7 +792,7 @@ export const recognitionData = {
       institution: "Dicoding Indonesia",
       year: "Mar 2026",
       description:
-        "Sertifikasi fundamental pembuatan website interaktif modern dan responsif.",
+        "Professional frontend certification in developing responsive, accessible, and high-performance modern web interfaces.",
       image: frontendImg,
       tags: ["HTML/CSS", "JavaScript", "Frontend"],
     },
@@ -798,7 +801,7 @@ export const recognitionData = {
       institution: "Dicoding Indonesia",
       year: "2024",
       description:
-        "Sertifikasi fundamental untuk ekstraksi, manipulasi, dan visualisasi data dasar.",
+        "Certification in exploratory data analysis, tabular data transformation, and visual storytelling.",
       image: dataanalystImg,
       tags: ["Data Analyst", "Data Science"],
     },
@@ -807,7 +810,7 @@ export const recognitionData = {
       institution: "Dicoding Indonesia",
       year: "2024",
       description:
-        "Sertifikasi perancangan RESTful API dan logika sisi server (server-side).",
+        "Certification in architecting secure, scalable RESTful APIs and server-side business logic using Node.js.",
       image: backendImg,
       tags: ["Backend", "REST API", "Node.js"],
     },
@@ -816,7 +819,7 @@ export const recognitionData = {
       institution: "Dicoding Indonesia",
       year: "2024",
       description:
-        "Sertifikasi pengelolaan versi kode menggunakan Git dan kolaborasi via GitHub.",
+        "Certification in version control workflows, branch management, code reviews, and open-source collaboration using Git and GitHub.",
       image: gitImg,
       tags: ["Git", "GitHub", "Version Control"],
     },
@@ -829,7 +832,7 @@ export const extraTeachingExperiences = [
     institution: "Hajrabyadl",
     year: "May 2025",
     description:
-      "Memandu siswa dalam mempelajari dasar-dasar HTML, CSS, dan desain UI/UX untuk membangun struktur halaman web interaktif.",
+      "Guided students through fundamental HTML, CSS, and UI/UX design workflows to design and assemble responsive, interactive webpage layouts.",
     image: hajrabyadlImg,
     tags: ["HTML", "CSS", "UI/UX Design", "23+ Students"],
   },
@@ -838,7 +841,7 @@ export const extraTeachingExperiences = [
     institution: "SMPN 45",
     year: "Sep 2023",
     description:
-      "Memperkenalkan konsep pembuatan aplikasi seluler dasar dan implementasi komponen interaktif kepada siswa sekolah menengah.",
+      "Introduced native mobile application concepts and interactive UI component architectures to junior high school students using Kodular.",
     image: smpn45Img,
     tags: ["Kodular", "10+ Students"],
   },
@@ -847,7 +850,7 @@ export const extraTeachingExperiences = [
     institution: "Al Anshar",
     year: "Sep 2022",
     description:
-      "Mengajarkan dasar-dasar pengembangan game dan logika pemrograman interaktif kepada para siswa untuk mengasah kreativitas digital mereka.",
+      "Educated students on UI/UX wireframing, color theory, and digital prototyping using Figma to create intuitive mobile application interfaces.",
     image: alansharImg2,
     tags: ["Figma", "15+ Students"],
   },
@@ -857,7 +860,7 @@ export const extraTeachingExperiences = [
     institution: "MTs Yasmine",
     year: "Oct 2022",
     description:
-      "Mengajarkan prinsip-prinsip desain antarmuka (UI/UX) dan pembuatan poster digital menggunakan perangkat lunak desain visual modern.",
+      "Taught graphic design fundamentals, typography hierarchy, and UI layout composition using modern design tools for digital media.",
     image: mtsyasmineImg,
     tags: ["Figma", "UI/UX & Poster Design", "25+ Students"],
   },
@@ -866,7 +869,7 @@ export const extraTeachingExperiences = [
     institution: "Al Anshar",
     year: "Nov 2022",
     description:
-      "Mengajarkan dasar-dasar pengembangan game dan logika pemrograman interaktif kepada para siswa untuk mengasah kreativitas digital mereka.",
+      "Taught 2D game architecture, event-driven programming, and physics simulation logic to students through Scratch.",
     image: alansharImg,
     tags: ["Scratch", "15+ Students"],
   },
@@ -875,7 +878,7 @@ export const extraTeachingExperiences = [
     institution: "Griyya Sunnah",
     year: "Jul 2022",
     description:
-      "Membimbing siswa dalam membuat game sederhana, mengenalkan alur logika, dan pemecahan masalah komputasional melalui pemrograman.",
+      "Coached students in game mechanics design and algorithmic problem-solving, building simple interactive games from scratch.",
     image: griyyasunnahImg,
     tags: ["Game Development", "15+ Students"],
   },
@@ -887,7 +890,7 @@ export const extraOtherExperiences = [
     institution: "PT Intisel Semarang",
     year: "Nov 2025",
     description:
-      "Menjalani program survival selama satu minggu di kota tak dikenal tanpa jaring pengaman atau uang saku. Bekerja mendistribusikan perlengkapan konstruksi telekomunikasi ke lokasi kontraktor untuk bertahan hidup dan membiayai tiket pulang.",
+      "Underwent a one-week urban survival initiative in an unfamiliar city with zero allowance or financial safety net. Handled telecom construction equipment logistics and contractor distribution to earn daily subsistence and fund the return transit.",
     tags: ["Survival", "Resilience", "Hard Work"],
     image: semarangImg,
   },
@@ -896,7 +899,7 @@ export const extraOtherExperiences = [
     institution: "IT Fest 2025",
     year: "Aug 2025",
     description:
-      "Memanfaatkan pengalaman sebagai Event Division Lead OSIS untuk merencanakan dan mengeksekusi acara secara end-to-end, mengatur logistik, delegasi tim, serta memastikan kelancaran operasional perlombaan IT.",
+      "Directed operations and end-to-end planning for a regional IT festival, orchestrating venue logistics, competition judging workflows, and delegating responsibilities across 15+ student committee members.",
     tags: ["Project Management", "Leadership", "Event Planning"],
     image: itfestImg,
   },
