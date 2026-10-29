@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PKG14RYTBS"></script>
+    <!-- Google tag (gtag.js) - Deferred loading to avoid LCP/FCP competition -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-PKG14RYTBS');
+
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PKG14RYTBS';
+        document.head.appendChild(s);
+      });
     </script>
     <!-- Preload Critical Fonts (Eliminates request chaining latency) -->
     <link rel="preload" href="/assets/fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />

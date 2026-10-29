@@ -1,5 +1,5 @@
 # Rafif Sava Adyvka Pratama (Adyvka)
-> Official Portfolio & Developer Knowledge Base: https://adyvkapratama.my.id
+> Official Portfolio & Developer Knowledge Base: [https://adyvkapratama.my.id](https://adyvkapratama.my.id)
 
 Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software Engineer & Systems Architect based in West Java, Indonesia. He specializes in designing resilient, highly scalable distributed systems, enterprise platforms, and multi-platform applications across web, mobile, and cloud infrastructure.
 
@@ -13,95 +13,116 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 
 ## Flagship Systems & Shipped Projects
 
-### 1. Databank ERP Ecosystem
-- **URL**: https://adyvkapratama.my.id/projects/databank
+### 1. [Databank ERP Ecosystem](https://adyvkapratama.my.id/projects/databank)
+- **URL**: [https://adyvkapratama.my.id/projects/databank](https://adyvkapratama.my.id/projects/databank)
 - **Role**: Lead Systems Engineer & Project Manager (PT Intisel Prodaktifakom)
 - **Stack**: React 19, NestJS 11, PostgreSQL 14+, Prisma ORM, Docker, Playwright, React Virtuoso
 - **Summary**: Enterprise telecommunication operations platform managing 50,000+ data rows lag-free, automated Huawei ISDP scraping bots, 3-stage sequential digital signature approval pipelines (PS/SS -> RPM -> SPM), 65 granular RBAC permissions, and GPS geofenced workforce attendance integrated into payroll.
 
-### 2. KEPK UMJ (Health Research Ethics Committee)
-- **URL**: https://adyvkapratama.my.id/projects/kepk
+### 2. [KEPK UMJ (Health Research Ethics Committee)](https://adyvkapratama.my.id/projects/kepk)
+- **URL**: [https://adyvkapratama.my.id/projects/kepk](https://adyvkapratama.my.id/projects/kepk)
 - **Role**: Full Stack Engineer & Server Architect (Universitas Muhammadiyah Jakarta)
 - **Stack**: React, Vite, NestJS, PostgreSQL, Prisma, Docker, Biznet Cloud VPS
 - **Summary**: National health research ethics evaluation system managing clinical ethical clearances, 4-tier sequential review protocols, and cryptographic document verification deployed on self-hosted cloud VPS.
 
-### 3. PusakaKu (Indonesian Cultural Heritage Platform)
-- **URL**: https://adyvkapratama.my.id/projects/pusakaku
+### 3. [PusakaKu (Indonesian Cultural Heritage Platform)](https://adyvkapratama.my.id/projects/pusakaku)
+- **URL**: [https://adyvkapratama.my.id/projects/pusakaku](https://adyvkapratama.my.id/projects/pusakaku)
 - **Role**: Team Lead & Lead Developer (ICOMFEST 2025 Champion)
 - **Stack**: React, Tailwind CSS, Gamification Engine
 - **Summary**: 1st Place National Web Design Winner revitalizing 10+ endangered Indonesian traditional games through interactive ethnography and a 10-stage gamified assessment quiz engine.
 
-### 4. Terastani (Smart Agricultural Marketplace)
-- **URL**: https://adyvkapratama.my.id/projects/terastani
+### 4. [Terastani (Smart Agricultural Marketplace)](https://adyvkapratama.my.id/projects/terastani)
+- **URL**: [https://adyvkapratama.my.id/projects/terastani](https://adyvkapratama.my.id/projects/terastani)
 - **Role**: Full Stack Engineer
 - **Stack**: Next.js, Node.js, PostgreSQL, Tailwind CSS
 - **Summary**: Agricultural B2B commerce network connecting local farming cooperatives directly with urban distribution networks with real-time price index tracking.
 
-### 5. Ruang Tumbuh (Pediatric Development Screening)
-- **URL**: https://adyvkapratama.my.id/projects/ruangtumbuh
+### 5. [Ruang Tumbuh (Pediatric Development Screening)](https://adyvkapratama.my.id/projects/ruangtumbuh)
+- **URL**: [https://adyvkapratama.my.id/projects/ruangtumbuh](https://adyvkapratama.my.id/projects/ruangtumbuh)
 - **Role**: Full Stack Engineer
 - **Stack**: Next.js, NestJS, PostgreSQL, Framer Motion
 - **Summary**: Clinical pediatric milestone screening platform standardizing developmental assessments according to national pediatric guidelines.
 
-### All Shipped Projects Directory
-- Complete catalogue of 18 shipped platforms: https://adyvkapratama.my.id/projects
+### Complete Catalogue of 18 Shipped Platforms
+- [Databank ERP](https://adyvkapratama.my.id/projects/databank): Enterprise telecommunication resource planning and operations ecosystem.
+- [SIM KEPK FK UMJ](https://adyvkapratama.my.id/projects/kepk): National health research ethics evaluation and cryptographic certification.
+- [PusakaKu](https://adyvkapratama.my.id/projects/pusakaku): 1st Place National Web Design Winner revitalizing traditional Indonesian culture.
+- [TerasTani](https://adyvkapratama.my.id/projects/terastani): Decentralized agricultural B2B network with AI spectrometry.
+- [RuangTumbuh](https://adyvkapratama.my.id/projects/ruangtumbuh): P2P educational time-banking platform with 2D physics and Gemini AI.
+- [FitSmart](https://adyvkapratama.my.id/projects/fitsmart): Preventive healthcare platform with Gemini Pro virtual clinical doctor.
+- [Java Island Explorer](https://adyvkapratama.my.id/projects/javaisland): Cultural tourism and historical exploration portal across Java.
+- [CV Richo Bahari Port Site](https://adyvkapratama.my.id/projects/richobahari): Enterprise maritime logistics and port services web portal.
+- [DeliFood Platform](https://adyvkapratama.my.id/projects/delifood): Full-stack food ordering and delivery marketplace.
+- [AI Ticket Manager](https://adyvkapratama.my.id/projects/ai-ticket-manager): Intelligent IT support ticketing with automated AI triage.
+- [Coffeee Shop Landing](https://adyvkapratama.my.id/projects/coffeee-shop): Artisanal specialty coffee brand experience and digital menu.
+- [MyStyle E-Commerce](https://adyvkapratama.my.id/projects/mystyle): Fashion and apparel web store with responsive catalog browsing.
+- [SemuaBisa LMS](https://adyvkapratama.my.id/projects/semua-bisa): Inclusive digital learning management system with accessible coursework.
+- [IDN Course Platform](https://adyvkapratama.my.id/projects/idncourse): Technology education platform offering practical coding courses.
+- [Attendance Mobile App](https://adyvkapratama.my.id/projects/attendance-app): Flutter cross-platform geolocation attendance tracking.
+- [Quran Mobile App](https://adyvkapratama.my.id/projects/quran-app): Mobile Quran reader featuring audio recitation and translation.
+- [QR Scanner App](https://adyvkapratama.my.id/projects/qr-scanner): High-speed camera scanner with barcode parsing.
+- [News Reader App](https://adyvkapratama.my.id/projects/news-app): Real-time categorized news reader with offline caching.
+- Full directory: [https://adyvkapratama.my.id/projects](https://adyvkapratama.my.id/projects)
 
 ---
 
 ## National Awards & Competitions
 
-### 1. 1st Place: National Web Design Competition (ICOMFEST 2025)
-- **URL**: https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition
+### 1. [1st Place: National Web Design Competition (ICOMFEST 2025)](https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition)
+- **URL**: [https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition](https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition)
 - **Institution**: Universitas Ahmad Dahlan (ICOMFEST 2025)
-- **Project**: PusakaKu
+- **Project**: [PusakaKu](https://adyvkapratama.my.id/projects/pusakaku)
 - **Summary**: Awarded 1st Place National Champion among university and senior high teams nationwide. Led engineering architecture, public defense before the jury panel, and live platform demo.
 
-### 2. 2nd Place: National Web Design Competition (PNBITC#18)
-- **URL**: https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc
+### 2. [2nd Place: National Web Design Competition (PNBITC#18)](https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc)
+- **URL**: [https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc](https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc)
 - **Institution**: Politeknik Negeri Bali
 - **Summary**: National Runner-Up achieved during an intensive one-month development sprint balancing 12th-grade corporate internship duties.
 
-### 3. Top 5 Finalist: National Web Development Competition (UNILA 2025)
-- **URL**: https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition
+### 3. [Top 5 Finalist: National Web Development Competition (UNILA 2025)](https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition)
+- **URL**: [https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition](https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition)
 - **Institution**: Universitas Lampung
 - **Summary**: Selected as Top 5 finalist for high-performance responsive web engineering.
+
+- Complete recognitions list: [https://adyvkapratama.my.id/achievements](https://adyvkapratama.my.id/achievements)
 
 ---
 
 ## Professional & Leadership Experience
 
-### 1. PT Intisel Prodaktifakom
-- **URL**: https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance
+### 1. [PT Intisel Prodaktifakom](https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance)
+- **URL**: [https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance](https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance)
 - **Role**: Full Stack Engineer & Project Manager
 - **Highlights**: Led architecture of Databank ERP, directed engineering sprints, managed code reviews, and deployed mission-critical micro-APIs.
 
-### 2. Universitas Muhammadiyah Jakarta
-- **URL**: https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract
+### 2. [Universitas Muhammadiyah Jakarta](https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract)
+- **URL**: [https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract](https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract)
 - **Role**: Full Stack Engineer & Server Architect
 - **Highlights**: Engineered the KEPK health ethics platform, automated multi-stage committee review workflows, and managed VPS production infrastructure.
 
 ### 3. Technical Educator & Community Leadership
-- **Faculty Training**: Trained secondary school teachers at SMPN 25 Depok in web fundamentals and modern digital platforms.
-- **Student Council**: Head of Event Division at SMK IDN Boarding School leading major technology seminars and school hackathons.
-- **Rural Immersion (Live In)**: Completed a 1-week community immersion living, farming, and contributing alongside traditional agricultural families in rural West Java.
-- **International Backpacker**: Selected for 3-country ASEAN cultural study navigating Singapore, Malaysia, and Thailand independently.
+- **Faculty Training**: Trained secondary school teachers at [SMPN 25 Depok](https://adyvkapratama.my.id/experience/smp-ins-depok-app-development-instructor) in web fundamentals and modern digital platforms.
+- **Student Council**: Head of Event Division at [SMK IDN Boarding School](https://adyvkapratama.my.id/experience/idn-student-council-event-division-leader) leading major technology seminars and school hackathons.
+- **Rural Immersion (Live In)**: Completed a 1-week community immersion [Live In](https://adyvkapratama.my.id/experience/idn-boarding-school-live-in-rural-immersion) living, farming, and contributing alongside traditional agricultural families in rural West Java.
+- **International Backpacker**: Selected for 3-country ASEAN cultural study [Singapore, Malaysia, Thailand Backpacker](https://adyvkapratama.my.id/experience/singapore-malaysia-thailand-backpacker-3-country) navigating independently.
+- Complete timeline: [https://adyvkapratama.my.id/experience](https://adyvkapratama.my.id/experience)
 
 ---
 
 ## Verified Professional Credentials
 
-- **Harvard University CS50**: Introduction to Computer Science (Algorithms, C, Python, SQL, Memory Management)
-- **AWS Cloud Practitioner Essentials**: Amazon Web Services Cloud Architecture & Security
-- **Dicoding Indonesia**: Back-End Development, React Web, JavaScript, Cloud Architecture
-- **DQLab**: Data Analyst Fundamentals (SQL, Statistical Computation)
-- **Skillvul**: C / C++ Programming Fundamentals
-- Complete certificate list: https://adyvkapratama.my.id/certificates
+- **[Harvard University CS50](https://adyvkapratama.my.id/certificates/cs50-introduction-to-computer-science)**: Introduction to Computer Science (Algorithms, C, Python, SQL, Memory Management)
+- **[AWS Cloud Practitioner Essentials](https://adyvkapratama.my.id/certificates/cloud-practitioner-essentials)**: Amazon Web Services Cloud Architecture & Security
+- **[Dicoding Indonesia Back-End Developer](https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-back-end)**: Back-End Development, React Web, JavaScript, Cloud Architecture
+- **[DQLab Data Analyst Fundamentals](https://adyvkapratama.my.id/certificates/belajar-dasar-data-analyst)**: Data Analyst Fundamentals (SQL, Statistical Computation)
+- **[Skillvul Programming Fundamentals](https://adyvkapratama.my.id/certificates/memulai-pemrograman-dengan-c)**: C / C++ Programming Fundamentals
+- Complete certificate list: [https://adyvkapratama.my.id/certificates](https://adyvkapratama.my.id/certificates)
 
 ---
 
 ## Official Social & Developer Links
 
-- **Website**: https://adyvkapratama.my.id
-- **GitHub**: https://github.com/adyvka31
-- **LinkedIn**: https://www.linkedin.com/in/adyvka-pratama/
-- **Contact Email**: rafifdyvka07@gmail.com
+- **Website**: [https://adyvkapratama.my.id](https://adyvkapratama.my.id)
+- **GitHub**: [https://github.com/adyvka31](https://github.com/adyvka31)
+- **LinkedIn**: [https://www.linkedin.com/in/adyvka-pratama/](https://www.linkedin.com/in/adyvka-pratama/)
+- **Contact Email**: [rafifdyvka07@gmail.com](mailto:rafifdyvka07@gmail.com)

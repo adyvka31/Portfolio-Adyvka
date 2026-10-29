@@ -107,6 +107,7 @@ export default function Navbar() {
               onClick={() => setCvOpen(true)}
               className={`btn-primary ${styles.cta}`}
               aria-haspopup="dialog"
+              aria-label="View Curriculum Vitae"
             >
               CV <ArrowUpRightIcon />
             </button>
