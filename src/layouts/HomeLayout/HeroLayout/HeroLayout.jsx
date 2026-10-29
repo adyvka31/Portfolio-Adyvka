@@ -3,8 +3,7 @@ import NativeReveal from "../../../components/Reveal/NativeReveal"; // ✅ Impor
 import { ArrowRightIcon, GithubIcon } from "../../../components/Icons/Icons";
 import { heroMetrics, personalInfo } from "../../../data/portfolio";
 import styles from "./HeroLayout.module.css";
-import profilePhoto from "../../../assets/profile.webp?w=400;800&quality=70&format=avif;webp&as=picture";
-import Image from "../../../components/Image/Image";
+import profilePhoto from "../../../assets/profile.webp";
 
 function HeroLayout() {
   const heroRef = useRef(null);
@@ -106,14 +105,15 @@ function HeroLayout() {
 
               {/* Layer 2: Profile Photo Container */}
               <div className={styles.heroBgPhotoContainer}>
-                <Image
+                <img
                   src={profilePhoto}
                   alt="Rafif Sava Adyvka Pratama"
                   className={styles.heroBgPhoto}
-                  width={800}
-                  height={1000}
-                  sizes="(max-width: 768px) 100vw, 600px"
-                  priority={true}
+                  width={1296}
+                  height={1728}
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
                 />
               </div>
 

@@ -27,7 +27,7 @@ export default function Image({
 
   return (
     <div
-      className={`img-skeleton-container ${isLoaded ? "is-loaded" : "is-loading"} ${containerClassName}`.trim()}
+      className={`img-skeleton-container ${isLoaded ? "is-loaded" : "is-loading"} ${priority ? "is-priority" : ""} ${containerClassName}`.trim()}
       style={{
         position: "relative",
         width: "100%",

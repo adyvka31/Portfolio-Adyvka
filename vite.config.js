@@ -13,7 +13,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith(".woff2")) {
+            return "assets/fonts/[name][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
         manualChunks(id) {
+          if (id.endsWith(".css") || id.includes(".css?")) return;
           if (!id.includes("node_modules")) return;
           if (id.includes("react-router")) return "router";
           if (

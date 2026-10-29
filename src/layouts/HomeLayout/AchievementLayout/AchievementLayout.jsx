@@ -7,7 +7,14 @@ import { recognitionData } from "../../../data/portfolio";
 import styles from "./AchievementLayout.module.css";
 
 function AchievementCard({ item, faded }) {
-  return <Card variant="bento" item={item} faded={faded} />;
+  return (
+    <Card
+      variant="bento"
+      item={item}
+      faded={faded}
+      className={faded ? styles.fadedCard : ""}
+    />
+  );
 }
 
 function AchievementLayout() {
