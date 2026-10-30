@@ -2,7 +2,7 @@
 
 > **Personal portfolio of Rafif Sava Adyvka Pratama** — Full Stack Engineer & Mobile Developer based in Depok, West Java, Indonesia.
 
-[![Live Demo](https://img.shields.io/badge/Live-adyvka--pratama.netlify.app-7cf2ff?style=flat-square&logo=netlify)](https://adyvka-pratama.netlify.app)
+[![Live Demo](https://img.shields.io/badge/Live-adyvkapratama.my.id-7cf2ff?style=flat-square&logo=netlify)](https://adyvkapratama.my.id)
 [![Tech Stack](https://img.shields.io/badge/Stack-React%20%2B%20Vite-61dafb?style=flat-square&logo=react)](https://vitejs.dev)
 [![License](https://img.shields.io/badge/License-MIT-white?style=flat-square)](LICENSE)
 
@@ -183,7 +183,7 @@ portofolio-adyvka/
 
 **Rafif Sava Adyvka Pratama** — Full Stack Engineer & Mobile Developer
 
-- 🌐 Portfolio: [adyvka-pratama.netlify.app](https://adyvka-pratama.netlify.app)
+- 🌐 Portfolio: [adyvkapratama.my.id](https://adyvkapratama.my.id)
 - 💼 LinkedIn: [linkedin.com/in/adyvka-pratama](https://www.linkedin.com/in/adyvka-pratama/)
 - 🐙 GitHub: [github.com/adyvka31](https://github.com/adyvka31)
 - 📧 Email: rafifdyvka07@gmail.com
