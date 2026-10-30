@@ -5,347 +5,422 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://adyvkapratama.my.id</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/about</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/achievements</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adyvkapratama.my.id/contact</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/richobahari</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/terastani</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/kepk</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/databank</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/ruangtumbuh</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/fitsmart</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/javaisland</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/pusakaku</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/semua-bisa</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/idncourse</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/coffeee-shop</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/mystyle</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/delifood</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/ai-ticket-manager</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/attendance-app</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/qr-scanner</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/news-app</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/projects/quran-app</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/cv-richo-bahari-frontend-developer-freelance</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/sma-lazuardi-gcs-web-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/hajrabyadl-web-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/smpn-45-app-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/smp-ins-depok-app-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/semut-semut-the-natural-school-game-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/al-anshar-app-design-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/mts-yasmine-design-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/al-anshar-game-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/griyya-sunnah-game-development-instructor</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/singapore-malaysia-thailand-backpacker-3-country</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/idn-student-council-event-division-leader</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/barmus-voluntrip-volunteer-event-organizer</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/pt-intisel-semarang-business-life-survival</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/it-fest-2025-competition-event-coordinator</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/experience/idn-boarding-school-live-in-rural-immersion</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/cs50-introduction-to-computer-science</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/coding-camp-full-stack-developer</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/frontend-web-developer</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/belajar-dasar-data-analyst</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-back-end</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/belajar-dasar-git-dengan-github</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/graphic-design-fundamentals</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/memulai-pemrograman-dengan-c</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/dasar-ui-ux-design</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/python-fundamentals</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/belajar-dasar-pemrograman-javascript</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/cloud-practitioner-essentials</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-web-dengan-react</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/memulai-pemrograman-dengan-python</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/belajar-dasar-pemrograman-web</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/pengenalan-ke-logika-pemrograman</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/pemrograman-dasar-c</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/dasar-prompt-engineering</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/meniti-karier-sebagai-software-developer</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/financial-literacy-fundamentals</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/artificial-intelligence-basics</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/google-developer-groups-participant</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://adyvkapratama.my.id/certificates/english-proficiency-assessment</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
 </urlset>
