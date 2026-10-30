@@ -21,6 +21,8 @@ import {
   CloudIcon,
   DatabaseIcon,
   FileCodeIcon,
+  GithubIcon,
+  LinkedInIcon,
   LockIcon,
   MonitorIcon,
   ServerIcon,
@@ -280,6 +282,11 @@ function ProjectDetailPage() {
                       rel="noopener noreferrer"
                       className={styles.linkBtn}
                     >
+                      {l.url.includes("lnkd.in") || l.url.includes("linkedin") ? (
+                        <LinkedInIcon size={13} />
+                      ) : l.url.includes("github.com") ? (
+                        <GithubIcon size={13} />
+                      ) : null}
                       {l.label} <ArrowUpRightIcon size={12} />
                     </a>
                   ))}

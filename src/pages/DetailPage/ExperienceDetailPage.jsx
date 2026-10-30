@@ -18,6 +18,8 @@ import {
   ArrowRightIcon,
   ArrowUpRightIcon,
   CheckIcon,
+  LinkedInIcon,
+  GithubIcon,
 } from "../../components/Icons/Icons";
 import {
   experiencesList,
@@ -151,6 +153,29 @@ function WorkExperienceView({ experience, detail, slug }) {
               ))}
             </div>
           </NativeReveal>
+
+          {detail?.links?.length > 0 && (
+            <NativeReveal className="css-reveal" delay={0.08}>
+              <div className={styles.linksRow}>
+                {detail.links.map((l) => (
+                  <a
+                    key={l.url}
+                    href={l.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkBtn}
+                  >
+                    {l.url.includes("lnkd.in") || l.url.includes("linkedin") ? (
+                      <LinkedInIcon size={13} />
+                    ) : l.url.includes("github.com") ? (
+                      <GithubIcon size={13} />
+                    ) : null}
+                    {l.label} <ArrowUpRightIcon size={12} />
+                  </a>
+                ))}
+              </div>
+            </NativeReveal>
+          )}
         </div>
 
         {/* OPTIONAL KPIS / METRIC STRIP */}

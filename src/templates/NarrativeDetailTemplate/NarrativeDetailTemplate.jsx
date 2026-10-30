@@ -11,6 +11,11 @@ import Tag from "../../components/Tag/Tag";
 import MetricsGrid from "../../components/MetricsGrid/MetricsGrid";
 import DocumentationGallery from "../../components/DocumentationGallery/DocumentationGallery";
 import Lightbox from "../../components/Lightbox/Lightbox";
+import {
+  ArrowUpRightIcon,
+  LinkedInIcon,
+  GithubIcon,
+} from "../../components/Icons/Icons";
 import styles from "./NarrativeDetailTemplate.module.css";
 
 function getFeaturedChapterIndex(chapters) {
@@ -31,6 +36,7 @@ function NarrativeDetailTemplate({
   hero,
   institution,
   tags = [],
+  links = [],
   kpis = [],
   story,
   pillars,
@@ -81,6 +87,29 @@ function NarrativeDetailTemplate({
                   <Tag key={t} size="sm">
                     {t}
                   </Tag>
+                ))}
+              </div>
+            </NativeReveal>
+          )}
+
+          {links && links.length > 0 && (
+            <NativeReveal className="css-reveal" delay={0.08}>
+              <div className={styles.linksRow}>
+                {links.map((l) => (
+                  <a
+                    key={l.url}
+                    href={l.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkBtn}
+                  >
+                    {l.url.includes("lnkd.in") || l.url.includes("linkedin") ? (
+                      <LinkedInIcon size={13} />
+                    ) : l.url.includes("github.com") ? (
+                      <GithubIcon size={13} />
+                    ) : null}
+                    {l.label} <ArrowUpRightIcon size={12} />
+                  </a>
                 ))}
               </div>
             </NativeReveal>

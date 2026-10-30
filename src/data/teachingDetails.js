@@ -190,6 +190,9 @@ export const teachingDetails = {
       "Squad Leadership",
       "IDN Mengajar",
     ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gCSnVS6B" },
+    ],
   },
 
   // Aliases for SMA Lazuardi GCS
@@ -544,6 +547,9 @@ export const teachingDetails = {
       "Public Speaking",
       "Event Logic",
     ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for SMPN 25 / 45 Depok
@@ -704,6 +710,9 @@ export const teachingDetails = {
       },
     ],
     stack: ["Kodular", "Android Development", "Visual Logic", "Mobile UI", "Teaching", "Event Logic"],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for SMP INS Depok
@@ -873,6 +882,9 @@ export const teachingDetails = {
       "Pedagogy",
       "Interactive Learning",
     ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for Semut-Semut
@@ -996,6 +1008,9 @@ export const teachingDetails = {
       },
     ],
     stack: ["Figma", "UI/UX Design", "Wireframing", "Mobile Ergonomics", "Interactive Prototyping", "Public Speaking"],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for Al Anshar App Design
@@ -1116,6 +1131,9 @@ export const teachingDetails = {
       },
     ],
     stack: ["Figma", "Graphic Design", "Typography", "Visual Hierarchy", "Poster Design", "Teaching"],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for MTs Yasmine
@@ -1236,6 +1254,9 @@ export const teachingDetails = {
       },
     ],
     stack: ["Scratch", "Game Development", "Logic Programming", "Collision Detection", "Teaching", "Public Speaking"],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for Al Anshar Game Dev
@@ -1359,6 +1380,9 @@ export const teachingDetails = {
       },
     ],
     stack: ["Scratch", "Game Development", "Youth Pedagogy", "Computational Thinking", "Public Speaking", "Community Outreach"],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
   },
 
   // Aliases for Griyya Sunnah

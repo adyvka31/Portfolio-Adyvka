@@ -1512,6 +1512,7 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/kepk-backend" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gDXiQQxX" },
     ],
   },
   databank: {
@@ -1988,8 +1989,7 @@ export const projectDetails = {
       "GitHub Actions",
     ],
     links: [
-      // { label: "Live", url: "#" },
-      // { label: "Case study PDF", url: "#" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gpEHsZsu" },
     ],
   },
 
@@ -2544,6 +2544,7 @@ export const projectDetails = {
       { label: "Live Demo", url: "https://ruang-tumbuh.vercel.app/" },
       { label: "Backend API", url: "https://ruangtumbuh-production.up.railway.app/" },
       { label: "GitHub", url: "https://github.com/adyvka31/RuangTumbuh" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gh6RRZFw" },
     ],
   },
   fitsmart: {
@@ -3040,6 +3041,7 @@ export const projectDetails = {
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/FitSmart" },
       { label: "Live Demo", url: "https://jagajiwamu.vercel.app/" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gimHbF7a" },
     ],
   },
 
@@ -3541,6 +3543,7 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/JavaIsland" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gcqYjYhC" },
     ],
   },
 
@@ -4042,6 +4045,8 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/Pusakaku" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gy-fZZqr" },
+      { label: "Official Article", url: "https://idn.sch.id/juara-1-web-design-icomfest-2025/" },
     ],
   },
 
@@ -4537,6 +4542,8 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/SemuaBisa-Web" },
+      { label: "LinkedIn Post (UNILA)", url: "https://lnkd.in/p/gequTgK3" },
+      { label: "LinkedIn Post (Showcase)", url: "https://lnkd.in/p/ge9vHNsM" },
     ],
   },
 
@@ -5048,6 +5055,7 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/IDNCourse-Web" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/ge9vHNsM" },
     ],
   },
 
@@ -5533,6 +5541,7 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/Coffeee-Shop" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/ge9vHNsM" },
     ],
   },
 
@@ -6534,6 +6543,7 @@ export const projectDetails = {
     ],
     links: [
       { label: "GitHub Repository", url: "https://github.com/adyvka31/DeliFood" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gMtk8_DD" },
     ],
   },
 

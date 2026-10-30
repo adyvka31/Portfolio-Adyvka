@@ -42,6 +42,12 @@ export const achievementDetails = {
       "Figma",
       "Git/GitHub",
     ],
+    links: [
+      {
+        label: "Official Article",
+        url: "https://idn.sch.id/smk-dkv-terbaik-bogor-siswa-idn-tembus-final-kompetisi-it-di-bali/",
+      },
+    ],
     kpis: [
       {
         value: "2nd Place",
@@ -190,6 +196,10 @@ export const achievementDetails = {
       "Figma",
       "Git/GitHub",
     ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gy-fZZqr" },
+      { label: "Official Article", url: "https://idn.sch.id/juara-1-web-design-icomfest-2025/" },
+    ],
     kpis: [
       {
         value: "1st Place",
@@ -337,6 +347,9 @@ export const achievementDetails = {
       "JavaScript",
       "UI/UX Design",
       "Git/GitHub",
+    ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gequTgK3" },
     ],
     kpis: [
       {

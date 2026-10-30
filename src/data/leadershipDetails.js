@@ -51,6 +51,9 @@ export const leadershipDetails = {
       "Overland Logistics",
       "Global Networking",
     ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+    ],
     kpis: [
       {
         value: "3 Countries",

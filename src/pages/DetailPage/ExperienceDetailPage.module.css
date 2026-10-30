@@ -47,6 +47,34 @@
   gap: 0.5rem;
 }
 
+.linksRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--accent-glow, #7cf2ff);
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(124, 242, 255, 0.05);
+  border: 1px solid rgba(124, 242, 255, 0.2);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.linkBtn:hover {
+  background: rgba(124, 242, 255, 0.12);
+  border-color: rgba(124, 242, 255, 0.4);
+  transform: translateY(-1px);
+}
+
 /* ==========================================================================
    GENERIC SECTIONS & CONTAINER
    ========================================================================== */

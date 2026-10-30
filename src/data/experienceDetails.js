@@ -646,6 +646,9 @@ export const experienceDetails = {
       "Docker",
       "Huawei ISDP",
     ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gpEHsZsu" },
+    ],
     relatedProject: "databank",
     relatedProjectCard: {
       slug: "databank",
@@ -851,6 +854,9 @@ export const experienceDetails = {
       "Spatie RBAC",
       "DomPDF",
       "Axios",
+    ],
+    links: [
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gDXiQQxX" },
     ],
     relatedProject: "kepk",
     relatedProjectCard: {

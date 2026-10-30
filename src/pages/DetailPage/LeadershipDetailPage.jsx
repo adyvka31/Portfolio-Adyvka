@@ -114,6 +114,7 @@ function LeadershipDetailPage({
         name: effectiveInstitution,
       }}
       tags={detail?.stack || item?.tags || []}
+      links={detail?.links}
       kpis={detail?.kpis}
       story={
         detail?.story
