@@ -3,7 +3,7 @@ import NativeReveal from "../../../components/Reveal/NativeReveal"; // ✅ Impor
 import { ArrowRightIcon, GithubIcon } from "../../../components/Icons/Icons";
 import { heroMetrics, personalInfo } from "../../../data/portfolio";
 import styles from "./HeroLayout.module.css";
-import profilePhoto from "../../../assets/profile.webp";
+import profilePhoto from "../../../assets/rafif-sava-adyvka-pratama-hero-portrait.webp";
 
 function HeroLayout() {
   const heroRef = useRef(null);
@@ -107,7 +107,7 @@ function HeroLayout() {
               <div className={styles.heroBgPhotoContainer}>
                 <img
                   src={profilePhoto}
-                  alt="Rafif Sava Adyvka Pratama"
+                  alt="Rafif Sava Adyvka Pratama — Software Engineer & Systems Architect Hero Portrait"
                   className={styles.heroBgPhoto}
                   width={1296}
                   height={1728}

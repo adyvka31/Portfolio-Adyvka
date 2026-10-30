@@ -49,7 +49,11 @@ function Card({
         >
           <Image
             src={item?.thumbnail || item?.image}
-            alt={item?.title || "Project Thumbnail"}
+            alt={
+              item?.title
+                ? `${item.title} — ${item?.category || "Software Engineering"} Project Preview`
+                : "Software Engineering Project Preview"
+            }
             className={styles.thumbnail}
             width={640}
             height={380}
@@ -250,7 +254,13 @@ function Card({
       <div className={styles.imageContainer}>
         <Image
           src={item?.image || item?.thumbnail}
-          alt={item?.title || item?.role || "Preview"}
+          alt={
+            item?.title
+              ? `${item.title} — ${item?.institution || item?.company || "Experience Showcase"}`
+              : item?.role
+              ? `${item.role} at ${item?.company || item?.institution || "Experience"}`
+              : "Engineering Experience Showcase"
+          }
           className={styles.cardImage}
           width={600}
           height={400}

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-import profilePhoto from "../../../assets/profile3.webp";
+import profilePhoto from "../../../assets/rafif-sava-adyvka-pratama-contact-portrait.webp";
 import Image from "../../../components/Image/Image";
 
 import {
@@ -122,7 +122,7 @@ export default function ContactLayout() {
                 <div className={styles.ncAvatarWrapper} aria-hidden="true">
                   <Image
                     src={profilePhoto}
-                    alt={personalInfo.name}
+                    alt={`${personalInfo.name} — ${personalInfo.role} Contact Portrait`}
                     className={styles.ncAvatar}
                     width={470}
                     height={470}

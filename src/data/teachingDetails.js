@@ -1,33 +1,33 @@
 // Field & workshop documentation archives
-import smalazuardi1 from "../assets/smalazuardi/smalazuardi1.webp";
-import smalazuardi2 from "../assets/smalazuardi/smalazuardi2.webp";
-import smalazuardi3 from "../assets/smalazuardi/smalazuardi3.webp";
-import smalazuardi4 from "../assets/smalazuardi/smalazuardi4.webp";
+import smalazuardi1 from "../assets/smalazuardi/sma-lazuardi-web-development-classroom-1.webp";
+import smalazuardi2 from "../assets/smalazuardi/sma-lazuardi-web-development-mentoring-2.webp";
+import smalazuardi3 from "../assets/smalazuardi/sma-lazuardi-web-development-coding-session-3.webp";
+import smalazuardi4 from "../assets/smalazuardi/sma-lazuardi-web-development-student-showcase-4.webp";
 
-import smpins1 from "../assets/smpins/smpins1.webp";
-import smpins2 from "../assets/smpins/smpins2.webp";
-import smpins3 from "../assets/smpins/smpins3.webp";
+import smpins1 from "../assets/smpins/smp-ins-depok-mobile-app-workshop-1.webp";
+import smpins2 from "../assets/smpins/smp-ins-depok-block-programming-mentoring-2.webp";
+import smpins3 from "../assets/smpins/smp-ins-depok-student-app-showcase-3.webp";
 
-import semutsemut1 from "../assets/semutsemut/semutsemut1.webp";
-import semutsemut2 from "../assets/semutsemut/semutsemut2.webp";
-import semutsemut3 from "../assets/semutsemut/semutsemut3.webp";
-import semutsemut4 from "../assets/semutsemut/semutsemut4.webp";
+import semutsemut1 from "../assets/semutsemut/semut-semut-game-development-workshop-1.webp";
+import semutsemut2 from "../assets/semutsemut/semut-semut-construct-game-engine-2.webp";
+import semutsemut3 from "../assets/semutsemut/semut-semut-interactive-gameplay-demo-3.webp";
+import semutsemut4 from "../assets/semutsemut/semut-semut-student-certificate-showcase-4.webp";
 
-import hajrabyadl1 from "../assets/hajrabyadl/hajrabyadl1.webp";
-import hajrabyadl2 from "../assets/hajrabyadl/hajrabyadl2.webp";
-import hajrabyadl3 from "../assets/hajrabyadl/hajrabyadl3.webp";
-import hajrabyadl4 from "../assets/hajrabyadl/hajrabyadl4.webp";
+import hajrabyadl1 from "../assets/hajrabyadl/hajrabyadl-frontend-coding-workshop-1.webp";
+import hajrabyadl2 from "../assets/hajrabyadl/hajrabyadl-html-css-student-guidance-2.webp";
+import hajrabyadl3 from "../assets/hajrabyadl/hajrabyadl-responsive-layout-training-3.webp";
+import hajrabyadl4 from "../assets/hajrabyadl/hajrabyadl-certificate-presentation-4.webp";
 
-import smpn251 from "../assets/smpn25/smpn251.webp";
-import smpn252 from "../assets/smpn25/smpn252.webp";
-import smpn253 from "../assets/smpn25/smpn253.webp";
-import smpn254 from "../assets/smpn25/smpn254.webp";
+import smpn251 from "../assets/smpn25/smpn-25-depok-teacher-app-training-1.webp";
+import smpn252 from "../assets/smpn25/smpn-25-depok-mobile-classroom-workshop-2.webp";
+import smpn253 from "../assets/smpn25/smpn-25-depok-kodular-hands-on-practice-3.webp";
+import smpn254 from "../assets/smpn25/smpn-25-depok-faculty-completion-ceremony-4.webp";
 
 // 2022 foundational archives
-import alanshar1 from "../assets/alanshar.webp";
-import alanshar2 from "../assets/alanshar2.webp";
-import mtsyasmine1 from "../assets/mtsyasmine.webp";
-import griyyasunnah1 from "../assets/griyyasunnah.webp";
+import alanshar1 from "../assets/al-anshar-game-development-instructor.webp";
+import alanshar2 from "../assets/al-anshar-app-design-instructor.webp";
+import mtsyasmine1 from "../assets/mts-yasmine-graphic-design-instructor.webp";
+import griyyasunnah1 from "../assets/griyya-sunnah-game-development-instructor.webp";
 
 export const teachingDetails = {
   // =========================================================================

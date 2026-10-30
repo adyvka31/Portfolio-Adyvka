@@ -1,19 +1,19 @@
-import kepkImg from "../assets/kepk.webp";
-import databankImg from "../assets/databank.webp";
-import richobahariImg from "../assets/richobahari.webp";
+import kepkImg from "../assets/kepk-umj-medical-research-ethics-platform.webp";
+import databankImg from "../assets/databank-erp-telecommunication-system.webp";
+import richobahariImg from "../assets/cv-richo-bahari-machinery-corporate-website.webp";
 
 // Field & on-site documentation archives
-import ptardyanda1 from "../assets/ptardyanda/ptardyanda1.webp";
-import ptardyanda2 from "../assets/ptardyanda/ptardyanda2.webp";
-import ptardyanda3 from "../assets/ptardyanda/ptardyanda3.webp";
+import ptardyanda1 from "../assets/ptardyanda/pt-ardyanda-digital-inovasi-fullstack-internship-1.webp";
+import ptardyanda2 from "../assets/ptardyanda/pt-ardyanda-backend-api-architecture-2.webp";
+import ptardyanda3 from "../assets/ptardyanda/pt-ardyanda-production-deployment-review-3.webp";
 
-import ptintisel1 from "../assets/ptintisel/ptintisel1.webp";
-import ptintisel2 from "../assets/ptintisel/ptintisel2.webp";
-import ptintisel3 from "../assets/ptintisel/ptintisel3.webp";
+import ptintisel1 from "../assets/ptintisel/pt-intisel-telecom-system-architecture-1.webp";
+import ptintisel2 from "../assets/ptintisel/pt-intisel-site-infrastructure-monitoring-2.webp";
+import ptintisel3 from "../assets/ptintisel/pt-intisel-engineering-team-planning-3.webp";
 
-import umj1 from "../assets/umj/umj1.webp";
-import umj2 from "../assets/umj/umj2.webp";
-import umj3 from "../assets/umj/umj3.webp";
+import umj1 from "../assets/umj/universitas-muhammadiyah-jakarta-systems-briefing-1.webp";
+import umj2 from "../assets/umj/universitas-muhammadiyah-jakarta-development-sprint-2.webp";
+import umj3 from "../assets/umj/universitas-muhammadiyah-jakarta-deployment-review-3.webp";
 
 // Indexed by the slug generated in portfolio.js (slugify(`${company}-${role}`))
 export const experienceDetails = {

@@ -47,7 +47,7 @@ function DocumentationGallery({
                 <div className={styles.docMediaWrap}>
                   <Image
                     src={doc.image}
-                    alt={doc.title}
+                    alt={doc.title ? `${doc.title} — Documentation Record` : "Engineering Documentation Record"}
                     className={styles.docImage}
                     width={640}
                     height={400}

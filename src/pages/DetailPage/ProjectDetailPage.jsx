@@ -336,7 +336,7 @@ function ProjectDetailPage() {
                   <div style={{ marginTop: "2rem" }}>
                     <MediaFrame
                       src={project.thumbnail}
-                      alt={project.title}
+                      alt={`${project.title} — Official Production Interface & System Architecture`}
                       chromeLabel={detail?.domain || `${project.slug}.vercel.app`}
                     />
                   </div>

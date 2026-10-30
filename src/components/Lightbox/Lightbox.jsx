@@ -63,7 +63,11 @@ export default function Lightbox({
         <div className={styles.lightboxMedia}>
           <Image
             src={current.src || current.image}
-            alt={current.title || "Preview image"}
+            alt={
+              current.title
+                ? `${current.title} — High Resolution Documentation Preview`
+                : current.caption || "High Resolution Engineering Documentation Preview"
+            }
             className={styles.lightboxImage}
             priority={true}
           />

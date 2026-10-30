@@ -1,18 +1,18 @@
 // src/data/achievementDetails.js
 // Official award certificates & competition archive photos
-import pnb1 from "../assets/pnb/pnb1.webp";
-import pnb2 from "../assets/pnb/pnb2.webp";
-import pnb3 from "../assets/pnb/pnb3.webp";
+import pnb1 from "../assets/pnb/pnbitc-2024-runner-up-stage-award-1.webp";
+import pnb2 from "../assets/pnb/pnbitc-2024-runner-up-trophy-certificate-2.webp";
+import pnb3 from "../assets/pnb/pnbitc-2024-national-competition-team-bali-3.webp";
 
-import icomfest1 from "../assets/icomfest2025.webp";
-import icomfest2 from "../assets/icomfest/icomfest2.webp";
-import icomfest3 from "../assets/icomfest/icomfest3.webp";
+import icomfest1 from "../assets/icomfest-2025-1st-place-web-design-national-champion.webp";
+import icomfest2 from "../assets/icomfest/icomfest-2025-champion-trophy-ceremony-2.webp";
+import icomfest3 from "../assets/icomfest/icomfest-2025-web-design-finalist-stage-3.webp";
 
-import unila1 from "../assets/unila2025.webp";
-import unila2 from "../assets/unila/unila2.webp";
-import unila3 from "../assets/unila/unila3.webp";
+import unila1 from "../assets/unila-web-development-competition-national-finalist-2025.webp";
+import unila2 from "../assets/unila/unila-national-web-dev-presentation-2.webp";
+import unila3 from "../assets/unila/unila-national-finalist-award-3.webp";
 
-import poster1 from "../assets/poster.webp";
+import poster1 from "../assets/idn-boarding-school-best-poster-award.webp";
 
 export const achievementDetails = {
   // =========================================================================

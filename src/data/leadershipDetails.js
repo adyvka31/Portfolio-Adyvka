@@ -1,27 +1,27 @@
 // src/data/leadershipDetails.js
 // Photographic archives & verifiable leadership records
 
-import backpackerHero from "../assets/backpackerImg.webp";
-import backpacker2 from "../assets/backpacker/backpacker2.webp";
-import backpacker3 from "../assets/backpacker/backpacker3.webp";
+import backpackerHero from "../assets/singapore-malaysia-thailand-backpacker-expedition.webp";
+import backpacker2 from "../assets/backpacker/singapore-malaysia-thailand-cross-border-route-2.webp";
+import backpacker3 from "../assets/backpacker/singapore-malaysia-thailand-cultural-expedition-3.webp";
 
-import osisHero from "../assets/osis.webp";
-import osis2 from "../assets/osis/osis2.webp";
-import osis3 from "../assets/osis/osis3.webp";
+import osisHero from "../assets/idn-student-council-event-division-leader.webp";
+import osis2 from "../assets/osis/idn-student-council-leadership-summit-2.webp";
+import osis3 from "../assets/osis/idn-student-council-event-production-3.webp";
 
-import barmusHero from "../assets/barmusImg.webp";
-import barmus2 from "../assets/barmush/barmush2.webp";
-import barmus3 from "../assets/barmush/barmush3.webp";
+import barmusHero from "../assets/barmus-voluntrip-event-organizer-volunteer.webp";
+import barmus2 from "../assets/barmush/barmus-voluntrip-community-outreach-2.webp";
+import barmus3 from "../assets/barmush/barmus-voluntrip-team-coordination-3.webp";
 
-import semarangHero from "../assets/semarang.webp";
-import semarang2 from "../assets/businesssurvival/businesssurvival2.webp";
-import semarang3 from "../assets/businesssurvival/businesssurvival3.webp";
+import semarangHero from "../assets/pt-intisel-semarang-business-survival.webp";
+import semarang2 from "../assets/businesssurvival/pt-intisel-semarang-market-trading-2.webp";
+import semarang3 from "../assets/businesssurvival/pt-intisel-semarang-entrepreneurship-survival-3.webp";
 
-import itfestHero from "../assets/itfest.webp";
+import itfestHero from "../assets/it-fest-2025-competition-event-coordinator.webp";
 
-import livein1 from "../assets/livein/livein1.webp";
-import livein2 from "../assets/livein/livein2.webp";
-import livein3 from "../assets/livein/livein3.webp";
+import livein1 from "../assets/livein/idn-boarding-school-rural-livein-immersion-1.webp";
+import livein2 from "../assets/livein/idn-boarding-school-community-collaboration-2.webp";
+import livein3 from "../assets/livein/idn-boarding-school-rural-life-reflection-3.webp";
 
 export const leadershipDetails = {
   // =========================================================================

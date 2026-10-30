@@ -3,7 +3,7 @@ import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import NativeReveal from "../../components/Reveal/NativeReveal";
-import profilePhoto from "../../assets/profile2.webp";
+import profilePhoto from "../../assets/rafif-sava-adyvka-pratama-software-engineer.webp";
 import styles from "./AboutPage.module.css";
 import Image from "../../components/Image/Image";
 
@@ -369,7 +369,7 @@ export default function AboutPage() {
                   <div className={styles.introPhotoGlow} aria-hidden="true" />
                   <Image
                     src={profilePhoto}
-                    alt="Rafif Sava Adyvka Pratama"
+                    alt="Rafif Sava Adyvka Pratama — Lead Systems Engineer & Project Manager"
                     className={styles.introPhoto}
                     width={700}
                     height={700}

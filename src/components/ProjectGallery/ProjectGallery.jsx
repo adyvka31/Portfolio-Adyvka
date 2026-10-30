@@ -194,7 +194,7 @@ export default function ProjectGallery({
                     <Image
                       key={current.id || currentIndex}
                       src={current.image}
-                      alt={current.title}
+                      alt={current.title ? `${current.title} — Mobile Application Screen` : "Mobile Application Screen"}
                       className={styles.phoneImage}
                       width={430}
                       height={900}
@@ -205,7 +205,7 @@ export default function ProjectGallery({
                   <Image
                     key={current.id || currentIndex}
                     src={current.image}
-                    alt={current.title}
+                    alt={current.title ? `${current.title} — Production Dashboard Interface` : "Production Dashboard Interface"}
                     className={styles.slideImage}
                     width={2940}
                     height={1674}
@@ -283,7 +283,7 @@ export default function ProjectGallery({
                 >
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.title ? `${item.title} — Thumbnail View` : "Thumbnail View"}
                     className={`${styles.thumbImage} ${
                       item.isMobile ? styles.thumbImageMobile : ""
                     }`}
@@ -334,7 +334,7 @@ export default function ProjectGallery({
             >
               <Image
                 src={current.image}
-                alt={current.title}
+                alt={current.title ? `${current.title} — Fullscreen Production View` : "Fullscreen Production View"}
                 className={`${styles.lightboxImage} ${
                   current.isMobile ? styles.lightboxImageMobile : ""
                 }`}
