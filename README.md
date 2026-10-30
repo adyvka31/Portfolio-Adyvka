@@ -183,7 +183,7 @@ portofolio-adyvka/
 
 **Rafif Sava Adyvka Pratama** — Full Stack Engineer & Mobile Developer
 
-- 🌐 Portfolio: [adyvka-pratama.netlify.app](https://adyvka-pratama.netlify.app)
+- 🌐 Portfolio: [adyvkapratama.my.id](https://adyvkapratama.my.id)
 - 💼 LinkedIn: [linkedin.com/in/adyvka-pratama](https://www.linkedin.com/in/adyvka-pratama/)
 - 🐙 GitHub: [github.com/adyvka31](https://github.com/adyvka31)
 - 📧 Email: rafifdyvka07@gmail.com
