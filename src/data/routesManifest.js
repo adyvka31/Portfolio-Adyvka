@@ -8,6 +8,7 @@ export const STATIC_ROUTES = [
   { path: "/experience", priority: 0.9, changefreq: "monthly" },
   { path: "/achievements", priority: 0.9, changefreq: "monthly" },
   { path: "/certificates", priority: 0.8, changefreq: "monthly" },
+  { path: "/contact", priority: 0.9, changefreq: "monthly" },
 ];
 
 export const PROJECT_SLUGS = [

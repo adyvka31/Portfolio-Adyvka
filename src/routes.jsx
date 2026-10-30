@@ -34,6 +34,7 @@ const CertificatesPage = lazy(
 const CertificateDetailPage = lazy(
   () => import("./pages/DetailPage/CertificateDetailPage"),
 );
+const ContactPage = lazy(() => import("./pages/ContactPage/ContactPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 export const routes = [
@@ -53,6 +54,7 @@ export const routes = [
       { path: "achievements/:slug", element: <AchievementDetailPage /> },
       { path: "certificates", element: <CertificatesPage /> },
       { path: "certificates/:slug", element: <CertificateDetailPage /> },
+      { path: "contact", element: <ContactPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

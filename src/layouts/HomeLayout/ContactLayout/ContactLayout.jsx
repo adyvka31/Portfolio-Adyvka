@@ -8,6 +8,9 @@ import {
   MailIcon,
   LinkedInIcon,
   GithubIcon,
+  YoutubeIcon,
+  InstagramIcon,
+  TiktokIcon,
   ArrowRightIcon,
 } from "../../../components/Icons/Icons";
 
@@ -180,7 +183,7 @@ export default function ContactLayout() {
                       <span className={`glass ${styles.iconBox}`}>
                         <MailIcon />
                       </span>
-                      Send an email
+                      Email
                     </a>
 
                     <a
@@ -205,6 +208,42 @@ export default function ContactLayout() {
                         <GithubIcon />
                       </span>
                       GitHub
+                    </a>
+
+                    <a
+                      href={personalInfo.socials.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.socialLink}
+                    >
+                      <span className={`glass ${styles.iconBox}`}>
+                        <YoutubeIcon />
+                      </span>
+                      YouTube
+                    </a>
+
+                    <a
+                      href={personalInfo.socials.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.socialLink}
+                    >
+                      <span className={`glass ${styles.iconBox}`}>
+                        <InstagramIcon />
+                      </span>
+                      Instagram
+                    </a>
+
+                    <a
+                      href={personalInfo.socials.tiktok}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.socialLink}
+                    >
+                      <span className={`glass ${styles.iconBox}`}>
+                        <TiktokIcon />
+                      </span>
+                      TikTok
                     </a>
                   </div>
                 </div>

@@ -129,6 +129,9 @@ export default function SEO({
     sameAs: [
       "https://github.com/adyvka31",
       "https://www.linkedin.com/in/adyvka-pratama/",
+      "https://www.youtube.com/@adyvkapratama",
+      "https://instagram.com/adyvkaa",
+      "https://www.tiktok.com/@adypraa31",
     ],
     alumniOf: [
       {

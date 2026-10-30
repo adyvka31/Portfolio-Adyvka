@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { Link } from "react-router-dom";
 import NativeReveal from "../Reveal/NativeReveal";
 import { ArrowRightIcon } from "../Icons/Icons";
 import styles from "./BottomCTA.module.css";
@@ -8,6 +9,8 @@ function BottomCTA({
   title = "Let's build something.",
   italicWord = "something",
   description = "Recruiting, contracting, or just curious — the inbox is open.",
+  buttonText = "Get in touch",
+  buttonTo = "/contact",
 }) {
   const renderTitle = () => {
     if (!italicWord) return title;
@@ -26,6 +29,8 @@ function BottomCTA({
     );
   };
 
+  const isInternal = buttonTo.startsWith("/") && !buttonTo.startsWith("//");
+
   return (
     <section className={styles.section} aria-label="Call to Action">
       <div className={styles.container}>
@@ -42,9 +47,15 @@ function BottomCTA({
         </NativeReveal>
 
         <NativeReveal delay={0.3} className="reveal-slide-up">
-          <a href="/#contact" className={`btn-primary ${styles.btn}`}>
-            Get in touch <ArrowRightIcon size={16} />
-          </a>
+          {isInternal ? (
+            <Link to={buttonTo} className={`btn-primary ${styles.btn}`}>
+              {buttonText} <ArrowRightIcon size={16} />
+            </Link>
+          ) : (
+            <a href={buttonTo} className={`btn-primary ${styles.btn}`}>
+              {buttonText} <ArrowRightIcon size={16} />
+            </a>
+          )}
         </NativeReveal>
       </div>
     </section>

@@ -1,0 +1,533 @@
+/* ==========================================================================
+   ContactPage.module.css
+   Modern, sleek, cyber-clean aesthetics for /contact page
+   ========================================================================== */
+
+.section {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5.5rem) var(--container-px);
+}
+
+.sectionAlt {
+  background: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgba(124, 242, 255, 0.04),
+      transparent 70%
+    ),
+    linear-gradient(180deg, rgba(8, 8, 10, 0.4) 0%, rgba(12, 12, 14, 0.8) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   SECTION 1: DIRECT COMMUNICATION CONSOLE
+   ========================================================================== */
+
+.consoleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .consoleGrid {
+    grid-template-columns: 1fr 1.35fr;
+  }
+}
+
+/* Info Card (Left) */
+.infoCard {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 40%),
+    rgba(14, 14, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 100%;
+}
+
+.infoGlow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(124, 242, 255, 0.12),
+    transparent 70%
+  );
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.infoTitle {
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 1.25rem 0 0.85rem;
+  color: #fff;
+}
+
+.infoLead {
+  color: var(--ink-200);
+  font-size: clamp(0.9rem, 1.4vw, 0.98rem);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.directBlock {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 2rem;
+  transition: border-color 0.25s ease;
+}
+
+.directBlock:hover {
+  border-color: rgba(124, 242, 255, 0.25);
+}
+
+.blockLabel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-300);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.emailLink {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  word-break: break-all;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.emailLink:hover,
+.emailLink:focus-visible {
+  color: var(--accent-glow);
+  outline: none;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: "Geist Mono", monospace;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.metricsBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1rem;
+  margin-top: auto;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metricLabel {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-300);
+}
+
+.metricValue {
+  font-size: 0.875rem;
+  color: var(--ink-100);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+/* Form Card (Right) */
+.formCard {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: 1.5rem;
+  background: rgba(14, 14, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 100%;
+}
+
+.formTitle {
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 1.25rem 0 0.5rem;
+  color: #fff;
+}
+
+.formSubhead {
+  color: var(--ink-200);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.label {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-200);
+}
+
+.input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1.05rem;
+  font-size: 0.875rem;
+  color: #fff;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-glow);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(124, 242, 255, 0.15);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3.25rem;
+  background: #fff;
+  color: var(--ink-950);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 2px solid transparent;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.submitBtn:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   SECTION 2: DIGITAL CHANNELS & PRESENCE
+   ========================================================================== */
+
+.sectionHeader {
+  margin-bottom: clamp(2rem, 4.5vw, 3.25rem);
+}
+
+.sectionHeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.channelsCounter {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-glow);
+  padding: 0.3rem 0.85rem;
+  background: rgba(124, 242, 255, 0.08);
+  border: 1px solid rgba(124, 242, 255, 0.2);
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.85rem;
+  line-height: 1.15;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.sectionLead {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: var(--ink-200);
+  max-width: 44rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Bento Channel Cards */
+.channelsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .channelsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .channelsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.channelCard {
+  position: relative;
+  padding: 1.6rem;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  text-decoration: none;
+  background:
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--channel-accent, #7cf2ff) 6%, transparent),
+      transparent 70%
+    ),
+    rgba(18, 18, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.channelCard:hover,
+.channelCard:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--channel-accent, rgba(124, 242, 255, 0.4));
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px color-mix(in srgb, var(--channel-accent, #7cf2ff) 14%, transparent);
+  outline: none;
+}
+
+.channelCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.channelIconBox {
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--channel-accent, #fff) 12%, rgba(255, 255, 255, 0.04));
+  color: var(--channel-accent, #fff);
+  border: 1px solid color-mix(in srgb, var(--channel-accent, #fff) 25%, transparent);
+  transition: transform 0.25s ease;
+}
+
+.channelCard:hover .channelIconBox {
+  transform: scale(1.08);
+}
+
+.channelCategory {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-300);
+}
+
+.channelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.channelNameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.channelName {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.channelArrow {
+  color: var(--ink-300);
+  transition: transform 0.25s ease, color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.channelCard:hover .channelArrow {
+  color: #fff;
+  transform: translate(3px, -3px);
+}
+
+.channelHandle {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--channel-accent, var(--ink-200));
+  font-weight: 400;
+}
+
+.channelDesc {
+  font-size: 0.85rem;
+  color: var(--ink-200);
+  line-height: 1.55;
+  margin: 0.4rem 0 0;
+}
+
+/* ==========================================================================
+   SECTION 3: COLLABORATION SCOPES
+   ========================================================================== */
+
+.scopeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .scopeGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.scopeCard {
+  padding: 1.85rem;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background: rgba(18, 18, 20, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.scopeCard:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.scopeNumber {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--accent-glow);
+  letter-spacing: 0.08em;
+}
+
+.scopeTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.scopeDesc {
+  font-size: 0.875rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
