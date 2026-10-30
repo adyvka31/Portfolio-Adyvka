@@ -11,6 +11,8 @@ export default defineConfig({
     },
   },
   build: {
+    cssCodeSplit: false,
+    target: ["es2022", "chrome100", "safari15", "firefox100", "edge100"],
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
