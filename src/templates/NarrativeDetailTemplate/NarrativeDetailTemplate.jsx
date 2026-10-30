@@ -13,6 +13,18 @@ import DocumentationGallery from "../../components/DocumentationGallery/Document
 import Lightbox from "../../components/Lightbox/Lightbox";
 import styles from "./NarrativeDetailTemplate.module.css";
 
+function getFeaturedChapterIndex(chapters) {
+  if (!Array.isArray(chapters) || chapters.length === 0) return -1;
+  if (chapters.length === 1) return 0;
+  if (chapters.length !== 3) return -1;
+  const ch1 = chapters.find((c) => c.chapter === "01") || chapters[0];
+  const ch3 = chapters.find((c) => c.chapter === "03") || chapters[2];
+  const getWeight = (c) => (c?.content?.length || 0) + (c?.title?.length || 0);
+  return getWeight(ch3) > getWeight(ch1)
+    ? chapters.indexOf(ch3)
+    : chapters.indexOf(ch1);
+}
+
 function NarrativeDetailTemplate({
   seo,
   subnav,
@@ -108,23 +120,41 @@ function NarrativeDetailTemplate({
                 </NativeReveal>
               )}
 
-              {story.chapters && (
-                <div className={styles.chaptersGrid}>
-                  {story.chapters.map((ch, idx) => (
-                    <NativeReveal key={ch.chapter || idx} delay={idx * 0.08}>
-                      <article className={styles.chapterCard}>
-                        <div className={styles.chapterHeader}>
-                          <span className={styles.chapterNum}>
-                            Chapter {ch.chapter}
-                          </span>
-                          <h3 className={styles.chapterTitle}>{ch.title}</h3>
-                        </div>
-                        <p className={styles.chapterText}>{ch.content}</p>
-                      </article>
-                    </NativeReveal>
-                  ))}
-                </div>
-              )}
+              {story.chapters && (() => {
+                const featuredIdx = getFeaturedChapterIndex(story.chapters);
+                return (
+                  <div className={styles.chaptersGrid}>
+                    {story.chapters.map((ch, idx) => {
+                      const isFeatured = idx === featuredIdx;
+                      return (
+                        <NativeReveal
+                          key={ch.chapter || idx}
+                          delay={idx * 0.08}
+                          className={`${styles.chapterReveal} ${
+                            isFeatured ? styles.chapterRevealFeatured : ""
+                          }`}
+                        >
+                          <article
+                            className={`${styles.chapterCard}${
+                              isFeatured && styles.chapterCardFeatured
+                                ? ` ${styles.chapterCardFeatured}`
+                                : ""
+                            }`}
+                          >
+                            <div className={styles.chapterHeader}>
+                              <span className={styles.chapterNum}>
+                                Chapter {ch.chapter}
+                              </span>
+                              <h3 className={styles.chapterTitle}>{ch.title}</h3>
+                            </div>
+                            <p className={styles.chapterText}>{ch.content}</p>
+                          </article>
+                        </NativeReveal>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </section>

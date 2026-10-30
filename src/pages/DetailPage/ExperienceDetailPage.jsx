@@ -47,6 +47,18 @@ function renderBodyBlock(block, idx) {
   return null;
 }
 
+function getFeaturedChapterIndex(chapters) {
+  if (!Array.isArray(chapters) || chapters.length === 0) return -1;
+  if (chapters.length === 1) return 0;
+  if (chapters.length !== 3) return -1;
+  const ch1 = chapters.find((c) => c.chapter === "01") || chapters[0];
+  const ch3 = chapters.find((c) => c.chapter === "03") || chapters[2];
+  const getWeight = (c) => (c?.content?.length || 0) + (c?.title?.length || 0);
+  return getWeight(ch3) > getWeight(ch1)
+    ? chapters.indexOf(ch3)
+    : chapters.indexOf(ch1);
+}
+
 function WorkExperienceView({ experience, detail, slug }) {
   const [activePhotoIdx, setActivePhotoIdx] = useState(null);
 
@@ -177,23 +189,43 @@ function WorkExperienceView({ experience, detail, slug }) {
                 </NativeReveal>
               )}
 
-              {detail.story.chapters && (
-                <div className={styles.storyGrid}>
-                  {detail.story.chapters.map((ch, idx) => (
-                    <NativeReveal key={ch.chapter || idx} delay={idx * 0.08}>
-                      <article className={styles.storyCard}>
-                        <div className={styles.storyCardHeader}>
-                          <span className={styles.storyChapterNum}>
-                            Chapter {ch.chapter}
-                          </span>
-                          <h3 className={styles.storyChapterTitle}>{ch.title}</h3>
-                        </div>
-                        <p className={styles.storyContent}>{ch.content}</p>
-                      </article>
-                    </NativeReveal>
-                  ))}
-                </div>
-              )}
+              {detail.story.chapters && (() => {
+                const featuredIdx = getFeaturedChapterIndex(detail.story.chapters);
+                return (
+                  <div className={styles.storyGrid}>
+                    {detail.story.chapters.map((ch, idx) => {
+                      const isFeatured = idx === featuredIdx;
+                      return (
+                        <NativeReveal
+                          key={ch.chapter || idx}
+                          delay={idx * 0.08}
+                          className={`${styles.storyReveal} ${
+                            isFeatured ? styles.storyRevealFeatured : ""
+                          }`}
+                        >
+                          <article
+                            className={`${styles.storyCard}${
+                              isFeatured && styles.storyCardFeatured
+                                ? ` ${styles.storyCardFeatured}`
+                                : ""
+                            }`}
+                          >
+                            <div className={styles.storyCardHeader}>
+                              <span className={styles.storyChapterNum}>
+                                Chapter {ch.chapter}
+                              </span>
+                              <h3 className={styles.storyChapterTitle}>
+                                {ch.title}
+                              </h3>
+                            </div>
+                            <p className={styles.storyContent}>{ch.content}</p>
+                          </article>
+                        </NativeReveal>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </section>
