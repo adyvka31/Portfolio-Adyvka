@@ -2,6 +2,7 @@
 // src/routes.jsx
 import { lazy } from "react";
 import App from "./App.jsx";
+import RootErrorBoundary from "./components/RootErrorBoundary/RootErrorBoundary.jsx";
 
 // Lazy imports
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -41,6 +42,7 @@ export const routes = [
   {
     path: "/",
     element: <App />,
+    errorElement: <RootErrorBoundary />,
     children: [
       { index: true, element: <HomePage /> },
       { path: "about", element: <AboutPage /> },

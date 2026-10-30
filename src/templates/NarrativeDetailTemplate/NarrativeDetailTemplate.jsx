@@ -11,6 +11,7 @@ import Tag from "../../components/Tag/Tag";
 import MetricsGrid from "../../components/MetricsGrid/MetricsGrid";
 import DocumentationGallery from "../../components/DocumentationGallery/DocumentationGallery";
 import Lightbox from "../../components/Lightbox/Lightbox";
+import Card from "../../components/Card/Card";
 import {
   ArrowUpRightIcon,
   LinkedInIcon,
@@ -163,7 +164,7 @@ function NarrativeDetailTemplate({
                             isFeatured ? styles.chapterRevealFeatured : ""
                           }`}
                         >
-                          <article
+                          <Card
                             className={`${styles.chapterCard}${
                               isFeatured && styles.chapterCardFeatured
                                 ? ` ${styles.chapterCardFeatured}`
@@ -177,7 +178,7 @@ function NarrativeDetailTemplate({
                               <h3 className={styles.chapterTitle}>{ch.title}</h3>
                             </div>
                             <p className={styles.chapterText}>{ch.content}</p>
-                          </article>
+                          </Card>
                         </NativeReveal>
                       );
                     })}
@@ -212,7 +213,7 @@ function NarrativeDetailTemplate({
               <div className={styles.curriculumGrid}>
                 {pillars.items.map((mod, idx) => (
                   <NativeReveal key={mod.module || idx} delay={idx * 0.06}>
-                    <article className={styles.curriculumCard}>
+                    <Card className={styles.curriculumCard}>
                       <div className={styles.curriculumTop}>
                         <span className={styles.moduleBadge}>Module {mod.module}</span>
                         {mod.tag && (
@@ -232,7 +233,7 @@ function NarrativeDetailTemplate({
                           ))}
                         </ul>
                       )}
-                    </article>
+                    </Card>
                   </NativeReveal>
                 ))}
               </div>
@@ -240,7 +241,7 @@ function NarrativeDetailTemplate({
               <div className={styles.pillarsGrid}>
                 {pillars.items.map((pillar, idx) => (
                   <NativeReveal key={idx} delay={idx * 0.06}>
-                    <article className={styles.pillarCard}>
+                    <Card className={styles.pillarCard}>
                       <div className={styles.pillarTop}>
                         <span className={styles.pillarBadge}>
                           Pillar 0{idx + 1}
@@ -251,7 +252,7 @@ function NarrativeDetailTemplate({
                       </div>
                       <h3 className={styles.pillarTitle}>{pillar.title}</h3>
                       <p className={styles.pillarDesc}>{pillar.desc}</p>
-                    </article>
+                    </Card>
                   </NativeReveal>
                 ))}
               </div>
@@ -282,10 +283,10 @@ function NarrativeDetailTemplate({
             <div className={styles.takeawaysGrid}>
               {takeaways.items.map((item, idx) => (
                 <NativeReveal key={idx} delay={idx * 0.08}>
-                  <article className={styles.takeawayCard}>
+                  <Card className={styles.takeawayCard}>
                     <h3 className={styles.takeawayTitle}>{item.title}</h3>
                     <p className={styles.takeawayDesc}>{item.desc}</p>
-                  </article>
+                  </Card>
                 </NativeReveal>
               ))}
             </div>

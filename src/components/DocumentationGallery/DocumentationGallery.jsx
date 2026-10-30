@@ -2,6 +2,7 @@ import { memo } from "react";
 import NativeReveal from "../Reveal/NativeReveal";
 import SectionLabel from "../SectionLabel/SectionLabel";
 import Image from "../Image/Image";
+import Card from "../Card/Card";
 import { MaximizeIcon } from "../Icons/Icons";
 import styles from "./DocumentationGallery.module.css";
 
@@ -30,7 +31,7 @@ function DocumentationGallery({
         <div className={styles.docGrid}>
           {items.map((doc, idx) => (
             <NativeReveal key={doc.id || idx} delay={idx * 0.08}>
-              <article
+              <Card
                 className={styles.docCard}
                 onClick={() => onSelectPhoto && onSelectPhoto(idx)}
                 role="button"
@@ -65,7 +66,7 @@ function DocumentationGallery({
                   <h3 className={styles.docTitle}>{doc.title}</h3>
                   <p className={styles.docDesc}>{doc.desc}</p>
                 </div>
-              </article>
+              </Card>
             </NativeReveal>
           ))}
         </div>

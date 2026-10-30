@@ -45,22 +45,16 @@
 }
 
 .docCard {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--line);
-  border-radius: 1rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: all 0.3s ease;
   outline: none;
 }
 
 .docCard:hover,
 .docCard:focus-visible {
-  border-color: rgba(245, 158, 11, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  border-color: rgba(124, 242, 255, 0.4);
 }
 
 .docMediaWrap {

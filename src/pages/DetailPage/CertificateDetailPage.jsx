@@ -10,6 +10,7 @@ import Tag from "../../components/Tag/Tag";
 import Image from "../../components/Image/Image";
 import Lightbox from "../../components/Lightbox/Lightbox";
 import SubNav from "../../components/SubNav/SubNav";
+import Card from "../../components/Card/Card";
 import { ArrowUpRightIcon, MaximizeIcon } from "../../components/Icons/Icons";
 import { allCertificates, getSiblings } from "../../data/portfolio";
 import { certificateDetails } from "../../data/certificateDetails";
@@ -140,7 +141,7 @@ function CertificateDetailPage() {
         >
           <div className={local.container}>
             <NativeReveal className="reveal-slide-up">
-              <article
+              <Card
                 className={local.fullWidthCertCard}
                 onClick={() => setIsLightboxOpen(true)}
                 role="button"
@@ -211,7 +212,7 @@ function CertificateDetailPage() {
                     </span>
                   </div>
                 </div>
-              </article>
+              </Card>
             </NativeReveal>
           </div>
         </section>
@@ -226,7 +227,7 @@ function CertificateDetailPage() {
           <div className={local.detailsGrid}>
             {/* SPECIFICATION CARD */}
             <NativeReveal delay={0.06} className="reveal-slide-up">
-              <aside className={`glass ${local.specCard}`}>
+              <Card as="aside" className={local.specCard}>
                 <div className={local.specRow}>
                   <span className={local.specLabel}>Credential ID</span>
                   <span className={local.specValue}>
@@ -271,14 +272,14 @@ function CertificateDetailPage() {
                     <ArrowUpRightIcon size={13} />
                   </a>
                 )}
-              </aside>
+              </Card>
             </NativeReveal>
 
             {/* CURRICULUM HIGHLIGHTS & PRACTICAL IMPACT */}
             <div className={local.rightCol}>
               {detail?.highlights && detail.highlights.length > 0 && (
                 <NativeReveal delay={0.08} className="reveal-slide-up">
-                  <article className={`glass ${local.panelCard}`}>
+                  <Card className={local.panelCard}>
                     <header className={local.panelHeader}>
                       <div className={local.panelIcon}>
                         <svg
@@ -327,13 +328,13 @@ function CertificateDetailPage() {
                         </li>
                       ))}
                     </ul>
-                  </article>
+                  </Card>
                 </NativeReveal>
               )}
 
               {detail?.application && (
                 <NativeReveal delay={0.12} className="reveal-slide-up">
-                  <article className={`glass ${local.panelCard}`}>
+                  <Card className={local.panelCard}>
                     <header className={local.panelHeader}>
                       <div className={local.panelIcon}>
                         <svg
@@ -361,7 +362,7 @@ function CertificateDetailPage() {
                     <p className={local.applicationText}>
                       {detail.application}
                     </p>
-                  </article>
+                  </Card>
                 </NativeReveal>
               )}
             </div>

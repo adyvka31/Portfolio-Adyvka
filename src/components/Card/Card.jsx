@@ -7,6 +7,7 @@ import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import styles from "./Card.module.css";
 
 function Card({
+  as: Component = "article",
   variant = "project", // "project" | "bento" | "certificate" | "story" | "custom"
   item,
   isFlagship = false,
@@ -19,13 +20,13 @@ function Card({
 
   if (variant === "custom" || children) {
     return (
-      <article
+      <Component
         className={`card glass ${styles.card} ${className}`}
         {...spotlight}
         {...rest}
       >
         {children}
-      </article>
+      </Component>
     );
   }
 

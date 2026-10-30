@@ -548,7 +548,7 @@ export const teachingDetails = {
       "Event Logic",
     ],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 
@@ -711,7 +711,7 @@ export const teachingDetails = {
     ],
     stack: ["Kodular", "Android Development", "Visual Logic", "Mobile UI", "Teaching", "Event Logic"],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 
@@ -883,7 +883,7 @@ export const teachingDetails = {
       "Interactive Learning",
     ],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 
@@ -1009,7 +1009,7 @@ export const teachingDetails = {
     ],
     stack: ["Figma", "UI/UX Design", "Wireframing", "Mobile Ergonomics", "Interactive Prototyping", "Public Speaking"],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 
@@ -1132,7 +1132,7 @@ export const teachingDetails = {
     ],
     stack: ["Figma", "Graphic Design", "Typography", "Visual Hierarchy", "Poster Design", "Teaching"],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 
@@ -1255,7 +1255,7 @@ export const teachingDetails = {
     ],
     stack: ["Scratch", "Game Development", "Logic Programming", "Collision Detection", "Teaching", "Public Speaking"],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 
@@ -1381,7 +1381,7 @@ export const teachingDetails = {
     ],
     stack: ["Scratch", "Game Development", "Youth Pedagogy", "Computational Thinking", "Public Speaking", "Community Outreach"],
     links: [
-      { label: "LinkedIn Post", url: "https://lnkd.in/p/g2DARFEU" },
+      { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
     ],
   },
 

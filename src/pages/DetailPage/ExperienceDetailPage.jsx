@@ -14,6 +14,7 @@ import Lightbox from "../../components/Lightbox/Lightbox";
 import SubNav from "../../components/SubNav/SubNav";
 import MetricsGrid from "../../components/MetricsGrid/MetricsGrid";
 import DocumentationGallery from "../../components/DocumentationGallery/DocumentationGallery";
+import Card from "../../components/Card/Card";
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
@@ -228,7 +229,7 @@ function WorkExperienceView({ experience, detail, slug }) {
                             isFeatured ? styles.storyRevealFeatured : ""
                           }`}
                         >
-                          <article
+                          <Card
                             className={`${styles.storyCard}${
                               isFeatured && styles.storyCardFeatured
                                 ? ` ${styles.storyCardFeatured}`
@@ -244,7 +245,7 @@ function WorkExperienceView({ experience, detail, slug }) {
                               </h3>
                             </div>
                             <p className={styles.storyContent}>{ch.content}</p>
-                          </article>
+                          </Card>
                         </NativeReveal>
                       );
                     })}
@@ -276,7 +277,7 @@ function WorkExperienceView({ experience, detail, slug }) {
             <NativeReveal delay={0.1}>
               <div className={styles.contributionsGrid}>
                 {detail.contributions.map((item, idx) => (
-                  <article key={item.id || idx} className={styles.contributionCard}>
+                  <Card key={item.id || idx} className={styles.contributionCard}>
                     <div className={styles.contributionTop}>
                       <span className={styles.contributionIndex}>
                         DELIVERABLE // 0{idx + 1}
@@ -299,7 +300,7 @@ function WorkExperienceView({ experience, detail, slug }) {
                         ))}
                       </ul>
                     )}
-                  </article>
+                  </Card>
                 ))}
               </div>
             </NativeReveal>
@@ -327,10 +328,10 @@ function WorkExperienceView({ experience, detail, slug }) {
             <NativeReveal delay={0.1}>
               <div className={styles.takeawaysGrid}>
                 {detail.takeaways.map((item, idx) => (
-                  <article key={idx} className={styles.takeawayCard}>
+                  <Card key={idx} className={styles.takeawayCard}>
                     <h3 className={styles.takeawayTitle}>{item.title}</h3>
                     <p className={styles.takeawayDesc}>{item.desc}</p>
-                  </article>
+                  </Card>
                 ))}
               </div>
             </NativeReveal>
@@ -359,7 +360,7 @@ function WorkExperienceView({ experience, detail, slug }) {
         <section className={styles.section}>
           <div className={styles.container}>
             <NativeReveal>
-              <article className={styles.projectBanner}>
+              <Card className={styles.projectBanner}>
                 <div className={styles.projectBannerInner}>
                   <div className={styles.projectBannerBody}>
                     <div className={styles.projectBannerBadge}>
@@ -404,7 +405,7 @@ function WorkExperienceView({ experience, detail, slug }) {
                     </div>
                   )}
                 </div>
-              </article>
+              </Card>
             </NativeReveal>
           </div>
         </section>
@@ -415,7 +416,7 @@ function WorkExperienceView({ experience, detail, slug }) {
         <section className={styles.section}>
           <div className={styles.container}>
             <NativeReveal>
-              <article className={styles.privacyCard}>
+              <Card className={styles.privacyCard}>
                 <div className={styles.privacyCardInner}>
                   <div className={styles.privacyBadge}>
                     <span className={styles.privacyDot} aria-hidden="true" />
@@ -446,7 +447,7 @@ function WorkExperienceView({ experience, detail, slug }) {
                     </div>
                   )}
                 </div>
-              </article>
+              </Card>
             </NativeReveal>
           </div>
         </section>

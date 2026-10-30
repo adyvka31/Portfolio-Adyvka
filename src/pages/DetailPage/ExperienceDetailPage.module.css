@@ -178,9 +178,6 @@
 }
 
 .storyCard {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 1.25rem;
   padding: clamp(1.5rem, 3vw, 2.25rem);
   display: flex;
   flex-direction: column;
@@ -188,17 +185,14 @@
   width: 100%;
   box-sizing: border-box;
   flex: 1;
-  transition: all 0.25s ease;
 }
 
 .storyCardFeatured {
-  background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(124, 242, 255, 0.22);
 }
 
 .storyCard:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(255, 255, 255, 0.16);
-  transform: translateY(-2px);
+  border-color: rgba(124, 242, 255, 0.4);
 }
 
 .storyCardHeader {
@@ -261,19 +255,13 @@
 }
 
 .contributionCard {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 8px;
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
-  transition: all 0.25s ease;
 }
 
 .contributionCard:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(124, 242, 255, 0.25);
-  transform: translateY(-2px);
+  border-color: rgba(124, 242, 255, 0.35);
 }
 
 .contributionTop {
@@ -361,16 +349,11 @@
 }
 
 .takeawayCard {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 8px;
   padding: 1.75rem;
-  transition: all 0.25s ease;
 }
 
 .takeawayCard:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(124, 242, 255, 0.35);
 }
 
 .takeawayTitle {

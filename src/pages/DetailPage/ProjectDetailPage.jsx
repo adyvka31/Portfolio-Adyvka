@@ -11,6 +11,7 @@ import MediaFrame from "../../components/MediaFrame/MediaFrame";
 import Tag from "../../components/Tag/Tag";
 import SubNav from "../../components/SubNav/SubNav";
 import NativeReveal from "../../components/Reveal/NativeReveal";
+import Card from "../../components/Card/Card";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import DatabankPreview from "../../layouts/HomeLayout/ProjectLayout/DatabankPreview";
 import ProjectGallery from "../../components/ProjectGallery/ProjectGallery";
@@ -61,36 +62,33 @@ function MethodBadge({ method }) {
 }
 
 function KPICard({ item }) {
-  const spot = useCardSpotlight();
   return (
-    <article className={`glass ${styles.kpiCard}`} {...spot}>
+    <Card className={styles.kpiCard}>
       <h3 className={`font-serif ${styles.kpiValue} text-glow`}>
         {item.value}
       </h3>
       <span className={styles.kpiLabel}>{item.label}</span>
       {item.note && <p className={styles.kpiNote}>{item.note}</p>}
-    </article>
+    </Card>
   );
 }
 
 function PillarCard({ item }) {
-  const spot = useCardSpotlight();
   return (
-    <article className={`glass ${styles.pillarCard}`} {...spot}>
+    <Card className={styles.pillarCard}>
       <div className={styles.pillarIconBox}>
         {renderPillarIcon(item.icon)}
       </div>
       <h3 className={styles.pillarTitle}>{item.title}</h3>
       <p className={styles.pillarDesc}>{item.desc}</p>
-    </article>
+    </Card>
   );
 }
 
 function FeatureCard({ item, index }) {
-  const spot = useCardSpotlight();
   const num = String(index + 1).padStart(2, "0");
   return (
-    <article className={`glass ${styles.featureCard}`} {...spot}>
+    <Card className={styles.featureCard}>
       <div className={styles.featureTop}>
         <span className={styles.featureNumber}>// {num}</span>
         {item.badge && <span className={styles.featureBadge}>{item.badge}</span>}
@@ -109,7 +107,7 @@ function FeatureCard({ item, index }) {
           ))}
         </ul>
       )}
-    </article>
+    </Card>
   );
 }
 
@@ -313,7 +311,7 @@ function ProjectDetailPage() {
             {/* THE OPERATIONAL MANDATE (BRIEF) */}
             {briefSection && (
               <NativeReveal delay={0.1}>
-                <div className={styles.challengeCard}>
+                <Card className={styles.challengeCard}>
                   <div className={styles.challengeHead}>
                     <span className={styles.challengeBadge}>The Operational Mandate</span>
                     <h3 className={styles.challengeTitle}>Context & High-Stakes Constraints</h3>
@@ -323,7 +321,7 @@ function ProjectDetailPage() {
                       <p key={i}>{p}</p>
                     ))}
                   </div>
-                </div>
+                </Card>
               </NativeReveal>
             )}
 
@@ -549,7 +547,7 @@ function ProjectDetailPage() {
                     {detail.approvalWorkflow.stages && (
                       <div className={styles.workflowStages}>
                         {detail.approvalWorkflow.stages.map((stg, idx) => (
-                          <article
+                          <Card
                             key={idx}
                             className={`${styles.stageCard} ${
                               activeWorkflowStage === idx ? styles.stageCardActive : ""
@@ -568,7 +566,7 @@ function ProjectDetailPage() {
                               <WorkflowIcon size={14} />
                               <span>{stg.action}</span>
                             </div>
-                          </article>
+                          </Card>
                         ))}
                       </div>
                     )}
@@ -640,13 +638,13 @@ function ProjectDetailPage() {
 
                 <div className={styles.archLayersGrid}>
                   {detail.architecture.layers?.map((layer, idx) => (
-                    <article key={idx} className={`glass ${styles.archLayerCard}`}>
+                    <Card key={idx} className={styles.archLayerCard}>
                       <div className={styles.archLayerHead}>
                         <h4 className={styles.archLayerName}>{layer.name}</h4>
                         <span className={styles.archLayerBadge}>{layer.badge}</span>
                       </div>
                       <p className={styles.archLayerDesc}>{layer.desc}</p>
-                    </article>
+                    </Card>
                   ))}
                 </div>
               </div>
@@ -670,7 +668,7 @@ function ProjectDetailPage() {
                 <NativeReveal delay={0.1}>
                   <div className={styles.techMatrix}>
                     {detail.techStackGrouped.map((grp, idx) => (
-                      <article key={idx} className={`glass ${styles.techGroupCard}`}>
+                      <Card key={idx} className={styles.techGroupCard}>
                         <h4 className={styles.techGroupTitle}>{grp.category}</h4>
                         <div className={styles.techItemList}>
                           {grp.items?.map((item, i) => (
@@ -680,7 +678,7 @@ function ProjectDetailPage() {
                             </div>
                           ))}
                         </div>
-                      </article>
+                      </Card>
                     ))}
                   </div>
                 </NativeReveal>
@@ -762,10 +760,10 @@ function ProjectDetailPage() {
                         <FileCodeIcon size={18} /> {detail?.schemaEngineTitle || "Database Entities & Schema Models"}
                       </h4>
                       {detail.prismaSchemas.map((sch, i) => (
-                        <article key={i} className={`glass ${styles.schemaCard}`}>
+                        <Card key={i} className={styles.schemaCard}>
                           <h5 className={styles.schemaName}>{sch.name || sch.title}</h5>
                           <p className={styles.schemaPurpose}>{sch.purpose || sch.desc || sch.schema}</p>
-                        </article>
+                        </Card>
                       ))}
                     </div>
                   </div>
@@ -832,7 +830,7 @@ function ProjectDetailPage() {
                   </h3>
                   <div className={styles.securityGrid}>
                     {detail.securityStandards?.map((sec, i) => (
-                      <article key={i} className={`glass ${styles.securityCard}`}>
+                      <Card key={i} className={styles.securityCard}>
                         <div className={styles.securityIconBox}>
                           <ShieldCheckIcon size={20} />
                         </div>
@@ -840,7 +838,7 @@ function ProjectDetailPage() {
                           <h4 className={styles.securityTitle}>{sec.title}</h4>
                           <p className={styles.securityDesc}>{sec.desc}</p>
                         </div>
-                      </article>
+                      </Card>
                     ))}
                   </div>
                 </div>
@@ -866,12 +864,12 @@ function ProjectDetailPage() {
                   <NativeReveal delay={0.1}>
                     <div className={styles.challengesGrid}>
                       {hardSection.body.map((text, i) => (
-                        <article key={i} className={`glass ${styles.challengeItemCard}`}>
+                        <Card key={i} className={styles.challengeItemCard}>
                           <h4 className={styles.challengeItemTitle}>
                             Challenge // 0{i + 1}
                           </h4>
                           <p className={styles.challengeItemText}>{text}</p>
-                        </article>
+                        </Card>
                       ))}
                     </div>
                   </NativeReveal>
@@ -883,14 +881,14 @@ function ProjectDetailPage() {
                     <div className={styles.resultsRow}>
                       {detail?.metricOutcomes ? (
                         detail.metricOutcomes.map((m, i) => (
-                          <article key={i} className={styles.resultCard}>
+                          <Card key={i} className={styles.resultCard}>
                             <span className={`font-serif ${styles.resultValue}`}>{m.value}</span>
                             <span className={styles.resultText}>{m.label}</span>
-                          </article>
+                          </Card>
                         ))
                       ) : (
                         <>
-                          <article className={styles.resultCard}>
+                          <Card className={styles.resultCard}>
                             <span className={`font-serif ${styles.resultValue}`}>
                               {isProductionReady ? "Production Live" : "Active"}
                             </span>
@@ -899,15 +897,15 @@ function ProjectDetailPage() {
                                 ? "Deployed and operational in production"
                                 : "Core modules under active engineering delivery"}
                             </span>
-                          </article>
-                          <article className={styles.resultCard}>
+                          </Card>
+                          <Card className={styles.resultCard}>
                             <span className={`font-serif ${styles.resultValue}`}>100%</span>
                             <span className={styles.resultText}>Architecture contract verified with zero regression</span>
-                          </article>
-                          <article className={styles.resultCard}>
+                          </Card>
+                          <Card className={styles.resultCard}>
                             <span className={`font-serif ${styles.resultValue}`}>Verified</span>
                             <span className={styles.resultText}>Production performance and security benchmarks met</span>
-                          </article>
+                          </Card>
                         </>
                       )}
                     </div>
