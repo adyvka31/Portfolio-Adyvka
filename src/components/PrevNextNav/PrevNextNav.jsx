@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./PrevNextNav.module.css";
 
-export default function PrevNextNav({ prev, next, baseUrl }) {
+function PrevNextNav({ prev, next, baseUrl }) {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
@@ -25,3 +26,5 @@ export default function PrevNextNav({ prev, next, baseUrl }) {
     </nav>
   );
 }
+
+export default memo(PrevNextNav);

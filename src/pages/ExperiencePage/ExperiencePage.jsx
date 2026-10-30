@@ -1,5 +1,5 @@
 import SEO from "../../components/SEO/SEO";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -14,15 +14,51 @@ import {
 } from "../../data/portfolio";
 import styles from "./ExperiencePage.module.css";
 
-function ExperienceBentoCard({ item }) {
-  return <Card variant="bento" item={item} />;
-}
+const TEACHING_TABS = ["All", "Game Development", "Web Development", "Other"];
+
+const EXPERIENCE_KEYWORDS = [
+  "Experience Rafif Sava Adyvka Pratama",
+  "Adyvka Work Experience",
+  "PT Intisel Prodaktifakom",
+  "Universitas Muhammadiyah Jakarta",
+  "PT Ardyanda Digital Inovasi",
+  "CV Richo Bahari",
+  "SMA Lazuardi GCS",
+  "SMPN 45 Depok",
+  "Hajrabyadl",
+  "Al Anshar",
+  "Live In Rural Immersion",
+  "International Backpacker",
+  "IDN Student Council",
+  "Barisan Muda Voluntrip",
+  "IT Fest 2025",
+  "Tech Educator",
+  "Software Engineer Career",
+];
+
+const EXPERIENCE_ITEMS = [
+  ...experiencesList.map((e) => ({
+    name: `${e.role} at ${e.company}`,
+    description: e.description,
+    url: `/experience/${e.slug}`,
+  })),
+  ...allTeachingExperiences.map((t) => ({
+    name: `${t.title} at ${t.institution}`,
+    description: t.description,
+    url: `/experience/${t.slug}`,
+  })),
+  ...allLeadershipExperiences.map((l) => ({
+    name: `${l.title} at ${l.institution}`,
+    description: l.description,
+    url: `/experience/${l.slug}`,
+  })),
+];
 
 export default function ExperiencePage() {
   const scrollRef = useRef(null);
   const [activeTab, setActiveTab] = useState("All");
 
-  const scroll = (direction) => {
+  const scroll = useCallback((direction) => {
     const { current } = scrollRef;
     if (current) {
       const scrollAmount = 370;
@@ -32,67 +68,24 @@ export default function ExperiencePage() {
         current.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
     }
-  };
+  }, []);
 
-  const workExperiences = experiencesList;
-  const teachingExperiencesRaw = allTeachingExperiences;
+  const teachingExperiences = useMemo(() => {
+    return allTeachingExperiences.filter((item) => {
+      if (activeTab === "All") return true;
+      if (activeTab === "Game Development")
+        return item.tags?.includes("Game Development");
+      if (activeTab === "Web Development")
+        return item.tags?.includes("Web Development");
 
-  const teachingTabs = ["All", "Game Development", "Web Development", "Other"];
-
-  const teachingExperiences = teachingExperiencesRaw.filter((item) => {
-    if (activeTab === "All") return true;
-    if (activeTab === "Game Development")
-      return item.tags?.includes("Game Development");
-    if (activeTab === "Web Development")
-      return item.tags?.includes("Web Development");
-
-    if (activeTab === "Other") {
-      const isGameDev = item.tags?.includes("Game Development");
-      const isWebDev = item.tags?.includes("Web Development");
-      return !isGameDev && !isWebDev;
-    }
-    return true;
-  });
-
-  const otherExperiences = allLeadershipExperiences;
-
-  const experienceCollectionKeywords = [
-    "Experience Rafif Sava Adyvka Pratama",
-    "Adyvka Work Experience",
-    "PT Intisel Prodaktifakom",
-    "Universitas Muhammadiyah Jakarta",
-    "PT Ardyanda Digital Inovasi",
-    "CV Richo Bahari",
-    "SMA Lazuardi GCS",
-    "SMPN 45 Depok",
-    "Hajrabyadl",
-    "Al Anshar",
-    "Live In Rural Immersion",
-    "International Backpacker",
-    "IDN Student Council",
-    "Barisan Muda Voluntrip",
-    "IT Fest 2025",
-    "Tech Educator",
-    "Software Engineer Career",
-  ];
-
-  const experienceItems = [
-    ...experiencesList.map((e) => ({
-      name: `${e.role} at ${e.company}`,
-      description: e.description,
-      url: `/experience/${e.slug}`,
-    })),
-    ...allTeachingExperiences.map((t) => ({
-      name: `${t.title} at ${t.institution}`,
-      description: t.description,
-      url: `/experience/${t.slug}`,
-    })),
-    ...allLeadershipExperiences.map((l) => ({
-      name: `${l.title} at ${l.institution}`,
-      description: l.description,
-      url: `/experience/${l.slug}`,
-    })),
-  ];
+      if (activeTab === "Other") {
+        const isGameDev = item.tags?.includes("Game Development");
+        const isWebDev = item.tags?.includes("Web Development");
+        return !isGameDev && !isWebDev;
+      }
+      return true;
+    });
+  }, [activeTab]);
 
   return (
     <PageShell>
@@ -100,8 +93,8 @@ export default function ExperiencePage() {
         title="Experiences — Rafif Sava Adyvka Pratama"
         description="Professional engineering timeline, corporate roles, technical educator outreach, and leadership experiences of Rafif Sava Adyvka Pratama (Adyvka)."
         path="/experience"
-        keywords={experienceCollectionKeywords}
-        itemList={experienceItems}
+        keywords={EXPERIENCE_KEYWORDS}
+        itemList={EXPERIENCE_ITEMS}
         breadcrumbs={[
           { name: "Home", item: "/" },
           { name: "Experience", item: "/experience" },
@@ -151,7 +144,7 @@ export default function ExperiencePage() {
                 ref={scrollRef}
                 aria-label="Timeline of work experiences"
               >
-                {workExperiences.map((exp, i) => (
+                {experiencesList.map((exp, i) => (
                   <li key={exp.slug} className={styles.cardWrapper}>
                     <NativeReveal delay={i * 0.1} className="reveal-slide-up">
                       <article className={styles.row}>
@@ -220,7 +213,7 @@ export default function ExperiencePage() {
                 role="group"
                 aria-label="Filter teaching experiences"
               >
-                {teachingTabs.map((tab) => (
+                {TEACHING_TABS.map((tab) => (
                   <button
                     key={tab}
                     type="button"
@@ -237,13 +230,12 @@ export default function ExperiencePage() {
 
           <div className={styles.bentoGrid}>
             {teachingExperiences.map((item, i) => (
-              /* ✅ Terapkan NativeReveal pada setiap Bento Card */
               <NativeReveal
                 key={i}
                 delay={(i % 3) * 0.1}
                 className="reveal-slide-up"
               >
-                <ExperienceBentoCard item={item} />
+                <Card variant="bento" item={item} />
               </NativeReveal>
             ))}
           </div>
@@ -268,14 +260,13 @@ export default function ExperiencePage() {
           </NativeReveal>
 
           <div className={styles.bentoGrid}>
-            {otherExperiences.map((item, i) => (
-              /* ✅ Terapkan NativeReveal pada setiap Bento Card */
+            {allLeadershipExperiences.map((item, i) => (
               <NativeReveal
                 key={i}
                 delay={(i % 3) * 0.1}
                 className="reveal-slide-up"
               >
-                <ExperienceBentoCard item={item} />
+                <Card variant="bento" item={item} />
               </NativeReveal>
             ))}
           </div>

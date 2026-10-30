@@ -7,29 +7,25 @@ import { allCertificates } from "../../data/portfolio";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import local from "./CertificatesPage.module.css";
 
-function CertificateCard({ item }) {
-  return <Card variant="certificate" item={item} />;
-}
+const CERTIFICATE_KEYWORDS = [
+  "Certificates Rafif Sava Adyvka Pratama",
+  "Adyvka Certificates",
+  "Harvard CS50 Certificate",
+  "Dicoding Certificates",
+  "DQLab Data Analyst",
+  "Skillvul C++",
+  "AWS Cloud Practitioner",
+  "Verified Developer Credentials",
+];
+
+const CERTIFICATE_ITEMS = (allCertificates || []).map((c) => ({
+  name: c.title,
+  description: c.description || `Issued by ${c.institution || c.issuer}`,
+  url: `/certificates/${c.slug}`,
+}));
 
 export default function CertificatesPage() {
   const items = allCertificates || [];
-
-  const certificateCollectionKeywords = [
-    "Certificates Rafif Sava Adyvka Pratama",
-    "Adyvka Certificates",
-    "Harvard CS50 Certificate",
-    "Dicoding Certificates",
-    "DQLab Data Analyst",
-    "Skillvul C++",
-    "AWS Cloud Practitioner",
-    "Verified Developer Credentials",
-  ];
-
-  const certificateItems = items.map((c) => ({
-    name: c.title,
-    description: c.description || `Issued by ${c.institution || c.issuer}`,
-    url: `/certificates/${c.slug}`,
-  }));
 
   return (
     <PageShell>
@@ -37,8 +33,8 @@ export default function CertificatesPage() {
         title="Certificates — Rafif Sava Adyvka Pratama"
         description="Verified credentials and engineering certifications earned by Rafif Sava Adyvka Pratama (Adyvka) from Harvard CS50, Dicoding, AWS, and DQLab."
         path="/certificates"
-        keywords={certificateCollectionKeywords}
-        itemList={certificateItems}
+        keywords={CERTIFICATE_KEYWORDS}
+        itemList={CERTIFICATE_ITEMS}
         breadcrumbs={[
           { name: "Home", item: "/" },
           { name: "Certificates", item: "/certificates" },
@@ -56,13 +52,12 @@ export default function CertificatesPage() {
         <div className={local.gridInner}>
           <div className={local.grid}>
             {items.map((item, i) => (
-              /* ✅ Implementasi NativeReveal dengan jeda (delay) 0.15 detik per kolom */
               <NativeReveal
                 key={item.slug}
                 delay={(i % 3) * 0.15}
                 className="reveal-slide-up"
               >
-                <CertificateCard item={item} />
+                <Card variant="certificate" item={item} />
               </NativeReveal>
             ))}
           </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import SEO from "../../components/SEO/SEO";
 import { useParams, Navigate, Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
@@ -11,11 +11,13 @@ import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import Tag from "../../components/Tag/Tag";
 import Image from "../../components/Image/Image";
 import Lightbox from "../../components/Lightbox/Lightbox";
+import SubNav from "../../components/SubNav/SubNav";
+import MetricsGrid from "../../components/MetricsGrid/MetricsGrid";
+import DocumentationGallery from "../../components/DocumentationGallery/DocumentationGallery";
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
   CheckIcon,
-  MaximizeIcon,
 } from "../../components/Icons/Icons";
 import {
   experiencesList,
@@ -94,28 +96,20 @@ function WorkExperienceView({ experience, detail, slug }) {
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}
-      <nav className={styles.subnav} aria-label="Experience Sub Navigation">
-        <div className={styles.subnavInner}>
-          <Link to="/experience" className={styles.backBtn}>
-            ← All Experiences
-          </Link>
-
-          <div className={styles.statusIndicator}>
-            <span className={styles.statusPulse} aria-hidden="true" />
-            <span>{detail?.period || experience.period}</span>
-          </div>
-
-          {detail?.relatedProject && (
-            <Link
-              to={`/projects/${detail.relatedProject}`}
-              className={styles.subnavAction}
-            >
-              <span>View Case Study</span>
-              <ArrowRightIcon size={12} />
-            </Link>
-          )}
-        </div>
-      </nav>
+      <SubNav
+        backTo="/experience"
+        backLabel="← All Experiences"
+        statusText={detail?.period || experience.period}
+        action={
+          detail?.relatedProject
+            ? {
+                to: `/projects/${detail.relatedProject}`,
+                label: "View Case Study",
+              }
+            : null
+        }
+        ariaLabel="Experience Sub Navigation"
+      />
 
       {/* PAGE HERO */}
       <PageHero
@@ -149,18 +143,8 @@ function WorkExperienceView({ experience, detail, slug }) {
 
         {/* OPTIONAL KPIS / METRIC STRIP */}
         {detail?.kpis && (
-          <div className={styles.container} style={{ marginTop: "2rem" }}>
-            <NativeReveal delay={0.1}>
-              <div className={styles.kpiGrid}>
-                {detail.kpis.map((kpi, idx) => (
-                  <article key={idx} className={styles.kpiCard}>
-                    <div className={styles.kpiValue}>{kpi.value}</div>
-                    <div className={styles.kpiLabel}>{kpi.label}</div>
-                    <p className={styles.kpiNote}>{kpi.note}</p>
-                  </article>
-                ))}
-              </div>
-            </NativeReveal>
+          <div className={styles.container}>
+            <MetricsGrid items={detail.kpis} />
           </div>
         )}
       </section>
@@ -299,54 +283,18 @@ function WorkExperienceView({ experience, detail, slug }) {
 
       {/* ON-SITE DOCUMENTATION & ARCHIVES */}
       {detail?.documentation && detail.documentation.length > 0 && (
-        <section className={styles.section}>
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel number="04" label="ON-SITE DOCUMENTATION & ARCHIVES" />
-                <h2 className={styles.sectionTitle}>
-                  {detail.documentationTitle || "Field Records & On-Site Documentation."}
-                </h2>
-                <p className={styles.sectionLead}>
-                  {detail.documentationLead ||
-                    "Authentic glimpses into live client meetings, development sessions, team collaboration, and daily engineering environments."}
-                </p>
-              </div>
-            </NativeReveal>
-
-            <NativeReveal delay={0.1}>
-              <div className={styles.docGrid}>
-                {detail.documentation.map((item, idx) => (
-                  <article
-                    key={item.id || idx}
-                    className={styles.docCard}
-                    onClick={() => setActivePhotoIdx(idx)}
-                  >
-                    <div className={styles.docMediaWrap}>
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        className={styles.docImage}
-                        width={640}
-                        height={400}
-                      />
-                      <div className={styles.docExpandBtn} aria-label="Expand image">
-                        <MaximizeIcon size={14} />
-                      </div>
-                      {item.tag && (
-                        <span className={styles.docBadge}>{item.tag}</span>
-                      )}
-                    </div>
-                    <div className={styles.docInfo}>
-                      <h3 className={styles.docTitle}>{item.title}</h3>
-                      <p className={styles.docDesc}>{item.desc}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </NativeReveal>
-          </div>
-        </section>
+        <DocumentationGallery
+          items={detail.documentation}
+          number="04"
+          label="ON-SITE DOCUMENTATION & ARCHIVES"
+          title={detail.documentationTitle || "Field Records & On-Site Documentation."}
+          lead={
+            detail.documentationLead ||
+            "Authentic glimpses into live client meetings, development sessions, team collaboration, and daily engineering environments."
+          }
+          ariaLabel="Field Documentation Archives"
+          onSelectPhoto={setActivePhotoIdx}
+        />
       )}
 
       {/* FEATURED CASE STUDY BANNER */}
@@ -474,7 +422,7 @@ function WorkExperienceView({ experience, detail, slug }) {
   );
 }
 
-export default function ExperienceDetailPage() {
+function ExperienceDetailPage() {
   const { slug } = useParams();
   const experience = experiencesList.find((e) => e.slug === slug);
   const detail = experienceDetails[slug];
@@ -513,3 +461,5 @@ export default function ExperienceDetailPage() {
 
   return <WorkExperienceView experience={experience} detail={detail} slug={slug} />;
 }
+
+export default memo(ExperienceDetailPage);

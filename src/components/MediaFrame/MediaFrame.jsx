@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./MediaFrame.module.css";
 import Image from "../Image/Image";
 
@@ -11,7 +12,7 @@ import Image from "../Image/Image";
  * @param {string} [chromeLabel]  Optional URL-style label in the chrome bar
  * @param {string} [aspect]   CSS aspect-ratio value (e.g. "16/10")
  */
-export default function MediaFrame({
+function MediaFrame({
   src,
   alt,
   caption,
@@ -45,3 +46,5 @@ export default function MediaFrame({
     </figure>
   );
 }
+
+export default memo(MediaFrame);

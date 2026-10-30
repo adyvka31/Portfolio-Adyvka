@@ -1,0 +1,145 @@
+/* src/components/DocumentationGallery/DocumentationGallery.module.css */
+
+.section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  max-width: 720px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 1rem 0 0.75rem;
+  line-height: 1.2;
+}
+
+.sectionLead {
+  font-size: 1.0625rem;
+  color: var(--ink-200);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.docGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .docGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.docCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.docCard:hover,
+.docCard:focus-visible {
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.docMediaWrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0d0e12;
+}
+
+.docImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.docCard:hover .docImage {
+  transform: scale(1.05);
+}
+
+.docExpandBtn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(7, 7, 8, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.25s ease;
+}
+
+.docCard:hover .docExpandBtn,
+.docCard:focus-visible .docExpandBtn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.docBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(7, 7, 8, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.6875rem;
+  color: var(--accent-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.docInfo {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.docTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.docDesc {
+  font-size: 0.8125rem;
+  color: var(--ink-300);
+  line-height: 1.5;
+  margin: 0;
+}

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import Tag from "../Tag/Tag";
 import Image from "../Image/Image";
@@ -5,7 +6,7 @@ import { ArrowUpRightIcon, ArrowRightIcon } from "../Icons/Icons";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import styles from "./Card.module.css";
 
-export default function Card({
+function Card({
   variant = "project", // "project" | "bento" | "certificate" | "story" | "custom"
   item,
   isFlagship = false,
@@ -297,3 +298,5 @@ export default function Card({
     </article>
   );
 }
+
+export default memo(Card);

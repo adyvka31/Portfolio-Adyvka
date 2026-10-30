@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import SEO from "../../components/SEO/SEO";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import PrevNextNav from "../../components/PrevNextNav/PrevNextNav";
@@ -9,13 +9,14 @@ import NativeReveal from "../../components/Reveal/NativeReveal";
 import Tag from "../../components/Tag/Tag";
 import Image from "../../components/Image/Image";
 import Lightbox from "../../components/Lightbox/Lightbox";
+import SubNav from "../../components/SubNav/SubNav";
 import { ArrowUpRightIcon, MaximizeIcon } from "../../components/Icons/Icons";
 import { allCertificates, getSiblings } from "../../data/portfolio";
 import { certificateDetails } from "../../data/certificateDetails";
 import { SITE_URL } from "../../data/siteConfig";
 import local from "./CertificateDetailPage.module.css";
 
-export default function CertificateDetailPage() {
+function CertificateDetailPage() {
   const { slug } = useParams();
 
   // Find matching certificate item
@@ -104,37 +105,23 @@ export default function CertificateDetailPage() {
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}
-      <nav className={local.subnav} aria-label="Certificate Sub Navigation">
-        <div className={local.subnavInner}>
-          <Link to="/certificates" className={local.backBtn}>
-            ← All Certificates
-          </Link>
-
-          <div className={local.statusIndicator}>
-            <span className={local.statusPulse} aria-hidden="true" />
-            <span>
-              Verified Credential · {effectiveIssuer}
-            </span>
-          </div>
-
-          {detail?.verifyUrl ? (
-            <a
-              href={detail.verifyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={local.subnavAction}
-              aria-label={`Verify ${effectiveTitle} on official website`}
-            >
-              <span>Verify Official Credential</span>
-              <ArrowUpRightIcon size={12} />
-            </a>
-          ) : (
-            <span className={local.subnavAction}>
-              Issued in {effectiveYear}
-            </span>
-          )}
-        </div>
-      </nav>
+      <SubNav
+        backTo="/certificates"
+        backLabel="← All Certificates"
+        statusText={`Verified Credential · ${effectiveIssuer}`}
+        action={
+          detail?.verifyUrl
+            ? {
+                href: detail.verifyUrl,
+                label: "Verify Official Credential",
+                ariaLabel: `Verify ${effectiveTitle} on official website`,
+              }
+            : {
+                text: `Issued in ${effectiveYear}`,
+              }
+        }
+        ariaLabel="Certificate Sub Navigation"
+      />
 
       {/* COMPACT PAGE HERO */}
       <PageHero
@@ -403,3 +390,5 @@ export default function CertificateDetailPage() {
     </PageShell>
   );
 }
+
+export default memo(CertificateDetailPage);

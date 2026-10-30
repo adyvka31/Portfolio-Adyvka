@@ -1,6 +1,7 @@
+import { memo } from "react";
 import styles from "./EmptyState.module.css";
 
-export default function EmptyState({
+function EmptyState({
   title = "No results found",
   message = "Try adjusting your search or filters to find what you're looking for.",
   icon = "🔍",
@@ -13,3 +14,5 @@ export default function EmptyState({
     </div>
   );
 }
+
+export default memo(EmptyState);

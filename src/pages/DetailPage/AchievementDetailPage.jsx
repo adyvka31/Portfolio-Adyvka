@@ -1,22 +1,11 @@
-import { useState } from "react";
-import SEO from "../../components/SEO/SEO";
-import { useParams, Navigate, Link } from "react-router-dom";
-import PageShell from "../../components/PageShell/PageShell";
-import PageHero from "../../components/PageHero/PageHero";
-import PrevNextNav from "../../components/PrevNextNav/PrevNextNav";
-import BottomCTA from "../../components/BottomCTA/BottomCTA";
-import NativeReveal from "../../components/Reveal/NativeReveal";
-import SectionLabel from "../../components/SectionLabel/SectionLabel";
-import Tag from "../../components/Tag/Tag";
-import Image from "../../components/Image/Image";
-import Lightbox from "../../components/Lightbox/Lightbox";
-import { ArrowRightIcon, MaximizeIcon } from "../../components/Icons/Icons";
+import { memo } from "react";
+import { useParams, Navigate } from "react-router-dom";
+import NarrativeDetailTemplate from "../../templates/NarrativeDetailTemplate/NarrativeDetailTemplate";
 import { allAchievements, getSiblings } from "../../data/portfolio";
 import { achievementDetails } from "../../data/achievementDetails";
 import { SITE_URL } from "../../data/siteConfig";
-import styles from "./AchievementDetailPage.module.css";
 
-export default function AchievementDetailPage({
+function AchievementDetailPage({
   item: propItem,
   detail: propDetail,
   slug: propSlug,
@@ -47,8 +36,6 @@ export default function AchievementDetailPage({
       : null;
 
   const detail = propDetail || (resolvedKey ? achievementDetails[resolvedKey] : null);
-
-  const [activePhotoIdx, setActivePhotoIdx] = useState(null);
 
   if (!item && !detail) {
     return <Navigate to="/achievements" replace />;
@@ -90,299 +77,108 @@ export default function AchievementDetailPage({
   };
 
   return (
-    <PageShell>
-      <SEO
-        title={`${effectiveTitle} — Rafif Sava Adyvka Pratama`}
-        description={effectiveSummary}
-        path={`/achievements/${effectiveSlug}`}
-        type="article"
-        keywords={achievementKeywords}
-        schema={achievementSchema}
-        breadcrumbs={[
+    <NarrativeDetailTemplate
+      seo={{
+        title: `${effectiveTitle} — Rafif Sava Adyvka Pratama`,
+        description: effectiveSummary,
+        path: `/achievements/${effectiveSlug}`,
+        type: "article",
+        keywords: achievementKeywords,
+        schema: achievementSchema,
+        breadcrumbs: [
           { name: "Home", item: "/" },
           { name: "Achievements", item: "/achievements" },
           { name: effectiveTitle, item: `/achievements/${effectiveSlug}` },
-        ]}
-      />
-
-      {/* STICKY QUICK NAVIGATION BAR */}
-      <nav className={styles.subnav} aria-label="Achievement Sub Navigation">
-        <div className={styles.subnavInner}>
-          <Link to="/achievements" className={styles.backBtn}>
-            ← All Achievements
-          </Link>
-
-          <div className={styles.statusIndicator}>
-            <span className={styles.statusPulse} aria-hidden="true" />
-            <span>
-              {detail?.badge || "National Recognition"} · {effectivePeriod}
-            </span>
-          </div>
-
-          {detail?.relatedProject && (
-            <Link
-              to={`/projects/${detail.relatedProject}`}
-              className={styles.subnavAction}
-              aria-label={`View ${detail.relatedProject} case study`}
-            >
-              <span>
-                View {detail.relatedProjectTitle ? `"${detail.relatedProjectTitle}"` : "Project"} Case Study
-              </span>
-              <ArrowRightIcon size={12} />
-            </Link>
-          )}
-        </div>
-      </nav>
-
-      {/* PAGE HERO */}
-      <PageHero
-        number={detail?.badge || item?.year || "Winner"}
-        label={detail?.subtitle || effectiveInstitution}
-        title={`${effectiveTitle}.`}
-        description={effectiveSummary}
-        meta={detail?.meta}
-      />
-
-      {/* TAGS & HOST INSTITUTION STRIP */}
-      <section className={styles.tagsStrip}>
-        <div className={styles.tagsInner}>
-          <NativeReveal className="css-reveal">
-            <div className={styles.companyRow}>
-              <span className={styles.companyLabel}>Organized By</span>
-              <span className={styles.companyName}>{effectiveInstitution}</span>
-            </div>
-          </NativeReveal>
-
-          <NativeReveal className="css-reveal" delay={0.05}>
-            <div className={styles.tags}>
-              {(detail?.stack || item?.tags || []).map((t) => (
-                <Tag key={t} size="sm">
-                  {t}
-                </Tag>
-              ))}
-            </div>
-          </NativeReveal>
-        </div>
-
-        {/* METRICS / STATS STRIP */}
-        {detail?.kpis && detail.kpis.length > 0 && (
-          <div className={styles.container}>
-            <NativeReveal delay={0.1}>
-              <div className={styles.statGrid}>
-                {detail.kpis.map((kpi, idx) => (
-                  <article key={idx} className={styles.statCard}>
-                    <div className={`font-serif ${styles.statValue} text-glow`}>
-                      {kpi.value}
-                    </div>
-                    <div className={styles.statLabel}>{kpi.label}</div>
-                    <p className={styles.statNote}>{kpi.note}</p>
-                  </article>
-                ))}
-              </div>
-            </NativeReveal>
-          </div>
-        )}
-      </section>
-
-      {/* SECTION 01: THE COMPETITION SPRINT & NARRATIVE */}
-      {detail?.story && (
-        <section className={styles.section} aria-label="Competition Narrative">
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel
-                  number="01"
-                  label="THE COMPETITION SPRINT & NARRATIVE"
-                />
-                <h2 className={styles.sectionTitle}>{detail.story.headline}</h2>
-                <p className={styles.sectionLead}>{detail.story.lead}</p>
-              </div>
-            </NativeReveal>
-
-            <div className={styles.storyWrap}>
-              {detail.story.quote && (
-                <NativeReveal delay={0.05}>
-                  <div className={styles.storyQuoteBox}>
-                    <blockquote className={styles.storyQuote}>
-                      "{detail.story.quote}"
-                    </blockquote>
-                  </div>
-                </NativeReveal>
-              )}
-
-              {detail.story.chapters && (
-                <div className={styles.chaptersGrid}>
-                  {detail.story.chapters.map((ch, idx) => (
-                    <NativeReveal key={ch.chapter || idx} delay={idx * 0.08}>
-                      <article className={styles.chapterCard}>
-                        <div className={styles.chapterHeader}>
-                          <span className={styles.chapterNum}>
-                            Chapter {ch.chapter}
-                          </span>
-                          <h3 className={styles.chapterTitle}>{ch.title}</h3>
-                        </div>
-                        <p className={styles.chapterText}>{ch.content}</p>
-                      </article>
-                    </NativeReveal>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 02: PLATFORM PILLARS & ARCHITECTURE */}
-      {detail?.pillars && detail.pillars.length > 0 && (
-        <section className={styles.section} aria-label="Platform Pillars">
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel
-                  number="02"
-                  label="PLATFORM PILLARS & INNOVATION"
-                />
-                <h2 className={styles.sectionTitle}>
-                  {detail.pillarsTitle || "Platform Pillars & Core Innovations."}
-                </h2>
-                <p className={styles.sectionLead}>
-                  {detail.pillarsLead ||
-                    "Technical and architectural highlights that distinguished our project during judging."}
-                </p>
-              </div>
-            </NativeReveal>
-
-            <div className={styles.pillarsGrid}>
-              {detail.pillars.map((pillar, idx) => (
-                <NativeReveal key={idx} delay={idx * 0.06}>
-                  <article className={styles.pillarCard}>
-                    <div className={styles.pillarTop}>
-                      <span className={styles.pillarBadge}>
-                        Pillar 0{idx + 1}
-                      </span>
-                      {pillar.tag && (
-                        <span className={styles.pillarTag}>{pillar.tag}</span>
-                      )}
-                    </div>
-                    <h3 className={styles.pillarTitle}>{pillar.title}</h3>
-                    <p className={styles.pillarDesc}>{pillar.desc}</p>
-                  </article>
-                </NativeReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 03: RETROSPECTIVE & KEY TAKEAWAYS */}
-      {detail?.takeaways && detail.takeaways.length > 0 && (
-        <section className={styles.section} aria-label="Competition Retrospective">
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel number="03" label="COMPETITION RETROSPECTIVE" />
-                <h2 className={styles.sectionTitle}>
-                  {detail.takeawaysTitle || "Key Reflections & Insights."}
-                </h2>
-                <p className={styles.sectionLead}>
-                  {detail.takeawaysLead ||
-                    "Strategic reflections on leading high-velocity student teams and pitching under pressure."}
-                </p>
-              </div>
-            </NativeReveal>
-
-            <div className={styles.takeawaysGrid}>
-              {detail.takeaways.map((item, idx) => (
-                <NativeReveal key={idx} delay={idx * 0.08}>
-                  <article className={styles.takeawayCard}>
-                    <h3 className={styles.takeawayTitle}>{item.title}</h3>
-                    <p className={styles.takeawayDesc}>{item.desc}</p>
-                  </article>
-                </NativeReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 04: ON-SITE DOCUMENTATION & ARCHIVES */}
-      {detail?.documentation && detail.documentation.length > 0 && (
-        <section className={styles.section} aria-label="Competition Documentation">
-          <div className={styles.container}>
-            <NativeReveal>
-              <div className={styles.sectionHeader}>
-                <SectionLabel
-                  number="04"
-                  label="ON-SITE DOCUMENTATION & ARCHIVES"
-                />
-                <h2 className={styles.sectionTitle}>
-                  {detail.documentationTitle ||
-                    "Championship Documentation & Records."}
-                </h2>
-                <p className={styles.sectionLead}>
-                  {detail.documentationLead ||
-                    "Verifiable photographic records from our competition run, live presentation defense, and official winner certificates."}
-                </p>
-              </div>
-            </NativeReveal>
-
-            <div className={styles.docGrid}>
-              {detail.documentation.map((doc, idx) => (
-                <NativeReveal key={doc.id || idx} delay={idx * 0.08}>
-                  <article
-                    className={styles.docCard}
-                    onClick={() => setActivePhotoIdx(idx)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        setActivePhotoIdx(idx);
-                      }
-                    }}
-                    aria-label={`View photo: ${doc.title}`}
-                  >
-                    <div className={styles.docMediaWrap}>
-                      <Image
-                        src={doc.image}
-                        alt={doc.title}
-                        className={styles.docImage}
-                        width={640}
-                        height={400}
-                      />
-                      <div
-                        className={styles.docExpandBtn}
-                        aria-label="Expand image"
-                      >
-                        <MaximizeIcon size={14} />
-                      </div>
-                      {doc.tag && (
-                        <span className={styles.docBadge}>{doc.tag}</span>
-                      )}
-                    </div>
-                    <div className={styles.docInfo}>
-                      <h3 className={styles.docTitle}>{doc.title}</h3>
-                      <p className={styles.docDesc}>{doc.desc}</p>
-                    </div>
-                  </article>
-                </NativeReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SIBLING NAVIGATION & CTA */}
-      <PrevNextNav prev={prev} next={next} baseUrl="/achievements" />
-      <BottomCTA />
-
-      {/* REUSABLE FULLSCREEN LIGHTBOX MODAL */}
-      <Lightbox
-        items={detail?.documentation}
-        activeIndex={activePhotoIdx}
-        onClose={() => setActivePhotoIdx(null)}
-        onNavigate={setActivePhotoIdx}
-      />
-    </PageShell>
+        ],
+      }}
+      subnav={{
+        backTo: "/achievements",
+        backLabel: "← All Achievements",
+        statusText: `${detail?.badge || "National Recognition"} · ${effectivePeriod}`,
+        action: detail?.relatedProject
+          ? {
+              to: `/projects/${detail.relatedProject}`,
+              label: `View ${detail.relatedProjectTitle ? `"${detail.relatedProjectTitle}"` : "Project"} Case Study`,
+              ariaLabel: `View ${detail.relatedProject} case study`,
+            }
+          : null,
+        ariaLabel: "Achievement Sub Navigation",
+      }}
+      hero={{
+        number: detail?.badge || item?.year || "Winner",
+        label: detail?.subtitle || effectiveInstitution,
+        title: `${effectiveTitle}.`,
+        description: effectiveSummary,
+        meta: detail?.meta,
+      }}
+      institution={{
+        label: "Organized By",
+        name: effectiveInstitution,
+      }}
+      tags={detail?.stack || item?.tags || []}
+      kpis={detail?.kpis}
+      story={
+        detail?.story
+          ? {
+              sectionNumber: "01",
+              sectionLabel: "THE COMPETITION SPRINT & NARRATIVE",
+              headline: detail.story.headline,
+              lead: detail.story.lead,
+              quote: detail.story.quote,
+              chapters: detail.story.chapters,
+              ariaLabel: "Competition Narrative",
+            }
+          : null
+      }
+      pillars={
+        detail?.pillars && detail.pillars.length > 0
+          ? {
+              sectionNumber: "02",
+              sectionLabel: "PLATFORM PILLARS & INNOVATION",
+              title: detail.pillarsTitle || "Platform Pillars & Core Innovations.",
+              lead:
+                detail.pillarsLead ||
+                "Technical and architectural highlights that distinguished our project during judging.",
+              items: detail.pillars,
+              ariaLabel: "Platform Pillars",
+            }
+          : null
+      }
+      takeaways={
+        detail?.takeaways && detail.takeaways.length > 0
+          ? {
+              sectionNumber: "03",
+              sectionLabel: "COMPETITION RETROSPECTIVE",
+              title: detail.takeawaysTitle || "Key Reflections & Insights.",
+              lead:
+                detail.takeawaysLead ||
+                "Strategic reflections on leading high-velocity student teams and pitching under pressure.",
+              items: detail.takeaways,
+              ariaLabel: "Competition Retrospective",
+            }
+          : null
+      }
+      documentation={
+        detail?.documentation && detail.documentation.length > 0
+          ? {
+              sectionNumber: "04",
+              sectionLabel: "ON-SITE DOCUMENTATION & ARCHIVES",
+              title:
+                detail.documentationTitle ||
+                "Championship Documentation & Records.",
+              lead:
+                detail.documentationLead ||
+                "Verifiable photographic records from our competition run, live presentation defense, and official winner certificates.",
+              items: detail.documentation,
+              ariaLabel: "Competition Documentation",
+            }
+          : null
+      }
+      prev={prev}
+      next={next}
+      baseUrl="/achievements"
+    />
   );
 }
+
+export default memo(AchievementDetailPage);

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./SectionLabel.module.css";
 
 /**
@@ -13,4 +14,4 @@ function SectionLabel({ number, label }) {
   );
 }
 
-export default SectionLabel;
+export default memo(SectionLabel);

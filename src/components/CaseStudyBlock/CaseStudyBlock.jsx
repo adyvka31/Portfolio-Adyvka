@@ -1,6 +1,7 @@
+import { memo } from "react";
 import styles from "./CaseStudyBlock.module.css";
 
-export default function CaseStudyBlock({ number, title, children, id }) {
+function CaseStudyBlock({ number, title, children, id }) {
   return (
     <section id={id} className={styles.section}>
       <div className={styles.container}>
@@ -17,3 +18,5 @@ export default function CaseStudyBlock({ number, title, children, id }) {
     </section>
   );
 }
+
+export default memo(CaseStudyBlock);

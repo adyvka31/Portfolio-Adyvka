@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 /**
  * Inline SVG icon set — keeps the bundle tiny and lets us style via currentColor.
  */
 
-export function ArrowUpRightIcon({ size = 12 }) {
+export const ArrowUpRightIcon = memo(function ArrowUpRightIcon({ size = 12 }) {
   return (
     <svg
       width={size}
@@ -17,9 +19,10 @@ export function ArrowUpRightIcon({ size = 12 }) {
       <path d="M7 17L17 7M9 7h8v8" />
     </svg>
   );
-}
+});
 
-export function ArrowRightIcon({ size = 14 }) {
+
+export const ArrowRightIcon = memo(function ArrowRightIcon({ size = 14 }) {
   return (
     <svg
       width={size}
@@ -34,9 +37,10 @@ export function ArrowRightIcon({ size = 14 }) {
       <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
-}
+});
 
-export function GithubIcon({ size = 14 }) {
+
+export const GithubIcon = memo(function GithubIcon({ size = 14 }) {
   return (
     <svg
       width={size}
@@ -49,9 +53,10 @@ export function GithubIcon({ size = 14 }) {
       <path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z" />
     </svg>
   );
-}
+});
 
-export function LinkedInIcon({ size = 14 }) {
+
+export const LinkedInIcon = memo(function LinkedInIcon({ size = 14 }) {
   return (
     <svg
       width={size}
@@ -64,9 +69,10 @@ export function LinkedInIcon({ size = 14 }) {
       <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
     </svg>
   );
-}
+});
 
-export function MailIcon({ size = 14 }) {
+
+export const MailIcon = memo(function MailIcon({ size = 14 }) {
   return (
     <svg
       width={size}
@@ -82,9 +88,10 @@ export function MailIcon({ size = 14 }) {
       <polyline points="22,6 12,13 2,6" />
     </svg>
   );
-}
+});
 
-export function SearchIcon({ size = 18 }) {
+
+export const SearchIcon = memo(function SearchIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -99,9 +106,10 @@ export function SearchIcon({ size = 18 }) {
       <path d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z" />
     </svg>
   );
-}
+});
 
-export function LayersIcon({ size = 18 }) {
+
+export const LayersIcon = memo(function LayersIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -116,9 +124,10 @@ export function LayersIcon({ size = 18 }) {
       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
     </svg>
   );
-}
+});
 
-export function GraphIcon({ size = 18 }) {
+
+export const GraphIcon = memo(function GraphIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -134,9 +143,10 @@ export function GraphIcon({ size = 18 }) {
       <path d="M12 4v8" />
     </svg>
   );
-}
+});
 
-export function PlusIcon({ size = 18 }) {
+
+export const PlusIcon = memo(function PlusIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -151,9 +161,10 @@ export function PlusIcon({ size = 18 }) {
       <path d="M12 2v20M2 12h20" />
     </svg>
   );
-}
+});
 
-export function ServerIcon({ size = 18 }) {
+
+export const ServerIcon = memo(function ServerIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -171,9 +182,10 @@ export function ServerIcon({ size = 18 }) {
       <circle cx="7" cy="17" r="0.5" fill="currentColor" />
     </svg>
   );
-}
+});
 
-export function CubeIcon({ size = 18 }) {
+
+export const CubeIcon = memo(function CubeIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -188,9 +200,10 @@ export function CubeIcon({ size = 18 }) {
       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
     </svg>
   );
-}
+});
 
-export function MonitorIcon({ size = 18 }) {
+
+export const MonitorIcon = memo(function MonitorIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -209,9 +222,10 @@ export function MonitorIcon({ size = 18 }) {
       <line x1="12" y1="17" x2="12" y2="21" />
     </svg>
   );
-}
+});
 
-export function DatabaseIcon({ size = 18 }) {
+
+export const DatabaseIcon = memo(function DatabaseIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -230,9 +244,10 @@ export function DatabaseIcon({ size = 18 }) {
       <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
     </svg>
   );
-}
+});
 
-export function TerminalIcon({ size = 18 }) {
+
+export const TerminalIcon = memo(function TerminalIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -250,9 +265,10 @@ export function TerminalIcon({ size = 18 }) {
       <line x1="12" y1="19" x2="20" y2="19" />
     </svg>
   );
-}
+});
 
-export function CloudIcon({ size = 18 }) {
+
+export const CloudIcon = memo(function CloudIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -269,9 +285,10 @@ export function CloudIcon({ size = 18 }) {
       <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
     </svg>
   );
-}
+});
 
-export function CheckIcon({ size = 14 }) {
+
+export const CheckIcon = memo(function CheckIcon({ size = 14 }) {
   return (
     <svg
       width={size}
@@ -288,9 +305,10 @@ export function CheckIcon({ size = 14 }) {
       <polyline points="20 6 9 17 4 12" />
     </svg>
   );
-}
+});
 
-export function ShieldCheckIcon({ size = 18 }) {
+
+export const ShieldCheckIcon = memo(function ShieldCheckIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -308,9 +326,10 @@ export function ShieldCheckIcon({ size = 18 }) {
       <path d="m9 12 2 2 4-4" />
     </svg>
   );
-}
+});
 
-export function LockIcon({ size = 16 }) {
+
+export const LockIcon = memo(function LockIcon({ size = 16 }) {
   return (
     <svg
       width={size}
@@ -328,9 +347,10 @@ export function LockIcon({ size = 16 }) {
       <path d="M7 11V7a5 5 0 0 1 10 0v4" />
     </svg>
   );
-}
+});
 
-export function WorkflowIcon({ size = 18 }) {
+
+export const WorkflowIcon = memo(function WorkflowIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -351,9 +371,10 @@ export function WorkflowIcon({ size = 18 }) {
       <path d="M12 13v2" />
     </svg>
   );
-}
+});
 
-export function FileCodeIcon({ size = 18 }) {
+
+export const FileCodeIcon = memo(function FileCodeIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -373,9 +394,10 @@ export function FileCodeIcon({ size = 18 }) {
       <path d="m14 17 2-2-2-2" />
     </svg>
   );
-}
+});
 
-export function ChevronLeftIcon({ size = 18 }) {
+
+export const ChevronLeftIcon = memo(function ChevronLeftIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -392,9 +414,10 @@ export function ChevronLeftIcon({ size = 18 }) {
       <polyline points="15 18 9 12 15 6" />
     </svg>
   );
-}
+});
 
-export function ChevronRightIcon({ size = 18 }) {
+
+export const ChevronRightIcon = memo(function ChevronRightIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -411,9 +434,10 @@ export function ChevronRightIcon({ size = 18 }) {
       <polyline points="9 18 15 12 9 6" />
     </svg>
   );
-}
+});
 
-export function MaximizeIcon({ size = 16 }) {
+
+export const MaximizeIcon = memo(function MaximizeIcon({ size = 16 }) {
   return (
     <svg
       width={size}
@@ -430,9 +454,10 @@ export function MaximizeIcon({ size = 16 }) {
       <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
     </svg>
   );
-}
+});
 
-export function XIcon({ size = 18 }) {
+
+export const XIcon = memo(function XIcon({ size = 18 }) {
   return (
     <svg
       width={size}
@@ -450,4 +475,5 @@ export function XIcon({ size = 18 }) {
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   );
-}
+});
+

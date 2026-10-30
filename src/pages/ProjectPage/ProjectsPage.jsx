@@ -1,5 +1,5 @@
 import SEO from "../../components/SEO/SEO";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useDeferredValue, useCallback } from "react";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import NativeReveal from "../../components/Reveal/NativeReveal";
@@ -10,14 +10,54 @@ import { SearchIcon } from "../../components/Icons/Icons";
 import { projectsList, projectFilters } from "../../data/portfolio";
 import styles from "./ProjectPage.module.css";
 
+const PROJECT_KEYWORDS = [
+  "Projects Rafif Sava Adyvka Pratama",
+  "Adyvka Projects",
+  "Databank ERP",
+  "Terastani",
+  "KEPK UMJ",
+  "Ruang Tumbuh",
+  "Richo Bahari",
+  "FitSmart",
+  "JavaIsland",
+  "Pusakaku",
+  "Semua Bisa",
+  "IDN Course",
+  "Coffee Shop",
+  "MyStyle",
+  "DeliFood",
+  "AI Ticket Manager",
+  "Attendance App",
+  "QR Scanner",
+  "News App",
+  "Quran App",
+  "Software Engineering Portfolio",
+  "Clean Architecture Projects",
+];
+
+const PROJECT_ITEMS = projectsList.map((p) => ({
+  name: p.title,
+  description: p.description,
+  url: `/projects/${p.slug}`,
+}));
+
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("web");
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
+
+  const handleQueryChange = useCallback((e) => {
+    setQuery(e.target.value);
+  }, []);
+
+  const handleFilterClick = useCallback((id) => {
+    setFilter(id);
+  }, []);
 
   const filtered = useMemo(() => {
+    const q = deferredQuery.trim().toLowerCase();
     return projectsList.filter((p) => {
       const matchCat = filter === "all" || p.category === filter;
-      const q = query.trim().toLowerCase();
       const matchQ =
         !q ||
         p.title.toLowerCase().includes(q) ||
@@ -25,38 +65,7 @@ export default function ProjectsPage() {
         p.tags.some((t) => t.toLowerCase().includes(q));
       return matchCat && matchQ;
     });
-  }, [filter, query]);
-
-  const projectCollectionKeywords = [
-    "Projects Rafif Sava Adyvka Pratama",
-    "Adyvka Projects",
-    "Databank ERP",
-    "Terastani",
-    "KEPK UMJ",
-    "Ruang Tumbuh",
-    "Richo Bahari",
-    "FitSmart",
-    "JavaIsland",
-    "Pusakaku",
-    "Semua Bisa",
-    "IDN Course",
-    "Coffee Shop",
-    "MyStyle",
-    "DeliFood",
-    "AI Ticket Manager",
-    "Attendance App",
-    "QR Scanner",
-    "News App",
-    "Quran App",
-    "Software Engineering Portfolio",
-    "Clean Architecture Projects",
-  ];
-
-  const projectItems = projectsList.map((p) => ({
-    name: p.title,
-    description: p.description,
-    url: `/projects/${p.slug}`,
-  }));
+  }, [filter, deferredQuery]);
 
   return (
     <PageShell>
@@ -64,8 +73,8 @@ export default function ProjectsPage() {
         title="Projects — Rafif Sava Adyvka Pratama"
         description="Comprehensive portfolio of enterprise systems, software platforms, and mobile apps engineered and shipped by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/projects"
-        keywords={projectCollectionKeywords}
-        itemList={projectItems}
+        keywords={PROJECT_KEYWORDS}
+        itemList={PROJECT_ITEMS}
         breadcrumbs={[
           { name: "Home", item: "/" },
           { name: "Projects", item: "/projects" },
@@ -82,19 +91,17 @@ export default function ProjectsPage() {
       <section className={styles.mainSection}>
         <div className={styles.container}>
           <div className={styles.controlsInner}>
-            {/* Animasi pencarian dengan class reveal-slide-up milik Anda */}
             <NativeReveal className={`${styles.searchWrap} reveal-slide-up`}>
               <SearchIcon size={16} />
               <input
                 type="text"
                 placeholder="Search by name, stack, or keyword…"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={handleQueryChange}
                 className={styles.searchInput}
               />
             </NativeReveal>
 
-            {/* Animasi filter dengan delay menyambung pencarian */}
             <NativeReveal
               delay={0.1}
               className={`${styles.filters} reveal-slide-up`}
@@ -102,7 +109,7 @@ export default function ProjectsPage() {
               {projectFilters.map((f) => (
                 <button
                   key={f.id}
-                  onClick={() => setFilter(f.id)}
+                  onClick={() => handleFilterClick(f.id)}
                   className={`${styles.chip} ${
                     filter === f.id ? styles.chipActive : ""
                   }`}

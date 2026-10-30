@@ -1,8 +1,9 @@
+import { memo } from "react";
 import NativeReveal from "../Reveal/NativeReveal";
 import { ArrowRightIcon } from "../Icons/Icons";
 import styles from "./BottomCTA.module.css";
 
-export default function BottomCTA({
+function BottomCTA({
   eyebrow = "What's next",
   title = "Let's build something.",
   italicWord = "something",
@@ -49,3 +50,5 @@ export default function BottomCTA({
     </section>
   );
 }
+
+export default memo(BottomCTA);

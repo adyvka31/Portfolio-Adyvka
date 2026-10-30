@@ -2,13 +2,13 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
+import Card from "../../../components/Card/Card";
 import { ArrowUpRightIcon, ArrowRightIcon } from "../../../components/Icons/Icons";
 import {
   projectsList,
   projectFilters,
   personalInfo,
 } from "../../../data/portfolio";
-import ProjectCard from "./ProjectCard";
 import styles from "./ProjectLayout.module.css";
 
 function ProjectLayout() {
@@ -88,7 +88,7 @@ function ProjectLayout() {
               delay={(idx % 3) * 0.12}
               className={`reveal-slide-up ${getColSpanClass(idx, activeFilter)}`}
             >
-              <ProjectCard project={project} />
+              <Card variant="project" item={project} />
             </NativeReveal>
           ))}
         </div>

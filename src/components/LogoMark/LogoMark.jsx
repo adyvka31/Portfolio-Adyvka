@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./LogoMark.module.css";
 
 function LogoMark({ withDot = true }) {
@@ -17,4 +18,4 @@ function LogoMark({ withDot = true }) {
   );
 }
 
-export default LogoMark;
+export default memo(LogoMark);

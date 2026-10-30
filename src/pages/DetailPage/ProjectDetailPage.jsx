@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useState, memo } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import SEO from "../../components/SEO/SEO";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -9,6 +9,7 @@ import PrevNextNav from "../../components/PrevNextNav/PrevNextNav";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import MediaFrame from "../../components/MediaFrame/MediaFrame";
 import Tag from "../../components/Tag/Tag";
+import SubNav from "../../components/SubNav/SubNav";
 import NativeReveal from "../../components/Reveal/NativeReveal";
 import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import DatabankPreview from "../../layouts/HomeLayout/ProjectLayout/DatabankPreview";
@@ -124,7 +125,7 @@ function renderBodyBlock(block, idx) {
   return null;
 }
 
-export default function ProjectDetailPage() {
+function ProjectDetailPage() {
   const { slug } = useParams();
   const normalizedSlug = slug === "flutter" ? "delifood" : slug;
   const project =
@@ -212,49 +213,35 @@ export default function ProjectDetailPage() {
       />
 
       {/* STICKY QUICK NAVIGATION BAR */}
-      <nav className={styles.subnav} aria-label="Project Sub Navigation">
-        <div className={styles.subnavInner}>
-          <Link to="/projects" className={styles.backBtn}>
-            ← All Projects
-          </Link>
-
-          {isEnterprise && (
-            <div className={styles.navPills}>
-              <a href="#overview" className={styles.navPill}>
-                01. Overview
+      <SubNav
+        backTo="/projects"
+        backLabel="← All Projects"
+        statusText={statusLabel}
+        pulseLive={isProductionReady}
+        ariaLabel="Project Sub Navigation"
+      >
+        {isEnterprise && (
+          <div className={styles.navPills}>
+            <a href="#overview" className={styles.navPill}>
+              01. Overview
+            </a>
+            {detail?.gallery?.length > 0 && (
+              <a href="#live-product" className={styles.navPill}>
+                02. Live Product
               </a>
-              {detail?.gallery?.length > 0 && (
-                <a href="#live-product" className={styles.navPill}>
-                  02. Live Product
-                </a>
-              )}
-              <a href="#capabilities" className={styles.navPill}>
-                03. Capabilities & Process
-              </a>
-              <a href="#architecture" className={styles.navPill}>
-                04. System Anatomy
-              </a>
-              <a href="#security-impact" className={styles.navPill}>
-                05. Security & Outcomes
-              </a>
-            </div>
-          )}
-
-          <div
-            className={`${styles.statusIndicator} ${
-              isProductionReady ? styles.statusReady : styles.statusDev
-            }`}
-          >
-            <span
-              className={`${styles.statusPulse} ${
-                isProductionReady ? styles.pulseReady : styles.pulseDev
-              }`}
-              aria-hidden="true"
-            />
-            <span>{statusLabel}</span>
+            )}
+            <a href="#capabilities" className={styles.navPill}>
+              03. Capabilities & Process
+            </a>
+            <a href="#architecture" className={styles.navPill}>
+              04. System Anatomy
+            </a>
+            <a href="#security-impact" className={styles.navPill}>
+              05. Security & Outcomes
+            </a>
           </div>
-        </div>
-      </nav>
+        )}
+      </SubNav>
 
       {/* =========================================================================
           ACT 1: EXECUTIVE OVERVIEW & THE PROBLEM (#overview)
@@ -947,3 +934,5 @@ export default function ProjectDetailPage() {
     </PageShell>
   );
 }
+
+export default memo(ProjectDetailPage);
