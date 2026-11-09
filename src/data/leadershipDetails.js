@@ -86,7 +86,7 @@ export const leadershipDetails = {
           chapter: "01",
           title: "The Self-Funding Hustle & Strict Selection",
           content:
-            "The 'IDN International Backpacker' program to Singapore, Malaysia, and Thailand was far from a typical high school study tour. The selection process was incredibly rigorous, primarily because we were required to fund the entire journey using our own hard-earned money. Over my holidays, I hustled to raise funds by offering freelance graphic design and web development services, and even taught basic IT skills to my peers and neighbors. After passing a thorough interview regarding my motivation and financial planning, I was thrilled to be chosen as one of only 9 students out of hundreds of applicants. Our independence was tested long before departure; we were tasked with personally booking our flights, securing accommodations, and mapping out public transit routes across all three countries with minimal guidance from our chaperone.",
+            "The 'IDN International Backpacker' program to Singapore, Malaysia, and Thailand was far from a typical high school study tour. The selection process was incredibly rigorous, primarily because we were required to fund the entire journey using our own hard-earned money. Over my holidays, I hustled to raise funds by offering freelance graphic design and web development services, and even taught basic IT skills to my peers and neighbors. After passing a thorough interview regarding my motivation and financial planning, I was thrilled to be chosen as one of only 9 students out of hundreds of applicants. Our independence was tested long before departure. We were tasked with personally booking our flights, securing accommodations, and mapping out public transit routes across all three countries with minimal guidance from our chaperone.",
         },
         {
           chapter: "02",
@@ -133,11 +133,11 @@ export const leadershipDetails = {
     takeaways: [
       {
         title: "Extreme Ownership of Circumstance",
-        desc: "When you pay for your own ticket and map your own route, you take complete responsibility for every outcome. There is no chaperone to blame; you must solve problems proactively.",
+        desc: "When you pay for your own ticket and map your own route, you take complete responsibility for every outcome. There is no chaperone to blame, and you must solve problems proactively.",
       },
       {
         title: "Empathy as a Universal Language",
-        desc: "Speaking with everyday locals taught me that communication is not about flawless grammar; it is about humility, attentive listening, and mutual respect.",
+        desc: "Speaking with everyday locals taught me that communication is not about flawless grammar, but about humility, attentive listening, and mutual respect.",
       },
       {
         title: "Composure Under High Uncertainty",
@@ -225,13 +225,13 @@ export const leadershipDetails = {
       headline: "From Stage Hand to Head of Division: Leading 500+ Competitors Through the IT FEST Chaos.",
       lead: "How rising to Head of the Student Council's Event Division and steering IT FEST 2025 through digital crashes, out-of-town guest arrivals, and high-pressure backroom certificate sprints proved that true leadership is about keeping a clear head when everything goes wrong.",
       quote:
-        "Surviving that chaos taught me that true leadership isn't about running a flawless event; it's about keeping a clear head and fixing things together when everything goes wrong.",
+        "Surviving that chaos taught me that true leadership isn't about running a flawless event, but about keeping a clear head and fixing things together when everything goes wrong.",
       chapters: [
         {
           chapter: "01",
           title: "Rising from the Ranks to Head of Division",
           content:
-            "My interest in running school events started back in junior high, so applying for the Student Council’s Event Division in vocational high school (SMK) was a natural step. It was the most competitive division to get into because our school constantly hosted exhibitions, competitions, and comparative studies. I managed to get in and spent my 10th-grade year learning the ropes from the ground up. By 11th grade, my dedication was recognized, and I was promoted to Head of the Event Division. Suddenly, I wasn't just helping out anymore; I was directing teams and carrying the full weight of the school's operational events on my shoulders.",
+            "My interest in running school events started back in junior high, so applying for the Student Council’s Event Division in vocational high school (SMK) was a natural step. It was the most competitive division to get into because our school constantly hosted exhibitions, competitions, and comparative studies. I managed to get in and spent my 10th-grade year learning the ropes from the ground up. By 11th grade, my dedication was recognized, and I was promoted to Head of the Event Division. Suddenly, I wasn't just helping out anymore, but was directing teams and carrying the full weight of the school's operational events on my shoulders.",
         },
         {
           chapter: "02",
@@ -243,7 +243,7 @@ export const leadershipDetails = {
           chapter: "03",
           title: "Grand Final Sprints & The Backroom Certificate Race",
           content:
-            "The grand final brought a whole different level of stress. We were rushing to finish the stage decorations while simultaneously managing the arrival of out-of-town guests. The most nerve-wracking part was the tiny gap between the judges' final scoring and the winner announcement. The time window was painfully short, and our team was sweating in the back room, frantically typing and printing out the winners' certificates so the closing ceremony wouldn't be delayed. We pulled it off, and seeing the winners smiling on stage made every sleepless night worth it. Surviving that chaos taught me that true leadership isn't about running a flawless event; it's about keeping a clear head and fixing things together when everything goes wrong.",
+            "The grand final brought a whole different level of stress. We were rushing to finish the stage decorations while simultaneously managing the arrival of out-of-town guests. The most nerve-wracking part was the tiny gap between the judges' final scoring and the winner announcement. The time window was painfully short, and our team was sweating in the back room, frantically typing and printing out the winners' certificates so the closing ceremony wouldn't be delayed. We pulled it off, and seeing the winners smiling on stage made every sleepless night worth it. Surviving that chaos taught me that true leadership isn't about running a flawless event, but about keeping a clear head and fixing things together when everything goes wrong.",
         },
       ],
     },
@@ -286,7 +286,7 @@ export const leadershipDetails = {
       },
       {
         title: "The Backroom Crew Makes the Stage Shine",
-        desc: "True leadership happens behind the scenes—typing certificates in a sweltering back room and making sure your exhausted team crosses the finish line together.",
+        desc: "True leadership happens behind the scenes, typing certificates in a sweltering back room and making sure your exhausted team crosses the finish line together.",
       },
     ],
     documentationTitle: "Student Council Archival Records",
@@ -443,7 +443,7 @@ export const leadershipDetails = {
         title: "Official Barmus Voluntrip Campaign",
         tag: "Official Campaign",
         image: barmus3,
-        desc: "Official campaign banner: 'Barmus Voluntrip — Menebar Kebaikan & Kebahagiaan' during field mission kickoff.",
+        desc: "Official campaign banner: 'Barmus Voluntrip: Menebar Kebaikan & Kebahagiaan' during field mission kickoff.",
       },
       {
         id: "barmus-field",
@@ -521,7 +521,7 @@ export const leadershipDetails = {
           chapter: "01",
           title: "The Drop-Off at Zero Balance",
           content:
-            "The Business & Life Survival challenge was designed to test our limits. We were transported to Semarang—a city where none of us had personal connections—and released with exactly zero rupiahs in our pockets. The rules were simple but uncompromising: no asking parents for money, no using personal credit, and no handouts. We had seven days to find employment, secure daily meals and shelter, and earn enough money to purchase our train ticket back to school.",
+            "The Business & Life Survival challenge was designed to test our limits. We were transported to Semarang, a city where none of us had personal connections, and released with exactly zero rupiahs in our pockets. The rules were simple but uncompromising: no asking parents for money, no using personal credit, and no handouts. We had seven days to find employment, secure daily meals and shelter, and earn enough money to purchase our train ticket back to school.",
         },
         {
           chapter: "02",
@@ -533,7 +533,7 @@ export const leadershipDetails = {
           chapter: "03",
           title: "Boarding the Train Home as a Stronger Person",
           content:
-            "By managing our meager income with surgical discipline—prioritizing simple food and resting in safe public spaces—we managed to save enough money by day six. Standing at Semarang Tawang Station on day seven and purchasing our return train tickets with crisp banknotes earned through our own sweat was deeply transformative. It erased any lingering fear of poverty or failure: I now know that wherever life places me, I will survive and build my way forward.",
+            "By managing our meager income with surgical discipline, prioritizing simple food and resting in safe public spaces, we managed to save enough money by day six. Standing at Semarang Tawang Station on day seven and purchasing our return train tickets with crisp banknotes earned through our own sweat was deeply transformative. It erased any lingering fear of poverty or failure: I now know that wherever life places me, I will survive and build my way forward.",
         },
       ],
     },
@@ -568,7 +568,7 @@ export const leadershipDetails = {
     takeaways: [
       {
         title: "Resilience Is a Concrete Muscle",
-        desc: "True resilience cannot be learned from business books; it is forged when you are physically exhausted and still have to negotiate your next meal.",
+        desc: "True resilience cannot be learned from business books, but is forged when you are physically exhausted and still have to negotiate your next meal.",
       },
       {
         title: "Every Honest Job Commands Respect",
@@ -748,7 +748,7 @@ export const leadershipDetails = {
     institution: "IDN Boarding School",
     period: "May 2024 · 1 Week",
     summary:
-      "Participated in an intensive one-week rural Live In program, residing with a traditional farming host family in a village community. Fully integrated into daily agrarian life—from maintaining the family's small shop (warung) and household routines to cultivating crops in the fields, bathing livestock, bonding with village children, and deep cleaning the communal mosque.",
+      "Participated in an intensive one-week rural Live In program, residing with a traditional farming host family in a village community. Fully integrated into daily agrarian life, ranging from maintaining the family's small shop (warung) and household routines to cultivating crops in the fields, bathing livestock, bonding with village children, and deep cleaning the communal mosque.",
     meta: [
       { label: "Program", value: "Live In Community Immersion" },
       { label: "Institution", value: "IDN Boarding School" },
@@ -797,7 +797,7 @@ export const leadershipDetails = {
           chapter: "01",
           title: "Stepping Into the Host Family's Daily Rhythm",
           content:
-            "As part of my school's program, I participated in a \"Live In\" activity where we spent a full week living in a rural village that still relies on traditional farming and agriculture. Assigned to a team of four, we stayed in the home of a local host family. We were not there to just act as tourists or guests; we were there to fully integrate and live exactly as the locals do. Starting from early in the morning, we jumped into their daily routines, helping out with cooking, sweeping, mopping, organizing the house, and even tending to our host family's small shop (warung).",
+            "As part of my school's program, I participated in a \"Live In\" activity where we spent a full week living in a rural village that still relies on traditional farming and agriculture. Assigned to a team of four, we stayed in the home of a local host family. We were not there to just act as tourists or guests, but were there to fully integrate and live exactly as the locals do. Starting from early in the morning, we jumped into their daily routines, helping out with cooking, sweeping, mopping, organizing the house, and even tending to our host family's small shop (warung).",
         },
         {
           chapter: "02",

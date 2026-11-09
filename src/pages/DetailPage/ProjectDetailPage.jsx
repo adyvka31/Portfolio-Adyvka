@@ -340,7 +340,7 @@ function ProjectDetailPage() {
                   <div style={{ marginTop: "2rem" }}>
                     <MediaFrame
                       src={project.thumbnail}
-                      alt={`${project.title} — Official Production Interface & System Architecture`}
+                      alt={`${project.title}, Official Production Interface & System Architecture`}
                       chromeLabel={detail?.domain || `${project.slug}.vercel.app`}
                     />
                   </div>
@@ -363,7 +363,7 @@ function ProjectDetailPage() {
           title={detail?.galleryTitle || "The Live System in Action"}
           lead={
             detail?.galleryLead ||
-            "Explore high-fidelity production interfaces — from operational analytics dashboards and role governance matrices to vendor workflows and real-time collaboration tools."
+            "Explore high-fidelity production interfaces, ranging from operational analytics dashboards and role governance matrices to vendor workflows and real-time collaboration tools."
           }
         />
       )}
@@ -387,7 +387,7 @@ function ProjectDetailPage() {
                 </h2>
                 <p className={styles.sectionLead}>
                   {detail?.capabilitiesLead ||
-                    "Built to automate mission-critical operations — unifying domain workflows, core services, and interactive user experiences."}
+                    "Built to automate mission-critical operations, unifying domain workflows, core services, and interactive user experiences."}
                 </p>
               </div>
             </NativeReveal>

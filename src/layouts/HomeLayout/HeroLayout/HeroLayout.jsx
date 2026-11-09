@@ -107,7 +107,7 @@ function HeroLayout() {
               <div className={styles.heroBgPhotoContainer}>
                 <img
                   src={profilePhoto}
-                  alt="Rafif Sava Adyvka Pratama — Software Engineer & Systems Architect Hero Portrait"
+                  alt="Rafif Sava Adyvka Pratama, Software Engineer & Systems Architect Hero Portrait"
                   className={styles.heroBgPhoto}
                   width={1296}
                   height={1728}
@@ -147,10 +147,10 @@ function HeroLayout() {
           {/* ✅ 3. Subhead menyusul (Delay: 0.2s) */}
           <NativeReveal delay={0.2} className="reveal-slide-up">
             <p className={styles.subhead}>
-              I'm Adyvka — a software engineer and polyglot builder focused on
-              clean architecture, resilient system design, and multi-platform
-              engineering. Currently architecting enterprise ERP systems and
-              digital infrastructure.
+              I'm Adyvka, a software engineer and high-agency builder. At 17, I
+              balance enterprise ERP architecture and production systems with
+              high-school academic honors, driven by clean craft, relentless
+              grit, and a genuine care for the people using what I build.
             </p>
           </NativeReveal>
 

@@ -83,7 +83,7 @@ export default function AchievementsPage() {
                     >
                       <Image
                         src={item.image}
-                        alt={`${item.title} — National Competition Honor & Stage Award`}
+                        alt={`${item.title}, National Competition Honor & Stage Award`}
                         className={local.image}
                         width={900}
                         height={560}

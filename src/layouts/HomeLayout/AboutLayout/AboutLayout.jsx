@@ -91,9 +91,9 @@ function AboutLayout() {
   const spotlight = useCardSpotlight();
 
   const aboutParagraphs = [
-    "I'm Rafif Sava Adyvka Pratama — a software engineer and systems architect based in West Java, Indonesia. I specialize in designing resilient, highly scalable systems across web, mobile, and cloud environments, architecting multi-tenant ERP platforms and enterprise digital infrastructure.",
-    "My engineering philosophy centers on polyglot problem solving, Clean Architecture, SOLID principles, and rigorous domain modeling. I believe programming languages and frameworks are deliberate tools chosen for specific system requirements — whether architecting high-throughput backend services, designing type-safe distributed systems, or engineering fluid multi-platform user interfaces.",
-    "Outside of architecting systems, I completed Harvard's CS50, earned 1st place in national software engineering competitions, and mentor emerging developers in computing fundamentals and algorithmic thinking.",
+    "I wrote my first line of code at 13, not to chase tech trends, but because I fell in love with turning an empty terminal into something that solves real human problems. Today, I build enterprise-grade systems, ranging from multi-tenant telecom ERPs to mission-critical healthcare governance platforms, grounded in *clean* *architecture* and quiet discipline.",
+    "I don't treat languages or frameworks as identities because they are deliberate tools chosen to honor the problem at hand. Whether tuning atomic database transactions, designing type-safe distributed services, or engineering fluid user interfaces, I believe great software is defined by clarity, *resilience*, and respect for the user.",
+    "Beyond the editor, my life has been shaped by genuine grit: self-funding cross-border expeditions through freelance work, authoring two published programming books to empower younger learners, and maintaining a *96/100* *GPA* standing while leading production deliverables. I build with curiosity, lead with empathy, and hold myself to standards that don't cut corners.",
   ];
 
   const getCategoryIcon = (category) => {
@@ -203,7 +203,7 @@ function AboutLayout() {
               <span className={`font-serif ${styles.italic} text-glow`}>
                 craft
               </span>{" "}
-              like a contract — every commit a quiet promise that the next
+              like a contract, where every commit is a quiet promise that the next
               person reading this code will understand it.
             </h2>
           </NativeReveal>

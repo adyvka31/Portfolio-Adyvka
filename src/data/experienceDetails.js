@@ -70,13 +70,13 @@ export const experienceDetails = {
           chapter: "02",
           title: "Unfamiliar Stacks, Zero Excuses, Ahead of Schedule",
           content:
-            "Walking into a fast-paced corporate software house on day one was humbling. The company's production systems ran on programming languages, frameworks, and architectural patterns I was barely familiar with. I had a choice: lean on my 'intern' status as an excuse to move slowly, or treat it as an accelerated masterclass. I dove in headfirst—spending evenings dissecting codebases, reading documentation, and setting a non-negotiable personal standard: every task assigned to me had to be completed cleanly and well ahead of the deadline. That velocity didn't go unnoticed. Within weeks, engineering management expanded my remit from backend APIs to full-stack feature development. Soon, I wasn't just fixing minor bugs; I was building core modules for internal financial platforms, delivering client solutions, and sitting in client stakeholder meetings representing our development team.",
+            "Walking into a fast-paced corporate software house on day one was humbling. The company's production systems ran on programming languages, frameworks, and architectural patterns I was barely familiar with. I had a choice: lean on my 'intern' status as an excuse to move slowly, or treat it as an accelerated masterclass. I dove in headfirst, spending evenings dissecting codebases, reading documentation, and setting a non-negotiable personal standard: every task assigned to me had to be completed cleanly and well ahead of the deadline. That velocity didn't go unnoticed. Within weeks, engineering management expanded my remit from backend APIs to full-stack feature development. Soon, I wasn't just fixing minor bugs, but was building core modules for internal financial platforms, delivering client solutions, and sitting in client stakeholder meetings representing our development team.",
         },
         {
           chapter: "03",
           title: "Beyond the Terminal: The Master of Ceremonies",
           content:
-            "Technical skill might get you in the door, but genuine human connection defines how far you grow. Throughout the internship, I made it a point to listen, collaborate, and build authentic friendships across departments—from UI/UX designers and QA testers to project managers and corporate executives. That proactive camaraderie led to an unexpected honor: the company appointed me as a core committee member and the Master of Ceremonies (MC) for internal company events, including our official Indonesian Independence Day celebration. Standing on stage with a microphone in front of senior engineers, department heads, and C-level executives was exhilarating. It transformed my public speaking, shattered my fear of executive communication, and proved that being an engineer never means hiding behind a screen.",
+            "Technical skill might get you in the door, but genuine human connection defines how far you grow. Throughout the internship, I made it a point to listen, collaborate, and build authentic friendships across departments, from UI/UX designers and QA testers to project managers and corporate executives. That proactive camaraderie led to an unexpected honor: the company appointed me as a core committee member and the Master of Ceremonies (MC) for internal company events, including our official Indonesian Independence Day celebration. Standing on stage with a microphone in front of senior engineers, department heads, and C-level executives was exhilarating. It transformed my public speaking, shattered my fear of executive communication, and proved that being an engineer never means hiding behind a screen.",
         },
       ],
     },
@@ -150,7 +150,7 @@ export const experienceDetails = {
       },
       {
         title: "Rapid Learning is a Superpower",
-        desc: "Entering an office with completely unfamiliar languages and frameworks was terrifying at first. But pushing through the discomfort proved that programming languages are just tools—what matters most is foundational system thinking, mental agility, and the discipline to learn on the fly.",
+        desc: "Entering an office with completely unfamiliar languages and frameworks was terrifying at first. But pushing through the discomfort proved that programming languages are just tools, and what matters most is foundational system thinking, mental agility, and the discipline to learn on the fly.",
       },
       {
         title: "Engineers Who Can Speak Compound Their Value",
@@ -200,7 +200,7 @@ export const experienceDetails = {
         image: ptardyanda3,
         tag: "17 Agustus & Company MC",
         title: "Indonesian Independence Day & Master of Ceremonies",
-        desc: "Serving as Master of Ceremonies (MC) and core event committee during PT Ardyanda's Indonesian Independence Day celebration—leading festivities, engaging senior leadership and colleagues, and proving that an engineer's impact goes far beyond the terminal.",
+        desc: "Serving as Master of Ceremonies (MC) and core event committee during PT Ardyanda's Indonesian Independence Day celebration, leading festivities, engaging senior leadership and colleagues, and proving that an engineer's impact goes far beyond the terminal.",
       },
     ],
     privacyBanner: {
@@ -252,7 +252,7 @@ export const experienceDetails = {
     statusBadge: "Production Live (Freelance)",
     period: "May 2026 — Aug 2026",
     summary:
-      "Commissioned by CentraDev to lead the frontend engineering and UI/UX architecture for CV. Richo Bahari, an established industrial general contractor operating across West Java and Jabodetabek. Transformed scattered PDF brochures and unorganized worksite photo archives into an enterprise-grade digital flagship built on Next.js 16, React 19, and Tailwind CSS v4—dignifying years of real physical labor, heavy steel fabrication, and strict K3 Zero Accident safety standards.",
+      "Commissioned by CentraDev to lead the frontend engineering and UI/UX architecture for CV. Richo Bahari, an established industrial general contractor operating across West Java and Jabodetabek. Transformed scattered PDF brochures and unorganized worksite photo archives into an enterprise-grade digital flagship built on Next.js 16, React 19, and Tailwind CSS v4, dignifying years of real physical labor, heavy steel fabrication, and strict K3 Zero Accident safety standards.",
     meta: [
       { label: "Role", value: "Lead Frontend Engineer & UI/UX Architect" },
       { label: "Client / Entity", value: "CV. Richo Bahari (Industrial General Contractor)" },
@@ -293,7 +293,7 @@ export const experienceDetails = {
           chapter: "01",
           title: "The Invisible Builders Behind Modern Industry",
           content:
-            "Every single day across the industrial corridors of Sukabumi, Cikarang, and greater West Java, the field crews of CV. Richo Bahari perform grueling, indispensable physical work. They pour rigid concrete pavement under punishing heat, weld heavy-duty structural steel jigs, and assemble multi-tiered warehouse pallet racking inside giant manufacturing facilities for clients like NGK Ceramics and PT Selatan Jaya. Yet outside those factory walls, their reputation was essentially invisible. When competing against multi-billion rupiah contractors for high-value factory tenders, they were stuck sending fragmented, low-resolution PDF brochures and raw WhatsApp photos. Their physical craftsmanship was exceptional, but their digital presence didn't do them justice. When CentraDev brought me in as Lead Frontend Engineer, I didn't see it as merely building another corporate website; I felt an immediate personal responsibility to give these hard-working builders the digital dignity they had earned with their own hands.",
+            "Every single day across the industrial corridors of Sukabumi, Cikarang, and greater West Java, the field crews of CV. Richo Bahari perform grueling, indispensable physical work. They pour rigid concrete pavement under punishing heat, weld heavy-duty structural steel jigs, and assemble multi-tiered warehouse pallet racking inside giant manufacturing facilities for clients like NGK Ceramics and PT Selatan Jaya. Yet outside those factory walls, their reputation was essentially invisible. When competing against multi-billion rupiah contractors for high-value factory tenders, they were stuck sending fragmented, low-resolution PDF brochures and raw WhatsApp photos. Their physical craftsmanship was exceptional, but their digital presence didn't do them justice. When CentraDev brought me in as Lead Frontend Engineer, I didn't see it as merely building another corporate website, but felt an immediate personal responsibility to give these hard-working builders the digital dignity they had earned with their own hands.",
         },
         {
           chapter: "02",
@@ -305,7 +305,7 @@ export const experienceDetails = {
           chapter: "03",
           title: "From Scattered PDFs to Corporate Pride",
           content:
-            "The most fulfilling moment of any project isn't when the code compiles without errors; it's the human reaction during handover. When the leadership and project coordinators of CV. Richo Bahari first explored the live platform—seeing their 5 core service pillars clearly articulated, their verified client case studies documented with measurable results, and their safety record given the prestige it deserved—the atmosphere completely changed. They weren't just looking at web design; they saw their life's work respected and validated. The platform immediately became their primary digital credential for bidding on factory expansions and manufacturing tenders, with direct consultation requests flowing straight into their communication pipeline. As a vocational high school student balancing late-night development sprints with dormitory life, this experience grounded me: technology isn't about Silicon Valley buzzwords; it's about amplifying the dignity of real human effort.",
+            "The most fulfilling moment of any project isn't when the code compiles without errors, but the human reaction during handover. When the leadership and project coordinators of CV. Richo Bahari first explored the live platform, seeing their 5 core service pillars clearly articulated, their verified client case studies documented with measurable results, and their safety record given the prestige it deserved, the atmosphere completely changed. They weren't just looking at web design, they saw their life's work respected and validated. The platform immediately became their primary digital credential for bidding on factory expansions and manufacturing tenders, with direct consultation requests flowing straight into their communication pipeline. As a vocational high school student balancing late-night development sprints with dormitory life, this experience grounded me: technology isn't about Silicon Valley buzzwords, but about amplifying the dignity of real human effort.",
         },
       ],
     },
@@ -375,11 +375,11 @@ export const experienceDetails = {
     takeaways: [
       {
         title: "Software Should Dignify Physical Craft",
-        desc: "We often celebrate pure tech startups, but traditional physical industries—welding, civil paving, warehouse racking—are the literal backbone of modern life. Helping these craftsmen present their work with digital excellence made me realize that code has the power to uplift and honor honest physical labor.",
+        desc: "We often celebrate pure tech startups, but traditional physical industries, including welding, civil paving, and warehouse racking, are the literal backbone of modern life. Helping these craftsmen present their work with digital excellence made me realize that code has the power to uplift and honor honest physical labor.",
       },
       {
         title: "Performance is an Act of Empathy",
-        desc: "When you know a field supervisor might need to open your site under direct sunlight on a dusty factory floor with two bars of cellular signal, optimizing web vitals stops being an abstract Lighthouse score—it becomes a direct gesture of respect for the user's time and conditions.",
+        desc: "When you know a field supervisor might need to open your site under direct sunlight on a dusty factory floor with two bars of cellular signal, optimizing web vitals stops being an abstract Lighthouse score, and becomes a direct gesture of respect for the user's time and conditions.",
       },
       {
         title: "Balancing Commitments Sharpens Shipping Discipline",
@@ -486,13 +486,13 @@ export const experienceDetails = {
           chapter: "01",
           title: "The Bold Pitch: Beyond a Basic Website",
           content:
-            "Our school's competency exam (UJIKOM) required us to deliver a tech project for a real-world client. Rather than settling for a basic website or an academic simulation, I took a bold initiative: pitching a full-scale ERP system to several established companies. After multiple attempts, PT Intisel Prodaktifakom, a national telecom contractor handling mission-critical network infrastructure, accepted my proposal. Partnering with my teammate Moreno Ibrahim, I took on the dual role of Project Manager and Full Stack Developer to engineer 'Databank' — a comprehensive internal management system designed to streamline everything from Purchase Orders (PO) to employee attendance and automated payroll.",
+            "Our school's competency exam (UJIKOM) required us to deliver a tech project for a real-world client. Rather than settling for a basic website or an academic simulation, I took a bold initiative: pitching a full-scale ERP system to several established companies. After multiple attempts, PT Intisel Prodaktifakom, a national telecom contractor handling mission-critical network infrastructure, accepted my proposal. Partnering with my teammate Moreno Ibrahim, I took on the dual role of Project Manager and Full Stack Developer to engineer 'Databank', a comprehensive internal management system designed to streamline everything from Purchase Orders (PO) to employee attendance and automated payroll.",
         },
         {
           chapter: "02",
           title: "No Seniors, No Shortcuts: Engineering on the Fly",
           content:
-            "Building an enterprise-grade system from scratch was intensely demanding. Utilizing React and NestJS, we architected the database, implemented secure Role-Based Access Control, and designed a highly responsive interface. Honestly, the hardest part wasn't the coding itself; it was project management. We had to define the scope and make critical architectural decisions entirely on our own, without any senior developers to guide us. We figured things out on the fly, balancing this heavy workload with our regular boarding school schedule to meet a strict three-month deadline.",
+            "Building an enterprise-grade system from scratch was intensely demanding. Utilizing React and NestJS, we architected the database, implemented secure Role-Based Access Control, and designed a highly responsive interface. Honestly, the hardest part wasn't the coding itself, but project management. We had to define the scope and make critical architectural decisions entirely on our own, without any senior developers to guide us. We figured things out on the fly, balancing this heavy workload with our regular boarding school schedule to meet a strict three-month deadline.",
         },
         {
           chapter: "03",
@@ -583,7 +583,7 @@ export const experienceDetails = {
       },
       {
         title: "Project Management Over Syntax",
-        desc: "Without senior developers to guide us, the hardest part wasn't writing NestJS or React code—it was managing scope, defining boundaries, and making high-stakes decisions under a strict 3-month deadline while balancing boarding school life.",
+        desc: "Without senior developers to guide us, the hardest part wasn't writing NestJS or React code, but was managing scope, defining boundaries, and making high-stakes decisions under a strict 3-month deadline while balancing boarding school life.",
       },
       {
         title: "Pride in Real Production Responsibility",
@@ -597,7 +597,7 @@ export const experienceDetails = {
       {
         name: "Moreno Ibrahim",
         role: "Project Partner & Frontend Engineer",
-        desc: "Handled the entire frontend side with excellence—building responsive React interfaces with Native CSS, Light/Dark mode styling, and seamless user experiences. Could not have done this without him.",
+        desc: "Handled the entire frontend side with excellence, building responsive React interfaces with Native CSS, Light/Dark mode styling, and seamless user experiences. Could not have done this without him.",
       },
       {
         name: "PT Intisel Prodaktifakom",

@@ -128,7 +128,7 @@ export default function ProjectsPage() {
         label="Projects & Publications"
         title="Works that shipped, not pitched."
         italicWord="shipped"
-        description="A catalogue of everything I've engineered, authored, or shipped — filter by software platforms or explore published technical learning modules & books."
+        description="A catalogue of everything I've engineered, authored, or shipped, with filters across software platforms, enterprise applications, and published technical learning modules."
       />
 
       <section className={styles.mainSection}>

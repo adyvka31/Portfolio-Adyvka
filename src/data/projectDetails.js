@@ -402,23 +402,23 @@ export const projectDetails = {
       {
         name: "richo-bahari-cp/ (Next.js 16 App Router)",
         items: [
-          "src/app/page.tsx — Executive landing page integrating all core sections",
-          "src/app/home/ — Modular sections: Hero, About, Services, Projects, Values, Contact",
-          "src/app/proyek/ — Dynamic project showcase routes with detailed case studies",
-          "src/app/layanan/ & kapabilitas/ — Deep-dive service line and equipment breakdowns",
-          "src/components/ui/ — Reusable atomic design components (Button, Cards, Badges)",
-          "src/lib/projects.ts — Strongly-typed portfolio database with client case studies",
-          "src/assets/ — Optimized AVIF and WebP project photographs from actual job sites",
+          "src/app/page.tsx: Executive landing page integrating all core sections",
+          "src/app/home/: Modular sections: Hero, About, Services, Projects, Values, Contact",
+          "src/app/proyek/: Dynamic project showcase routes with detailed case studies",
+          "src/app/layanan/ & kapabilitas/: Deep-dive service line and equipment breakdowns",
+          "src/components/ui/: Reusable atomic design components (Button, Cards, Badges)",
+          "src/lib/projects.ts: Strongly-typed portfolio database with client case studies",
+          "src/assets/: Optimized AVIF and WebP project photographs from actual job sites",
         ],
       },
       {
         name: "flyer-designs/ (Marketing Collateral & Visual Assets)",
         items: [
-          "flyer-web-preview.html — 1080x1350 4:5 executive marketing presentation flyer",
-          "thumbnail-landscape.html — 1280x720 16:9 widescreen presentation banner",
-          "flyer-a4.html — Printable ISO 216 A4 corporate capability brochure",
-          "richo_bahari_web_preview_flyer.png — High-resolution rendered marketing flyer",
-          "screenshots/ — High-definition desktop and mobile UI captures",
+          "flyer-web-preview.html: 1080x1350 4:5 executive marketing presentation flyer",
+          "thumbnail-landscape.html: 1280x720 16:9 widescreen presentation banner",
+          "flyer-a4.html: Printable ISO 216 A4 corporate capability brochure",
+          "richo_bahari_web_preview_flyer.png: High-resolution rendered marketing flyer",
+          "screenshots/: High-definition desktop and mobile UI captures",
         ],
       },
     ],
@@ -846,7 +846,7 @@ export const projectDetails = {
           level: "Stage 05",
           role: "RW Hub Manager",
           title: "Weight Verification & Smart Escrow Payout",
-          desc: "The hub manager scans the QR ticket and weighs the produce; the system automatically triggers escrow disbursement into the grower's digital wallet.",
+          desc: "The hub manager scans the QR ticket and weighs the produce, and the system automatically triggers escrow disbursement into the grower's digital wallet.",
           action: "QR Verification & Instant Escrow Release",
         },
         {
@@ -866,24 +866,24 @@ export const projectDetails = {
       {
         name: "tera-backend/ (Express 5 + Clean Layered Architecture)",
         items: [
-          "src/controllers/ — HTTP handlers (auth, dashboard, harvest, quota, wallet)",
-          "src/services/ — AuthService, LandCalculator, PlantVision, SmartEscrow",
-          "src/repositories/ — Isolated PostgreSQL queries with parameterized SQL",
-          "src/routes/ — Versioned /api/v1 routing (14 specialized API endpoints)",
-          "src/middlewares/ — JWT auth, RBAC, latency logger, fail-fast validator",
-          "src/config/ — Database connection pool (pg.Pool), constants, env parser",
-          "src/seed/ — Idempotent database seeder for jury competition evaluation",
+          "src/controllers/: HTTP handlers (auth, dashboard, harvest, quota, wallet)",
+          "src/services/: AuthService, LandCalculator, PlantVision, SmartEscrow",
+          "src/repositories/: Isolated PostgreSQL queries with parameterized SQL",
+          "src/routes/: Versioned /api/v1 routing (14 specialized API endpoints)",
+          "src/middlewares/: JWT auth, RBAC, latency logger, fail-fast validator",
+          "src/config/: Database connection pool (pg.Pool), constants, env parser",
+          "src/seed/: Idempotent database seeder for jury competition evaluation",
         ],
       },
       {
         name: "tera-frontend/ (React 19 + Vite 8 + Tailwind CSS v4)",
         items: [
-          "src/features/dashboard/ — OverviewTab, CalculatorTab, VisionTab, LumbungTab, FinanceTab",
-          "src/components/common/ — Tactile modals, QRCodeImage, Button, Badge, MetricCard",
-          "src/components/layout/ — Header (IoT telemetry sync pill), Sidebar, RoleSwitcher",
-          "src/context/AuthContext.jsx — Session state & 1-click cultivator/distributor role switcher",
-          "src/utils/plantVisionEngine.js — Canvas pixel spectrometry & SPAD chlorophyll index",
-          "src/api/ — Axios singleton with Bearer tokens & 401 automatic recovery",
+          "src/features/dashboard/: OverviewTab, CalculatorTab, VisionTab, LumbungTab, FinanceTab",
+          "src/components/common/: Tactile modals, QRCodeImage, Button, Badge, MetricCard",
+          "src/components/layout/: Header (IoT telemetry sync pill), Sidebar, RoleSwitcher",
+          "src/context/AuthContext.jsx: Session state & 1-click cultivator/distributor role switcher",
+          "src/utils/plantVisionEngine.js: Canvas pixel spectrometry & SPAD chlorophyll index",
+          "src/api/: Axios singleton with Bearer tokens & 401 automatic recovery",
         ],
       },
     ],
@@ -1351,26 +1351,26 @@ export const projectDetails = {
       {
         name: "kepk-backend/ (Laravel 12.x Architecture)",
         items: [
-          "app/Services/ResearchCreation/ — BaseResearchCreationService & Subtype Services",
-          "app/Services/ResearchCreation/ResearchSubtypeResolver.php — Dynamic Strategy Resolver",
-          "app/Http/Controllers/ — VerifyController, PathClassificationController, AppointmentReviewerController",
-          "app/Http/Controllers/ReviewTaskController.php — AJAX chapter evaluation & comments",
-          "app/Http/Controllers/PostApproval/ — Amendment, FinalReport, EthicsExtension, SaeReport",
-          "app/Http/Requests/Store/ — BaseStoreResearchRequest & subtype draft-mode validation",
-          "app/Enums/ — 24 medical backed enums (ClinicalTrialPhase, VulnerableType, TriState, Sponsor)",
-          "app/View/Composers/RoleComposer.php — Zero-cost view injection for RBAC navigation",
-          "database/migrations/ — Relational schema, JSON attributes, foreign keys cascade",
+          "app/Services/ResearchCreation/: BaseResearchCreationService & Subtype Services",
+          "app/Services/ResearchCreation/ResearchSubtypeResolver.php: Dynamic Strategy Resolver",
+          "app/Http/Controllers/: VerifyController, PathClassificationController, AppointmentReviewerController",
+          "app/Http/Controllers/ReviewTaskController.php: AJAX chapter evaluation & comments",
+          "app/Http/Controllers/PostApproval/: Amendment, FinalReport, EthicsExtension, SaeReport",
+          "app/Http/Requests/Store/: BaseStoreResearchRequest & subtype draft-mode validation",
+          "app/Enums/: 24 medical backed enums (ClinicalTrialPhase, VulnerableType, TriState, Sponsor)",
+          "app/View/Composers/RoleComposer.php: Zero-cost view injection for RBAC navigation",
+          "database/migrations/: Relational schema, JSON attributes, foreign keys cascade",
         ],
       },
       {
         name: "kepk-frontend/ (Blade + Tailwind CSS v4 + Vite)",
         items: [
-          "resources/views/research/create/ — 3-stage protocol wizard & Form B subtype partials",
-          "resources/views/secretariat/ — Verification audits, path triaging, and reviewer assignment",
-          "resources/views/reviewer/ — Chapter-by-chapter AJAX evaluation workspace",
-          "resources/views/pdf/ — DomPDF official A4 Ethical Clearance template with dynamic QR",
-          "resources/views/post-approval/ — Amendments, annual extensions, and SAE forms",
-          "resources/js/ — SweetAlert2 modals, Axios chapter submitters, and Alpine interactivity",
+          "resources/views/research/create/: 3-stage protocol wizard & Form B subtype partials",
+          "resources/views/secretariat/: Verification audits, path triaging, and reviewer assignment",
+          "resources/views/reviewer/: Chapter-by-chapter AJAX evaluation workspace",
+          "resources/views/pdf/: DomPDF official A4 Ethical Clearance template with dynamic QR",
+          "resources/views/post-approval/: Amendments, annual extensions, and SAE forms",
+          "resources/js/: SweetAlert2 modals, Axios chapter submitters, and Alpine interactivity",
         ],
       },
     ],
@@ -1723,7 +1723,7 @@ export const projectDetails = {
     ],
     featuresTitle: "8 Mission-Critical Enterprise Modules",
     featuresLead:
-      "From multi-tier inventory to mobile warehouse dispatch — every workflow is backed by cryptographic audit trails and real-time ledger consistency.",
+      "From multi-tier inventory to mobile warehouse dispatch, every workflow is backed by cryptographic audit trails and real-time ledger consistency.",
     features: [
       {
         id: "databank-mgmt",
@@ -1855,23 +1855,23 @@ export const projectDetails = {
       {
         name: "databank-backend/ (NestJS 11)",
         items: [
-          "src/auth/ — JWT strategy, Passport guards, RBAC decorators",
-          "src/databank/ — CRUD Databank, PO, Impl Doc, ESAR, Datafab",
-          "src/outsource/ — Outsource master, PO DB, JO Approval, BAST Form",
-          "src/scraper/ — Playwright headless scraper for Huawei ISDP",
-          "src/attendance/ — GPS geofence clock in/out, server time, payroll",
-          "prisma/schema/ — Modular schemas: databank, outsource, user, role, permission, attendance",
+          "src/auth/: JWT strategy, Passport guards, RBAC decorators",
+          "src/databank/: CRUD Databank, PO, Impl Doc, ESAR, Datafab",
+          "src/outsource/: Outsource master, PO DB, JO Approval, BAST Form",
+          "src/scraper/: Playwright headless scraper for Huawei ISDP",
+          "src/attendance/: GPS geofence clock in/out, server time, payroll",
+          "prisma/schema/: Modular schemas: databank, outsource, user, role, permission, attendance",
         ],
       },
       {
         name: "databank-frontend/ (React 19 + Vite 7)",
         items: [
-          "src/features/manageData/ — Databank virtualized table & Excel filters",
-          "src/features/outsource/ — JO approval with canvas signatures, BAST export",
-          "src/features/attendance/ — Clock in/out with GPS radius & server time",
-          "src/features/roles/ & users/ — RBAC matrix & individual permission overrides",
-          "src/components/ExcelColumnFilter/ — Excel-style dropdown column filters",
-          "src/locales/ — Multi-language dictionaries (ID, EN, ZH)",
+          "src/features/manageData/: Databank virtualized table & Excel filters",
+          "src/features/outsource/: JO approval with canvas signatures, BAST export",
+          "src/features/attendance/: Clock in/out with GPS radius & server time",
+          "src/features/roles/ & users/: RBAC matrix & individual permission overrides",
+          "src/components/ExcelColumnFilter/: Excel-style dropdown column filters",
+          "src/locales/: Multi-language dictionaries (ID, EN, ZH)",
         ],
       },
     ],
@@ -1958,15 +1958,15 @@ export const projectDetails = {
       {
         title: "Architecture",
         body: [
-          "React + Vite on the frontend for fast cold starts; NestJS modular monolith on the backend with Prisma ORM over PostgreSQL. Domain boundaries enforced at the module level — inventory cannot import from finance, only through a shared events module.",
-          "Auth uses JWT with refresh-token rotation; RBAC is policy-based with deny-by-default. Every write goes through a use-case layer that emits domain events for the audit log.",
+          "React + Vite on the frontend for fast cold starts; NestJS modular monolith on the backend with Prisma ORM over PostgreSQL. Domain boundaries enforced at the module level, inventory cannot import from finance, only through a shared events module.",
+          "Auth uses JWT with refresh-token rotation, while RBAC is policy-based with deny-by-default. Every write goes through a use-case layer that emits domain events for the audit log.",
         ],
       },
       {
         title: "What was hard",
         body: [
           "Migrating live financial data without a maintenance window. Solved with a dual-write pattern: new system shadows the old for 30 days while reconciliation runs nightly.",
-          "Permission UX. RBAC matrices are usually a nightmare for end users — we built a 'show me what this role can do' inspector that renders the policy in plain English.",
+          "Permission UX. RBAC matrices are usually a nightmare for end users, we built a 'show me what this role can do' inspector that renders the policy in plain English.",
         ],
       },
       {
@@ -1998,7 +1998,7 @@ export const projectDetails = {
     subtitle: "Time Banking Educational Ecosystem & Mentorship Platform",
     status: "Production Ready",
     summary:
-      "A peer-to-peer educational platform built on the Time Banking paradigm — where one hour of learning any discipline holds equal value to one hour of teaching. Powered by atomic PostgreSQL time-wallet transactions, real-time Socket.io communication, an interactive Matter.js 2D physics engine, and Google Gemini AI assistance.",
+      "A peer-to-peer educational platform built on the Time Banking paradigm, where one hour of learning any discipline holds equal value to one hour of teaching. Powered by atomic PostgreSQL time-wallet transactions, real-time Socket.io communication, an interactive Matter.js 2D physics engine, and Google Gemini AI assistance.",
     domain: "ruang-tumbuh.vercel.app",
     meta: [
       { label: "Role", value: "Project Lead & Server Architect" },
@@ -2010,7 +2010,7 @@ export const projectDetails = {
     galleryLabel: "PRODUCTION INTERFACES",
     galleryTitle: "The RuangTumbuh Experience",
     galleryLead:
-      "Explore the core interfaces of RuangTumbuh — from the interactive 2D physics landing canvas and cashless course catalog to real-time WebSocket communication and the Gemini AI copilot.",
+      "Explore the core interfaces of RuangTumbuh, from the interactive 2D physics landing canvas and cashless course catalog to real-time WebSocket communication and the Gemini AI copilot.",
     gallery: [
       {
         id: "hero-showcase",
@@ -2134,7 +2134,7 @@ export const projectDetails = {
     ],
     capabilitiesTitle: "Core Capabilities & Time Banking Workflow",
     capabilitiesLead:
-      "Engineered to democratize peer education — combining transactional time banking, dynamic course syndication, unified calendar scheduling, and low-latency real-time collaboration.",
+      "Engineered to democratize peer education, combining transactional time banking, dynamic course syndication, unified calendar scheduling, and low-latency real-time collaboration.",
     features: [
       {
         id: "time-wallet-engine",
@@ -2344,29 +2344,29 @@ export const projectDetails = {
       {
         name: "rutu-backend/ (Express 5 + Prisma ORM)",
         items: [
-          "src/controllers/ — Auth, user, booking, course, schedule, chat, and chatbot controllers",
-          "src/services/ — BookingService ($transaction), CourseService, ScheduleService, Gemini AI",
-          "src/middleware/ — Rate limiter (auth/global), Helmet, CORS whitelist, JWT verification, Multer",
-          "src/sockets/ — Socket.io real-time chat gateway with JWT handshake authorization",
-          "prisma/ — PostgreSQL schema definitions, migrations, and community seed scripts",
+          "src/controllers/: Auth, user, booking, course, schedule, chat, and chatbot controllers",
+          "src/services/: BookingService ($transaction), CourseService, ScheduleService, Gemini AI",
+          "src/middleware/: Rate limiter (auth/global), Helmet, CORS whitelist, JWT verification, Multer",
+          "src/sockets/: Socket.io real-time chat gateway with JWT handshake authorization",
+          "prisma/: PostgreSQL schema definitions, migrations, and community seed scripts",
         ],
       },
       {
         name: "rutu-frontend/ (React 19 + TanStack Query + Vite 7)",
         items: [
-          "src/pages/ — Landing (Matter.js), Courses (infinite query), Dashboard, Messages, Schedule",
-          "src/hooks/ — useSearchCourses (debounce), useMatterPhysics, useSocketChat, useAuth",
-          "src/components/ — ChatbotPanel (Gemini), Navigation, CourseCards, ScheduleCalendar",
-          "src/context/ — AuthContext with 30-min inactivity timeout and user state",
-          "src/services/ — Axios API clients with Bearer token interceptors",
+          "src/pages/: Landing (Matter.js), Courses (infinite query), Dashboard, Messages, Schedule",
+          "src/hooks/: useSearchCourses (debounce), useMatterPhysics, useSocketChat, useAuth",
+          "src/components/: ChatbotPanel (Gemini), Navigation, CourseCards, ScheduleCalendar",
+          "src/context/: AuthContext with 30-min inactivity timeout and user state",
+          "src/services/: Axios API clients with Bearer token interceptors",
         ],
       },
       {
         name: "packages/shared/ (@rutu/shared)",
         items: [
-          "src/schemas/auth.schema.js — Shared Zod login & registration schemas",
-          "src/schemas/course.schema.js — Shared course and module validation schemas",
-          "package.json — Shared internal package consumed by frontend and backend",
+          "src/schemas/auth.schema.js: Shared Zod login & registration schemas",
+          "src/schemas/course.schema.js: Shared course and module validation schemas",
+          "package.json: Shared internal package consumed by frontend and backend",
         ],
       },
     ],
@@ -2461,7 +2461,7 @@ export const projectDetails = {
     securityStandards: [
       {
         title: "Tiered Rate Limiting Protection",
-        desc: "Auth limiter restricts login/registration to 15 requests per 15 minutes to thwart brute-force attacks; global limiter restricts general traffic to 300 requests per 5 minutes.",
+        desc: "Auth limiter restricts login/registration to 15 requests per 15 minutes to thwart brute-force attacks, while the global limiter restricts general traffic to 300 requests per 5 minutes.",
       },
       {
         title: "Prisma ACID Transactions ($transaction)",
@@ -2505,7 +2505,7 @@ export const projectDetails = {
         title: "Architecture & Time Banking",
         body: [
           "Adopted a pnpm workspace monorepo dividing the project into @rutu/shared (Zod data validation contracts), rutu-backend (Express 5 with Prisma ORM and Socket.io), and rutu-frontend (React 19 with TanStack Query and Matter.js).",
-          "The Time Wallet engine operates on strict transaction atomicity: when a student books a session, the duration is locked in escrow using prisma.$transaction. If accepted, the mentor is credited and a 6-character verification token is issued; if cancelled or rejected, an instant refund is executed.",
+          "The Time Wallet engine operates on strict transaction atomicity: when a student books a session, the duration is locked in escrow using prisma.$transaction. If accepted, the mentor is credited and a 6-character verification token is issued, whereas if cancelled or rejected, an instant refund is executed.",
         ],
       },
       {
@@ -2564,7 +2564,7 @@ export const projectDetails = {
     galleryLabel: "PREVENTIVE HEALTHCARE INTERFACES",
     galleryTitle: "The FitSmart Digital Wellness Hub",
     galleryLead:
-      "Explore the key portals of FitSmart — uniting real-time AI doctor triage, evidence-based clinical pathology breakdowns, functional superfood dietetics, and athletic conditioning.",
+      "Explore the key portals of FitSmart, uniting real-time AI doctor triage, evidence-based clinical pathology breakdowns, functional superfood dietetics, and athletic conditioning.",
     gallery: [
       {
         id: "hero-showcase",
@@ -2572,7 +2572,7 @@ export const projectDetails = {
         route: "fitsmart.local/index.html",
         tag: "Official Brand Presentation",
         image: fitsmartImg,
-        desc: "Official launch flyer and comprehensive interface showcase for FitSmart — an all-in-one AI-driven preventive healthcare and athletic wellness platform.",
+        desc: "Official launch flyer and comprehensive interface showcase for FitSmart, an all-in-one AI-driven preventive healthcare and athletic wellness platform.",
         features: [
           "Comprehensive Digital Health Ecosystem",
           "Cross-Platform Responsive Interface System",
@@ -2611,7 +2611,7 @@ export const projectDetails = {
         route: "fitsmart.local/konsumsi.html",
         tag: "Nutritional Science",
         image: fitsmart3,
-        desc: "Extensive dietary catalog featuring 16+ nutrient-dense food classifications — including antioxidant superfoods (Quinoa, Kurma, Kismis), cruciferous greens, and omega-3 rich nutrition.",
+        desc: "Extensive dietary catalog featuring 16+ nutrient-dense food classifications, including antioxidant superfoods (Quinoa, Kurma, Kismis), cruciferous greens, and omega-3 rich nutrition.",
         features: [
           "16+ Classified Micronutrient & Superfood Profiles",
           "Daily Caloric & Macronutrient Balance Recommendations",
@@ -2789,7 +2789,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "AI Clinical Consultation & Lifestyle Decision Lifecycle",
-      lead: "From user symptom inquiry to actionable preventive recommendations — each consultation passes through strict client-side domain verification and deterministic LLM inference.",
+      lead: "From user symptom inquiry to actionable preventive recommendations, each consultation passes through strict client-side domain verification and deterministic LLM inference.",
       stages: [
         {
           level: "Stage 01",
@@ -2885,23 +2885,23 @@ export const projectDetails = {
       {
         name: "Pages/ (Specialized Health Portals)",
         items: [
-          "index.html — Main landing portal with hero & platform overview",
-          "penyakit.html — Disease encyclopedia & 24 clinical diagnostic modals",
-          "konsumsi.html — Dietary guidelines, macronutrients & superfood profiles",
-          "aktifitas.html — Athletic conditioning & customized workout routines",
-          "login.html — Authentication portal UI for returning users",
-          "register.html — User registration & onboarding interface",
+          "index.html: Main landing portal with hero & platform overview",
+          "penyakit.html: Disease encyclopedia & 24 clinical diagnostic modals",
+          "konsumsi.html: Dietary guidelines, macronutrients & superfood profiles",
+          "aktifitas.html: Athletic conditioning & customized workout routines",
+          "login.html: Authentication portal UI for returning users",
+          "register.html: User registration & onboarding interface",
         ],
       },
       {
         name: "Style/ & Root Controller (Presentation & Logic)",
         items: [
-          "Style/penyakit.css — Modal overlays, disease cards & grid layouts",
-          "Style/konsumsi.css — Nutrition tables, food profile cards & badges",
-          "Style/aktifitas.css — Workout routine cards & sports category layouts",
-          "Style/style.css — Global typography, color system & reset rules",
-          "script.js — Core controller: 24 popups, Gemini AI fetch & rate limiter",
-          "script2.js — Secondary AI consultation module & drawer toggle",
+          "Style/penyakit.css: Modal overlays, disease cards & grid layouts",
+          "Style/konsumsi.css: Nutrition tables, food profile cards & badges",
+          "Style/aktifitas.css: Workout routine cards & sports category layouts",
+          "Style/style.css: Global typography, color system & reset rules",
+          "script.js: Core controller: 24 popups, Gemini AI fetch & rate limiter",
+          "script2.js: Secondary AI consultation module & drawer toggle",
         ],
       },
     ],
@@ -3062,7 +3062,7 @@ export const projectDetails = {
     galleryLabel: "CULTURAL & TOURISM INTERFACES",
     galleryTitle: "The JavaIsland Digital Experience",
     galleryLead:
-      "Explore the key interactive touchpoints of JavaIsland — bridging conversational AI cultural guidance, reactive 3D mouse parallax city cards, ancient imperial chronicles, and traditional gastronomy.",
+      "Explore the key interactive touchpoints of JavaIsland, bridging conversational AI cultural guidance, reactive 3D mouse parallax city cards, ancient imperial chronicles, and traditional gastronomy.",
     gallery: [
       {
         id: "hero-showcase",
@@ -3287,7 +3287,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "AI Cultural Inquiry & Visitor Guidance Lifecycle",
-      lead: "From user inquiry to verified cultural recommendations — each interaction passes through bilingual domain evaluation and deterministic LLM generation.",
+      lead: "From user inquiry to verified cultural recommendations, each interaction passes through bilingual domain evaluation and deterministic LLM generation.",
       stages: [
         {
           level: "Stage 01",
@@ -3384,26 +3384,26 @@ export const projectDetails = {
       {
         name: "Root Directory (Core Application Portals)",
         items: [
-          "index.html — Main landing gateway with hero, 3D parallax cities, and marquee",
-          "culture.html — Historical chronicles, Majapahit Empire, and performing arts",
-          "explore.html — Tourism destinations, category filters, and booking simulator",
-          "askjava.html — Tanya Jawa: Bilingual Gemini Flash AI conversational concierge",
-          "detailwayang.html — In-depth Wayang Kulit shadow puppetry heritage profile",
-          "detailgudeg.html — Gudeg Yogyakarta historical origin & culinary recipe lore",
-          "detailrawon.html — Rawon Ponorogo black beef soup recipe & kluwek nut history",
-          "detailsotokudus.html — Soto Kudus central Javanese shredded chicken soup profile",
-          "detaillontong.html — Lontong Sayur coconut vegetable stew culinary breakdown",
+          "index.html: Main landing gateway with hero, 3D parallax cities, and marquee",
+          "culture.html: Historical chronicles, Majapahit Empire, and performing arts",
+          "explore.html: Tourism destinations, category filters, and booking simulator",
+          "askjava.html: Tanya Jawa: Bilingual Gemini Flash AI conversational concierge",
+          "detailwayang.html: In-depth Wayang Kulit shadow puppetry heritage profile",
+          "detailgudeg.html: Gudeg Yogyakarta historical origin & culinary recipe lore",
+          "detailrawon.html: Rawon Ponorogo black beef soup recipe & kluwek nut history",
+          "detailsotokudus.html: Soto Kudus central Javanese shredded chicken soup profile",
+          "detaillontong.html: Lontong Sayur coconut vegetable stew culinary breakdown",
         ],
       },
       {
         name: "Styles & Assets (css/, font/, Images/)",
         items: [
-          "index.css — 3D card tilt styling, perspective math rules, and custom animations",
-          "css/askjava.css — Chatbot container, bubble styling, and autoscroll rules",
-          "css/culture.css — Timeline styling, narrative layouts, and modal dialogs",
-          "css/explore.css — Destination card grids, booking input bar, and category buttons",
-          "font/Silvertones.otf — Custom brand display font embedded via @font-face",
-          "Images/ — High-resolution photography, SVG maps, and cultural iconography",
+          "index.css: 3D card tilt styling, perspective math rules, and custom animations",
+          "css/askjava.css: Chatbot container, bubble styling, and autoscroll rules",
+          "css/culture.css: Timeline styling, narrative layouts, and modal dialogs",
+          "css/explore.css: Destination card grids, booking input bar, and category buttons",
+          "font/Silvertones.otf: Custom brand display font embedded via @font-face",
+          "Images/: High-resolution photography, SVG maps, and cultural iconography",
         ],
       },
     ],
@@ -3564,7 +3564,7 @@ export const projectDetails = {
     galleryLabel: "FOLK HERITAGE & GAMIFIED INTERFACES",
     galleryTitle: "The Pusakaku Cultural Experience",
     galleryLead:
-      "Explore the core interactive touchpoints of Pusakaku — from gamified cultural quizzes and deep anthropological game profiles to dual-lane kinetic marquees and responsive heritage typography.",
+      "Explore the core interactive touchpoints of Pusakaku, from gamified cultural quizzes and deep anthropological game profiles to dual-lane kinetic marquees and responsive heritage typography.",
     gallery: [
       {
         id: "hero-showcase",
@@ -3598,7 +3598,7 @@ export const projectDetails = {
         route: "pusakaku.local/permainan.html",
         tag: "Regional Ethnography",
         image: pusakaku2,
-        desc: "Provincial game filter tab system allowing users to explore heritage games across 10 Indonesian provinces — including Sulawesi, Lampung, Yogyakarta, Jawa Tengah, Padang, Jawa Barat, Riau, Kalimantan, NTT, and Bali.",
+        desc: "Provincial game filter tab system allowing users to explore heritage games across 10 Indonesian provinces, including Sulawesi, Lampung, Yogyakarta, Jawa Tengah, Padang, Jawa Barat, Riau, Kalimantan, NTT, and Bali.",
         features: [
           "10-Province Regional Tab Filter Engine",
           "Rich Cultural Metadata & Gameplay Context per Game",
@@ -3789,7 +3789,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Traditional Game Discovery & Educational Assessment Lifecycle",
-      lead: "From cultural exploration to interactive assessment — guiding users through an engaging cycle of historical learning and gamified reinforcement.",
+      lead: "From cultural exploration to interactive assessment, guiding users through an engaging cycle of historical learning and gamified reinforcement.",
       stages: [
         {
           level: "Stage 01",
@@ -3886,23 +3886,23 @@ export const projectDetails = {
       {
         name: "Root & Pages/ (Core Portals & Game Dossiers)",
         items: [
-          "index.html — Main landing portal with hero, marquee, about, and FAQ",
-          "Pages/game.html — Interactive 10-stage gamified cultural assessment quiz",
-          "Pages/pagecongklak.html — Congklak (Mancala) history, rules, and mathematical lore",
-          "Pages/pageegrang.html — Egrang (bamboo stilts) balance physics and motor skills",
-          "Pages/pagekelereng.html — Kelereng (marbles) precision geometry and tactical rules",
-          "Pages/pagelayang.html — Layang-Layang (kites) aerodynamics and Kaghati Kolope history",
+          "index.html: Main landing portal with hero, marquee, about, and FAQ",
+          "Pages/game.html: Interactive 10-stage gamified cultural assessment quiz",
+          "Pages/pagecongklak.html: Congklak (Mancala) history, rules, and mathematical lore",
+          "Pages/pageegrang.html: Egrang (bamboo stilts) balance physics and motor skills",
+          "Pages/pagekelereng.html: Kelereng (marbles) precision geometry and tactical rules",
+          "Pages/pagelayang.html: Layang-Layang (kites) aerodynamics and Kaghati Kolope history",
         ],
       },
       {
         name: "Logic, Styles & Assets (Javascript/, Style/, Font/, Image/)",
         items: [
-          "Javascript/game.js — Quiz state machine: pagination, score calculation & reset",
-          "Javascript/hello.js — Sequenced welcome preloader curtain with sliding exit",
-          "Style/index.css — Keyframe animations, Yogyakarta font imports & reset rules",
-          "Font/Yogyakarta.ttf — Custom TrueType display typography asset",
-          "Image/ — Archival photography, logo assets, and cultural vector illustrations",
-          "tailwind.config.js — Tailwind configuration with 6 custom breakpoint definitions",
+          "Javascript/game.js: Quiz state machine: pagination, score calculation & reset",
+          "Javascript/hello.js: Sequenced welcome preloader curtain with sliding exit",
+          "Style/index.css: Keyframe animations, Yogyakarta font imports & reset rules",
+          "Font/Yogyakarta.ttf: Custom TrueType display typography asset",
+          "Image/: Archival photography, logo assets, and cultural vector illustrations",
+          "tailwind.config.js: Tailwind configuration with 6 custom breakpoint definitions",
         ],
       },
     ],
@@ -4007,7 +4007,7 @@ export const projectDetails = {
       {
         title: "The brief",
         body: [
-          "With the rapid rise of digital screens and mobile entertainment, traditional Indonesian folk games are rapidly fading from the daily lives of younger generations. These games are far more than idle pastimes — they represent centuries of intangible cultural heritage, teaching essential life lessons such as patience, balance, tactical foresight, and community solidarity. Pusakaku was conceived to reverse this trend: a digital sanctuary that documents, celebrates, and revitalizes traditional Indonesian games through modern web experiences.",
+          "With the rapid rise of digital screens and mobile entertainment, traditional Indonesian folk games are rapidly fading from the daily lives of younger generations. These games are far more than idle pastimes, they represent centuries of intangible cultural heritage, teaching essential life lessons such as patience, balance, tactical foresight, and community solidarity. Pusakaku was conceived to reverse this trend: a digital sanctuary that documents, celebrates, and revitalizes traditional Indonesian games through modern web experiences.",
           "Core Mandate: Build an accessible, visually appealing cultural platform that pairs in-depth ethnographic game archives with a gamified 10-stage quiz engine to educate children, parents, and educators about Indonesia's folk game heritage.",
         ],
       },
@@ -4023,7 +4023,7 @@ export const projectDetails = {
         body: [
           "Engineering an interactive multi-step quiz interface using pure vanilla JavaScript without introducing bulky state management libraries. Solved by designing an element display toggle function (showQuestion) linked to a currentQuestionIndex counter, paired with radio-selector querying and automated form clearing on restart.",
           "Maintaining smooth 60 FPS performance for dual-lane continuous marquees displaying high-resolution cultural photography. Solved by leveraging GPU-accelerated CSS keyframe translations (slide-right, slide-right2) that bypass CPU layout recalculation.",
-          "Synthesizing authentic anthropological lore with accessible child-friendly explanations. Conducted thorough research into game origins — such as Congklak's Mancala ancestry and the ancient Kaghati Kolope leaf kite of Muna Island — presenting complex historical data in concise, engaging narratives.",
+          "Synthesizing authentic anthropological lore with accessible child-friendly explanations. Conducted thorough research into game origins, such as Congklak's Mancala ancestry and the ancient Kaghati Kolope leaf kite of Muna Island, presenting complex historical data in concise, engaging narratives.",
         ],
       },
       {
@@ -4067,7 +4067,7 @@ export const projectDetails = {
     galleryLabel: "EDTECH & CAREER INTERFACES",
     galleryTitle: "The SemuaBisa Digital Ecosystem",
     galleryLead:
-      "Explore the core multi-domain touchpoints of SemuaBisa — uniting free technical bootcamps, accessible higher education roadmaps, digital freelance matchmaking, and tech recruitment job pipelines.",
+      "Explore the core multi-domain touchpoints of SemuaBisa, uniting free technical bootcamps, accessible higher education roadmaps, digital freelance matchmaking, and tech recruitment job pipelines.",
     gallery: [
       {
         id: "hero-showcase",
@@ -4114,7 +4114,7 @@ export const projectDetails = {
         route: "semuabisa.local/bootcamp.html",
         tag: "EdTech Training",
         image: semuabisa3,
-        desc: "Curated technical bootcamp modules designed for Indonesian youth — spanning HTML/CSS Front-End Development, Machine Learning & AI Engineering, and MySQL Relational Database Architecture.",
+        desc: "Curated technical bootcamp modules designed for Indonesian youth, spanning HTML/CSS Front-End Development, Machine Learning & AI Engineering, and MySQL Relational Database Architecture.",
         features: [
           "HTML/CSS Front-End Web Development Track",
           "Machine Learning & Applied AI Fundamentals",
@@ -4292,7 +4292,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Youth Digital Skill Mastery & Employment Lifecycle",
-      lead: "From free bootcamp discovery to junior career placement — empowering Indonesian youth through a structured, multi-tier tech advancement journey.",
+      lead: "From free bootcamp discovery to junior career placement, empowering Indonesian youth through a structured, multi-tier tech advancement journey.",
       stages: [
         {
           level: "Stage 01",
@@ -4390,24 +4390,24 @@ export const projectDetails = {
       {
         name: "Root Portals (Multi-Page Architecture)",
         items: [
-          "Index.html — Main landing hub with hero, mission overview, and category grid",
-          "bootcamp.html — Comprehensive technical bootcamp catalog across 8 disciplines",
-          "detail-bootcamp.html — In-depth curriculum breakdown and module syllabus",
-          "register_bootcamp.html — Student enrollment and learning track application form",
-          "kuliah.html — Higher education roadmap with Alpine.js accessible tabs",
-          "jasa.html — Digital freelance marketplace connecting student talent with clients",
-          "lowongan-kerja.html — Curated tech job board with industry partner listings",
-          "profil.html — Student dashboard tracking enrolled courses and certificates",
+          "Index.html: Main landing hub with hero, mission overview, and category grid",
+          "bootcamp.html: Comprehensive technical bootcamp catalog across 8 disciplines",
+          "detail-bootcamp.html: In-depth curriculum breakdown and module syllabus",
+          "register_bootcamp.html: Student enrollment and learning track application form",
+          "kuliah.html: Higher education roadmap with Alpine.js accessible tabs",
+          "jasa.html: Digital freelance marketplace connecting student talent with clients",
+          "lowongan-kerja.html: Curated tech job board with industry partner listings",
+          "profil.html: Student dashboard tracking enrolled courses and certificates",
         ],
       },
       {
         name: "Authentication & Assets (auth/, Images/, style/)",
         items: [
-          "auth/login.html — Student login portal with clean DaisyUI card styling",
-          "auth/register.html — New learner registration and account creation interface",
-          "main.js — Dynamic scroll-elevated navbar controller and banner dismissal",
-          "tailwind.config.js — Tailwind theme extension with DaisyUI plugin integration",
-          "Images/ — High-res photography, category icons, and brand vector illustrations",
+          "auth/login.html: Student login portal with clean DaisyUI card styling",
+          "auth/register.html: New learner registration and account creation interface",
+          "main.js: Dynamic scroll-elevated navbar controller and banner dismissal",
+          "tailwind.config.js: Tailwind theme extension with DaisyUI plugin integration",
+          "Images/: High-res photography, category icons, and brand vector illustrations",
         ],
       },
     ],
@@ -4564,7 +4564,7 @@ export const projectDetails = {
     galleryLabel: "E-LEARNING & COURSE INTERFACES",
     galleryTitle: "The IDNCourse Digital Experience",
     galleryLead:
-      "Explore the core interactive touchpoints of IDNCourse — spanning category-filtered course animations, multi-layer course popups, interactive team showcases, and client-side session persistence.",
+      "Explore the core interactive touchpoints of IDNCourse, spanning category-filtered course animations, multi-layer course popups, interactive team showcases, and client-side session persistence.",
     gallery: [
       {
         id: "hero-showcase",
@@ -4611,7 +4611,7 @@ export const projectDetails = {
         route: "idncourse.local/ourteam.html",
         tag: "Instructor Profiles",
         image: idncourse3,
-        desc: "Team showcase introducing core educators and software engineers — Adyvka Pratama (Front-End Developer), Abdullah (Back-End Developer), and Muli'at Harosan Syadida (Designer).",
+        desc: "Team showcase introducing core educators and software engineers, Adyvka Pratama (Front-End Developer), Abdullah (Back-End Developer), and Muli'at Harosan Syadida (Designer).",
         features: [
           "Adyvka Pratama - Front-End Lead Profile",
           "Abdullah - Back-End Engineering Specialist",
@@ -4789,7 +4789,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Course Discovery & Student Enrollment Lifecycle",
-      lead: "From animated technology filtering to verified student enrollment — guiding learners through an intuitive educational discovery pathway.",
+      lead: "From animated technology filtering to verified student enrollment, guiding learners through an intuitive educational discovery pathway.",
       stages: [
         {
           level: "Stage 01",
@@ -4885,24 +4885,24 @@ export const projectDetails = {
       {
         name: "Root Portals (Multi-Page Architecture)",
         items: [
-          "index.html — Main landing hub with hero stats, course filter grid, team & FAQ",
-          "about.html — Platform vision, mission, and learning advantages",
-          "course.html — Comprehensive tech course catalog and curriculum views",
-          "bootcamp.html — Specialized intensive training bootcamps (IELTS & coding)",
-          "ourteam.html — Dedicated developer team profile directory with hover rotation",
-          "login.html — User authentication portal with localStorage session hydration",
+          "index.html: Main landing hub with hero stats, course filter grid, team & FAQ",
+          "about.html: Platform vision, mission, and learning advantages",
+          "course.html: Comprehensive tech course catalog and curriculum views",
+          "bootcamp.html: Specialized intensive training bootcamps (IELTS & coding)",
+          "ourteam.html: Dedicated developer team profile directory with hover rotation",
+          "login.html: User authentication portal with localStorage session hydration",
         ],
       },
       {
         name: "Styles & Assets (style/, Images/)",
         items: [
-          "style/index.css — Main landing stylesheet: animated keyframes, hero, and cards",
-          "style/course.css — Course catalog grid layout and modal overlay styling",
-          "style/about.css — Platform story and mission statement typography",
-          "style/ourteam.css — Developer profile cards and hover rotation effects",
-          "style/bootcamp.css — Bootcamp banner cards and instructor spotlight containers",
-          "style/login.css — Clean authentication form containers and inputs",
-          "Images/ — Technology icons (Python, C#, HTML), illustrations, and avatars",
+          "style/index.css: Main landing stylesheet: animated keyframes, hero, and cards",
+          "style/course.css: Course catalog grid layout and modal overlay styling",
+          "style/about.css: Platform story and mission statement typography",
+          "style/ourteam.css: Developer profile cards and hover rotation effects",
+          "style/bootcamp.css: Bootcamp banner cards and instructor spotlight containers",
+          "style/login.css: Clean authentication form containers and inputs",
+          "Images/: Technology icons (Python, C#, HTML), illustrations, and avatars",
         ],
       },
     ],
@@ -5076,7 +5076,7 @@ export const projectDetails = {
     galleryLabel: "COFFEE RETAIL & BRAND EXPERIENCE",
     galleryTitle: "The Coffeee Shop Digital Architecture",
     galleryLead:
-      "Explore the responsive interface patterns of Coffeee Shop — combining atmospheric hero aesthetics, hover-activated roast highlights, interactive beverage purchasing selectors, and multi-location branch discovery.",
+      "Explore the responsive interface patterns of Coffeee Shop, combining atmospheric hero aesthetics, hover-activated roast highlights, interactive beverage purchasing selectors, and multi-location branch discovery.",
     gallery: [
       {
         id: "hero-showcase",
@@ -5200,7 +5200,7 @@ export const projectDetails = {
     ],
     capabilitiesTitle: "Core Capabilities & Café Visitor Journey",
     capabilitiesLead:
-      "Coffeee Shop transforms traditional beverage discovery into an engaging online experience — guiding customers from brand immersion to roast selection and local café visitation.",
+      "Coffeee Shop transforms traditional beverage discovery into an engaging online experience, guiding customers from brand immersion to roast selection and local café visitation.",
     features: [
       {
         id: "hero-immersion",
@@ -5289,7 +5289,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Café Patron Discovery & Order Customization Journey",
-      lead: "From atmospheric brand introduction to customized drink sizing and café branch visitation — guiding coffee enthusiasts through a seamless retail journey.",
+      lead: "From atmospheric brand introduction to customized drink sizing and café branch visitation, guiding coffee enthusiasts through a seamless retail journey.",
       stages: [
         {
           level: "Stage 01",
@@ -5396,18 +5396,18 @@ export const projectDetails = {
       {
         name: "Application Root",
         items: [
-          "index.html — Semantic single-page landing architecture containing hero, roast showcase, branch directory, advantages, product catalog, team grid, and footer",
-          "tailwind.config.js — Tailwind CSS configuration template for utility class compilation and theme extensions",
+          "index.html: Semantic single-page landing architecture containing hero, roast showcase, branch directory, advantages, product catalog, team grid, and footer",
+          "tailwind.config.js: Tailwind CSS configuration template for utility class compilation and theme extensions",
         ],
       },
       {
         name: "Brand Assets (Images/)",
         items: [
-          "Images/logo coffee.png — Brand identity crest and navigation icon",
-          "Images/testimoni1.jpeg — Designer profile portrait photography",
-          "Images/testimoni2.png — UI Developer profile portrait photography",
-          "Images/testimoni3.png — Team artisan profile portrait photography",
-          "Images/testimoni4.jpeg — Supporting team member photography",
+          "Images/logo coffee.png, Brand identity crest and navigation icon",
+          "Images/testimoni1.jpeg: Designer profile portrait photography",
+          "Images/testimoni2.png: UI Developer profile portrait photography",
+          "Images/testimoni3.png: Team artisan profile portrait photography",
+          "Images/testimoni4.jpeg: Supporting team member photography",
         ],
       },
     ],
@@ -5562,7 +5562,7 @@ export const projectDetails = {
     galleryLabel: "FASHION COMMERCE & STOREFRONT",
     galleryTitle: "The MyStyle Storefront Experience",
     galleryLead:
-      "Explore the multi-page digital commerce architecture of MyStyle — bridging editorial fashion curation, interactive size and color selectors, multi-item cart management, and seamless account workflows.",
+      "Explore the multi-page digital commerce architecture of MyStyle, bridging editorial fashion curation, interactive size and color selectors, multi-item cart management, and seamless account workflows.",
     gallery: [
       {
         id: "hero-showcase",
@@ -5596,7 +5596,7 @@ export const projectDetails = {
         route: "mystyle.local/index.html#promos",
         tag: "Promotions & Sales",
         image: mystyle2,
-        desc: "Dynamic promotional banner carousel highlighting exclusive offers — including 'SPECIAL DEALS 20%' and '3.3 FASHION SALE' seasonal campaigns with active countdown timers.",
+        desc: "Dynamic promotional banner carousel highlighting exclusive offers, including 'SPECIAL DEALS 20%' and '3.3 FASHION SALE' seasonal campaigns with active countdown timers.",
         features: [
           "'SPECIAL DEALS 20%' Flash Discount Banners",
           "3.3 Fashion Sale Seasonal Promotion Carousel",
@@ -5609,7 +5609,7 @@ export const projectDetails = {
         route: "mystyle.local/index.html#catalog",
         tag: "Product Discovery",
         image: mystyle3,
-        desc: "Clean e-commerce product catalog with responsive category filter tabs — All, Shirt, T-Shirt, Jacket, and Pants — displaying product cards with pricing and stock status.",
+        desc: "Clean e-commerce product catalog with responsive category filter tabs, All, Shirt, T-Shirt, Jacket, and Pants, displaying product cards with pricing and stock status.",
         features: [
           "5 Category Tabs (All, Shirt, T-Shirt, Jacket, Pants)",
           "Responsive Multi-Column Apparel Grid",
@@ -5686,7 +5686,7 @@ export const projectDetails = {
     ],
     capabilitiesTitle: "Core Capabilities & Fashion Shopper Journey",
     capabilitiesLead:
-      "MyStyle provides fashion enthusiasts with an effortless digital shopping experience — guiding customers from editorial discovery to tailored size selection and streamlined cart checkout.",
+      "MyStyle provides fashion enthusiasts with an effortless digital shopping experience, guiding customers from editorial discovery to tailored size selection and streamlined cart checkout.",
     features: [
       {
         id: "editorial-storefront",
@@ -5775,7 +5775,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Fashion Patron Discovery & Checkout Lifecycle",
-      lead: "From editorial collection discovery to garment sizing customization and seamless checkout completion — guiding apparel shoppers through an elegant retail experience.",
+      lead: "From editorial collection discovery to garment sizing customization and seamless checkout completion, guiding apparel shoppers through an elegant retail experience.",
       stages: [
         {
           level: "Stage 01",
@@ -5883,25 +5883,25 @@ export const projectDetails = {
       {
         name: "Root Portals (Multi-Page Architecture)",
         items: [
-          "index.html — Main editorial fashion storefront with hero, advantages, and collection cards",
-          "detailproduct.html — Product detail view with size/color pickers, reviews, and lookbook gallery",
-          "viewproduct.html — Apparel catalog with 10 category quick-filters and promo banners",
-          "cart.html — Shopping bag interface with quantity steppers, item checkboxes, and promo coupons",
-          "about.html — Brand heritage, craftsmanship standards, and showroom photography",
-          "account.html — User dashboard displaying order history, address details, and settings",
-          "edit.html — Profile customization interface for modifying user details",
-          "login.html — User authentication portal with Google OAuth simulation",
-          "register.html — New customer registration onboarding workflow",
+          "index.html: Main editorial fashion storefront with hero, advantages, and collection cards",
+          "detailproduct.html: Product detail view with size/color pickers, reviews, and lookbook gallery",
+          "viewproduct.html: Apparel catalog with 10 category quick-filters and promo banners",
+          "cart.html: Shopping bag interface with quantity steppers, item checkboxes, and promo coupons",
+          "about.html: Brand heritage, craftsmanship standards, and showroom photography",
+          "account.html: User dashboard displaying order history, address details, and settings",
+          "edit.html: Profile customization interface for modifying user details",
+          "login.html: User authentication portal with Google OAuth simulation",
+          "register.html: New customer registration onboarding workflow",
         ],
       },
       {
         name: "Styles & Fonts (src/, Font/, Images/)",
         items: [
-          "src/style.css — Custom CSS rules, @font-face declarations, #pembungkus hover physics, and @import 'tailwindcss'",
-          "src/output.css — Pre-compiled Tailwind CSS utility stylesheet",
-          "Font/BOOKOS.TTF — Custom Bookman Old Style font file",
-          "Font/solskinDEMO.otf — Editorial display font asset",
-          "Images/ — Brand crest (logo_mystyle.svg), collection imagery, and model photography",
+          "src/style.css: Custom CSS rules, @font-face declarations, #pembungkus hover physics, and @import 'tailwindcss'",
+          "src/output.css: Pre-compiled Tailwind CSS utility stylesheet",
+          "Font/BOOKOS.TTF: Custom Bookman Old Style font file",
+          "Font/solskinDEMO.otf: Editorial display font asset",
+          "Images/: Brand crest (logo_mystyle.svg), collection imagery, and model photography",
         ],
       },
     ],
@@ -6001,7 +6001,7 @@ export const projectDetails = {
       {
         title: "The brief",
         body: [
-          "In the competitive online fashion landscape, delivering a distinguished digital storefront requires more than a simple product grid—it demands editorial storytelling, tactile micro-interactions, and a friction-free shopping journey. MyStyle was created to combine luxury fashion brand aesthetics with complete e-commerce functionality.",
+          "In the competitive online fashion landscape, delivering a distinguished digital storefront requires more than a simple product grid, it demands editorial storytelling, tactile micro-interactions, and a friction-free shopping journey. MyStyle was created to combine luxury fashion brand aesthetics with complete e-commerce functionality.",
           "Core Mandate: Architect a responsive multi-page fashion commerce platform utilizing Tailwind CSS v4, custom Bookman typography, and interactive shopping bag workflows that guide customers from visual discovery to tailored order completion.",
         ],
       },
@@ -6059,7 +6059,7 @@ export const projectDetails = {
     galleryLabel: "MOBILE APPLICATION INTERFACES",
     galleryTitle: "The DeliFood Mobile Experience",
     galleryLead:
-      "Explore the reactive mobile interface of DeliFood — featuring real-time stream-driven catalogs, smart cart quantity deduplication, fluid Hero animations, and multi-stage delivery tracking.",
+      "Explore the reactive mobile interface of DeliFood, featuring real-time stream-driven catalogs, smart cart quantity deduplication, fluid Hero animations, and multi-stage delivery tracking.",
     gallery: [
       {
         id: "hero-showcase",
@@ -6188,7 +6188,7 @@ export const projectDetails = {
     ],
     capabilitiesTitle: "Core Capabilities & Order Fulfillment Workflow",
     capabilitiesLead:
-      "Engineered for smooth, high-throughput mobile retail — combining reactive data streaming, gesture-driven cart management, real-time wishlist toggling, and multi-stage delivery logistics.",
+      "Engineered for smooth, high-throughput mobile retail, combining reactive data streaming, gesture-driven cart management, real-time wishlist toggling, and multi-stage delivery logistics.",
     features: [
       {
         id: "stream-catalog",
@@ -6208,7 +6208,7 @@ export const projectDetails = {
         badge: "E-Commerce Logic",
         desc: "Optimized shopping basket preventing redundant database rows and delivering seamless cart manipulation.",
         points: [
-          "Quantity Auto-Increment: Inspects existing cart items by title; increments quantity (+1) if found rather than duplicating rows.",
+          "Quantity Auto-Increment: Inspects existing cart items by title, incrementing quantity (+1) if found rather than duplicating rows.",
           "Swipe-to-Dismiss Deletion: Wrap-around Dismissible widget allowing intuitive gesture-based deletion with red background and instant sync.",
           "Indonesian Currency Formatting: Dynamic calculation of item subtotals and flat delivery fee (Rp 8.000) using NumberFormat.currency.",
           "Modal Bottom Sheet Address Input: Non-blocking address input screen prompting customer delivery coordinates prior to checkout.",
@@ -6281,7 +6281,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Order Fulfillment & Delivery Lifecycle",
-      lead: "From cart checkout to doorstep delivery — every order transitions through an asynchronous Firestore state machine with automated subcollection synchronization.",
+      lead: "From cart checkout to doorstep delivery, every order transitions through an asynchronous Firestore state machine with automated subcollection synchronization.",
       stages: [
         {
           level: "Stage 01",
@@ -6380,22 +6380,22 @@ export const projectDetails = {
       {
         name: "lib/features/ (Feature-First Modules)",
         items: [
-          "home/ — HomeScreen, Hero DetailPage, ItemFoodModel, promotional sections",
-          "cart/ — CartScreen with swipe-to-dismiss, InputAdress bottom sheet modal",
-          "whislist/ — WhislistScreen with 2-column reactive grid and instant toggle",
-          "track_status/ — TrackStatusScreen with 4-stage stepper and transit logs",
-          "profile/ — ProfileScreen with Firestore user data fetching and logout",
-          "onboarding/ — SplashScreen, Onboarding intro, and SignupPage dual-write",
+          "home/: HomeScreen, Hero DetailPage, ItemFoodModel, promotional sections",
+          "cart/: CartScreen with swipe-to-dismiss, InputAdress bottom sheet modal",
+          "whislist/: WhislistScreen with 2-column reactive grid and instant toggle",
+          "track_status/: TrackStatusScreen with 4-stage stepper and transit logs",
+          "profile/: ProfileScreen with Firestore user data fetching and logout",
+          "onboarding/: SplashScreen, Onboarding intro, and SignupPage dual-write",
         ],
       },
       {
         name: "lib/service/ & core (Data & Preferences)",
         items: [
-          "service/database_service.dart — Firestore CRUD, stream queries, deduplication, seed",
-          "prefrences/color.dart — Custom brand color palette (MainColors)",
-          "prefrences/icons.dart — Custom icon glyphs and asset constants",
-          "components/app_back_button.dart — Reusable circular back navigation button",
-          "widgets/item_combo.dart — Reusable menu item card with price & rating",
+          "service/database_service.dart: Firestore CRUD, stream queries, deduplication, seed",
+          "prefrences/color.dart: Custom brand color palette (MainColors)",
+          "prefrences/icons.dart: Custom icon glyphs and asset constants",
+          "components/app_back_button.dart: Reusable circular back navigation button",
+          "widgets/item_combo.dart: Reusable menu item card with price & rating",
         ],
       },
     ],
@@ -6565,7 +6565,7 @@ export const projectDetails = {
     galleryLabel: "MOBILE BIOMETRICS & INTERFACES",
     galleryTitle: "The Attendance App Experience",
     galleryLead:
-      "Explore the reactive mobile interfaces of Attendance App — from hardware-accelerated on-device face detection and live categorized task boards to dynamic dark/light theme switching and self-service credential recovery.",
+      "Explore the reactive mobile interfaces of Attendance App, from hardware-accelerated on-device face detection and live categorized task boards to dynamic dark/light theme switching and self-service credential recovery.",
     gallery: [
       {
         id: "hero-showcase",
@@ -6652,7 +6652,7 @@ export const projectDetails = {
       {
         value: "100%",
         label: "Biometric Privacy",
-        note: "Zero biometric face images uploaded to cloud; 100% processed locally on-device",
+        note: "Zero biometric face images uploaded to cloud, with 100% processed locally on-device",
       },
       {
         value: "4 Domains",
@@ -6694,7 +6694,7 @@ export const projectDetails = {
     ],
     capabilitiesTitle: "Core Capabilities & Biometric Attendance Workflow",
     capabilitiesLead:
-      "Engineered for frictionless biometric check-in and task tracking — merging hardware camera streams, local computer vision ML inference, cloud NoSQL streaming, and modern reactive Flutter state management.",
+      "Engineered for frictionless biometric check-in and task tracking, merging hardware camera streams, local computer vision ML inference, cloud NoSQL streaming, and modern reactive Flutter state management.",
     features: [
       {
         id: "biometric-face-detection",
@@ -6769,7 +6769,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Biometric Attendance & Task Synchronization Lifecycle",
-      lead: "From camera initialization and facial feature verification to cloud data synchronization — every operation follows a secure, privacy-preserving pipeline.",
+      lead: "From camera initialization and facial feature verification to cloud data synchronization, every operation follows a secure, privacy-preserving pipeline.",
       stages: [
         {
           level: "Stage 01",
@@ -6878,31 +6878,31 @@ export const projectDetails = {
       {
         name: "lib/ (Application Architecture)",
         items: [
-          "main.dart — App entry point, camera discovery, permission initialization, and auth gate",
-          "theme_controller.dart — GetX reactive theme controller managing light and dark themes",
-          "firebase_options.dart — Auto-generated Firebase cross-platform configuration",
+          "main.dart: App entry point, camera discovery, permission initialization, and auth gate",
+          "theme_controller.dart: GetX reactive theme controller managing light and dark themes",
+          "firebase_options.dart: Auto-generated Firebase cross-platform configuration",
         ],
       },
       {
         name: "lib/screen/ (Core Application Screens)",
         items: [
-          "camera_screen.dart — Camera viewfinder, Google ML Kit face detection, and feedback overlay",
-          "home_screen.dart — StreamBuilder task feed, search filter, categories, and CRUD sheets",
+          "camera_screen.dart: Camera viewfinder, Google ML Kit face detection, and feedback overlay",
+          "home_screen.dart: StreamBuilder task feed, search filter, categories, and CRUD sheets",
         ],
       },
       {
         name: "lib/auth/ (Identity & Security Screens)",
         items: [
-          "login_screen.dart — Email/password login, validation, and social login UI federation",
-          "register_screen.dart — User registration, credential creation, and terms consent",
-          "forgot_password_screen.dart — Self-service password recovery via Firebase Auth",
+          "login_screen.dart: Email/password login, validation, and social login UI federation",
+          "register_screen.dart: User registration, credential creation, and terms consent",
+          "forgot_password_screen.dart: Self-service password recovery via Firebase Auth",
         ],
       },
       {
         name: "assets/ & fonts/ (Design Assets)",
         items: [
-          "assets/images/ — Illustration assets (login, register, forgot password, social icons)",
-          "fonts/ — Poppins font family files (Regular, Medium, SemiBold, Bold)",
+          "assets/images/: Illustration assets (login, register, forgot password, social icons)",
+          "fonts/: Poppins font family files (Regular, Medium, SemiBold, Bold)",
         ],
       },
     ],
@@ -6981,7 +6981,7 @@ export const projectDetails = {
       {
         value: "100%",
         label: "Biometric Privacy Guaranteed",
-        desc: "Zero face images uploaded to cloud; 100% processed locally on-device",
+        desc: "Zero face images uploaded to cloud, with 100% processed locally on-device",
       },
     ],
     sections: [
@@ -7053,7 +7053,7 @@ export const projectDetails = {
     galleryLabel: "MOBILE EVENT TICKETING & SCANNER INTERFACES",
     galleryTitle: "The QR Guest Manager Experience",
     galleryLead:
-      "Explore the high-performance event check-in experience — featuring live hardware camera barcode detection, gallery image barcode decoding, dynamic QR vector rendering, and real-time ticket redemption status reconciliation.",
+      "Explore the high-performance event check-in experience, featuring live hardware camera barcode detection, gallery image barcode decoding, dynamic QR vector rendering, and real-time ticket redemption status reconciliation.",
     gallery: [
       {
         id: "hero-showcase",
@@ -7168,7 +7168,7 @@ export const projectDetails = {
     ],
     capabilitiesTitle: "Core Capabilities & Event Check-In Workflow",
     capabilitiesLead:
-      "Engineered for rapid, fraud-proof attendee processing — uniting native camera hardware drivers, computer vision barcode parsing, vector QR code rendering, and secure cloud identity governance.",
+      "Engineered for rapid, fraud-proof attendee processing, uniting native camera hardware drivers, computer vision barcode parsing, vector QR code rendering, and secure cloud identity governance.",
     features: [
       {
         id: "hardware-camera-scanner",
@@ -7223,7 +7223,7 @@ export const projectDetails = {
         desc: "Strict anti-passback and duplicate prevention logic ensuring tickets cannot be redeemed more than once.",
         points: [
           "Processing State Lock: _isProcessingScan boolean flag prevents multiple rapid triggers from accidental double-scans.",
-          "Prior Redemption Intercept: Checks ticket status in local memory; if already redeemed, blocks API call and triggers alert dialog.",
+          "Prior Redemption Intercept: Checks ticket status in local memory, blocking the API call and triggering an alert dialog if already redeemed.",
           "Optimistic Status Mutation: Updates ticket status to REDEEMED and stamps redeemedAt timestamp in-memory before showing confirmation.",
         ],
       },
@@ -7263,7 +7263,7 @@ export const projectDetails = {
     ],
     approvalWorkflow: {
       title: "Scan Verification & Ticket Redemption Lifecycle",
-      lead: "From camera frame acquisition to REST API validation and local state synchronization — every check-in follows a strict anti-fraud verification pipeline.",
+      lead: "From camera frame acquisition to REST API validation and local state synchronization, every check-in follows a strict anti-fraud verification pipeline.",
       stages: [
         {
           level: "Stage 01",
@@ -7373,31 +7373,31 @@ export const projectDetails = {
       {
         name: "lib/views/ (Core Application Screens)",
         items: [
-          "home_screen.dart — Two-tab interface (Guest List & Camera Scanner), QR modal, and redeem logic",
-          "add_guest_screen.dart — Attendee registration form and instant vector QR generator",
-          "splash_screen.dart — Animated startup splash screen with brand iconography",
+          "home_screen.dart: Two-tab interface (Guest List & Camera Scanner), QR modal, and redeem logic",
+          "add_guest_screen.dart: Attendee registration form and instant vector QR generator",
+          "splash_screen.dart: Animated startup splash screen with brand iconography",
         ],
       },
       {
         name: "lib/services/ (Network & Business Logic)",
         items: [
-          "api_service.dart — Dio HTTP client connecting to Vercel ticketing endpoints",
-          "auth_service.dart — Firebase Auth methods (signIn, signUp, signOut, error handler)",
+          "api_service.dart: Dio HTTP client connecting to Vercel ticketing endpoints",
+          "auth_service.dart: Firebase Auth methods (signIn, signUp, signOut, error handler)",
         ],
       },
       {
         name: "lib/models/ & auth/ (Entities & Security)",
         items: [
-          "models/ticket.dart — Immutable Ticket model with JSON deserializer",
-          "auth/login_screen.dart — Staff login screen with password visibility toggle",
-          "auth/register_screen.dart — Staff registration screen with form validation",
+          "models/ticket.dart: Immutable Ticket model with JSON deserializer",
+          "auth/login_screen.dart: Staff login screen with password visibility toggle",
+          "auth/register_screen.dart: Staff registration screen with form validation",
         ],
       },
       {
         name: "lib/ (Application Entry)",
         items: [
-          "main.dart — App entry point, ValueNotifier theme configuration (Light & Dark)",
-          "firebase_options.dart — Platform credentials for Android, iOS, and Web",
+          "main.dart: App entry point, ValueNotifier theme configuration (Light & Dark)",
+          "firebase_options.dart: Platform credentials for Android, iOS, and Web",
         ],
       },
     ],
@@ -7557,7 +7557,7 @@ export const projectDetails = {
     galleryLabel: "MOBILE NEWS READER & EDITORIAL PLATFORM",
     galleryTitle: "The News App Experience",
     galleryLead:
-      "Explore the high-velocity mobile reading experience — featuring live CNN Indonesia news streams, multi-category chips, full-text substring search, ISO-8601 calendar filtering, expandable sliver article reader, and reactive bookmark curation.",
+      "Explore the high-velocity mobile reading experience, featuring live CNN Indonesia news streams, multi-category chips, full-text substring search, ISO-8601 calendar filtering, expandable sliver article reader, and reactive bookmark curation.",
     gallery: [
       {
         id: "hero-showcase",
@@ -7752,7 +7752,7 @@ export const projectDetails = {
     approvalWorkflow: {
       title: "Content Ingestion & Reader Lifecycle",
       lead:
-        "From CNN Indonesia REST API stream through GetX reactive transformation to reader bookmarking — every article flows through a resilient, responsive pipeline.",
+        "From CNN Indonesia REST API stream through GetX reactive transformation to reader bookmarking, every article flows through a resilient, responsive pipeline.",
       stages: [
         {
           level: "Stage 01",
@@ -7885,23 +7885,23 @@ export const projectDetails = {
       {
         name: "lib/ (Core Application Architecture)",
         items: [
-          "main.dart — App bootstrap with id_ID date formatting and GetMaterialApp",
-          "api/api.dart — Asynchronous REST client querying CNN Indonesia endpoints",
-          "controller/news_controller.dart — GetX controller managing news, filters, themes, bookmarks",
-          "controller/splash_controller.dart — Splash lifecycle controller managing 4s delay and route handover",
-          "screens/api_screen.dart — Home discovery feed, carousel, search bar, and category chips",
-          "screens/detail_screen.dart — Editorial reader with SliverAppBar parallax cover and bookmark toggle",
-          "screens/favorite_screen.dart — Dedicated bookmark repository with one-tap reader navigation",
-          "screens/splash_screen.dart — Cold start splash screen executing Lottie vector animation",
+          "main.dart: App bootstrap with id_ID date formatting and GetMaterialApp",
+          "api/api.dart: Asynchronous REST client querying CNN Indonesia endpoints",
+          "controller/news_controller.dart: GetX controller managing news, filters, themes, bookmarks",
+          "controller/splash_controller.dart: Splash lifecycle controller managing 4s delay and route handover",
+          "screens/api_screen.dart: Home discovery feed, carousel, search bar, and category chips",
+          "screens/detail_screen.dart: Editorial reader with SliverAppBar parallax cover and bookmark toggle",
+          "screens/favorite_screen.dart: Dedicated bookmark repository with one-tap reader navigation",
+          "screens/splash_screen.dart: Cold start splash screen executing Lottie vector animation",
         ],
       },
       {
         name: "assets/ & configuration",
         items: [
-          "assets/animations/Insider-loading.json — Vector Lottie animation for startup splash",
-          "pubspec.yaml — Dependency manifest configuring get, lottie, http, and intl",
-          "android/ — Native Android Gradle and manifest build files",
-          "ios/ — Native iOS Xcode workspace and Runner configuration",
+          "assets/animations/Insider-loading.json: Vector Lottie animation for startup splash",
+          "pubspec.yaml: Dependency manifest configuring get, lottie, http, and intl",
+          "android/: Native Android Gradle and manifest build files",
+          "ios/: Native iOS Xcode workspace and Runner configuration",
         ],
       },
     ],
@@ -7960,7 +7960,7 @@ export const projectDetails = {
     securityStandards: [
       {
         title: "Graceful Network Intercept & User Snackbars",
-        desc: "Surrounds API HTTP calls with try-catch blocks; automatically resets loading indicators, displays non-blocking Get.snackbar error notifications, and provides fallback empty list states.",
+        desc: "Surrounds API HTTP calls with try-catch blocks, automatically resetting loading indicators, displaying non-blocking Get.snackbar error notifications, and providing fallback empty list states.",
       },
       {
         title: "CDN Image Fallback & Placeholder Containment",
@@ -8066,7 +8066,7 @@ export const projectDetails = {
     galleryLabel: "MOBILE AL-QURAN READER & DEVOTIONAL PLATFORM",
     galleryTitle: "The Quran App Experience",
     galleryLead:
-      "Explore the peaceful and high-performance digital Quran experience — featuring complete 114 surah indexing, instant multi-attribute search, full verse reader with Arabic script & Indonesian transliteration, and reactive bookmark management.",
+      "Explore the peaceful and high-performance digital Quran experience, featuring complete 114 surah indexing, instant multi-attribute search, full verse reader with Arabic script & Indonesian transliteration, and reactive bookmark management.",
     gallery: [
       {
         id: "hero-showcase",
@@ -8261,7 +8261,7 @@ export const projectDetails = {
     approvalWorkflow: {
       title: "Scripture Ingestion & Reader Lifecycle",
       lead:
-        "From remote Quranic REST API query through GetX reactive transformation to reader bookmarking — every surah and ayat flows through a structured, responsive pipeline.",
+        "From remote Quranic REST API query through GetX reactive transformation to reader bookmarking, every surah and ayat flows through a structured, responsive pipeline.",
       stages: [
         {
           level: "Stage 01",
@@ -8394,20 +8394,20 @@ export const projectDetails = {
       {
         name: "lib/ (Core Application Architecture)",
         items: [
-          "main.dart — App bootstrap and GetMaterialApp configuration",
-          "controller/quran_controller.dart — GetX controller managing API requests, search, themes, bookmarks",
-          "screens/quran_screen.dart — Home surah grid with search bar and bookmark navigation",
-          "screens/quran_detail.dart — Full verse reader with Arabic text and HTML transliteration",
-          "screens/quran_bookmark.dart — Dedicated bookmark repository with one-tap reader navigation",
+          "main.dart: App bootstrap and GetMaterialApp configuration",
+          "controller/quran_controller.dart: GetX controller managing API requests, search, themes, bookmarks",
+          "screens/quran_screen.dart: Home surah grid with search bar and bookmark navigation",
+          "screens/quran_detail.dart: Full verse reader with Arabic text and HTML transliteration",
+          "screens/quran_bookmark.dart: Dedicated bookmark repository with one-tap reader navigation",
         ],
       },
       {
         name: "configuration & manifests",
         items: [
-          "pubspec.yaml — Dependency manifest configuring get, http, flutter_html, and cupertino_icons",
-          "analysis_options.yaml — Recommended Flutter linting standards",
-          "android/ — Native Android Gradle and manifest build files",
-          "ios/ — Native iOS Xcode workspace and Runner configuration",
+          "pubspec.yaml: Dependency manifest configuring get, http, flutter_html, and cupertino_icons",
+          "analysis_options.yaml: Recommended Flutter linting standards",
+          "android/: Native Android Gradle and manifest build files",
+          "ios/: Native iOS Xcode workspace and Runner configuration",
         ],
       },
     ],
@@ -8514,7 +8514,7 @@ export const projectDetails = {
       {
         title: "Architecture & Reactive State",
         body: [
-          "Quran App is built on Flutter 3.x paired with the reactive power of GetX (get: ^4.7.2). By utilizing a controller-based pattern (QuranController extending GetxController), all dynamic application states—such as the active search query, dark/light theme toggle, and bookmarked surah collection—are encapsulated into reactive observables (.obs).",
+          "Quran App is built on Flutter 3.x paired with the reactive power of GetX (get: ^4.7.2). By utilizing a controller-based pattern (QuranController extending GetxController), all dynamic application states, such as the active search query, dark/light theme toggle, and bookmarked surah collection, are encapsulated into reactive observables (.obs).",
           "This architecture eliminates the need for heavyweight StatefulWidget boilerplate. Screens reactively update via granular Obx rebuilders only when relevant state changes occur, ensuring the UI remains snappy and responsive.",
           "Network requests to the remote Quran API are handled cleanly through asynchronous HTTP methods and integrated into Flutter's FutureBuilder, providing explicit handling for loading, error, and populated states.",
         ],
@@ -8571,7 +8571,7 @@ export const projectDetails = {
     galleryLabel: "MOBILE TASK AUTOMATION & AI INTERFACES",
     galleryTitle: "The AI Ticket Manager Experience",
     galleryLead:
-      "Explore the intelligent task orchestration experience — featuring real-time Firestore synchronization, natural language task synthesis powered by Google Gemini, contextual custom prompt overrides, and secure multi-tenant identity governance.",
+      "Explore the intelligent task orchestration experience, featuring real-time Firestore synchronization, natural language task synthesis powered by Google Gemini, contextual custom prompt overrides, and secure multi-tenant identity governance.",
     gallery: [
       {
         id: "hero-showcase",
@@ -8766,7 +8766,7 @@ export const projectDetails = {
     approvalWorkflow: {
       title: "Task Ingestion, AI Synthesis & Lifecycle Workflow",
       lead:
-        "From task creation and cloud synchronization to Gemini AI summary generation and lifecycle resolution — every record flows through a secure, multi-tier pipeline.",
+        "From task creation and cloud synchronization to Gemini AI summary generation and lifecycle resolution, every record flows through a secure, multi-tier pipeline.",
       stages: [
         {
           level: "Stage 01",
@@ -8898,27 +8898,27 @@ export const projectDetails = {
       {
         name: "lib/ (Core Application Architecture)",
         items: [
-          "main.dart — App bootstrap, Firebase initialization, MultiProvider, and Auth StreamBuilder",
-          "models/ticket.dart — Ticket data model with fromFirestore and toMap serialization",
-          "providers/ticket_provider.dart — ChangeNotifier state provider for AI summary generation and local ticket state",
-          "services/gemini_service.dart — Google Generative AI integration with dual-model fallback mechanism",
-          "services/firestore_service.dart — Cloud Firestore CRUD and real-time snapshots stream scoped to users/{uid}/tasks",
-          "services/auth_service.dart — Firebase Auth signIn, signUp, signOut, and human-readable error handler",
-          "screens/home_screen.dart — Primary task management dashboard with live search and greeting header",
-          "screens/ticket_form_screen.dart — Task creation and editing form with date, time, duration, and status pickers",
-          "screens/ai_summary_screen.dart — Gemini AI assistant screen with task dropdown and custom prompt input",
-          "screens/login_screen.dart — User login screen with client validation and auth routing",
-          "screens/register_screen.dart — Account creation screen with display name registration",
+          "main.dart: App bootstrap, Firebase initialization, MultiProvider, and Auth StreamBuilder",
+          "models/ticket.dart: Ticket data model with fromFirestore and toMap serialization",
+          "providers/ticket_provider.dart: ChangeNotifier state provider for AI summary generation and local ticket state",
+          "services/gemini_service.dart: Google Generative AI integration with dual-model fallback mechanism",
+          "services/firestore_service.dart: Cloud Firestore CRUD and real-time snapshots stream scoped to users/{uid}/tasks",
+          "services/auth_service.dart: Firebase Auth signIn, signUp, signOut, and human-readable error handler",
+          "screens/home_screen.dart: Primary task management dashboard with live search and greeting header",
+          "screens/ticket_form_screen.dart: Task creation and editing form with date, time, duration, and status pickers",
+          "screens/ai_summary_screen.dart: Gemini AI assistant screen with task dropdown and custom prompt input",
+          "screens/login_screen.dart: User login screen with client validation and auth routing",
+          "screens/register_screen.dart: Account creation screen with display name registration",
         ],
       },
       {
         name: "configuration & cloud manifests",
         items: [
-          "pubspec.yaml — Dependency manifest configuring google_generative_ai, cloud_firestore, firebase_auth, and provider",
-          "firebase.json — Firebase CLI deployment and project configuration",
-          "firebase_options.dart — Platform-specific Firebase credentials for Android, iOS, macOS, and Web",
-          "android/app/google-services.json — Android Google services configuration",
-          "ios/Runner/GoogleService-Info.plist — iOS Google services configuration",
+          "pubspec.yaml: Dependency manifest configuring google_generative_ai, cloud_firestore, firebase_auth, and provider",
+          "firebase.json: Firebase CLI deployment and project configuration",
+          "firebase_options.dart: Platform-specific Firebase credentials for Android, iOS, macOS, and Web",
+          "android/app/google-services.json: Android Google services configuration",
+          "ios/Runner/GoogleService-Info.plist: iOS Google services configuration",
         ],
       },
     ],

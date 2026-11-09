@@ -55,7 +55,7 @@ const TRACKS = [
     tech: {
       label: "TECHNICAL",
       title: "Production Client Web",
-      detail: "Shipped baperentcar.com — live car rental production deployment.",
+      detail: "Shipped baperentcar.com, a live car rental production deployment.",
     },
     human: {
       label: "HUMAN",
@@ -191,11 +191,11 @@ const SOFT_SKILLS = [
   },
   {
     skill: "Engineering Leadership & PM",
-    from: "Head of OSIS Event Division; leading architecture and Databank ERP delivery at PT Intisel.",
+    from: "Served as Head of OSIS Event Division, and led architecture and Databank ERP delivery at PT Intisel.",
   },
   {
     skill: "Technical Mentoring & Pedagogy",
-    from: "Teaching development since 13; trained educators at SMPN 25 Depok and guided junior developer cohorts.",
+    from: "Teaching development since 13, trained educators at SMPN 25 Depok, and guided junior developer cohorts.",
   },
   {
     skill: "Cross-cultural Adaptability",
@@ -297,7 +297,7 @@ export default function AboutPage() {
     <PageShell>
       <SEO
         title="About — Rafif Sava Adyvka Pratama"
-        description="Learn more about Rafif Sava Adyvka Pratama (Adyvka) — Software Engineer & Systems Architect specializing in clean architecture, polyglot development, and distributed systems."
+        description="Learn more about Rafif Sava Adyvka Pratama (Adyvka), Software Engineer & Systems Architect specializing in clean architecture, polyglot development, and distributed systems."
         path="/about"
         type="profile"
         keywords={[
@@ -320,7 +320,7 @@ export default function AboutPage() {
         label="About"
         title="Built early. Kept building."
         italicWord="Kept building"
-        description="Software Engineer & Systems Architect crafting robust multi-platform systems. Final-year student majoring in Software Engineering at SMK IDN Boarding School, currently leading system architecture and ERP delivery at PT Intisel."
+        description="Software Engineer & high-agency builder crafting resilient multi-platform systems. Final-year student majoring in Software Engineering at SMK IDN Boarding School, currently leading enterprise ERP delivery at PT Intisel while holding a 96/100 academic honors record."
         meta={[
           { label: "Age", value: "17" },
           { label: "Academic Record", value: "96 / 100 GPA (Sem 4)" },
@@ -340,27 +340,33 @@ export default function AboutPage() {
               </NativeReveal>
               <NativeReveal delay={0.1}>
                 <h2 className={`font-serif ${styles.introQuote} text-glow`}>
-                  "Engineer by training, operator by curriculum, teacher by habit."
+                  "Code is how I build systems. Grit is how I solve problems. Empathy is why any of it matters."
                 </h2>
               </NativeReveal>
               <NativeReveal delay={0.2}>
                 <div className={styles.introBody}>
                   <p>
-                    I'm Rafif Sava Adyvka Pratama (known online as <em>Adyvka</em>) — a
-                    Software Engineer and Systems Architect based in West Java, Indonesia.
-                    I architect and build robust, high-performance systems spanning web, mobile,
-                    backend microservices, and cloud infrastructure. Rather than being confined
-                    to a single stack, I treat programming languages and frameworks as deliberate
-                    tools selected to solve specific technical challenges.
+                    I'm Rafif Sava Adyvka Pratama (known to friends and colleagues as <em>Adyvka</em>), a
+                    software engineer, educator, and systems builder based in West Java, Indonesia.
+                    I discovered the joy of programming at age 13, not as an abstract academic exercise,
+                    but as a craft of turning curiosity into tangible tools that make life simpler
+                    for real people. Rather than being confined to a single framework, I approach engineering
+                    as a deliberate problem solver, selecting the right languages and patterns to build
+                    resilient, high-performance systems spanning web, mobile, and cloud infrastructure.
                   </p>
                   <p>
                     Currently a final-year vocational student majoring in Software Engineering
-                    (Rekayasa Perangkat Lunak) at SMK IDN Boarding School, I concurrently lead
-                    the Databank ERP build as Lead Systems Engineer and Project Manager at PT Intisel
-                    — establishing clean architecture, domain boundaries, database schema designs,
-                    and automated delivery pipelines. My engineering foundation is rooted in
-                    computational rigor (Harvard CS50, algorithms in C/C++ and Python), proven
-                    in national competitions, and reinforced by mentoring developers since age 13.
+                    (Rekayasa Perangkat Lunak) at SMK IDN Boarding School, my education extends far beyond
+                    textbooks. I concurrently lead enterprise software delivery, architecting the <em>Databank ERP</em> for
+                    national telecommunications contractor PT Intisel as Project Manager, and engineering internal payroll
+                    and client platforms at PT Ardyanda. Balancing high-stakes production uptime with a <strong>96 / 100 Semester 4 GPA</strong> taught
+                    me early on that passion without rigor is just potential, but quiet discipline turns ideas into durable software.
+                  </p>
+                  <p>
+                    My journey has been shaped as much by people as by code: authoring two published books
+                    to help junior students learn without intimidation, self-funding solo backpacking expeditions
+                    across Southeast Asia through freelance design, and surviving in unfamiliar cities with zero safety net.
+                    Every system I engineer carries that same standard of grit, empathy, and uncompromising craftsmanship.
                   </p>
                 </div>
               </NativeReveal>
@@ -372,7 +378,7 @@ export default function AboutPage() {
                   <div className={styles.introPhotoGlow} aria-hidden="true" />
                   <Image
                     src={profilePhoto}
-                    alt="Rafif Sava Adyvka Pratama — Lead Systems Engineer & Project Manager"
+                    alt="Rafif Sava Adyvka Pratama, Lead Systems Engineer & Project Manager"
                     className={styles.introPhoto}
                     width={700}
                     height={700}
@@ -592,9 +598,9 @@ export default function AboutPage() {
                   .
                 </h2>
                 <p className={styles.nextLead}>
-                  Graduating June 2027. Seeking high-autonomy teams where I can
-                  take end-to-end ownership of engineering deliverables from
-                  database schema to user interface.
+                  Graduating in 2027, but already operating with the ownership and delivery velocity of a seasoned contributor.
+                  Seeking high-trust, engineering-driven teams where I can take end-to-end responsibility for mission-critical software, collaborating
+                  with builders who care deeply about craft, humility, and shipping work that matters.
                 </p>
               </div>
             </NativeReveal>

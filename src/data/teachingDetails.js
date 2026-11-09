@@ -433,19 +433,19 @@ export const teachingDetails = {
       headline: "Teaching the Teachers: Commanding the Room at 16",
       lead: "How standing in front of educators with decades of classroom experience shattered imposter syndrome and cemented a permanent standard of technical communication.",
       quote:
-        "By sixteen I had been teaching peers for three years. But teaching teachers was entirely different — standing in front of people who had been educating longer than I had been alive, explaining how to think about software. That week taught me the profound difference between knowing something and having the respect and clarity to hand it to someone else.",
+        "By sixteen I had been teaching peers for three years. But teaching teachers was entirely different, standing in front of people who had been educating longer than I had been alive, explaining how to think about software. That week taught me the profound difference between knowing something and having the respect and clarity to hand it to someone else.",
       chapters: [
         {
           chapter: "01",
           title: "Shattering the Age Barrier & The Initial Hesitation",
           content:
-            "Walking into the main computer laboratory at SMPN 25 Depok as a 16-year-old high schooler to train adult teachers was a profound test of composure. In the room sat seasoned educators, senior subject heads, and curious junior high student representatives. At first, there was visible hesitation: teachers were worried that modern software engineering would require memorizing complex code syntax that was too far removed from their classroom routine. I knew immediately that technical arrogance would fail. I opened the workshop by honoring their teaching expertise and reframing mobile applications not as abstract computer science, but as modern interactive chalkboards—tools they could directly use to create dynamic quiz modules, interactive flashcards, and student scorecards.",
+            "Walking into the main computer laboratory at SMPN 25 Depok as a 16-year-old high schooler to train adult teachers was a profound test of composure. In the room sat seasoned educators, senior subject heads, and curious junior high student representatives. At first, there was visible hesitation: teachers were worried that modern software engineering would require memorizing complex code syntax that was too far removed from their classroom routine. I knew immediately that technical arrogance would fail. I opened the workshop by honoring their teaching expertise and reframing mobile applications not as abstract computer science, but as modern interactive chalkboards, tools they could directly use to create dynamic quiz modules, interactive flashcards, and student scorecards.",
         },
         {
           chapter: "02",
           title: "Demystifying Event-Driven Logic with Kodular",
           content:
-            "To keep the training accessible and immediately rewarding, we utilized Kodular's visual block programming environment. I guided the faculty through decomposing an application into human logic: 'When this button is clicked, check if the student's answer matches the correct key; if yes, add ten points and play a sound.' Stripping away semicolon syntax errors allowed the teachers to focus entirely on logical workflow. As we walked through building interactive question banks and multi-screen navigation, the initial intimidation transformed into genuine excitement.",
+            "To keep the training accessible and immediately rewarding, we utilized Kodular's visual block programming environment. I guided the faculty through decomposing an application into human logic: 'When this button is clicked, check if the student's answer matches the correct key, and if yes, add ten points and play a sound.' Stripping away semicolon syntax errors allowed the teachers to focus entirely on logical workflow. As we walked through building interactive question banks and multi-screen navigation, the initial intimidation transformed into genuine excitement.",
         },
         {
           chapter: "03",
@@ -494,7 +494,7 @@ export const teachingDetails = {
     takeaways: [
       {
         title: "Humility Commands Far More Respect Than Arrogance",
-        desc: "Standing before teachers who had taught for decades taught me that authority doesn't come from proving how smart you are; it comes from making the people in front of you feel capable and understood.",
+        desc: "Standing before teachers who had taught for decades taught me that authority doesn't come from proving how smart you are, but from making the people in front of you feel capable and understood.",
       },
       {
         title: "Technology Succeeds When It Solves Real Pain",
@@ -617,7 +617,7 @@ export const teachingDetails = {
           chapter: "01",
           title: "Connecting with Young Boarding Students",
           content:
-            "Junior high students live in a world saturated with mobile technology, yet few have ever contemplated what happens beneath the glass display. During this outreach session at SMP INS Depok, my goal was to bridge that conceptual divide. I began not by lecturing about theory, but by asking them about their favorite smartphone games and apps. By dissecting familiar mechanics—such as what triggers a button press or how a notification pops up—I showed them that software is simply a sequence of clear instructions waiting to be written.",
+            "Junior high students live in a world saturated with mobile technology, yet few have ever contemplated what happens beneath the glass display. During this outreach session at SMP INS Depok, my goal was to bridge that conceptual divide. I began not by lecturing about theory, but by asking them about their favorite smartphone games and apps. By dissecting familiar mechanics, such as what triggers a button press or how a notification pops up, I showed them that software is simply a sequence of clear instructions waiting to be written.",
         },
         {
           chapter: "02",
@@ -629,7 +629,7 @@ export const teachingDetails = {
           chapter: "03",
           title: "Pride in Authorship: 'I Made This App'",
           content:
-            "By the end of the workshop, each student had designed and compiled their own functional Android application—ranging from personalized islamic daily reminder tools to interactive audio soundboards and multi-stage quiz games. Watching them show their screens to their dorm peers with genuine pride proved that empowering young minds with creator tools unlocks creativity that traditional passive learning never could.",
+            "By the end of the workshop, each student had designed and compiled their own functional Android application, ranging from personalized islamic daily reminder tools to interactive audio soundboards and multi-stage quiz games. Watching them show their screens to their dorm peers with genuine pride proved that empowering young minds with creator tools unlocks creativity that traditional passive learning never could.",
         },
       ],
     },
@@ -768,7 +768,7 @@ export const teachingDetails = {
       headline: "Turning Curiosity into Playable Code: Gamifying Algorithmic Thinking",
       lead: "How video game development served as the ultimate Trojan horse for teaching rigorous mathematics and logical problem-solving to creative middle schoolers.",
       quote:
-        "Kids don't want to memorize dry mathematical formulas; they want to see their sprites jump, dodge obstacles, and celebrate a high score. Game development gives algorithms an immediate, joyful purpose.",
+        "Kids don't want to memorize dry mathematical formulas, they want to see their sprites jump, dodge obstacles, and celebrate a high score. Game development gives algorithms an immediate, joyful purpose.",
       chapters: [
         {
           chapter: "01",
@@ -829,7 +829,7 @@ export const teachingDetails = {
     takeaways: [
       {
         title: "Play is the Highest Form of Research",
-        desc: "Framing programming as building a video game completely removes the fear of failure. When an algorithm breaks, children don't see an error—they see a game glitch they want to fix.",
+        desc: "Framing programming as building a video game completely removes the fear of failure. When an algorithm breaks, children don't see an error, they see a game glitch they want to fix.",
       },
       {
         title: "Peer Playtesting Drives Genuine Code Review",
@@ -896,7 +896,7 @@ export const teachingDetails = {
   },
 
   // =========================================================================
-  // 06. AL ANSHAR — APP DESIGN (Sep 2022 · SMP Year 3, Age 14)
+  // 06. AL ANSHAR, APP DESIGN (Sep 2022 · SMP Year 3, Age 14)
   // =========================================================================
   "al-anshar-app-design-instructor": {
     badge: "Vocational Community Outreach",
@@ -940,7 +940,7 @@ export const teachingDetails = {
       headline: "Paper to Pixels: Teaching Human-Centered Interface Design at 14",
       lead: "How an early community teaching assignment proved that understanding the human user is just as critical as writing backend code.",
       quote:
-        "Before writing a single line of code, an engineer must understand how humans interact with a screen. Teaching UI/UX at fourteen showed me that design isn't decoration; it's communication.",
+        "Before writing a single line of code, an engineer must understand how humans interact with a screen. Teaching UI/UX at fourteen showed me that design isn't decoration, but communication.",
       chapters: [
         {
           chapter: "01",
@@ -1063,7 +1063,7 @@ export const teachingDetails = {
       headline: "The 3-Second Rule: Deconstructing Visual Noise for Junior High Designers",
       lead: "How teaching digital composition in Figma helped students discover that good design is about visual clarity, not decorative excess.",
       quote:
-        "Good design isn't about making things loud; it's about making information clear, respectful, and effortless to understand.",
+        "Good design isn't about making things loud, but about making information clear, respectful, and effortless to understand.",
       chapters: [
         {
           chapter: "01",
@@ -1142,7 +1142,7 @@ export const teachingDetails = {
   },
 
   // =========================================================================
-  // 08. AL ANSHAR — GAME DEV (Nov 2022 · SMP Year 3, Age 14)
+  // 08. AL ANSHAR, GAME DEV (Nov 2022 · SMP Year 3, Age 14)
   // =========================================================================
   "al-anshar-game-development-instructor": {
     badge: "Vocational Community Outreach",
@@ -1186,7 +1186,7 @@ export const teachingDetails = {
       headline: "Deconstructing the Game Loop: Teaching State Logic in Scratch",
       lead: "How returning to Al Anshar to teach game development turned abstract conditional statements into tangible, joyful mechanics.",
       quote:
-        "When you teach a student how to build a game, you're not just entertaining them; you're teaching them how to break an overwhelming problem into small, manageable logic blocks.",
+        "When you teach a student how to build a game, you're not just entertaining them, but teaching them how to break an overwhelming problem into small, manageable logic blocks.",
       chapters: [
         {
           chapter: "01",
@@ -1318,7 +1318,7 @@ export const teachingDetails = {
           chapter: "01",
           title: "Conquering the Fear of Standing Up Front",
           content:
-            "In July 2022, right as I was turning 14 at IDN Boarding School, our curriculum challenged us to go out into the local community and teach what we had learned. Standing before 15+ elementary and junior high students at Griyya Sunnah, my hands were shaking. I worried: 'Will they listen to someone who is only fourteen?' But the moment I projected Scratch on screen and showed them how connecting two blocks could make a cat dance and play music, all artificial barriers dissolved. Children don't care how old you are; they care whether you are patient, encouraging, and genuinely excited about what you're sharing.",
+            "In July 2022, right as I was turning 14 at IDN Boarding School, our curriculum challenged us to go out into the local community and teach what we had learned. Standing before 15+ elementary and junior high students at Griyya Sunnah, my hands were shaking. I worried: 'Will they listen to someone who is only fourteen?' But the moment I projected Scratch on screen and showed them how connecting two blocks could make a cat dance and play music, all artificial barriers dissolved. Children don't care how old you are, they care whether you are patient, encouraging, and genuinely excited about what you're sharing.",
         },
         {
           chapter: "02",

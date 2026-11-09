@@ -108,7 +108,7 @@ export default function ContactPage() {
     <PageShell>
       <SEO
         title="Contact & Channels — Rafif Sava Adyvka Pratama"
-        description="Get in touch with Rafif Sava Adyvka Pratama (Adyvka) — Software Engineer & Systems Architect. Reach out via email, LinkedIn, GitHub, YouTube, Instagram, or TikTok."
+        description="Get in touch with Rafif Sava Adyvka Pratama (Adyvka), Software Engineer & Systems Architect. Reach out via email, LinkedIn, GitHub, YouTube, Instagram, or TikTok."
         path="/contact"
         keywords={CONTACT_KEYWORDS}
         breadcrumbs={[
@@ -145,7 +145,7 @@ export default function ContactPage() {
                   Start a conversation.
                 </h2>
                 <p className={styles.infoLead}>
-                  Whether you're recruiting, planning a contract engagement, or looking to discuss system architecture — the inbox is continuously monitored.
+                  Whether you're recruiting, planning a contract engagement, or looking to discuss system architecture, the inbox is continuously monitored.
                 </p>
 
                 <div className={styles.directBlock}>
@@ -310,7 +310,7 @@ export default function ContactPage() {
                   .
                 </h2>
                 <p className={styles.sectionLead}>
-                  From code repositories and technical breakdowns to career milestones and short-form tech tips — explore my presence across the web.
+                  From code repositories and technical breakdowns to career milestones and short-form tech tips, explore my presence across the web.
                 </p>
               </div>
             </NativeReveal>

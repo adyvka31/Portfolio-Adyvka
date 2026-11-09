@@ -222,7 +222,7 @@ export const projects = [
     title: "TerasTani",
     year: "2026",
     description:
-      "Decentralized urban agriculture platform connecting residential harvests to communal RW crate hubs, powered by IoT microclimate telemetry, AI leaf spectrometry, and smart escrow settlement.",
+      "Decentralized urban agriculture OS empowering neighborhood micro-growers. Connects residential harvests to communal RW crate hubs using computer-vision crop health diagnostics, IoT microclimate telemetry, and smart escrow settlements.",
     tags: [
       "React 19",
       "Vite 8",
@@ -247,7 +247,7 @@ export const projects = [
     title: "SIM KEPK FK UMJ",
     year: "2025",
     description:
-      "Full-stack research ethics governance system for FK UMJ, automating ethical clearance workflows, WHO/CIOMS 2016 compliance, reviewer workload limits, and official PDF certification.",
+      "Full-stack research ethics governance platform engineered for FK UMJ. Streamlines ethical clearance workflows under WHO/CIOMS 2016 standards, automating multi-tier reviewer assignments, revision tracking, and certified digital issuance.",
     tags: [
       "Laravel 12",
       "PHP 8.2",
@@ -270,7 +270,7 @@ export const projects = [
     title: "Databank ERP",
     year: "2025",
     description:
-      "Enterprise resource planning system at PT Intisel Prodaktifakom. Owns inventory, finance, and HR modules used daily across the org. Built on React + NestJS with a strictly typed PostgreSQL data layer.",
+      "Mission-critical telecom ERP pitched from a high-school dorm and delivered for PT Intisel. Extended to a 9-month professional engagement, it actively automates procurement workflows, daily attendance, payroll calculations, and Huawei ISDP data synchronization across national operations.",
     tags: [
       "React",
       "Vite",
@@ -293,7 +293,7 @@ export const projects = [
     title: "RuangTumbuh",
     year: "2025",
     description:
-      "Peer-to-peer educational platform built on the Time Banking paradigm. Powered by atomic PostgreSQL time-wallet transactions, real-time Socket.io chat, Matter.js 2D physics, and Google Gemini AI.",
+      "Peer-to-peer educational ecosystem based on the Time Banking paradigm. Enables youth to exchange skills as equitable currency, backed by atomic PostgreSQL time-wallet ledgers, interactive physics, and generative AI tutoring.",
     tags: [
       "React",
       "Vite",
@@ -859,17 +859,17 @@ export const aiFeatures = [
   {
     title: "Semantic search",
     description:
-      "Vector embeddings over enterprise docs — making years of internal knowledge instantly queryable by natural language.",
+      "Vector embeddings over enterprise docs, making years of internal knowledge instantly queryable by natural language.",
   },
   {
     title: "Agentic workflows",
     description:
-      "LLM-driven automation that handles multi-step business processes — with deterministic guardrails for production safety.",
+      "LLM-driven automation that handles multi-step business processes with deterministic guardrails for production safety.",
   },
   {
     title: "RAG pipelines",
     description:
-      "Retrieval-augmented generation grounded in private data — answers that cite sources instead of hallucinating them.",
+      "Retrieval-augmented generation grounded in private data, returning answers that cite sources instead of hallucinating them.",
   },
 ];
 
@@ -1209,7 +1209,7 @@ export const allAchievements = [
     institution: "ICOMFEST 2025",
     year: "Feb 2025",
     description:
-      "Won 1st Place at the ICOMFEST 2025 National Web Design Competition with 'PusakaKu'—an interactive digital preservation platform for Indonesian traditional folk games powered by ethnographic archives and a gamified assessment engine.",
+      "Won 1st Place at the ICOMFEST 2025 National Web Design Competition with 'PusakaKu', an interactive digital preservation platform for Indonesian traditional folk games powered by ethnographic archives and a gamified assessment engine.",
     image: icomfestImg,
     tags: ["Winner", "Web Design", "PusakaKu", "React", "Gamification"],
   },

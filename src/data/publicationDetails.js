@@ -32,10 +32,10 @@ export const publicationDetails = {
       "E-Book",
     ],
     overview:
-      "A comprehensive 125-page published book engineered to demystify computer science logic for young learners and beginners. Written by Rafif Sava Adyvka Pratama, this book eliminates syntactic friction by using MIT Scratch's block-based visual canvas, teaching fundamental computational principles—event listeners, variable states, collision geometry, conditional branching, and physics loops—through five complete playable games.",
+      "A comprehensive 125-page published book authored by Rafif Sava Adyvka Pratama to demystify computer science logic for young learners and beginners. Written from the conviction that algorithmic thinking and creative joy should come before cryptic syntax errors, this book uses MIT Scratch's visual block canvas to teach core computational principles through five complete, playable games.",
     synopsis: [
       "In standard computer science education, beginners often hit an immediate barrier: syntax errors and intimidating boilerplate code overshadow algorithmic thinking. 'Membuat Game Tanpa Coding' was authored to solve this problem by providing a structured, visual-first roadmap.",
-      "The curriculum starts from foundational principles—workspace orientation, coordinate systems (X/Y axes), sprite manipulation, and event loops—before guiding students step-by-step through developing 5 full arcade and educational games from an empty canvas.",
+      "The curriculum starts from foundational principles, including workspace orientation, coordinate systems (X/Y axes), sprite manipulation, and event loops, before guiding students step-by-step through developing 5 full arcade and educational games from an empty canvas.",
       "Beyond technical mechanics, each chapter emphasizes game design thinking: defining clear win/loss states, balancing player difficulty curves, generating sound cues, and creating engaging visual backdrops.",
       "Adopted as a core learning guide at SMK IDN Boarding School and deployed in practical weekend workshops across schools in Depok and Jakarta, this book has empowered over 300 middle and high school students to build and publish their very first games.",
     ],
@@ -285,7 +285,7 @@ export const publicationDetails = {
       "Practical Module",
     ],
     overview:
-      "A 106-page step-by-step practical engineering module authored by Rafif Sava Adyvka Pratama. Designed to guide students and junior developers from zero web knowledge to engineering responsive, modern, production-grade landing pages using HTML5 semantics, CSS3 layouts, and the industry-standard utility-first framework: Tailwind CSS.",
+      "A 106-page step-by-step practical engineering module authored by Rafif Sava Adyvka Pratama to bridge the gap between foundational web basics and production frontend development. Written from practical teaching experience, it guides vocational students from raw HTML/CSS into building responsive, production-ready landing pages with Tailwind CSS.",
     synopsis: [
       "Modern web engineering has shifted rapidly: writing monolithic CSS stylesheets from scratch often leads to specificity wars, bloated bundles, and sluggish development cycles. Yet, jumping directly into heavy JavaScript frameworks without mastering foundational HTML/CSS creates fragile developer habits.",
       "'Membuat Website Dengan Mudah Menggunakan Framework' bridges this exact gap. It provides a balanced, progressive curriculum structured in four pragmatic phases: core HTML5 markup, essential CSS3 Box Model concepts, hands-on landing page construction, and full migration to utility-first Tailwind CSS.",

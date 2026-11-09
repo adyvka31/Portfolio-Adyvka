@@ -162,7 +162,7 @@ function CertificateDetailPage() {
                     <span className={`${local.dot} ${local.dotGreen}`} />
                   </div>
                   <div className={local.chromeTitle}>
-                    {effectiveIssuer} — Official Credential Verification
+                    {effectiveIssuer}: Official Credential Verification
                   </div>
                   <div className={local.chromeRight}>
                     <span className={local.verifiedPill}>

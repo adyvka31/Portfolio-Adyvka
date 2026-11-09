@@ -16,7 +16,7 @@ import poster1 from "../assets/idn-boarding-school-best-poster-award.webp";
 
 export const achievementDetails = {
   // =========================================================================
-  // 00. PNBITC#18 2026 — 2ND PLACE NATIONAL WEB DESIGN COMPETITION
+  // 00. PNBITC#18 2026, 2ND PLACE NATIONAL WEB DESIGN COMPETITION
   // =========================================================================
   "2nd-place-national-web-design-competition-pnbitc": {
     badge: "2nd Place",
@@ -74,13 +74,13 @@ export const achievementDetails = {
       headline: "Coding at Midnight, Delivering by Day: The Road to National Runner-Up.",
       lead: "How balancing the grueling demands of a mandatory 12th-grade corporate internship with late-night competition sprints culminated in 2nd Place at PNBITC#18 Politeknik Negeri Bali.",
       quote:
-        "When passion meets discipline, a crowded schedule isn't an obstacle—it becomes fuel. Standing on the national podium while still in high school proved that the midnight hours were worth every single line of code.",
+        "When passion meets discipline, a crowded schedule isn't an obstacle, it becomes fuel. Standing on the national podium while still in high school proved that the midnight hours were worth every single line of code.",
       chapters: [
         {
           chapter: "01",
           title: "The Clash of Deadlines & A Spark of Ambition",
           content:
-            "Entering September 2026, my life was already running at maximum capacity. As a 12th-grader undergoing a mandatory one-year corporate internship, my weekdays were consumed by production backends, client tickets, and tight corporate sprints. Yet, when the announcement for the 18th PNB Information Technology Competition (PNBITC#18) at Politeknik Negeri Bali crossed my desk, a familiar adrenaline kicked in. Some peers thought it was reckless to take on a nationwide web design competition while managing enterprise deadlines. But I couldn't let the opportunity pass. I knew that true growth doesn't happen when conditions are comfortable; it happens when you push yourself beyond what feels manageable.",
+            "Entering September 2026, my life was already running at maximum capacity. As a 12th-grader undergoing a mandatory one-year corporate internship, my weekdays were consumed by production backends, client tickets, and tight corporate sprints. Yet, when the announcement for the 18th PNB Information Technology Competition (PNBITC#18) at Politeknik Negeri Bali crossed my desk, a familiar adrenaline kicked in. Some peers thought it was reckless to take on a nationwide web design competition while managing enterprise deadlines. But I couldn't let the opportunity pass. I knew that true growth doesn't happen when conditions are comfortable, but when you push yourself beyond what feels manageable.",
         },
         {
           chapter: "02",
@@ -92,7 +92,7 @@ export const achievementDetails = {
           chapter: "03",
           title: "The National Podium in Bali & The Taste of Pride",
           content:
-            "On October 1st, 2026, the national grand final evaluation and announcement arrived. Competing against dozens to hundreds of brilliant participants—including seasoned university undergraduates and top vocational schools from across the Indonesian archipelago—was genuinely humbling. When our name was called as the 2nd Place Winner (Juara 2 Nasional Desain Web), a wave of profound relief and emotion rushed over me. Holding that national award plaque in my hands was not just about the trophy; it was the ultimate vindication of every sleepless night, every sacrificed weekend, and every doubt cast aside. It solidified my conviction that neither age nor a grueling schedule can cap what a high schooler with relentless drive can achieve.",
+            "On October 1st, 2026, the national grand final evaluation and announcement arrived. Competing against dozens to hundreds of brilliant participants, including seasoned university undergraduates and top vocational schools from across the Indonesian archipelago, was genuinely humbling. When our name was called as the 2nd Place Winner (Juara 2 Nasional Desain Web), a wave of profound relief and emotion rushed over me. Holding that national award plaque in my hands was not just about the trophy, but the ultimate vindication of every sleepless night, every sacrificed weekend, and every doubt cast aside. It solidified my conviction that neither age nor a grueling schedule can cap what a high schooler with relentless drive can achieve.",
         },
       ],
     },
@@ -135,7 +135,7 @@ export const achievementDetails = {
       },
       {
         title: "Standing Tall Against University Peers",
-        desc: "Standing on the podium against university undergraduates proved that seniority is just a number; dedication, craft, and clear storytelling are what truly define a developer.",
+        desc: "Standing on the podium against university undergraduates proved that seniority is just a number, while dedication, craft, and clear storytelling are what truly define a developer.",
       },
     ],
     documentationTitle: "PNBITC#18 Documentation & Verifiable Records",
@@ -167,7 +167,7 @@ export const achievementDetails = {
   },
 
   // =========================================================================
-  // 01. ICOMFEST 2025 — 1ST PLACE NATIONAL WEB DESIGN COMPETITION
+  // 01. ICOMFEST 2025, 1ST PLACE NATIONAL WEB DESIGN COMPETITION
   // =========================================================================
   "1st-place-national-web-design-competition": {
     badge: "1st Place",
@@ -178,7 +178,7 @@ export const achievementDetails = {
     relatedProject: "pusakaku",
     relatedProjectTitle: "PusakaKu",
     summary:
-      "Led a 3-person engineering team to win 1st Place at the ICOMFEST 2025 National Web Design Competition by engineering 'PusakaKu' — an interactive cultural platform revitalizing endangered Indonesian traditional games through deep ethnography and gamified education.",
+      "Led a 3-person engineering team to win 1st Place at the ICOMFEST 2025 National Web Design Competition by engineering 'PusakaKu', an interactive cultural platform revitalizing endangered Indonesian traditional games through deep ethnography and gamified education.",
     meta: [
       { label: "Category", value: "Web Design Competition" },
       { label: "Level", value: "National (University & Public)" },
@@ -238,7 +238,7 @@ export const achievementDetails = {
           chapter: "02",
           title: "Engineering PusakaKu Under Boarding School Rigor",
           content:
-            "Through extensive brainstorming and technical collaboration, we conceptualized and engineered 'PusakaKu,' an interactive platform designed to revitalize traditional Indonesian games. Driven by a concern that our cultural heritage was fading in the modern era, we integrated comprehensive historical information with a captivating user interface and educational gamification. Our primary challenge was time management; we initiated the project during our last week of holiday, but had to sustain the development phase for another three weeks while navigating a highly demanding boarding school schedule. Balancing intensive coding sessions with rigorous academic duties required immense dedication. Nevertheless, through strategic delegation and relentless hands-on teamwork, we successfully advanced to the Top 5.",
+            "Through extensive brainstorming and technical collaboration, we conceptualized and engineered 'PusakaKu,' an interactive platform designed to revitalize traditional Indonesian games. Driven by a concern that our cultural heritage was fading in the modern era, we integrated comprehensive historical information with a captivating user interface and educational gamification. Our primary challenge was time management because we initiated the project during our last week of holiday, and had to sustain the development phase for another three weeks while navigating a highly demanding boarding school schedule. Balancing intensive coding sessions with rigorous academic duties required immense dedication. Nevertheless, through strategic delegation and relentless hands-on teamwork, we successfully advanced to the Top 5.",
         },
         {
           chapter: "03",
@@ -319,7 +319,7 @@ export const achievementDetails = {
   },
 
   // =========================================================================
-  // 02. UNILA 2024 — TOP 5 FINALIST NATIONAL WEB DEV COMPETITION
+  // 02. UNILA 2024, TOP 5 FINALIST NATIONAL WEB DEV COMPETITION
   // =========================================================================
   "finalist-national-web-dev-competition": {
     badge: "Top 5 Finalist",
@@ -330,7 +330,7 @@ export const achievementDetails = {
     relatedProject: "semua-bisa",
     relatedProjectTitle: "SemuaBisa",
     summary:
-      "Entrusted by school faculty to lead Team Deadliner at the UNILA National Web Development Competition. Facilitated team consensus to build 'SemuaBisa' — a functional e-learning platform bridging educational disparities in rural Indonesia. Finished in 4th place as the sole vocational high school (SMK) finalist competing against collegiate teams.",
+      "Entrusted by school faculty to lead Team Deadliner at the UNILA National Web Development Competition. Facilitated team consensus to build 'SemuaBisa', a functional e-learning platform bridging educational disparities in rural Indonesia. Finished in 4th place as the sole vocational high school (SMK) finalist competing against collegiate teams.",
     meta: [
       { label: "Category", value: "Web Development Competition" },
       { label: "Level", value: "National (Collegiate & Public)" },
@@ -383,13 +383,13 @@ export const achievementDetails = {
           chapter: "01",
           title: "Faculty Trust & The Genesis of 'SemuaBisa'",
           content:
-            "Right in the middle of a packed schedule filled with school projects and student council duties, my teacher called me in. I was entrusted to lead our school's team for the UNILA National Web Development Competition, fully funded by the school based on my academic track record. It was a massive opportunity, but our first real challenge emerged immediately during brainstorming. My two teammates and I had conflicting visions—one wanted a CV generator, while another pushed for an automated note-taking app. Knowing we needed a unified direction, I facilitated an open discussion where we evaluated the real-world impact of each idea. We eventually reached a consensus to build 'SemuaBisa,' a functional e-learning platform explicitly designed to tackle educational disparities in rural Indonesia.",
+            "Right in the middle of a packed schedule filled with school projects and student council duties, my teacher called me in. I was entrusted to lead our school's team for the UNILA National Web Development Competition, fully funded by the school based on my academic track record. It was a massive opportunity, but our first real challenge emerged immediately during brainstorming. My two teammates and I had conflicting visions, one wanted a CV generator, while another pushed for an automated note-taking app. Knowing we needed a unified direction, I facilitated an open discussion where we evaluated the real-world impact of each idea. We eventually reached a consensus to build 'SemuaBisa,' a functional e-learning platform explicitly designed to tackle educational disparities in rural Indonesia.",
         },
         {
           chapter: "02",
           title: "The Sole SMK Finalists & Transit Across the Sunda Strait",
           content:
-            "The biggest shock came when the preliminary results were announced. We made it to the Top 5 Grand Finalists, but we were the only vocational high school (SMK) team on the list; the other four were university teams. Knowing we were competing against older students made our trip from Bogor to Lampung an adventure in itself. Traveling entirely via public transit—switching between minivans, trains, and a ferry—we treated the journey as a practical test of our independence. Once we arrived at our lodging, we spent our nights running through presentation simulations to ensure our delivery was as solid as our code.",
+            "The biggest shock came when the preliminary results were announced. We made it to the Top 5 Grand Finalists, but we were the only vocational high school (SMK) team on the list, as the other four were university teams. Knowing we were competing against older students made our trip from Bogor to Lampung an adventure in itself. Traveling entirely via public transit, switching between minivans, trains, and a ferry, we treated the journey as a practical test of our independence. Once we arrived at our lodging, we spent our nights running through presentation simulations to ensure our delivery was as solid as our code.",
         },
         {
           chapter: "03",
@@ -470,7 +470,7 @@ export const achievementDetails = {
   },
 
   // =========================================================================
-  // 03. IDUL ADHA FESTIVAL — BEST POSTER AWARD
+  // 03. IDUL ADHA FESTIVAL, BEST POSTER AWARD
   // =========================================================================
   "dummy-new-achievement": {
     badge: "Best Poster",
@@ -508,7 +508,7 @@ export const achievementDetails = {
       headline: "Visual Storytelling Through Geometric Elegance.",
       lead: "Crafting a festival poster that fused traditional Islamic aesthetics with contemporary minimalist layout principles.",
       quote:
-        "Great design is not about decorating a canvas; it is about communicating a profound message with maximum clarity and emotional resonance.",
+        "Great design is not about decorating a canvas, but about communicating a profound message with maximum clarity and emotional resonance.",
       chapters: [
         {
           chapter: "01",

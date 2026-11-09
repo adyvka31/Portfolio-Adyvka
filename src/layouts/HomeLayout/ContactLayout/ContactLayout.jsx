@@ -122,7 +122,7 @@ export default function ContactLayout() {
                 <div className={styles.ncAvatarWrapper} aria-hidden="true">
                   <Image
                     src={profilePhoto}
-                    alt={`${personalInfo.name} — ${personalInfo.role} Contact Portrait`}
+                    alt={`${personalInfo.name}, ${personalInfo.role} Contact Portrait`}
                     className={styles.ncAvatar}
                     width={470}
                     height={470}
@@ -168,7 +168,7 @@ export default function ContactLayout() {
                     .
                   </h2>
                   <p className={styles.subhead}>
-                    Recruiting, contracting, or just curious — the inbox is
+                    Whether recruiting, contracting, or just curious, the inbox is
                     open. I usually reply within 24 hours.
                   </p>
 
