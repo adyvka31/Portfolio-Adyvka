@@ -90,10 +90,16 @@ export const CERTIFICATE_SLUGS = [
   "english-proficiency-assessment",
 ];
 
+export const PUBLICATION_SLUGS = [
+  "buku-membuat-game-tanpa-coding",
+  "buku-membuat-website-dengan-framework",
+];
+
 export function getAllRoutes() {
   return [
     ...STATIC_ROUTES.map((r) => r.path),
     ...PROJECT_SLUGS.map((slug) => `/projects/${slug}`),
+    ...PUBLICATION_SLUGS.map((slug) => `/publications/${slug}`),
     ...EXPERIENCE_SLUGS.map((slug) => `/experience/${slug}`),
     ...ACHIEVEMENT_SLUGS.map((slug) => `/achievements/${slug}`),
     ...CERTIFICATE_SLUGS.map((slug) => `/certificates/${slug}`),

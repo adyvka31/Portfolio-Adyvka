@@ -73,6 +73,9 @@ export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
   title: "Software Engineer // Systems Architect & Polyglot Builder",
   role: "Software Engineer & Systems Architect",
+  education: "Final-Year Student Majoring in Software Engineering (Rekayasa Perangkat Lunak) at SMK IDN Boarding School",
+  school: "SMK IDN Boarding School",
+  major: "Software Engineering (Rekayasa Perangkat Lunak)",
   location: "Depok, West Java, Indonesia",
   timezone: "UTC+07 — Working remotely",
   currentRole: "Software Engineer & Systems Architect",
@@ -609,7 +612,7 @@ export const publicationsList = [
     edition: "Student & Community Learning Edition",
     publisher: "SMK IDN Boarding School",
     pages: 106,
-    fileSize: "28 MB",
+    fileSize: "9.4 MB",
     pdfUrl: bookWebPdf,
     downloadPath: "/publications/buku-membuat-website-dengan-framework-adyvka.pdf",
     cover: bookWebCover,
@@ -659,11 +662,28 @@ export const projectFilters = [
   { id: "publications", label: "Books & Modules" },
 ];
 
+export const certificateFilters = [
+  { id: "all", label: "All" },
+  { id: "web", label: "Web & Cloud" },
+  { id: "programming", label: "Programming & CS" },
+  { id: "data-ai", label: "Data & AI" },
+  { id: "design", label: "Design & Professional" },
+];
+
+export const teachingFilters = [
+  { id: "all", label: "All" },
+  { id: "game", label: "Game Development" },
+  { id: "web", label: "Web Development" },
+  { id: "app", label: "App Development" },
+  { id: "design", label: "UI/UX & Design" },
+];
+
 export const extraCertificatesOnlyForPage = [
   {
     title: "Graphic Design Fundamentals",
     institution: "Canva / Course",
     year: "2023",
+    category: "design",
     description:
       "Certification in visual design principles, typography, and digital asset composition.",
     image: canvaImg,
@@ -673,6 +693,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Memulai Pemrograman Dengan C",
     institution: "Dicoding Indonesia",
     year: "2023",
+    category: "programming",
     description:
       "Certification in foundational C programming, covering memory management, low-level algorithms, and data structures.",
     image: cdicodingImg,
@@ -682,6 +703,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Dasar UI/UX Design",
     institution: "Figma Course",
     year: "2023",
+    category: "design",
     description:
       "Certification in wireframing, interactive prototyping, and design system creation using Figma.",
     image: figmaImg,
@@ -691,6 +713,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Python Fundamentals",
     institution: "DQLab",
     year: "2024",
+    category: "data-ai",
     description:
       "Certification in foundational Python syntax, data manipulation, and exploratory data analysis.",
     image: pythondqlabImg,
@@ -700,6 +723,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Belajar Dasar Pemrograman JavaScript",
     institution: "Dicoding Indonesia",
     year: "2024",
+    category: "web",
     description:
       "Certification in core JavaScript fundamentals, ES6+ features, and interactive DOM manipulation.",
     image: javascriptImg,
@@ -709,6 +733,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Cloud Practitioner Essentials",
     institution: "Amazon Web Services (AWS)",
     year: "2024",
+    category: "web",
     description:
       "Certification in cloud computing architecture, global infrastructure, and core AWS cloud services.",
     image: awsImg,
@@ -718,6 +743,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Belajar Membuat Aplikasi Web dengan React",
     institution: "Dicoding Indonesia",
     year: "2025",
+    category: "web",
     description:
       "Certification in modern web application engineering using React.js components, hooks, and state management.",
     image: reactImg,
@@ -727,6 +753,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Memulai Pemrograman Dengan Python",
     institution: "Dicoding Indonesia",
     year: "2024",
+    category: "programming",
     description:
       "Certification in algorithmic problem-solving and structured programming with Python.",
     image: pythondicodingImg,
@@ -736,6 +763,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Belajar Dasar Pemrograman Web",
     institution: "Dicoding Indonesia",
     year: "2024",
+    category: "web",
     description:
       "Certification in semantic web development using HTML5, modern CSS layouts, and Flexbox.",
     image: webbasicImg,
@@ -745,6 +773,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Pengenalan ke Logika Pemrograman",
     institution: "Dicoding Indonesia",
     year: "2023",
+    category: "programming",
     description:
       "Certification in computational logic, flowcharting, and algorithmic problem-solving methodologies.",
     image: logicdevImg,
@@ -754,6 +783,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Pemrograman Dasar C",
     institution: "Skilvul",
     year: "2023",
+    category: "programming",
     description:
       "Certification in algorithm development and core data structure implementations in C.",
     image: cskillvulImg,
@@ -763,6 +793,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Dasar Prompt Engineering",
     institution: "AI Course",
     year: "2025",
+    category: "data-ai",
     description:
       "Certification in advanced prompt engineering strategies to optimize generative LLM completions.",
     image: promptImg,
@@ -772,6 +803,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Meniti Karier Sebagai Software Developer",
     institution: "Dicoding Indonesia",
     year: "2024",
+    category: "design",
     description:
       "Certification in professional software engineering workflows, agile methodologies, and SDLC standards.",
     image: softwaredevImg,
@@ -781,6 +813,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Financial Literacy Fundamentals",
     institution: "Finance Course",
     year: "2023",
+    category: "design",
     description:
       "Certification in personal financial literacy, budgeting frameworks, and asset management principles.",
     image: financialImg,
@@ -790,6 +823,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Artificial Intelligence Basics",
     institution: "AI Academy",
     year: "2024",
+    category: "data-ai",
     description:
       "Certification in foundational artificial intelligence concepts, machine learning models, and neural networks.",
     image: aiImg,
@@ -799,6 +833,7 @@ export const extraCertificatesOnlyForPage = [
     title: "Google Developer Groups Participant",
     institution: "Google Developer Groups",
     year: "2024",
+    category: "design",
     description:
       "Active participation certification in Google Developer Groups tech talks and technical workshops.",
     image: gdgImg,
@@ -808,6 +843,7 @@ export const extraCertificatesOnlyForPage = [
     title: "English Proficiency Assessment",
     institution: "English Language Course",
     year: "2024",
+    category: "design",
     description:
       "Verified English proficiency certification evaluating professional communication and global technical collaboration.",
     image: englishImg,
@@ -881,6 +917,7 @@ export const recognitionData = {
       title: "Web Development Instructor",
       institution: "SMA Lazuardi GCS",
       year: "Sep 2025",
+      category: "web",
       description:
         "Mentored high school students in foundational web development, teaching modern HTML semantics, CSS flexbox/grid layout systems, and responsive design workflows.",
       image: webDevImg,
@@ -899,6 +936,7 @@ export const recognitionData = {
       title: "App Development Instructor",
       institution: "SMP INS Depok",
       year: "Oct 2023",
+      category: "app",
       description:
         "Delivered interactive mobile app development workshops for junior high school students, introducing visual programming logic, UI components, and block-based architectures.",
       image: appDevImg,
@@ -917,6 +955,7 @@ export const recognitionData = {
       title: "Game Development Instructor",
       institution: "Semut-Semut The Natural School",
       year: "Oct 2023",
+      category: "game",
       description:
         "Instructed elementary and middle school students in computational thinking and 2D game mechanics through hands-on visual scripting and physics simulations.",
       image: semutsemutImg,
@@ -966,6 +1005,7 @@ export const recognitionData = {
       title: "CS50: Introduction to Computer Science",
       institution: "Harvard University",
       year: "Oct 2025",
+      category: "programming",
       description:
         "Comprehensive computer science curriculum certification covering algorithms, data structures, memory management, and software engineering in C and Python.",
       image: cs50Img,
@@ -975,6 +1015,7 @@ export const recognitionData = {
       title: "Coding Camp: Full Stack Developer",
       institution: "Dicoding Indonesia × DBS Foundation",
       year: "Apr 2026",
+      category: "web",
       description:
         "Intensive full-stack development certification mastering end-to-end architectures from scalable backend APIs to responsive React frontends.",
       image: codingcampImg,
@@ -984,6 +1025,7 @@ export const recognitionData = {
       title: "Frontend Web Developer",
       institution: "Dicoding Indonesia",
       year: "Mar 2026",
+      category: "web",
       description:
         "Professional frontend certification in developing responsive, accessible, and high-performance modern web interfaces.",
       image: frontendImg,
@@ -993,6 +1035,7 @@ export const recognitionData = {
       title: "Belajar Dasar Data Analyst",
       institution: "Dicoding Indonesia",
       year: "2024",
+      category: "data-ai",
       description:
         "Certification in exploratory data analysis, tabular data transformation, and visual storytelling.",
       image: dataanalystImg,
@@ -1002,6 +1045,7 @@ export const recognitionData = {
       title: "Belajar Membuat Aplikasi Back-End",
       institution: "Dicoding Indonesia",
       year: "2024",
+      category: "web",
       description:
         "Certification in architecting secure, scalable RESTful APIs and server-side business logic using Node.js.",
       image: backendImg,
@@ -1011,6 +1055,7 @@ export const recognitionData = {
       title: "Belajar Dasar Git dengan GitHub",
       institution: "Dicoding Indonesia",
       year: "2024",
+      category: "web",
       description:
         "Certification in version control workflows, branch management, code reviews, and open-source collaboration using Git and GitHub.",
       image: gitImg,
@@ -1024,56 +1069,62 @@ export const extraTeachingExperiences = [
     title: "Web Development Instructor",
     institution: "Hajrabyadl",
     year: "May 2025",
+    category: "web",
     description:
       "Guided students through fundamental HTML, CSS, and UI/UX design workflows to design and assemble responsive, interactive webpage layouts.",
     image: hajrabyadlImg,
-    tags: ["HTML", "CSS", "UI/UX Design", "23+ Students"],
+    tags: ["Web Development", "HTML", "CSS", "UI/UX Design", "23+ Students"],
   },
   {
     title: "App Development Instructor",
     institution: "SMPN 45",
     year: "Sep 2023",
+    category: "app",
     description:
       "Introduced native mobile application concepts and interactive UI component architectures to junior high school students using Kodular.",
     image: smpn45Img,
-    tags: ["Kodular", "10+ Students"],
+    tags: ["App Development", "Kodular", "10+ Students"],
   },
   {
     title: "App Design Instructor",
     institution: "Al Anshar",
     year: "Sep 2022",
+    category: "design",
     description:
       "Educated students on UI/UX wireframing, color theory, and digital prototyping using Figma to create intuitive mobile application interfaces.",
     image: alansharImg2,
-    tags: ["Figma", "15+ Students"],
+    tags: ["UI/UX Design", "Figma", "15+ Students"],
   },
 
   {
     title: "Design Instructor",
     institution: "MTs Yasmine",
     year: "Oct 2022",
+    category: "design",
     description:
       "Taught graphic design fundamentals, typography hierarchy, and UI layout composition using modern design tools for digital media.",
     image: mtsyasmineImg,
-    tags: ["Figma", "UI/UX & Poster Design", "25+ Students"],
+    tags: ["Design", "Figma", "UI/UX & Poster Design", "25+ Students"],
   },
   {
     title: "Game Development Instructor",
     institution: "Al Anshar",
     year: "Nov 2022",
+    category: "game",
     description:
       "Taught 2D game architecture, event-driven programming, and physics simulation logic to students through Scratch.",
     image: alansharImg,
-    tags: ["Scratch", "15+ Students"],
+    tags: ["Game Development", "Scratch", "15+ Students"],
   },
   {
     title: "Game Development Instructor",
     institution: "Griyya Sunnah",
     year: "Jul 2022",
+    category: "game",
     description:
       "Coached students in game mechanics design and algorithmic problem-solving, building simple interactive games from scratch.",
     image: griyyasunnahImg,
-    tags: ["Game Development", "15+ Students"],
+    tags: ["Game Development", "Scratch", "15+ Students"],
   },
 ];
 

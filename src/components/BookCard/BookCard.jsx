@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { Link } from "react-router-dom";
 import Image from "../Image/Image";
 import Tag from "../Tag/Tag";
 import {
@@ -73,18 +74,15 @@ function BookCard({ item, onRead, className = "" }) {
           <span className={styles.year}>{item.year}</span>
         </div>
 
-        <h3 className={styles.title}>{item.title}</h3>
+        <h3 className={styles.title}>
+          <Link to={`/publications/${item.slug}`} className={styles.titleLink}>
+            {item.title}
+          </Link>
+        </h3>
 
         {item.subtitle && (
           <p className={styles.subtitle}>{item.subtitle}</p>
         )}
-
-        <div className={styles.authorRow}>
-          <span className={styles.authorLabel}>Author:</span>
-          <strong className={styles.authorName}>{item.author}</strong>
-          <span className={styles.dotSeparator}>•</span>
-          <span className={styles.edition}>{item.edition || item.publisher}</span>
-        </div>
 
         <p className={styles.description}>{item.description}</p>
 
@@ -139,14 +137,23 @@ function BookCard({ item, onRead, className = "" }) {
 
         {/* Action Buttons */}
         <div className={styles.actionsRow}>
+          <Link
+            to={`/publications/${item.slug}`}
+            className={`btn-primary ${styles.detailBtn}`}
+            aria-label={`View overview and syllabus for ${item.title}`}
+          >
+            <span>Overview & Syllabus</span>
+            <ArrowUpRightIcon size={13} />
+          </Link>
+
           <button
             type="button"
-            className={`btn-primary ${styles.readBtn}`}
+            className={styles.readBtn}
             onClick={() => onRead && onRead(item)}
             aria-label={`Read ${item.title} online`}
           >
-            <BookOpenIcon size={15} />
-            <span>Read Online (Preview)</span>
+            <BookOpenIcon size={14} />
+            <span>Read PDF</span>
           </button>
 
           <a
@@ -155,8 +162,8 @@ function BookCard({ item, onRead, className = "" }) {
             className={styles.downloadBtn}
             aria-label={`Download PDF of ${item.title}`}
           >
-            <DownloadIcon size={15} />
-            <span>Download PDF</span>
+            <DownloadIcon size={14} />
+            <span>Download</span>
             {item.fileSize && (
               <span className={styles.fileSize}>({item.fileSize})</span>
             )}

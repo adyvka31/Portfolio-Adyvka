@@ -224,7 +224,7 @@ export default function Navbar() {
 
             <div className={styles.iframeContainer}>
               <iframe
-                src={`${personalInfo.cvUrl}#view=FitH&toolbar=1`}
+                src={`${personalInfo.cvUrl}#zoom=100&toolbar=1`}
                 title="Curriculum Vitae PDF Document"
                 className={styles.pdfViewer}
               />

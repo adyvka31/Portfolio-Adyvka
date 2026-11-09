@@ -12,7 +12,7 @@ const HOME_FAQ = [
   {
     question: "Who is Rafif Sava Adyvka Pratama (Adyvka)?",
     answer:
-      "Rafif Sava Adyvka Pratama (known online as Adyvka) is an Indonesian Software Engineer and Systems Architect. He is currently lead engineer and Project Manager at PT Intisel Prodaktifakom, a Harvard CS50 graduate, and final-year student at SMK IDN Boarding School.",
+      "Rafif Sava Adyvka Pratama (known online as Adyvka) is an Indonesian Software Engineer and Systems Architect. He is currently lead engineer and Project Manager at PT Intisel Prodaktifakom, a Harvard CS50 graduate, and a final-year student majoring in Software Engineering at SMK IDN Boarding School.",
   },
   {
     question: "What core systems and projects has Rafif Sava Adyvka Pratama built?",

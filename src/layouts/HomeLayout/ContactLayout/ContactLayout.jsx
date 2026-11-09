@@ -133,7 +133,7 @@ export default function ContactLayout() {
 
                 <div className={styles.bottomBar}>
                   <span className={styles.bottomText}>
-                    VHS IDN Boarding School Student
+                    Software Engineering Student · SMK IDN Boarding School
                   </span>
                   <div className={styles.bottomArrow}>
                     <ArrowRightIcon size={14} />

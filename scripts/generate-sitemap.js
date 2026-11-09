@@ -7,6 +7,7 @@ import {
   EXPERIENCE_SLUGS,
   ACHIEVEMENT_SLUGS,
   CERTIFICATE_SLUGS,
+  PUBLICATION_SLUGS,
 } from "../src/data/routesManifest.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -67,7 +68,17 @@ CERTIFICATE_SLUGS.forEach((slug) => {
   });
 });
 
-// Published Books & Educational Modules
+// Published Books & Educational Modules (Detail Pages)
+PUBLICATION_SLUGS.forEach((slug) => {
+  urls.push({
+    loc: `${BASE_URL}/publications/${slug}`,
+    lastmod: TODAY,
+    changefreq: "monthly",
+    priority: "0.9",
+  });
+});
+
+// Published Books & Educational Modules (Direct PDF Files)
 const PUBLICATION_FILES = [
   "/publications/buku-membuat-game-tanpa-coding-adyvka.pdf",
   "/publications/buku-membuat-website-dengan-framework-adyvka.pdf",

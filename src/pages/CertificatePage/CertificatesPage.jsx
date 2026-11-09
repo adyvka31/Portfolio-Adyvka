@@ -1,11 +1,15 @@
 import SEO from "../../components/SEO/SEO";
+import { useState, useMemo, useDeferredValue, useCallback, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import NativeReveal from "../../components/Reveal/NativeReveal";
 import Card from "../../components/Card/Card";
-import { allCertificates } from "../../data/portfolio";
+import EmptyState from "../../components/EmptyState/EmptyState";
+import { SearchIcon } from "../../components/Icons/Icons";
+import { allCertificates, certificateFilters } from "../../data/portfolio";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
-import local from "./CertificatesPage.module.css";
+import styles from "./CertificatesPage.module.css";
 
 const CERTIFICATE_KEYWORDS = [
   "Certificates Rafif Sava Adyvka Pratama",
@@ -25,7 +29,65 @@ const CERTIFICATE_ITEMS = (allCertificates || []).map((c) => ({
 }));
 
 export default function CertificatesPage() {
-  const items = allCertificates || [];
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialFilter = searchParams.get("filter") || "all";
+
+  const [filter, setFilter] = useState(
+    certificateFilters.some((f) => f.id === initialFilter) ? initialFilter : "all"
+  );
+  const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
+
+  // Sync state if URL query param changes
+  useEffect(() => {
+    const urlFilter = searchParams.get("filter");
+    if (urlFilter && certificateFilters.some((f) => f.id === urlFilter)) {
+      setFilter(urlFilter);
+    }
+  }, [searchParams]);
+
+  const handleQueryChange = useCallback((e) => {
+    setQuery(e.target.value);
+  }, []);
+
+  const handleFilterClick = useCallback(
+    (id) => {
+      setFilter(id);
+      if (id === "all") {
+        setSearchParams({}, { replace: true });
+      } else {
+        setSearchParams({ filter: id }, { replace: true });
+      }
+    },
+    [setSearchParams]
+  );
+
+  // Calculate count for each category
+  const categoryCounts = useMemo(() => {
+    const counts = { all: (allCertificates || []).length };
+    (allCertificates || []).forEach((c) => {
+      if (c.category) {
+        counts[c.category] = (counts[c.category] || 0) + 1;
+      }
+    });
+    return counts;
+  }, []);
+
+  // Filter certificates based on selected category and search query
+  const filtered = useMemo(() => {
+    const q = deferredQuery.trim().toLowerCase();
+    return (allCertificates || []).filter((c) => {
+      const matchCat = filter === "all" || c.category === filter;
+      const matchQ =
+        !q ||
+        c.title.toLowerCase().includes(q) ||
+        (c.institution && c.institution.toLowerCase().includes(q)) ||
+        (c.description && c.description.toLowerCase().includes(q)) ||
+        (c.year && c.year.toLowerCase().includes(q)) ||
+        (c.tags && c.tags.some((t) => t.toLowerCase().includes(q)));
+      return matchCat && matchQ;
+    });
+  }, [filter, deferredQuery]);
 
   return (
     <PageShell>
@@ -48,19 +110,67 @@ export default function CertificatesPage() {
         description="A curated collection of verified professional certifications and credentials demonstrating technical rigor, industry standards, and continuous learning."
       />
 
-      <section className={local.gridSection} aria-label="Certificate Gallery">
-        <div className={local.gridInner}>
-          <div className={local.grid}>
-            {items.map((item, i) => (
-              <NativeReveal
-                key={item.slug}
-                delay={(i % 3) * 0.15}
-                className="reveal-slide-up"
-              >
-                <Card variant="certificate" item={item} />
+      <section className={styles.gridSection} aria-label="Certificate Gallery">
+        <div className={styles.gridInner}>
+          {/* Controls: Search Bar & Filter Tabs */}
+          <div className={styles.controlsSection}>
+            <div className={styles.controlsInner}>
+              <NativeReveal className={`${styles.searchWrap} reveal-slide-up`}>
+                <SearchIcon size={16} />
+                <input
+                  type="text"
+                  placeholder="Search credentials by title, skill, or issuer…"
+                  value={query}
+                  onChange={handleQueryChange}
+                  className={styles.searchInput}
+                  aria-label="Search certificates"
+                />
               </NativeReveal>
-            ))}
+
+              <NativeReveal
+                delay={0.1}
+                className={`${styles.filters} reveal-slide-up`}
+              >
+                {certificateFilters.map((f) => (
+                  <button
+                    key={f.id}
+                    type="button"
+                    onClick={() => handleFilterClick(f.id)}
+                    className={`${styles.chip} ${
+                      filter === f.id ? styles.chipActive : ""
+                    }`}
+                  >
+                    {f.label}{" "}
+                    <span style={{ opacity: 0.65, fontSize: "0.7rem" }}>
+                      ({categoryCounts[f.id] || 0})
+                    </span>
+                  </button>
+                ))}
+              </NativeReveal>
+            </div>
           </div>
+
+          {/* Grid or Empty State */}
+          {filtered.length === 0 ? (
+            <NativeReveal delay={0.1} className="reveal-slide-up">
+              <EmptyState
+                title="No certificates found"
+                message="No credentials match the selected filter or search query."
+              />
+            </NativeReveal>
+          ) : (
+            <div className={styles.grid}>
+              {filtered.map((item, i) => (
+                <NativeReveal
+                  key={item.slug}
+                  delay={(i % 3) * 0.1}
+                  className="reveal-slide-up"
+                >
+                  <Card variant="certificate" item={item} />
+                </NativeReveal>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -145,6 +145,7 @@ export default function SEO({
       {
         "@type": "EducationalOrganization",
         name: "SMK IDN Boarding School",
+        department: "Software Engineering (Rekayasa Perangkat Lunak)",
       },
       {
         "@type": "EducationalOrganization",
@@ -197,7 +198,7 @@ export default function SEO({
           "A 125-page comprehensive educational book on 2D visual programming, game mechanics, and computational thinking using MIT Scratch.",
         bookFormat: "https://schema.org/EBook",
         encodingFormat: "application/pdf",
-        url: `${SITE_URL}/projects?filter=publications`,
+        url: `${SITE_URL}/publications/buku-membuat-game-tanpa-coding`,
       },
       {
         "@type": "Book",
@@ -217,7 +218,7 @@ export default function SEO({
           "A 106-page practical learning module guiding readers from HTML5/CSS3 foundations to engineering modern responsive interfaces with Tailwind CSS.",
         bookFormat: "https://schema.org/EBook",
         encodingFormat: "application/pdf",
-        url: `${SITE_URL}/projects?filter=publications`,
+        url: `${SITE_URL}/publications/buku-membuat-website-dengan-framework`,
       },
     ],
   };
@@ -239,7 +240,7 @@ export default function SEO({
       "Comprehensive 125-page guide to learning game mechanics, sprite manipulation, and computational logic using MIT Scratch without writing complex code syntax.",
     bookFormat: "https://schema.org/EBook",
     encodingFormat: "application/pdf",
-    url: `${SITE_URL}/projects?filter=publications`,
+    url: `${SITE_URL}/publications/buku-membuat-game-tanpa-coding`,
   };
 
   const bookWebEntity = {
@@ -259,7 +260,7 @@ export default function SEO({
       "Structured 106-page technical learning module covering semantic HTML5, modern CSS3 styling, and utility-first layout engineering with Tailwind CSS.",
     bookFormat: "https://schema.org/EBook",
     encodingFormat: "application/pdf",
-    url: `${SITE_URL}/projects?filter=publications`,
+    url: `${SITE_URL}/publications/buku-membuat-website-dengan-framework`,
   };
 
   const websiteEntity = {

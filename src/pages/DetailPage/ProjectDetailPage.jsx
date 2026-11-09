@@ -141,6 +141,10 @@ function ProjectDetailPage() {
   const [activeWorkflowStage, setActiveWorkflowStage] = useState(0);
   const [activeDirTab, setActiveDirTab] = useState(0);
 
+  if (project?.category === "publications" || project?.type === "book") {
+    return <Navigate to={`/publications/${project.slug}`} replace />;
+  }
+
   if (!project) return <Navigate to="/projects" replace />;
 
   const { prev, next } = getSiblings(projectsList, project.slug || slug);

@@ -45,7 +45,7 @@ const PROJECT_KEYWORDS = [
 const PROJECT_ITEMS = projectsList.map((p) => ({
   name: p.title,
   description: p.description,
-  url: p.category === "publications" ? `/projects?filter=publications` : `/projects/${p.slug}`,
+  url: p.category === "publications" ? `/publications/${p.slug}` : `/projects/${p.slug}`,
 }));
 
 export default function ProjectsPage() {

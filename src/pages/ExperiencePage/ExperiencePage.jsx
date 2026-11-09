@@ -7,15 +7,13 @@ import NativeReveal from "../../components/Reveal/NativeReveal";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
 import Card from "../../components/Card/Card";
-import { ArrowRightIcon } from "../../components/Icons/Icons";
 import {
   experiencesList,
   allTeachingExperiences,
   allLeadershipExperiences,
+  teachingFilters,
 } from "../../data/portfolio";
 import styles from "./ExperiencePage.module.css";
-
-const TEACHING_TABS = ["All", "Game Development", "Web Development", "Other"];
 
 const EXPERIENCE_KEYWORDS = [
   "Experience Rafif Sava Adyvka Pratama",
@@ -57,7 +55,7 @@ const EXPERIENCE_ITEMS = [
 
 export default function ExperiencePage() {
   const scrollRef = useRef(null);
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("all");
 
   const scroll = useCallback((direction) => {
     const { current } = scrollRef;
@@ -71,20 +69,19 @@ export default function ExperiencePage() {
     }
   }, []);
 
+  const teachingCategoryCounts = useMemo(() => {
+    const counts = { all: allTeachingExperiences.length };
+    allTeachingExperiences.forEach((item) => {
+      const cat = item.category || "web";
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    return counts;
+  }, []);
+
   const teachingExperiences = useMemo(() => {
     return allTeachingExperiences.filter((item) => {
-      if (activeTab === "All") return true;
-      if (activeTab === "Game Development")
-        return item.tags?.includes("Game Development");
-      if (activeTab === "Web Development")
-        return item.tags?.includes("Web Development");
-
-      if (activeTab === "Other") {
-        const isGameDev = item.tags?.includes("Game Development");
-        const isWebDev = item.tags?.includes("Web Development");
-        return !isGameDev && !isWebDev;
-      }
-      return true;
+      if (activeTab === "all") return true;
+      return item.category === activeTab;
     });
   }, [activeTab]);
 
@@ -214,15 +211,18 @@ export default function ExperiencePage() {
                 role="group"
                 aria-label="Filter teaching experiences"
               >
-                {TEACHING_TABS.map((tab) => (
+                {teachingFilters.map((tab) => (
                   <button
-                    key={tab}
+                    key={tab.id}
                     type="button"
-                    aria-pressed={activeTab === tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`${styles.filterTab} ${activeTab === tab ? styles.filterTabActive : ""}`}
+                    aria-pressed={activeTab === tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`${styles.filterTab} ${activeTab === tab.id ? styles.filterTabActive : ""}`}
                   >
-                    {tab}
+                    {tab.label}{" "}
+                    <span style={{ opacity: 0.65, fontSize: "0.7rem" }}>
+                      ({teachingCategoryCounts[tab.id] || 0})
+                    </span>
                   </button>
                 ))}
               </div>
@@ -240,30 +240,6 @@ export default function ExperiencePage() {
               </NativeReveal>
             ))}
           </div>
-
-          {/* Authored Books & Learning Modules Callout */}
-          <NativeReveal delay={0.2} className="reveal-slide-up">
-            <div className={styles.publicationBanner}>
-              <div className={styles.publicationBannerContent}>
-                <span className={styles.publicationBadge}>
-                  Official Curriculum & Published Books
-                </span>
-                <h3 className={styles.publicationTitle}>
-                  Authored Technical Books & Learning Modules
-                </h3>
-                <p className={styles.publicationDesc}>
-                  As part of his teaching tenure and technical educator outreach, Rafif authored and published 2 comprehensive guides (125-page Scratch Game Programming & 106-page Modern Web with Tailwind CSS) utilized in active classroom instruction.
-                </p>
-              </div>
-              <Link
-                to="/projects?filter=publications"
-                className={`btn-primary ${styles.publicationCta}`}
-              >
-                <span>Explore Books & Modules</span>
-                <ArrowRightIcon size={14} />
-              </Link>
-            </div>
-          </NativeReveal>
         </div>
       </section>
 

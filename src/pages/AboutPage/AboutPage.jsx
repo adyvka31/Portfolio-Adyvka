@@ -13,7 +13,7 @@ const INTRO_FACTS = [
   { label: "Alias", value: "Adyvka" },
   { label: "Location", value: "Depok, West Java, Indonesia" },
   { label: "Current role", value: "Software Engineer & PM at PT Intisel" },
-  { label: "Education", value: "SMK IDN Boarding School (Year XII)" },
+  { label: "Education", value: "SMK IDN Boarding School (Software Engineering · Year XII)" },
 ];
 
 const TRACKS = [
@@ -214,8 +214,8 @@ const CURRENTLY = [
   },
   {
     label: "STUDYING",
-    title: "Final Year · SMK",
-    detail: "SMK IDN Boarding School, graduating June 2027.",
+    title: "Software Engineering Major",
+    detail: "Final-year Software Engineering (RPL) student at SMK IDN Boarding School.",
   },
   {
     label: "DEEPENING",
@@ -319,7 +319,7 @@ export default function AboutPage() {
         label="About"
         title="Built early. Kept building."
         italicWord="Kept building"
-        description="Software Engineer & Systems Architect crafting robust multi-platform systems. Final-year student at SMK IDN Boarding School, currently leading system architecture and ERP delivery at PT Intisel."
+        description="Software Engineer & Systems Architect crafting robust multi-platform systems. Final-year student majoring in Software Engineering at SMK IDN Boarding School, currently leading system architecture and ERP delivery at PT Intisel."
         meta={[
           { label: "Age", value: "17" },
           { label: "Discipline", value: "Software Engineering & Architecture" },
@@ -352,12 +352,13 @@ export default function AboutPage() {
                     tools selected to solve specific technical challenges.
                   </p>
                   <p>
-                    Currently at PT Intisel, I lead the Databank ERP build as lead systems
-                    engineer and Project Manager — establishing clean architecture, domain
-                    boundaries, database schema designs, and automated delivery pipelines.
-                    My engineering foundation is rooted in computational rigor (Harvard CS50,
-                    algorithms in C/C++ and Python), proven in national competitions, and reinforced
-                    by mentoring developers since age 13.
+                    Currently a final-year vocational student majoring in Software Engineering
+                    (Rekayasa Perangkat Lunak) at SMK IDN Boarding School, I concurrently lead
+                    the Databank ERP build as Lead Systems Engineer and Project Manager at PT Intisel
+                    — establishing clean architecture, domain boundaries, database schema designs,
+                    and automated delivery pipelines. My engineering foundation is rooted in
+                    computational rigor (Harvard CS50, algorithms in C/C++ and Python), proven
+                    in national competitions, and reinforced by mentoring developers since age 13.
                   </p>
                 </div>
               </NativeReveal>

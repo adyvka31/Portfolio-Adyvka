@@ -1,0 +1,719 @@
+/* src/pages/DetailPage/PublicationDetailPage.module.css */
+
+.actionStrip {
+  padding: 1.25rem 0 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.actionInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.actionGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.readBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.65rem 1.15rem;
+  border-radius: 9999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.downloadBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.externalBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  padding: 0.65rem 1rem;
+  border-radius: 9999px;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.externalBtn:hover {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: "Geist Mono", monospace;
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* ── OVERVIEW & 3D COVER SECTION ──────────────────────── */
+.overviewSection {
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .overviewGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* 3D Book Representation */
+.coverWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 6rem;
+}
+
+.book3D {
+  position: relative;
+  width: 280px;
+  perspective: 1200px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.book3D:hover {
+  transform: translateY(-6px) rotateY(-8deg) rotateX(4deg);
+}
+
+.bookSpine {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: -9px;
+  width: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 20, 25, 0.95),
+    rgba(70, 70, 85, 0.9) 60%,
+    rgba(255, 255, 255, 0.15)
+  );
+  border-radius: 4px 0 0 4px;
+  transform: rotateY(-35deg);
+  transform-origin: right center;
+  z-index: 1;
+}
+
+.bookPages {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: -10px;
+  width: 14px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ddd 0px,
+    #fff 1px,
+    #bbb 2px,
+    #eee 3px
+  );
+  border-radius: 0 3px 3px 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.45);
+  transform: rotateY(45deg);
+  transform-origin: left center;
+  z-index: 1;
+}
+
+.coverFrame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+  background: #0f1015;
+}
+
+.coverImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1.414;
+  object-fit: cover;
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(10, 10, 15, 0.85) 100%
+  );
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.book3D:hover .coverOverlay {
+  opacity: 0.85;
+}
+
+.hoverPrompt {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.book3D:hover .hoverPrompt {
+  opacity: 1;
+}
+
+.coverCaption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Specs Box */
+.specsCard {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.specsTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.specsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .specsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.specLabel {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.specValue {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Narrative Body */
+.narrativeCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.leadText {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 400;
+}
+
+.paragraph {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(235, 235, 240, 0.8);
+  margin: 0;
+}
+
+/* ── METRICS GRID ─────────────────────────────────────── */
+.kpiSection {
+  padding: 2rem 0 3rem;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 850px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpiCard {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kpiVal {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.kpiLbl {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-glow, #38bdf8);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kpiSub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+/* ── LEARNING PILLARS ─────────────────────────────────── */
+.sectionBlock {
+  padding: 3.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.sectionDesc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 750px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pillarCard {
+  padding: 1.75rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillarIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-glow, #38bdf8);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.pillarTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.pillarDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── FEATURED PROJECTS BUILT IN BOOK ──────────────────── */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 450px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectCard {
+  padding: 1.75rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.chapterBadge {
+  font-size: 0.75rem;
+  font-family: "Geist Mono", monospace;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--accent-glow, #38bdf8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.genreLabel {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.projName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.projSummary {
+  font-size: 0.9rem;
+  color: rgba(235, 235, 240, 0.8);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mechanicsList {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mechanicItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.checkIcon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* ── TABLE OF CONTENTS CURRICULUM ─────────────────────── */
+.curriculumList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chapterCard {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.chapterHeaderBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+}
+
+.chapterHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chapNum {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-glow, #38bdf8);
+  padding: 0.2rem 0.6rem;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 6px;
+}
+
+.chapTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.chapPages {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: "Geist Mono", monospace;
+}
+
+.chevronIcon {
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.chapterBody {
+  padding: 0 1.75rem 1.5rem 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+}
+
+.chapSummary {
+  font-size: 0.9rem;
+  color: rgba(235, 235, 240, 0.85);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.subsectionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.65rem 1rem;
+}
+
+.subItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.subDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-glow, #38bdf8);
+  flex-shrink: 0;
+}
+
+/* ── TARGET AUDIENCE & DEPLOYMENTS ────────────────────── */
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 800px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.audienceCard,
+.deploymentCard {
+  padding: 1.75rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cardHeading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: rgba(235, 235, 240, 0.8);
+  line-height: 1.5;
+}
+
+.deploymentsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deployItem {
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deployItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.deployTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.deploySchool {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.deployDate {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: "Geist Mono", monospace;
+}
+
+.deployRole {
+  font-size: 0.85rem;
+  color: var(--accent-glow, #38bdf8);
+  margin-bottom: 0.35rem;
+}
+
+.deployImpact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+}

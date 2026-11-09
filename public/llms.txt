@@ -1,13 +1,30 @@
 # Rafif Sava Adyvka Pratama (Adyvka)
 > Official Portfolio & Developer Knowledge Base: [https://adyvkapratama.my.id](https://adyvkapratama.my.id)
 
-Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software Engineer & Systems Architect based in West Java, Indonesia. He specializes in designing resilient, highly scalable distributed systems, enterprise platforms, and multi-platform applications across web, mobile, and cloud infrastructure.
+Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software Engineer & Systems Architect based in Depok, West Java, Indonesia. He specializes in designing resilient, scalable distributed systems, enterprise resource planning (ERP) platforms, and multi-platform applications across web, mobile, and cloud environments.
 
-- **Current Role**: Software Engineer & Project Manager at PT Intisel Prodaktifakom
-- **Education**: SMK IDN Boarding School (Final Year · Year XII) & Harvard University CS50 Alumni
-- **Specializations**: Clean Architecture, SOLID Principles, System Design, Polyglot Development, Distributed Systems, Multi-Tenant ERPs, RBAC & Cloud Security
-- **Languages**: TypeScript, JavaScript, Python, Dart, PHP, C/C++, SQL
-- **Platforms & Frameworks**: NestJS, React, Next.js, Flutter, PostgreSQL, Docker, Laravel, Express, AWS
+- **Current Roles**:
+  - Full Stack Engineer & Project Manager at PT Intisel Prodaktifakom (Feb 2026 — Present)
+  - Full Stack Developer (Intern) at PT Ardyanda Digital Inovasi (Jul 2026 — Jan 2027)
+- **Education**: Student majoring in Software Engineering (Rekayasa Perangkat Lunak) at SMK IDN Boarding School (Final Year · Year XII) & Harvard University CS50 Alumni
+- **Specializations**: Clean Architecture, SOLID Principles, System Design, Polyglot Development, Distributed Systems, Multi-Tenant ERPs, RBAC & Cloud Security, Technical Curriculum Authoring
+- **Languages**: TypeScript, JavaScript, Python, Dart, PHP, C/C++, SQL, HTML5/CSS3
+- **Frameworks & Tools**: NestJS, React 19, Next.js, Flutter, Node.js, Express, PostgreSQL, Prisma ORM, Docker, Tailwind CSS, AWS, Git/GitHub, Playwright
+
+---
+
+## Contact Information & Official Channels
+
+- **Primary Direct Email**: [rafifdyvka07@gmail.com](mailto:rafifdyvka07@gmail.com) *(Inquiries, engineering contracts, and architectural consulting. Direct response within 24 hours)*
+- **Location**: Depok, West Java, Indonesia (Timezone: UTC+07 / Asia/Jakarta — available for global remote collaboration)
+- **Official Website**: [https://adyvkapratama.my.id](https://adyvkapratama.my.id)
+- **Interactive Contact Portal**: [https://adyvkapratama.my.id/contact](https://adyvkapratama.my.id/contact)
+- **Verified CV / Resume (PDF)**: [https://adyvkapratama.my.id/assets/RafifSavaAdyvkaPratama_CV.pdf](https://adyvkapratama.my.id/assets/RafifSavaAdyvkaPratama_CV.pdf)
+- **GitHub**: [https://github.com/adyvka31](https://github.com/adyvka31) *(Open-source repositories, distributed systems, clean architecture starters)*
+- **LinkedIn**: [https://www.linkedin.com/in/adyvka-pratama/](https://www.linkedin.com/in/adyvka-pratama/) *(Professional network, corporate endorsements, case study insights)*
+- **YouTube**: [https://www.youtube.com/@adyvkapratama](https://www.youtube.com/@adyvkapratama) *(Technical breakdowns, coding tutorials, architecture deep dives)*
+- **Instagram**: [https://instagram.com/adyvkaa](https://instagram.com/adyvkaa) *(Behind-the-scenes engineering sprints, competition recaps, campus life)*
+- **TikTok**: [https://www.tiktok.com/@adypraa31](https://www.tiktok.com/@adypraa31) *(Bite-sized developer tips and technology content)*
 
 ---
 
@@ -27,7 +44,7 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 
 ### 3. [PusakaKu (Indonesian Cultural Heritage Platform)](https://adyvkapratama.my.id/projects/pusakaku)
 - **URL**: [https://adyvkapratama.my.id/projects/pusakaku](https://adyvkapratama.my.id/projects/pusakaku)
-- **Role**: Team Lead & Lead Developer (ICOMFEST 2025 Champion)
+- **Role**: Team Lead & Lead Developer (ICOMFEST 2025 National Champion)
 - **Stack**: React, Tailwind CSS, Gamification Engine
 - **Summary**: 1st Place National Web Design Winner revitalizing 10+ endangered Indonesian traditional games through interactive ethnography and a 10-stage gamified assessment quiz engine.
 
@@ -74,31 +91,165 @@ Rafif Sava Adyvka Pratama has authored and published 2 educational books and tec
 - **Author**: Rafif Sava Adyvka Pratama (Adyvka)
 - **Publication Date**: January 2023 (First Edition)
 - **Publisher**: SMK IDN Boarding School (Jonggol, West Java, Indonesia)
-- **Format**: 125-Page Published E-Book / Educational Guide (PDF)
-- **Core Topics**: MIT Scratch, visual block programming, 2D game mechanics, collision detection, game physics, and computational thinking for beginners.
+- **Format**: 125-Page Published E-Book / Educational Guide (PDF, 7.9 MB)
+- **Core Topics**: MIT Scratch 3.0, visual block programming, 2D game loops, collision detection physics, state machines, and computational logic.
 - **Table of Contents (6 Chapters)**:
-  - BAB I: Membuat Game di Scratch (Introduction, Scratch installation, web interface)
-  - BAB II: Catching Fruit (Fruit catching 2D game mechanics & scripts)
-  - BAB III: Alien Invader (Space shooter mechanics & laser projectile physics)
-  - BAB IV: Game Adab (Interactive educational ethics game)
-  - BAB V: Pacman (Maze navigation, ghost AI, and collectible scoring)
-  - BAB VI: Block Breaker (Paddle bounce physics and brick destruction)
+  - BAB I: Membuat Game di Scratch (Introduction, Scratch installation, web interface, coordinate space)
+  - BAB II: Catching Fruit (Fruit catching 2D game mechanics, gravity acceleration, script loops)
+  - BAB III: Alien Invader (Space shooter mechanics, laser projectile cloning, collision detection)
+  - BAB IV: Game Adab (Interactive educational ethics game with branching choices)
+  - BAB V: Pacman (Maze navigation, wall color sensing, ghost patrol AI, collectible scoring)
+  - BAB VI: Block Breaker (Paddle bounce physics, angle reflection, brick destruction grid)
+- **Overview & Syllabus Page**: [https://adyvkapratama.my.id/publications/buku-membuat-game-tanpa-coding](https://adyvkapratama.my.id/publications/buku-membuat-game-tanpa-coding)
 - **Direct PDF URL**: [https://adyvkapratama.my.id/publications/buku-membuat-game-tanpa-coding-adyvka.pdf](https://adyvkapratama.my.id/publications/buku-membuat-game-tanpa-coding-adyvka.pdf)
-- **Interactive Preview**: [https://adyvkapratama.my.id/projects?filter=publications](https://adyvkapratama.my.id/projects?filter=publications)
+- **Interactive Directory**: [https://adyvkapratama.my.id/projects?filter=publications](https://adyvkapratama.my.id/projects?filter=publications)
 
 ### 2. "Membuat Website Dengan Mudah Menggunakan Framework" (Building Websites Easily with Frameworks)
 - **Author**: Rafif Sava Adyvka Pratama (Adyvka)
-- **Publication Date**: 2024
+- **Publication Date**: May 2024 (Student & Community Learning Edition)
 - **Publisher**: SMK IDN Boarding School
-- **Format**: 106-Page Technical Learning Module (PDF)
-- **Core Topics**: Semantic HTML5, modern CSS3 styling, responsive layouts, the CSS Box Model, and utility-first engineering with Tailwind CSS.
+- **Format**: 106-Page Technical Learning Module (PDF, 9.4 MB)
+- **Core Topics**: Semantic HTML5, modern CSS3 styling, responsive mobile-first layouts, the CSS Box Model, and utility-first engineering with Tailwind CSS.
 - **Table of Contents (4 Chapters)**:
-  - BAB I: Pengenalan HTML Dasar (Web architecture, Head/Body syntax, VS Code + Live Server setup, semantic markup)
-  - BAB II: Pengenalan CSS Dasar (Selectors, external stylesheets, Box Model, color systems, typography)
-  - BAB III: Membuat Project HTML CSS (Building a complete modern landing page project from scratch)
-  - BAB IV: Menggunakan Tailwind (Tailwind setup via CLI & CDN, utility classes, Flexbox/Grid, and responsive production layouts)
+  - BAB I: Pengenalan HTML Dasar (Web architecture, Head/Body syntax, VS Code + Live Server setup, semantic markup, tables & forms)
+  - BAB II: Pengenalan CSS Dasar (Selectors, external stylesheets, Box Model: margin/padding/border, color systems, typography)
+  - BAB III: Membuat Project HTML CSS (Building a complete modern landing page project from scratch with Flexbox)
+  - BAB IV: Menggunakan Tailwind (Tailwind setup via CLI & CDN, utility classes, Flexbox/Grid, Tailblocks integration, responsive breakpoints)
+- **Overview & Syllabus Page**: [https://adyvkapratama.my.id/publications/buku-membuat-website-dengan-framework](https://adyvkapratama.my.id/publications/buku-membuat-website-dengan-framework)
 - **Direct PDF URL**: [https://adyvkapratama.my.id/publications/buku-membuat-website-dengan-framework-adyvka.pdf](https://adyvkapratama.my.id/publications/buku-membuat-website-dengan-framework-adyvka.pdf)
-- **Interactive Preview**: [https://adyvkapratama.my.id/projects?filter=publications](https://adyvkapratama.my.id/projects?filter=publications)
+- **Interactive Directory**: [https://adyvkapratama.my.id/projects?filter=publications](https://adyvkapratama.my.id/projects?filter=publications)
+
+---
+
+## Professional Work Experience
+
+### 1. [PT Ardyanda Digital Inovasi — Full Stack Developer Internship](https://adyvkapratama.my.id/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship)
+- **URL**: [https://adyvkapratama.my.id/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship](https://adyvkapratama.my.id/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship)
+- **Period**: Jul 2026 — Jan 2027 (Current)
+- **Role**: Full Stack Developer (Internship)
+- **Location**: Bogor / Depok, West Java
+- **Summary**: Engineering internal business suites (payroll, loans, financial ledgers) and client-facing platforms across healthcare, mosque management systems, and CMS. Elevated from backend intern to core full-stack developer, direct client stakeholder liaison, and official company Master of Ceremonies (MC).
+
+### 2. [PT Intisel Prodaktifakom — Full Stack Engineer Freelance](https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance)
+- **URL**: [https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance](https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance)
+- **Period**: Feb 2026 — Present (Current)
+- **Role**: Full Stack Engineer & Project Manager
+- **Location**: Jakarta / Remote
+- **Summary**: Architected and engineered Databank ERP from an empty codebase. Built high-throughput NestJS APIs, PostgreSQL relational models, automated Huawei ISDP scraping bots, 3-tier digital signatures, and 65 granular RBAC security rules. Contract extended through 2026.
+
+### 3. [CV Richo Bahari — Frontend Developer Freelance](https://adyvkapratama.my.id/experience/cv-richo-bahari-frontend-developer-freelance)
+- **URL**: [https://adyvkapratama.my.id/experience/cv-richo-bahari-frontend-developer-freelance](https://adyvkapratama.my.id/experience/cv-richo-bahari-frontend-developer-freelance)
+- **Period**: May 2026 — Aug 2026
+- **Role**: Frontend Developer (Freelance)
+- **Location**: Cirebon / West Java
+- **Summary**: Designed and deployed the modern corporate web portal and industrial service catalog for CV Richo Bahari, supporting civil engineering, MEP, steel fabrication, and port logistics fleet operations.
+
+### 4. [Universitas Muhammadiyah Jakarta — Full Stack Engineer Contract](https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract)
+- **URL**: [https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract](https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract)
+- **Period**: Jul 2025 — Jan 2026
+- **Role**: Full Stack Engineer & Server Architect
+- **Location**: Jakarta (Faculty of Medicine)
+- **Summary**: Engineered the KEPK clinical research ethics evaluation platform. Digitized WHO/CIOMS ethical review protocols, automated multi-tier committee evaluations, and deployed production VPS infrastructure with automated daily encrypted backups.
+
+---
+
+## Technical Teaching Experience (All 9 Instructor Deployments)
+
+Rafif Sava Adyvka Pratama has served as lead instructor and mentor across 9 primary and secondary educational institutions:
+
+### 1. [SMA Lazuardi GCS — Web Development Instructor](https://adyvkapratama.my.id/experience/sma-lazuardi-gcs-web-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/sma-lazuardi-gcs-web-development-instructor](https://adyvkapratama.my.id/experience/sma-lazuardi-gcs-web-development-instructor)
+- **Date**: Sep 2025 · Depok, West Java
+- **Audience**: 25+ High School Students
+- **Focus**: Semantic HTML5 markup, CSS3 Flexbox/Grid layouts, responsive viewport design, and UI wireframing. Guided students to develop functional personal landing pages.
+
+### 2. [Hajrabyadl — Web Development Instructor](https://adyvkapratama.my.id/experience/hajrabyadl-web-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/hajrabyadl-web-development-instructor](https://adyvkapratama.my.id/experience/hajrabyadl-web-development-instructor)
+- **Date**: May 2025 · Community Workshop
+- **Audience**: 23+ Students
+- **Focus**: Foundational HTML/CSS styling, interactive UI components, design typography, and accessible webpage layout assembly.
+
+### 3. [SMP INS Depok — App Development Instructor](https://adyvkapratama.my.id/experience/smp-ins-depok-app-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/smp-ins-depok-app-development-instructor](https://adyvkapratama.my.id/experience/smp-ins-depok-app-development-instructor)
+- **Date**: Oct 2023 · Depok, West Java
+- **Audience**: 25+ Junior High Students
+- **Focus**: Mobile application fundamentals, visual block-based programming logic, mobile UI layout design, and deploying live prototype APKs.
+
+### 4. [SMPN 45 Depok — App Development Instructor](https://adyvkapratama.my.id/experience/smpn-45-app-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/smpn-45-app-development-instructor](https://adyvkapratama.my.id/experience/smpn-45-app-development-instructor)
+- **Date**: Sep 2023 · Depok, West Java
+- **Audience**: 10+ Junior High Students
+- **Focus**: Native Android app architecture, event handling, media integrations, and Kodular block programming.
+
+### 5. [Semut-Semut The Natural School — Game Development Instructor](https://adyvkapratama.my.id/experience/semut-semut-the-natural-school-game-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/semut-semut-the-natural-school-game-development-instructor](https://adyvkapratama.my.id/experience/semut-semut-the-natural-school-game-development-instructor)
+- **Date**: Oct 2023 · Depok, West Java
+- **Audience**: 25+ Elementary & Middle School Students
+- **Focus**: Computational thinking, 2D physics simulation, sprite animation cycles, collision math, and arcade mechanics using Scratch.
+
+### 6. [Al-Anshar Boarding School — App Design Instructor](https://adyvkapratama.my.id/experience/al-anshar-app-design-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/al-anshar-app-design-instructor](https://adyvkapratama.my.id/experience/al-anshar-app-design-instructor)
+- **Date**: Sep 2022 · Boarding School Campus
+- **Audience**: 15+ Students
+- **Focus**: UI/UX design fundamentals, Figma wireframing, color theory, design systems, and mobile app interface prototyping.
+
+### 7. [MTs Yasmine — Design Instructor](https://adyvkapratama.my.id/experience/mts-yasmine-design-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/mts-yasmine-design-instructor](https://adyvkapratama.my.id/experience/mts-yasmine-design-instructor)
+- **Date**: Oct 2022
+- **Audience**: 25+ Students
+- **Focus**: Graphic design hierarchy, typography rules, poster composition, and digital illustration using Figma and Canva.
+
+### 8. [Al-Anshar Boarding School — Game Development Instructor](https://adyvkapratama.my.id/experience/al-anshar-game-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/al-anshar-game-development-instructor](https://adyvkapratama.my.id/experience/al-anshar-game-development-instructor)
+- **Date**: Nov 2022
+- **Audience**: 15+ Students
+- **Focus**: 2D arcade game architecture, variable loops, event-driven scripting, and score tracking with MIT Scratch.
+
+### 9. [Griyya Sunnah — Game Development Instructor](https://adyvkapratama.my.id/experience/griyya-sunnah-game-development-instructor)
+- **URL**: [https://adyvkapratama.my.id/experience/griyya-sunnah-game-development-instructor](https://adyvkapratama.my.id/experience/griyya-sunnah-game-development-instructor)
+- **Date**: Jul 2022
+- **Audience**: 15+ Students
+- **Focus**: Algorithmic problem-solving through interactive game development, game mechanics design, and introductory programming logic.
+
+---
+
+## Leadership, Community & Survival Expeditions (All 6 Initiatives)
+
+### 1. [Singapore, Malaysia, Thailand Backpacker — 3-Country Expedition](https://adyvkapratama.my.id/experience/singapore-malaysia-thailand-backpacker-3-country)
+- **URL**: [https://adyvkapratama.my.id/experience/singapore-malaysia-thailand-backpacker-3-country](https://adyvkapratama.my.id/experience/singapore-malaysia-thailand-backpacker-3-country)
+- **Date**: Sep 2025 · Singapore, Malaysia, Thailand
+- **Competencies**: Cross-Cultural Fluency, Self-Funding, International Transit Logistics, Emergency Decision-Making
+- **Summary**: Selected as 1 of only 9 student delegates out of hundreds of applicants for the IDN International Backpacker program. Entire journey self-funded through freelance coding and design contracts. Independently navigated public transit, cross-border train junctions, and accommodations across 3 sovereign nations within one week.
+
+### 2. [IDN Student Council — Event Division Leader](https://adyvkapratama.my.id/experience/idn-student-council-event-division-leader)
+- **URL**: [https://adyvkapratama.my.id/experience/idn-student-council-event-division-leader](https://adyvkapratama.my.id/experience/idn-student-council-event-division-leader)
+- **Period**: Jan 2025 — Mar 2026 (Two Consecutive Terms)
+- **Competencies**: Cross-Functional Team Leadership, Budget Allocation, Event Operations, Sponsor Negotiation
+- **Summary**: Led the Student Council Event Division for two full annual terms. Directed end-to-end production pipelines, stage engineering, sponsor relations, and logistical operations for major campus ceremonies, technology hackathons, and regional inter-school competitions.
+
+### 3. [Barmus Voluntrip — Volunteer Event Organizer](https://adyvkapratama.my.id/experience/barmus-voluntrip-volunteer-event-organizer)
+- **URL**: [https://adyvkapratama.my.id/experience/barmus-voluntrip-volunteer-event-organizer](https://adyvkapratama.my.id/experience/barmus-voluntrip-volunteer-event-organizer)
+- **Date**: Feb 2026 · Grassroots Community Initiative
+- **Competencies**: Social Empathy, Field Logistics, Community Engagement, Resource Distribution
+- **Summary**: Coordinated field logistics, resource distribution, and direct community engagement for grassroots volunteer initiatives empowering underprivileged rural populations.
+
+### 4. [PT Intisel Semarang — Business & Life Survival](https://adyvkapratama.my.id/experience/pt-intisel-semarang-business-life-survival)
+- **URL**: [https://adyvkapratama.my.id/experience/pt-intisel-semarang-business-life-survival](https://adyvkapratama.my.id/experience/pt-intisel-semarang-business-life-survival)
+- **Date**: Nov 2025 · Semarang, Central Java
+- **Competencies**: Mental Resilience, Resourcefulness, Labor Logistics, Crisis Management
+- **Summary**: Completed a rigorous one-week urban survival initiative in an unfamiliar city with zero pocket money or safety net. Worked directly in telecom equipment logistics and warehouse operations to earn daily subsistence and fund the transit back home.
+
+### 5. [IT Fest 2025 — Competition Event Coordinator](https://adyvkapratama.my.id/experience/it-fest-2025-competition-event-coordinator)
+- **URL**: [https://adyvkapratama.my.id/experience/it-fest-2025-competition-event-coordinator](https://adyvkapratama.my.id/experience/it-fest-2025-competition-event-coordinator)
+- **Date**: Aug 2025 · Regional Competition
+- **Competencies**: Technical Judging Coordination, Event Planning, Committee Management
+- **Summary**: Coordinated venue planning, competition judging rubrics, and day-of-event operations for a regional IT festival, managing responsibilities across a 15+ student committee.
+
+### 6. [IDN Boarding School — Live In Rural Immersion](https://adyvkapratama.my.id/experience/idn-boarding-school-live-in-rural-immersion)
+- **URL**: [https://adyvkapratama.my.id/experience/idn-boarding-school-live-in-rural-immersion](https://adyvkapratama.my.id/experience/idn-boarding-school-live-in-rural-immersion)
+- **Date**: May 2024 · Rural West Java
+- **Competencies**: Community Empathy, Agricultural Labor, Social Impact
+- **Summary**: Lived with a traditional farming family for 7 full days with zero digital devices. Integrated into daily agricultural routines, tended community stalls, and performed restoration work on local village facilities.
 
 ---
 
@@ -106,59 +257,77 @@ Rafif Sava Adyvka Pratama has authored and published 2 educational books and tec
 
 ### 1. [1st Place: National Web Design Competition (ICOMFEST 2025)](https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition)
 - **URL**: [https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition](https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition)
-- **Institution**: Universitas Ahmad Dahlan (ICOMFEST 2025)
+- **Host**: Universitas Ahmad Dahlan (ICOMFEST 2025) · Feb 2025
 - **Project**: [PusakaKu](https://adyvkapratama.my.id/projects/pusakaku)
-- **Summary**: Awarded 1st Place National Champion among university and senior high teams nationwide. Led engineering architecture, public defense before the jury panel, and live platform demo.
+- **Summary**: Awarded 1st Place National Champion among university and senior high teams across Indonesia. Engineered the digital preservation platform, defended the technical architecture during the jury panel, and executed a live demo.
 
 ### 2. [2nd Place: National Web Design Competition (PNBITC#18)](https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc)
 - **URL**: [https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc](https://adyvkapratama.my.id/achievements/2nd-place-national-web-design-competition-pnbitc)
-- **Institution**: Politeknik Negeri Bali
-- **Summary**: National Runner-Up achieved during an intensive one-month development sprint balancing 12th-grade corporate internship duties.
+- **Host**: Politeknik Negeri Bali · Oct 2026
+- **Summary**: National Runner-Up (2nd Place) engineered during an intensive one-month sprint alongside demanding 12th-grade corporate internship duties.
 
-### 3. [Top 5 Finalist: National Web Development Competition (UNILA 2025)](https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition)
+### 3. [Top 5 Finalist: National Web Development Competition (UNILA 2024)](https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition)
 - **URL**: [https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition](https://adyvkapratama.my.id/achievements/finalist-national-web-dev-competition)
-- **Institution**: Universitas Lampung
-- **Summary**: Selected as Top 5 finalist for high-performance responsive web engineering.
+- **Host**: Universitas Lampung · Oct 2024
+- **Project**: [SemuaBisa](https://adyvkapratama.my.id/projects/semua-bisa)
+- **Summary**: Secured 4th Place (Top 5 Grand Finalist) as the sole vocational high school (SMK) team competing directly against university engineering teams nationwide.
 
-- Complete recognitions list: [https://adyvkapratama.my.id/achievements](https://adyvkapratama.my.id/achievements)
-
----
-
-## Professional & Leadership Experience
-
-### 1. [PT Intisel Prodaktifakom](https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance)
-- **URL**: [https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance](https://adyvkapratama.my.id/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance)
-- **Role**: Full Stack Engineer & Project Manager
-- **Highlights**: Led architecture of Databank ERP, directed engineering sprints, managed code reviews, and deployed mission-critical micro-APIs.
-
-### 2. [Universitas Muhammadiyah Jakarta](https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract)
-- **URL**: [https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract](https://adyvkapratama.my.id/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract)
-- **Role**: Full Stack Engineer & Server Architect
-- **Highlights**: Engineered the KEPK health ethics platform, automated multi-stage committee review workflows, and managed VPS production infrastructure.
-
-### 3. Technical Educator & Community Leadership
-- **Faculty Training**: Trained secondary school teachers at [SMPN 25 Depok](https://adyvkapratama.my.id/experience/smp-ins-depok-app-development-instructor) in web fundamentals and modern digital platforms.
-- **Student Council**: Head of Event Division at [SMK IDN Boarding School](https://adyvkapratama.my.id/experience/idn-student-council-event-division-leader) leading major technology seminars and school hackathons.
-- **Rural Immersion (Live In)**: Completed a 1-week community immersion [Live In](https://adyvkapratama.my.id/experience/idn-boarding-school-live-in-rural-immersion) living, farming, and contributing alongside traditional agricultural families in rural West Java.
-- **International Backpacker**: Selected for 3-country ASEAN cultural study [Singapore, Malaysia, Thailand Backpacker](https://adyvkapratama.my.id/experience/singapore-malaysia-thailand-backpacker-3-country) navigating independently.
-- Complete timeline: [https://adyvkapratama.my.id/experience](https://adyvkapratama.my.id/experience)
+### 4. [Best Poster Award: Idul Adha Festival](https://adyvkapratama.my.id/achievements/dummy-new-achievement)
+- **URL**: [https://adyvkapratama.my.id/achievements/dummy-new-achievement](https://adyvkapratama.my.id/achievements/dummy-new-achievement)
+- **Host**: IDN Boarding School · Dec 2023
+- **Summary**: Awarded Best Poster for typography hierarchy, visual negative space balance, and contemporary Islamic geometric aesthetics.
 
 ---
 
-## Verified Professional Credentials
+## All 23 Verified Professional Credentials & Certifications
 
-- **[Harvard University CS50](https://adyvkapratama.my.id/certificates/cs50-introduction-to-computer-science)**: Introduction to Computer Science (Algorithms, C, Python, SQL, Memory Management)
-- **[AWS Cloud Practitioner Essentials](https://adyvkapratama.my.id/certificates/cloud-practitioner-essentials)**: Amazon Web Services Cloud Architecture & Security
-- **[Dicoding Indonesia Back-End Developer](https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-back-end)**: Back-End Development, React Web, JavaScript, Cloud Architecture
-- **[DQLab Data Analyst Fundamentals](https://adyvkapratama.my.id/certificates/belajar-dasar-data-analyst)**: Data Analyst Fundamentals (SQL, Statistical Computation)
-- **[Skillvul Programming Fundamentals](https://adyvkapratama.my.id/certificates/memulai-pemrograman-dengan-c)**: C / C++ Programming Fundamentals
-- Complete certificate list: [https://adyvkapratama.my.id/certificates](https://adyvkapratama.my.id/certificates)
+Every credential links to its dedicated, verified detail page with curriculum breakdown and skills covered:
 
----
+1. **[Harvard University — CS50: Introduction to Computer Science](https://adyvkapratama.my.id/certificates/cs50-introduction-to-computer-science)** (Oct 2025)
+   - Skills: Algorithms, Data Structures, Memory Management, C, Python, SQL, Complexity Analysis
+2. **[Amazon Web Services (AWS) — Cloud Practitioner Essentials](https://adyvkapratama.my.id/certificates/cloud-practitioner-essentials)** (2024)
+   - Skills: AWS Global Cloud Infrastructure, EC2, S3, IAM Security, VPC Networking, Cloud Architecture
+3. **[Dicoding Indonesia × DBS Foundation — Coding Camp: Full Stack Developer](https://adyvkapratama.my.id/certificates/coding-camp-full-stack-developer)** (Apr 2026)
+   - Skills: Full-Stack Web Development, Node.js REST APIs, Scalable Backends, React Frontends
+4. **[Dicoding Indonesia — Frontend Web Developer](https://adyvkapratama.my.id/certificates/frontend-web-developer)** (Mar 2026)
+   - Skills: Semantic HTML5, Responsive Layouts, Modern CSS3, DOM Manipulation, Web Accessibility
+5. **[Dicoding Indonesia — Belajar Membuat Aplikasi Back-End](https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-back-end)** (2024)
+   - Skills: RESTful API Architecture, Node.js, Hapi framework, Server Routing, Request Validation
+6. **[Dicoding Indonesia — Belajar Membuat Aplikasi Web dengan React](https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-web-dengan-react)** (2025)
+   - Skills: React.js Component Architecture, Hooks, Controlled State, SPA Routing
+7. **[Dicoding Indonesia — Belajar Dasar Pemrograman JavaScript](https://adyvkapratama.my.id/certificates/belajar-dasar-pemrograman-javascript)** (2024)
+   - Skills: Modern ECMAScript (ES6+), Asynchronous JavaScript, Closures, Functional Programming
+8. **[Dicoding Indonesia — Belajar Dasar Git dengan GitHub](https://adyvkapratama.my.id/certificates/belajar-dasar-git-dengan-github)** (2024)
+   - Skills: Version Control, Branch Management, Merge Conflicts, Pull Requests, Git Rebase
+9. **[Dicoding Indonesia — Belajar Dasar Data Analyst](https://adyvkapratama.my.id/certificates/belajar-dasar-data-analyst)** (2024)
+   - Skills: Exploratory Data Analysis, Tabular Transformations, Statistical Computation
+10. **[Dicoding Indonesia — Memulai Pemrograman Dengan Python](https://adyvkapratama.my.id/certificates/memulai-pemrograman-dengan-python)** (2024)
+    - Skills: Python Syntax, Algorithmic Logic, Control Flow, Data Structures
+11. **[Dicoding Indonesia — Memulai Pemrograman Dengan C](https://adyvkapratama.my.id/certificates/memulai-pemrograman-dengan-c)** (2023)
+    - Skills: C Programming, Pointer Arithmetic, Low-Level Memory Management
+12. **[Dicoding Indonesia — Belajar Dasar Pemrograman Web](https://adyvkapratama.my.id/certificates/belajar-dasar-pemrograman-web)** (2024)
+    - Skills: HTML5 Semantic Architecture, CSS Styling, Responsive Viewports
+13. **[Dicoding Indonesia — Pengenalan ke Logika Pemrograman](https://adyvkapratama.my.id/certificates/pengenalan-ke-logika-pemrograman)** (2023)
+    - Skills: Computational Logic, Flowcharts, Algorithmic Sequencing, Pseudocode
+14. **[Dicoding Indonesia — Meniti Karier Sebagai Software Developer](https://adyvkapratama.my.id/certificates/meniti-karier-sebagai-software-developer)** (2024)
+    - Skills: Software Development Life Cycle (SDLC), Agile Sprints, Code Standards
+15. **[DQLab — Python Fundamentals](https://adyvkapratama.my.id/certificates/python-fundamentals)** (2024)
+    - Skills: Data Science Basics, Pandas, Python Data Manipulation
+16. **[Skilvul — Pemrograman Dasar C](https://adyvkapratama.my.id/certificates/pemrograman-dasar-c)** (2023)
+    - Skills: C Language Syntax, Loops, Conditional Branching, Array Processing
+17. **[Figma Academy — Dasar UI/UX Design](https://adyvkapratama.my.id/certificates/dasar-ui-ux-design)** (2023)
+    - Skills: Wireframing, High-Fidelity UI Prototyping, Component Design Systems
+18. **[AI Course — Dasar Prompt Engineering](https://adyvkapratama.my.id/certificates/dasar-prompt-engineering)** (2025)
+    - Skills: Few-Shot Prompting, Chain-of-Thought, LLM Parameter Tuning
+19. **[AI Academy — Artificial Intelligence Basics](https://adyvkapratama.my.id/certificates/artificial-intelligence-basics)** (2024)
+    - Skills: Neural Networks, Machine Learning Foundations, AI Ethics
+20. **[Canva — Graphic Design Fundamentals](https://adyvkapratama.my.id/certificates/graphic-design-fundamentals)** (2023)
+    - Skills: Visual Balance, Color Palettes, Brand Assets, Editorial Typography
+21. **[Finance Course — Financial Literacy Fundamentals](https://adyvkapratama.my.id/certificates/financial-literacy-fundamentals)** (2023)
+    - Skills: Budgeting Frameworks, Financial Planning, Asset Allocation
+22. **[Google Developer Groups (GDG) — Participant](https://adyvkapratama.my.id/certificates/google-developer-groups-participant)** (2024)
+    - Skills: Cloud Infrastructure, Modern Web Standards, Google Developer Community
+23. **[English Language Course — English Proficiency Assessment](https://adyvkapratama.my.id/certificates/english-proficiency-assessment)** (2024)
+    - Skills: Global Technical Communication, Written & Spoken English Proficiency
 
-## Official Social & Developer Links
-
-- **Website**: [https://adyvkapratama.my.id](https://adyvkapratama.my.id)
-- **GitHub**: [https://github.com/adyvka31](https://github.com/adyvka31)
-- **LinkedIn**: [https://www.linkedin.com/in/adyvka-pratama/](https://www.linkedin.com/in/adyvka-pratama/)
-- **Contact Email**: [rafifdyvka07@gmail.com](mailto:rafifdyvka07@gmail.com)
+- Complete certificates index: [https://adyvkapratama.my.id/certificates](https://adyvkapratama.my.id/certificates)
