@@ -7,6 +7,7 @@ import NativeReveal from "../../components/Reveal/NativeReveal";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
 import Card from "../../components/Card/Card";
+import { ArrowRightIcon } from "../../components/Icons/Icons";
 import {
   experiencesList,
   allTeachingExperiences,
@@ -239,6 +240,30 @@ export default function ExperiencePage() {
               </NativeReveal>
             ))}
           </div>
+
+          {/* Authored Books & Learning Modules Callout */}
+          <NativeReveal delay={0.2} className="reveal-slide-up">
+            <div className={styles.publicationBanner}>
+              <div className={styles.publicationBannerContent}>
+                <span className={styles.publicationBadge}>
+                  Official Curriculum & Published Books
+                </span>
+                <h3 className={styles.publicationTitle}>
+                  Authored Technical Books & Learning Modules
+                </h3>
+                <p className={styles.publicationDesc}>
+                  As part of his teaching tenure and technical educator outreach, Rafif authored and published 2 comprehensive guides (125-page Scratch Game Programming & 106-page Modern Web with Tailwind CSS) utilized in active classroom instruction.
+                </p>
+              </div>
+              <Link
+                to="/projects?filter=publications"
+                className={`btn-primary ${styles.publicationCta}`}
+              >
+                <span>Explore Books & Modules</span>
+                <ArrowRightIcon size={14} />
+              </Link>
+            </div>
+          </NativeReveal>
         </div>
       </section>
 

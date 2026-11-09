@@ -2,6 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Immediate Canonical Domain Redirect (adyvka-pratama.netlify.app -> adyvkapratama.my.id) -->
+    <script>
+      (function() {
+        if (window.location.hostname === 'adyvka-pratama.netlify.app') {
+          window.location.replace('https://adyvkapratama.my.id' + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <!-- Google tag (gtag.js) - Deferred loading on user interaction / idle to maximize performance -->

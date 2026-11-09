@@ -42,6 +42,11 @@ import itfestImg from "../assets/it-fest-2025-competition-event-coordinator.webp
 import semarangImg from "../assets/pt-intisel-semarang-business-survival.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import posterImg from "../assets/idn-boarding-school-best-poster-award.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 
+import bookGameCover from "../assets/buku-membuat-game-tanpa-coding-cover.webp?w=400;800&quality=85&format=avif;webp&as=picture";
+import bookWebCover from "../assets/buku-membuat-website-dengan-framework-cover.webp?w=400;800&quality=85&format=avif;webp&as=picture";
+import bookGamePdf from "../assets/buku-membuat-game-tanpa-coding-adyvka.pdf";
+import bookWebPdf from "../assets/buku-membuat-website-dengan-framework-adyvka.pdf";
+
 import dataanalystImg from "../assets/dicoding-data-analyst-fundamentals-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import backendImg from "../assets/dicoding-backend-developer-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import gitImg from "../assets/dicoding-git-github-fundamentals-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
@@ -526,9 +531,132 @@ export const projects = [
   },
 ];
 
+export const publicationsList = [
+  {
+    id: "buku-membuat-game-tanpa-coding",
+    slug: "buku-membuat-game-tanpa-coding",
+    category: "publications",
+    type: "book",
+    label: "BOOK & MODULE · GAME LOGIC & SCRATCH",
+    title: "Membuat Game Tanpa Coding",
+    subtitle: "A Beginner's Guide to Visual Programming with MIT Scratch",
+    author: "Rafif Sava Adyvka Pratama",
+    year: "2023",
+    edition: "First Edition, January 2023",
+    publisher: "SMK IDN Boarding School",
+    pages: 125,
+    fileSize: "7.9 MB",
+    pdfUrl: bookGamePdf,
+    downloadPath: "/publications/buku-membuat-game-tanpa-coding-adyvka.pdf",
+    cover: bookGameCover,
+    thumbnail: bookGameCover,
+    image: bookGameCover,
+    description:
+      "A comprehensive 125-page published book introducing computational thinking, game mechanics, and 2D visual programming using MIT Scratch without complex coding syntax. Used as standard curriculum across multiple schools and student workshops.",
+    tags: [
+      "Scratch",
+      "Game Development",
+      "Visual Programming",
+      "Game Logic",
+      "125 Pages",
+      "E-Book",
+    ],
+    chapters: [
+      {
+        num: "BAB I",
+        title: "Membuat Game di Scratch",
+        desc: "1.1 Introduction to visual block programming · 1.2 Downloading and installing Scratch · 1.3 Using Scratch on the web.",
+      },
+      {
+        num: "BAB II",
+        title: "Catching Fruit",
+        desc: "2.1 Concept · 2.2 Gameplay UI · 2.3 Creating & importing Sprites · 2.4 Designing Backgrounds · 2.5 Complete game logic & scripts.",
+      },
+      {
+        num: "BAB III",
+        title: "Alien Invader",
+        desc: "3.1 Concept · 3.2 Gameplay UI · 3.3 Sprite design & animation · 3.4 Background setup · 3.5 Laser projectile shooting & collision scripts.",
+      },
+      {
+        num: "BAB IV",
+        title: "Game Adab",
+        desc: "4.1 Educational game concept · 4.2 Gameplay UI · 4.3 Character Sprites · 4.4 Environmental Backgrounds · 4.5 Interactive choice & score logic.",
+      },
+      {
+        num: "BAB V",
+        title: "Pacman",
+        desc: "5.1 Maze survival mechanics · 5.2 Gameplay UI · 5.3 Player & ghost Sprites · 5.4 Labyrinth Backdrop · 5.5 Path navigation & collectible scripts.",
+      },
+      {
+        num: "BAB VI",
+        title: "Block Breaker",
+        desc: "6.1 Arcade paddle & bounce physics · 6.2 Gameplay UI · 6.3 Paddle & ball Sprites · 6.4 Stage Backdrop · 6.5 Reflection angles & brick destruction logic.",
+      },
+    ],
+    targetAudience:
+      "Junior/senior high school students, introductory CS educators, and beginners seeking to master algorithm logic visually.",
+  },
+  {
+    id: "buku-membuat-website-dengan-framework",
+    slug: "buku-membuat-website-dengan-framework",
+    category: "publications",
+    type: "book",
+    label: "PRACTICAL MODULE · WEB DEVELOPMENT & TAILWIND CSS",
+    title: "Membuat Website Dengan Mudah Menggunakan Framework",
+    subtitle: "Foundations of HTML5, CSS3, and Modern Utility-First Tailwind CSS",
+    author: "Rafif Sava Adyvka Pratama",
+    year: "2024",
+    edition: "Student & Community Learning Edition",
+    publisher: "SMK IDN Boarding School",
+    pages: 106,
+    fileSize: "28 MB",
+    pdfUrl: bookWebPdf,
+    downloadPath: "/publications/buku-membuat-website-dengan-framework-adyvka.pdf",
+    cover: bookWebCover,
+    thumbnail: bookWebCover,
+    image: bookWebCover,
+    description:
+      "A 106-page step-by-step practical engineering module guiding beginners from zero to building modern, responsive production web interfaces with HTML5, CSS3, and utility-first Tailwind CSS.",
+    tags: [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Web Development",
+      "Responsive Layout",
+      "106 Pages",
+      "Practical Module",
+    ],
+    chapters: [
+      {
+        num: "BAB I",
+        title: "Pengenalan HTML Dasar",
+        desc: "Core web architecture, semantic document markup, Head & Body tags, VS Code + Live Server setup, text elements, media, hyperlinks, tables, and forms.",
+      },
+      {
+        num: "BAB II",
+        title: "Pengenalan CSS Dasar",
+        desc: "CSS syntax, element/class/ID selectors, internal & external stylesheets, the Box Model (margin, padding, border), color palettes, and typography.",
+      },
+      {
+        num: "BAB III",
+        title: "Membuat Project HTML CSS",
+        desc: "Hands-on project constructing a clean, fully-structured landing page with custom Hero sections, navigation bars, content grids, and interactive buttons.",
+      },
+      {
+        num: "BAB IV",
+        title: "Menggunakan Tailwind",
+        desc: "Tailwind philosophy, CLI & CDN installation, core utility classes, Tailwind component libraries (Tailblocks), and engineering a complete modern responsive web layout.",
+      },
+    ],
+    targetAudience:
+      "Vocational high school students, CS undergraduates, junior developers, and self-taught learners mastering modern responsive web development.",
+  },
+];
+
 export const projectFilters = [
   { id: "web", label: "Web" },
   { id: "mobile", label: "Mobile" },
+  { id: "publications", label: "Books & Modules" },
 ];
 
 export const extraCertificatesOnlyForPage = [
@@ -990,10 +1118,16 @@ export const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
-export const projectsList = projects.map((p) => ({
-  ...p,
-  slug: p.id, // already URL-safe in your data
-}));
+export const projectsList = [
+  ...projects.map((p) => ({
+    ...p,
+    slug: p.id,
+  })),
+  ...publicationsList.map((pub) => ({
+    ...pub,
+    slug: pub.slug,
+  })),
+];
 
 // Helper: get prev/next in a list
 export function getSiblings(list, slug) {

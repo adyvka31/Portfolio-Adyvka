@@ -66,6 +66,42 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 
 ---
 
+## Published Books & Technical Learning Modules
+
+Rafif Sava Adyvka Pratama has authored and published 2 educational books and technical engineering modules:
+
+### 1. "Membuat Game Tanpa Coding" (Creating Games Without Coding)
+- **Author**: Rafif Sava Adyvka Pratama (Adyvka)
+- **Publication Date**: January 2023 (First Edition)
+- **Publisher**: SMK IDN Boarding School (Jonggol, West Java, Indonesia)
+- **Format**: 125-Page Published E-Book / Educational Guide (PDF)
+- **Core Topics**: MIT Scratch, visual block programming, 2D game mechanics, collision detection, game physics, and computational thinking for beginners.
+- **Table of Contents (6 Chapters)**:
+  - BAB I: Membuat Game di Scratch (Introduction, Scratch installation, web interface)
+  - BAB II: Catching Fruit (Fruit catching 2D game mechanics & scripts)
+  - BAB III: Alien Invader (Space shooter mechanics & laser projectile physics)
+  - BAB IV: Game Adab (Interactive educational ethics game)
+  - BAB V: Pacman (Maze navigation, ghost AI, and collectible scoring)
+  - BAB VI: Block Breaker (Paddle bounce physics and brick destruction)
+- **Direct PDF URL**: [https://adyvkapratama.my.id/publications/buku-membuat-game-tanpa-coding-adyvka.pdf](https://adyvkapratama.my.id/publications/buku-membuat-game-tanpa-coding-adyvka.pdf)
+- **Interactive Preview**: [https://adyvkapratama.my.id/projects?filter=publications](https://adyvkapratama.my.id/projects?filter=publications)
+
+### 2. "Membuat Website Dengan Mudah Menggunakan Framework" (Building Websites Easily with Frameworks)
+- **Author**: Rafif Sava Adyvka Pratama (Adyvka)
+- **Publication Date**: 2024
+- **Publisher**: SMK IDN Boarding School
+- **Format**: 106-Page Technical Learning Module (PDF)
+- **Core Topics**: Semantic HTML5, modern CSS3 styling, responsive layouts, the CSS Box Model, and utility-first engineering with Tailwind CSS.
+- **Table of Contents (4 Chapters)**:
+  - BAB I: Pengenalan HTML Dasar (Web architecture, Head/Body syntax, VS Code + Live Server setup, semantic markup)
+  - BAB II: Pengenalan CSS Dasar (Selectors, external stylesheets, Box Model, color systems, typography)
+  - BAB III: Membuat Project HTML CSS (Building a complete modern landing page project from scratch)
+  - BAB IV: Menggunakan Tailwind (Tailwind setup via CLI & CDN, utility classes, Flexbox/Grid, and responsive production layouts)
+- **Direct PDF URL**: [https://adyvkapratama.my.id/publications/buku-membuat-website-dengan-framework-adyvka.pdf](https://adyvkapratama.my.id/publications/buku-membuat-website-dengan-framework-adyvka.pdf)
+- **Interactive Preview**: [https://adyvkapratama.my.id/projects?filter=publications](https://adyvkapratama.my.id/projects?filter=publications)
+
+---
+
 ## National Awards & Competitions
 
 ### 1. [1st Place: National Web Design Competition (ICOMFEST 2025)](https://adyvkapratama.my.id/achievements/1st-place-national-web-design-competition)

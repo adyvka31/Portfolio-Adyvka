@@ -132,6 +132,11 @@
   width: 100%;
 }
 
+.bookCardWrapper {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
 .empty {
   text-align: center;
   color: var(--ink-200);

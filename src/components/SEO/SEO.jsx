@@ -34,6 +34,14 @@ const CORE_KEYWORDS = [
   "PT Intisel",
   "SMK IDN Boarding School",
   "Harvard CS50",
+  "Membuat Game Tanpa Coding",
+  "Membuat Website Dengan Mudah Menggunakan Framework",
+  "Buku Rafif Sava Adyvka Pratama",
+  "Buku Adyvka",
+  "Adyvka Book Author",
+  "Technical Author",
+  "Scratch Programming Guide",
+  "Tailwind CSS Learning Module",
 ];
 
 /**
@@ -164,7 +172,94 @@ export default function SEO({
       "Database Design",
       "ERP Systems",
       "RESTful APIs",
+      "Game Development Education",
+      "Scratch Visual Programming",
+      "Web Development Pedagogy",
+      "Tailwind CSS Framework",
+      "Technical Curriculum Writing",
     ],
+    author: [
+      {
+        "@type": "Book",
+        "@id": `${SITE_URL}/publications/buku-membuat-game-tanpa-coding#book`,
+        name: "Membuat Game Tanpa Coding",
+        alternateName: "Creating 2D Games Without Coding — Scratch Visual Programming Guide",
+        headline: "Membuat Game Tanpa Coding",
+        author: { "@id": `${SITE_URL}/#person` },
+        numberOfPages: 125,
+        inLanguage: "id",
+        datePublished: "2023-01",
+        publisher: {
+          "@type": "Organization",
+          name: "SMK IDN Boarding School",
+        },
+        description:
+          "A 125-page comprehensive educational book on 2D visual programming, game mechanics, and computational thinking using MIT Scratch.",
+        bookFormat: "https://schema.org/EBook",
+        encodingFormat: "application/pdf",
+        url: `${SITE_URL}/projects?filter=publications`,
+      },
+      {
+        "@type": "Book",
+        "@id": `${SITE_URL}/publications/buku-membuat-website-dengan-framework#book`,
+        name: "Membuat Website Dengan Mudah Menggunakan Framework",
+        alternateName: "Building Modern Websites Easily with Frameworks — HTML5, CSS3, & Tailwind CSS",
+        headline: "Membuat Website Dengan Mudah Menggunakan Framework",
+        author: { "@id": `${SITE_URL}/#person` },
+        numberOfPages: 106,
+        inLanguage: "id",
+        datePublished: "2024",
+        publisher: {
+          "@type": "Organization",
+          name: "SMK IDN Boarding School",
+        },
+        description:
+          "A 106-page practical learning module guiding readers from HTML5/CSS3 foundations to engineering modern responsive interfaces with Tailwind CSS.",
+        bookFormat: "https://schema.org/EBook",
+        encodingFormat: "application/pdf",
+        url: `${SITE_URL}/projects?filter=publications`,
+      },
+    ],
+  };
+
+  const bookGameEntity = {
+    "@type": "Book",
+    "@id": `${SITE_URL}/publications/buku-membuat-game-tanpa-coding#book`,
+    name: "Membuat Game Tanpa Coding",
+    alternateName: "Creating 2D Games Without Coding — Scratch Visual Programming Guide",
+    author: { "@id": `${SITE_URL}/#person` },
+    numberOfPages: 125,
+    inLanguage: "id",
+    datePublished: "2023-01",
+    publisher: {
+      "@type": "Organization",
+      name: "SMK IDN Boarding School",
+    },
+    description:
+      "Comprehensive 125-page guide to learning game mechanics, sprite manipulation, and computational logic using MIT Scratch without writing complex code syntax.",
+    bookFormat: "https://schema.org/EBook",
+    encodingFormat: "application/pdf",
+    url: `${SITE_URL}/projects?filter=publications`,
+  };
+
+  const bookWebEntity = {
+    "@type": "Book",
+    "@id": `${SITE_URL}/publications/buku-membuat-website-dengan-framework#book`,
+    name: "Membuat Website Dengan Mudah Menggunakan Framework",
+    alternateName: "Building Modern Websites Easily with Frameworks — HTML5, CSS3, & Tailwind CSS",
+    author: { "@id": `${SITE_URL}/#person` },
+    numberOfPages: 106,
+    inLanguage: "id",
+    datePublished: "2024",
+    publisher: {
+      "@type": "Organization",
+      name: "SMK IDN Boarding School",
+    },
+    description:
+      "Structured 106-page technical learning module covering semantic HTML5, modern CSS3 styling, and utility-first layout engineering with Tailwind CSS.",
+    bookFormat: "https://schema.org/EBook",
+    encodingFormat: "application/pdf",
+    url: `${SITE_URL}/projects?filter=publications`,
   };
 
   const websiteEntity = {
@@ -188,7 +283,13 @@ export default function SEO({
     inLanguage: "en-US",
   };
 
-  const graph = [personEntity, websiteEntity, webPageEntity];
+  const graph = [
+    personEntity,
+    websiteEntity,
+    webPageEntity,
+    bookGameEntity,
+    bookWebEntity,
+  ];
 
   // If this is a profile page (Home or About), attach Google ProfilePage entity
   if (type === "profile" || path === "" || path === "/" || path === "/about") {

@@ -1,1 +1,6 @@
-/* /index.html   200
+# Canonical Domain 301 Redirect (Consolidate indexing strictly to adyvkapratama.my.id)
+https://adyvka-pratama.netlify.app/* https://adyvkapratama.my.id/:splat 301!
+http://adyvka-pratama.netlify.app/* https://adyvkapratama.my.id/:splat 301!
+
+# SPA fallback
+/* /index.html 200
