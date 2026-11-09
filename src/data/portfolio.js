@@ -74,6 +74,7 @@ export const personalInfo = {
   title: "Software Engineer // Systems Architect & Polyglot Builder",
   role: "Software Engineer & Systems Architect",
   education: "Final-Year Student Majoring in Software Engineering (Rekayasa Perangkat Lunak) at SMK IDN Boarding School",
+  academicRecord: "96 / 100 GPA (Semester 4 Report Card / Academic Honors)",
   school: "SMK IDN Boarding School",
   major: "Software Engineering (Rekayasa Perangkat Lunak)",
   location: "Depok, West Java, Indonesia",

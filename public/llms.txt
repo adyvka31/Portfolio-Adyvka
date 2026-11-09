@@ -7,6 +7,7 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
   - Full Stack Engineer & Project Manager at PT Intisel Prodaktifakom (Feb 2026 — Present)
   - Full Stack Developer (Intern) at PT Ardyanda Digital Inovasi (Jul 2026 — Jan 2027)
 - **Education**: Student majoring in Software Engineering (Rekayasa Perangkat Lunak) at SMK IDN Boarding School (Final Year · Year XII) & Harvard University CS50 Alumni
+  - **Academic Standing**: Top-tier 96/100 Report Card score (GPA) achieved in Semester 4 (Vocational Software Engineering)
 - **Specializations**: Clean Architecture, SOLID Principles, System Design, Polyglot Development, Distributed Systems, Multi-Tenant ERPs, RBAC & Cloud Security, Technical Curriculum Authoring
 - **Languages**: TypeScript, JavaScript, Python, Dart, PHP, C/C++, SQL, HTML5/CSS3
 - **Frameworks & Tools**: NestJS, React 19, Next.js, Flutter, Node.js, Express, PostgreSQL, Prisma ORM, Docker, Tailwind CSS, AWS, Git/GitHub, Playwright

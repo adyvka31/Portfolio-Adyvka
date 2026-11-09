@@ -14,6 +14,7 @@ const INTRO_FACTS = [
   { label: "Location", value: "Depok, West Java, Indonesia" },
   { label: "Current role", value: "Software Engineer & PM at PT Intisel" },
   { label: "Education", value: "SMK IDN Boarding School (Software Engineering · Year XII)" },
+  { label: "Academic standing", value: "96 / 100 GPA (Semester 4 · Academic Honors)" },
 ];
 
 const TRACKS = [
@@ -83,8 +84,8 @@ const TRACKS = [
     grade: "SMK · Year 2",
     tech: {
       label: "TECHNICAL",
-      title: "Full Stack & Competitions",
-      detail: "Delivered systems for UMJ and national technology competitions.",
+      title: "Academic Honors & Full Stack",
+      detail: "Achieved a 96/100 Semester 4 GPA while delivering systems for UMJ and winning national competitions.",
     },
     human: {
       label: "HUMAN",
@@ -213,9 +214,9 @@ const CURRENTLY = [
     detail: "Full Stack & PM leading enterprise platform at PT Intisel.",
   },
   {
-    label: "STUDYING",
-    title: "Software Engineering Major",
-    detail: "Final-year Software Engineering (RPL) student at SMK IDN Boarding School.",
+    label: "ACADEMICS",
+    title: "96 / 100 GPA Record",
+    detail: "Top-tier academic score achieved in Semester 4 of Software Engineering at SMK IDN Boarding School.",
   },
   {
     label: "DEEPENING",
@@ -322,6 +323,7 @@ export default function AboutPage() {
         description="Software Engineer & Systems Architect crafting robust multi-platform systems. Final-year student majoring in Software Engineering at SMK IDN Boarding School, currently leading system architecture and ERP delivery at PT Intisel."
         meta={[
           { label: "Age", value: "17" },
+          { label: "Academic Record", value: "96 / 100 GPA (Sem 4)" },
           { label: "Discipline", value: "Software Engineering & Architecture" },
           { label: "Core Stack", value: "Polyglot (TS, Python, Dart, PHP, C++)" },
           { label: "Experience", value: "5+ Years · Est. 2021" },
