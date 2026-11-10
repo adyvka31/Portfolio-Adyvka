@@ -288,25 +288,31 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening}`}
           onAnimationEnd={handleAnimationEnd}
           role="dialog"
-          aria-label="Ask Adyvka"
+          aria-label="Ask Adyvka Assistant"
           aria-modal="true"
         >
           {/* Header (Clean minimal, human, single close button) */}
           <header className={styles.chatHeader}>
             <div className={styles.headerLeft}>
               <div className={styles.botAvatar}>
-                <img
-                  src={profilePhoto}
-                  alt="Adyvka"
-                  className={styles.botAvatarImg}
-                  width={36}
-                  height={36}
-                />
+                <div className={styles.botAvatarImgWrap}>
+                  <img
+                    src={profilePhoto}
+                    alt="Rafif Sava Adyvka Pratama"
+                    className={styles.botAvatarImg}
+                    width={36}
+                    height={36}
+                  />
+                </div>
                 <span className={styles.avatarLiveDot} aria-hidden="true" />
               </div>
               <div className={styles.headerInfo}>
-                <span className={styles.botName}>Adyvka</span>
-                <span className={styles.botStatus}>Online</span>
+                <span className={styles.botName}>Adyvka Assistant</span>
+                <span className={styles.botStatus}>
+                  <span className={styles.statusLabel}>Portfolio AI</span>
+                  <span className={styles.statusDivider} aria-hidden="true">•</span>
+                  <span className={styles.statusLive}>Online</span>
+                </span>
               </div>
             </div>
 
@@ -429,21 +435,23 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           type="button"
           className={`${styles.launcherBtn} ${isChatActive ? styles.launcherBtnOpen : ""}`}
           onClick={handleToggle}
-          title={isChatActive ? "Close conversation" : "Ask Adyvka"}
-          aria-label={isChatActive ? "Close conversation" : "Ask Adyvka"}
+          title={isChatActive ? "Close conversation" : "Ask Adyvka Assistant"}
+          aria-label={isChatActive ? "Close conversation" : "Ask Adyvka Assistant"}
           aria-expanded={isChatActive}
         >
           <div
             className={`${styles.iconLayer} ${styles.avatarLayer} ${isChatActive ? styles.layerHidden : styles.layerActive}`}
             aria-hidden={isChatActive}
           >
-            <img
-              src={profilePhoto}
-              alt="Adyvka"
-              className={styles.launcherAvatarImg}
-              width={48}
-              height={48}
-            />
+            <div className={styles.launcherAvatarImgWrap}>
+              <img
+                src={profilePhoto}
+                alt="Rafif Sava Adyvka Pratama"
+                className={styles.launcherAvatarImg}
+                width={48}
+                height={48}
+              />
+            </div>
             <span className={styles.pulseDot} aria-hidden="true" />
           </div>
 
