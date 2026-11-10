@@ -3,18 +3,16 @@ import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import NativeReveal from "../../components/Reveal/NativeReveal";
-import profilePhoto from "../../assets/rafif-sava-adyvka-pratama-software-engineer.webp";
+import LanyardBadge from "../../components/LanyardBadge/LanyardBadge";
 import styles from "./AboutPage.module.css";
-import Image from "../../components/Image/Image";
 
 /* ====== DATA ====== */
 const INTRO_FACTS = [
-  { label: "Full name", value: "Rafif Sava Adyvka Pratama" },
   { label: "Alias", value: "Adyvka" },
-  { label: "Location", value: "Depok, West Java, Indonesia" },
-  { label: "Current role", value: "Software Engineer & PM at PT Intisel" },
-  { label: "Education", value: "SMK IDN Boarding School (Software Engineering · Year XII)" },
-  { label: "Academic standing", value: "96 / 100 GPA (Semester 4 · Academic Honors)" },
+  { label: "Base", value: "Depok, West Java, ID" },
+  { label: "Affiliation", value: "PT Intisel & PT Ardyanda" },
+  { label: "Education", value: "SMK IDN (Software Engineering)" },
+  { label: "Academics", value: "96 / 100 GPA (Honors)" },
 ];
 
 const TRACKS = [
@@ -346,74 +344,35 @@ export default function AboutPage() {
               <NativeReveal delay={0.2}>
                 <div className={styles.introBody}>
                   <p>
-                    I'm Rafif Sava Adyvka Pratama (known to friends and colleagues as <em>Adyvka</em>), a
+                    I am Rafif Sava Adyvka Pratama (known to friends and colleagues as <em>Adyvka</em>), a
                     software engineer, educator, and systems builder based in West Java, Indonesia.
-                    I discovered the joy of programming at age 13, not as an abstract academic exercise,
-                    but as a craft of turning curiosity into tangible tools that make life simpler
-                    for real people. Rather than being confined to a single framework, I approach engineering
-                    as a deliberate problem solver, selecting the right languages and patterns to build
-                    resilient, high-performance systems spanning web, mobile, and cloud infrastructure.
+                    Since discovering programming at age 13, I have treated code as a craft of turning
+                    curiosity into practical tools that make life simpler for real people.
+                    Rather than sticking to a single framework, I approach engineering as a deliberate
+                    problem solver, choosing the right patterns to build resilient, high-performance
+                    systems across web, mobile, and cloud infrastructure.
                   </p>
                   <p>
-                    Currently a final-year vocational student majoring in Software Engineering
-                    (Rekayasa Perangkat Lunak) at SMK IDN Boarding School, my education extends far beyond
-                    textbooks. I concurrently lead enterprise software delivery, architecting the <em>Databank ERP</em> for
-                    national telecommunications contractor PT Intisel as Project Manager, and engineering internal payroll
-                    and client platforms at PT Ardyanda. Balancing high-stakes production uptime with a <strong>96 / 100 Semester 4 GPA</strong> taught
-                    me early on that passion without rigor is just potential, but quiet discipline turns ideas into durable software.
+                    Currently in my final year majoring in Software Engineering at SMK IDN Boarding School,
+                    my education pairs classroom study with enterprise delivery.
+                    I serve as Project Manager architecting the <em>Databank ERP</em> for
+                    national contractor PT Intisel, while engineering internal platforms at PT Ardyanda.
+                    Balancing production uptime with a <strong>96 / 100 GPA</strong> taught me early on
+                    that quiet discipline turns ambitious ideas into durable software.
                   </p>
                   <p>
                     My journey has been shaped as much by people as by code: authoring two published books
-                    to help junior students learn without intimidation, self-funding solo backpacking expeditions
-                    across Southeast Asia through freelance design, and surviving in unfamiliar cities with zero safety net.
-                    Every system I engineer carries that same standard of grit, empathy, and uncompromising craftsmanship.
+                    to help junior students learn programming without intimidation, self-funding solo backpacking
+                    expeditions across Southeast Asia through freelance design, and surviving in unfamiliar cities
+                    with zero safety net. Every system I engineer carries that same standard of grit, empathy,
+                    and uncompromising craftsmanship.
                   </p>
                 </div>
               </NativeReveal>
             </div>
 
             <NativeReveal delay={0.2}>
-              <div className={`glass ${styles.introCard}`}>
-                <div className={styles.introPhotoWrap}>
-                  <div className={styles.introPhotoGlow} aria-hidden="true" />
-                  <Image
-                    src={profilePhoto}
-                    alt="Rafif Sava Adyvka Pratama, Lead Systems Engineer & Project Manager"
-                    className={styles.introPhoto}
-                    width={700}
-                    height={700}
-                  />
-                  <div
-                    className={styles.introPhotoOverlay}
-                    aria-hidden="true"
-                  />
-
-                  <div className={`glass-hi ${styles.introPhotoBadge}`}>
-                    <span className={styles.introPhotoBadgeStatus}>
-                      <span
-                        className={`${styles.introPhotoBadgeDot} pulse-dot`}
-                        aria-hidden="true"
-                      />
-                      Available 2027
-                    </span>
-                    <span className={styles.introPhotoBadgeMeta}>
-                      EST. 2021
-                    </span>
-                  </div>
-                </div>
-
-                <div className={styles.introCardContent}>
-                  <span className={styles.introCardLabel}>// Identity Card</span>
-                  <dl className={styles.introCardList}>
-                    {INTRO_FACTS.map((f) => (
-                      <div key={f.label} className={styles.introCardRow}>
-                        <dt className={styles.introCardKey}>{f.label}</dt>
-                        <dd className={styles.introCardValue}>{f.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              </div>
+              <LanyardBadge facts={INTRO_FACTS} />
             </NativeReveal>
           </div>
 

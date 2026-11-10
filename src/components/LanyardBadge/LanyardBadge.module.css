@@ -1,0 +1,537 @@
+/* =========================================================================
+   LANYARD BADGE COMPONENT STYLES
+   Interactive hanging lanyard badge with real-time spring physics
+   Strictly adheres to punctuation rule: NO em-dash or semicolon in sentences
+   ========================================================================= */
+
+.lanyardStage {
+  position: relative;
+  width: 100%;
+  min-height: 840px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+@media (min-width: 1024px) {
+  .lanyardStage {
+    min-height: 880px;
+  }
+}
+
+/* Top Wall Standoff Peg Anchor */
+.lanyardAnchor {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.anchorPeg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #cbd5e1 0%,
+    #64748b 45%,
+    #334155 75%,
+    #0f172a 100%
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), inset 0 2px 3px rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.anchorScrew {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1e293b;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.95), 0 1px 1px rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.anchorScrewSlot {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  right: 2px;
+  height: 1.5px;
+  background: #94a3b8;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.anchorPlate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.22rem 0.75rem;
+  background: rgba(18, 18, 24, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7);
+}
+
+.anchorRivet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a1a1aa;
+  box-shadow: inset 0 1px 1px #ffffff, 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.anchorLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-200, #a1a1aa);
+  text-transform: uppercase;
+}
+
+/* SVG Strap Canvas */
+.strapSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+/* Metal Clasp Assembly connecting strap to badge slot */
+.claspAssembly {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform-origin: center top;
+  z-index: 6;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -16px;
+  width: 32px;
+}
+
+.crimpMetal {
+  width: 32px;
+  height: 14px;
+  background: linear-gradient(
+    180deg,
+    #e2e8f0 0%,
+    #94a3b8 25%,
+    #475569 55%,
+    #1e293b 85%,
+    #334155 100%
+  );
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 5px;
+}
+
+.crimpLine {
+  width: 1px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.35);
+}
+
+.swivelRing {
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid #d1d5db;
+  border-radius: 50%;
+  margin-top: -2px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.carabinerHook {
+  width: 13px;
+  height: 22px;
+  border: 2.5px solid #e5e7eb;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-top: -3px;
+  background: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.carabinerGate {
+  position: absolute;
+  top: 3px;
+  right: -1px;
+  width: 2px;
+  height: 10px;
+  background: #9ca3af;
+  border-radius: 1px;
+}
+
+/* Badge Card */
+.badgeCard {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  margin-left: max(-210px, calc((100vw - 2rem) / -2));
+  width: 420px;
+  max-width: calc(100vw - 2rem);
+  transform-origin: center 12px;
+  z-index: 4;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  border-radius: 1.6rem;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 24, 0.97),
+    rgba(10, 10, 14, 0.99)
+  );
+  border: 1px solid rgba(124, 242, 255, 0.22);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.85), 0 0 32px rgba(124, 242, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.badgeCardActive {
+  cursor: grabbing;
+  box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.95), 0 0 40px rgba(124, 242, 255, 0.18);
+  border-color: rgba(124, 242, 255, 0.42);
+}
+
+/* Slot cutout at top of card */
+.badgeSlot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+
+.slotHole {
+  width: 44px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.95), 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Badge Header: Real Status and Timezone */
+.badgeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.4rem 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.statusLive {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.livePulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.9);
+  animation: pulseGreen 2s infinite ease-in-out;
+}
+
+@keyframes pulseGreen {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+.statusLiveText {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #10b981;
+  text-transform: uppercase;
+}
+
+.badgeTimezone {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-200, #a1a1aa);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Photo Section */
+.badgePhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.28 / 1;
+  overflow: hidden;
+  background: #08080c;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badgePhotoGlow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(124, 242, 255, 0.18), transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.badgePhoto {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(8%) contrast(1.05) brightness(1);
+  pointer-events: none;
+}
+
+.badgePhotoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 14, 0.78) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.badgeStatusPill {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 1rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.72rem;
+  border-radius: 9999px;
+  background: rgba(14, 14, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.85);
+}
+
+.statusText {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #f4f4f6;
+}
+
+/* Badge Body Content */
+.badgeBody {
+  padding: 1.15rem 1.4rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.badgeNameHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.badgeTitleBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f4f4f6;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.badgeRole {
+  font-size: 0.78rem;
+  color: var(--accent-glow, #7cf2ff);
+  font-family: var(--font-mono, monospace);
+  margin-top: 0.25rem;
+}
+
+/* Microchip Icon Graphic */
+.chipGraphic {
+  width: 34px;
+  height: 26px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #d4af37, #f3e5ab, #aa8c2c);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.chipLine {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.chipLineH {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.chipLineV {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+/* Specs List */
+.specsList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.specRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.specLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--ink-300, #888894);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.specValue {
+  font-size: 0.82rem;
+  color: #f4f4f6;
+  text-align: right;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Badge Footer: High-Value Quick Action Buttons */
+.badgeFooter {
+  padding: 0.85rem 1.4rem 1.15rem;
+  background: rgba(14, 14, 18, 0.72);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cvBtn,
+.contactBtn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cvBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f4f4f6;
+}
+
+.cvBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.contactBtn {
+  background: rgba(124, 242, 255, 0.12);
+  border: 1px solid rgba(124, 242, 255, 0.35);
+  color: var(--accent-glow, #7cf2ff);
+  box-shadow: 0 0 16px rgba(124, 242, 255, 0.1);
+}
+
+.contactBtn:hover {
+  background: rgba(124, 242, 255, 0.22);
+  border-color: rgba(124, 242, 255, 0.6);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(124, 242, 255, 0.25);
+}
+
+.btnIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
