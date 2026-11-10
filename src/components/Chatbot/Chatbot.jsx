@@ -126,25 +126,25 @@ function Chatbot() {
 
   const isChatActive = isOpen && !isClosing;
 
-  // Initial greeting
+  // Initial greeting (English-first matching website with bilingual support notice)
   const [messages, setMessages] = useState([
     {
       id: "welcome",
       sender: "bot",
       title: "Adyvka Portfolio Assistant",
-      text: `Halo! Saya asisten portofolio Rafif Sava Adyvka Pratama (Adyvka).
+      text: `Hello! I am the interactive portfolio assistant for Rafif Sava Adyvka Pratama (Adyvka).
 
-Saya memiliki akses lengkap ke seluruh data dan rekam jejak Adyvka:
-* **Nilai Rapot 96/100:** Semester 4 jurusan Rekayasa Perangkat Lunak SMK IDN Boarding School.
-* **Pengalaman Kerja:** Lead Engineer Databank ERP di PT Intisel, Full Stack di PT Ardyanda, dan CV. Richo Bahari.
-* **Karya Buku:** Penulis 2 buku teknis resmi (*Membuat Game 2D* dan *Membuat Website Modern*).
-* **Petualangan Karakter:** Solo backpacker mandiri lintas 3 negara (Singapura, Malaysia, Thailand) di usia 15 tahun.
-* **Sertifikasi:** CS50 Harvard University dan AWS Cloud Practitioner.
+I have full access to Adyvka's verified records across software engineering, teaching, and leadership:
+* **Academic Honors (96/100 GPA):** Semester 4 in Software Engineering at SMK IDN Boarding School.
+* **Work Experience:** Lead Systems Engineer for Databank ERP at PT Intisel, Full Stack at PT Ardyanda, and CV. Richo Bahari.
+* **Published Author:** Author of 2 technical books (*Making 2D Games* and *Modern Web Development*).
+* **Character & Resilience:** Solo backpacker across 3 countries (Singapore, Malaysia, Thailand) at age 15.
+* **Certifications:** Harvard University CS50 and AWS Cloud Practitioner.
 
-Ada hal spesifik yang ingin Anda tanyakan atau diskusikan?`,
+You can ask me questions in **English** or **Bahasa Indonesia**. What would you like to explore?`,
       links: [
-        { label: "Buka Profil About", url: "/about" },
-        { label: "Lihat Proyek Enterprise", url: "/projects" },
+        { label: "Explore About Profile", url: "/about" },
+        { label: "View Enterprise Projects", url: "/projects" },
       ],
       timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     },
@@ -237,7 +237,7 @@ Ada hal spesifik yang ingin Anda tanyakan atau diskusikan?`,
           className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening}`}
           onAnimationEnd={handleAnimationEnd}
           role="dialog"
-          aria-label="Tanya Adyvka"
+          aria-label="Ask Adyvka"
           aria-modal="true"
         >
           {/* Header (Clean minimal, human, single close button) */}
@@ -263,15 +263,15 @@ Ada hal spesifik yang ingin Anda tanyakan atau diskusikan?`,
               type="button"
               className={styles.headerCloseBtn}
               onClick={handleClose}
-              title="Tutup percakapan"
-              aria-label="Tutup percakapan"
+              title="Close conversation"
+              aria-label="Close conversation"
             >
               <CloseIcon size={18} strokeWidth={2.2} />
             </button>
           </header>
 
           {/* Quick Suggestions Bar */}
-          <div className={styles.suggestionsBar} aria-label="Topik Pertanyaan Cepat">
+          <div className={styles.suggestionsBar} aria-label="Quick Suggestion Topics">
             {QUICK_SUGGESTIONS.map((sug) => (
               <button
                 key={sug.id}
@@ -353,15 +353,15 @@ Ada hal spesifik yang ingin Anda tanyakan atau diskusikan?`,
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Tanyakan apa saja tentang Adyvka..."
+              placeholder="Ask anything about Adyvka... (English / Indonesia)"
               className={styles.textInput}
-              aria-label="Ketik pertanyaan"
+              aria-label="Type question"
             />
             <button
               type="submit"
               disabled={!inputValue.trim() || isTyping}
               className={styles.sendBtn}
-              aria-label="Kirim Pesan"
+              aria-label="Send Message"
             >
               <SendIcon size={16} />
             </button>
@@ -374,8 +374,8 @@ Ada hal spesifik yang ingin Anda tanyakan atau diskusikan?`,
         type="button"
         className={`${styles.launcherBtn} ${isChatActive ? styles.launcherBtnOpen : ""}`}
         onClick={handleToggle}
-        title={isChatActive ? "Tutup" : "Tanya Adyvka"}
-        aria-label={isChatActive ? "Tutup chat" : "Buka chat Adyvka"}
+        title={isChatActive ? "Close conversation" : "Ask Adyvka"}
+        aria-label={isChatActive ? "Close conversation" : "Ask Adyvka"}
         aria-expanded={isChatActive}
       >
         <div
