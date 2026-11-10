@@ -79,7 +79,7 @@ function AchievementDetailPage({
   return (
     <NarrativeDetailTemplate
       seo={{
-        title: `${effectiveTitle} — Rafif Sava Adyvka Pratama`,
+        title: `${effectiveTitle} · Rafif Sava Adyvka Pratama`,
         description: effectiveSummary,
         path: `/achievements/${effectiveSlug}`,
         type: "article",

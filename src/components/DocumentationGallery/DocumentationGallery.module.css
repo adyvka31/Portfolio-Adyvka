@@ -38,9 +38,39 @@
   gap: 1.75rem;
 }
 
+@media (min-width: 640px) {
+  /* 4 items: 2x2 layout starting on medium screens */
+  .docGridFour,
+  .docGridTwo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 768px) {
-  .docGrid {
+  .docGrid,
+  .docGridDefault {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Exactly 4 items: 2x2 layout */
+  .docGridFour {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Exactly 3 items: 1 row with 3 columns */
+  .docGridThree {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 2 items: 1 row with 2 columns */
+  .docGridTwo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 1 item: single centered column */
+  .docGridOne {
+    grid-template-columns: minmax(0, 720px);
+    justify-content: center;
   }
 }
 

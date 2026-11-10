@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   return (
     <PageShell>
       <SEO
-        title="404 Not Found — Rafif Sava Adyvka Pratama"
+        title="404 Not Found · Rafif Sava Adyvka Pratama"
         description="The page you are looking for does not exist on the official portfolio of Rafif Sava Adyvka Pratama."
         path="*"
       />

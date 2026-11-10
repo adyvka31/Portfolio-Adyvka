@@ -107,7 +107,7 @@ export default function ContactPage() {
   return (
     <PageShell>
       <SEO
-        title="Contact & Channels — Rafif Sava Adyvka Pratama"
+        title="Contact & Channels · Rafif Sava Adyvka Pratama"
         description="Get in touch with Rafif Sava Adyvka Pratama (Adyvka), Software Engineer & Systems Architect. Reach out via email, LinkedIn, GitHub, YouTube, Instagram, or TikTok."
         path="/contact"
         keywords={CONTACT_KEYWORDS}
@@ -122,9 +122,9 @@ export default function ContactPage() {
         label="Contact & Channels"
         title="Let's connect & build."
         italicWord="build"
-        description="Available for high-autonomy engineering roles, enterprise architecture consulting, and technical collaboration. Reach out through the message console or connect across any platform."
+        description="Available for high-autonomy engineering roles, enterprise architecture contracts, and global technical collaboration. Reach out through the message console or connect across any platform."
         meta={[
-          { label: "Status", value: "Available for Work" },
+          { label: "Role Intent", value: "Software Engineer (Grad 2027)" },
           { label: "Location", value: "Depok, West Java (UTC+07)" },
           { label: "Avg. Response", value: "< 24 Hours" },
           { label: "Primary Email", value: personalInfo.email },

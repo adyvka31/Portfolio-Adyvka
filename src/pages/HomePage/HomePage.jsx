@@ -35,7 +35,7 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        title="Rafif Sava Adyvka Pratama — Software Engineer & Systems Architect"
+        title="Rafif Sava Adyvka Pratama · Software Engineer & Systems Architect"
         description="Official portfolio of Rafif Sava Adyvka Pratama (Adyvka), Software Engineer & Systems Architect. Polyglot builder engineering robust, scalable distributed systems across web, mobile, and cloud."
         path="/"
         type="profile"

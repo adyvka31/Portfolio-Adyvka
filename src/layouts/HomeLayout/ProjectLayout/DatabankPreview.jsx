@@ -2,7 +2,7 @@ import styles from "./DatabankPreview.module.css";
 
 /**
  * Inline dashboard mockup for the Databank ERP card.
- * Pure presentational — semantic tags added for A11y.
+ * Pure presentational · semantic tags added for A11y.
  */
 function DatabankPreview() {
   // Bar heights for the mini chart (in %)

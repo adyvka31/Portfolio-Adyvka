@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 /**
- * Inline SVG icon set — keeps the bundle tiny and lets us style via currentColor.
+ * Inline SVG icon set · keeps the bundle tiny and lets us style via currentColor.
  */
 
 export const ArrowUpRightIcon = memo(function ArrowUpRightIcon({ size = 12 }) {

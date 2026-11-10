@@ -203,7 +203,7 @@ function ProjectDetailPage() {
   return (
     <PageShell>
       <SEO
-        title={`${projectTitle} — Rafif Sava Adyvka Pratama`}
+        title={`${projectTitle} · Rafif Sava Adyvka Pratama`}
         description={projectSummary}
         path={`/projects/${project.slug}`}
         type="article"
@@ -257,7 +257,6 @@ function ProjectDetailPage() {
           label={detail?.subtitle || project.label}
           title={`${detail?.title || project.title}.`}
           description={detail?.summary || project.description}
-          meta={detail?.meta}
         />
 
         {/* TAGS & QUICK ACTIONS STRIP */}
@@ -298,18 +297,43 @@ function ProjectDetailPage() {
           </div>
         </section>
 
-        {/* KPI METRICS & THE BRIEF */}
+        {/* UNIFIED SPECIFICATIONS, KPIS & THE BRIEF */}
         <section className={styles.showcaseSection}>
           <div className={styles.showcaseInner}>
-            {/* KPI GRID */}
-            {detail?.kpis?.length > 0 && (
-              <NativeReveal>
-                <div className={styles.kpiGrid}>
-                  {detail.kpis.map((kpi, idx) => (
-                    <KPICard key={idx} item={kpi} />
-                  ))}
-                </div>
-              </NativeReveal>
+            {/* UNIFIED SPECIFICATIONS & IMPACT BENCHMARKS (MERGED META & KPIS) */}
+            {(detail?.meta?.length > 0 || detail?.kpis?.length > 0) && (
+              <div className={styles.overviewMetaContainer}>
+                {/* PROJECT TECHNICAL SPECIFICATIONS */}
+                {detail?.meta?.length > 0 && (
+                  <NativeReveal>
+                    <div className={styles.specChipsCard}>
+                      <div className={styles.specHeader}>
+                        <span className={styles.specHeaderBadge}>// Technical Specifications</span>
+                        <span className={styles.specHeaderNote}>Engineering & Project Parameters</span>
+                      </div>
+                      <dl className={styles.specGrid} aria-label="Project Technical Specifications">
+                        {detail.meta.map((item, idx) => (
+                          <div key={idx} className={styles.specItem}>
+                            <dt className={styles.specLabel}>{item.label}</dt>
+                            <dd className={styles.specValue}>{item.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  </NativeReveal>
+                )}
+
+                {/* KPI IMPACT BENCHMARKS */}
+                {detail?.kpis?.length > 0 && (
+                  <NativeReveal delay={0.06}>
+                    <div className={styles.kpiGrid}>
+                      {detail.kpis.map((kpi, idx) => (
+                        <KPICard key={idx} item={kpi} />
+                      ))}
+                    </div>
+                  </NativeReveal>
+                )}
+              </div>
             )}
 
             {/* THE OPERATIONAL MANDATE (BRIEF) */}
@@ -352,7 +376,7 @@ function ProjectDetailPage() {
       </section>
 
       {/* =========================================================================
-          ACT 2: THE PRODUCT IN ACTION — LIVE SYSTEM SCREENSHOTS (#live-product)
+          ACT 2: THE PRODUCT IN ACTION · LIVE SYSTEM SCREENSHOTS (#live-product)
           ========================================================================= */}
       {detail?.gallery?.length > 0 && (
         <ProjectGallery
@@ -880,38 +904,15 @@ function ProjectDetailPage() {
                 )}
 
                 {/* MEASURABLE RESULTS CARDS */}
-                {resultsSection && (
+                {resultsSection && detail?.metricOutcomes?.length > 0 && (
                   <NativeReveal delay={0.15}>
                     <div className={styles.resultsRow}>
-                      {detail?.metricOutcomes ? (
-                        detail.metricOutcomes.map((m, i) => (
-                          <Card key={i} className={styles.resultCard}>
-                            <span className={`font-serif ${styles.resultValue}`}>{m.value}</span>
-                            <span className={styles.resultText}>{m.label}</span>
-                          </Card>
-                        ))
-                      ) : (
-                        <>
-                          <Card className={styles.resultCard}>
-                            <span className={`font-serif ${styles.resultValue}`}>
-                              {isProductionReady ? "Production Live" : "Active"}
-                            </span>
-                            <span className={styles.resultText}>
-                              {isProductionReady
-                                ? "Deployed and operational in production"
-                                : "Core modules under active engineering delivery"}
-                            </span>
-                          </Card>
-                          <Card className={styles.resultCard}>
-                            <span className={`font-serif ${styles.resultValue}`}>100%</span>
-                            <span className={styles.resultText}>Architecture contract verified with zero regression</span>
-                          </Card>
-                          <Card className={styles.resultCard}>
-                            <span className={`font-serif ${styles.resultValue}`}>Verified</span>
-                            <span className={styles.resultText}>Production performance and security benchmarks met</span>
-                          </Card>
-                        </>
-                      )}
+                      {detail.metricOutcomes.map((m, i) => (
+                        <Card key={i} className={styles.resultCard}>
+                          <span className={`font-serif ${styles.resultValue}`}>{m.value}</span>
+                          <span className={styles.resultText}>{m.label}</span>
+                        </Card>
+                      ))}
                     </div>
                   </NativeReveal>
                 )}

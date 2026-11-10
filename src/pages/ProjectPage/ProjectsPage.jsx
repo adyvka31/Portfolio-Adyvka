@@ -113,7 +113,7 @@ export default function ProjectsPage() {
   return (
     <PageShell>
       <SEO
-        title="Projects & Publications — Rafif Sava Adyvka Pratama"
+        title="Projects & Publications · Rafif Sava Adyvka Pratama"
         description="Comprehensive portfolio of enterprise systems, software platforms, mobile apps, and published technical learning modules & books authored by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/projects"
         keywords={PROJECT_KEYWORDS}
@@ -128,7 +128,13 @@ export default function ProjectsPage() {
         label="Projects & Publications"
         title="Works that shipped, not pitched."
         italicWord="shipped"
-        description="A catalogue of everything I've engineered, authored, or shipped, with filters across software platforms, enterprise applications, and published technical learning modules."
+        description="A comprehensive catalogue of production software systems and published engineering learning modules, engineered to solve real operational challenges with architectural precision."
+        meta={[
+          { label: "Shipped Deliverables", value: "18 Production Systems" },
+          { label: "Published Books", value: "2 Official Learning Modules" },
+          { label: "Core Disciplines", value: "Full Stack, Mobile & Cloud" },
+          { label: "Domain Reach", value: "Enterprise ERP, Health & AgriTech" },
+        ]}
       />
 
       <section className={styles.mainSection}>

@@ -121,7 +121,7 @@ function PublicationDetailPage() {
   return (
     <PageShell>
       <SEO
-        title={`${effectiveTitle} — Book & Module by ${effectiveAuthor}`}
+        title={`${effectiveTitle} · Book & Module by ${effectiveAuthor}`}
         description={detail?.overview || baseItem?.description}
         path={`/publications/${effectiveSlug}`}
         type="book"

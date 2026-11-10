@@ -92,7 +92,7 @@ function CertificateDetailPage() {
   return (
     <PageShell>
       <SEO
-        title={`${effectiveTitle} — Rafif Sava Adyvka Pratama`}
+        title={`${effectiveTitle} · Rafif Sava Adyvka Pratama`}
         description={effectiveSummary}
         path={`/certificates/${effectiveSlug}`}
         type="article"

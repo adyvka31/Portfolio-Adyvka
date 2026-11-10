@@ -88,7 +88,7 @@ export default function ExperiencePage() {
   return (
     <PageShell>
       <SEO
-        title="Experiences — Rafif Sava Adyvka Pratama"
+        title="Experiences · Rafif Sava Adyvka Pratama"
         description="Professional engineering timeline, corporate roles, technical educator outreach, and leadership experiences of Rafif Sava Adyvka Pratama (Adyvka)."
         path="/experience"
         keywords={EXPERIENCE_KEYWORDS}
@@ -103,7 +103,13 @@ export default function ExperiencePage() {
         label="Experience"
         title="A timeline of things shipped."
         italicWord="things shipped"
-        description="Every role, every responsibility, every system I've owned in production, alongside my journey in teaching and community building."
+        description="A complete production timeline spanning enterprise ERP engineering, community teaching outreach, and cross-border leadership, executed while maintaining academic honors in software engineering."
+        meta={[
+          { label: "Production Engineering", value: "4 Roles & Contracts" },
+          { label: "Teaching Outreach", value: "9 Programs · 300+ Students" },
+          { label: "Leadership & Global", value: "6 Expeditions · 3 Countries" },
+          { label: "Current Focus", value: "Lead Systems Engineer & PM" },
+        ]}
       />
 
       {/* 01 - WORK EXPERIENCE */}

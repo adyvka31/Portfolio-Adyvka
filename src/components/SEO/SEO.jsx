@@ -67,8 +67,8 @@ export default function SEO({
   const fullTitle = title
     ? title.includes(SITE_NAME) || title.includes("Adyvka")
       ? title
-      : `${title} — ${SITE_NAME}`
-    : `${SITE_NAME} — Software Engineer & Systems Architect`;
+      : `${title} · ${SITE_NAME}`
+    : `${SITE_NAME} · Software Engineer & Systems Architect`;
 
   const url = `${SITE_URL}${path}`;
   const imageUrl = image?.startsWith("http")
@@ -184,7 +184,7 @@ export default function SEO({
         "@type": "Book",
         "@id": `${SITE_URL}/publications/buku-membuat-game-tanpa-coding#book`,
         name: "Membuat Game Tanpa Coding",
-        alternateName: "Creating 2D Games Without Coding — Scratch Visual Programming Guide",
+        alternateName: "Creating 2D Games Without Coding · Scratch Visual Programming Guide",
         headline: "Membuat Game Tanpa Coding",
         author: { "@id": `${SITE_URL}/#person` },
         numberOfPages: 125,
@@ -204,7 +204,7 @@ export default function SEO({
         "@type": "Book",
         "@id": `${SITE_URL}/publications/buku-membuat-website-dengan-framework#book`,
         name: "Membuat Website Dengan Mudah Menggunakan Framework",
-        alternateName: "Building Modern Websites Easily with Frameworks — HTML5, CSS3, & Tailwind CSS",
+        alternateName: "Building Modern Websites Easily with Frameworks · HTML5, CSS3, & Tailwind CSS",
         headline: "Membuat Website Dengan Mudah Menggunakan Framework",
         author: { "@id": `${SITE_URL}/#person` },
         numberOfPages: 106,
@@ -227,7 +227,7 @@ export default function SEO({
     "@type": "Book",
     "@id": `${SITE_URL}/publications/buku-membuat-game-tanpa-coding#book`,
     name: "Membuat Game Tanpa Coding",
-    alternateName: "Creating 2D Games Without Coding — Scratch Visual Programming Guide",
+    alternateName: "Creating 2D Games Without Coding · Scratch Visual Programming Guide",
     author: { "@id": `${SITE_URL}/#person` },
     numberOfPages: 125,
     inLanguage: "id",
@@ -247,7 +247,7 @@ export default function SEO({
     "@type": "Book",
     "@id": `${SITE_URL}/publications/buku-membuat-website-dengan-framework#book`,
     name: "Membuat Website Dengan Mudah Menggunakan Framework",
-    alternateName: "Building Modern Websites Easily with Frameworks — HTML5, CSS3, & Tailwind CSS",
+    alternateName: "Building Modern Websites Easily with Frameworks · HTML5, CSS3, & Tailwind CSS",
     author: { "@id": `${SITE_URL}/#person` },
     numberOfPages: 106,
     inLanguage: "id",
@@ -266,7 +266,7 @@ export default function SEO({
   const websiteEntity = {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    name: "Rafif Sava Adyvka Pratama — Official Portfolio",
+    name: "Rafif Sava Adyvka Pratama · Official Portfolio",
     alternateName: ["Adyvka Portfolio", "Rafif Sava", "Adyvka Pratama"],
     url: SITE_URL,
     publisher: { "@id": `${SITE_URL}/#person` },
@@ -400,7 +400,7 @@ export default function SEO({
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content="Rafif Sava Adyvka Pratama — Portfolio" />
+      <meta property="og:site_name" content="Rafif Sava Adyvka Pratama · Portfolio" />
       <meta property="og:locale" content="en_US" />
       {publishedTime && (
         <meta property="article:published_time" content={publishedTime} />

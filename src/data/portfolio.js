@@ -78,7 +78,7 @@ export const personalInfo = {
   school: "SMK IDN Boarding School",
   major: "Software Engineering (Rekayasa Perangkat Lunak)",
   location: "Depok, West Java, Indonesia",
-  timezone: "UTC+07 — Working remotely",
+  timezone: "UTC+07 · Working remotely",
   currentRole: "Software Engineer & Systems Architect",
   email: "rafifdyvka07@gmail.com",
   socials: {
@@ -878,7 +878,7 @@ export const aiFeatures = [
 // ============================================
 export const experiences = [
   {
-    period: "Jul 2026 — Jan 2027",
+    period: "Jul 2026 – Jan 2027",
     role: "Full Stack Developer - Internship",
     company: "PT Ardyanda Digital Inovasi",
     description:
@@ -886,7 +886,7 @@ export const experiences = [
     current: true,
   },
   {
-    period: "Feb 2026 — Present",
+    period: "Feb 2026 – Present",
     role: "Full Stack Engineer - Freelance",
     company: "PT Intisel Prodaktifakom",
     description:
@@ -894,14 +894,14 @@ export const experiences = [
     current: true,
   },
   {
-    period: "May 2026 — Aug 2026",
+    period: "May 2026 – Aug 2026",
     role: "Frontend Developer - Freelance",
     company: "CV. Richo Bahari",
     description:
       "Engineering modern corporate web platforms and interactive industrial catalogs for civil construction, MEP, steel fabrication, and logistics fleet operations across West Java.",
   },
   {
-    period: "Jul 2025 — Jan 2026",
+    period: "Jul 2025 – Jan 2026",
     role: "Full Stack Engineer - Contract",
     company: "Universitas Muhammadiyah Jakarta",
     description:

@@ -94,7 +94,7 @@ function WorkExperienceView({ experience, detail, slug }) {
   return (
     <PageShell>
       <SEO
-        title={`${experience.role} at ${experience.company} — Rafif Sava Adyvka Pratama`}
+        title={`${experience.role} at ${experience.company} · Rafif Sava Adyvka Pratama`}
         description={detail?.summary || experience.description}
         path={`/experience/${experience.slug}`}
         type="article"
@@ -135,17 +135,10 @@ function WorkExperienceView({ experience, detail, slug }) {
         meta={detail?.meta}
       />
 
-      {/* TAGS & COMPANY STRIP */}
+      {/* TAGS & QUICK ACTIONS STRIP */}
       <section className={styles.tagsStrip}>
         <div className={styles.tagsInner}>
           <NativeReveal className="css-reveal">
-            <div className={styles.companyRow}>
-              <span className={styles.companyLabel}>Organization</span>
-              <span className={styles.companyName}>{experience.company}</span>
-            </div>
-          </NativeReveal>
-
-          <NativeReveal className="css-reveal" delay={0.05}>
             <div className={styles.tags}>
               {detail?.stack?.map((t) => (
                 <Tag key={t} size="sm">

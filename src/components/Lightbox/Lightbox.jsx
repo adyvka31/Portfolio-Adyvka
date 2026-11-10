@@ -65,7 +65,7 @@ export default function Lightbox({
             src={current.src || current.image}
             alt={
               current.title
-                ? `${current.title} — High Resolution Documentation Preview`
+                ? `${current.title} · High Resolution Documentation Preview`
                 : current.caption || "High Resolution Engineering Documentation Preview"
             }
             className={styles.lightboxImage}

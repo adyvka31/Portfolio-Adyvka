@@ -34,7 +34,7 @@ export default function AchievementsPage() {
   return (
     <PageShell>
       <SEO
-        title="Achievements — Rafif Sava Adyvka Pratama"
+        title="Achievements · Rafif Sava Adyvka Pratama"
         description="National awards, software competition victories, and technological recognitions earned by Rafif Sava Adyvka Pratama (Adyvka)."
         path="/achievements"
         keywords={ACHIEVEMENT_KEYWORDS}
@@ -49,7 +49,13 @@ export default function AchievementsPage() {
         label="Achievements"
         title="Receipts, not résumé filler."
         italicWord="Receipts"
-        description="Achievements aren’t just a list on a resume. They’re a record of dedication, execution, and high standards. Here’s the story behind them."
+        description="National awards and competition victories won by stepping onto open stages to test engineering craft directly against collegiate competitors and industry standards."
+        meta={[
+          { label: "National Champion", value: "1st Place ICOMFEST 2025" },
+          { label: "National Runner-Up", value: "2nd Place PNBITC#18 Bali" },
+          { label: "Collegiate Finalist", value: "Top 5 Finalist UNILA 2024" },
+          { label: "Academic Distinction", value: "SMK IDN Best Poster Award" },
+        ]}
       />
 
       <section

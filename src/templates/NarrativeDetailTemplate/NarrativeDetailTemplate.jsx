@@ -65,24 +65,11 @@ function NarrativeDetailTemplate({
         />
       )}
 
-      {/* TAGS & INSTITUTION STRIP */}
+      {/* TAGS & QUICK ACTIONS STRIP */}
       <section className={styles.tagsStrip}>
         <div className={styles.tagsInner}>
-          {institution && (
-            <NativeReveal className="css-reveal">
-              <div className={styles.companyRow}>
-                <span className={styles.companyLabel}>
-                  {institution.label || "Organization"}
-                </span>
-                <span className={styles.companyName}>
-                  {institution.name}
-                </span>
-              </div>
-            </NativeReveal>
-          )}
-
           {tags && tags.length > 0 && (
-            <NativeReveal className="css-reveal" delay={0.05}>
+            <NativeReveal className="css-reveal">
               <div className={styles.tags}>
                 {tags.map((t) => (
                   <Tag key={t} size="sm">

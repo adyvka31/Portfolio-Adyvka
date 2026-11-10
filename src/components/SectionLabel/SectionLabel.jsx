@@ -2,7 +2,7 @@ import { memo } from "react";
 import styles from "./SectionLabel.module.css";
 
 /**
- * The numbered section eyebrow ("01 — ABOUT").
+ * The numbered section eyebrow ("01 · ABOUT").
  */
 function SectionLabel({ number, label }) {
   return (

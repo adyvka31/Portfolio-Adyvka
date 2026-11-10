@@ -51,7 +51,7 @@ function Card({
             src={item?.thumbnail || item?.image}
             alt={
               item?.title
-                ? `${item.title} — ${item?.category || "Software Engineering"} Project Preview`
+                ? `${item.title} · ${item?.category || "Software Engineering"} Project Preview`
                 : "Software Engineering Project Preview"
             }
             className={styles.thumbnail}
@@ -169,7 +169,7 @@ function Card({
         </div>
 
         <div className={styles.cardBody}>
-          <div className={styles.institution}>— {item?.institution || item?.issuer}</div>
+          <div className={styles.institution}>{item?.institution || item?.issuer}</div>
           <h3 className={styles.title}>{item?.title}</h3>
 
           <ul className={styles.tagWrapper} aria-label="Skills acquired">
@@ -256,7 +256,7 @@ function Card({
           src={item?.image || item?.thumbnail}
           alt={
             item?.title
-              ? `${item.title} — ${item?.institution || item?.company || "Experience Showcase"}`
+              ? `${item.title} · ${item?.institution || item?.company || "Experience Showcase"}`
               : item?.role
               ? `${item.role} at ${item?.company || item?.institution || "Experience"}`
               : "Engineering Experience Showcase"
@@ -276,7 +276,7 @@ function Card({
       <div className={styles.cardBody}>
         <div className={styles.head}>
           <div className={styles.institutionWrapper}>
-            <span className={styles.institution}>— {item?.institution || item?.company}</span>
+            <span className={styles.institution}>{item?.institution || item?.company}</span>
           </div>
           {item?.icon && (
             <span className={styles.icon} aria-hidden="true">

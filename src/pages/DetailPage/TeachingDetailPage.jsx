@@ -60,7 +60,7 @@ function TeachingDetailPage({
   return (
     <NarrativeDetailTemplate
       seo={{
-        title: `${effectiveTitle} at ${effectiveInstitution} — Rafif Sava Adyvka Pratama`,
+        title: `${effectiveTitle} at ${effectiveInstitution} · Rafif Sava Adyvka Pratama`,
         description: effectiveSummary,
         path: `/experience/${effectiveSlug}`,
         type: "article",

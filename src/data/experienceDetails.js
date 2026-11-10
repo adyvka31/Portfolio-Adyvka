@@ -21,14 +21,14 @@ export const experienceDetails = {
     subtitle: "PT Ardyanda Digital Inovasi (Software Engineering & Digital Solutions)",
     roleTitle: "Full Stack Developer Intern",
     statusBadge: "Active Corporate Internship",
-    period: "Jul 2026 — Jan 2027 · Present",
+    period: "Jul 2026 – Jan 2027 · Present",
     summary:
       "Selected through a competitive 5-round interview process for the mandatory 12th-grade vocational internship. Originally brought on as a Backend Developer, rapidly expanded into a Full Stack Developer handling both internal enterprise financial systems (payroll, employee cash advance engines) and multi-industry client platforms (healthcare, mosque ERP, CMS). Represented the engineering team in client stakeholder meetings and served as company Master of Ceremonies (MC) for corporate events.",
     meta: [
       { label: "Role", value: "Full Stack Developer Intern (Orig. Backend Intern)" },
       { label: "Organization", value: "PT Ardyanda Digital Inovasi" },
       { label: "Program", value: "12th Grade Mandatory 1-Year Vocational Internship" },
-      { label: "Period", value: "Jul 2026 — Jan 2027 · Present (Active)" },
+      { label: "Period", value: "Jul 2026 – Jan 2027 · Present (Active)" },
       { label: "Selection", value: "Competitive Hiring (Mass Applications, 5 Interview Rounds)" },
       { label: "Tech Stack", value: "RESTful APIs, Full Stack Architecture, SQL Schemas, Agile" },
     ],
@@ -250,7 +250,7 @@ export const experienceDetails = {
     subtitle: "CV. Richo Bahari (General Contractor & Industrial Engineering)",
     roleTitle: "Lead Frontend Engineer & UI/UX Architect",
     statusBadge: "Production Live (Freelance)",
-    period: "May 2026 — Aug 2026",
+    period: "May 2026 – Aug 2026",
     summary:
       "Commissioned by CentraDev to lead the frontend engineering and UI/UX architecture for CV. Richo Bahari, an established industrial general contractor operating across West Java and Jabodetabek. Transformed scattered PDF brochures and unorganized worksite photo archives into an enterprise-grade digital flagship built on Next.js 16, React 19, and Tailwind CSS v4, dignifying years of real physical labor, heavy steel fabrication, and strict K3 Zero Accident safety standards.",
     meta: [
@@ -258,7 +258,7 @@ export const experienceDetails = {
       { label: "Client / Entity", value: "CV. Richo Bahari (Industrial General Contractor)" },
       { label: "Agency / Team", value: "CentraDev Team" },
       { label: "Engagement", value: "Freelance (Production Live)" },
-      { label: "Period", value: "May 2026 — Aug 2026" },
+      { label: "Period", value: "May 2026 – Aug 2026" },
       { label: "Tech Stack", value: "Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript" },
     ],
     kpis: [
@@ -443,14 +443,14 @@ export const experienceDetails = {
     subtitle: "PT Intisel Prodaktifakom (National Telecom Contractor)",
     roleTitle: "Full Stack Engineer & Project Manager",
     statusBadge: "Freelance Contract Extended (Active)",
-    period: "Feb 2026 — Present · 9 mos",
+    period: "Feb 2026 – Present · 9 mos",
     summary:
       "Pitched, architected, and shipped 'Databank', an enterprise-grade ERP system for PT Intisel Prodaktifakom, a national telecom contractor. What originated as a bold 3-month school competency exam (UJIKOM) initiative evolved into an extended 9-month professional freelance engagement, managing everything from Purchase Orders and automated payroll to enterprise data synchronization with Huawei.",
     meta: [
       { label: "Role", value: "Full Stack Engineer & Project Manager" },
       { label: "Organization", value: "PT Intisel Prodaktifakom (Telecom Contractor)" },
       { label: "Engagement", value: "Freelance (Extended from 3-Month UJIKOM to 9 Mos)" },
-      { label: "Period", value: "Feb 2026 — Present · 9 mos (Active)" },
+      { label: "Period", value: "Feb 2026 – Present · 9 mos (Active)" },
       { label: "Team", value: "Rafif Sava Adyvka (Full Stack), Moreno Ibrahim (Frontend)" },
       { label: "Tech Stack", value: "React, CSS Native, NestJS, Prisma ORM, PostgreSQL" },
     ],
@@ -673,13 +673,13 @@ export const experienceDetails = {
     subtitle: "Faculty of Medicine, Universitas Muhammadiyah Jakarta",
     roleTitle: "Full Stack Engineer & Server Architect",
     statusBadge: "Enterprise Contract Completed",
-    period: "Jul 2025 — Jan 2026",
+    period: "Jul 2025 – Jan 2026",
     summary:
       "Commissioned in 11th grade to build a full-stack Academic Research Management System from scratch for the Faculty of Medicine at Universitas Muhammadiyah Jakarta. Re-engineered legacy architecture into an enterprise-grade platform standardizing the complete WHO/CIOMS ethical clearance lifecycle.",
     meta: [
       { label: "Role", value: "Full Stack Engineer & Server Architect" },
       { label: "Client / Institution", value: "Faculty of Medicine, Universitas Muhammadiyah Jakarta" },
-      { label: "Contract Period", value: "Jul 2025 — Jan 2026 (4-Month Contract)" },
+      { label: "Contract Period", value: "Jul 2025 – Jan 2026 (4-Month Contract)" },
       { label: "Selection", value: "Handpicked (Top 2 of 25 Students in 11th Grade)" },
       { label: "Team", value: "Athallah Muhammad (Partner), Haidar Miqdad (Mentor & PM)" },
       { label: "Tech Stack", value: "Tailwind CSS, JavaScript, Laravel 12, MySQL, AWS" },

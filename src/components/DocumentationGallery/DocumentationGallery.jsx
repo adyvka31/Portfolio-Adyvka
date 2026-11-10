@@ -17,6 +17,18 @@ function DocumentationGallery({
 }) {
   if (!items || items.length === 0) return null;
 
+  const count = items.length;
+  const gridLayoutClass =
+    count === 4
+      ? styles.docGridFour
+      : count === 3
+      ? styles.docGridThree
+      : count === 2
+      ? styles.docGridTwo
+      : count === 1
+      ? styles.docGridOne
+      : styles.docGridDefault;
+
   return (
     <section className={styles.section} aria-label={ariaLabel}>
       <div className={styles.container}>
@@ -28,7 +40,7 @@ function DocumentationGallery({
           </div>
         </NativeReveal>
 
-        <div className={styles.docGrid}>
+        <div className={`${styles.docGrid} ${gridLayoutClass}`}>
           {items.map((doc, idx) => (
             <NativeReveal key={doc.id || idx} delay={idx * 0.08}>
               <Card
@@ -47,7 +59,7 @@ function DocumentationGallery({
                 <div className={styles.docMediaWrap}>
                   <Image
                     src={doc.image}
-                    alt={doc.title ? `${doc.title} — Documentation Record` : "Engineering Documentation Record"}
+                    alt={doc.title ? `${doc.title} · Documentation Record` : "Engineering Documentation Record"}
                     className={styles.docImage}
                     width={640}
                     height={400}

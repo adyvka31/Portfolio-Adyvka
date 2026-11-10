@@ -173,7 +173,7 @@ export const leadershipDetails = {
   },
 
   // =========================================================================
-  // 02. IDN STUDENT COUNCIL — EVENT DIVISION LEADER
+  // 02. IDN STUDENT COUNCIL · EVENT DIVISION LEADER
   // =========================================================================
   "idn-student-council-event-division-leader": {
     badge: "Executive Leadership",
@@ -182,7 +182,7 @@ export const leadershipDetails = {
     institution: "IDN Student Council",
     period: "Jan 2025 - Mar 2026",
     summary:
-      "Rose from Grade 10 committee member to Head of the Event Division in Grade 11. Commanded the organizing committee for IT FEST 2025—a national competition with over 500 participants across IT and English categories—directing teams, managing out-of-town guests, and resolving high-pressure backroom operational crises under zero-delay deadlines.",
+      "Rose from Grade 10 committee member to Head of the Event Division in Grade 11. Commanded the organizing committee for IT FEST 2025, a national competition with over 500 participants across IT and English categories, directing teams, managing out-of-town guests, and resolving high-pressure backroom operational crises under zero-delay deadlines.",
     meta: [
       { label: "Organization", value: "IDN Student Council (OSIS)" },
       { label: "Role", value: "Head of Event Division" },
@@ -318,7 +318,7 @@ export const leadershipDetails = {
   },
 
   // =========================================================================
-  // 03. BARMUS VOLUNTRIP — VOLUNTEER EVENT ORGANIZER
+  // 03. BARMUS VOLUNTRIP · VOLUNTEER EVENT ORGANIZER
   // =========================================================================
   "barmus-voluntrip-volunteer-event-organizer": {
     badge: "Social Impact & Volunteerism",
@@ -608,7 +608,7 @@ export const leadershipDetails = {
   },
 
   // =========================================================================
-  // 05. COMPETITION EVENT COORDINATOR — IT FEST 2025
+  // 05. COMPETITION EVENT COORDINATOR · IT FEST 2025
   // =========================================================================
   "it-fest-2025-competition-event-coordinator": {
     badge: "Event Leadership",
@@ -739,7 +739,7 @@ export const leadershipDetails = {
   },
 
   // =========================================================================
-  // 06. LIVE IN RURAL COMMUNITY IMMERSION — TRADITIONAL AGRICULTURE
+  // 06. LIVE IN RURAL COMMUNITY IMMERSION · TRADITIONAL AGRICULTURE
   // =========================================================================
   "idn-boarding-school-live-in-rural-immersion": {
     badge: "Community Immersion & Agriculture",

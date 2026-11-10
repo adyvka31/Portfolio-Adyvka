@@ -215,8 +215,8 @@ const CURRENTLY = [
   },
   {
     label: "ACADEMICS",
-    title: "96 / 100 GPA Record",
-    detail: "Top-tier academic score achieved in Semester 4 of Software Engineering at SMK IDN Boarding School.",
+    title: "96 / 100 GPA (Academic Honors)",
+    detail: "Top-tier academic score achieved in Semester 4 of Software Engineering at SMK IDN Boarding School, maintained while leading corporate ERP deliverables.",
   },
   {
     label: "DEEPENING",
@@ -296,7 +296,7 @@ export default function AboutPage() {
   return (
     <PageShell>
       <SEO
-        title="About — Rafif Sava Adyvka Pratama"
+        title="About · Rafif Sava Adyvka Pratama"
         description="Learn more about Rafif Sava Adyvka Pratama (Adyvka), Software Engineer & Systems Architect specializing in clean architecture, polyglot development, and distributed systems."
         path="/about"
         type="profile"
@@ -336,7 +336,7 @@ export default function AboutPage() {
           <div className={styles.introWrap}>
             <div className={styles.introLeft}>
               <NativeReveal>
-                <span className={styles.sectionLabel}>— Profile</span>
+                <span className={styles.sectionLabel}>// Profile</span>
               </NativeReveal>
               <NativeReveal delay={0.1}>
                 <h2 className={`font-serif ${styles.introQuote} text-glow`}>
@@ -403,7 +403,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className={styles.introCardContent}>
-                  <span className={styles.introCardLabel}>— Identity Card</span>
+                  <span className={styles.introCardLabel}>// Identity Card</span>
                   <dl className={styles.introCardList}>
                     {INTRO_FACTS.map((f) => (
                       <div key={f.label} className={styles.introCardRow}>
@@ -423,7 +423,7 @@ export default function AboutPage() {
               <NativeReveal className="reveal-slide-up">
                 <div className={styles.skillsHeader}>
                   <span className={styles.sectionLabel}>
-                    — Technical Skills
+                    // Technical Skills
                   </span>
 
                   <h2 className={`${styles.skillsTitle} text-fade`}>
@@ -474,7 +474,7 @@ export default function AboutPage() {
             <div className={styles.skillsColumn}>
               <NativeReveal className="reveal-slide-up" delay={0.1}>
                 <div className={styles.skillsHeader}>
-                  <span className={styles.sectionLabel}>— Core Capabilities</span>
+                  <span className={styles.sectionLabel}>// Core Capabilities</span>
 
                   <h2 className={`${styles.skillsTitle} text-fade`}>
                     <span className={`font-serif ${styles.italic} text-glow`}>
@@ -524,7 +524,7 @@ export default function AboutPage() {
           <NativeReveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
               <span className={styles.sectionLabel}>
-                — Two Tracks, Six Years
+                // Two Tracks, Six Years
               </span>
               <h2 className={`${styles.sectionTitle} text-fade`}>
                 Every year, one of{" "}
@@ -555,7 +555,7 @@ export default function AboutPage() {
         <div className={styles.container}>
           <NativeReveal>
             <div className={`${styles.sectionHead} ${styles.headCenter}`}>
-              <span className={styles.sectionLabel}>— Right Now</span>
+              <span className={styles.sectionLabel}>// Right Now</span>
               <h2 className={`${styles.sectionTitle} text-fade`}>
                 What's open in the{" "}
                 <span className={`font-serif ${styles.italic} text-glow`}>
@@ -589,7 +589,7 @@ export default function AboutPage() {
           <div className={styles.nextWrap}>
             <NativeReveal>
               <div className={styles.nextLeft}>
-                <span className={styles.sectionLabel}>— What's Next</span>
+                <span className={styles.sectionLabel}>// What's Next</span>
                 <h2 className={`${styles.sectionTitle} text-fade`}>
                   The shape of the next{" "}
                   <span className={`font-serif ${styles.italic} text-glow`}>

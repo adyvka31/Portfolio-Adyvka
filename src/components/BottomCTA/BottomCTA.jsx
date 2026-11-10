@@ -8,7 +8,7 @@ function BottomCTA({
   eyebrow = "What's next",
   title = "Let's build something.",
   italicWord = "something",
-  description = "Recruiting, contracting, or just curious — the inbox is open.",
+  description = "Recruiting, contracting, or just curious, the inbox is open.",
   buttonText = "Get in touch",
   buttonTo = "/contact",
 }) {

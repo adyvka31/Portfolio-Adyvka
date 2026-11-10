@@ -92,7 +92,7 @@ export default function CertificatesPage() {
   return (
     <PageShell>
       <SEO
-        title="Certificates — Rafif Sava Adyvka Pratama"
+        title="Certificates · Rafif Sava Adyvka Pratama"
         description="Verified credentials and engineering certifications earned by Rafif Sava Adyvka Pratama (Adyvka) from Harvard CS50, Dicoding, AWS, and DQLab."
         path="/certificates"
         keywords={CERTIFICATE_KEYWORDS}
@@ -107,7 +107,13 @@ export default function CertificatesPage() {
         label="Certificates"
         title="Verified knowledge."
         italicWord="Verified"
-        description="A curated collection of verified professional certifications and credentials demonstrating technical rigor, industry standards, and continuous learning."
+        description="A verified record of self-directed computational study, spanning Harvard CS50 fundamentals, AWS cloud architecture, backend systems, and artificial intelligence."
+        meta={[
+          { label: "Total Credentials", value: "23 Verified Certificates" },
+          { label: "Core Foundation", value: "Harvard CS50x Graduate" },
+          { label: "Architecture & Cloud", value: "AWS, Dicoding & DQLab" },
+          { label: "Domains Covered", value: "Web, Cloud, Data & AI" },
+        ]}
       />
 
       <section className={styles.gridSection} aria-label="Certificate Gallery">

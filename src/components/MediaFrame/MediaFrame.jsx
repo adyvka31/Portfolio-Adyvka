@@ -3,7 +3,7 @@ import styles from "./MediaFrame.module.css";
 import Image from "../Image/Image";
 
 /**
- * Image frame styled like a browser/macOS window — for case-study screenshots,
+ * Image frame styled like a browser/macOS window · for case-study screenshots,
  * certificate scans, achievement photos. Reuses your existing chrome aesthetic.
  *
  * @param {string} src        Image source

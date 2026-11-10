@@ -1958,7 +1958,7 @@ export const projectDetails = {
       {
         title: "Architecture",
         body: [
-          "React + Vite on the frontend for fast cold starts; NestJS modular monolith on the backend with Prisma ORM over PostgreSQL. Domain boundaries enforced at the module level, inventory cannot import from finance, only through a shared events module.",
+          "React + Vite on the frontend for fast cold starts, coupled with a NestJS modular monolith on the backend with Prisma ORM over PostgreSQL. Domain boundaries enforced at the module level, inventory cannot import from finance, only through a shared events module.",
           "Auth uses JWT with refresh-token rotation, while RBAC is policy-based with deny-by-default. Every write goes through a use-case layer that emits domain events for the audit log.",
         ],
       },
@@ -1976,6 +1976,20 @@ export const projectDetails = {
           "18% reduction in monthly close time during internal workflow trials.",
           "4,328 SKUs migrated with zero reconciliation errors.",
         ],
+      },
+    ],
+    metricOutcomes: [
+      {
+        value: "18%",
+        label: "Reduction in monthly financial close duration during internal trials",
+      },
+      {
+        value: "4,328",
+        label: "SKUs and operational assets migrated with zero reconciliation errors",
+      },
+      {
+        value: "3 Stages",
+        label: "Sequential digital signature approval chain safeguarding procurement",
       },
     ],
     stack: [

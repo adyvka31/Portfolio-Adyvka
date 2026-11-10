@@ -16,7 +16,7 @@ export default function ProjectGallery({
   sectionNumber = "02",
   label = "PRODUCTION INTERFACES",
   title = "The Live System in Action",
-  lead = "Explore high-fidelity production interfaces of the Databank Ecosystem — from operational analytics dashboards and role governance matrices to vendor PO workflows and high-throughput virtualized data tables.",
+  lead = "Explore high-fidelity production interfaces of the Databank Ecosystem, spanning operational analytics dashboards, role governance matrices, vendor PO workflows, and high-throughput virtualized data tables.",
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -194,7 +194,7 @@ export default function ProjectGallery({
                     <Image
                       key={current.id || currentIndex}
                       src={current.image}
-                      alt={current.title ? `${current.title} — Mobile Application Screen` : "Mobile Application Screen"}
+                      alt={current.title ? `${current.title} · Mobile Application Screen` : "Mobile Application Screen"}
                       className={styles.phoneImage}
                       width={430}
                       height={900}
@@ -205,7 +205,7 @@ export default function ProjectGallery({
                   <Image
                     key={current.id || currentIndex}
                     src={current.image}
-                    alt={current.title ? `${current.title} — Production Dashboard Interface` : "Production Dashboard Interface"}
+                    alt={current.title ? `${current.title} · Production Dashboard Interface` : "Production Dashboard Interface"}
                     className={styles.slideImage}
                     width={2940}
                     height={1674}
@@ -283,7 +283,7 @@ export default function ProjectGallery({
                 >
                   <Image
                     src={item.image}
-                    alt={item.title ? `${item.title} — Thumbnail View` : "Thumbnail View"}
+                    alt={item.title ? `${item.title} · Thumbnail View` : "Thumbnail View"}
                     className={`${styles.thumbImage} ${
                       item.isMobile ? styles.thumbImageMobile : ""
                     }`}
@@ -315,7 +315,7 @@ export default function ProjectGallery({
           >
             <div className={styles.lightboxHeader}>
               <h4 className={styles.lightboxTitle}>
-                {current.title} — {current.route || (isMobileSlide ? "mobile.app" : "databank.intisel.id")}
+                {current.title} · {current.route || (isMobileSlide ? "mobile.app" : "databank.intisel.id")}
               </h4>
               <button
                 type="button"
@@ -334,7 +334,7 @@ export default function ProjectGallery({
             >
               <Image
                 src={current.image}
-                alt={current.title ? `${current.title} — Fullscreen Production View` : "Fullscreen Production View"}
+                alt={current.title ? `${current.title} · Fullscreen Production View` : "Fullscreen Production View"}
                 className={`${styles.lightboxImage} ${
                   current.isMobile ? styles.lightboxImageMobile : ""
                 }`}

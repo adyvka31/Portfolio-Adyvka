@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { LazyMotion, domAnimation } from "framer-motion";
 
 import Navbar from "./components/Navbar/Navbar";
+import Chatbot from "./components/Chatbot/Chatbot";
 import PageLoader from "./components/PageLoader/PageLoader";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
@@ -23,6 +24,7 @@ export default function App() {
           <Outlet />
         </Suspense>
       </ErrorBoundary>
+      <Chatbot />
     </LazyMotion>
   );
 }
