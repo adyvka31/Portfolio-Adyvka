@@ -325,21 +325,30 @@
 }
 
 .headerCloseBtn {
-  background: transparent;
-  border: none;
-  color: var(--ink-300, #82828e);
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f4f4f6;
   cursor: pointer;
-  padding: 0.35rem;
-  border-radius: 8px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
 }
 
 .headerCloseBtn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #f4f4f6;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.headerCloseBtn:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.24);
 }
 
 /* Quick Suggestions Bar */
@@ -596,13 +605,21 @@
     right: calc(1.75rem + env(safe-area-inset-right, 0px));
   }
 
-  .launcherWrapperHiddenOnMobile {
+  .launcherHiddenWhenKeyboard {
     display: none !important;
   }
 
   .chatWindowKeyboardOpen {
     border-radius: 18px !important;
     box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.95), 0 0 20px rgba(124, 242, 255, 0.15);
+  }
+
+  .headerCloseBtn {
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.24);
+    color: #ffffff;
   }
 
   /* Floating card modal on mobile (not fullscreen) */

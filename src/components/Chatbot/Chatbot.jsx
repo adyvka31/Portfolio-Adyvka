@@ -406,7 +406,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
               title="Close conversation"
               aria-label="Close conversation"
             >
-              <CloseIcon size={18} strokeWidth={2.2} />
+              <CloseIcon size={18} strokeWidth={2.4} />
             </button>
           </header>
 
@@ -514,7 +514,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       {/* Floating Circular Toggle Button */}
       <div
         ref={launcherRef}
-        className={`${styles.launcherWrapper} ${isChatActive ? styles.launcherWrapperHiddenOnMobile : ""}`}
+        className={`${styles.launcherWrapper} ${keyboardState.isOpen ? styles.launcherHiddenWhenKeyboard : ""}`}
       >
         <button
           type="button"

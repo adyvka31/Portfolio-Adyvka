@@ -127,9 +127,9 @@
 
 .ncContent {
   position: relative;
-  z-index: 10;
+  z-index: 4;
   padding: clamp(2rem, 5vw, 3.5rem) 1.5rem 0;
-  transform: translateZ(60px);
+  transform: translateZ(30px);
 }
 
 .ncName {
@@ -165,8 +165,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 5;
-  transform: translateZ(40px);
+  z-index: 12;
+  transform: translateZ(70px);
   pointer-events: none;
 }
 
@@ -206,7 +206,7 @@
   position: absolute;
   bottom: clamp(1.5rem, 4vw, 2.5rem);
   left: 50%;
-  transform: translateX(-50%) translateZ(80px); /* Center secara absolut & ruang 3D */
+  transform: translateX(-50%) translateZ(90px); /* Center secara absolut & ruang 3D */
 
   /* SENIOR FIX: Fluid width agar aman di HP 320px */
   width: calc(100% - 2.5rem);
