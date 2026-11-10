@@ -159,6 +159,25 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     messagesEndRef.current?.scrollIntoView({ behavior });
   };
 
+  // Lock body scroll on mobile when chat window is active
+  useEffect(() => {
+    if (!isOpen || isClosing) return;
+
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 640;
+    if (!isMobile) return;
+
+    const originalOverflow = document.body.style.overflow;
+    const originalTouchAction = document.body.style.touchAction;
+
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.touchAction = originalTouchAction;
+    };
+  }, [isOpen, isClosing]);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -173,7 +192,10 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       });
     }
 
-    inputRef.current?.focus({ preventScroll: true });
+    // Only auto-focus on desktop so mobile on-screen keyboard does not aggressively pop up
+    if (typeof window !== "undefined" && window.innerWidth > 640) {
+      inputRef.current?.focus({ preventScroll: true });
+    }
   }, [isOpen, messages, isTyping]);
 
   // Handle send message
@@ -230,7 +252,11 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   };
 
   return (
-    <div className={styles.chatbotWrapper}>
+    <div
+      className={`${styles.chatbotWrapper} ${
+        isChatActive ? styles.chatbotWrapperOpen : ""
+      }`}
+    >
       {/* Chat Window Modal */}
       {isOpen && (
         <section
