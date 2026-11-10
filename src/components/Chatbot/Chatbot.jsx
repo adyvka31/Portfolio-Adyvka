@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { findBestAnswer, QUICK_SUGGESTIONS } from "../../data/chatbotKnowledge";
-import profilePhoto from "../../assets/rafif-sava-adyvka-pratama-software-engineer.webp";
 import styles from "./Chatbot.module.css";
 
 // SVG Icons
@@ -28,6 +27,39 @@ function ArrowUpRightIcon({ size = 12 }) {
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="7" y1="17" x2="17" y2="7" />
       <polyline points="7 7 17 7 17 17" />
+    </svg>
+  );
+}
+
+// Modern AI Chatbot / Robot Icon for floating launcher
+function ChatBotIcon({ size = 26 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={styles.botIconSvg}
+      aria-hidden="true"
+    >
+      {/* Robot Antenna with Signal Beacon */}
+      <path d="M12 6V2.5" />
+      <circle cx="12" cy="2" r="1" fill="currentColor" stroke="none" />
+
+      {/* Robot Head with Speech Bubble Contour */}
+      <rect x="3.5" y="6" width="17" height="12" rx="4" />
+      <path d="M8 18l-3.5 3.5v-3.5" strokeLinejoin="round" />
+
+      {/* Expressive Glowing Eyes */}
+      <circle cx="9" cy="11.5" r="1.25" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="11.5" r="1.25" fill="currentColor" stroke="none" />
+
+      {/* Friendly Curvature Smile */}
+      <path d="M10 14.5c.6.6 1.3.8 2 .8s1.4-.2 2-.8" strokeWidth="1.8" />
     </svg>
   );
 }
@@ -126,6 +158,45 @@ function Chatbot() {
   };
 
   const isChatActive = isOpen && !isClosing;
+
+  // Periodic floating notification bubble ("Ask Adyvka")
+  const [bubbleState, setBubbleState] = useState("idle"); // "idle" | "visible" | "hidden"
+
+  useEffect(() => {
+    // If chat is open, immediately collapse bubble
+    if (isChatActive) {
+      setBubbleState("hidden");
+      return;
+    }
+
+    let showTimer;
+    let hideTimer;
+    let isCancelled = false;
+
+    const scheduleCycle = (delay) => {
+      showTimer = setTimeout(() => {
+        if (isCancelled) return;
+        setBubbleState("visible");
+
+        // Keep visible for 4.5s then collapse into button
+        hideTimer = setTimeout(() => {
+          if (isCancelled) return;
+          setBubbleState("hidden");
+          // Wait 3.8s before expanding again
+          scheduleCycle(3800);
+        }, 4500);
+      }, delay);
+    };
+
+    // First appearance 1.6s after component mounts or chat closes
+    scheduleCycle(1600);
+
+    return () => {
+      isCancelled = true;
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
+  }, [isChatActive]);
 
   // Initial greeting (English-first matching website with bilingual support notice)
   const [messages, setMessages] = useState([
@@ -378,14 +449,8 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           <header className={styles.chatHeader}>
             <div className={styles.headerLeft}>
               <div className={styles.botAvatar}>
-                <div className={styles.botAvatarImgWrap}>
-                  <img
-                    src={profilePhoto}
-                    alt="Rafif Sava Adyvka Pratama"
-                    className={styles.botAvatarImg}
-                    width={36}
-                    height={36}
-                  />
+                <div className={styles.botAvatarIconWrap}>
+                  <ChatBotIcon size={20} />
                 </div>
                 <span className={styles.avatarLiveDot} aria-hidden="true" />
               </div>
@@ -511,11 +576,36 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
         </section>
       )}
 
-      {/* Floating Circular Toggle Button */}
+      {/* Floating Circular Toggle Button & Notification Bubble */}
       <div
         ref={launcherRef}
         className={`${styles.launcherWrapper} ${keyboardState.isOpen ? styles.launcherHiddenWhenKeyboard : ""}`}
       >
+        {/* Floating Notification Badge ("Ask Adyvka") */}
+        <div
+          className={`${styles.bubbleBadge} ${
+            bubbleState === "visible"
+              ? styles.bubbleVisible
+              : bubbleState === "hidden"
+              ? styles.bubbleHidden
+              : styles.bubbleIdle
+          }`}
+          onClick={handleToggle}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleToggle();
+            }
+          }}
+          aria-label="Ask Adyvka"
+          title="Ask Adyvka"
+        >
+          <span className={styles.bubbleSparkle} aria-hidden="true">✦</span>
+          <span className={styles.bubbleText}>Ask Adyvka</span>
+        </div>
+
         <button
           type="button"
           className={`${styles.launcherBtn} ${isChatActive ? styles.launcherBtnOpen : ""}`}
@@ -525,17 +615,11 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           aria-expanded={isChatActive}
         >
           <div
-            className={`${styles.iconLayer} ${styles.avatarLayer} ${isChatActive ? styles.layerHidden : styles.layerActive}`}
+            className={`${styles.iconLayer} ${styles.botLayer} ${isChatActive ? styles.layerHidden : styles.layerActive}`}
             aria-hidden={isChatActive}
           >
-            <div className={styles.launcherAvatarImgWrap}>
-              <img
-                src={profilePhoto}
-                alt="Rafif Sava Adyvka Pratama"
-                className={styles.launcherAvatarImg}
-                width={48}
-                height={48}
-              />
+            <div className={styles.launcherIconWrap}>
+              <ChatBotIcon size={26} />
             </div>
             <span className={styles.pulseDot} aria-hidden="true" />
           </div>
