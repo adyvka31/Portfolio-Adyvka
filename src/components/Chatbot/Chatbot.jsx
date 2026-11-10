@@ -153,11 +153,43 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   const messagesContainerRef = useRef(null);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const chatWindowRef = useRef(null);
+  const launcherRef = useRef(null);
 
   // Auto scroll to bottom
   const scrollToBottom = (behavior = "smooth") => {
     messagesEndRef.current?.scrollIntoView({ behavior });
   };
+
+  // Close chat on pointerdown outside modal and launcher or on Escape key
+  useEffect(() => {
+    if (!isOpen || isClosing) return;
+
+    const handlePointerDownOutside = (e) => {
+      if (
+        chatWindowRef.current &&
+        !chatWindowRef.current.contains(e.target) &&
+        launcherRef.current &&
+        !launcherRef.current.contains(e.target)
+      ) {
+        handleClose();
+      }
+    };
+
+    const handleKeyDownGlobal = (e) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDownOutside);
+    document.addEventListener("keydown", handleKeyDownGlobal);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDownOutside);
+      document.removeEventListener("keydown", handleKeyDownGlobal);
+    };
+  }, [isOpen, isClosing]);
 
   // Lock body scroll on mobile when chat window is active
   useEffect(() => {
@@ -167,14 +199,10 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     if (!isMobile) return;
 
     const originalOverflow = document.body.style.overflow;
-    const originalTouchAction = document.body.style.touchAction;
-
     document.body.style.overflow = "hidden";
-    document.body.style.touchAction = "none";
 
     return () => {
       document.body.style.overflow = originalOverflow;
-      document.body.style.touchAction = originalTouchAction;
     };
   }, [isOpen, isClosing]);
 
@@ -252,14 +280,11 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   };
 
   return (
-    <div
-      className={`${styles.chatbotWrapper} ${
-        isChatActive ? styles.chatbotWrapperOpen : ""
-      }`}
-    >
+    <>
       {/* Chat Window Modal */}
       {isOpen && (
         <section
+          ref={chatWindowRef}
           className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening}`}
           onAnimationEnd={handleAnimationEnd}
           role="dialog"
@@ -395,37 +420,42 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
         </section>
       )}
 
-      {/* Floating Circular Toggle Button (Avatar when closed, Close X when open) */}
-      <button
-        type="button"
-        className={`${styles.launcherBtn} ${isChatActive ? styles.launcherBtnOpen : ""}`}
-        onClick={handleToggle}
-        title={isChatActive ? "Close conversation" : "Ask Adyvka"}
-        aria-label={isChatActive ? "Close conversation" : "Ask Adyvka"}
-        aria-expanded={isChatActive}
+      {/* Floating Circular Toggle Button */}
+      <div
+        ref={launcherRef}
+        className={styles.launcherWrapper}
       >
-        <div
-          className={`${styles.iconLayer} ${styles.avatarLayer} ${isChatActive ? styles.layerHidden : styles.layerActive}`}
-          aria-hidden={isChatActive}
+        <button
+          type="button"
+          className={`${styles.launcherBtn} ${isChatActive ? styles.launcherBtnOpen : ""}`}
+          onClick={handleToggle}
+          title={isChatActive ? "Close conversation" : "Ask Adyvka"}
+          aria-label={isChatActive ? "Close conversation" : "Ask Adyvka"}
+          aria-expanded={isChatActive}
         >
-          <img
-            src={profilePhoto}
-            alt="Adyvka"
-            className={styles.launcherAvatarImg}
-            width={48}
-            height={48}
-          />
-          <span className={styles.pulseDot} aria-hidden="true" />
-        </div>
+          <div
+            className={`${styles.iconLayer} ${styles.avatarLayer} ${isChatActive ? styles.layerHidden : styles.layerActive}`}
+            aria-hidden={isChatActive}
+          >
+            <img
+              src={profilePhoto}
+              alt="Adyvka"
+              className={styles.launcherAvatarImg}
+              width={48}
+              height={48}
+            />
+            <span className={styles.pulseDot} aria-hidden="true" />
+          </div>
 
-        <div
-          className={`${styles.iconLayer} ${styles.closeLayer} ${isChatActive ? styles.layerActive : styles.layerHidden}`}
-          aria-hidden={!isChatActive}
-        >
-          <CloseIcon size={20} strokeWidth={2.4} />
-        </div>
-      </button>
-    </div>
+          <div
+            className={`${styles.iconLayer} ${styles.closeLayer} ${isChatActive ? styles.layerActive : styles.layerHidden}`}
+            aria-hidden={!isChatActive}
+          >
+            <CloseIcon size={20} strokeWidth={2.4} />
+          </div>
+        </button>
+      </div>
+    </>
   );
 }
 
