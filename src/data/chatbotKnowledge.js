@@ -43,7 +43,7 @@ export const ADYVKA_PROFILE = {
   youtube: "https://www.youtube.com/@adyvkapratama",
   instagram: "https://instagram.com/adyvkaa",
   tiktok: "https://www.tiktok.com/@adypraa31",
-  portfolioUrl: "https://adyvka.my.id",
+  portfolioUrl: "https://adyvkapratama.my.id",
 };
 
 export const QUICK_SUGGESTIONS = [
@@ -73,7 +73,7 @@ export function detectLanguage(text) {
     "kenapa ", "mengapa ", "ceritakan ", "jelaskan ", "sebutkan ", "tolong ",
     "bisa ", "halo ", "hai ", "kapan ", "dimana ", "di mana ", "adakah ", "cara ",
     "dimanakah ", "ke mana ", "dari mana ", "asal ", "tentang ", "mau ", "tanya ",
-    "minta ", "kasih ", "berikan ", "ada ", "sudahkah ", "pernahkah ", "apakah ",
+    "minta ", "kasih ", "berikan ", "ada ", "sudahkah ", "pernahkah ",
     "assalamu", "selamat "
   ];
   if (idOpeners.some((prefix) => lower.startsWith(prefix))) {
@@ -85,7 +85,10 @@ export function detectLanguage(text) {
     "who ", "what ", "how ", "why ", "when ", "where ", "which ", "tell me ",
     "can you ", "could you ", "show me ", "list ", "explain ", "describe ",
     "is ", "are ", "do ", "does ", "did ", "hello ", "hi ", "hey ", "where is ",
-    "where was ", "how old ", "how many ", "what is ", "who is ", "can adyvka "
+    "where was ", "how old ", "how many ", "what is ", "who is ", "can adyvka ",
+    "give me ", "download ", "view ", "show ", "tell ", "share ", "is he ",
+    "can i ", "can we ", "where does ", "what are ", "who are ", "how much ",
+    "current ", "national ", "academic ", "why should ", "why choose "
   ];
   if (enOpeners.some((prefix) => lower.startsWith(prefix))) {
     return "en";
@@ -109,34 +112,50 @@ export function detectLanguage(text) {
     "orang", "halo", "hai", "dong", "sih", "ya", "kok", "nih", "tuh", "gak", "nggak",
     "ga", "udah", "udh", "dah", "blm", "tau", "tahu", "kasih", "tolong", "bener",
     "ingin", "mau", "punya", "bocoran", "tanya", "tanyakan", "jelaskan", "sebutkan",
-    "ceritakan", "kenal", "gmn", "beneran",
-    // Expanded Indonesian synonyms & everyday terms
-    "nomor", "no", "wa", "whatsapp", "telepon", "telp", "tlp", "hp", "surel", "email",
-    "alamat", "biodata", "profil", "biografi", "agama", "islam", "muslim", "keyakinan",
-    "keluarga", "orangtua", "ayah", "ibu", "bapak", "saudara", "adik", "kakak", "teman",
-    "hobi", "minat", "keahlian", "kemampuan", "skill", "karya", "portofolio", "porto",
-    "cv", "resume", "link", "tautan", "akun", "medsos", "sosmed", "sosial", "media",
-    "channel", "depok", "bogor", "jakarta", "bandung", "indonesia", "jawa", "barat",
-    "smk", "sma", "smp", "sd", "idn", "boarding", "santri", "pesantren", "organisasi",
-    "osis", "panitia", "koordinator", "lulusan", "kelulusan", "rekrut", "hire", "merekrut",
-    "alasan", "pilih", "memilih", "makasih", "makasi", "terimakasih", "terima", "kasih",
-    "thanks", "keren", "mantap", "hebat", "top", "assalamualaikum", "assalamu", "alaikum"
+    "ceritakan", "kenal", "gmn", "beneran", "nomor", "no", "wa", "telepon", "telp",
+    "tlp", "hp", "surel", "alamat", "biodata", "profil", "biografi", "agama", "islam",
+    "muslim", "keyakinan", "keluarga", "orangtua", "ayah", "ibu", "bapak", "saudara",
+    "adik", "kakak", "teman", "hobi", "minat", "keahlian", "kemampuan", "skill",
+    "karya", "portofolio", "porto", "tautan", "akun", "medsos", "sosmed", "depok",
+    "bogor", "jakarta", "bandung", "indonesia", "jawa", "barat", "smk", "sma", "smp",
+    "sd", "idn", "boarding", "santri", "pesantren", "organisasi", "osis", "panitia",
+    "koordinator", "lulusan", "kelulusan", "rekrut", "merekrut", "alasan", "pilih",
+    "memilih", "makasih", "makasi", "terimakasih", "terima", "keren", "mantap", "hebat",
+    "top", "assalamualaikum", "assalamu", "alaikum"
   ]);
 
   const EN_INDICATORS = new Set([
-    "the", "a", "an", "is", "are", "was", "were", "be", "been", "have", "has", "had",
+    "the", "a", "an", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had",
     "do", "does", "did", "to", "of", "in", "for", "on", "with", "at", "by", "from",
     "about", "into", "through", "during", "before", "after", "and", "or", "but", "if",
     "this", "that", "these", "those", "i", "you", "he", "she", "it", "we", "they",
-    "my", "your", "his", "their", "our", "project", "projects", "experience", "experiences",
-    "work", "job", "career", "teaching", "school", "gpa", "grade", "score", "book",
-    "books", "award", "awards", "certificate", "certificates", "certification",
-    "contact", "reach", "hire", "skills", "stack", "rate", "rates",
-    "pricing", "remote", "hybrid", "available", "age", "old", "born", "many", "much", "total",
-    "where", "when", "who", "what", "how", "why", "which", "tell", "show", "give", "can",
-    "could", "would", "should", "place", "birth", "living", "located", "details",
-    "overview", "summary", "recommend", "hobbies", "hobby", "vision", "faith", "religion",
-    "family", "parents", "download"
+    "my", "your", "his", "her", "their", "our", "him", "project", "projects", "app", "apps",
+    "application", "applications", "experience", "experiences", "work", "job", "jobs",
+    "career", "teaching", "teach", "taught", "instructor", "mentor", "school", "schools",
+    "gpa", "grade", "grades", "score", "scores", "academic", "book", "books", "award",
+    "awards", "competition", "competitions", "won", "winner", "wins", "certificate",
+    "certificates", "certification", "certifications", "credential", "credentials",
+    "license", "licenses", "contact", "reach", "hire", "skills", "stack", "rate", "rates",
+    "pricing", "fee", "fees", "cost", "costs", "charge", "charges", "charging", "remote",
+    "hybrid", "available", "availability", "age", "old", "born", "birth", "birthday",
+    "birthplace", "many", "much", "total", "count", "where", "when", "who", "whom", "what",
+    "how", "why", "which", "tell", "show", "give", "can", "could", "would", "should",
+    "will", "place", "city", "country", "living", "located", "based", "residence",
+    "residing", "hometown", "details", "overview", "summary", "recommend", "hobbies",
+    "hobby", "free", "time", "leisure", "vision", "goals", "goal", "plans", "aspirations",
+    "faith", "religion", "family", "parents", "parent", "father", "mother", "dad", "mom",
+    "sibling", "siblings", "brother", "sister", "download", "resume", "cv", "curriculum",
+    "vitae", "thanks", "thank", "awesome", "great", "job", "impressive", "amazing",
+    "fantastic", "brilliant", "technologies", "technology", "framework", "frameworks",
+    "languages", "language", "code", "coding", "software", "developer", "engineer",
+    "engineering", "internship", "intern", "contract", "freelance", "fulltime", "parttime",
+    "open", "strengths", "strength", "choose", "help", "assist", "capabilities", "bot",
+    "ai", "assistant", "national", "international", "championship", "profile", "account",
+    "number", "email", "phone", "call", "whatsapp", "linkedin", "github", "instagram",
+    "youtube", "tiktok", "social", "socials", "handle", "channel", "studies", "studied",
+    "student", "authored", "author", "writer", "published", "publish", "solo", "backpacker",
+    "backpacking", "survival", "leadership", "leader", "lead", "organize", "organizer",
+    "event", "events", "current"
   ]);
 
   let idScore = 0;
@@ -147,9 +166,29 @@ export function detectLanguage(text) {
     if (EN_INDICATORS.has(w)) enScore++;
   }
 
-  if (idScore > enScore) return "id";
   if (enScore > idScore && enScore >= 1) return "en";
-  if (words.some((w) => ID_INDICATORS.has(w))) return "id";
+  if (idScore > enScore && idScore >= 1) return "id";
+
+  const ID_EXCLUSIVE = new Set([
+    "yang", "di", "ke", "dari", "ini", "itu", "dan", "atau", "untuk", "pada", "oleh",
+    "ada", "tidak", "bukan", "sudah", "belum", "lagi", "bisa", "kamu", "anda", "dia",
+    "beliau", "saya", "aku", "kami", "kita", "mereka", "dong", "sih", "ya", "kah", "pun",
+    "udah", "udh", "dah", "blm", "tau", "tahu", "gimana", "gmn", "apa", "apakah", "siapa",
+    "kenapa", "mengapa", "berapa", "kapan", "dimana", "mana", "kok", "nih", "tuh", "gak",
+    "nggak", "ga", "makasih", "terimakasih", "alamat", "akun", "unduh", "minta", "ceritakan",
+    "pengalaman", "proyek", "projek", "kerja", "lomba", "juara", "sekolah", "kuliah", "jurusan",
+    "rapot", "nilai", "buku", "tulis", "buat", "bikin", "ajar", "mengajar", "guru", "tarif",
+    "gaji", "biaya", "harga", "kelebihan", "keunggulan", "tentang", "kontak", "hubungi", "umur",
+    "usia", "tahun", "domisili", "tinggal", "sertifikat", "prestasi", "lahir", "kelahiran",
+    "tempat", "asal", "orangtua", "keluarga", "ayah", "ibu", "bapak", "saudara", "hobi",
+    "minat", "cita", "impian", "tujuan", "bantu", "banget"
+  ]);
+
+  if (words.some((w) => ID_EXCLUSIVE.has(w))) {
+    return "id";
+  }
+
+  if (enScore >= 1) return "en";
 
   const idAffixPattern = /^(me|ber|di|ter|pe|se)[a-z]+|[a-z]+(kan|an|nya|ku|mu|lah|kah)$/;
   if (words.some((w) => idAffixPattern.test(w) && !EN_INDICATORS.has(w))) {
@@ -309,6 +348,284 @@ export function normalizeText(text) {
   clean = clean.replace(/\bminta\s+cv\b/g, "cv");
   clean = clean.replace(/\bunduh\s+resume\b/g, "cv");
   clean = clean.replace(/\bdownload\s+resume\b/g, "cv");
+
+  // =========================================================================
+  // EXTENSIVE ENGLISH SYNONYMS & NORMALIZATION
+  // =========================================================================
+
+  // English Greetings & Gratitude
+  clean = clean.replace(/\bthank\s+you\s+so\s+much\b/g, "terimakasih");
+  clean = clean.replace(/\bthank\s+you\s+very\s+much\b/g, "terimakasih");
+  clean = clean.replace(/\bthanks\s+a\s+lot\b/g, "terimakasih");
+  clean = clean.replace(/\bthank\s+you\b/g, "terimakasih");
+  clean = clean.replace(/\bmany\s+thanks\b/g, "terimakasih");
+  clean = clean.replace(/\bmuch\s+appreciated\b/g, "terimakasih");
+  clean = clean.replace(/\bappreciate\s+it\b/g, "terimakasih");
+  clean = clean.replace(/\bcheers\b/g, "terimakasih");
+  clean = clean.replace(/\bawesome\s+job\b/g, "terimakasih");
+  clean = clean.replace(/\bgreat\s+job\b/g, "terimakasih");
+  clean = clean.replace(/\bgood\s+job\b/g, "terimakasih");
+  clean = clean.replace(/\bwell\s+done\b/g, "terimakasih");
+  clean = clean.replace(/\bimpressive\s+work\b/g, "terimakasih");
+  clean = clean.replace(/\bawesome\b/g, "terimakasih");
+  clean = clean.replace(/\bamazing\b/g, "terimakasih");
+  clean = clean.replace(/\bfantastic\b/g, "terimakasih");
+  clean = clean.replace(/\bbrilliant\b/g, "terimakasih");
+
+  // English Bot Identity
+  clean = clean.replace(/\bwho\s+are\s+you\b/g, "botidentity");
+  clean = clean.replace(/\bwhat\s+are\s+you\b/g, "botidentity");
+  clean = clean.replace(/\bwhat\s+is\s+your\s+name\b/g, "botidentity");
+  clean = clean.replace(/\bwho\s+made\s+you\b/g, "botidentity");
+  clean = clean.replace(/\bwho\s+created\s+you\b/g, "botidentity");
+  clean = clean.replace(/\bwhat\s+can\s+you\s+do\b/g, "botidentity");
+  clean = clean.replace(/\bhow\s+can\s+you\s+help\b/g, "botidentity");
+  clean = clean.replace(/\bhow\s+can\s+you\s+assist\b/g, "botidentity");
+  clean = clean.replace(/\bwhat\s+are\s+your\s+capabilities\b/g, "botidentity");
+  clean = clean.replace(/\bwhat\s+can\s+i\s+ask\b/g, "botidentity");
+
+  // English Contact, Social & Reach Out
+  clean = clean.replace(/\bhow\s+can\s+i\s+contact\b/g, "kontak");
+  clean = clean.replace(/\bhow\s+to\s+contact\b/g, "kontak");
+  clean = clean.replace(/\bhow\s+can\s+i\s+reach\b/g, "kontak");
+  clean = clean.replace(/\bhow\s+to\s+reach\b/g, "kontak");
+  clean = clean.replace(/\bget\s+in\s+touch\b/g, "kontak");
+  clean = clean.replace(/\breach\s+out\b/g, "kontak");
+  clean = clean.replace(/\bcontact\s+info\b/g, "kontak");
+  clean = clean.replace(/\bcontact\s+information\b/g, "kontak");
+  clean = clean.replace(/\bcontact\s+details\b/g, "kontak");
+  clean = clean.replace(/\bwhatsapp\s+number\b/g, "whatsapp");
+  clean = clean.replace(/\bwa\s+number\b/g, "whatsapp");
+  clean = clean.replace(/\bchat\s+on\s+whatsapp\b/g, "whatsapp");
+  clean = clean.replace(/\bphone\s+number\b/g, "telepon");
+  clean = clean.replace(/\btelephone\s+number\b/g, "telepon");
+  clean = clean.replace(/\bcell\s+phone\b/g, "telepon");
+  clean = clean.replace(/\bmobile\s+number\b/g, "telepon");
+  clean = clean.replace(/\bemail\s+address\b/g, "email");
+  clean = clean.replace(/\bsend\s+email\b/g, "email");
+  clean = clean.replace(/\bdrop\s+an\s+email\b/g, "email");
+  clean = clean.replace(/\bgithub\s+account\b/g, "kontak github");
+  clean = clean.replace(/\bgithub\s+profile\b/g, "kontak github");
+  clean = clean.replace(/\bgithub\s+link\b/g, "kontak github");
+  clean = clean.replace(/\bhis\s+github\b/g, "kontak github");
+  clean = clean.replace(/\blinkedin\s+account\b/g, "kontak linkedin");
+  clean = clean.replace(/\blinkedin\s+profile\b/g, "kontak linkedin");
+  clean = clean.replace(/\blinkedin\s+link\b/g, "kontak linkedin");
+  clean = clean.replace(/\bhis\s+linkedin\b/g, "kontak linkedin");
+  clean = clean.replace(/\binstagram\s+profile\b/g, "kontak instagram");
+  clean = clean.replace(/\binstagram\s+account\b/g, "kontak instagram");
+  clean = clean.replace(/\bhis\s+instagram\b/g, "kontak instagram");
+  clean = clean.replace(/\byoutube\s+channel\b/g, "kontak youtube");
+  clean = clean.replace(/\bhis\s+youtube\b/g, "kontak youtube");
+  clean = clean.replace(/\btiktok\s+account\b/g, "kontak tiktok");
+  clean = clean.replace(/\bhis\s+tiktok\b/g, "kontak tiktok");
+  clean = clean.replace(/\bsocial\s+media\b/g, "kontak");
+  clean = clean.replace(/\bsocial\s+profiles?\b/g, "kontak");
+  clean = clean.replace(/\bsocials\b/g, "kontak");
+
+  // English Resume / CV
+  clean = clean.replace(/\bdownload\s+cv\b/g, "cv");
+  clean = clean.replace(/\bdownload\s+resume\b/g, "cv");
+  clean = clean.replace(/\bget\s+cv\b/g, "cv");
+  clean = clean.replace(/\bget\s+resume\b/g, "cv");
+  clean = clean.replace(/\bview\s+cv\b/g, "cv");
+  clean = clean.replace(/\bview\s+resume\b/g, "cv");
+  clean = clean.replace(/\bcurriculum\s+vitae\b/g, "cv");
+  clean = clean.replace(/\bpdf\s+resume\b/g, "cv");
+  clean = clean.replace(/\bcv\s+pdf\b/g, "cv");
+
+  // English Birth, Age, Origins & Domicile
+  clean = clean.replace(/\bwhere\s+was\s+(?:adyvka\s+|he\s+)?born\b/g, "lahir");
+  clean = clean.replace(/\bwhere\s+is\s+he\s+born\b/g, "lahir");
+  clean = clean.replace(/\bplace\s+of\s+birth\b/g, "lahir");
+  clean = clean.replace(/\bbirth\s+place\b/g, "lahir");
+  clean = clean.replace(/\bbirthplace\b/g, "lahir");
+  clean = clean.replace(/\bbirth\s+city\b/g, "lahir");
+  clean = clean.replace(/\bnative\s+city\b/g, "lahir");
+  clean = clean.replace(/\bhow\s+old\s+is\s+(?:he|adyvka)\b/g, "umur");
+  clean = clean.replace(/\bwhat\s+is\s+his\s+age\b/g, "umur");
+  clean = clean.replace(/\bwhen\s+was\s+(?:he|adyvka)\s+born\b/g, "lahir umur");
+  clean = clean.replace(/\bdate\s+of\s+birth\b/g, "lahir umur");
+  clean = clean.replace(/\bbirth\s+date\b/g, "lahir umur");
+  clean = clean.replace(/\byear\s+of\s+birth\b/g, "lahir umur");
+  clean = clean.replace(/\bbirth\s+year\b/g, "lahir umur");
+  clean = clean.replace(/\bwhere\s+does\s+(?:he|adyvka)\s+live\b/g, "domisili");
+  clean = clean.replace(/\bwhere\s+is\s+(?:he|adyvka)\s+located\b/g, "domisili");
+  clean = clean.replace(/\bwhere\s+is\s+(?:he|adyvka)\s+based\b/g, "domisili");
+  clean = clean.replace(/\bwhat\s+city\s+is\s+he\s+from\b/g, "domisili");
+  clean = clean.replace(/\bcurrent\s+residence\b/g, "domisili");
+  clean = clean.replace(/\bcurrent\s+location\b/g, "domisili");
+  clean = clean.replace(/\bcity\s+of\s+residence\b/g, "domisili");
+  clean = clean.replace(/\bwhere\s+is\s+his\s+home\b/g, "domisili");
+  clean = clean.replace(/\bresidence\b/g, "domisili");
+  clean = clean.replace(/\bresiding\b/g, "domisili");
+  clean = clean.replace(/\bhometown\b/g, "domisili");
+
+  // English Faith & Family
+  clean = clean.replace(/\bwhat\s+is\s+his\s+religion\b/g, "agama");
+  clean = clean.replace(/\bwhat\s+religion\b/g, "agama");
+  clean = clean.replace(/\bwhat\s+is\s+his\s+faith\b/g, "agama");
+  clean = clean.replace(/\bis\s+he\s+muslim\b/g, "agama");
+  clean = clean.replace(/\breligious\s+beliefs?\b/g, "agama");
+  clean = clean.replace(/\bspiritual\s+beliefs?\b/g, "agama");
+  clean = clean.replace(/\btell\s+me\s+about\s+his\s+family\b/g, "keluarga");
+  clean = clean.replace(/\bwho\s+are\s+his\s+parents\b/g, "keluarga");
+  clean = clean.replace(/\bhis\s+family\b/g, "keluarga");
+  clean = clean.replace(/\bfather\s+and\s+mother\b/g, "keluarga");
+  clean = clean.replace(/\bhis\s+parents\b/g, "keluarga");
+  clean = clean.replace(/\bdoes\s+he\s+have\s+siblings\b/g, "keluarga");
+  clean = clean.replace(/\bhis\s+siblings\b/g, "keluarga");
+  clean = clean.replace(/\bchildhood\s+background\b/g, "keluarga");
+  clean = clean.replace(/\bupbringing\b/g, "keluarga");
+  clean = clean.replace(/\bfather\b/g, "keluarga");
+  clean = clean.replace(/\bmother\b/g, "keluarga");
+  clean = clean.replace(/\bparents?\b/g, "keluarga");
+  clean = clean.replace(/\bsiblings?\b/g, "keluarga");
+  clean = clean.replace(/\bbrothers?\b/g, "keluarga");
+  clean = clean.replace(/\bsisters?\b/g, "keluarga");
+
+  // English Projects & Applications
+  clean = clean.replace(/\bhow\s+many\s+projects\b/g, "jumlahproyek");
+  clean = clean.replace(/\bhow\s+many\s+apps\b/g, "jumlahproyek");
+  clean = clean.replace(/\bhow\s+many\s+applications\b/g, "jumlahproyek");
+  clean = clean.replace(/\bnumber\s+of\s+projects\b/g, "jumlahproyek");
+  clean = clean.replace(/\btotal\s+projects\b/g, "jumlahproyek");
+  clean = clean.replace(/\btotal\s+apps\b/g, "jumlahproyek");
+  clean = clean.replace(/\blist\s+all\s+projects\b/g, "katalogproyek");
+  clean = clean.replace(/\blist\s+projects\b/g, "katalogproyek");
+  clean = clean.replace(/\bshow\s+all\s+projects\b/g, "katalogproyek");
+  clean = clean.replace(/\bshow\s+projects\b/g, "katalogproyek");
+  clean = clean.replace(/\bwhat\s+applications\s+has\s+he\s+built\b/g, "katalogproyek");
+  clean = clean.replace(/\bwhat\s+apps\s+has\s+he\s+built\b/g, "katalogproyek");
+  clean = clean.replace(/\bwhat\s+projects\s+has\s+he\s+built\b/g, "katalogproyek");
+  clean = clean.replace(/\bwhat\s+has\s+he\s+built\b/g, "katalogproyek");
+  clean = clean.replace(/\ball\s+projects\b/g, "katalogproyek");
+  clean = clean.replace(/\bproject\s+catalog\b/g, "katalogproyek");
+  clean = clean.replace(/\bproject\s+list\b/g, "katalogproyek");
+  clean = clean.replace(/\bapplications?\b/g, "proyek");
+  clean = clean.replace(/\bapps?\b/g, "proyek");
+  clean = clean.replace(/\bbuilt\b/g, "buat");
+  clean = clean.replace(/\bcreated\b/g, "buat");
+  clean = clean.replace(/\bdeveloped\b/g, "buat");
+
+  // English Tech Stack & Skills
+  clean = clean.replace(/\bwhat\s+is\s+his\s+tech\s+stack\b/g, "techstack");
+  clean = clean.replace(/\btech\s+stack\b/g, "techstack");
+  clean = clean.replace(/\bwhat\s+technologies\s+does\s+he\s+use\b/g, "techstack");
+  clean = clean.replace(/\btechnologies\s+used\b/g, "techstack");
+  clean = clean.replace(/\bwhat\s+frameworks\s+does\s+he\s+master\b/g, "techstack");
+  clean = clean.replace(/\bframeworks\s+used\b/g, "techstack");
+  clean = clean.replace(/\bwhat\s+programming\s+languages\b/g, "techstack");
+  clean = clean.replace(/\bprogramming\s+languages?\b/g, "techstack");
+  clean = clean.replace(/\bcoding\s+languages?\b/g, "techstack");
+  clean = clean.replace(/\bdeveloper\s+skills\b/g, "techstack");
+  clean = clean.replace(/\btechnical\s+skills\b/g, "techstack");
+  clean = clean.replace(/\btechnologies\b/g, "teknologi");
+  clean = clean.replace(/\btechnology\b/g, "teknologi");
+  clean = clean.replace(/\bframeworks?\b/g, "framework");
+
+  // English Rates, Pricing & Availability
+  clean = clean.replace(/\bhow\s+much\s+does\s+he\s+charge\b/g, "tarif");
+  clean = clean.replace(/\bwhat\s+are\s+his\s+rates\b/g, "tarif");
+  clean = clean.replace(/\bwhat\s+does\s+he\s+charge\b/g, "tarif");
+  clean = clean.replace(/\bhourly\s+rate\b/g, "tarif");
+  clean = clean.replace(/\bservice\s+fee\b/g, "tarif");
+  clean = clean.replace(/\bservice\s+cost\b/g, "tarif");
+  clean = clean.replace(/\bpricing\s+model\b/g, "tarif");
+  clean = clean.replace(/\bproject\s+price\b/g, "tarif");
+  clean = clean.replace(/\bcost\s+of\s+service\b/g, "tarif");
+  clean = clean.replace(/\bcharge\b/g, "tarif");
+  clean = clean.replace(/\bcharges\b/g, "tarif");
+  clean = clean.replace(/\bcharging\b/g, "tarif");
+  clean = clean.replace(/\bcost\b/g, "tarif");
+  clean = clean.replace(/\bcosts\b/g, "tarif");
+  clean = clean.replace(/\bfee\b/g, "tarif");
+  clean = clean.replace(/\bfees\b/g, "tarif");
+  clean = clean.replace(/\bis\s+he\s+available\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bwork\s+availability\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bopen\s+to\s+work\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bfreelance\s+availability\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bavailable\s+for\s+freelance\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bcan\s+i\s+hire\s+him\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bhire\s+full\s*time\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bhire\s+part\s*time\b/g, "ketersediaankerja");
+  clean = clean.replace(/\bfull\s*time\b/g, "fulltime");
+  clean = clean.replace(/\bpart\s*time\b/g, "parttime");
+  clean = clean.replace(/\bavailability\b/g, "ketersediaankerja");
+
+  // English Strengths & Why Hire
+  clean = clean.replace(/\bwhy\s+should\s+i\s+hire\b/g, "kelebihan hire");
+  clean = clean.replace(/\bwhy\s+hire\s+(?:adyvka|him)\b/g, "kelebihan hire");
+  clean = clean.replace(/\bwhy\s+choose\s+(?:adyvka|him)\b/g, "kelebihan hire");
+  clean = clean.replace(/\bcore\s+strengths\b/g, "kelebihan");
+  clean = clean.replace(/\bkey\s+strengths\b/g, "kelebihan");
+  clean = clean.replace(/\bcompetitive\s+edge\b/g, "kelebihan");
+  clean = clean.replace(/\breasons\s+to\s+hire\b/g, "kelebihan hire");
+  clean = clean.replace(/\bwhat\s+makes\s+him\s+unique\b/g, "kelebihan");
+  clean = clean.replace(/\bvalue\s+proposition\b/g, "kelebihan");
+
+  // English Hobbies & Free Time
+  clean = clean.replace(/\bwhat\s+does\s+he\s+do\s+in\s+his\s+free\s+time\b/g, "hobi");
+  clean = clean.replace(/\bfree\s+time\b/g, "hobi");
+  clean = clean.replace(/\bspare\s+time\b/g, "hobi");
+  clean = clean.replace(/\bleisure\s+activities\b/g, "hobi");
+  clean = clean.replace(/\bleisure\b/g, "hobi");
+  clean = clean.replace(/\bpassions\b/g, "hobi");
+  clean = clean.replace(/\bhobbies\b/g, "hobi");
+  clean = clean.replace(/\bhobby\b/g, "hobi");
+  clean = clean.replace(/\binterests?\b/g, "hobi");
+
+  // English Vision & Goals
+  clean = clean.replace(/\bfuture\s+goals\b/g, "visi");
+  clean = clean.replace(/\bcareer\s+vision\b/g, "visi");
+  clean = clean.replace(/\bcareer\s+goals\b/g, "visi");
+  clean = clean.replace(/\bfuture\s+plans\b/g, "visi");
+  clean = clean.replace(/\bengineering\s+aspirations\b/g, "visi");
+  clean = clean.replace(/\blong\s+term\s+vision\b/g, "visi");
+  clean = clean.replace(/\baspirations?\b/g, "visi");
+  clean = clean.replace(/\bvisions?\b/g, "visi");
+  clean = clean.replace(/\bgoals?\b/g, "visi");
+
+  // English Academics, GPA & School
+  clean = clean.replace(/\bwhat\s+is\s+his\s+gpa\b/g, "rapot");
+  clean = clean.replace(/\bwhat\s+are\s+his\s+grades\b/g, "rapot");
+  clean = clean.replace(/\bacademic\s+scores?\b/g, "rapot");
+  clean = clean.replace(/\breport\s+card\b/g, "rapot");
+  clean = clean.replace(/\bacademic\s+standing\b/g, "rapot");
+  clean = clean.replace(/\bacademic\s+records?\b/g, "rapot");
+  clean = clean.replace(/\bgrades?\b/g, "rapot");
+  clean = clean.replace(/\bscores?\b/g, "rapot");
+  clean = clean.replace(/\bwhere\s+did\s+he\s+study\b/g, "sekolah");
+  clean = clean.replace(/\bwhat\s+school\b/g, "sekolah");
+  clean = clean.replace(/\bvocational\s+high\s+school\b/g, "sekolah smk");
+  clean = clean.replace(/\bwhat\s+is\s+his\s+major\b/g, "sekolah jurusan");
+  clean = clean.replace(/\bfield\s+of\s+study\b/g, "sekolah jurusan");
+  clean = clean.replace(/\bhigh\s+schools?\b/g, "sekolah");
+
+  // English Awards & Competitions
+  clean = clean.replace(/\bnational\s+competitions?\s+won\b/g, "lomba");
+  clean = clean.replace(/\bawards?\s+won\b/g, "lomba");
+  clean = clean.replace(/\bcompetitions?\s+won\b/g, "lomba");
+  clean = clean.replace(/\bchampionships?\s+won\b/g, "lomba");
+  clean = clean.replace(/\bnational\s+awards?\b/g, "lomba");
+  clean = clean.replace(/\bchampionships?\b/g, "lomba");
+  clean = clean.replace(/\bcompetitions?\b/g, "lomba");
+  clean = clean.replace(/\bawards?\b/g, "lomba");
+  clean = clean.replace(/\btrophies\b/g, "lomba");
+  clean = clean.replace(/\btrophy\b/g, "lomba");
+
+  // English Certificates & Books
+  clean = clean.replace(/\bhow\s+many\s+certificates\b/g, "sertifikat");
+  clean = clean.replace(/\btotal\s+certificates\b/g, "sertifikat");
+  clean = clean.replace(/\blist\s+certificates\b/g, "sertifikat");
+  clean = clean.replace(/\bverified\s+credentials\b/g, "sertifikat");
+  clean = clean.replace(/\bcredentials?\b/g, "sertifikat");
+  clean = clean.replace(/\blicenses?\b/g, "sertifikat");
+  clean = clean.replace(/\bhas\s+he\s+published\s+(?:any\s+)?books?\b/g, "buku");
+  clean = clean.replace(/\bwhat\s+books\s+has\s+he\s+written\b/g, "buku");
+  clean = clean.replace(/\bbooks?\s+authored\b/g, "buku");
+  clean = clean.replace(/\bpublished\s+books?\b/g, "buku");
+  clean = clean.replace(/\bpublished\s+author\b/g, "buku");
 
   return clean.split(/\s+/).filter(Boolean).join(" ");
 }
@@ -4640,7 +4957,7 @@ Anda dapat menghubungi Adyvka secara langsung untuk peluang kerja, konsultasi te
 * **Instagram:** https://instagram.com/adyvkaa
 * **YouTube:** https://www.youtube.com/@adyvkapratama
 * **TikTok:** https://www.tiktok.com/@adypraa31
-* **Website Portofolio:** https://adyvka.my.id
+* **Website Portofolio:** https://adyvkapratama.my.id
 
 Anda juga dapat mengirimkan pesan langsung melalui formulir pesan di halaman Contact.`,
       links: [
@@ -4671,7 +4988,7 @@ Feel free to connect directly with Adyvka for engineering opportunities, contrac
 * **Instagram:** https://instagram.com/adyvkaa
 * **YouTube:** https://www.youtube.com/@adyvkapratama
 * **TikTok:** https://www.tiktok.com/@adypraa31
-* **Portfolio URL:** https://adyvka.my.id
+* **Portfolio URL:** https://adyvkapratama.my.id
 
 You can also submit an inquiry through the interactive message form on the Contact page.`,
       links: [
@@ -5201,7 +5518,9 @@ export function findBestAnswer(rawQuery) {
   else if (
     tokens.has("terimakasih") || tokens.has("makasih") || tokens.has("makasi") || tokens.has("tengkyu") ||
     tokens.has("thanks") || normalized.includes("thank you") ||
-    tokens.has("keren") || tokens.has("mantap") || tokens.has("hebat")
+    tokens.has("keren") || tokens.has("mantap") || tokens.has("hebat") ||
+    tokens.has("awesome") || tokens.has("amazing") || tokens.has("impressive") || tokens.has("fantastic") || tokens.has("brilliant") ||
+    normalized.includes("awesome job") || normalized.includes("great job") || normalized.includes("good job") || normalized.includes("well done")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.GRATITUDE_THANKS;
   }
@@ -5209,20 +5528,21 @@ export function findBestAnswer(rawQuery) {
   // 4. Contact, WhatsApp, Phone, Email & Direct Social Reach Out
   else if (
     tokens.has("whatsapp") || tokens.has("wa") || tokens.has("telepon") || tokens.has("phone") || tokens.has("call") || tokens.has("hp") ||
-    tokens.has("surel") || tokens.has("email") ||
+    tokens.has("surel") || tokens.has("email") || tokens.has("kontak") || tokens.has("contact") || tokens.has("reach") ||
     normalized.includes("nomor wa") || normalized.includes("no wa") || normalized.includes("nomor telepon") || normalized.includes("no telepon") ||
     normalized.includes("nomor hp") || normalized.includes("chat wa") || normalized.includes("hubungi") ||
-    normalized.includes("kontak resmi") || normalized.includes("reach out") ||
+    normalized.includes("kontak resmi") || normalized.includes("reach out") || normalized.includes("contact him") || normalized.includes("how can i contact") ||
     ((tokens.has("github") || tokens.has("linkedin") || tokens.has("instagram") || tokens.has("tiktok") || tokens.has("youtube")) &&
-     (tokens.has("akun") || tokens.has("link") || tokens.has("url") || tokens.has("profil") || tokens.has("sosmed") || tokens.has("medsos") || tokens.has("kontak") || tokens.has("mana") || tokens.has("apa") || tokens.has("channel")))
+     (tokens.has("akun") || tokens.has("account") || tokens.has("profile") || tokens.has("profil") || tokens.has("link") || tokens.has("url") || tokens.has("handle") || tokens.has("sosmed") || tokens.has("medsos") || tokens.has("kontak") || tokens.has("contact") || tokens.has("mana") || tokens.has("apa") || tokens.has("channel") || tokens.has("show") || tokens.has("give") || tokens.has("lihat") || tokens.has("his") || tokens.has("adyvka")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CONTACT;
   }
 
   // 5. CV / Resume Download
   else if (
-    tokens.has("cv") || tokens.has("resume") || normalized.includes("download cv") || normalized.includes("unduh cv") ||
-    normalized.includes("unduh resume") || normalized.includes("download resume") || normalized.includes("minta cv")
+    (tokens.has("cv") || tokens.has("resume") || normalized.includes("download cv") || normalized.includes("unduh cv") ||
+     normalized.includes("unduh resume") || normalized.includes("download resume") || normalized.includes("minta cv")) &&
+    !tokens.has("richo") && !tokens.has("bahari")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CV_RESUME;
   }
@@ -5238,9 +5558,12 @@ export function findBestAnswer(rawQuery) {
 
   // 7. Family Background & Upbringing
   else if (
-    tokens.has("keluarga") || tokens.has("orangtua") || tokens.has("family") || tokens.has("parents") ||
+    tokens.has("keluarga") || tokens.has("orangtua") || tokens.has("family") || tokens.has("parents") || tokens.has("parent") ||
     tokens.has("ayah") || tokens.has("ibu") || tokens.has("bapak") || tokens.has("saudara") ||
-    normalized.includes("orang tua") || normalized.includes("latar belakang keluarga") || normalized.includes("masa kecil")
+    tokens.has("father") || tokens.has("mother") || tokens.has("dad") || tokens.has("mom") ||
+    tokens.has("siblings") || tokens.has("sibling") || tokens.has("brother") || tokens.has("sister") ||
+    normalized.includes("orang tua") || normalized.includes("latar belakang keluarga") || normalized.includes("masa kecil") ||
+    normalized.includes("father and mother") || normalized.includes("his parents") || normalized.includes("his family")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.FAMILY_BACKGROUND;
   }
@@ -5762,18 +6085,22 @@ export function findBestAnswer(rawQuery) {
 
   // Project Count (e.g. berapa banyak projek yang sudah dikerjakan, how many projects has adyvka built)
   else if (
-    (((tokens.has("how") && tokens.has("many")) || tokens.has("berapa") || tokens.has("jumlah") || tokens.has("total") || tokens.has("18")) &&
-     (tokens.has("proyek") || tokens.has("projek") || tokens.has("project") || tokens.has("projects") || tokens.has("aplikasi") || tokens.has("built"))) ||
-    normalized.includes("how many project")
+    tokens.has("jumlahproyek") ||
+    (((tokens.has("how") && (tokens.has("many") || tokens.has("much"))) || tokens.has("berapa") || tokens.has("jumlah") || tokens.has("total") || tokens.has("18")) &&
+     (tokens.has("proyek") || tokens.has("projek") || tokens.has("project") || tokens.has("projects") || tokens.has("aplikasi") || tokens.has("built") || tokens.has("app") || tokens.has("apps") || tokens.has("applications") || tokens.has("made"))) ||
+    normalized.includes("how many project") || normalized.includes("how many app")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.COUNT_PROJECTS;
   }
 
   // Project Catalog / List
   else if (
-    tokens.has("katalog") || normalized.includes("daftar proyek") || normalized.includes("list project") ||
+    tokens.has("katalogproyek") || tokens.has("katalog") || normalized.includes("daftar proyek") || normalized.includes("list project") ||
+    normalized.includes("list all projects") || normalized.includes("show all projects") || normalized.includes("what applications has he built") ||
+    normalized.includes("what apps has he built") || normalized.includes("what has he built") ||
     normalized.includes("proyek apa saja") || normalized.includes("apa saja proyek") || 
-    (tokens.has("sebutkan") && tokens.has("proyek")) || (tokens.has("proyek") && tokens.has("portofolio"))
+    (tokens.has("sebutkan") && tokens.has("proyek")) || (tokens.has("proyek") && tokens.has("portofolio")) ||
+    (tokens.has("all") && (tokens.has("projects") || tokens.has("apps") || tokens.has("applications") || tokens.has("proyek")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.LIST_PROJECTS;
   }
@@ -5834,17 +6161,21 @@ export function findBestAnswer(rawQuery) {
   // Rates & Pricing (checked before general tech stack)
   else if (
     tokens.has("tarif") || tokens.has("harga") || tokens.has("biaya") || tokens.has("gaji") || 
-    tokens.has("fee") || tokens.has("rate") || tokens.has("rates") || tokens.has("pricing") ||
-    normalized.includes("biaya jasa") || normalized.includes("tarif koding") || normalized.includes("tarif projek")
+    tokens.has("fee") || tokens.has("fees") || tokens.has("rate") || tokens.has("rates") || tokens.has("pricing") ||
+    tokens.has("charge") || tokens.has("charges") || tokens.has("cost") || tokens.has("costs") ||
+    normalized.includes("biaya jasa") || normalized.includes("tarif koding") || normalized.includes("tarif projek") ||
+    normalized.includes("how much does he charge") || normalized.includes("what are his rates") || normalized.includes("service fee")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.RATES_AND_PRICING;
   }
 
   // Work Availability & Employment Model
   else if (
-    tokens.has("availability") || tokens.has("ketersediaan") || tokens.has("remote") || 
-    tokens.has("freelance") || tokens.has("part-time") || tokens.has("full-time") || tokens.has("kontrak") ||
-    normalized.includes("ketersediaan kerja") || normalized.includes("open to work")
+    tokens.has("ketersediaankerja") || tokens.has("availability") || tokens.has("available") || tokens.has("ketersediaan") ||
+    tokens.has("remote") || tokens.has("freelance") || tokens.has("part-time") || tokens.has("full-time") ||
+    tokens.has("parttime") || tokens.has("fulltime") || tokens.has("kontrak") ||
+    normalized.includes("ketersediaan kerja") || normalized.includes("open to work") || normalized.includes("available for freelance") ||
+    normalized.includes("can i hire") || normalized.includes("hire him") || normalized.includes("open for hire")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.WORK_AVAILABILITY;
   }
@@ -5874,15 +6205,16 @@ export function findBestAnswer(rawQuery) {
   // Hobbies & Interests
   else if (
     tokens.has("hobi") || tokens.has("hobby") || tokens.has("hobbies") || tokens.has("minat") || 
-    tokens.has("leisure") || tokens.has("interest") || tokens.has("luang")
+    tokens.has("leisure") || tokens.has("interest") || tokens.has("interests") || tokens.has("luang") ||
+    normalized.includes("free time") || normalized.includes("spare time") || normalized.includes("in his free time")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.HOBBIES_INTERESTS;
   }
 
   // Vision & Future Goals
   else if (
-    tokens.has("visi") || tokens.has("vision") || tokens.has("cita-cita") || tokens.has("impian") || 
-    tokens.has("tujuan") || tokens.has("goal") || tokens.has("goals") || tokens.has("future")
+    tokens.has("visi") || tokens.has("vision") || tokens.has("cita") || normalized.includes("cita cita") ||
+    tokens.has("impian") || tokens.has("tujuan") || tokens.has("goal") || tokens.has("goals") || tokens.has("future")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.VISION_FUTURE_GOALS;
   }
@@ -5931,22 +6263,29 @@ export function findBestAnswer(rawQuery) {
   else if (
     tokens.has("domisili") || tokens.has("tinggal") || tokens.has("lokasi") || tokens.has("kota") || 
     tokens.has("asal") || tokens.has("alamat") || tokens.has("rumah") || tokens.has("location") ||
-    (tokens.has("where") && (tokens.has("live") || tokens.has("located") || tokens.has("from"))) ||
+    tokens.has("residence") || tokens.has("residing") || tokens.has("hometown") ||
+    (tokens.has("where") && (tokens.has("live") || tokens.has("lives") || tokens.has("located") || tokens.has("based") || tokens.has("from"))) ||
     normalized.includes("tempat tinggal") || normalized.includes("tinggal dimana") || normalized.includes("dimana tinggal") ||
-    normalized.includes("asal mana") || normalized.includes("berasal dari")
+    normalized.includes("asal mana") || normalized.includes("berasal dari") ||
+    normalized.includes("where does he live") || normalized.includes("where is he based") ||
+    normalized.includes("current residence") || normalized.includes("city of residence") || normalized.includes("what city is he from")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.LOCATION_DOMICILE;
   }
 
   // Tech Stack & Engineering Skills (General Catch-all for coding skills)
   else if (
-    tokens.has("stack") || tokens.has("teknologi") || tokens.has("technology") || tokens.has("skills") || 
-    tokens.has("keahlian") || tokens.has("koding") || tokens.has("programming") || tokens.has("tools") ||
-    tokens.has("framework") || tokens.has("database") || tokens.has("frontend") || tokens.has("backend") ||
+    tokens.has("techstack") || tokens.has("stack") || tokens.has("teknologi") || tokens.has("technology") || tokens.has("technologies") ||
+    tokens.has("skills") || tokens.has("skill") || tokens.has("keahlian") || tokens.has("koding") || tokens.has("programming") ||
+    tokens.has("tools") || tokens.has("framework") || tokens.has("frameworks") || tokens.has("database") || tokens.has("databases") ||
+    tokens.has("frontend") || tokens.has("backend") || tokens.has("fullstack") ||
     tokens.has("nestjs") || tokens.has("nextjs") || tokens.has("postgresql") || tokens.has("docker") || tokens.has("typescript") ||
     tokens.has("react") || tokens.has("reactjs") || tokens.has("laravel") || tokens.has("prisma") || tokens.has("tailwind") ||
     tokens.has("bahasakoding") || (tokens.has("bahasa") && !tokens.has("inggris") && !tokens.has("english")) || tokens.has("pemrograman") ||
-    normalized.includes("bahasa pemrograman") || normalized.includes("programming language") ||
+    normalized.includes("bahasa pemrograman") || normalized.includes("programming language") || normalized.includes("programming languages") ||
+    normalized.includes("coding language") || normalized.includes("coding languages") ||
+    normalized.includes("dikuasai") || normalized.includes("bisa koding") || normalized.includes("menguasai") ||
+    normalized.includes("tech stack") || normalized.includes("what technologies") || normalized.includes("what frameworks") ||
     normalized.includes("dikuasai") || normalized.includes("bisa koding") || normalized.includes("menguasai")
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.TECH_STACK;

@@ -22,9 +22,19 @@ function CloseIcon({ size = 18, strokeWidth = 2.2 }) {
   );
 }
 
-function ArrowUpRightIcon({ size = 12 }) {
+function ArrowUpRightIcon({ size = 12, className = "" }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <line x1="7" y1="17" x2="17" y2="7" />
       <polyline points="7 7 17 7 17 17" />
     </svg>
@@ -224,9 +234,29 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
 
   const messagesContainerRef = useRef(null);
   const messagesEndRef = useRef(null);
+  const lastUserMessageRef = useRef(null);
   const inputRef = useRef(null);
   const chatWindowRef = useRef(null);
   const launcherRef = useRef(null);
+
+  // Scroll so that user's latest question and top of bot response stay in view
+  const scrollToLastUserQuestion = (behavior = "smooth") => {
+    const container = messagesContainerRef.current;
+    const target = lastUserMessageRef.current;
+    if (!container) return;
+
+    if (target) {
+      const containerRect = container.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+      const offset = (targetRect.top - containerRect.top) + container.scrollTop - 12;
+      container.scrollTo({
+        top: Math.max(0, offset),
+        behavior,
+      });
+    } else {
+      messagesEndRef.current?.scrollIntoView({ behavior });
+    }
+  };
 
   // Auto scroll to bottom
   const scrollToBottom = (behavior = "smooth") => {
@@ -351,14 +381,22 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   useEffect(() => {
     if (!isOpen) return;
 
-    if (messages.length > 1 || isTyping) {
+    if (messages.length <= 1 && !isTyping) {
+      if (messagesContainerRef.current) {
+        messagesContainerRef.current.scrollTop = 0;
+        requestAnimationFrame(() => {
+          if (messagesContainerRef.current && messages.length <= 1) {
+            messagesContainerRef.current.scrollTop = 0;
+          }
+        });
+      }
+    } else if (isTyping) {
+      // While bot is typing, keep user message and typing indicator in view
       scrollToBottom();
-    } else if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTop = 0;
+    } else {
+      // When bot response arrives, scroll so user question and top of bot response stay in view
       requestAnimationFrame(() => {
-        if (messagesContainerRef.current && messages.length <= 1) {
-          messagesContainerRef.current.scrollTop = 0;
-        }
+        scrollToLastUserQuestion("smooth");
       });
     }
 
@@ -432,6 +470,8 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       }
     : undefined;
 
+  const lastUserMessageIndex = messages.map((m) => m.sender).lastIndexOf("user");
+
   return (
     <>
       {/* Chat Window Modal */}
@@ -493,9 +533,10 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
 
           {/* Messages Area */}
           <div ref={messagesContainerRef} className={styles.messagesList}>
-            {messages.map((msg) => (
+            {messages.map((msg, idx) => (
               <div
                 key={msg.id}
+                ref={idx === lastUserMessageIndex ? lastUserMessageRef : null}
                 className={`${styles.messageRow} ${
                   msg.sender === "user" ? styles.userRow : styles.botRow
                 }`}
@@ -503,7 +544,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
                 <div
                   className={`${styles.messageBubble} ${
                     msg.sender === "user" ? styles.userBubble : styles.botBubble
-                  }`}
+                  } ${msg.links && msg.links.length > 0 ? styles.bubbleWithLinks : ""}`}
                 >
                   {msg.title && <div className={styles.messageTitle}>{msg.title}</div>}
                   <FormattedText text={msg.text} />
@@ -518,8 +559,8 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
                           className={styles.linkBtn}
                           onClick={() => handleLinkClick(link.url)}
                         >
-                          <span>{link.label}</span>
-                          <ArrowUpRightIcon size={11} />
+                          <span className={styles.linkBtnLabel}>{link.label}</span>
+                          <ArrowUpRightIcon size={12} className={styles.linkBtnIcon} />
                         </button>
                       ))}
                     </div>

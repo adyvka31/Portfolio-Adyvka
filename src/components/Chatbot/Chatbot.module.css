@@ -350,6 +350,65 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Subtle cyber ambient ornament and tech grid pattern behind messages */
+.chatWindow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+  background-image:
+    /* Delicate ambient cyan aura at top right */
+    radial-gradient(circle at 88% 12%, rgba(124, 242, 255, 0.055) 0%, transparent 48%),
+    /* Subtle deep violet aura at bottom left */
+    radial-gradient(circle at 12% 88%, rgba(99, 102, 241, 0.04) 0%, transparent 42%),
+    /* Faint architectural concentric tech rings ornament in the center */
+    radial-gradient(circle at 50% 46%, transparent 80px, rgba(124, 242, 255, 0.016) 81px, transparent 82px, transparent 140px, rgba(124, 242, 255, 0.011) 141px, transparent 142px),
+    /* Faint architectural grid lines */
+    linear-gradient(to right, rgba(124, 242, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 242, 255, 0.015) 1px, transparent 1px),
+    /* Micro tech dot grid pattern */
+    radial-gradient(rgba(124, 242, 255, 0.072) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    44px 44px,
+    44px 44px,
+    22px 22px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    center center,
+    center center,
+    center center;
+  opacity: 0.75;
+}
+
+/* Subtle corner tech bracket marks */
+.chatWindow::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 12px;
+  background:
+    linear-gradient(to right, rgba(124, 242, 255, 0.16) 8px, transparent 8px) top left,
+    linear-gradient(to bottom, rgba(124, 242, 255, 0.16) 8px, transparent 8px) top left,
+    linear-gradient(to left, rgba(124, 242, 255, 0.16) 8px, transparent 8px) top right,
+    linear-gradient(to bottom, rgba(124, 242, 255, 0.16) 8px, transparent 8px) top right,
+    linear-gradient(to right, rgba(124, 242, 255, 0.16) 8px, transparent 8px) bottom left,
+    linear-gradient(to top, rgba(124, 242, 255, 0.16) 8px, transparent 8px) bottom left,
+    linear-gradient(to left, rgba(124, 242, 255, 0.16) 8px, transparent 8px) bottom right,
+    linear-gradient(to top, rgba(124, 242, 255, 0.16) 8px, transparent 8px) bottom right;
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+}
+
 .chatWindowOpening {
   animation: expandFromButton 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -394,6 +453,8 @@
 
 /* Minimal Header (Kept as requested) */
 .chatHeader {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -529,6 +590,8 @@
 
 /* Quick Suggestions Bar */
 .suggestionsBar {
+  position: relative;
+  z-index: 2;
   padding: 0.65rem 1rem;
   background: rgba(13, 13, 16, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -565,6 +628,8 @@
 
 /* Messages Area */
 .messagesList {
+  position: relative;
+  z-index: 1;
   flex: 1;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -638,36 +703,73 @@
   color: var(--accent-glow, #7cf2ff);
 }
 
-/* Action Links in Bot Bubble */
+/* Bubble with Action Links (Full Width presence) */
+.bubbleWithLinks {
+  width: 100%;
+  max-width: 90%;
+}
+
+/* Action Links in Bot Bubble (Full-width card buttons) */
 .linkButtonsWrap {
-  margin-top: 0.75rem;
-  padding-top: 0.65rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.45rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .linkBtn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.73rem;
-  font-family: var(--font-mono, "Geist Mono", monospace);
+  justify-content: space-between;
+  gap: 0.65rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-weight: 500;
   color: var(--accent-glow, #7cf2ff);
-  background: rgba(124, 242, 255, 0.08);
-  border: 1px solid rgba(124, 242, 255, 0.25);
-  border-radius: 6px;
-  padding: 0.3rem 0.6rem;
+  background: rgba(124, 242, 255, 0.06);
+  border: 1px solid rgba(124, 242, 255, 0.2);
+  border-radius: 9px;
+  padding: 0.58rem 0.85rem;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.linkBtnLabel {
+  flex: 1;
+  text-align: left;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.linkBtnIcon {
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
 }
 
 .linkBtn:hover {
-  background: rgba(124, 242, 255, 0.18);
+  background: rgba(124, 242, 255, 0.14);
   border-color: rgba(124, 242, 255, 0.5);
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(124, 242, 255, 0.12);
+}
+
+.linkBtn:hover .linkBtnIcon,
+.linkBtn:hover svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.linkBtn:active {
+  transform: translateY(0);
 }
 
 .messageMeta {
@@ -717,6 +819,8 @@
 
 /* Input Area */
 .inputForm {
+  position: relative;
+  z-index: 2;
   padding: 0.85rem 1rem;
   background: rgba(14, 14, 18, 0.95);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -851,5 +955,9 @@
     /* Crucial 16px minimum prevents iOS Safari from auto-zooming */
     font-size: 16px;
     padding: 0.65rem 0.85rem;
+  }
+
+  .bubbleWithLinks {
+    max-width: 95%;
   }
 }
