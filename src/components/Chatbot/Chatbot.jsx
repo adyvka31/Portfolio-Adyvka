@@ -95,6 +95,7 @@ function Chatbot() {
 
   const handleClose = () => {
     if (isClosing || !isOpen) return;
+    inputRef.current?.blur();
     setIsClosing(true);
   };
 
@@ -198,11 +199,81 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     const isMobile = typeof window !== "undefined" && window.innerWidth <= 640;
     if (!isMobile) return;
 
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const scrollY = window.scrollY;
+    const originalPosition = document.body.style.position;
+    const originalTop = document.body.style.top;
+    const originalWidth = document.body.style.width;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
 
     return () => {
-      document.body.style.overflow = originalOverflow;
+      document.body.style.position = originalPosition;
+      document.body.style.top = originalTop;
+      document.body.style.width = originalWidth;
+      window.scrollTo(0, scrollY);
+    };
+  }, [isOpen, isClosing]);
+
+  // Track visual viewport for mobile keyboard positioning
+  const [keyboardState, setKeyboardState] = useState({
+    isOpen: false,
+    top: null,
+    cardHeight: null,
+  });
+
+  useEffect(() => {
+    if (!isOpen || isClosing) {
+      setKeyboardState({ isOpen: false, top: null, cardHeight: null });
+      return;
+    }
+
+    if (typeof window === "undefined" || !window.visualViewport) return;
+
+    const handleViewportChange = () => {
+      const vv = window.visualViewport;
+      if (!vv) return;
+
+      const isMobile = window.innerWidth <= 640;
+      if (!isMobile) {
+        setKeyboardState({ isOpen: false, top: null, cardHeight: null });
+        return;
+      }
+
+      const heightDiff = window.innerHeight - vv.height;
+      const isKeyboard = heightDiff > 140;
+
+      if (isKeyboard) {
+        const safeTop = 48;
+        const topPos = Math.max(8, (vv.offsetTop || 0) + safeTop);
+        const cardH = Math.max(260, vv.height - safeTop - 12);
+
+        setKeyboardState({
+          isOpen: true,
+          top: topPos,
+          cardHeight: cardH,
+        });
+
+        // Ensure messages list scrolls smoothly to bottom when keyboard opens
+        requestAnimationFrame(() => {
+          scrollToBottom("smooth");
+        });
+      } else {
+        setKeyboardState({
+          isOpen: false,
+          top: null,
+          cardHeight: null,
+        });
+      }
+    };
+
+    window.visualViewport.addEventListener("resize", handleViewportChange);
+    window.visualViewport.addEventListener("scroll", handleViewportChange);
+
+    return () => {
+      window.visualViewport.removeEventListener("resize", handleViewportChange);
+      window.visualViewport.removeEventListener("scroll", handleViewportChange);
     };
   }, [isOpen, isClosing]);
 
@@ -279,13 +350,25 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     }
   };
 
+  const chatWindowDynamicStyle = keyboardState.isOpen
+    ? {
+        position: "fixed",
+        top: `${keyboardState.top}px`,
+        bottom: "auto",
+        height: `${keyboardState.cardHeight}px`,
+        maxHeight: `${keyboardState.cardHeight}px`,
+        transition: "none",
+      }
+    : undefined;
+
   return (
     <>
       {/* Chat Window Modal */}
       {isOpen && (
         <section
           ref={chatWindowRef}
-          className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening}`}
+          className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening} ${keyboardState.isOpen ? styles.chatWindowKeyboardOpen : ""}`}
+          style={chatWindowDynamicStyle}
           onAnimationEnd={handleAnimationEnd}
           role="dialog"
           aria-label="Ask Adyvka Assistant"
@@ -328,18 +411,20 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           </header>
 
           {/* Quick Suggestions Bar */}
-          <div className={styles.suggestionsBar} aria-label="Quick Suggestion Topics">
-            {QUICK_SUGGESTIONS.map((sug) => (
-              <button
-                key={sug.id}
-                type="button"
-                className={styles.suggestionChip}
-                onClick={() => handleSendMessage(sug.query)}
-              >
-                {sug.label}
-              </button>
-            ))}
-          </div>
+          {!keyboardState.isOpen && (
+            <div className={styles.suggestionsBar} aria-label="Quick Suggestion Topics">
+              {QUICK_SUGGESTIONS.map((sug) => (
+                <button
+                  key={sug.id}
+                  type="button"
+                  className={styles.suggestionChip}
+                  onClick={() => handleSendMessage(sug.query)}
+                >
+                  {sug.label}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Messages Area */}
           <div ref={messagesContainerRef} className={styles.messagesList}>
@@ -429,7 +514,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       {/* Floating Circular Toggle Button */}
       <div
         ref={launcherRef}
-        className={styles.launcherWrapper}
+        className={`${styles.launcherWrapper} ${isChatActive ? styles.launcherWrapperHiddenOnMobile : ""}`}
       >
         <button
           type="button"

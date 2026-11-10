@@ -596,6 +596,15 @@
     right: calc(1.75rem + env(safe-area-inset-right, 0px));
   }
 
+  .launcherWrapperHiddenOnMobile {
+    display: none !important;
+  }
+
+  .chatWindowKeyboardOpen {
+    border-radius: 18px !important;
+    box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.95), 0 0 20px rgba(124, 242, 255, 0.15);
+  }
+
   /* Floating card modal on mobile (not fullscreen) */
   .chatWindow {
     position: fixed;
