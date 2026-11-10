@@ -91,9 +91,9 @@ function AboutLayout() {
   const spotlight = useCardSpotlight();
 
   const aboutParagraphs = [
-    "I wrote my first line of code at 13, not to chase tech trends, but because I fell in love with turning an empty terminal into something that solves real human problems. Today, I build enterprise-grade systems, ranging from multi-tenant telecom ERPs to mission-critical healthcare governance platforms, grounded in *clean* *architecture* and quiet discipline.",
-    "I don't treat languages or frameworks as identities because they are deliberate tools chosen to honor the problem at hand. Whether tuning atomic database transactions, designing type-safe distributed services, or engineering fluid user interfaces, I believe great software is defined by clarity, *resilience*, and respect for the user.",
-    "Beyond the editor, my life has been shaped by genuine grit: self-funding cross-border expeditions through freelance work, authoring two published programming books to empower younger learners, and maintaining a *96/100* *GPA* standing while leading production deliverables. I build with curiosity, lead with empathy, and hold myself to standards that don't cut corners.",
+    "I wrote my first line of code at 13, not to follow trends, but to turn an empty terminal into solutions for real human problems. Today, I build enterprise-grade systems, from multi-tenant telecom ERPs to mission-critical healthcare platforms, anchored in *clean* *architecture* and quiet discipline.",
+    "To me, languages and frameworks are deliberate tools, not identities. Whether tuning atomic database transactions, architecting type-safe distributed services, or crafting fluid user interfaces, I believe great software is defined by clarity, *resilience*, and respect for the user.",
+    "Beyond the editor, my path is driven by genuine grit: self-funding cross-border travel through freelance work, authoring two published programming books for young learners, and maintaining a *96/100* *GPA* while delivering production-grade software. I build with curiosity, lead with empathy, and never cut corners.",
   ];
 
   const getCategoryIcon = (category) => {
