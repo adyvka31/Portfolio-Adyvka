@@ -48,8 +48,8 @@ EXPERIENCE_SLUGS.forEach((slug) => {
   });
 });
 
-// Achievements (exclude dummy items)
-ACHIEVEMENT_SLUGS.filter((slug) => !slug.includes("dummy")).forEach((slug) => {
+// Achievements
+ACHIEVEMENT_SLUGS.forEach((slug) => {
   urls.push({
     loc: `${BASE_URL}/achievements/${slug}`,
     lastmod: TODAY,

@@ -146,10 +146,69 @@ export default function SEO({
         "@type": "EducationalOrganization",
         name: "SMK IDN Boarding School",
         department: "Software Engineering (Rekayasa Perangkat Lunak)",
+        description: "Semester 4 Software Engineering with a 96/100 GPA Academic Honors record",
       },
       {
         "@type": "EducationalOrganization",
         name: "Harvard University CS50",
+      },
+    ],
+    award: [
+      "1st Place Champion, National Web Design Competition ICOMFEST 2025",
+      "2nd Place Runner-Up, National Web Design Competition PNB IT Competition 2026",
+      "Top 5 Grand Finalist (4th Place), National Web Development Competition Universitas Lampung 2024",
+      "Best Poster Award, Idul Adha Festival IDN Boarding School 2023",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "CS50: Introduction to Computer Science",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "EducationalOrganization",
+          name: "Harvard University",
+        },
+        url: `${SITE_URL}/certificates/cs50-introduction-to-computer-science`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "AWS Certified Cloud Practitioner Essentials",
+        credentialCategory: "certification",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Amazon Web Services",
+        },
+        url: `${SITE_URL}/certificates/cloud-practitioner-essentials`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Coding Camp Full Stack Developer",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Dicoding Indonesia",
+        },
+        url: `${SITE_URL}/certificates/coding-camp-full-stack-developer`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Frontend Web Developer",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Dicoding Indonesia",
+        },
+        url: `${SITE_URL}/certificates/frontend-web-developer`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Belajar Membuat Aplikasi Back-End untuk Pemula",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Dicoding Indonesia",
+        },
+        url: `${SITE_URL}/certificates/belajar-membuat-aplikasi-back-end`,
       },
     ],
     knowsAbout: [

@@ -20,13 +20,11 @@ const ACHIEVEMENT_KEYWORDS = [
   "Software Development Awards",
 ];
 
-const ACHIEVEMENT_ITEMS = allAchievements
-  .filter((a) => a.slug !== "dummy-new-achievement")
-  .map((a) => ({
-    name: a.title,
-    description: a.description,
-    url: `/achievements/${a.slug}`,
-  }));
+const ACHIEVEMENT_ITEMS = allAchievements.map((a) => ({
+  name: a.title,
+  description: a.description,
+  url: `/achievements/${a.slug}`,
+}));
 
 export default function AchievementsPage() {
   const storyItems = allAchievements;

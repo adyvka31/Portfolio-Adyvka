@@ -472,7 +472,7 @@ export const achievementDetails = {
   // =========================================================================
   // 03. IDUL ADHA FESTIVAL, BEST POSTER AWARD
   // =========================================================================
-  "dummy-new-achievement": {
+  "best-poster-award-idul-adha-festival": {
     badge: "Best Poster",
     subtitle: "IDN Boarding School",
     roleTitle: "Best Poster Award: Idul Adha Festival",
@@ -565,4 +565,11 @@ achievementDetails["pnb"] =
   achievementDetails["2nd-place-national-web-design-competition-pnbitc"];
 achievementDetails["politeknik-negeri-bali"] =
   achievementDetails["2nd-place-national-web-design-competition-pnbitc"];
+
+achievementDetails["dummy-new-achievement"] =
+  achievementDetails["best-poster-award-idul-adha-festival"];
+achievementDetails["idul-adha-festival"] =
+  achievementDetails["best-poster-award-idul-adha-festival"];
+achievementDetails["best-poster"] =
+  achievementDetails["best-poster-award-idul-adha-festival"];
 

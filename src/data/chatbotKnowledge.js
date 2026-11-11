@@ -1568,11 +1568,48 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
       "query": "tell me about all 18 software engineering projects by adyvka"
     }
   ],
+  "/achievements/best-poster-award-idul-adha-festival": [
+    {
+      "id": "ach_poster_summary",
+      "label": "🎨 Best Poster Award: Idul Adha Festival Overview",
+      "query": "tell me about adyvka best poster award at idul adha festival"
+    },
+    {
+      "id": "ach_poster_design",
+      "label": "📐 Design Principles & Geometric Typography",
+      "query": "how did adyvka design the idul adha festival poster in figma"
+    },
+    {
+      "id": "ach_poster_icomfest",
+      "label": "🥇 1st Place National Web Design at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "ach_poster_pnbitc",
+      "label": "🥈 2nd Place National Web Design at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "ach_poster_unila",
+      "label": "🏅 National Finalist Web Development at UNILA",
+      "query": "tell me about adyvka finalist achievement at unila"
+    },
+    {
+      "id": "ach_poster_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
   "/achievements/dummy-new-achievement": [
     {
       "id": "ach_dum_summary",
-      "label": "🏆 Overview of National Hackathons & Awards",
-      "query": "what national competitions and hackathons has adyvka won"
+      "label": "🎨 Best Poster Award: Idul Adha Festival Overview",
+      "query": "tell me about adyvka best poster award at idul adha festival"
+    },
+    {
+      "id": "ach_dum_design",
+      "label": "📐 Design Principles & Geometric Typography",
+      "query": "how did adyvka design the idul adha festival poster in figma"
     },
     {
       "id": "ach_dum_icomfest",
@@ -1588,11 +1625,6 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
       "id": "ach_dum_unila",
       "label": "🏅 National Finalist Web Development at UNILA",
       "query": "tell me about adyvka finalist achievement at unila"
-    },
-    {
-      "id": "ach_dum_strategy",
-      "label": "🎯 Hackathon Pitching Strategy & Live Demo",
-      "query": "what was adyvka winning strategy for national hackathons"
     },
     {
       "id": "ach_dum_all",
@@ -6342,30 +6374,42 @@ Equipped me with fluent English communication required for consuming internation
   },
   ACHIEV_POSTER: {
     id: {
-      title: `Best Poster Design Award - Festival Kreatif IDN Boarding School`,
-      text: `**Juara 1 Desain Poster Kreatif (Best Poster Award)**
+      title: `Best Poster Award - Idul Adha Festival IDN Boarding School`,
+      text: `**Best Poster Award (Juara 1) · Idul Adha Festival**
 
-* **Penyelenggara:** SMK IDN Boarding School.
-* **Pencapaian:** Meraih predikat poster terbaik berkat keunggulan tata letak visual, teori tipografi, dan komposisi hierarki grafis.`,
+* **Penyelenggara:** SMK IDN Boarding School (Desember 2023).
+* **Karya Desain:** Poster resmi perayaan Idul Adha yang memadukan estetika geometri Islam klasik dengan prinsip tata letak minimalis modern.
+* **Alat & Keahlian:** Didesain dengan Figma dan Adobe Illustrator, memadukan tipografi serif berhuruf kontras tinggi, palet warna elegan beraksen emas, serta ornamen vektor lengkungan khas.
+* **Hasil Penjurian:** Terpilih oleh dewan juri sebagai Best Poster berkat keanggunan komposisi visual, keterbacaan hierarki teks, serta keseimbangan ruang kosong (*negative space*).`,
       links: [
         {
-                "label": "Lihat Halaman Prestasi",
-                "url": "/achievements"
-        }
-],
+          label: "Detail Penghargaan Poster",
+          url: "/achievements/best-poster-award-idul-adha-festival",
+        },
+        {
+          label: "Lihat Seluruh Prestasi",
+          url: "/achievements",
+        },
+      ],
     },
     en: {
-      title: `Best Poster Design Award - SMK IDN Boarding School`,
-      text: `**1st Place Best Poster Design Award**
+      title: `Best Poster Award - Idul Adha Festival IDN Boarding School`,
+      text: `**1st Place Best Poster Award · Idul Adha Festival**
 
-* **Host Institution:** SMK IDN Boarding School.
-* **Recognition:** Awarded 1st place for excellence in graphic composition, typography hierarchy, and visual branding.`,
+* **Host Institution:** SMK IDN Boarding School (December 2023).
+* **Creative Work:** Official Idul Adha celebration poster fusing traditional Islamic geometric aesthetics with contemporary minimalist layout principles.
+* **Tools & Craft:** Designed in Figma and Adobe Illustrator, harmonizing high-contrast serif typography with refined gold accents and custom vector arches.
+* **Jury Recognition:** Awarded Best Poster by the jury for sophisticated visual restraint, flawless typographic hierarchy, and balanced negative space.`,
       links: [
         {
-                "label": "View Achievements",
-                "url": "/achievements"
-        }
-],
+          label: "View Poster Case Study",
+          url: "/achievements/best-poster-award-idul-adha-festival",
+        },
+        {
+          label: "Explore All Achievements",
+          url: "/achievements",
+        },
+      ],
     },
   },
   BOOK_GAME_SCRATCH: {
@@ -10174,6 +10218,10 @@ export const SUGGESTION_EXACT_MAP = {
   "tell me about adyvka zero capital business and life survival in semarang": "SEMARANG_SURVIVAL_DETAIL",
   "tell me about adyvka 2nd place award at pnbitc": "ACHIEV_PNBITC",
   "tell me about adyvka finalist achievement at unila": "ACHIEV_UNILA",
+  "tell me about adyvka best poster award at idul adha festival": "ACHIEV_POSTER",
+  "ceritakan penghargaan poster terbaik adyvka di festival idul adha": "ACHIEV_POSTER",
+  "how did adyvka design the idul adha festival poster in figma": "ACHIEV_POSTER",
+  "bagaimana adyvka mendesain poster idul adha di figma": "ACHIEV_POSTER",
   "what was adyvka winning strategy for national hackathons": "HACKATHON_STRATEGY_DEEPDIVE",
   "what certifications does adyvka have": "CERTIFICATES",
   "tell me about adyvka harvard university cs50 certificate": "CERT_CS50",

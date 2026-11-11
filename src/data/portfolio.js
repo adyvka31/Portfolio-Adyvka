@@ -1224,7 +1224,7 @@ export const allAchievements = [
     tags: ["4th Place", "Top 5 Finalist", "SemuaBisa", "Tailwind CSS", "EdTech"],
   },
   {
-    slug: "dummy-new-achievement",
+    slug: "best-poster-award-idul-adha-festival",
     title: "Best Poster Award: Idul Adha Festival",
     institution: "IDN Boarding School",
     year: "Dec 2023",

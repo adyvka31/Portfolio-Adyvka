@@ -230,9 +230,9 @@ function Chatbot() {
 I have full access to Adyvka's verified records across software engineering, teaching, and leadership:
 * **Academic Honors (96/100 GPA):** Semester 4 in Software Engineering at SMK IDN Boarding School.
 * **Work Experience:** Lead Systems Engineer for Databank ERP at PT Intisel, Full Stack at PT Ardyanda, and CV. Richo Bahari.
-* **Published Author:** Author of 2 technical books (*Making 2D Games* and *Modern Web Development*).
-* **Character & Resilience:** Solo backpacker across 3 countries (Singapore, Malaysia, Thailand) at age 15.
+* **National Achievements & Publications:** 1st Place Champion at ICOMFEST 2025, 2nd Place at PNBITC, and author of 2 published technical books.
 * **Certifications:** Harvard University CS50 and AWS Cloud Practitioner.
+* **Character & Resilience:** Solo backpacker across 3 countries (Singapore, Malaysia, Thailand) at age 15.
 
 You can ask me questions in **English** or **Bahasa Indonesia**. What would you like to explore?`,
       links: [

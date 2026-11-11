@@ -61,7 +61,7 @@ export const ACHIEVEMENT_SLUGS = [
   "2nd-place-national-web-design-competition-pnbitc",
   "1st-place-national-web-design-competition",
   "finalist-national-web-dev-competition",
-  "dummy-new-achievement",
+  "best-poster-award-idul-adha-festival",
 ];
 
 export const CERTIFICATE_SLUGS = [
