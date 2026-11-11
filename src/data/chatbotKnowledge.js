@@ -47,21 +47,2455 @@ export const ADYVKA_PROFILE = {
 };
 
 export const QUICK_SUGGESTIONS = [
-  { id: "ardyanda", label: "💼 Magang PT Ardyanda", query: "ceritakan pengalaman detail adyvka magang di pt ardyanda digital inovasi" },
-  { id: "git_cert", label: "📜 Sertifikat Git & GitHub", query: "sertifikat belajar dasar git dengan github belajar apa dan apa yang didapat" },
-  { id: "all_exp", label: "🌟 All 20 Experiences", query: "tell me about all 20 experiences of adyvka in engineering teaching and leadership" },
-  { id: "count_proj", label: "🚀 18 Projects Catalog", query: "how many projects has adyvka worked on and what are they" },
-  { id: "teaching_smpn25", label: "👨‍🏫 Pelatihan Guru SMPN 25", query: "ceritakan pengalaman adyvka melatih guru dan kepala sekolah di smpn 25 depok" },
-  { id: "cs50", label: "🎓 Harvard CS50 Credential", query: "tell me about adyvka harvard cs50 certificate" },
-  { id: "backpacker", label: "🌍 Solo Backpacker 3 Negara", query: "ceritakan pengalaman solo backpacker 3 negara singapura malaysia thailand" },
-  { id: "databank", label: "⚡ Databank ERP (PT Intisel)", query: "tell me about databank erp project at pt intisel" },
-  { id: "awards", label: "🏆 Juara Lomba Nasional", query: "apa saja prestasi juara lomba web design adyvka di pnbitc bali dan icomfest" },
-  { id: "books", label: "📚 2 Published Books", query: "buku apa saja yang sudah ditulis dan diterbitkan oleh adyvka" },
-  { id: "gpa", label: "🎓 Rapot 96/100 & Akademik", query: "berapa nilai rapot ipk adyvka dan pencapaian akademiknya" },
-  { id: "stack", label: "🛠️ Tech Stack & Skills", query: "what is adyvka tech stack and engineering skills" },
-  { id: "why_hire", label: "⭐ Kenapa Merekrut Adyvka", query: "mengapa harus merekrut adyvka dan apa keunggulannya" },
-  { id: "cv", label: "📄 Unduh CV & Kontak", query: "bagaimana cara download cv dan menghubungi adyvka" },
+  { id: "why_hire", label: "⭐ Why Hire Adyvka?", query: "why hire adyvka and what makes him stand out" },
+  { id: "lead_exp", label: "⚡ Lead Systems Engineer at PT Intisel", query: "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom" },
+  { id: "ardyanda", label: "💼 Full Stack Internship at PT Ardyanda", query: "tell me about adyvka internship at pt ardyanda digital inovasi" },
+  { id: "projects", label: "🚀 18 Software Engineering Projects", query: "how many projects has adyvka worked on and what are they" },
+  { id: "awards", label: "🏆 National Web Competition Awards", query: "what competitions and awards has adyvka won" },
+  { id: "gpa", label: "🎓 96/100 GPA & Academic Honors", query: "what is adyvka gpa and academic achievements" },
+  { id: "cs50", label: "📜 Harvard CS50 & AWS Cloud", query: "tell me about adyvka harvard cs50 certificate" },
+  { id: "books", label: "📚 Author of 2 Published Books", query: "what books has adyvka written and published" },
+  { id: "backpacker", label: "🌍 3-Country Solo Backpacker at 15", query: "tell me about adyvka solo backpacker trip across 3 countries" },
+  { id: "all_exp", label: "🌟 Complete 20 Career Experiences", query: "tell me about all 20 experiences of adyvka" },
+  { id: "faculty", label: "👨‍🏫 Faculty Training at SMPN 25 Depok", query: "tell me about adyvka teacher training at smpn 25 depok" },
+  { id: "stack", label: "🛠️ Polyglot Architecture & Stack", query: "what is adyvka tech stack and engineering skills" },
+  { id: "git", label: "🐙 Git & GitHub Dicoding Credential", query: "tell me about adyvka git and github certificate from dicoding" },
+  { id: "contact", label: "💬 Contact via WhatsApp (+62 821-1313-9664)", query: "how can i contact adyvka via whatsapp" },
 ];
+
+export const CONTEXTUAL_SUGGESTIONS_MAP = {
+  "/": [
+    {
+      "id": "home_why_hire",
+      "label": "⭐ Why Hire Adyvka?",
+      "query": "why hire adyvka and what makes him stand out"
+    },
+    {
+      "id": "home_lead_eng",
+      "label": "⚡ Lead Systems Engineer at PT Intisel",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "home_ardyanda",
+      "label": "💼 Full Stack Internship at PT Ardyanda",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "home_projects",
+      "label": "🚀 18 Software Engineering Projects",
+      "query": "how many projects has adyvka worked on and what are they"
+    },
+    {
+      "id": "home_award_icomfest",
+      "label": "🏆 1st Place National Web Design Winner",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "home_contact",
+      "label": "📬 Contact Adyvka on WhatsApp & Email",
+      "query": "how can i contact adyvka via whatsapp or email"
+    }
+  ],
+  "/about": [
+    {
+      "id": "abt_summary",
+      "label": "👤 Adyvka Professional Profile Summary",
+      "query": "who is adyvka and what is his professional background"
+    },
+    {
+      "id": "abt_tech_stack",
+      "label": "⚡ Core Full Stack & AI Tech Stack",
+      "query": "what technologies frameworks and tools does adyvka use"
+    },
+    {
+      "id": "abt_teaching",
+      "label": "🎓 Leadership & Teaching Experience",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "abt_education",
+      "label": "🏫 Academic Background at IDN Boarding School",
+      "query": "what is adyvka educational background and high school"
+    },
+    {
+      "id": "abt_awards",
+      "label": "🏆 National Hackathon Achievements",
+      "query": "what awards and competition achievements has adyvka won"
+    },
+    {
+      "id": "abt_contact",
+      "label": "📬 Direct Contact & Social Links",
+      "query": "what are adyvka official contact details and social media links"
+    }
+  ],
+  "/projects": [
+    {
+      "id": "projs_overview",
+      "label": "🚀 18 Software Engineering Projects Overview",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    },
+    {
+      "id": "projs_pusakaku",
+      "label": "🏛️ Pusakaku Nusantara Cultural Platform",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "projs_terastani",
+      "label": "🌱 Terastani AI & IoT Smart Agriculture",
+      "query": "tell me about terastani ai and iot smart agriculture platform"
+    },
+    {
+      "id": "projs_ruangtumbuh",
+      "label": "🧠 RuangTumbuh Mental Health & Time Banking",
+      "query": "tell me about ruangtumbuh mental health platform"
+    },
+    {
+      "id": "projs_databank",
+      "label": "📊 DataBank Web Scraping & Approval Pipeline",
+      "query": "tell me about databank erp system"
+    },
+    {
+      "id": "projs_kepk",
+      "label": "🏥 SIM KEPK Ethics Committee System",
+      "query": "tell me about sim kepk ethical clearance system"
+    }
+  ],
+  "/experience": [
+    {
+      "id": "exp_overview",
+      "label": "💼 All 19 Professional Experiences Overview",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    },
+    {
+      "id": "exp_intisel",
+      "label": "⚡ Lead Systems Engineer at PT Intisel",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "exp_ardyanda",
+      "label": "🏢 Full Stack Internship at PT Ardyanda",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_richo",
+      "label": "⚓ Frontend Developer at CV Richo Bahari",
+      "query": "tell me about adyvka frontend developer role at cv richo bahari"
+    },
+    {
+      "id": "exp_umj",
+      "label": "🏥 Full Stack Contract at Universitas Muhammadiyah",
+      "query": "tell me about adyvka full stack contract at universitas muhammadiyah jakarta"
+    },
+    {
+      "id": "exp_semarang",
+      "label": "🧗 Rp 0 Business Survival in Semarang",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    }
+  ],
+  "/achievements": [
+    {
+      "id": "ach_overview",
+      "label": "🏆 National Hackathons & Awards Overview",
+      "query": "what national competitions and hackathons has adyvka won"
+    },
+    {
+      "id": "ach_icomfest",
+      "label": "🥇 1st Place National Web Design at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "ach_pnbitc",
+      "label": "🥈 2nd Place National Web Design at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "ach_unila",
+      "label": "🏅 National Finalist Web Development at UNILA",
+      "query": "tell me about adyvka finalist achievement at unila"
+    },
+    {
+      "id": "ach_strategy",
+      "label": "🎯 Hackathon Winning Strategy & Pitching",
+      "query": "what was adyvka winning strategy for national hackathons"
+    },
+    {
+      "id": "ach_projects",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/certificates": [
+    {
+      "id": "cert_overview",
+      "label": "📜 23 Professional Certifications Overview",
+      "query": "what certifications does adyvka have"
+    },
+    {
+      "id": "cert_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_fullstack",
+      "label": "💻 Dicoding Full Stack Developer Coding Camp",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_react",
+      "label": "⚛️ Dicoding React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_backend",
+      "label": "🛠️ Dicoding Backend Developer & REST APIs",
+      "query": "tell me about adyvka backend developer certificate"
+    }
+  ],
+  "/contact": [
+    {
+      "id": "cnt_overview",
+      "label": "📬 Official Contact Channels & Inquiries",
+      "query": "how can i contact adyvka for collaboration or hiring"
+    },
+    {
+      "id": "cnt_whatsapp",
+      "label": "💬 Reach via WhatsApp Hotline",
+      "query": "what is adyvka official whatsapp phone number hotline"
+    },
+    {
+      "id": "cnt_email",
+      "label": "✉️ Send Direct Project Email",
+      "query": "what is adyvka official project email address"
+    },
+    {
+      "id": "cnt_social",
+      "label": "🌐 GitHub & LinkedIn Professional Profiles",
+      "query": "what are adyvka github and linkedin profile links"
+    },
+    {
+      "id": "cnt_hire",
+      "label": "⭐ Why Hire Adyvka for Your Team",
+      "query": "why hire adyvka and what makes him stand out"
+    },
+    {
+      "id": "cnt_projects",
+      "label": "🚀 All 18 Software Engineering Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/pusakaku": [
+    {
+      "id": "prj_pusa_summary",
+      "label": "🏛️ Pusakaku Platform Overview & Vision",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "prj_pusa_gamify",
+      "label": "🎮 Gamification & Interactive Quiz Architecture",
+      "query": "how does pusakaku implement gamification and quiz mechanics"
+    },
+    {
+      "id": "prj_pusa_map",
+      "label": "🗺️ 3D Interactive Map & Cultural Data",
+      "query": "how does pusakaku render 3d interactive map and cultural data"
+    },
+    {
+      "id": "prj_pusa_icomfest",
+      "label": "🥇 1st Place National Award at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "prj_pusa_tera",
+      "label": "🌱 Terastani AI & IoT Smart Agriculture",
+      "query": "tell me about terastani ai and iot smart agriculture platform"
+    },
+    {
+      "id": "prj_pusa_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/terastani": [
+    {
+      "id": "prj_tera_summary",
+      "label": "🌱 Terastani AI & IoT Platform Overview",
+      "query": "tell me about terastani ai and iot smart agriculture platform"
+    },
+    {
+      "id": "prj_tera_cv",
+      "label": "🔬 Computer Vision Plant Disease Detection",
+      "query": "how does terastani implement computer vision plant disease detection"
+    },
+    {
+      "id": "prj_tera_iot",
+      "label": "📡 IoT Soil Moisture & Environmental Sensors",
+      "query": "how does terastani integrate iot soil moisture and environmental sensors"
+    },
+    {
+      "id": "prj_tera_unila",
+      "label": "🏅 National Finalist Web Development at UNILA",
+      "query": "tell me about adyvka finalist achievement at unila"
+    },
+    {
+      "id": "prj_tera_pusa",
+      "label": "🏛️ Pusakaku Nusantara Cultural Platform",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "prj_tera_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/ruangtumbuh": [
+    {
+      "id": "prj_ruang_summary",
+      "label": "🧠 RuangTumbuh Platform Overview & Mission",
+      "query": "tell me about ruangtumbuh mental health platform"
+    },
+    {
+      "id": "prj_ruang_timebank",
+      "label": "⏱️ Time Banking Social Credit Architecture",
+      "query": "how does ruangtumbuh time banking and peer support architecture work"
+    },
+    {
+      "id": "prj_ruang_problem",
+      "label": "🎯 Mental Health Problem in Indonesia",
+      "query": "what real world mental health problem does ruangtumbuh solve"
+    },
+    {
+      "id": "prj_ruang_pnbitc",
+      "label": "🥈 2nd Place National Award at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "prj_ruang_pusa",
+      "label": "🏛️ Pusakaku Nusantara Cultural Platform",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "prj_ruang_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/databank": [
+    {
+      "id": "prj_data_summary",
+      "label": "📊 DataBank System Overview & Corporate Scope",
+      "query": "tell me about databank erp system"
+    },
+    {
+      "id": "prj_data_scraping",
+      "label": "🤖 Puppeteer Automated Web Scraping Pipeline",
+      "query": "how does adyvka build puppeteer web scraping pipeline in databank erp"
+    },
+    {
+      "id": "prj_data_metrics",
+      "label": "⚡ 90% Manual Reporting Time Reduction",
+      "query": "how did databank cut 90 percent manual reporting time"
+    },
+    {
+      "id": "prj_data_approval",
+      "label": "🛡️ Multi-Tier Hierarchy Approval Workflow",
+      "query": "how does the multi-tier hierarchy approval workflow work in databank"
+    },
+    {
+      "id": "prj_data_arch",
+      "label": "⚙️ Microservice Backend & Security Architecture",
+      "query": "what is the microservice architecture and system architecture in databank"
+    },
+    {
+      "id": "prj_data_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/kepk": [
+    {
+      "id": "prj_kepk_summary",
+      "label": "🏥 SIM KEPK System Overview & Ethics Workflow",
+      "query": "tell me about sim kepk ethical clearance system"
+    },
+    {
+      "id": "prj_kepk_contract",
+      "label": "💼 Full Stack Contract at Universitas Muhammadiyah",
+      "query": "tell me about adyvka full stack contract at universitas muhammadiyah jakarta"
+    },
+    {
+      "id": "prj_kepk_databank",
+      "label": "📊 DataBank Web Scraping & Enterprise Platform",
+      "query": "tell me about databank erp system"
+    },
+    {
+      "id": "prj_kepk_intisel",
+      "label": "⚡ Lead Systems Engineer at PT Intisel",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "prj_kepk_ardyanda",
+      "label": "🏢 Full Stack Internship at PT Ardyanda",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "prj_kepk_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/fitsmart": [
+    {
+      "id": "prj_fit_summary",
+      "label": "💪 FitSmart AI Platform Overview",
+      "query": "tell me about fitsmart ai health platform"
+    },
+    {
+      "id": "prj_fit_ai",
+      "label": "🥗 Gemini AI Nutrition & Dietary Analysis",
+      "query": "how does fitsmart use gemini ai nutrition and dietary analysis"
+    },
+    {
+      "id": "prj_fit_tracker",
+      "label": "📈 Real-Time Calorie & Macro Tracking",
+      "query": "how does fitsmart track real-time calorie and macro metrics"
+    },
+    {
+      "id": "prj_fit_ruang",
+      "label": "🧠 RuangTumbuh Mental Health Platform",
+      "query": "tell me about ruangtumbuh mental health platform"
+    },
+    {
+      "id": "prj_fit_tera",
+      "label": "🌱 Terastani AI & IoT Smart Agriculture",
+      "query": "tell me about terastani ai and iot smart agriculture platform"
+    },
+    {
+      "id": "prj_fit_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/richobahari": [
+    {
+      "id": "prj_richo_summary",
+      "label": "⚓ CV Richo Bahari Platform Overview",
+      "query": "tell me about richo bahari e-commerce project"
+    },
+    {
+      "id": "prj_richo_perf",
+      "label": "⚡ 95+ Lighthouse Score & Optimization",
+      "query": "how does richo bahari achieve 95+ performance lighthouse score"
+    },
+    {
+      "id": "prj_richo_catalog",
+      "label": "🚢 Marine Equipment Catalog Architecture",
+      "query": "how is the marine equipment catalog structured in richo bahari"
+    },
+    {
+      "id": "prj_richo_exp",
+      "label": "💼 Frontend Developer Role at CV Richo Bahari",
+      "query": "tell me about adyvka frontend developer role at cv richo bahari"
+    },
+    {
+      "id": "prj_richo_java",
+      "label": "🏝️ JavaIsland Tourism Booking Platform",
+      "query": "tell me about javaisland tourism web platform"
+    },
+    {
+      "id": "prj_richo_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/javaisland": [
+    {
+      "id": "prj_java_summary",
+      "label": "🏝️ JavaIsland Tourism Platform Overview",
+      "query": "tell me about javaisland tourism web platform"
+    },
+    {
+      "id": "prj_java_booking",
+      "label": "🎫 Interactive Travel Booking System",
+      "query": "how does the travel booking system work in javaisland"
+    },
+    {
+      "id": "prj_java_culture",
+      "label": "🎭 Javanese Cultural Heritage Showcase",
+      "query": "how does javaisland showcase javanese cultural heritage and virtual tour"
+    },
+    {
+      "id": "prj_java_pusa",
+      "label": "🏛️ Pusakaku Nusantara Cultural Platform",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "prj_java_richo",
+      "label": "⚓ CV Richo Bahari Platform",
+      "query": "tell me about richo bahari e-commerce project"
+    },
+    {
+      "id": "prj_java_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/semua-bisa": [
+    {
+      "id": "prj_semua_summary",
+      "label": "♿ SemuaBisa Inclusive Learning Overview",
+      "query": "tell me about semua bisa inclusive learning platform"
+    },
+    {
+      "id": "prj_semua_access",
+      "label": "👁️ WCAG 2.1 AA Screen Reader Accessibility",
+      "query": "how does semua bisa implement screen reader accessibility and wcag 2.1"
+    },
+    {
+      "id": "prj_semua_arch",
+      "label": "📐 Modular Educational Platform Architecture",
+      "query": "what is the modular educational platform architecture of semua bisa"
+    },
+    {
+      "id": "prj_semua_ruang",
+      "label": "🧠 RuangTumbuh Mental Health Platform",
+      "query": "tell me about ruangtumbuh mental health platform"
+    },
+    {
+      "id": "prj_semua_idn",
+      "label": "📚 IDNCourse Learning Management System",
+      "query": "tell me about idncourse e-learning web platform"
+    },
+    {
+      "id": "prj_semua_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/idncourse": [
+    {
+      "id": "prj_idn_summary",
+      "label": "📚 IDNCourse LMS Platform Overview",
+      "query": "tell me about idncourse e-learning web platform"
+    },
+    {
+      "id": "prj_idn_video",
+      "label": "🎥 Video Streaming & Progress Tracking",
+      "query": "how does idncourse deliver video streaming and student progress tracking"
+    },
+    {
+      "id": "prj_idn_cert",
+      "label": "📜 Automated Certificate Verification Pipeline",
+      "query": "how does idncourse generate automated certificate verification"
+    },
+    {
+      "id": "prj_idn_semua",
+      "label": "♿ SemuaBisa Inclusive Learning Platform",
+      "query": "tell me about semua bisa inclusive learning platform"
+    },
+    {
+      "id": "prj_idn_databank",
+      "label": "📊 DataBank Web Scraping Enterprise System",
+      "query": "tell me about databank erp system"
+    },
+    {
+      "id": "prj_idn_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/coffeee-shop": [
+    {
+      "id": "prj_coffee_summary",
+      "label": "☕ Coffee Shop Platform Overview",
+      "query": "tell me about modern coffee shop website project"
+    },
+    {
+      "id": "prj_coffee_menu",
+      "label": "📋 Dynamic Beverage Menu Personalization",
+      "query": "how does coffee shop handle dynamic beverage menu personalization"
+    },
+    {
+      "id": "prj_coffee_ux",
+      "label": "✨ Micro-Interactions & Responsive UX Polish",
+      "query": "how does coffee shop implement micro-interactions and ux polish"
+    },
+    {
+      "id": "prj_coffee_deli",
+      "label": "🍔 DeliFood Delivery & Order Management",
+      "query": "tell me about delifood food delivery web app"
+    },
+    {
+      "id": "prj_coffee_mystyle",
+      "label": "👗 MyStyle E-Commerce Platform",
+      "query": "tell me about mystyle e-commerce web platform"
+    },
+    {
+      "id": "prj_coffee_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/mystyle": [
+    {
+      "id": "prj_my_summary",
+      "label": "👗 MyStyle E-Commerce Overview",
+      "query": "tell me about mystyle e-commerce web platform"
+    },
+    {
+      "id": "prj_my_cart",
+      "label": "🛒 Persistent Shopping Cart & Checkout Flow",
+      "query": "how does mystyle manage persistent shopping cart and checkout"
+    },
+    {
+      "id": "prj_my_catalog",
+      "label": "🏷️ Multi-Category Fashion Grid & Filters",
+      "query": "how does mystyle organize multi-category fashion grid and filtering"
+    },
+    {
+      "id": "prj_my_deli",
+      "label": "🍔 DeliFood Delivery & Order Platform",
+      "query": "tell me about delifood food delivery web app"
+    },
+    {
+      "id": "prj_my_richo",
+      "label": "⚓ CV Richo Bahari Platform",
+      "query": "tell me about richo bahari e-commerce project"
+    },
+    {
+      "id": "prj_my_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/delifood": [
+    {
+      "id": "prj_deli_summary",
+      "label": "🍔 DeliFood Delivery Platform Overview",
+      "query": "tell me about delifood food delivery web app"
+    },
+    {
+      "id": "prj_deli_tracking",
+      "label": "📍 Real-Time Order Tracking & Driver Route",
+      "query": "how does delifood provide real-time order tracking and route preview"
+    },
+    {
+      "id": "prj_deli_menu",
+      "label": "🍽️ Restaurant Catalog & Menu Management",
+      "query": "how does delifood organize restaurant catalog and menu filtering"
+    },
+    {
+      "id": "prj_deli_coffee",
+      "label": "☕ Modern Coffee Shop Platform",
+      "query": "tell me about modern coffee shop website project"
+    },
+    {
+      "id": "prj_deli_mystyle",
+      "label": "👗 MyStyle E-Commerce Platform",
+      "query": "tell me about mystyle e-commerce web platform"
+    },
+    {
+      "id": "prj_deli_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/ai-ticket-manager": [
+    {
+      "id": "prj_ticket_summary",
+      "label": "🎫 AI Ticket Manager Platform Overview",
+      "query": "tell me about ai ticket manager helpdesk platform"
+    },
+    {
+      "id": "prj_ticket_nlp",
+      "label": "🤖 Gemini NLP Auto-Classification & Triage",
+      "query": "how does ai ticket manager use gemini nlp auto-classification triage"
+    },
+    {
+      "id": "prj_ticket_sla",
+      "label": "⏱️ SLA Real-Time Analytics & Ticket Queue",
+      "query": "how does ai ticket manager track sla real-time analytics and ticket queue"
+    },
+    {
+      "id": "prj_ticket_data",
+      "label": "📊 DataBank Web Scraping Enterprise System",
+      "query": "tell me about databank erp system"
+    },
+    {
+      "id": "prj_ticket_attend",
+      "label": "📱 Smart Attendance Biometric App",
+      "query": "tell me about attendance app mobile geofencing"
+    },
+    {
+      "id": "prj_ticket_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/attendance-app": [
+    {
+      "id": "prj_attend_summary",
+      "label": "📱 Smart Attendance App Overview",
+      "query": "tell me about attendance app mobile geofencing"
+    },
+    {
+      "id": "prj_attend_bio",
+      "label": "📍 GPS Geofencing & Biometric Facial Verification",
+      "query": "how does attendance app use gps geofencing and facial biometric verification"
+    },
+    {
+      "id": "prj_attend_offline",
+      "label": "🔄 Offline Clock-In & IndexedDB Synchronization",
+      "query": "how does attendance app handle offline clock-in and indexeddb sync"
+    },
+    {
+      "id": "prj_attend_qr",
+      "label": "⚡ Fast QR Scanner App",
+      "query": "tell me about fast qr code scanner web app"
+    },
+    {
+      "id": "prj_attend_ticket",
+      "label": "🎫 AI Ticket Manager Platform",
+      "query": "tell me about ai ticket manager helpdesk platform"
+    },
+    {
+      "id": "prj_attend_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/qr-scanner": [
+    {
+      "id": "prj_qr_summary",
+      "label": "⚡ Fast QR Scanner App Overview",
+      "query": "tell me about fast qr code scanner web app"
+    },
+    {
+      "id": "prj_qr_webrtc",
+      "label": "📷 WebRTC High-Speed Camera QR Decoding",
+      "query": "how does qr scanner achieve webrtc high-speed camera decoding"
+    },
+    {
+      "id": "prj_qr_checkin",
+      "label": "🎫 Event Ticket Check-In & Validation Flow",
+      "query": "how does qr scanner process event ticket check-in and validation"
+    },
+    {
+      "id": "prj_qr_attend",
+      "label": "📱 Smart Attendance Biometric App",
+      "query": "tell me about attendance app mobile geofencing"
+    },
+    {
+      "id": "prj_qr_ticket",
+      "label": "🎫 AI Ticket Manager Platform",
+      "query": "tell me about ai ticket manager helpdesk platform"
+    },
+    {
+      "id": "prj_qr_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/news-app": [
+    {
+      "id": "prj_news_summary",
+      "label": "📰 Real-Time News Portal Overview",
+      "query": "tell me about real-time news portal web app"
+    },
+    {
+      "id": "prj_news_api",
+      "label": "🌐 REST API News Aggregation & Live Feeds",
+      "query": "how does news app aggregate rest api news aggregation and breaking feeds"
+    },
+    {
+      "id": "prj_news_cache",
+      "label": "🔖 Dynamic Category Filtering & Offline Cache",
+      "query": "how does news app handle dynamic category filtering and bookmark cache"
+    },
+    {
+      "id": "prj_news_quran",
+      "label": "📖 Quran Digital Audio App",
+      "query": "tell me about quran web application project"
+    },
+    {
+      "id": "prj_news_deli",
+      "label": "🍔 DeliFood Delivery Platform",
+      "query": "tell me about delifood food delivery web app"
+    },
+    {
+      "id": "prj_news_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/projects/quran-app": [
+    {
+      "id": "prj_quran_summary",
+      "label": "📖 Quran Digital Audio App Overview",
+      "query": "tell me about quran web application project"
+    },
+    {
+      "id": "prj_quran_audio",
+      "label": "🎧 Multi-Qari Verse Audio Recitation Streaming",
+      "query": "how does quran app stream multi-qari verse audio recitations"
+    },
+    {
+      "id": "prj_quran_typo",
+      "label": "✒️ Arabic Typography & Tajweed Color-Coding",
+      "query": "how does quran app render arabic typography and tajweed color coding"
+    },
+    {
+      "id": "prj_quran_news",
+      "label": "📰 Real-Time News Portal App",
+      "query": "tell me about real-time news portal web app"
+    },
+    {
+      "id": "prj_quran_pusa",
+      "label": "🏛️ Pusakaku Nusantara Cultural Platform",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "prj_quran_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship": [
+    {
+      "id": "exp_ardy_summary",
+      "label": "🏢 PT Ardyanda Internship Overview",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_ardy_payroll",
+      "label": "💰 Automated 100% PPh 21 Payroll Calculation",
+      "query": "how did adyvka automate pph 21 and payroll system at pt ardyanda"
+    },
+    {
+      "id": "exp_ardy_eval",
+      "label": "🌟 98/100 Perfect Performance Evaluation Score",
+      "query": "what was adyvka 98/100 performance evaluation score at pt ardyanda"
+    },
+    {
+      "id": "exp_ardy_mc",
+      "label": "🎤 Master of Ceremonies at Corporate Events",
+      "query": "tell me about adyvka role as master of ceremonies at pt ardyanda"
+    },
+    {
+      "id": "exp_ardy_intisel",
+      "label": "⚡ Lead Systems Engineer at PT Intisel",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "exp_ardy_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/cv-richo-bahari-frontend-developer-freelance": [
+    {
+      "id": "exp_richo_summary",
+      "label": "⚓ CV Richo Bahari Developer Experience",
+      "query": "tell me about adyvka frontend developer role at cv richo bahari"
+    },
+    {
+      "id": "exp_richo_perf",
+      "label": "⚡ 95+ Lighthouse Score & Optimization",
+      "query": "how does richo bahari achieve 95+ performance lighthouse score"
+    },
+    {
+      "id": "exp_richo_catalog",
+      "label": "🚢 Marine Equipment Catalog Architecture",
+      "query": "how is the marine equipment catalog structured in richo bahari"
+    },
+    {
+      "id": "exp_richo_intisel",
+      "label": "⚡ Lead Systems Engineer at PT Intisel",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "exp_richo_ardyanda",
+      "label": "🏢 Full Stack Internship at PT Ardyanda",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_richo_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance": [
+    {
+      "id": "exp_inti_summary",
+      "label": "⚡ PT Intisel Lead Systems Engineer Overview",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "exp_inti_bts",
+      "label": "📡 Enterprise 1000+ BTS Data Mapping",
+      "query": "how did adyvka implement enterprise 1000 bts data mapping at intisel"
+    },
+    {
+      "id": "exp_inti_team",
+      "label": "👥 Cross-Functional Team Leadership & Mentorship",
+      "query": "how did adyvka demonstrate cross-functional team leadership and mentorship at intisel"
+    },
+    {
+      "id": "exp_inti_ardyanda",
+      "label": "🏢 Full Stack Internship at PT Ardyanda",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_inti_semarang",
+      "label": "🧗 Rp 0 Survival in Semarang",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    },
+    {
+      "id": "exp_inti_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/universitas-muhammadiyah-jakarta-full-stack-engineer-contract": [
+    {
+      "id": "exp_umj_summary",
+      "label": "🏥 Universitas Muhammadiyah Jakarta Contract",
+      "query": "tell me about adyvka full stack contract at universitas muhammadiyah jakarta"
+    },
+    {
+      "id": "exp_umj_kepk",
+      "label": "📋 SIM KEPK Ethics Committee System",
+      "query": "tell me about sim kepk ethical clearance system"
+    },
+    {
+      "id": "exp_umj_intisel",
+      "label": "⚡ Lead Systems Engineer at PT Intisel",
+      "query": "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom"
+    },
+    {
+      "id": "exp_umj_ardyanda",
+      "label": "🏢 Full Stack Internship at PT Ardyanda",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_umj_semarang",
+      "label": "🧗 Rp 0 Survival in Semarang",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    },
+    {
+      "id": "exp_umj_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/sma-lazuardi-gcs-web-development-instructor": [
+    {
+      "id": "exp_laz_summary",
+      "label": "👨‍🏫 SMA Lazuardi Web Instructor Overview",
+      "query": "tell me about adyvka teaching experience at sma lazuardi"
+    },
+    {
+      "id": "exp_laz_curriculum",
+      "label": "💻 HTML CSS JS Web Development Curriculum",
+      "query": "what web development curriculum did adyvka teach at sma lazuardi"
+    },
+    {
+      "id": "exp_laz_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_laz_book",
+      "label": "📖 Published Book: Web Frameworks",
+      "query": "tell me about adyvka published book on web frameworks"
+    },
+    {
+      "id": "exp_laz_smpn45",
+      "label": "📱 SMPN 45 App Development Instructor",
+      "query": "tell me about adyvka teaching app development at smpn 45"
+    },
+    {
+      "id": "exp_laz_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/hajrabyadl-web-development-instructor": [
+    {
+      "id": "exp_haj_summary",
+      "label": "👨‍🏫 Hajrabyadl Web Instructor Overview",
+      "query": "tell me about adyvka teaching web development at hajrabyadl"
+    },
+    {
+      "id": "exp_haj_curriculum",
+      "label": "💻 Full Stack Coding & Student Mentoring",
+      "query": "what full stack coding roadmap did adyvka mentor at hajrabyadl"
+    },
+    {
+      "id": "exp_haj_laz",
+      "label": "👨‍🏫 SMA Lazuardi Web Development Instructor",
+      "query": "tell me about adyvka teaching experience at sma lazuardi"
+    },
+    {
+      "id": "exp_haj_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_haj_ardyanda",
+      "label": "🏢 PT Ardyanda Full Stack Internship",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_haj_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/smpn-45-app-development-instructor": [
+    {
+      "id": "exp_smp45_summary",
+      "label": "📱 SMPN 45 App Instructor Overview",
+      "query": "tell me about adyvka teaching app development at smpn 45"
+    },
+    {
+      "id": "exp_smp45_curriculum",
+      "label": "📲 MIT App Inventor Curriculum & Student Apps",
+      "query": "what mit app inventor mobile curriculum did adyvka teach at smpn 45"
+    },
+    {
+      "id": "exp_smp45_ins",
+      "label": "📱 SMP INS Depok App Instructor",
+      "query": "tell me about adyvka teaching app development at smp ins depok"
+    },
+    {
+      "id": "exp_smp45_laz",
+      "label": "👨‍🏫 SMA Lazuardi Web Instructor",
+      "query": "tell me about adyvka teaching experience at sma lazuardi"
+    },
+    {
+      "id": "exp_smp45_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_smp45_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/smp-ins-depok-app-development-instructor": [
+    {
+      "id": "exp_ins_summary",
+      "label": "📱 SMP INS Depok App Instructor Overview",
+      "query": "tell me about adyvka teaching app development at smp ins depok"
+    },
+    {
+      "id": "exp_ins_curriculum",
+      "label": "🧠 Student Logic Building & Mobile Architecture",
+      "query": "how did adyvka teach student logic building and mobile architecture at ins depok"
+    },
+    {
+      "id": "exp_ins_smp45",
+      "label": "📱 SMPN 45 App Development Instructor",
+      "query": "tell me about adyvka teaching app development at smpn 45"
+    },
+    {
+      "id": "exp_ins_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_ins_semut",
+      "label": "🎮 Semut-Semut Game Development Instructor",
+      "query": "tell me about adyvka teaching game development at semut-semut the natural school"
+    },
+    {
+      "id": "exp_ins_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/semut-semut-the-natural-school-game-development-instructor": [
+    {
+      "id": "exp_semut_summary",
+      "label": "🎮 Semut-Semut Game Instructor Overview",
+      "query": "tell me about adyvka teaching game development at semut-semut the natural school"
+    },
+    {
+      "id": "exp_semut_curriculum",
+      "label": "🕹️ Scratch Game Mechanics & Storytelling",
+      "query": "what scratch game mechanics and interactive storytelling did adyvka teach at semut-semut"
+    },
+    {
+      "id": "exp_semut_book",
+      "label": "📖 Published Book: Making Games Without Coding",
+      "query": "tell me about adyvka published book on making games with scratch"
+    },
+    {
+      "id": "exp_semut_anshar",
+      "label": "🎮 Al Anshar Game Development Instructor",
+      "query": "tell me about adyvka teaching game development at al anshar"
+    },
+    {
+      "id": "exp_semut_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_semut_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/al-anshar-app-design-instructor": [
+    {
+      "id": "exp_anshardes_summary",
+      "label": "🎨 Al Anshar App Design Overview",
+      "query": "tell me about adyvka teaching app design at al anshar"
+    },
+    {
+      "id": "exp_anshardes_figma",
+      "label": "📐 Figma Wireframing & UI/UX Design System",
+      "query": "how did adyvka teach figma wireframing and ui/ux design systems at al anshar"
+    },
+    {
+      "id": "exp_anshardes_game",
+      "label": "🎮 Al Anshar Game Development Instructor",
+      "query": "tell me about adyvka teaching game development at al anshar"
+    },
+    {
+      "id": "exp_anshardes_yasmine",
+      "label": "🎨 MTs Yasmine Design Instructor",
+      "query": "tell me about adyvka teaching design at mts yasmine"
+    },
+    {
+      "id": "exp_anshardes_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_anshardes_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/mts-yasmine-design-instructor": [
+    {
+      "id": "exp_yas_summary",
+      "label": "🎨 MTs Yasmine Design Instructor Overview",
+      "query": "tell me about adyvka teaching design at mts yasmine"
+    },
+    {
+      "id": "exp_yas_curriculum",
+      "label": "🖼️ Graphic Design Fundamentals & Branding",
+      "query": "what graphic design and branding curriculum did adyvka teach at yasmine"
+    },
+    {
+      "id": "exp_yas_anshar",
+      "label": "🎨 Al Anshar App Design Instructor",
+      "query": "tell me about adyvka teaching app design at al anshar"
+    },
+    {
+      "id": "exp_yas_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_yas_laz",
+      "label": "👨‍🏫 SMA Lazuardi Web Instructor",
+      "query": "tell me about adyvka teaching experience at sma lazuardi"
+    },
+    {
+      "id": "exp_yas_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/al-anshar-game-development-instructor": [
+    {
+      "id": "exp_anshargame_summary",
+      "label": "🎮 Al Anshar Game Instructor Overview",
+      "query": "tell me about adyvka teaching game development at al anshar"
+    },
+    {
+      "id": "exp_anshargame_scratch",
+      "label": "🕹️ Scratch Game Logic & Block-Based Coding",
+      "query": "what scratch game logic and block-based coding did adyvka teach at al anshar"
+    },
+    {
+      "id": "exp_anshargame_semut",
+      "label": "🎮 Semut-Semut Game Development Instructor",
+      "query": "tell me about adyvka teaching game development at semut-semut the natural school"
+    },
+    {
+      "id": "exp_anshargame_book",
+      "label": "📖 Published Book: Making Games Without Coding",
+      "query": "tell me about adyvka published book on making games with scratch"
+    },
+    {
+      "id": "exp_anshargame_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_anshargame_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/griyya-sunnah-game-development-instructor": [
+    {
+      "id": "exp_griyya_summary",
+      "label": "🎮 Griyya Sunnah Game Instructor Overview",
+      "query": "tell me about adyvka teaching game development at griyya sunnah"
+    },
+    {
+      "id": "exp_griyya_curriculum",
+      "label": "🧒 Interactive Game Design for Young Learners",
+      "query": "how did adyvka design interactive game curricula for young learners at griyya sunnah"
+    },
+    {
+      "id": "exp_griyya_semut",
+      "label": "🎮 Semut-Semut Game Development Instructor",
+      "query": "tell me about adyvka teaching game development at semut-semut the natural school"
+    },
+    {
+      "id": "exp_griyya_anshar",
+      "label": "🎮 Al Anshar Game Development Instructor",
+      "query": "tell me about adyvka teaching game development at al anshar"
+    },
+    {
+      "id": "exp_griyya_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_griyya_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/singapore-malaysia-thailand-backpacker-3-country": [
+    {
+      "id": "exp_bp_summary",
+      "label": "🌍 3-Country Solo Backpacker at 15 Overview",
+      "query": "tell me about adyvka solo backpacker trip across 3 countries"
+    },
+    {
+      "id": "exp_bp_lessons",
+      "label": "🧭 Cross-Cultural Independence & Resilience",
+      "query": "what life lessons and cross-cultural independence did adyvka learn from solo backpacking"
+    },
+    {
+      "id": "exp_bp_finance",
+      "label": "💵 International Travel Budgeting & Expense Control",
+      "query": "how did adyvka manage international travel budgeting and currency control as a teenager"
+    },
+    {
+      "id": "exp_bp_semarang",
+      "label": "🧗 Rp 0 Survival in Semarang",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    },
+    {
+      "id": "exp_bp_livein",
+      "label": "🌾 IDN Live-In Rural Community Immersion",
+      "query": "tell me about adyvka live-in rural immersion experience"
+    },
+    {
+      "id": "exp_bp_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/idn-student-council-event-division-leader": [
+    {
+      "id": "exp_osis_summary",
+      "label": "🏛️ IDN Student Council Event Leader Overview",
+      "query": "tell me about adyvka leadership role in idn student council event division"
+    },
+    {
+      "id": "exp_osis_ops",
+      "label": "📋 Campus-Wide Event Execution & Operations",
+      "query": "how did adyvka organize campus-wide event execution and logistics in student council"
+    },
+    {
+      "id": "exp_osis_itfest",
+      "label": "🏆 IT Fest 2025 Competition Coordinator",
+      "query": "tell me about adyvka role as event coordinator for it fest 2025"
+    },
+    {
+      "id": "exp_osis_barmus",
+      "label": "🤝 Barmus Voluntrip Event Organizer",
+      "query": "tell me about adyvka volunteer role in barmus voluntrip"
+    },
+    {
+      "id": "exp_osis_lead",
+      "label": "🎓 Teaching & Leadership Track Record",
+      "query": "tell me about adyvka teaching and leadership track record"
+    },
+    {
+      "id": "exp_osis_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/barmus-voluntrip-volunteer-event-organizer": [
+    {
+      "id": "exp_bar_summary",
+      "label": "🤝 Barmus Voluntrip Organizer Overview",
+      "query": "tell me about adyvka volunteer role in barmus voluntrip"
+    },
+    {
+      "id": "exp_bar_impact",
+      "label": "🌱 Community Empowerment & Social Impact",
+      "query": "what youth empowerment and community impact was achieved in barmus voluntrip"
+    },
+    {
+      "id": "exp_bar_osis",
+      "label": "🏛️ IDN Student Council Event Leader",
+      "query": "tell me about adyvka leadership role in idn student council event division"
+    },
+    {
+      "id": "exp_bar_livein",
+      "label": "🌾 IDN Live-In Rural Community Immersion",
+      "query": "tell me about adyvka live-in rural immersion experience"
+    },
+    {
+      "id": "exp_bar_semarang",
+      "label": "🧗 Rp 0 Survival in Semarang",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    },
+    {
+      "id": "exp_bar_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/pt-intisel-semarang-business-life-survival": [
+    {
+      "id": "exp_smg_summary",
+      "label": "🧗 Rp 0 Business & Life Survival Overview",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    },
+    {
+      "id": "exp_smg_profit",
+      "label": "📈 Generating Millions from Zero Capital",
+      "query": "how did adyvka survive and generate profits from zero capital in semarang"
+    },
+    {
+      "id": "exp_smg_mindset",
+      "label": "💡 Extreme Entrepreneurial Grit & Mindset",
+      "query": "what entrepreneurial mindset did adyvka gain from semarang survival"
+    },
+    {
+      "id": "exp_smg_daily",
+      "label": "⚡ Daily Survival Hustle & Street Smarts",
+      "query": "what street smarts and daily survival hustle did adyvka experience in semarang"
+    },
+    {
+      "id": "exp_smg_bp",
+      "label": "🌍 3-Country Solo Backpacker at 15",
+      "query": "tell me about adyvka solo backpacker trip across 3 countries"
+    },
+    {
+      "id": "exp_smg_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/it-fest-2025-competition-event-coordinator": [
+    {
+      "id": "exp_itfest_summary",
+      "label": "🏆 IT Fest 2025 Coordinator Overview",
+      "query": "tell me about adyvka role as event coordinator for it fest 2025"
+    },
+    {
+      "id": "exp_itfest_ops",
+      "label": "📊 100+ Participants Logistics & Operations",
+      "query": "how did adyvka coordinate operations and logistics for 100+ participants in it fest 2025"
+    },
+    {
+      "id": "exp_itfest_osis",
+      "label": "🏛️ IDN Student Council Event Division Leader",
+      "query": "tell me about adyvka leadership role in idn student council event division"
+    },
+    {
+      "id": "exp_itfest_award",
+      "label": "🥇 1st Place National Web Design at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "exp_itfest_ardy",
+      "label": "🏢 PT Ardyanda Full Stack Internship",
+      "query": "tell me about adyvka internship at pt ardyanda digital inovasi"
+    },
+    {
+      "id": "exp_itfest_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/experience/idn-boarding-school-live-in-rural-immersion": [
+    {
+      "id": "exp_live_summary",
+      "label": "🌾 IDN Live-In Rural Immersion Overview",
+      "query": "tell me about adyvka live-in rural immersion experience"
+    },
+    {
+      "id": "exp_live_labor",
+      "label": "👨‍🌾 Village Labor, Farming & Community Integration",
+      "query": "what village labor agricultural work and community life did adyvka undertake during live-in"
+    },
+    {
+      "id": "exp_live_bar",
+      "label": "🤝 Barmus Voluntrip Event Organizer",
+      "query": "tell me about adyvka volunteer role in barmus voluntrip"
+    },
+    {
+      "id": "exp_live_bp",
+      "label": "🌍 3-Country Solo Backpacker at 15",
+      "query": "tell me about adyvka solo backpacker trip across 3 countries"
+    },
+    {
+      "id": "exp_live_semarang",
+      "label": "🧗 Rp 0 Survival in Semarang",
+      "query": "tell me about adyvka zero capital business and life survival in semarang"
+    },
+    {
+      "id": "exp_live_all",
+      "label": "💼 Explore All 19 Professional Experiences",
+      "query": "tell me about all professional work teaching and leadership experiences of adyvka"
+    }
+  ],
+  "/achievements/1st-place-national-web-design-competition": [
+    {
+      "id": "ach_1st_summary",
+      "label": "🥇 1st Place National Web Design at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "ach_1st_jury",
+      "label": "🏆 Why Pusakaku Impressed ICOMFEST Juries",
+      "query": "why did the icomfest juries award 1st place to pusakaku"
+    },
+    {
+      "id": "ach_1st_strategy",
+      "label": "🎯 Hackathon Presentation & Live Demo Strategy",
+      "query": "what was adyvka winning strategy for national hackathons"
+    },
+    {
+      "id": "ach_1st_pusa",
+      "label": "🏛️ Pusakaku Nusantara Platform Architecture",
+      "query": "tell me about pusakaku nusantara cultural platform"
+    },
+    {
+      "id": "ach_1st_pnbitc",
+      "label": "🥈 2nd Place National Award at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "ach_1st_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/achievements/2nd-place-national-web-design-competition-pnbitc": [
+    {
+      "id": "ach_2nd_summary",
+      "label": "🥈 2nd Place National Web Design at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "ach_2nd_pitch",
+      "label": "🎤 PNBITC Live Pitch & Time Banking Presentation",
+      "query": "how did adyvka deliver the live pitch and presentation at pnbitc"
+    },
+    {
+      "id": "ach_2nd_ruang",
+      "label": "🧠 RuangTumbuh Mental Health Platform",
+      "query": "tell me about ruangtumbuh mental health platform"
+    },
+    {
+      "id": "ach_2nd_icomfest",
+      "label": "🥇 1st Place National Award at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "ach_2nd_strategy",
+      "label": "🎯 Hackathon Winning Strategy & Pitching",
+      "query": "what was adyvka winning strategy for national hackathons"
+    },
+    {
+      "id": "ach_2nd_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/achievements/finalist-national-web-dev-competition": [
+    {
+      "id": "ach_fin_summary",
+      "label": "🏅 National Finalist Web Development at UNILA",
+      "query": "tell me about adyvka finalist achievement at unila"
+    },
+    {
+      "id": "ach_fin_jury",
+      "label": "📊 UNILA Competition Feedback & Evaluation",
+      "query": "what feedback and technical evaluation did unila juries give to terastani"
+    },
+    {
+      "id": "ach_fin_tera",
+      "label": "🌱 Terastani AI & IoT Smart Agriculture",
+      "query": "tell me about terastani ai and iot smart agriculture platform"
+    },
+    {
+      "id": "ach_fin_icomfest",
+      "label": "🥇 1st Place National Award at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "ach_fin_pnbitc",
+      "label": "🥈 2nd Place National Award at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "ach_fin_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/achievements/dummy-new-achievement": [
+    {
+      "id": "ach_dum_summary",
+      "label": "🏆 Overview of National Hackathons & Awards",
+      "query": "what national competitions and hackathons has adyvka won"
+    },
+    {
+      "id": "ach_dum_icomfest",
+      "label": "🥇 1st Place National Web Design at ICOMFEST",
+      "query": "tell me about adyvka 1st place national award at icomfest"
+    },
+    {
+      "id": "ach_dum_pnbitc",
+      "label": "🥈 2nd Place National Web Design at PNBITC",
+      "query": "tell me about adyvka 2nd place award at pnbitc"
+    },
+    {
+      "id": "ach_dum_unila",
+      "label": "🏅 National Finalist Web Development at UNILA",
+      "query": "tell me about adyvka finalist achievement at unila"
+    },
+    {
+      "id": "ach_dum_strategy",
+      "label": "🎯 Hackathon Pitching Strategy & Live Demo",
+      "query": "what was adyvka winning strategy for national hackathons"
+    },
+    {
+      "id": "ach_dum_all",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/certificates/cs50-introduction-to-computer-science": [
+    {
+      "id": "cert_cs50_summary",
+      "label": "🎓 Harvard CS50 Certificate Overview",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_cs50_curriculum",
+      "label": "📚 CS50 Core Curriculum & Algorithms",
+      "query": "what algorithms and memory management concepts did adyvka master in cs50 core curriculum"
+    },
+    {
+      "id": "cert_cs50_project",
+      "label": "🛠️ CS50 Final Capstone Project",
+      "query": "what was adyvka cs50 final capstone project and implementation"
+    },
+    {
+      "id": "cert_cs50_aws",
+      "label": "☁️ AWS Cloud Practitioner Certification",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_cs50_camp",
+      "label": "💻 Dicoding Full Stack Developer Camp",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_cs50_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/coding-camp-full-stack-developer": [
+    {
+      "id": "cert_camp_summary",
+      "label": "💻 Coding Camp Full Stack Developer Overview",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_camp_cs50",
+      "label": "🎓 Harvard CS50 Introduction to Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_camp_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_camp_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_camp_backend",
+      "label": "🛠️ Backend Application Development",
+      "query": "tell me about adyvka backend developer certificate"
+    },
+    {
+      "id": "cert_camp_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/frontend-web-developer": [
+    {
+      "id": "cert_front_summary",
+      "label": "🌐 Frontend Web Developer Overview",
+      "query": "tell me about adyvka frontend web developer certificate"
+    },
+    {
+      "id": "cert_front_webdasar",
+      "label": "💻 Belajar Dasar Pemrograman Web",
+      "query": "tell me about adyvka basic web programming certificate"
+    },
+    {
+      "id": "cert_front_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_front_git",
+      "label": "🐙 Belajar Dasar Git dengan GitHub",
+      "query": "tell me about adyvka git and github certificate"
+    },
+    {
+      "id": "cert_front_uiux",
+      "label": "🎨 Dasar UI/UX Design Certification",
+      "query": "tell me about adyvka ui/ux design fundamentals certificate"
+    },
+    {
+      "id": "cert_front_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/belajar-dasar-data-analyst": [
+    {
+      "id": "cert_data_summary",
+      "label": "📊 Belajar Dasar Data Analyst Overview",
+      "query": "tell me about adyvka data analyst certificate"
+    },
+    {
+      "id": "cert_data_python",
+      "label": "🐍 Python Fundamentals Certification",
+      "query": "tell me about adyvka python fundamentals certificate"
+    },
+    {
+      "id": "cert_data_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_data_ai",
+      "label": "🤖 Artificial Intelligence Basics",
+      "query": "tell me about adyvka artificial intelligence basics certificate"
+    },
+    {
+      "id": "cert_data_camp",
+      "label": "💻 Full Stack Coding Camp Certification",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_data_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/belajar-membuat-aplikasi-back-end": [
+    {
+      "id": "cert_back_summary",
+      "label": "🛠️ Belajar Membuat Aplikasi Back-End Overview",
+      "query": "tell me about adyvka backend developer certificate"
+    },
+    {
+      "id": "cert_back_js",
+      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "query": "tell me about adyvka javascript basics certificate"
+    },
+    {
+      "id": "cert_back_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_back_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_back_git",
+      "label": "🐙 Belajar Dasar Git dengan GitHub",
+      "query": "tell me about adyvka git and github certificate"
+    },
+    {
+      "id": "cert_back_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/belajar-dasar-git-dengan-github": [
+    {
+      "id": "cert_git_summary",
+      "label": "🐙 Belajar Dasar Git dengan GitHub Overview",
+      "query": "tell me about adyvka git and github certificate"
+    },
+    {
+      "id": "cert_git_branch",
+      "label": "🌿 Git Branching & Merge Conflicts Resolution",
+      "query": "how does adyvka implement git branching and merge conflicts resolution"
+    },
+    {
+      "id": "cert_git_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_git_camp",
+      "label": "💻 Dicoding Full Stack Coding Camp",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_git_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_git_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/graphic-design-fundamentals": [
+    {
+      "id": "cert_graph_summary",
+      "label": "🎨 Graphic Design Fundamentals Overview",
+      "query": "tell me about adyvka graphic design fundamentals certificate"
+    },
+    {
+      "id": "cert_graph_uiux",
+      "label": "📐 Dasar UI/UX Design Certification",
+      "query": "tell me about adyvka ui/ux design fundamentals certificate"
+    },
+    {
+      "id": "cert_graph_front",
+      "label": "🌐 Frontend Web Developer Certification",
+      "query": "tell me about adyvka frontend web developer certificate"
+    },
+    {
+      "id": "cert_graph_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_graph_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_graph_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/memulai-pemrograman-dengan-c": [
+    {
+      "id": "cert_c_mem_summary",
+      "label": "💻 Memulai Pemrograman Dengan C Overview",
+      "query": "tell me about adyvka c programming certificate dicoding"
+    },
+    {
+      "id": "cert_c_mem_skilvul",
+      "label": "⌨️ Pemrograman Dasar C (Skilvul)",
+      "query": "tell me about adyvka c programming certificate skilvul"
+    },
+    {
+      "id": "cert_c_mem_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_c_mem_logika",
+      "label": "🧠 Pengenalan ke Logika Pemrograman",
+      "query": "tell me about adyvka programming logic certificate"
+    },
+    {
+      "id": "cert_c_mem_py",
+      "label": "🐍 Memulai Pemrograman Dengan Python",
+      "query": "tell me about adyvka python basics certificate dicoding"
+    },
+    {
+      "id": "cert_c_mem_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/dasar-ui-ux-design": [
+    {
+      "id": "cert_ui_summary",
+      "label": "📐 Dasar UI/UX Design Overview",
+      "query": "tell me about adyvka ui/ux design fundamentals certificate"
+    },
+    {
+      "id": "cert_ui_graph",
+      "label": "🎨 Graphic Design Fundamentals",
+      "query": "tell me about adyvka graphic design fundamentals certificate"
+    },
+    {
+      "id": "cert_ui_front",
+      "label": "🌐 Frontend Web Developer Certification",
+      "query": "tell me about adyvka frontend web developer certificate"
+    },
+    {
+      "id": "cert_ui_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_ui_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_ui_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/python-fundamentals": [
+    {
+      "id": "cert_pyfund_summary",
+      "label": "🐍 Python Fundamentals (DQLab) Overview",
+      "query": "tell me about adyvka python fundamentals certificate"
+    },
+    {
+      "id": "cert_pyfund_dicoding",
+      "label": "🐍 Memulai Pemrograman Dengan Python",
+      "query": "tell me about adyvka python basics certificate dicoding"
+    },
+    {
+      "id": "cert_pyfund_data",
+      "label": "📊 Belajar Dasar Data Analyst",
+      "query": "tell me about adyvka data analyst certificate"
+    },
+    {
+      "id": "cert_pyfund_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_pyfund_ai",
+      "label": "🤖 Artificial Intelligence Basics",
+      "query": "tell me about adyvka artificial intelligence basics certificate"
+    },
+    {
+      "id": "cert_pyfund_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/belajar-dasar-pemrograman-javascript": [
+    {
+      "id": "cert_js_summary",
+      "label": "⚡ Belajar Dasar Pemrograman JS Overview",
+      "query": "tell me about adyvka javascript basics certificate"
+    },
+    {
+      "id": "cert_js_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_js_backend",
+      "label": "🛠️ Belajar Membuat Aplikasi Back-End",
+      "query": "tell me about adyvka backend developer certificate"
+    },
+    {
+      "id": "cert_js_web",
+      "label": "💻 Belajar Dasar Pemrograman Web",
+      "query": "tell me about adyvka basic web programming certificate"
+    },
+    {
+      "id": "cert_js_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_js_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/cloud-practitioner-essentials": [
+    {
+      "id": "cert_aws_summary",
+      "label": "☁️ Cloud Practitioner Essentials Overview",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_aws_sec",
+      "label": "🛡️ AWS IAM & Cloud Security Best Practices",
+      "query": "how does adyvka apply aws iam and cloud security best practices"
+    },
+    {
+      "id": "cert_aws_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_aws_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_aws_backend",
+      "label": "🛠️ Belajar Membuat Aplikasi Back-End",
+      "query": "tell me about adyvka backend developer certificate"
+    },
+    {
+      "id": "cert_aws_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/belajar-membuat-aplikasi-web-dengan-react": [
+    {
+      "id": "cert_react_summary",
+      "label": "⚛️ Belajar Aplikasi Web dengan React Overview",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_react_hooks",
+      "label": "🎣 React Hooks & State Management Architecture",
+      "query": "how does adyvka manage state with react hooks and component lifecycle in react"
+    },
+    {
+      "id": "cert_react_js",
+      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "query": "tell me about adyvka javascript basics certificate"
+    },
+    {
+      "id": "cert_react_front",
+      "label": "🌐 Frontend Web Developer Certification",
+      "query": "tell me about adyvka frontend web developer certificate"
+    },
+    {
+      "id": "cert_react_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_react_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/memulai-pemrograman-dengan-python": [
+    {
+      "id": "cert_pymem_summary",
+      "label": "🐍 Memulai Pemrograman Dengan Python Overview",
+      "query": "tell me about adyvka python basics certificate dicoding"
+    },
+    {
+      "id": "cert_pymem_fund",
+      "label": "🐍 Python Fundamentals (DQLab)",
+      "query": "tell me about adyvka python fundamentals certificate"
+    },
+    {
+      "id": "cert_pymem_data",
+      "label": "📊 Belajar Dasar Data Analyst",
+      "query": "tell me about adyvka data analyst certificate"
+    },
+    {
+      "id": "cert_pymem_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_pymem_ai",
+      "label": "🤖 Artificial Intelligence Basics",
+      "query": "tell me about adyvka artificial intelligence basics certificate"
+    },
+    {
+      "id": "cert_pymem_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/belajar-dasar-pemrograman-web": [
+    {
+      "id": "cert_web_summary",
+      "label": "💻 Belajar Dasar Pemrograman Web Overview",
+      "query": "tell me about adyvka basic web programming certificate"
+    },
+    {
+      "id": "cert_web_front",
+      "label": "🌐 Frontend Web Developer Certification",
+      "query": "tell me about adyvka frontend web developer certificate"
+    },
+    {
+      "id": "cert_web_js",
+      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "query": "tell me about adyvka javascript basics certificate"
+    },
+    {
+      "id": "cert_web_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_web_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_web_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/pengenalan-ke-logika-pemrograman": [
+    {
+      "id": "cert_log_summary",
+      "label": "🧠 Logika Pemrograman Overview",
+      "query": "tell me about adyvka programming logic certificate"
+    },
+    {
+      "id": "cert_log_c",
+      "label": "💻 Memulai Pemrograman Dengan C",
+      "query": "tell me about adyvka c programming certificate dicoding"
+    },
+    {
+      "id": "cert_log_js",
+      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "query": "tell me about adyvka javascript basics certificate"
+    },
+    {
+      "id": "cert_log_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_log_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_log_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/pemrograman-dasar-c": [
+    {
+      "id": "cert_cskil_summary",
+      "label": "⌨️ Pemrograman Dasar C (Skilvul) Overview",
+      "query": "tell me about adyvka c programming certificate skilvul"
+    },
+    {
+      "id": "cert_cskil_dicoding",
+      "label": "💻 Memulai Pemrograman Dengan C (Dicoding)",
+      "query": "tell me about adyvka c programming certificate dicoding"
+    },
+    {
+      "id": "cert_cskil_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_cskil_log",
+      "label": "🧠 Pengenalan ke Logika Pemrograman",
+      "query": "tell me about adyvka programming logic certificate"
+    },
+    {
+      "id": "cert_cskil_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_cskil_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/dasar-prompt-engineering": [
+    {
+      "id": "cert_prompt_summary",
+      "label": "🤖 Dasar Prompt Engineering Overview",
+      "query": "tell me about adyvka prompt engineering certificate"
+    },
+    {
+      "id": "cert_prompt_ai",
+      "label": "🤖 Artificial Intelligence Basics",
+      "query": "tell me about adyvka artificial intelligence basics certificate"
+    },
+    {
+      "id": "cert_prompt_py",
+      "label": "🐍 Python Fundamentals Certification",
+      "query": "tell me about adyvka python fundamentals certificate"
+    },
+    {
+      "id": "cert_prompt_data",
+      "label": "📊 Belajar Dasar Data Analyst",
+      "query": "tell me about adyvka data analyst certificate"
+    },
+    {
+      "id": "cert_prompt_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_prompt_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/meniti-karier-sebagai-software-developer": [
+    {
+      "id": "cert_karier_summary",
+      "label": "🚀 Meniti Karier Sebagai Software Dev Overview",
+      "query": "tell me about adyvka software developer career certificate"
+    },
+    {
+      "id": "cert_karier_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_karier_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_karier_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_karier_git",
+      "label": "🐙 Belajar Dasar Git dengan GitHub",
+      "query": "tell me about adyvka git and github certificate"
+    },
+    {
+      "id": "cert_karier_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/financial-literacy-fundamentals": [
+    {
+      "id": "cert_fin_summary",
+      "label": "💰 Financial Literacy Fundamentals Overview",
+      "query": "tell me about adyvka financial literacy certificate"
+    },
+    {
+      "id": "cert_fin_karier",
+      "label": "🚀 Meniti Karier Sebagai Software Developer",
+      "query": "tell me about adyvka software developer career certificate"
+    },
+    {
+      "id": "cert_fin_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_fin_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_fin_english",
+      "label": "🌐 English Proficiency Assessment",
+      "query": "tell me about adyvka english proficiency certificate"
+    },
+    {
+      "id": "cert_fin_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/artificial-intelligence-basics": [
+    {
+      "id": "cert_ai_summary",
+      "label": "🤖 Artificial Intelligence Basics Overview",
+      "query": "tell me about adyvka artificial intelligence basics certificate"
+    },
+    {
+      "id": "cert_ai_prompt",
+      "label": "🤖 Dasar Prompt Engineering",
+      "query": "tell me about adyvka prompt engineering certificate"
+    },
+    {
+      "id": "cert_ai_python",
+      "label": "🐍 Python Fundamentals Certification",
+      "query": "tell me about adyvka python fundamentals certificate"
+    },
+    {
+      "id": "cert_ai_data",
+      "label": "📊 Belajar Dasar Data Analyst",
+      "query": "tell me about adyvka data analyst certificate"
+    },
+    {
+      "id": "cert_ai_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_ai_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/google-developer-groups-participant": [
+    {
+      "id": "cert_gdg_summary",
+      "label": "👥 Google Developer Groups Overview",
+      "query": "tell me about adyvka google developer groups certificate"
+    },
+    {
+      "id": "cert_gdg_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_gdg_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_gdg_react",
+      "label": "⚛️ React Web Application Development",
+      "query": "tell me about adyvka react web development certificate"
+    },
+    {
+      "id": "cert_gdg_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_gdg_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/certificates/english-proficiency-assessment": [
+    {
+      "id": "cert_eng_summary",
+      "label": "🌐 English Proficiency Assessment Overview",
+      "query": "tell me about adyvka english proficiency certificate"
+    },
+    {
+      "id": "cert_eng_cs50",
+      "label": "🎓 Harvard CS50 Computer Science",
+      "query": "tell me about adyvka harvard university cs50 certificate"
+    },
+    {
+      "id": "cert_eng_aws",
+      "label": "☁️ AWS Cloud Practitioner Essentials",
+      "query": "tell me about adyvka aws cloud practitioner certificate"
+    },
+    {
+      "id": "cert_eng_camp",
+      "label": "💻 Coding Camp Full Stack Developer",
+      "query": "tell me about adyvka coding camp full stack developer certificate"
+    },
+    {
+      "id": "cert_eng_karier",
+      "label": "🚀 Meniti Karier Sebagai Software Developer",
+      "query": "tell me about adyvka software developer career certificate"
+    },
+    {
+      "id": "cert_eng_all",
+      "label": "📜 Explore All 23 Professional Certifications",
+      "query": "what certifications does adyvka have"
+    }
+  ],
+  "/publications/buku-membuat-game-tanpa-coding": [
+    {
+      "id": "pub_game_summary",
+      "label": "📖 Making Games Without Coding Book Overview",
+      "query": "tell me about adyvka published book on making games with scratch"
+    },
+    {
+      "id": "pub_game_web",
+      "label": "🌐 Making Modern Websites with Frameworks Book",
+      "query": "tell me about adyvka published book on web frameworks"
+    },
+    {
+      "id": "pub_game_teaching",
+      "label": "🎮 Semut-Semut Game Teaching Experience",
+      "query": "tell me about adyvka teaching game development at semut-semut the natural school"
+    },
+    {
+      "id": "pub_game_all",
+      "label": "📚 All Published Books & Modules",
+      "query": "what books has adyvka written and published"
+    },
+    {
+      "id": "pub_game_why",
+      "label": "⭐ Why Hire Adyvka for Engineering & Education",
+      "query": "why hire adyvka and what makes him stand out"
+    },
+    {
+      "id": "pub_game_projs",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ],
+  "/publications/buku-membuat-website-dengan-framework": [
+    {
+      "id": "pub_web_summary",
+      "label": "🌐 Making Modern Websites Book Overview",
+      "query": "tell me about adyvka published book on web frameworks"
+    },
+    {
+      "id": "pub_web_game",
+      "label": "📖 Making Games Without Coding Book",
+      "query": "tell me about adyvka published book on making games with scratch"
+    },
+    {
+      "id": "pub_web_teaching",
+      "label": "👨‍🏫 SMA Lazuardi Web Instructor Experience",
+      "query": "tell me about adyvka teaching experience at sma lazuardi"
+    },
+    {
+      "id": "pub_web_all",
+      "label": "📚 All Published Books & Modules",
+      "query": "what books has adyvka written and published"
+    },
+    {
+      "id": "pub_web_richo",
+      "label": "⚓ Frontend Developer at CV Richo Bahari",
+      "query": "tell me about adyvka frontend developer role at cv richo bahari"
+    },
+    {
+      "id": "pub_web_projs",
+      "label": "🚀 Explore All 18 Software Projects",
+      "query": "tell me about all 18 software engineering projects by adyvka"
+    }
+  ]
+};
+
+
+export function getContextualSuggestions(pathname = "/", lang = "id") {
+  if (!pathname || typeof pathname !== "string") {
+    return QUICK_SUGGESTIONS;
+  }
+
+  // Normalize path by stripping trailing slashes
+  const cleanPath = pathname.length > 1 && pathname.endsWith("/")
+    ? pathname.replace(/\/+$/, "")
+    : pathname.toLowerCase().trim();
+
+  // 1. Direct match in contextual map
+  if (CONTEXTUAL_SUGGESTIONS_MAP[cleanPath]) {
+    return CONTEXTUAL_SUGGESTIONS_MAP[cleanPath];
+  }
+
+  // 2. Handle /teaching/:slug or /leadership/:slug mapped to /experience/:slug
+  if (cleanPath.startsWith("/teaching/") || cleanPath.startsWith("/leadership/")) {
+    const slug = cleanPath.split("/")[2];
+    const expPath = `/experience/${slug}`;
+    if (CONTEXTUAL_SUGGESTIONS_MAP[expPath]) {
+      return CONTEXTUAL_SUGGESTIONS_MAP[expPath];
+    }
+  }
+
+  // 3. Dynamic fallback for projects: /projects/:slug
+  if (cleanPath.startsWith("/projects/")) {
+    const slug = cleanPath.replace("/projects/", "").replace(/-/g, " ");
+    return [
+      { id: "dyn_proj_sum", label: "📝 Summarize this Project", query: `tell me about ${slug} project details and features` },
+      { id: "dyn_proj_stack", label: "🛠️ Tech Stack & Architecture", query: `what is the tech stack and system architecture of ${slug}` },
+      { id: "dyn_proj_feat", label: "💡 Key Features & Problem Solved", query: `what problems does ${slug} solve and its core features` },
+      { id: "dyn_proj_all", label: "🚀 Explore All 18 Projects", query: "how many projects has adyvka worked on and what are they" },
+      { id: "dyn_proj_databank", label: "⚡ Databank ERP Enterprise System", query: "tell me about databank erp at pt intisel" },
+      { id: "dyn_proj_pusakaku", label: "🏛️ PusakaKu Platform (1st Place ICOMFEST)", query: "tell me about pusakaku 1st place icomfest project" },
+    ];
+  }
+
+  // 4. Dynamic fallback for experience: /experience/:slug, /teaching/:slug, /leadership/:slug
+  if (cleanPath.startsWith("/experience/") || cleanPath.startsWith("/teaching/") || cleanPath.startsWith("/leadership/")) {
+    const parts = cleanPath.split("/");
+    const slug = (parts[2] || "").replace(/-/g, " ");
+    return [
+      { id: "dyn_exp_sum", label: "💼 Summarize this Experience", query: `tell me about adyvka experience in ${slug}` },
+      { id: "dyn_exp_role", label: "🎯 Core Responsibilities & Impact", query: `what were adyvka key responsibilities and impact in ${slug}` },
+      { id: "dyn_exp_all", label: "🌟 Explore All 20 Experiences", query: "tell me about all 20 experiences of adyvka" },
+      { id: "dyn_exp_intisel", label: "⚡ Lead Systems Engineer at PT Intisel", query: "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom" },
+      { id: "dyn_exp_ardyanda", label: "💼 PT Ardyanda Full Stack Internship", query: "tell me about adyvka internship at pt ardyanda digital inovasi" },
+      { id: "dyn_exp_bp", label: "🌍 3-Country Solo Backpacker at 15", query: "tell me about adyvka solo backpacker trip across 3 countries" },
+    ];
+  }
+
+  // 5. Dynamic fallback for certificates: /certificates/:slug
+  if (cleanPath.startsWith("/certificates/")) {
+    const slug = cleanPath.replace("/certificates/", "").replace(/-/g, " ");
+    return [
+      { id: "dyn_cert_sum", label: "📜 Syllabus & Topics Covered", query: `what was taught and learned in ${slug} certificate` },
+      { id: "dyn_cert_skills", label: "🎓 Skills & Competencies Acquired", query: `what skills and competencies did adyvka gain from ${slug}` },
+      { id: "dyn_cert_verify", label: "🔗 Verify Official Credential", query: `tell me about adyvka ${slug} certificate credentials` },
+      { id: "dyn_cert_all", label: "📜 Explore All 23 Certifications", query: "what certificates and certifications does adyvka have" },
+      { id: "dyn_cert_cs50", label: "🎓 Harvard University CS50 Credential", query: "tell me about adyvka harvard cs50 certificate" },
+      { id: "dyn_cert_aws", label: "☁️ AWS Cloud Practitioner Essentials", query: "tell me about adyvka aws cloud practitioner certificate" },
+    ];
+  }
+
+  // 6. Dynamic fallback for achievements: /achievements/:slug
+  if (cleanPath.startsWith("/achievements/")) {
+    const slug = cleanPath.replace("/achievements/", "").replace(/-/g, " ");
+    return [
+      { id: "dyn_ach_sum", label: "🏆 Competition Overview & Victory", query: `tell me about adyvka achievement in ${slug}` },
+      { id: "dyn_ach_idea", label: "💡 Winning Innovation & Presentation", query: `what was the winning innovation and jury pitch for ${slug}` },
+      { id: "dyn_ach_all", label: "🌟 All Competition Honors", query: "what competitions and awards has adyvka won" },
+      { id: "dyn_ach_icomfest", label: "🥇 1st Place National Champion ICOMFEST", query: "tell me about 1st place national winner at icomfest 2025" },
+      { id: "dyn_ach_pnbitc", label: "🥈 2nd Place National Runner-Up PNBITC Bali", query: "tell me about 2nd place national runner up at pnbitc bali" },
+      { id: "dyn_ach_unila", label: "🏅 Top 5 National Finalist UNILA", query: "tell me about top 5 national finalist at unila 2025" },
+    ];
+  }
+
+  // 7. Dynamic fallback for publications: /publications/:slug
+  if (cleanPath.startsWith("/publications/")) {
+    const slug = cleanPath.replace("/publications/", "").replace(/-/g, " ");
+    return [
+      { id: "dyn_pub_sum", label: "📚 Book Overview & Chapters", query: `tell me about adyvka published book on ${slug}` },
+      { id: "dyn_pub_pedagogy", label: "💡 Practical Coding Pedagogy", query: "what topics and audience is covered in adyvka book" },
+      { id: "dyn_pub_all", label: "📖 Explore Both Published Books", query: "what books has adyvka written and published" },
+      { id: "dyn_pub_journey", label: "🚀 Adyvka Software Engineering Journey", query: "tell me about adyvka software engineering background" },
+      { id: "dyn_pub_projects", label: "⚡ Databank ERP Enterprise Platform", query: "tell me about databank erp at pt intisel" },
+      { id: "dyn_pub_cs50", label: "🎓 Harvard University CS50 Credential", query: "tell me about adyvka harvard cs50 certificate" },
+    ];
+  }
+
+  // Default to global quick suggestions
+  return QUICK_SUGGESTIONS;
+}
 
 export function detectLanguage(text) {
   if (!text || typeof text !== "string") return "id";
@@ -102,7 +2536,7 @@ export function detectLanguage(text) {
     "ada", "tidak", "bukan", "sudah", "belum", "lagi", "bisa", "kamu", "anda", "dia",
     "beliau", "saya", "aku", "kami", "kita", "mereka", "projek", "proyek", "kerja",
     "pengalaman", "lomba", "juara", "sekolah", "kuliah", "jurusan", "rapot", "nilai",
-    "buku", "tulis", "buat", "bikin", "ajar", "mengajar", "guru", "siswa", "murid",
+    "buku", "tulis", "buat", "bikin", "ajar", "mengajar", "belajar", "dasar", "dengan", "guru", "siswa", "murid", "materi", "kurikulum",
     "tarif", "gaji", "biaya", "harga", "kelebihan", "keunggulan", "tentang", "kontak",
     "hubungi", "umur", "usia", "tahun", "domisili", "tinggal", "sertifikat", "prestasi",
     "seluruh", "pilar", "rekam", "jejak", "didapat", "dipelajari", "magang", "kasbon",
@@ -177,7 +2611,7 @@ export function detectLanguage(text) {
     "kenapa", "mengapa", "berapa", "kapan", "dimana", "mana", "kok", "nih", "tuh", "gak",
     "nggak", "ga", "makasih", "terimakasih", "alamat", "akun", "unduh", "minta", "ceritakan",
     "pengalaman", "proyek", "projek", "kerja", "lomba", "juara", "sekolah", "kuliah", "jurusan",
-    "rapot", "nilai", "buku", "tulis", "buat", "bikin", "ajar", "mengajar", "guru", "tarif",
+    "rapot", "nilai", "buku", "tulis", "buat", "bikin", "ajar", "mengajar", "belajar", "dasar", "dengan", "materi", "kurikulum", "guru", "tarif",
     "gaji", "biaya", "harga", "kelebihan", "keunggulan", "tentang", "kontak", "hubungi", "umur",
     "usia", "tahun", "domisili", "tinggal", "sertifikat", "prestasi", "lahir", "kelahiran",
     "tempat", "asal", "orangtua", "keluarga", "ayah", "ibu", "bapak", "saudara", "hobi",
@@ -2715,6 +5149,7 @@ Equipped me with fluent English communication required for consuming internation
       text: `**Proyek: TerasTani (Decentralized Urban Micro-Farm Operating System & AI Precision Agriculture)**
 
 * **Ringkasan Sistem:** A decentralized urban micro-farm operating system designed to reduce post-harvest loss and retail fragmentation. Aligned with UN SDGs (2, 11, 12, 13), TerasTani aggregates balcony and yard harvests within 200–500m into communal RW crate hubs with AI leaf spectrometry and smart escrow settlement.
+* **Prestasi Resmi:** Juara 2 Nasional (National Runner-Up) Web Design Competition di ajang PNBITC#18 Politeknik Negeri Bali 2024.
 * **Tahun Peluncuran:** 2026
 * **Teknologi Utama:** React 19, Vite 8, Node.js 20, Express 5, PostgreSQL, Supabase, Tailwind CSS v4, Computer Vision AI, Smart Escrow, IoT Telemetry
 
@@ -2747,6 +5182,7 @@ Equipped me with fluent English communication required for consuming internation
       text: `**Project: TerasTani (Decentralized Urban Micro-Farm Operating System & AI Precision Agriculture)**
 
 * **System Overview:** A decentralized urban micro-farm operating system designed to reduce post-harvest loss and retail fragmentation. Aligned with UN SDGs (2, 11, 12, 13), TerasTani aggregates balcony and yard harvests within 200–500m into communal RW crate hubs with AI leaf spectrometry and smart escrow settlement.
+* **Championship Honor:** 2nd Place National Runner-Up at the PNBITC#18 Web Design Competition (Politeknik Negeri Bali 2024).
 * **Delivered Year:** 2026
 * **Core Tech Stack:** React 19, Vite 8, Node.js 20, Express 5, PostgreSQL, Supabase, Tailwind CSS v4, Computer Vision AI, Smart Escrow, IoT Telemetry
 
@@ -3111,6 +5547,7 @@ Equipped me with fluent English communication required for consuming internation
       text: `**Proyek: Pusakaku (Digital Preservation of Indonesian Traditional Folk Games & Cultural Heritage)**
 
 * **Ringkasan Sistem:** An educational cultural heritage platform engineered to revive and preserve Indonesia's endangered traditional folk games. Combines rich historical ethnography, psychomotor and cognitive development analyses, an interactive 10-stage gamified assessment quiz engine, and custom display typography.
+* **Prestasi Resmi:** Juara 1 Nasional (1st Place Champion) Web Design Competition pada ajang ICOMFEST 2025 di Universitas Ahmad Dahlan Yogyakarta.
 * **Tahun Peluncuran:** 2023
 * **Teknologi Utama:** HTML5, CSS3, Tailwind CSS, JavaScript, Interactive Quiz, Custom Typography
 
@@ -3143,6 +5580,7 @@ Equipped me with fluent English communication required for consuming internation
       text: `**Project: Pusakaku (Digital Preservation of Indonesian Traditional Folk Games & Cultural Heritage)**
 
 * **System Overview:** An educational cultural heritage platform engineered to revive and preserve Indonesia's endangered traditional folk games. Combines rich historical ethnography, psychomotor and cognitive development analyses, an interactive 10-stage gamified assessment quiz engine, and custom display typography.
+* **Championship Honor:** 1st Place National Champion at the ICOMFEST 2025 Web Design Competition (Universitas Ahmad Dahlan).
 * **Delivered Year:** 2023
 * **Core Tech Stack:** HTML5, CSS3, Tailwind CSS, JavaScript, Interactive Quiz, Custom Typography
 
@@ -3177,6 +5615,7 @@ Equipped me with fluent English communication required for consuming internation
       text: `**Proyek: SemuaBisa (Inclusive EdTech Ecosystem & Youth Digital Career Platform)**
 
 * **Ringkasan Sistem:** An inclusive digital education ecosystem and workforce development platform built for the Unila 2024 National Web Design Competition by Team Deadliner. Empowers Indonesian youth to master modern digital competencies through 100% free bootcamps across 8 tech disciplines, accessible university degree pathways with Alpine.js tabs, a freelance digital services hub, and verified tech career job boards.
+* **Prestasi Resmi:** Top 5 Finalis Nasional Web Development Competition di Universitas Lampung (UNILA) 2025.
 * **Tahun Peluncuran:** 2024
 * **Teknologi Utama:** HTML5, CSS3, Tailwind CSS, DaisyUI, Alpine.js, JavaScript
 
@@ -3209,6 +5648,7 @@ Equipped me with fluent English communication required for consuming internation
       text: `**Project: SemuaBisa (Inclusive EdTech Ecosystem & Youth Digital Career Platform)**
 
 * **System Overview:** An inclusive digital education ecosystem and workforce development platform built for the Unila 2024 National Web Design Competition by Team Deadliner. Empowers Indonesian youth to master modern digital competencies through 100% free bootcamps across 8 tech disciplines, accessible university degree pathways with Alpine.js tabs, a freelance digital services hub, and verified tech career job boards.
+* **Official Honor:** Top 5 National Finalist at the UNILA 2025 Web Development Competition (Universitas Lampung).
 * **Delivered Year:** 2024
 * **Core Tech Stack:** HTML5, CSS3, Tailwind CSS, DaisyUI, Alpine.js, JavaScript
 
@@ -5478,6 +7918,2592 @@ Feel free to ask me anything about any specific project, experience, or certific
     },
   },
 
+
+  // --- NEW INTEGRATED DEEP-DIVE CARDS (71 ITEMS) ---
+  CONTACT_WHATSAPP: {
+  "id": {
+    "title": "Kontak Langsung WhatsApp Resmi Adyvka",
+    "text": "**Hubungi Adyvka via WhatsApp Resmi**\n\nAnda dapat menghubungi Adyvka secara instan melalui saluran WhatsApp untuk penawaran kerja sama, konsultasi rekayasa perangkat lunak, atau undangan proyek:\n\n* **Nomor WhatsApp Resmi:** +62 821-1313-9664\n* **Tautan Obrolan Cepat:** [Chat WhatsApp Langsung](https://wa.me/6282113139664)\n* **Ketersediaan Komunikasi:** Aktif setiap hari kerja (WIB / UTC+07) dengan rata-rata respons di bawah beberapa jam.\n* **Topik yang Diterima:** Rekrutmen Full-Time / Kontrak, Proyek Freelance Enterprise, Pelatihan Guru dan Komunitas, serta Sesi Mentoring Teknis.",
+    "links": [
+      {
+        "label": "Buka WhatsApp (+62 821-1313-9664)",
+        "url": "https://wa.me/6282113139664"
+      },
+      {
+        "label": "Kunjungi Halaman Kontak",
+        "url": "/contact"
+      }
+    ]
+  },
+  "en": {
+    "title": "Direct Official WhatsApp Channel for Adyvka",
+    "text": "**Contact Adyvka Directly via Official WhatsApp**\n\nYou can reach out to Adyvka instantly for software engineering contracts, enterprise job offers, or technical consultation:\n\n* **Official WhatsApp Number:** +62 821-1313-9664\n* **Direct Instant Chat Link:** [Open WhatsApp Chat](https://wa.me/6282113139664)\n* **Response Availability:** Active during business hours (UTC+07 / WIB) with typical response time within a few hours.\n* **Inquiry Topics Welcomed:** Full-Stack & Systems Engineering Roles, Enterprise Freelance Development, Faculty Training Workshops, and Technical Mentorship.",
+    "links": [
+      {
+        "label": "Open WhatsApp (+62 821-1313-9664)",
+        "url": "https://wa.me/6282113139664"
+      },
+      {
+        "label": "Visit Contact Page",
+        "url": "/contact"
+      }
+    ]
+  }
+},
+
+  CONTACT_EMAIL: {
+  "id": {
+    "title": "Alamat Email Resmi untuk Peluang Kerja & Kolaborasi",
+    "text": "**Kirim Surel Langsung ke Adyvka**\n\nUntuk pengiriman proposal resmi, dokumen RFP, offering letter perusahaan, atau kerja sama jangka panjang:\n\n* **Alamat Email Resmi:** rafifdyvka07@gmail.com\n* **Format Surel Disarankan:** Cantumkan deskripsi proyek, timeline target, ekspektasi peran, dan tautan perusahaan terkait.\n* **Waktu Respons:** Surel diperiksa secara berkala setiap hari kerja dengan balasan maksimal dalam 24 jam.",
+    "links": [
+      {
+        "label": "Kirim Email Langsung",
+        "url": "mailto:rafifdyvka07@gmail.com"
+      },
+      {
+        "label": "Unduh CV Resmi",
+        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+      },
+      {
+        "label": "Kunjungi Halaman Kontak",
+        "url": "/contact"
+      }
+    ]
+  },
+  "en": {
+    "title": "Official Email Address for Career Inquiries & Enterprise Work",
+    "text": "**Send an Official Email Directly to Adyvka**\n\nFor formal RFP documentation, corporate offering letters, and long-term engineering partnerships:\n\n* **Official Email Address:** rafifdyvka07@gmail.com\n* **Recommended Email Format:** Please include project overview, targeted delivery timeline, scope of work, and company links.\n* **Response Window:** Inquiries are monitored continuously with responses typically provided within 24 hours.",
+    "links": [
+      {
+        "label": "Send Email Directly",
+        "url": "mailto:rafifdyvka07@gmail.com"
+      },
+      {
+        "label": "Download Official CV",
+        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+      },
+      {
+        "label": "Visit Contact Page",
+        "url": "/contact"
+      }
+    ]
+  }
+},
+
+  CONTACT_SOCIAL: {
+  "id": {
+    "title": "Tautan Profil Resmi GitHub, LinkedIn & Media Sosial",
+    "text": "**Saluran Digital dan Repositori Terverifikasi Adyvka**\n\nIkuti dan verifikasi portofolio kode serta aktivitas profesional Adyvka di platform digital resmi berikut:\n\n* **GitHub (Kode Sumber & Open Source):** [github.com/adyvka31](https://github.com/adyvka31)\n* **LinkedIn (Rekam Jejak Profesional):** [linkedin.com/in/adyvka-pratama](https://www.linkedin.com/in/adyvka-pratama/)\n* **YouTube (Tutorial & Dokumentasi Teknis):** [@adyvkapratama](https://www.youtube.com/@adyvkapratama)\n* **Instagram (Aktivitas & Publikasi):** [@adyvkaa](https://instagram.com/adyvkaa)\n* **TikTok (Edukasi Koding Cepat):** [@adypraa31](https://www.tiktok.com/@adypraa31)",
+    "links": [
+      {
+        "label": "Kunjungi Profil GitHub",
+        "url": "https://github.com/adyvka31"
+      },
+      {
+        "label": "Kunjungi Profil LinkedIn",
+        "url": "https://www.linkedin.com/in/adyvka-pratama/"
+      },
+      {
+        "label": "Kunjungi Halaman Kontak",
+        "url": "/contact"
+      }
+    ]
+  },
+  "en": {
+    "title": "Official Verified Profiles on GitHub, LinkedIn & Social Media",
+    "text": "**Verified Digital Presence and Code Repositories**\n\nFollow and inspect Adyvka's open-source repositories and career milestones across official channels:\n\n* **GitHub (Open Source Repositories & Architecture):** [github.com/adyvka31](https://github.com/adyvka31)\n* **LinkedIn (Career Experience & Endorsements):** [linkedin.com/in/adyvka-pratama](https://www.linkedin.com/in/adyvka-pratama/)\n* **YouTube (Technical Tutorials & Presentations):** [@adyvkapratama](https://www.youtube.com/@adyvkapratama)\n* **Instagram (Engineering Activities & Milestones):** [@adyvkaa](https://instagram.com/adyvkaa)\n* **TikTok (Bite-Sized Coding Tips):** [@adypraa31](https://www.tiktok.com/@adypraa31)",
+    "links": [
+      {
+        "label": "Visit GitHub Profile",
+        "url": "https://github.com/adyvka31"
+      },
+      {
+        "label": "Visit LinkedIn Profile",
+        "url": "https://www.linkedin.com/in/adyvka-pratama/"
+      },
+      {
+        "label": "Visit Contact Page",
+        "url": "/contact"
+      }
+    ]
+  }
+},
+
+  SEMARANG_PROFIT_DEEPDIVE: {
+  "id": {
+    "title": "Strategi Menghasilkan Omzet Jutaan Rupiah dari Modal Rp 0 di Semarang",
+    "text": "**Mekanisme Finansial Survival Bisnis Modal Nol Rupiah di Semarang**\n\nTiba di Kota Semarang tanpa uang tunai dan tanpa bantuan eksternal, Adyvka menerapkan strategi komersial taktis untuk bertahan hidup dan menghasilkan pendapatan:\n\n1. **Peluang Kerja Cepat di Hari Pertama:** Berjalan kaki puluhan kilometer menyusuri kawasan pergudangan dan bengkel teknik untuk menawarkan tenaga fisik.\n2. **Pekerjaan Logistik di Depot Telekomunikasi PT Intisel:** Mengamankan pekerjaan harian memuat perangkat keras baja, dudukan antena, dan kabel feeder BTS ke truk logistik.\n3. **Konversi Tenaga Menjadi Modal Berputar:** Upah tunai hari pertama dialokasikan secara ketat untuk kebutuhan makanan dasar, sementara sisanya digunakan untuk konsinyasi barang dagangan lokal.\n4. **Disiplin Kas Ketat:** Seluruh arus kas dicatat manual setiap malam. Pada hari keenam, tabungan mandiri telah mencapai jutaan rupiah dan cukup untuk membeli tiket kereta pulang di Stasiun Semarang Tawang.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Survival Semarang",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Commercial Mechanics of Generating Millions from Zero Capital in Semarang",
+    "text": "**Financial and Commercial Strategy Behind the Rp 0 Semarang Challenge**\n\nArriving in Semarang with literally zero cash and zero personal contacts, Adyvka deployed tactical resourcefulness to secure daily subsistence and generate surplus capital:\n\n1. **Day One Direct Pitching:** Walking kilometers under tropical heat across industrial districts to pitch immediate manual labor to warehouse supervisors.\n2. **Securing Telecom Logistics Work:** Landing temporary handling work at PT Intisel's regional telecom storage depot, loading steel mounting brackets, antennas, and heavy transmission cabling onto distribution vehicles.\n3. **Reinvesting First Day Wages:** Strict allocation of day-one cash earnings into minimal basic food, turning the surplus into inventory trading and local value exchange.\n4. **Financial Discipline and Tawang Station Victory:** Keeping meticulous handwritten cash flow logs. By day six, total earnings reached millions of rupiah, fully covering living costs and return train tickets at Semarang Tawang Station.",
+    "links": [
+      {
+        "label": "Semarang Survival Experience Case Study",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  SEMARANG_MINDSET_DEEPDIVE: {
+  "id": {
+    "title": "Mindset Wirausaha Ekstrem dan Kemampuan Negosiasi Lapangan di Semarang",
+    "text": "**Pelajaran Mentalitas Wirausaha dan Daya Tahan Ekstrem**\n\nTantangan survival satu minggu di Semarang membentuk fondasi ketangguhan mental Adyvka:\n\n* **Menghadapi Penolakan Tanpa Rasa Takut:** Ditolak puluhan pemilik ruko dan mandor gudang sebelum mendapatkan pekerjaan pertama mengajarkan ketahanan mental bahwa penolakan hanyalah data statistik, bukan kegagalan pribadi.\n* **Orientasi Solusi Cepat:** Dalam kondisi lapar dan tanpa saldo bank, otak dipaksa membuang kepasifan dan secara proaktif mencari siapa yang membutuhkan penyelesaian masalah di jalanan.\n* **Kecerdasan Negosiasi Lapangan:** Membangun rapport instan dengan orang asing dan mandor proyek untuk meyakinkan mereka bahwa tenaga kerja muda ini dapat diandalkan dan berintegritas.\n* **Menghilangkan Ketakutan akan Kemiskinan:** Keberhasilan pulang membawa tiket yang dibeli dari keringat sendiri menanamkan keyakinan bahwa di lingkungan apa pun, Adyvka mampu bertahan dan membangun kesuksesan.",
+    "links": [
+      {
+        "label": "Studi Kasus Survival Semarang",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "Lihat Profil Lengkap Adyvka",
+        "url": "/about"
+      }
+    ]
+  },
+  "en": {
+    "title": "Extreme Entrepreneurial Mindset & Street Negotiation in Semarang",
+    "text": "**Psychological Resilience and Field Negotiation Lessons**\n\nThe unassisted one-week survival challenge in Semarang forged Adyvka's unbreakable problem-solving mindset:\n\n* **Immunity to Rejection:** Enduring dozens of rejections from shopkeepers and warehouse managers before securing the first gig taught that rejection is merely feedback, never a personal defeat.\n* **Extreme Resourcefulness over Resources:** When starvation is a real possibility, excuses vanish. Survival requires immediate active scanning of who has an urgent problem that can be solved right now.\n* **Street Negotiation and Trust Building:** Quickly reading body language and establishing rapport with blue-collar workers and managers to demonstrate reliability and relentless work ethic.\n* **Elimination of Poverty Anxiety:** Successfully purchasing return train tickets with self-earned money erased any fear of failure, instilling lifelong confidence to thrive under any adversity.",
+    "links": [
+      {
+        "label": "Semarang Survival Experience Details",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "View Adyvka Profile & Philosophy",
+        "url": "/about"
+      }
+    ]
+  }
+},
+
+  SEMARANG_DAILY_DEEPDIVE: {
+  "id": {
+    "title": "Rutinitas Harian dan Manajemen Sumber Daya saat Survival di Semarang",
+    "text": "**Rutinitas Operasional dan Manajemen Sumber Daya Lapangan di Semarang**\n\nSetiap hari selama seminggu diatur dengan perhitungan waktu dan energi yang presisi:\n\n* **Manajemen Istirahat:** Memanfaatkan tempat umum yang aman seperti serambi masjid untuk beristirahat malam tanpa mengeluarkan biaya sewa penginapan.\n* **Disiplin Makanan dan Kalori:** Menghitung asupan kalori termurah yang mengenyangkan untuk mempertahankan stamina fisik saat mengangkut material berat.\n* **Mobilitas Efisien:** Berjalan kaki melintasi zona industri Simpang Lima dan Pelabuhan Tanjung Emas untuk menghemat seluruh uang tunai yang terkumpul.\n* **Pelajaran Kerendahan Hati:** Pengalaman ini menumbuhkan rasa empati mendalam terhadap pekerja harian lepas dan buruh kasar di Indonesia.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Survival Semarang",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "Pengalaman Solo Backpacker 3 Negara",
+        "url": "/experience/singapore-malaysia-thailand-backpacker-3-country"
+      }
+    ]
+  },
+  "en": {
+    "title": "Daily Survival Routine & Resource Management in Semarang",
+    "text": "**Field Operational Realities and Resource Management Across Semarang**\n\nEach day during the survival challenge was executed with strict caloric and financial budgeting:\n\n* **Rest and Shelter Protocols:** Resting overnight in safe community public spaces such as mosque courtyards to eliminate lodging expenses entirely.\n* **Nutritional Discipline:** Maximizing caloric value with minimal rupiah outlay to sustain intense physical endurance during hardware loading shifts.\n* **Zero-Cost Mobility:** Walking on foot across industrial corridors from Simpang Lima to Tanjung Emas Port to protect every rupiah earned.\n* **Deep Empathy for Blue-Collar Labor:** Gaining firsthand reverence for Indonesia's daily wage laborers, cementing profound humility and social awareness.",
+    "links": [
+      {
+        "label": "Semarang Survival Case Study",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "3-Country Solo Backpacker Experience",
+        "url": "/experience/singapore-malaysia-thailand-backpacker-3-country"
+      }
+    ]
+  }
+},
+
+  DATABANK_SCRAPING_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Otomasi Web Scraping Huawei ISDP di Databank ERP",
+    "text": "**Otomasi Scraping Telemetri Huawei ISDP pada Databank ERP**\n\nAdyvka merancang subsistem otomatisasi headless browser untuk menyinkronkan data BTS tanpa input manual:\n\n* **Headless Extraction Engine:** Menggunakan script berbasis Node.js dan headless Chromium untuk melakukan login terenkripsi ke portal enterprise Huawei ISDP.\n* **Penanganan Sesi Dinamis:** Menyimpan token sesi dan cookie secara aman, melakukan refresh otomatis saat sesi kedaluwarsa tanpa menghentikan antrean.\n* **Ekstraksi Data Tabular:** Mengurai ratusan halaman dokumen BTS, status acceptance, dan bukti pekerjaan lapangan ke dalam format JSON terstruktur.\n* **Sinkronisasi Terjadwal:** Menjalankan cron job periodik untuk memastikan ribuan site telekomunikasi selalu diperbarui di database PostgreSQL.",
+    "links": [
+      {
+        "label": "Detail Proyek Databank ERP",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Peran Lead Engineer di PT Intisel",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      }
+    ]
+  },
+  "en": {
+    "title": "Automated Huawei ISDP Web Scraping Engine in Databank ERP",
+    "text": "**Automated Telemetry Scraping Architecture in Databank ERP**\n\nAdyvka engineered a resilient headless browser ingestion pipeline to eliminate tedious manual data entry:\n\n* **Headless Extraction Pipeline:** Built with Node.js and headless Chromium to perform automated authenticated sessions into the enterprise Huawei ISDP portal.\n* **Dynamic Session Management:** Secure cookie storage and automated token re-authentication to prevent job interruption during long scraping cycles.\n* **Tabular Data Parsing:** Normalizing hundreds of unstructured web pages, site acceptance milestones, and inspection photos into standardized JSON payloads.\n* **Scheduled Ingestion Crons:** Nightly batch sync tasks populating PostgreSQL schemas across more than 1,000 active telecom BTS installations.",
+    "links": [
+      {
+        "label": "Databank ERP Project Details",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Lead Engineer Role at PT Intisel",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      }
+    ]
+  }
+},
+
+  DATABANK_METRICS_DEEPDIVE: {
+  "id": {
+    "title": "Dampak Efisiensi 90% dan Reduksi Waktu Verifikasi Databank ERP",
+    "text": "**Metrik Keberhasilan Bisnis dan Efisiensi Operasional Databank ERP**\n\nImplementasi Databank ERP memberikan dampak kuantitatif nyata bagi manajemen PT Intisel Prodaktifakom:\n\n* **Penghematan Waktu Verifikasi:** Memangkas siklus verifikasi dokumen instalasi dari 3 hari kerja manual menjadi kurang dari 15 menit per batch.\n* **Eliminasi Kesalahan Manusia:** Mendeteksi duplikasi invoice vendor dan ketidaksesuaian nomor seri perangkat secara otomatis sebelum dokumen disetujui.\n* **Transparansi Waktu Nyata:** Menyediakan dasbor eksekutif untuk memantau status penyelesaian BTS Telkomsel, Indosat, dan XL Axiata secara langsung.\n* **Efisiensi Finansial:** Mempercepat siklus penagihan dan pencairan dana proyek dari klien korporat telekomunikasi.",
+    "links": [
+      {
+        "label": "Detail Proyek Databank ERP",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Pengalaman Kerja di PT Intisel",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      }
+    ]
+  },
+  "en": {
+    "title": "Quantified 90% Verification Efficiency Gain in Databank ERP",
+    "text": "**Business Impact and Operational ROI Delivered by Databank ERP**\n\nDeploying Databank ERP transformed PT Intisel Prodaktifakom's daily telecommunications workflow:\n\n* **Cycle Time Reduction:** Slashed installation verification turnaround from 3 full business days down to under 15 minutes per batch.\n* **Elimination of Audit Discrepancies:** Automated duplicate invoice flagging and equipment serial mismatch detection prior to sign-off.\n* **Real-Time Executive Visibility:** Live dashboard visualizing BTS delivery milestones across Telkomsel, Indosat, and XL Axiata infrastructure projects.\n* **Accelerated Cash Flow:** Significantly faster vendor payment reconciliation and client invoicing cycles for multi-million telecom contracts.",
+    "links": [
+      {
+        "label": "Databank ERP Case Study",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Work Experience at PT Intisel",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      }
+    ]
+  }
+},
+
+  DATABANK_APPROVAL_DEEPDIVE: {
+  "id": {
+    "title": "Alur Hirarki 3-Level Digital Approval pada Databank ERP",
+    "text": "**Sistem Persetujuan Bertingkat 3-Level Digital Approval**\n\nUntuk menjamin kepatuhan audit korporat, Databank ERP menerapkan alur persetujuan terstruktur:\n\n1. **Level 1 (Field Site Engineer):** Insinyur lapangan mengunggah berkas instalasi, foto perangkat terpasang, dan pembacaan uji daya.\n2. **Level 2 (Project Manager):** Manajer proyek memvalidasi kelengkapan teknis, memeriksa kesesuaian SOP, dan menyetujui dokumen teknis.\n3. **Level 3 (General Manager / Finance):** Penandatanganan akhir digital untuk otorisasi penagihan dan pencairan dana vendor.\n* **Audit Trail Digital:** Setiap aksi persetujuan dicatat dengan stempel waktu dan ID pengguna terenkripsi untuk mencegah manipulasi data.",
+    "links": [
+      {
+        "label": "Detail Proyek Databank ERP",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Studi Kasus Arsitektur Databank",
+        "url": "/projects/databank"
+      }
+    ]
+  },
+  "en": {
+    "title": "3-Level Digital Approval Hierarchy & Audit Engine in Databank ERP",
+    "text": "**Hierarchical 3-Level Approval State Machine in Databank ERP**\n\nTo guarantee audit compliance across multi-stakeholder telecom engineering, Databank ERP enforces strict authorization gates:\n\n1. **Level 1 (Field Site Engineer Submission):** Uploading site installation documents, commissioning photo records, and optical power readings.\n2. **Level 2 (Project Manager Technical Review):** Validating technical criteria, checking contractor checklists, and approving installation quality.\n3. **Level 3 (General Manager / Finance Sign-Off):** Final cryptographic digital signature authorizing vendor invoice settlement and billing release.\n* **Tamper-Evident Audit Trail:** Every approval action records immutable user IDs, IP addresses, and timestamps to prevent fraudulent alterations.",
+    "links": [
+      {
+        "label": "Databank ERP Project Architecture",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "PT Intisel Project Manager Experience",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      }
+    ]
+  }
+},
+
+  DATABANK_ARCH_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Enterprise Next.js dan Skema PostgreSQL Databank ERP",
+    "text": "**Arsitektur Teknis dan Desain Database Relasional Databank ERP**\n\nDatabank ERP dibangun dengan stack modern berorientasi performa tinggi:\n\n* **Frontend & Backend Terintegrasi:** Next.js App Router dengan React Server Components untuk meminimalkan beban komputasi di sisi peramban klien.\n* **Object-Relational Mapping:** Prisma ORM dengan skema relasional ternormalisasi antara entitas BTS Site, Vendor, Purchase Order, dan Invoice.\n* **Optimasi Kueri PostgreSQL:** Indexing komposit pada kolom site ID dan status approval, menghasilkan pencarian sub-detik pada ratusan ribu data.\n* **Keamanan Data Perusahaan:** Proteksi Role-Based Access Control (RBAC) ketat yang memisahkan hak akses antardivisi.",
+    "links": [
+      {
+        "label": "Detail Proyek Databank ERP",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Keahlian Teknis & Tech Stack",
+        "url": "/about"
+      }
+    ]
+  },
+  "en": {
+    "title": "Next.js Enterprise Architecture & PostgreSQL Relational Schema in Databank ERP",
+    "text": "**Technical System Architecture and Database Engineering of Databank ERP**\n\nDatabank ERP was engineered on a high-throughput modern polyglot stack:\n\n* **Full-Stack Unified Framework:** Next.js App Router with React Server Components keeping client bundle sizes lightweight and efficient.\n* **Relational Data Layer:** Prisma ORM managing strictly normalized relational schemas between Sites, Vendors, Invoices, and Purchase Orders.\n* **PostgreSQL Performance Indexing:** Composite indexing on site IDs and approval status codes enabling sub-second search across 100k+ historical records.\n* **Enterprise Security & RBAC:** Fine-grained Role-Based Access Control ensuring strict data isolation between field contractors and corporate managers.",
+    "links": [
+      {
+        "label": "Databank ERP System Architecture",
+        "url": "/projects/databank"
+      },
+      {
+        "label": "Adyvka Polyglot Tech Stack",
+        "url": "/about"
+      }
+    ]
+  }
+},
+
+  PUSAKAKU_GAMIFY_DEEPDIVE: {
+  "id": {
+    "title": "Sistem Gamifikasi dan Kuis Interaktif Permainan Tradisional PusakaKu",
+    "text": "**Mekanisme Gamifikasi Pelestarian Budaya pada Platform PusakaKu**\n\nPusakaKu menggabungkan pelestarian warisan budaya nusantara dengan mekanika permainan modern:\n\n* **Minigame Interaktif Permainan Tradisional:** Simulasi visual permainan tradisional seperti Congklak, Gobak Sodor, dan Egrang dengan aturan otentik.\n* **Sistem Skor dan Poin Budaya:** Pengguna mengumpulkan poin budaya setiap kali menyelesaikan kuis pengetahuan rakyat dan memainkan simulasi.\n* **Papan Peringkat Nasional:** Papan skor interaktif real-time yang memacu antusiasme generasi muda untuk mendalami budaya Indonesia.\n* **Kuis Interaktif Adaptif:** Pertanyaan seputar sejarah, filosofi, dan asal daerah permainan tradisional dengan animasi umpan balik instan.",
+    "links": [
+      {
+        "label": "Detail Proyek PusakaKu",
+        "url": "/projects/pusakaku"
+      },
+      {
+        "label": "Gelar Juara 1 Nasional ICOMFEST 2025",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      }
+    ]
+  },
+  "en": {
+    "title": "Interactive Cultural Gamification & Folk Game Quizzes in PusakaKu",
+    "text": "**Gamification Mechanics for Cultural Preservation in PusakaKu**\n\nPusakaKu bridges traditional Indonesian folk heritage with modern interactive web mechanics:\n\n* **Interactive Folk Game Minigames:** Real-time visual simulations of traditional games such as Congklak, Gobak Sodor, and Egrang honoring authentic local rules.\n* **Cultural Experience Points:** Learners accumulate cultural mastery points by completing trivia quizzes and completing game simulations.\n* **Competitive Leaderboards:** Interactive real-time scoreboards incentivizing Gen-Z students to explore folk traditions across Indonesian provinces.\n* **Adaptive Knowledge Trivia:** Animated interactive quizzes covering regional cultural histories, traditional lore, and game philosophies.",
+    "links": [
+      {
+        "label": "PusakaKu Platform Project Details",
+        "url": "/projects/pusakaku"
+      },
+      {
+        "label": "1st Place National Champion ICOMFEST",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      }
+    ]
+  }
+},
+
+  PUSAKAKU_ARCH_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Peta 3D Nusantara dan Responsivitas Web PusakaKu",
+    "text": "**Arsitektur Frontend 3D dan Responsivitas Tinggi PusakaKu**\n\nKunci kemenangan Juara 1 Nasional ICOMFEST 2025 terletak pada keunggulan teknis platform:\n\n* **Visualisasi Peta 3D Nusantara:** Mengintegrasikan Three.js dan WebGL untuk merender kepulauan Indonesia secara interaktif dan lancar pada 60 fps.\n* **Optimalisasi Aset Ringan:** Kompresi model 3D dan tekstur grafis sehingga dapat dimuat cepat bahkan pada koneksi seluler menengah.\n* **Desain Responsif Total:** Antarmuka adaptif sempurna dari layar smartphone hingga monitor desktop resolusi 4K.\n* **Aksesibilitas dan Tipografi:** Menggunakan hierarki tipografi modern dengan kontras tinggi yang nyaman dibaca oleh seluruh kalangan usia.",
+    "links": [
+      {
+        "label": "Detail Proyek PusakaKu",
+        "url": "/projects/pusakaku"
+      },
+      {
+        "label": "Detail Kejuaraan ICOMFEST 2025",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      }
+    ]
+  },
+  "en": {
+    "title": "Interactive 3D Archipelago Map & High-Performance Architecture of PusakaKu",
+    "text": "**Interactive 3D Frontend Architecture and Engineering Excellence in PusakaKu**\n\nPusakaKu's 1st Place National Championship victory was propelled by sophisticated frontend engineering:\n\n* **Interactive 3D Indonesian Archipelago:** Utilizing Three.js and WebGL shaders to render an interactive map of Indonesian islands running smoothly at 60 fps.\n* **Asset Optimization Pipelines:** Aggressive GLTF compression and texture minification enabling sub-2-second loads on mobile cellular devices.\n* **Fluid Responsive Layouts:** Responsive layout precision gracefully adapting from mobile smartphones up to 4K ultra-wide monitors.\n* **Accessibility and Typographic Balance:** Harmonious color contrast ratios and modern typography engineered for effortless cross-generational exploration.",
+    "links": [
+      {
+        "label": "PusakaKu Project Case Study",
+        "url": "/projects/pusakaku"
+      },
+      {
+        "label": "ICOMFEST National Championship Details",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      }
+    ]
+  }
+},
+
+  TERASTANI_AI_DEEPDIVE: {
+  "id": {
+    "title": "Deteksi Penyakit Tanaman dengan AI Computer Vision pada TerasTani",
+    "text": "**Teknologi Kecerdasan Buatan Computer Vision TerasTani**\n\nTerasTani mengintegrasikan model machine learning untuk mendiagnosis kesehatan tanaman urban farming:\n\n* **Klasifikasi Citra Daun:** Menggunakan model Convolutional Neural Network (CNN) terlatih untuk mendeteksi hama, jamur, dan defisiensi nutrisi daun.\n* **Inferensi Cepat di Sisi Klien:** Memanfaatkan TensorFlow.js untuk pemrosesan gambar langsung di peramban tanpa latensi server yang tinggi.\n* **Tingkat Akurasi dan Skor Keyakinan:** Menyajikan skor keyakinan persentase serta panduan penanganan organik terarah bagi petani perkotaan.\n* **Rekomendasi Tindakan Cepat:** Memberikan resep nutrisi dan jadwal penyiraman otomatis untuk memulihkan tanaman yang sakit.",
+    "links": [
+      {
+        "label": "Detail Proyek TerasTani",
+        "url": "/projects/terastani"
+      },
+      {
+        "label": "Juara 2 Nasional PNBITC Bali",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      }
+    ]
+  },
+  "en": {
+    "title": "AI Computer Vision Leaf Disease Detection Engine in TerasTani",
+    "text": "**Artificial Intelligence and Computer Vision Technology in TerasTani**\n\nTerasTani integrates modern machine learning models to diagnose plant health for urban micro-farmers:\n\n* **Leaf Image Classification:** Convolutional Neural Network (CNN) architecture trained to detect crop pests, fungal infections, and nutrient deficiencies.\n* **Client-Side Edge Inference:** Leveraging TensorFlow.js to process camera captures directly within the browser, delivering zero-latency offline diagnostics.\n* **Confidence Scoring & Precision:** Providing real-time statistical confidence ratings paired with actionable organic remediation protocols.\n* **Targeted Organic Treatment Guides:** Automated nutrition adjustment recipes and irrigation schedules to nurse distressed urban crops back to full health.",
+    "links": [
+      {
+        "label": "TerasTani Urban Farming Case Study",
+        "url": "/projects/terastani"
+      },
+      {
+        "label": "PNBITC Bali Runner-Up Award Details",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      }
+    ]
+  }
+},
+
+  TERASTANI_IOT_DEEPDIVE: {
+  "id": {
+    "title": "Integrasi Sensor IoT dan Telemetri Micro-Farming pada TerasTani",
+    "text": "**Sistem Sensor IoT dan Otomasi Irigasi TerasTani**\n\nPlatform TerasTani menghubungkan perangkat keras mikrokontroler dengan dasbor cloud waktu nyata:\n\n* **Telemetri Sensor Lengkap:** Membaca kelembapan tanah, suhu udara, intensitas cahaya, dan pH air nutrisi menggunakan sensor terkalibrasi.\n* **Penyiraman Tetes Otomatis:** Katup irigasi tetes terbuka secara otomatis saat kelembapan tanah turun di bawah ambang batas yang ditentukan.\n* **Protokol Komunikasi Ringan:** Menggunakan protokol MQTT dan WebSocket untuk pengiriman data telemetri yang hemat daya dan bandwidth.\n* **Peringatan Dini Cuaca Ekstrem:** Memberikan notifikasi instan ke smartphone pengguna saat suhu lingkungan melewati batas aman tanaman.",
+    "links": [
+      {
+        "label": "Detail Proyek TerasTani",
+        "url": "/projects/terastani"
+      },
+      {
+        "label": "Juara 2 Nasional PNBITC Bali",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      }
+    ]
+  },
+  "en": {
+    "title": "Urban IoT Telemetry & Automated Irrigation in TerasTani",
+    "text": "**IoT Sensor Telemetry and Micro-Climate Automation in TerasTani**\n\nTerasTani integrates smart microcontroller sensors directly into a real-time reactive cloud platform:\n\n* **Comprehensive Sensor Telemetry:** Reading live soil moisture, ambient temperature, sunlight lumens, and hydroponic nutrient pH via ESP32 hardware.\n* **Automated Drip Irrigation:** Smart solenoid valves triggering precision drip watering whenever soil moisture drops below calibrated thresholds.\n* **Lightweight Telemetry Protocol:** Powered by MQTT and WebSockets ensuring minimal battery drain and resilient performance on mobile data.\n* **Real-Time Climate Alerts:** Instant alerts warning urban farmers of scorching heat waves or sudden humidity drops threatening crop yields.",
+    "links": [
+      {
+        "label": "TerasTani Project Architecture",
+        "url": "/projects/terastani"
+      },
+      {
+        "label": "PNBITC Bali 2nd Place Honor",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      }
+    ]
+  }
+},
+
+  RUANGTUMBUH_TIMEBANK_DEEPDIVE: {
+  "id": {
+    "title": "Model Pertukaran Waktu Peer-to-Peer Time Banking pada RuangTumbuh",
+    "text": "**Mekanisme Ekonomi Pertukaran Waktu Time Banking RuangTumbuh**\n\nRuangTumbuh menggantikan transaksi uang dengan mata uang berbasis waktu:\n\n* **Prinsip 1 Jam Mengajar = 1 Kredit Waktu:** Setiap individu dinilai setara tanpa memandang latar belakang ekonomi, di mana satu jam berbagi keahlian menghasilkan satu kredit.\n* **Buku Besar Kredit Terdesentralisasi:** Saldo kredit waktu disimpan dalam basis data transaksional yang aman dengan sistem escrow otomatis selama sesi belajar berlangsung.\n* **Pencegahan Eksploitasi dan Penipuan:** Sesi hanya dinyatakan selesai setelah kedua belah pihak mengonfirmasi kehadiran dan kualitas materi pembelajaran.\n* **Ekonomi Gotong Royong Digital:** Membangun ekosistem belajar yang mandiri dan berkelanjutan untuk generasi muda Indonesia.",
+    "links": [
+      {
+        "label": "Detail Proyek RuangTumbuh",
+        "url": "/projects/ruangtumbuh"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Peer-to-Peer Time Banking Economics in RuangTumbuh",
+    "text": "**Time Banking Currency Mechanics and Peer Exchange in RuangTumbuh**\n\nRuangTumbuh replaces monetary barriers with an equitable hour-for-hour time ledger:\n\n* **Universal 1 Hour = 1 Credit Exchange:** Every member's time is valued equally, where teaching for one hour earns one time credit to redeem for learning any other skill.\n* **Transactional Credit Escrow:** Time credits are held in escrow during scheduled mentoring sessions and only released upon bilateral completion sign-off.\n* **Fraud Prevention & Mutual Review:** Strict session verification requiring mutual confirmation and star ratings to prevent credit abuse.\n* **Collaborative Communal Economy:** Fostering sustainable digital peer-to-peer mutual aid among young Indonesian developers, designers, and students.",
+    "links": [
+      {
+        "label": "RuangTumbuh Project Architecture",
+        "url": "/projects/ruangtumbuh"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  RUANGTUMBUH_PROBLEM_DEEPDIVE: {
+  "id": {
+    "title": "Solusi Ketimpangan Akses Mentoring Pendidikan pada RuangTumbuh",
+    "text": "**Masalah Sosial yang Diselesaikan oleh Platform RuangTumbuh**\n\nRuangTumbuh lahir dari observasi langsung mengenai ketimpangan akses pendidikan:\n\n* **Tingginya Biaya Kursus dan Mentoring Komersial:** Banyak pelajar berbakat di daerah terhambat biaya tinggi untuk belajar rekayasa perangkat lunak dan desain dari mentor ahli.\n* **Demokratisasi Transfer Keterampilan:** RuangTumbuh memungkinkan seorang ahli koding belajar bahasa asing dari penutur fasih, tanpa ada pihak yang terbebani biaya finansial.\n* **Validasi Keterampilan Berbasis Komunitas:** Mentor dinilai langsung dari portofolio dan umpan balik transparan dari murid-murid sebelumnya.\n* **Membuka Peluang Karier Digital:** Pelajar dari kalangan prasejahtera mendapatkan bimbingan portofolio langsung untuk bersaing di industri teknologi.",
+    "links": [
+      {
+        "label": "Detail Proyek RuangTumbuh",
+        "url": "/projects/ruangtumbuh"
+      },
+      {
+        "label": "Profil Adyvka & Visi Sosial",
+        "url": "/about"
+      }
+    ]
+  },
+  "en": {
+    "title": "Solving Educational Mentorship Disparity in RuangTumbuh",
+    "text": "**Social Impact and Educational Equity Addressed by RuangTumbuh**\n\nRuangTumbuh was engineered to dismantle economic barriers in youth technology education:\n\n* **Commercial Tutoring Inequity:** Talented students from underprivileged communities are frequently priced out of commercial bootcamps and elite tech mentorship.\n* **Democratizing Skill Transfer:** A software engineer can teach JavaScript in exchange for graphic design or English language tutoring without spending a single rupiah.\n* **Merit-Based Community Validation:** Mentor reputations are built transparently on verified session ratings and tangible student portfolio outcomes.\n* **Unlocking Digital Career Pathways:** Equipping youth with direct portfolio guidance and mock interview preparation to enter competitive software careers.",
+    "links": [
+      {
+        "label": "RuangTumbuh Case Study",
+        "url": "/projects/ruangtumbuh"
+      },
+      {
+        "label": "Adyvka Vision & Philosophy",
+        "url": "/about"
+      }
+    ]
+  }
+},
+
+  ARDYANDA_PAYROLL_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Sistem Payroll 100% Presisi dan PPh 21 di PT Ardyanda",
+    "text": "**Rekayasa Mesin Perhitungan Payroll dan Pajak PPh 21 di PT Ardyanda**\n\nSelama magang satu tahun penuh di PT Ardyanda Digital Inovasi, Adyvka merancang modul inti penggajian:\n\n* **Implementasi Rumus TER PPh 21 Terbaru:** Menghitung potongan pajak penghasilan bulanan menggunakan skema Tarif Efektif Rata-Rata (Kategori A, B, C) dengan akurasi 100%.\n* **Pemotongan BPJS dan Asuransi:** Menghitung potongan BPJS Kesehatan dan BPJS Ketenagakerjaan (JKK, JKM, JHT, JP) secara presisi hingga digit desimal terkecil.\n* **Manajemen Kasbon dan Pinjaman Karyawan:** Menghubungkan jadwal cicilan kasbon langsung ke slip gaji otomatis tanpa risiko duplikasi atau kelalaian potong.\n* **Kompensasi Shift Khusus Rumah Sakit:** Menghitung uang shift malam dan tunjangan lembur tenaga medis di sistem rumah sakit yang dikelola perusahaan.",
+    "links": [
+      {
+        "label": "Detail Magang PT Ardyanda",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      },
+      {
+        "label": "Lihat Seluruh 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "100% Precision Payroll Engine & PPh 21 Tax Calculations at PT Ardyanda",
+    "text": "**Engineering the 100% Precision Payroll Engine at PT Ardyanda Digital Inovasi**\n\nDuring his full one-year corporate internship, Adyvka developed the enterprise payroll computational core:\n\n* **Latest TER PPh 21 Tax Compliance:** Automating monthly tax withholdings compliant with Indonesia's updated TER tax framework across categories A, B, and C with zero decimal deviation.\n* **BPJS Health & Social Security Calculations:** Precision deductions for BPJS Kesehatan and Ketenagakerjaan (JKK, JKM, JHT, JP) conforming to national labor regulations.\n* **Employee Cash Advance (Kasbon) Ledger:** Direct synchronization between employee loan amortization schedules and automated monthly payslips.\n* **Hospital Medical Staff Shift Compensation:** Tailored compensation logic processing night-shift premiums and overtime allowances for hospital client personnel.",
+    "links": [
+      {
+        "label": "PT Ardyanda Internship Details",
+        "url": "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  ARDYANDA_EVAL_DEEPDIVE: {
+  "id": {
+    "title": "Nilai Evaluasi Korporat 98/100 dan Pengakuan Kinerja di PT Ardyanda",
+    "text": "**Hasil Evaluasi Kinerja Resmi 98 dari 100 di PT Ardyanda**\n\nAdyvka menyelesaikan magang korporat satu tahun dengan predikat kinerja istimewa:\n\n* **Nilai Akhir Evaluasi: 98 / 100:** Diberikan langsung oleh pimpinan teknis dan manajemen PT Ardyanda Digital Inovasi.\n* **Kualitas Kode dan Kepatuhan Arsitektur:** Diakui mampu menghasilkan backend yang stabil, aman dari celah SQL injection, dan mudah dipelihara tim pengembang.\n* **Ketepatan Waktu dan Tanggung Jawab:** Menyelesaikan seluruh tiket backlog sprint sebelum tenggat waktu tanpa mengorbankan standar pengujian kualitas.\n* **Komunikasi dan Kolaborasi Lintas Tim:** Menjembatani koordinasi teknis antara manajer produk, desainer UI/UX, dan klien korporat.",
+    "links": [
+      {
+        "label": "Studi Kasus Magang PT Ardyanda",
+        "url": "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship"
+      },
+      {
+        "label": "Unduh CV Terverifikasi",
+        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+      }
+    ]
+  },
+  "en": {
+    "title": "Outstanding 98/100 Corporate Performance Evaluation at PT Ardyanda",
+    "text": "**Official Corporate Evaluation Score of 98 out of 100 at PT Ardyanda**\n\nAdyvka concluded his year-long corporate internship with an exceptional performance appraisal:\n\n* **Final Evaluation Score: 98 / 100:** Awarded formally by senior engineering management at PT Ardyanda Digital Inovasi.\n* **Code Rigor & Architectural Cleanliness:** Commended for shipping robust backend services fortified against vulnerabilities and cleanly documented for the engineering team.\n* **Sprint Velocity & Reliability:** Consistently completing sprint tickets ahead of production deployment deadlines with rigorous unit testing.\n* **Cross-Functional Communication:** Smooth collaboration between technical product managers, UI/UX designers, and enterprise healthcare clients.",
+    "links": [
+      {
+        "label": "PT Ardyanda Internship Case Study",
+        "url": "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship"
+      },
+      {
+        "label": "Download Verified CV",
+        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+      }
+    ]
+  }
+},
+
+  ARDYANDA_MC_DEEPDIVE: {
+  "id": {
+    "title": "Peran Master of Ceremony (MC) dan Komunikasi Publik di PT Ardyanda",
+    "text": "**Kepemimpinan Komunikasi Publik dan Master of Ceremony di PT Ardyanda**\n\nSelain kontribusi rekayasa perangkat lunak, Adyvka dipercaya menjadi figur komunikasi perusahaan:\n\n* **Memandu Acara Resmi Korporat:** Bertindak sebagai MC resmi pada pertemuan akbar tahunan, rapat koordinasi seluruh divisi, dan perayaan perusahaan.\n* **Menghidupkan Suasana Profesional:** Menggabungkan etika protokoler formal dengan pembawaan santai yang membangun kedekatan antar-karyawan.\n* **Keahlian Public Speaking:** Membuktikan bahwa seorang engineer perangkat lunak mampu berkomunikasi secara percaya diri di hadapan ratusan audiens eksekutif.\n* **Sinergi Teknis dan Komunikasi:** Kemampuan mempresentasikan topik rekayasa yang kompleks menjadi penjelasan yang mudah dipahami oleh pemangku kepentingan non-teknis.",
+    "links": [
+      {
+        "label": "Detail Pengalaman PT Ardyanda",
+        "url": "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship"
+      },
+      {
+        "label": "Lihat Profil Lengkap Adyvka",
+        "url": "/about"
+      }
+    ]
+  },
+  "en": {
+    "title": "Master of Ceremony (MC) & Corporate Public Speaking at PT Ardyanda",
+    "text": "**Public Speaking Leadership and Master of Ceremony Roles at PT Ardyanda**\n\nBeyond his core software engineering contributions, Adyvka was selected to lead corporate public communications:\n\n* **Hosting Flagship Company Townhalls:** Serving as the official Master of Ceremony (MC) for annual corporate galas, all-hands meetings, and team gatherings.\n* **Professional Stage Presence:** Seamlessly blending formal protocol with engaging charisma to unite cross-departmental staff and leadership.\n* **Bridging Engineering & Public Oratory:** Disproving the stereotype of introverted coders by delivering articulate, energetic presentations before corporate executives.\n* **Executive Technical Translation:** Skillfully explaining intricate backend logic and product milestones in clear terms for non-technical company directors.",
+    "links": [
+      {
+        "label": "PT Ardyanda Experience Details",
+        "url": "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship"
+      },
+      {
+        "label": "View Complete Adyvka Profile",
+        "url": "/about"
+      }
+    ]
+  }
+},
+
+  INTISEL_BTS_DEEPDIVE: {
+  "id": {
+    "title": "Otomasi Verifikasi 1.000+ Site BTS Telekomunikasi di PT Intisel",
+    "text": "**Manajemen dan Otomasi 1.000+ Menara BTS Telekomunikasi di PT Intisel**\n\nSebagai Lead Systems Engineer di PT Intisel Prodaktifakom, Adyvka menangani infrastruktur berskala besar:\n\n* **Cakupan Operator Nasional:** Mengelola verifikasi kelayakan teknis menara BTS untuk klien telekomunikasi raksasa seperti Telkomsel, Indosat Ooredoo Hutchison, dan XL Axiata.\n* **Penggantian Audit Manual yang Rentan Galat:** Menggantikan proses manual verifikasi dokumen spreadsheet ribuan baris dengan pipeline otomatisasi Databank ERP.\n* **Validasi Perangkat Keras dan Antena:** Memverifikasi sudut azimuth antena, pembacaan VSWR kabel pengumpan, dan instalasi catu daya baterai cadangan.\n* **Kecepatan Penerbitan Berita Acara:** Mempercepat penerbitan Berita Acara Serah Terima (BAST) pekerjaan lapangan sehingga pembayaran vendor lancar.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di PT Intisel",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      },
+      {
+        "label": "Detail Proyek Databank ERP",
+        "url": "/projects/databank"
+      }
+    ]
+  },
+  "en": {
+    "title": "Automating 1,000+ Telecom BTS Site Verifications at PT Intisel",
+    "text": "**Automated Verification Architecture Across 1,000+ Telecom BTS Installations**\n\nAs Lead Systems Engineer at PT Intisel Prodaktifakom, Adyvka orchestrated nationwide telecom verification:\n\n* **Tier-1 Telecom Operator Scope:** Managing technical audit validation across BTS towers for Telkomsel, Indosat Ooredoo Hutchison, and XL Axiata networks.\n* **Replacing Error-Prone Manual Audits:** Replacing hundreds of cumbersome manual Excel spreadsheets with the Databank ERP automated data pipeline.\n* **Hardware & RF Parameter Validation:** Programmatically checking antenna azimuth angles, RF feeder cable VSWR metrics, and backup battery rectifiers.\n* **Accelerated Handover Acceptance:** Slashing the turnaround time for official project acceptance certificates (BAST), unlocking faster client cash disbursements.",
+    "links": [
+      {
+        "label": "PT Intisel Lead Engineer Details",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      },
+      {
+        "label": "Databank ERP Project Overview",
+        "url": "/projects/databank"
+      }
+    ]
+  }
+},
+
+  INTISEL_TEAM_DEEPDIVE: {
+  "id": {
+    "title": "Kepemimpinan Tim Rekayasa dan Manajemen Proyek di PT Intisel",
+    "text": "**Kepemimpinan Tim Teknis Lintas Divisi dan Manajemen Proyek di PT Intisel**\n\nPeran ganda Adyvka sebagai Lead Systems Engineer sekaligus Project Manager mencakup:\n\n* **Manajemen Sprint dan Backlog:** Memimpin sesi sprint planning, standup berkala, dan code review bersama tim pengembang frontend dan backend.\n* **Koordinasi Lintas Divisi:** Menyelaraskan kebutuhan teknis tim insinyur lapangan, divisi akuntansi proyek, dan jajaran direksi perusahaan.\n* **Manajemen Vendor dan Kontraktor:** Mengawasi kepatuhan mitra sub-kontraktor terhadap standar operasional prosedur instalasi telekomunikasi.\n* **Penyelesaian Masalah Kritis:** Mengambil keputusan arsitektur cepat saat terjadi anomali integrasi server atau kendala format data lapangan.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di PT Intisel",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      },
+      {
+        "label": "Detail Proyek Databank ERP",
+        "url": "/projects/databank"
+      }
+    ]
+  },
+  "en": {
+    "title": "Engineering Team Leadership & Technical Project Management at PT Intisel",
+    "text": "**Cross-Departmental Technical Leadership and Project Management at PT Intisel**\n\nAdyvka's dual mandate as Lead Systems Engineer and Technical Project Manager encompassed:\n\n* **Sprint Cadence & Code Quality:** Directing sprint planning cycles, daily developer standups, and rigorous code reviews across frontend and backend squads.\n* **Cross-Departmental Synchronization:** Translating complex technical realities between on-ground telecom field engineers, project accountants, and company directors.\n* **Subcontractor & Vendor Oversight:** Enforcing quality compliance across third-party field contractors installing sensitive telecommunication hardware.\n* **Mission-Critical Problem Solving:** Making decisive system architecture calls during unexpected API breaks or edge-case telemetry formatting errors.",
+    "links": [
+      {
+        "label": "PT Intisel Engineering Leadership",
+        "url": "/experience/pt-intisel-prodaktifakom-full-stack-engineer-freelance"
+      },
+      {
+        "label": "Databank ERP System Case Study",
+        "url": "/projects/databank"
+      }
+    ]
+  }
+},
+
+  BACKPACKER_LESSONS_DEEPDIVE: {
+  "id": {
+    "title": "Pelajaran Hidup, Kemandirian Ekstrem & Ketangguhan Solo Backpacker",
+    "text": "**Transformasi Mentalitas Solo Backpacker 3 Negara di Usia 15 Tahun**\n\nEkspedisi mandiri melintasi Singapura, Malaysia, dan Thailand tanpa pendamping dewasa memberikan pelajaran hidup mendalam:\n\n* **Kemandirian Mengambil Keputusan:** Saat tersesat di stasiun perbatasan luar negeri, tidak ada orang tua yang bisa dimintai tolong. Adyvka harus mengevaluasi opsi rute secara cepat dan tenang.\n* **Menaklukkan Rasa Takut dan Kesepian:** Berada sendirian di negeri asing dengan bahasa yang berbeda melatih keberanian mental untuk berinteraksi dengan komunitas internasional.\n* **Manajemen Krisis Tanpa Panik:** Menghadapi keterlambatan jadwal kereta, mencari penginapan murah dadakan, dan menjaga keselamatan barang bawaan setiap detik.\n* **Fondasi Karakter Tangguh:** Pengalaman ini menjadi bukti nyata ketahanan mental Adyvka dalam menghadapi tekanan apa pun di dunia profesional.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Solo Backpacker",
+        "url": "/experience/singapore-malaysia-thailand-backpacker-3-country"
+      },
+      {
+        "label": "Lihat Profil Lengkap Adyvka",
+        "url": "/about"
+      }
+    ]
+  },
+  "en": {
+    "title": "Life Lessons, Resilience & Extreme Independence from Solo Backpacking",
+    "text": "**Transformative Independence from Solo Backpacking 3 Countries at Age 15**\n\nNavigating Singapore, Malaysia, and Thailand entirely unaccompanied as a 15-year-old forged profound personal maturity:\n\n* **Autonomous Critical Decision Making:** When stranded at international rail checkpoints, zero parental safety nets existed. Adyvka had to evaluate route alternatives with calm pragmatism.\n* **Conquering Fear and Isolation:** Being alone in foreign cities with foreign languages built fearless cross-cultural confidence to communicate with travelers worldwide.\n* **Crisis Management Under Pressure:** Adapting to sudden transit delays, finding safe budget hostels on the fly, and safeguarding personal gear at all hours.\n* **Bedrock of Professional Tenacity:** Proving that high-stress engineering deadlines and operational hurdles are easily conquered after surviving international solo expeditions.",
+    "links": [
+      {
+        "label": "Solo Backpacker Experience Details",
+        "url": "/experience/singapore-malaysia-thailand-backpacker-3-country"
+      },
+      {
+        "label": "View Adyvka Profile & Philosophy",
+        "url": "/about"
+      }
+    ]
+  }
+},
+
+  BACKPACKER_FINANCE_DEEPDIVE: {
+  "id": {
+    "title": "Manajemen Logistik Rute dan Pendanaan Mandiri 100% Solo Backpacker",
+    "text": "**Perencanaan Logistik Rute dan 100% Pembiayaan Mandiri Solo Backpacker**\n\nEkspedisi internasional ini dibiayai dan direncanakan sepenuhnya oleh Adyvka sendiri:\n\n* **100% Dibiayai dari Tabungan Koding:** Seluruh biaya paspor, tiket transportasi, akomodasi hostel, dan konsumsi diperoleh dari hasil kerja rekayasa perangkat lunak lepas tanpa meminta sepeser pun kepada orang tua.\n* **Rute Darat dan Kereta Hemat Anggaran:** Menyusun rute logistik efisien dari Singapura menyeberang ke Johor Bahru, naik kereta sleeper ke Kuala Lumpur dan Penang, melintasi perbatasan darat Padang Besar ke Hat Yai, hingga Bangkok.\n* **Manajemen Anggaran Harian Ketat:** Mengonversi mata uang SGD, MYR, dan THB secara hemat, memilih transportasi publik lokal, dan mencatat pengeluaran setiap hari.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Solo Backpacker",
+        "url": "/experience/singapore-malaysia-thailand-backpacker-3-country"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Route Logistics Planning & 100% Self-Funded Financing for Solo Backpacking",
+    "text": "**Route Logistics Strategy and 100% Self-Funded Budgeting**\n\nThis multi-country expedition was entirely funded and planned by Adyvka from scratch:\n\n* **100% Funded via Freelance Software Earnings:** Every dollar for passport fees, cross-border train tickets, hostel bunks, and meals was earned through personal software freelance projects without asking parents for money.\n* **Overland Rail Itinerary:** Engineering an overland route from Singapore crossing into Johor Bahru, boarding sleeper trains to Kuala Lumpur and Penang, traversing Padang Besar border into Hat Yai, and reaching Bangkok.\n* **Disciplined Currency Management:** Managing daily cash envelopes across SGD, MYR, and THB, relying solely on local metro networks, and keeping daily expense logs.",
+    "links": [
+      {
+        "label": "Solo Backpacker Expedition Case Study",
+        "url": "/experience/singapore-malaysia-thailand-backpacker-3-country"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  CS50_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Kurikulum Komprehensif Harvard CS50: C, Python, Memori & Algoritma",
+    "text": "**Kurikulum Akademik dan Silabus Mendalam Harvard University CS50x**\n\nSertifikasi prestisius CS50 dari Universitas Harvard menguji pemahaman ilmu komputer dari lapisan terendah:\n\n* **Pemrograman Bahasa C dan Manajemen Memori:** Memahami alokasi memori manual (malloc/free), manipulasi pointer, segmentasi memori stack dan heap, serta pencegahan memory leak.\n* **Analisis Kompleksitas Algoritma Big-O:** Mempelajari efisiensi algoritma pencarian biner, merge sort, quicksort, dan optimasi struktur data.\n* **Struktur Data Abstrak Tingkat Lanjut:** Mengimplementasikan linked list, hash table, trie, dan binary search tree murni menggunakan bahasa C dari nol.\n* **Pengembangan Backend Python dan SQL:** Membangun aplikasi web dengan arsitektur basis data relasional SQLite dan framework Flask.",
+    "links": [
+      {
+        "label": "Detail Sertifikat Harvard CS50",
+        "url": "/certificates/cs50-introduction-to-computer-science"
+      },
+      {
+        "label": "Jelajahi Seluruh 23 Sertifikat",
+        "url": "/certificates"
+      }
+    ]
+  },
+  "en": {
+    "title": "Comprehensive Harvard CS50 Syllabus: C, Memory Allocation & Algorithms",
+    "text": "**Rigorous Computer Science Syllabus in Harvard University's CS50x**\n\nThe globally acclaimed Harvard CS50 credential certifies foundational computer science mastery:\n\n* **C Programming & Memory Management:** Manual heap allocation (malloc/free), direct pointer arithmetic, stack buffer safety, and memory leak elimination using Valgrind.\n* **Algorithmic Complexity & Big-O Analysis:** Benchmarking asymptotic runtime efficiency across linear search, binary search, merge sort, and quicksort algorithms.\n* **Abstract Data Structures from Scratch:** Writing custom implementations of singly-linked lists, hash tables, tries, and binary search trees natively in C.\n* **Python Backend & Relational SQL:** Transitioning foundational logic into production web servers utilizing Python, Flask, and relational SQL database schemas.",
+    "links": [
+      {
+        "label": "Harvard CS50 Certificate Details",
+        "url": "/certificates/cs50-introduction-to-computer-science"
+      },
+      {
+        "label": "Explore All 23 Verified Credentials",
+        "url": "/certificates"
+      }
+    ]
+  }
+},
+
+  CS50_PROJECT_DEEPDIVE: {
+  "id": {
+    "title": "Proyek Akhir Capstone Kelulusan Harvard University CS50x",
+    "text": "**Proyek Akhir Capstone Kelulusan Sertifikasi Harvard CS50**\n\nSyarat kelulusan sertifikasi Harvard CS50 mewajibkan mahasiswa merancang dan meluncurkan proyek software mandiri yang memenuhi standar evaluasi staf pengajar Harvard:\n\n* **Standar Evaluasi Akademik:** Proyek harus menunjukkan penerapan konsep ilmu komputer yang komprehensif, mencakup desain database relasional, API backend yang kokoh, dan antarmuka web interaktif.\n* **Tinjauan Kode Independen:** Setiap baris kode ditinjau melalui pengujian otomatis dan penilaian staf Harvard mengenai efisiensi algoritma, gaya penulisan kode, dan dokumentasi.\n* **Pembuktian Kemampuan Rekayasa:** Keberhasilan menyelesaikan capstone ini menegaskan bahwa Adyvka memiliki pemahaman sains komputer yang solid berstandar kurikulum universitas global.",
+    "links": [
+      {
+        "label": "Detail Sertifikat Harvard CS50",
+        "url": "/certificates/cs50-introduction-to-computer-science"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek Rekayasa",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Harvard CS50x Final Capstone Engineering Project",
+    "text": "**Graduation Capstone Project for Harvard CS50x Certification**\n\nGraduating from Harvard CS50 requires designing, engineering, and presenting an ambitious independent software application evaluated by Harvard course staff:\n\n* **Rigorous Academic Criteria:** The capstone must exhibit comprehensive computer science application, including relational database modeling, resilient backend endpoints, and responsive client interfaces.\n* **Independent Automated & Staff Code Reviews:** Evaluated via automated testing suites and staff assessments on algorithmic efficiency, clean architecture, and exhaustive documentation.\n* **Proof of Systems Competency:** Successful completion validates Adyvka's ability to conceptualize and deploy production-grade software adhering to world-class university benchmarks.",
+    "links": [
+      {
+        "label": "Harvard CS50 Certificate Overview",
+        "url": "/certificates/cs50-introduction-to-computer-science"
+      },
+      {
+        "label": "Explore All 18 Software Engineering Works",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  AWS_SECURITY_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Cloud AWS dan Kepatuhan Keamanan Well-Architected",
+    "text": "**Arsitektur Cloud dan Kepatuhan Keamanan AWS Practitioner**\n\nSertifikasi AWS Cloud Practitioner Essentials membuktikan pemahaman Adyvka mengenai infrastruktur cloud global Amazon Web Services:\n\n* **AWS Well-Architected Framework:** Menerapkan 6 pilar utama: Keunggulan Operasional, Keamanan, Keandalan, Efisiensi Kinerja, Optimasi Biaya, dan Keberlanjutan.\n* **Manajemen Akses IAM (Identity & Access Management):** Menerapkan prinsip hak akses terkecil (least privilege), autentikasi multifaktor (MFA), dan pemisahan peran IAM.\n* **Keamanan Jaringan Virtual Private Cloud (VPC):** Memahami konfigurasi subnet publik dan privat, Network ACL, serta Security Group untuk melindungi instans komputasi EC2.\n* **Kepatuhan Enkripsi Data:** Menerapkan enkripsi data saat transit (TLS) dan saat disimpan di Amazon S3 maupun basis data RDS menggunakan AWS KMS.",
+    "links": [
+      {
+        "label": "Detail Sertifikat AWS Cloud",
+        "url": "/certificates/cloud-practitioner-essentials"
+      },
+      {
+        "label": "Jelajahi Seluruh 23 Sertifikat",
+        "url": "/certificates"
+      }
+    ]
+  },
+  "en": {
+    "title": "AWS Cloud Architecture & Well-Architected Security Compliance",
+    "text": "**Cloud Systems Architecture & Security Standards Certified by AWS**\n\nThe AWS Cloud Practitioner credential validates Adyvka's comprehension of Amazon Web Services global infrastructure:\n\n* **AWS Well-Architected Pillars:** Adhering to the six core pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability.\n* **IAM Least-Privilege Governance:** Configuring Identity and Access Management policies, multi-factor authentication (MFA), and role assumption to prevent unauthorized access.\n* **Virtual Private Cloud (VPC) Security:** Structuring public and private subnets, Network Access Control Lists (NACLs), and stateful Security Groups safeguarding EC2 instances.\n* **Data Encryption Protocols:** Managing encryption in transit via TLS and encryption at rest across Amazon S3 buckets and RDS clusters using AWS KMS keys.",
+    "links": [
+      {
+        "label": "AWS Certificate Details",
+        "url": "/certificates/cloud-practitioner-essentials"
+      },
+      {
+        "label": "Explore All 23 Professional Certifications",
+        "url": "/certificates"
+      }
+    ]
+  }
+},
+
+  GIT_WORKFLOW_DEEPDIVE: {
+  "id": {
+    "title": "Penguasaan Branching, Pull Request & Resolusi Konflik Git",
+    "text": "**Materi Pembelajaran Mendalam Git & GitHub dari Dicoding Indonesia**\n\nSertifikat Belajar Dasar Git dengan GitHub menguji kompetensi kolaborasi tim teknis:\n\n* **Strategi Percabangan (Branching Workflow):** Menguasai pembuatan feature branch, hotfix, dan pengelolaan cabang rilis untuk mencegah tabrakan kode pada branch utama.\n* **Mekanisme Pull Request dan Code Review:** Membuka pull request yang rapi, menulis deskripsi perubahan yang jelas, dan melakukan review kode terhadap anggota tim lain.\n* **Resolusi Merge Conflict:** Mengatasi konflik baris kode secara tepat tanpa menghilangkan kontribusi rekan kerja saat proses merging atau rebasing.\n* **Manajemen Repositori Jarak Jauh:** Sinkronisasi remote repository, pengelolaan SSH keys yang aman, dan penggunaan file .gitignore untuk melindungi kredensial sensitif.",
+    "links": [
+      {
+        "label": "Detail Sertifikat Git & GitHub",
+        "url": "/certificates/belajar-dasar-git-dengan-github"
+      },
+      {
+        "label": "Jelajahi Seluruh 23 Sertifikat",
+        "url": "/certificates"
+      }
+    ]
+  },
+  "en": {
+    "title": "Git Branching, Pull Request & Merge Conflict Resolution Mastery",
+    "text": "**Advanced Team Collaboration Curriculum in Git & GitHub Certification**\n\nThe Git and GitHub credential from Dicoding Indonesia certifies industrial team development workflows:\n\n* **Feature Branching & Release Management:** Creating isolated feature branches, staging hotfixes, and maintaining trunk stability across active multi-developer sprints.\n* **Pull Request Protocol & Code Reviews:** Structuring legible pull requests with comprehensive commit logs and participating in rigorous peer code review cycles.\n* **Merge Conflict Resolution:** Resolving conflicting code blocks surgically during merges and rebases without overwriting critical changes.\n* **Remote Repository Security:** Enforcing SSH key authentication, managing remote remotes, and leveraging strict .gitignore rules to prevent credential leakage.",
+    "links": [
+      {
+        "label": "Git & GitHub Certificate Case Study",
+        "url": "/certificates/belajar-dasar-git-dengan-github"
+      },
+      {
+        "label": "Explore All 23 Credentials",
+        "url": "/certificates"
+      }
+    ]
+  }
+},
+
+  REACT_HOOKS_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Komponen React, Custom Hooks & State Management",
+    "text": "**Kompetensi Arsitektur Single-Page Application pada Sertifikat React**\n\nSertifikasi Belajar Membuat Aplikasi Web dengan React dari Dicoding menguji pembuatan antarmuka modern yang reaktif:\n\n* **Siklus Hidup dan React Hooks:** Penguasaan mendalam useState, useEffect, useMemo, dan useCallback untuk mengoptimalkan render komponen.\n* **Manajemen State Terpusat:** Menghindari prop drilling menggunakan React Context API dan pola custom hooks yang modular dan dapat digunakan kembali.\n* **Optimasi Performa Virtual DOM:** Mencegah re-render yang tidak perlu dengan teknik memoization dan pembagian komponen terisolasi.\n* **Pembangunan Aplikasi Responsif:** Mengintegrasikan form interaktif dengan validasi real-time, penanganan error asinkron, dan transisi UI yang halus.",
+    "links": [
+      {
+        "label": "Detail Sertifikat React Web Developer",
+        "url": "/certificates/belajar-membuat-aplikasi-web-dengan-react"
+      },
+      {
+        "label": "Jelajahi Seluruh 23 Sertifikat",
+        "url": "/certificates"
+      }
+    ]
+  },
+  "en": {
+    "title": "React Component Architecture, Custom Hooks & State Management Mastery",
+    "text": "**Production-Grade Single-Page Application Competencies Certified in React**\n\nThe React Web Developer credential from Dicoding certifies modern reactive user interface engineering:\n\n* **Lifecycle Mastery & Core Hooks:** Expert utilization of useState, useEffect, useMemo, and useCallback to eliminate rendering bottlenecks.\n* **Centralized State & Custom Hooks:** Mitigating prop-drilling through React Context and authoring reusable, self-contained custom hooks.\n* **Virtual DOM Reconciliation Tuning:** Preventing unnecessary component re-renders utilizing React.memo and component boundary isolation.\n* **Snappy Interactive Interfaces:** Crafting dynamic client forms with real-time field validation, asynchronous error handling, and silky UI state transitions.",
+    "links": [
+      {
+        "label": "React Developer Certificate Overview",
+        "url": "/certificates/belajar-membuat-aplikasi-web-dengan-react"
+      },
+      {
+        "label": "Explore All 23 Verified Credentials",
+        "url": "/certificates"
+      }
+    ]
+  }
+},
+
+  ICOMFEST_JURY_DEEPDIVE: {
+  "id": {
+    "title": "Pertahanan Grand Final dan Matriks Penilaian Juri ICOMFEST 2025",
+    "text": "**Presentasi Grand Final dan Kemenangan Juara 1 Nasional ICOMFEST 2025**\n\nKemenangan Adyvka bersama proyek PusakaKu diraih melalui pertahanan teknis yang memukau dewan juri Universitas Ahmad Dahlan:\n\n* **Inovasi Pelestarian Budaya Berbasis Web 3D:** Memukau juri dengan visualisasi kepulauan nusantara interaktif Three.js yang berjalan lancar di peramban tanpa lag.\n* **Pengujian Arsitektur oleh Dosen Penguji:** Menjawab dengan tenang dan mendalam pertanyaan dewan juri seputar optimasi performa, kompresi aset grafis, dan skalabilitas backend.\n* **Dampak Sosial Budaya Nyata:** Membuktikan bahwa platform mampu memikat generasi muda untuk kembali mempelajari permainan tradisional Indonesia yang hampir punah.\n* **Skor Tertinggi Dewan Juri:** Meraih total poin tertinggi dari seluruh finalis perguruan tinggi dan sekolah menengah se-Indonesia untuk mengamankan podium Juara 1 Nasional.",
+    "links": [
+      {
+        "label": "Detail Juara 1 ICOMFEST",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      },
+      {
+        "label": "Studi Kasus Proyek PusakaKu",
+        "url": "/projects/pusakaku"
+      }
+    ]
+  },
+  "en": {
+    "title": "Grand Final Stage Defense & Jury Evaluation at ICOMFEST 2025",
+    "text": "**Grand Final Defense and 1st Place National Championship Victory at ICOMFEST 2025**\n\nAdyvka's 1st Place victory with PusakaKu was sealed through a commanding stage presentation before Universitas Ahmad Dahlan faculty juries:\n\n* **3D Cultural Preservation Innovation:** Captivating judges with an interactive Three.js archipelago map running at a silky 60 fps inside mobile browsers.\n* **Rigorous Technical Inquisitorial Defense:** Calmly and authoritatively addressing tough jury questions regarding asset compression, WebGL rendering loops, and scalable backend services.\n* **Quantifiable Social & Cultural Value:** Demonstrating high youth engagement metrics reviving interest in endangered traditional Indonesian folk games.\n* **Top Scoring Podium Finish:** Earning the highest aggregate score across high school and university contenders nationwide to claim the 1st Place National Champion trophy.",
+    "links": [
+      {
+        "label": "ICOMFEST 1st Place Champion Details",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      },
+      {
+        "label": "PusakaKu Cultural Platform Case Study",
+        "url": "/projects/pusakaku"
+      }
+    ]
+  }
+},
+
+  PNBITC_PITCH_DEEPDIVE: {
+  "id": {
+    "title": "Presentasi Sistem dan Penilaian Juri PNBITC#18 Politeknik Negeri Bali",
+    "text": "**Pertahanan Sistem TerasTani di Kompetisi Nasional PNBITC#18 Bali**\n\nAdyvka meraih podium Juara 2 Nasional di ajang bergengsi Politeknik Negeri Bali setelah bersaing ketat dengan peserta mahasiswa dan siswa nasional:\n\n* **Demonstrasi Langsung Perangkat Keras dan AI:** Menampilkan live demo sensor kelembapan tanah dan inferensi pendeteksian penyakit daun berbasis computer vision di hadapan juri.\n* **Keseimbangan Beban Kerja Magang dan Lomba:** Merancang dan mengoding sistem kompetisi ini di sela-sela jadwal magang korporat kelas 12 yang padat.\n* **Keunggulan Sistem Urban Farming Terpadu:** Juri mengapresiasi solusi holistik TerasTani yang menggabungkan automasi IoT, marketplace lokal, dan edukasi pertanian presisi.\n* **Podium Juara 2 Nasional:** Mengukuhkan posisi TerasTani sebagai inovasi web teknologi pertanian terbaik di ajang tingkat nasional ini.",
+    "links": [
+      {
+        "label": "Detail Juara 2 PNBITC Bali",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      },
+      {
+        "label": "Studi Kasus Proyek TerasTani",
+        "url": "/projects/terastani"
+      }
+    ]
+  },
+  "en": {
+    "title": "System Defense & Jury Evaluation at PNBITC#18 Politeknik Negeri Bali",
+    "text": "**Technical System Presentation and 2nd Place Podium Finish at PNBITC#18 Bali**\n\nCompeting against collegiate and senior high teams nationwide, Adyvka secured 2nd Place National Runner-Up at Politeknik Negeri Bali:\n\n* **Live Hardware Telemetry & Edge AI Demonstration:** Demonstrating real-time soil moisture triggers and computer vision crop disease diagnostics live before university faculty adjudicators.\n* **Balancing Corporate Internship Sprints:** Squeezing late-night competition development sprints alongside demanding full-time 12th-grade corporate internship shifts.\n* **Holistic Micro-Farming Value:** Juries commended TerasTani's integrated architecture combining automated IoT watering, hyper-local community crop trading, and precision agriculture education.\n* **National Runner-Up Honor:** Celebrating a hard-fought podium finish validating Adyvka's ability to ship competition-grade systems under intense pressure.",
+    "links": [
+      {
+        "label": "PNBITC Bali Runner-Up Details",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      },
+      {
+        "label": "TerasTani Platform Case Study",
+        "url": "/projects/terastani"
+      }
+    ]
+  }
+},
+
+  UNILA_JURY_DEEPDIVE: {
+  "id": {
+    "title": "Keunggulan Aksesibilitas SemuaBisa pada Final Nasional UNILA 2025",
+    "text": "**Keunggulan Inovasi dan Penilaian Juri SemuaBisa di Universitas Lampung**\n\nPlatform SemuaBisa meraih predikat Top 5 Finalis Nasional Web Development Competition di Universitas Lampung:\n\n* **Fokus Penuh pada Standar Aksesibilitas WCAG AAA:** Menjadi satu-satunya platform finalis yang merancang arsitektur ramah disabilitas secara menyeluruh.\n* **Fitur Ramah Disabilitas Nyata:** Dilengkapi pembaca layar semantik, mode kontras tinggi, navigasi papan ketik penuh, dan tipografi disleksia.\n* **Arsitektur Super Ringan:** Juri mengapresiasi penggunaan Alpine.js yang menghasilkan waktu muat sub-detik bahkan pada jaringan internet pedesaan yang lambat.\n* **Dampak bagi Karier Digital Pemuda:** Menyediakan jalur pembelajaran teknologi yang inklusif bagi seluruh lapisan masyarakat tanpa diskriminasi.",
+    "links": [
+      {
+        "label": "Detail Finalis UNILA",
+        "url": "/achievements/finalist-national-web-dev-competition"
+      },
+      {
+        "label": "Studi Kasus Proyek SemuaBisa",
+        "url": "/projects/semua-bisa"
+      }
+    ]
+  },
+  "en": {
+    "title": "Accessibility Innovation & Jury Highlights at UNILA 2025 National Final",
+    "text": "**Digital Accessibility Innovation and Finalist Honors at Universitas Lampung**\n\nSemuaBisa achieved Top 5 National Finalist recognition at UNILA's prestigious web development competition:\n\n* **Strict WCAG AAA Accessibility Standards:** Standing out as the sole finalist platform architected from the ground up for persons with visual and cognitive impairments.\n* **Tangible Inclusive UX Features:** Complete with ARIA semantic screen-reader tags, high-contrast monochrome themes, keyboard-only focus states, and dyslexia-friendly typography toggles.\n* **Ultra-Lightweight Performance:** Praised by judges for leveraging Alpine.js to achieve sub-second page rendering on budget mobile devices in rural areas.\n* **Democratic Youth Tech Empowerment:** Building an accessible bridge for underprivileged youth to acquire software engineering competencies.",
+    "links": [
+      {
+        "label": "UNILA National Finalist Details",
+        "url": "/achievements/finalist-national-web-dev-competition"
+      },
+      {
+        "label": "SemuaBisa EdTech Project Case Study",
+        "url": "/projects/semua-bisa"
+      }
+    ]
+  }
+},
+
+  HACKATHON_STRATEGY_DEEPDIVE: {
+  "id": {
+    "title": "Strategi Kemenangan Hackathon dan Kompetisi Rekayasa Web Adyvka",
+    "text": "**Playbook Strategi Adyvka dalam Memenangkan Kompetisi Web Nasional**\n\nKonsistensi Adyvka dalam meraih podium di berbagai kompetisi nasional didasarkan pada strategi terstruktur:\n\n1. **Riset Mendalam Tema Lomba:** Menganalisis latar belakang dewan juri dan mengidentifikasi celah masalah nyata yang belum diselesaikan kompetitor lain.\n2. **Kombinasi Estetika Visual dan Rekayasa Mendalam:** Memadukan antarmuka visual kelas dunia dengan fungsionalitas teknis nyata seperti AI inferensi atau integrasi hardware IoT.\n3. **Penyusunan Prototipe Cepat (Speed Prototyping):** Membangun fondasi sistem yang berfungsi dalam hitungan hari, menyisakan waktu untuk pengujian performa dan penghapusan bug.\n4. **Presentasi dan Latihan Tanya Jawab Skenario Terburuk:** Menyiapkan slide yang memikat, mendemonstrasikan prototipe secara live, dan mengantisipasi seluruh pertanyaan tajam juri dengan tenang.",
+    "links": [
+      {
+        "label": "Lihat Semua Prestasi Kejuaraan",
+        "url": "/achievements"
+      },
+      {
+        "label": "Juara 1 Nasional ICOMFEST 2025",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      },
+      {
+        "label": "Juara 2 Nasional PNBITC Bali",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      }
+    ]
+  },
+  "en": {
+    "title": "Hackathon Playbook & Strategies for Winning National Web Competitions",
+    "text": "**Adyvka's Strategic Playbook for Winning National Software Competitions**\n\nAdyvka's track record of securing podium finishes at national championships rests on structured methodology:\n\n1. **Theme Deconstruction & Jury Analysis:** Dissecting the competition brief and identifying urgent unaddressed real-world problems that other teams overlook.\n2. **Harmonizing World-Class UI with Deep Engineering:** Blending stunning aesthetic polish with substantive technical depth such as client-side AI inference or IoT hardware telemetry.\n3. **Rapid Prototyping Velocity:** Shipping an end-to-end working MVP within days, reserving ample time for lighthouse optimization and rigorous bug fixing.\n4. **Rehearsed Stage Defense & Edge-Case Readiness:** Delivering confident live demos, structuring concise metric-driven slide decks, and answering tough jury interrogations with calm technical depth.",
+    "links": [
+      {
+        "label": "View All Competition Honors",
+        "url": "/achievements"
+      },
+      {
+        "label": "1st Place National Champion ICOMFEST",
+        "url": "/achievements/1st-place-national-web-design-competition"
+      },
+      {
+        "label": "2nd Place National Runner-Up PNBITC",
+        "url": "/achievements/2nd-place-national-web-design-competition-pnbitc"
+      }
+    ]
+  }
+},
+
+  RICHO_PERF_DEEPDIVE: {
+  "id": {
+    "title": "Optimasi Google Lighthouse 99 Poin pada Web CV Richo Bahari",
+    "text": "**Rekayasa Performa Web Berkecepatan Tinggi CV Richo Bahari**\n\nAdyvka mengoptimalkan web profil korporat CV Richo Bahari hingga meraih skor 99 di Google Lighthouse:\n\n* **Format Citra Modern WebP dan AVIF:** Seluruh aset visual katalog mesin industri dikonversi ke format WebP dan AVIF dengan kompresi lossless.\n* **Eliminasi Cumulative Layout Shift (CLS):** Menetapkan rasio aspek eksplisit pada seluruh gambar dan kontainer komponen untuk mencegah pergeseran tata letak.\n* **Pemisahan Kode dan Critical CSS:** Menerapkan code splitting dinamis pada Next.js 16 sehingga peramban hanya mengunduh skrip yang dibutuhkan halaman aktif.\n* **Waktu Muat Sub-Detik:** Skor 99 Performance, 100 Accessibility, 100 Best Practices, dan 100 SEO berhasil diraih secara konsisten.",
+    "links": [
+      {
+        "label": "Studi Kasus Web CV Richo Bahari",
+        "url": "/projects/richobahari"
+      },
+      {
+        "label": "Pengalaman Kerja di CV Richo Bahari",
+        "url": "/experience/cv-richo-bahari-frontend-developer-freelance"
+      }
+    ]
+  },
+  "en": {
+    "title": "99 Google Lighthouse Performance Optimization in CV Richo Bahari",
+    "text": "**High-Velocity Web Performance Engineering for CV Richo Bahari**\n\nAdyvka engineered the corporate industrial web platform to achieve an outstanding 99 Google Lighthouse score:\n\n* **Modern AVIF and WebP Image Pipelines:** Converting industrial machinery photography into lightweight WebP and AVIF assets with lossless compression.\n* **Zero Cumulative Layout Shift (CLS):** Enforcing explicit aspect ratios across responsive image wrappers to eliminate distracting layout jumps.\n* **Critical CSS & Route-Based Splitting:** Next.js 16 code splitting ensuring client browsers only parse critical CSS and JavaScript required for the active viewport.\n* **Sub-Second Core Web Vitals:** Consistently achieving 99 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO on production benchmarks.",
+    "links": [
+      {
+        "label": "CV Richo Bahari Project Details",
+        "url": "/projects/richobahari"
+      },
+      {
+        "label": "Frontend Developer Role at CV Richo Bahari",
+        "url": "/experience/cv-richo-bahari-frontend-developer-freelance"
+      }
+    ]
+  }
+},
+
+  RICHO_CATALOG_DEEPDIVE: {
+  "id": {
+    "title": "Katalog Mesin Industri Berat dan Kepatuhan Standar K3 CV Richo Bahari",
+    "text": "**Desain Katalog Peralatan Industri Berat dan Standar K3**\n\nPlatform web CV Richo Bahari menyajikan portofolio kontraktor umum dan rekayasa industri:\n\n* **Katalog Fabrikasi Baja dan Konstruksi:** Menampilkan spesifikasi teknis pekerjaan konstruksi sipil, fabrikasi baja struktural, dan instalasi mekanikal elektrikal.\n* **Sistem Penyimpanan Heavy-Duty Racking:** Menampilkan portofolio instalasi rak pergudangan industri berkapasitas tonase tinggi.\n* **Kepatuhan Standar K3 Zero Accident:** Menekankan komitmen keselamatan kerja Keselamatan dan Kesehatan Kerja (K3) serta standar ISO 9001.\n* **Navigasi Portofolio Berbasis Kategori:** Mempermudah calon klien korporat menemukan rekam jejak proyek industri yang relevan.",
+    "links": [
+      {
+        "label": "Detail Proyek CV Richo Bahari",
+        "url": "/projects/richobahari"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Industrial Heavy Machinery Catalog & K3 Standards in CV Richo Bahari",
+    "text": "**Industrial Machinery Catalog Design and K3 Compliance Architecture**\n\nThe CV Richo Bahari corporate web platform showcases an extensive general contracting portfolio:\n\n* **Structural Steel & Civil Engineering Showcase:** Visualizing heavy civil contracting, structural steel fabrication, and industrial MEP engineering deliverables.\n* **Heavy-Duty Storage Racking Catalog:** Interactive showcase of industrial warehouse racking solutions supporting high-tonnage payload capacities.\n* **Zero Accident K3 & ISO 9001 Compliance:** Highlighting strict adherence to workplace occupational safety protocols and quality management benchmarks.\n* **Category-Filtered Portfolio Navigation:** Enabling enterprise industrial clients to effortlessly inspect past engineering works and verified project specs.",
+    "links": [
+      {
+        "label": "CV Richo Bahari Project Details",
+        "url": "/projects/richobahari"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  FITSMART_AI_DEEPDIVE: {
+  "id": {
+    "title": "Integrasi Google Gemini AI untuk Pelatihan Kesehatan di FitSmart",
+    "text": "**Integrasi Kecerdasan Buatan Google Gemini pada FitSmart AI**\n\nFitSmart memanfaatkan Google Gemini 1.5 Flash untuk memberikan asisten kesehatan pribadi:\n\n* **Parsing Deskripsi Makanan Alami:** Pengguna cukup mengetik menu makanan harian, dan Gemini AI otomatis mengekstrak taksiran kalori, protein, lemak, dan karbohidrat.\n* **Rekomendasi Olahraga Progresif:** Menghasilkan saran latihan fisik yang disesuaikan dengan tingkat kebugaran, berat badan, dan target kalori pengguna.\n* **Prompt Engineering Presisi Klinis:** Menggunakan instruksi terstruktur untuk mencegah halusinasi medis dan memberikan panduan gaya hidup sehat yang aman.\n* **Konsultasi Interaktif 24/7:** Menyediakan obrolan langsung mengenai nutrisi seimbang dan pemulihan tubuh setelah berolahraga.",
+    "links": [
+      {
+        "label": "Detail Proyek FitSmart AI",
+        "url": "/projects/fitsmart"
+      },
+      {
+        "label": "Keahlian Kecerdasan Buatan (AI)",
+        "url": "/about"
+      }
+    ]
+  },
+  "en": {
+    "title": "Google Gemini AI Integration for Health Coaching in FitSmart",
+    "text": "**Google Gemini AI Assistant Integration in FitSmart**\n\nFitSmart leverages Google Gemini 1.5 Flash API to deliver a personalized clinical health companion:\n\n* **Natural Language Meal Parsing:** Users type unstructured meal logs, and Gemini AI programmatically extracts estimated calories, protein, carbs, and fats.\n* **Progressive Workout Recommendations:** Generating personalized physical routines tailored to current stamina, body composition, and caloric deficit targets.\n* **Clinically Guided Prompt Engineering:** Engineered prompt templates mitigating medical hallucinations and encouraging evidence-based healthy habits.\n* **24/7 Interactive Wellness Companion:** Instant conversational guidance explaining nutritional balance, hydration goals, and active recovery routines.",
+    "links": [
+      {
+        "label": "FitSmart AI Case Study",
+        "url": "/projects/fitsmart"
+      },
+      {
+        "label": "Adyvka AI Capabilities",
+        "url": "/about"
+      }
+    ]
+  }
+},
+
+  FITSMART_TRACKER_DEEPDIVE: {
+  "id": {
+    "title": "Perhitungan Kalori Klinis dan Pelacak Nutrisi pada FitSmart",
+    "text": "**Mesin Perhitungan Kalori Klinis dan Pelacak Gaya Hidup FitSmart**\n\nFitSmart mengimplementasikan algoritma kesehatan ilmiah untuk pemantauan nutrisi harian:\n\n* **Rumus BMR Mifflin-St Jeor:** Menghitung Basal Metabolic Rate pengguna secara akurat berdasarkan usia, tinggi, berat badan, dan jenis kelamin.\n* **Penyesuaian Kalori Dinamis:** Menghitung Total Daily Energy Expenditure (TDEE) dengan mempertimbangkan tingkat aktivitas fisik harian.\n* **Grafik Progres Berat Badan:** Visualisasi tren berat badan mingguan dan bulanan dengan kurva regresi untuk memantau kemajuan target.\n* **Pencatatan Asupan Air:** Pengingat hidrasi harian untuk menjaga metabolisme tubuh tetap optimal sepanjang hari.",
+    "links": [
+      {
+        "label": "Detail Proyek FitSmart",
+        "url": "/projects/fitsmart"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Clinical Calorie Calculation & Nutrition Progress Tracker in FitSmart",
+    "text": "**Scientific Calorie Calculations and Lifestyle Analytics in FitSmart**\n\nFitSmart implements validated metabolic formulas for accurate daily fitness management:\n\n* **Mifflin-St Jeor BMR Equation:** Calculating accurate Basal Metabolic Rates calibrated to age, height, body mass, and gender parameters.\n* **Dynamic TDEE Energy Balancing:** Automatically adjusting Total Daily Energy Expenditure based on monitored daily physical activity tiers.\n* **Weight Trend Progression Charts:** Visualizing weekly and monthly weight fluctuations with smoothing curves to track fitness targets reliably.\n* **Hydration Intake Logging:** Smart daily water tracking with reminders to keep metabolic and athletic recovery at peak performance.",
+    "links": [
+      {
+        "label": "FitSmart Project Details",
+        "url": "/projects/fitsmart"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  JAVAISLAND_BOOKING_DEEPDIVE: {
+  "id": {
+    "title": "Mesin Pemesanan Tur dan Reservasi Jadwal Dinamis JavaIsland",
+    "text": "**Fitur Pemesanan Paket Wisata dan Manajemen Jadwal JavaIsland**\n\nJavaIsland menyediakan portal reservasi tur budaya pulau Jawa yang interaktif:\n\n* **Penyusun Paket Wisata Kustom:** Pengguna dapat memilih durasi perjalanan, jumlah peserta, dan destinasi budaya yang ingin dikunjungi.\n* **Kalkulator Harga Instan:** Menghitung estimasi biaya perjalanan secara transparan mencakup transportasi lokal, pemandu wisata, dan tiket masuk.\n* **Penerbitan Voucher Reservasi:** Menghasilkan bukti pemesanan digital lengkap dengan jadwal rencana perjalanan harian.\n* **Ulasan Wisatawan Terverifikasi:** Ulasan otentik dari wisatawan untuk membantu pengguna memilih rute perjalanan terbaik.",
+    "links": [
+      {
+        "label": "Detail Proyek JavaIsland",
+        "url": "/projects/javaisland"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Tour Booking & Dynamic Itinerary Reservation Engine in JavaIsland",
+    "text": "**Interactive Cultural Tour Booking and Schedule Engine in JavaIsland**\n\nJavaIsland delivers a frictionless travel reservation portal for exploring Java's heritage:\n\n* **Custom Tour Package Builder:** Travelers select expedition durations, group headcount, and targeted historical destinations across Java.\n* **Transparent Real-Time Pricing:** Automated cost estimations factoring in local transportation, certified guides, and heritage entrance passes.\n* **Instant Digital Voucher Generation:** Generating reservation confirmation passes complete with comprehensive day-by-day travel schedules.\n* **Verified Traveler Testimonials:** Authentic reviews and community recommendations guiding travelers to discover off-the-beaten-path cultural gems.",
+    "links": [
+      {
+        "label": "JavaIsland Travel Case Study",
+        "url": "/projects/javaisland"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  JAVAISLAND_CULTURE_DEEPDIVE: {
+  "id": {
+    "title": "Eksplorasi Warisan Budaya Jawa dan Destinasi Wisata JavaIsland",
+    "text": "**Mesin Eksplorasi Warisan Budaya dan Sejarah Jawa pada JavaIsland**\n\nJavaIsland dirancang untuk memperkenalkan kekayaan warisan budaya pulau Jawa kepada dunia:\n\n* **Panduan Sejarah Candi Borobudur dan Prambanan:** Narasi mendalam mengenai arsitektur, relief, dan filosofi spiritual candi bersejarah di Jawa Tengah dan Yogyakarta.\n* **Peta Wisata Budaya Keraton:** Menjelajahi tradisi Keraton Yogyakarta dan Surakarta Hadiningrat, tarian klasik, serta seni gamelan.\n* **Eksplorasi Alam Bromo dan Ijen:** Informasi pendakian dan konservasi kawasan vulkanik Jawa Timur dengan panduan keselamatan terperinci.\n* **Rekomendasi Kuliner Tradisional:** Menampilkan kuliner legendaris khas nusantara di setiap kota tujuan perjalanan.",
+    "links": [
+      {
+        "label": "Detail Proyek JavaIsland",
+        "url": "/projects/javaisland"
+      },
+      {
+        "label": "Proyek PusakaKu (Juara 1 ICOMFEST)",
+        "url": "/projects/pusakaku"
+      }
+    ]
+  },
+  "en": {
+    "title": "Javanese Cultural Heritage & Historical Exploration in JavaIsland",
+    "text": "**Cultural Heritage Preservation and Historical Showcase in JavaIsland**\n\nJavaIsland was architected to celebrate the historical majesty of Java for global travelers:\n\n* **In-Depth Borobudur & Prambanan Guides:** Comprehensive narratives detailing temple bas-reliefs, Buddhist and Hindu architecture, and spiritual origins.\n* **Royal Keraton Heritage Maps:** Documenting royal palace customs in Yogyakarta and Surakarta, classical court dances, and gamelan heritage.\n* **Bromo & Ijen Volcanic Expeditions:** Trail logistics and safety tips for traversing East Java's volcanic peaks and sulfuric craters.\n* **Traditional Culinary Spotlights:** Curated culinary maps highlighting legendary authentic food destinations across each historical township.",
+    "links": [
+      {
+        "label": "JavaIsland Project Details",
+        "url": "/projects/javaisland"
+      },
+      {
+        "label": "PusakaKu Cultural Platform (1st Place)",
+        "url": "/projects/pusakaku"
+      }
+    ]
+  }
+},
+
+  IDNCOURSE_LMS_DEEPDIVE: {
+  "id": {
+    "title": "Sistem Streaming Video dan Kuis Interaktif pada IDN Course LMS",
+    "text": "**Fitur Pembelajaran Interaktif dan Kuis Koding IDN Course LMS**\n\nIDN Course dirancang sebagai platform pembelajaran rekayasa perangkat lunak modern:\n\n* **Pemutar Video Modul Bertingkat:** Memutar video materi dengan kendali kecepatan putar, penanda bab, dan pelacak durasi tonton otomatis.\n* **Kuis Pilihan Ganda dan Praktik:** Menguji pemahaman materi setelah setiap modul dengan penilaian otomatis dan penjelasan kunci jawaban.\n* **Pelacak Kemajuan Belajar Siswa:** Dasbor visual yang menunjukkan persentase penyelesaian kurikulum dan pencapaian lencana siswa.\n* **Forum Diskusi Per Materi:** Memungkinkan siswa bertanya langsung kepada instruktur di bawah setiap bab pembelajaran.",
+    "links": [
+      {
+        "label": "Detail Proyek IDN Course",
+        "url": "/projects/idncourse"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Video Streaming & Interactive Coding Quizzes in IDN Course LMS",
+    "text": "**Interactive Video Streaming & Auto-Graded Quizzes in IDN Course LMS**\n\nIDN Course was architected as an interactive software engineering learning hub:\n\n* **Segmented Video Streaming Player:** Video player with playback speed controls, chapter navigation, and automatic progress tracking.\n* **Auto-Graded Multiple Choice & Coding Quizzes:** Evaluating concept retention after each lesson with instant score feedback and answer breakdowns.\n* **Visual Student Progress Dashboards:** Real-time dashboards visualizing percentage completion milestones and earned achievement badges.\n* **Lesson-Specific Discussion Forums:** Enabling enrolled students to post technical questions and receive guidance directly from mentors.",
+    "links": [
+      {
+        "label": "IDN Course LMS Case Study",
+        "url": "/projects/idncourse"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  IDNCOURSE_CERT_DEEPDIVE: {
+  "id": {
+    "title": "Penerbitan Sertifikat PDF Otomatis dan Verifikasi Hash di IDN Course",
+    "text": "**Mesin Penerbitan Sertifikat Digital Otomatis IDN Course**\n\nSetelah siswa menuntaskan 100% kurikulum kursus, sistem secara otomatis menerbitkan sertifikat:\n\n* **Penerbitan Dokumen Vektor PDF Instan:** Merender nama siswa, judul kursus, dan tanggal kelulusan ke dalam sertifikat beresolusi tinggi.\n* **Kode Hash Verifikasi Unik:** Menghasilkan kode alfanumerik unik untuk setiap sertifikat untuk mencegah pemalsuan dokumen kelulusan.\n* **Tautan Validasi Publik:** Pihak sekolah atau perekrut kerja dapat memverifikasi keaslian sertifikat secara online melalui portal verifikasi IDN Course.\n* **Unduh dan Bagikan Cepat:** Siswa dapat mengunduh berkas PDF atau membagikan tautan kredensial ke profil LinkedIn.",
+    "links": [
+      {
+        "label": "Detail Proyek IDN Course",
+        "url": "/projects/idncourse"
+      },
+      {
+        "label": "Jelajahi Seluruh 23 Sertifikat Adyvka",
+        "url": "/certificates"
+      }
+    ]
+  },
+  "en": {
+    "title": "Automated PDF Certificate Generation & Hash Verification in IDN Course",
+    "text": "**Automated Certificate Generation & Verification Engine in IDN Course**\n\nUpon achieving 100% course completion, IDN Course triggers automated credential issuance:\n\n* **Instant Vector PDF Rendering:** Programmatically printing student credentials, course titles, and completion dates onto crisp high-resolution certificates.\n* **Unique Cryptographic Verification Hash:** Generating a tamper-proof alphanumeric credential ID to permanently prevent fraudulent certificate forgery.\n* **Public Online Verification Portal:** Enabling employers and academic institutions to verify student credential authenticity via a dedicated URL.\n* **One-Click LinkedIn Credential Sharing:** Allowing graduates to download print-ready PDFs or publish their verified credential badge directly to LinkedIn.",
+    "links": [
+      {
+        "label": "IDN Course Platform Details",
+        "url": "/projects/idncourse"
+      },
+      {
+        "label": "Explore Adyvka's 23 Certifications",
+        "url": "/certificates"
+      }
+    ]
+  }
+},
+
+  COFFEESHOP_MENU_DEEPDIVE: {
+  "id": {
+    "title": "Menu Artisan Kustom dan Alur Reservasi Meja di Coffeee Shop",
+    "text": "**Fitur Pemesanan Kopi Artisan dan Reservasi Meja Coffeee Shop**\n\nCoffeee Shop menghadirkan etalase digital interaktif bagi penikmat kopi spesialti:\n\n* **Katalog Biji Kopi Single Origin:** Menampilkan profil aroma, tingkat sangrai (light, medium, dark), dan daerah asal biji kopi nusantara.\n* **Kustomisasi Metode Seduh:** Pelanggan dapat memilih metode seduh manual brew (V60, Aeropress, French Press) atau racikan berbasis espresso.\n* **Formulir Reservasi Meja Interaktif:** Memilih tanggal, jam kedatangan, dan preferensi area indoor atau outdoor untuk reservasi cepat.\n* **Keranjang Belanja Real-Time:** Menghitung total pesanan menu dan pilihan pastry secara langsung dengan antarmuka yang elegan.",
+    "links": [
+      {
+        "label": "Detail Proyek Coffeee Shop",
+        "url": "/projects/coffeee-shop"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Custom Artisan Menu & Table Booking Flow in Coffeee Shop",
+    "text": "**Artisan Coffee Menu Customization & Table Reservation Flow**\n\nCoffeee Shop provides an elegant digital storefront for specialty coffee enthusiasts:\n\n* **Single-Origin Bean Profiles:** Visualizing tasting notes, roast levels (light, medium, dark), and origin terroirs across Indonesian coffee regions.\n* **Brew Method Customizer:** Enabling patrons to customize pour-over extraction methods (V60, Aeropress, French Press) or espresso parameters.\n* **Interactive Table Booking Scheduler:** Reserving seating preferences across indoor quiet zones or outdoor patio areas with real-time slot selection.\n* **Snappy Cart Drawer:** Calculating total drink and pastry orders instantly with warm artisan aesthetics and fluid UI feedback.",
+    "links": [
+      {
+        "label": "Coffeee Shop Case Study",
+        "url": "/projects/coffeee-shop"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  COFFEESHOP_UX_DEEPDIVE: {
+  "id": {
+    "title": "Desain Antarmuka Brand dan Transisi Mikro Coffeee Shop",
+    "text": "**Pengalaman Visual Brand dan Transisi Halus pada Coffeee Shop**\n\nDesain web Coffeee Shop dirancang untuk membangkitkan suasana kedai kopi artisan:\n\n* **Palet Warna Hangat:** Menggunakan kombinasi warna cokelat espresso, krem, dan aksen hangat yang nyaman dipandang mata.\n* **Transisi Mikro CSS Halus:** Animasi hover interaktif pada kartu menu dan tombol pemesanan yang memberikan umpan balik taktil.\n* **Tipografi Bersih dan Proporsional:** Hierarki huruf yang mempermudah pelanggan membaca detail rasa dan harga menu kopi.\n* **Responsif Sempurna di Ponsel:** Alur pemesanan dirancang ramah satu tangan pada layar smartphone saat pelanggan berada di perjalanan.",
+    "links": [
+      {
+        "label": "Detail Proyek Coffeee Shop",
+        "url": "/projects/coffeee-shop"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Brand Experience & Micro-Interactions in Coffeee Shop",
+    "text": "**Artisan Brand Identity & Fluid Micro-Interactions in Coffeee Shop**\n\nThe Coffeee Shop interface was designed to evoke the ambiance of an artisan specialty cafe:\n\n* **Warm Earthy Color Palette:** Harmonious blends of espresso brown, warm creams, and amber accents creating a welcoming visual atmosphere.\n* **Fluid CSS Micro-Animations:** Tactile hover transitions on coffee cards and reservation buttons delivering instant visual feedback.\n* **Clean Typographic Hierarchy:** Legible editorial typography allowing customers to effortlessly scan tasting profiles and bean pricing.\n* **One-Handed Mobile Optimization:** Ergonomically engineered for smooth one-thumb navigation on mobile screens when ordering on the go.",
+    "links": [
+      {
+        "label": "Coffeee Shop Project Details",
+        "url": "/projects/coffeee-shop"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  MYSTYLE_CART_DEEPDIVE: {
+  "id": {
+    "title": "Keranjang Belanja Reaktif dan Alur Checkout pada MyStyle",
+    "text": "**Mekanisme Keranjang Belanja Reaktif dan Checkout MyStyle**\n\nMyStyle menghadirkan pengalaman belanja busana modern tanpa hambatan:\n\n* **Drawer Keranjang Sisi Klien:** Menambahkan dan menghapus barang belanjaan secara instan tanpa perlu memuat ulang halaman.\n* **Pilihan Varian Ukuran dan Warna:** Memilih ukuran sepatu atau pakaian dan warna busana dengan validasi ketersediaan stok real-time.\n* **Kalkulator Diskon dan Kupon:** Memasukkan kode promo yang langsung memotong total pembayaran secara transparan.\n* **Alur Checkout Ringkas:** Formulir pengiriman yang bersih dan ringkas untuk memaksimalkan tingkat konversi pembelian.",
+    "links": [
+      {
+        "label": "Detail Proyek MyStyle",
+        "url": "/projects/mystyle"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Reactive Shopping Cart State & Instant Checkout in MyStyle",
+    "text": "**Reactive Cart Drawer and Frictionless Checkout Architecture in MyStyle**\n\nMyStyle delivers an intuitive apparel e-commerce customer buying experience:\n\n* **Client-Side Slide-Over Cart Drawer:** Instant item addition and removal with dynamic subtotal recalculation and zero page reloads.\n* **Variant Size & Color Selectors:** Selecting shoe sizes and fabric colorways with real-time inventory validation checks.\n* **Discount Code Engine:** Applying promotional coupons that instantly reflect transparent markdown deductions across the cart total.\n* **Streamlined Checkout Funnel:** Minimalist shipping address collection form designed to maximize checkout conversion rates.",
+    "links": [
+      {
+        "label": "MyStyle E-Commerce Case Study",
+        "url": "/projects/mystyle"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  MYSTYLE_CATALOG_DEEPDIVE: {
+  "id": {
+    "title": "Desain Lookbook Busana dan Arsitektur Grid Modern MyStyle",
+    "text": "**Arsitektur Grid Katalog Busana dan Desain Lookbook MyStyle**\n\nMyStyle dirancang dengan tata letak editorial busana kelas atas:\n\n* **Grid Katalog Editorial:** Menyajikan foto produk resolusi tinggi dengan tata letak grid modern yang elegan dan responsif.\n* **Fitur Zoom Detail Produk:** Pelanggan dapat memeriksa tekstur kain dan jahitan sepatu secara jelas sebelum membeli.\n* **Filter Musim dan Kategori:** Memfilter koleksi pakaian berdasarkan musim, jenis kelamin, dan kategori gaya hidup.\n* **Kecepatan Muat Gambar Optimal:** Pemuatan gambar bertahap (lazy loading) untuk menghemat kuota internet pengguna ponsel.",
+    "links": [
+      {
+        "label": "Detail Proyek MyStyle",
+        "url": "/projects/mystyle"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Modern Apparel Lookbook Grid & Catalog Architecture in MyStyle",
+    "text": "**High-Fashion Editorial Lookbook & Grid Architecture in MyStyle**\n\nMyStyle combines high-fashion aesthetic polish with performant web engineering:\n\n* **Editorial Lookbook Grid:** Showcasing high-resolution apparel photography in a balanced responsive grid layout.\n* **Product Detail Inspection Zoom:** Enabling shoppers to inspect fabric textures, stitching, and materials up close prior to purchasing.\n* **Season & Category Filtering:** Instant multi-category filtering by season, gender, and streetwear lifestyle collections.\n* **Responsive Lazy-Loading:** Progressive image decoding and native lazy-loading protecting user data on cellular devices.",
+    "links": [
+      {
+        "label": "MyStyle Project Overview",
+        "url": "/projects/mystyle"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  DELIFOOD_TRACKING_DEEPDIVE: {
+  "id": {
+    "title": "Pelacakan Kurir Real-Time dan Status Pesanan pada DeliFood",
+    "text": "**Sistem Pelacakan Pengiriman Makanan Waktu Nyata DeliFood**\n\nAplikasi mobile DeliFood menghadirkan pemantauan status pesanan makanan secara transparan:\n\n* **Indikator Progres 4 Tahap:** Menampilkan status pesanan secara visual mulai dari Diterima Restoran, Sedang Dimasak, Diantar Kurir, hingga Sampai di Lokasi.\n* **Simulasi Pergerakan Kurir GPS:** Memvisualisasikan perkiraan posisi kurir di rute jalan menuju alamat pemesan dengan animasi yang mulus.\n* **Estimasi Waktu Tiba Akurat:** Memberikan perkiraan menit kedatangan makanan berdasarkan jarak tempuh dan kondisi dapur restoran.\n* **Tombol Kontak Kurir Langsung:** Memungkinkan pelanggan menghubungi kurir pengantar via telepon atau obrolan instan saat pesanan diantar.",
+    "links": [
+      {
+        "label": "Detail Proyek DeliFood",
+        "url": "/projects/delifood"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Real-Time Courier Tracking & Order State Machine in DeliFood",
+    "text": "**Real-Time Food Delivery Tracking & Order State Transitions in DeliFood**\n\nDeliFood keeps hunger at bay with transparent live delivery monitoring:\n\n* **4-Stage Order Progression Indicator:** Visualizing status milestones: Order Confirmed, Kitchen Cooking, Courier En Route, and Successfully Delivered.\n* **Simulated GPS Courier Navigation:** Smoothly animating delivery driver movement along road pathways toward the customer address.\n* **Accurate Arrival Estimates:** Dynamic countdown timers factoring in kitchen preparation time and delivery road distances.\n* **Direct Driver Contact Trigger:** Instant call and messaging triggers to reach the active delivery courier directly for gate access instructions.",
+    "links": [
+      {
+        "label": "DeliFood Mobile App Details",
+        "url": "/projects/delifood"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  DELIFOOD_ARCH_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Mobile Flutter dan Kontrak REST API pada DeliFood",
+    "text": "**Arsitektur Aplikasi Flutter dan Integrasi REST API DeliFood**\n\nDeliFood dibangun dengan fondasi kode mobile yang bersih dan modular:\n\n* **Clean Architecture Flutter:** Memisahkan lapisan presentasi widget, logika bisnis state management, dan repositori data jaringan.\n* **Kontrak REST API Terstruktur:** Mengonsumsi data katalog restoran dan menu makanan melalui endpoint JSON yang teroptimasi.\n* **Penyimpanan Lokal Keranjang Makanan:** Pesanan makanan tetap tersimpan aman di penyimpanan lokal ponsel jika aplikasi tidak sengaja ditutup.\n* **Performa Responsif 60 FPS:** Seluruh daftar makanan dapat digulir dengan sangat lancar tanpa frame drop di perangkat Android dan iOS.",
+    "links": [
+      {
+        "label": "Detail Proyek DeliFood",
+        "url": "/projects/delifood"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Flutter Mobile Architecture & REST API Contracts in DeliFood",
+    "text": "**Clean Flutter Mobile Architecture & REST Integration in DeliFood**\n\nDeliFood was built using scalable mobile development patterns across iOS and Android:\n\n* **Clean Mobile Architecture:** Strict decoupling between UI view widgets, state management providers, and network repositories.\n* **Optimized REST API Endpoints:** Fast serialization of restaurant catalogs, category listings, and checkout order payloads over JSON.\n* **Local Cart Persistence:** Protecting customer food orders in local storage across sudden app restarts or backgrounding.\n* **Buttery 60 FPS Scrolling:** Highly performant list rendering ensuring zero frame drops even across long restaurant menus.",
+    "links": [
+      {
+        "label": "DeliFood Mobile Architecture",
+        "url": "/projects/delifood"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  AI_TICKET_AI_DEEPDIVE: {
+  "id": {
+    "title": "Klasifikasi Otomatis dan Ringkasan Tiket dengan Google Gemini AI",
+    "text": "**Otomasi Klasifikasi dan Analisis Sentimen Tiket dengan Gemini AI**\n\nAI Ticket Manager memanfaatkan kecerdasan buatan untuk mengotomasi alur IT support:\n\n* **Ringkasan Otomatis Kendala Pengguna:** Gemini AI membaca keluhan teknis pengguna yang panjang dan merangkum inti masalah dalam beberapa poin jelas.\n* **Penentuan Tingkat Prioritas Otomatis:** Mengklasifikasikan tiket ke dalam kategori Rendah, Sedang, Tinggi, atau Kritis berdasarkan urgensi masalah.\n* **Analisis Sentimen Pelanggan:** Mendeteksi nada frustrasi pelanggan agar tiket dapat segera dieskalasi ke tim teknis senior.\n* **Rekomendasi Solusi Cepat:** Menyarankan langkah pemecahan masalah awal yang dapat langsung dikirimkan oleh agen pendukung.",
+    "links": [
+      {
+        "label": "Detail Proyek AI Ticket Manager",
+        "url": "/projects/ai-ticket-manager"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Automated Ticket Triage & Synthesis via Google Gemini AI",
+    "text": "**Automated Ticket Classification and Sentiment Triage via Gemini AI**\n\nAI Ticket Manager transforms chaotic IT helpdesk inboxes using AI intelligence:\n\n* **Automated Issue Summarization:** Gemini AI parses lengthy user problem descriptions into crisp, actionable 2-sentence summaries.\n* **Intelligent Priority Scoring:** Automatically assigning severity levels (Low, Medium, High, or Critical) based on business impact.\n* **Customer Sentiment Analysis:** Detecting customer frustration signals to escalate high-risk complaints to senior managers immediately.\n* **Suggested Resolution Snippets:** Generating contextual troubleshooting steps ready for helpdesk agents to send with one click.",
+    "links": [
+      {
+        "label": "AI Ticket Manager Case Study",
+        "url": "/projects/ai-ticket-manager"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  AI_TICKET_CLOUD_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Real-Time Cloud Firestore pada AI Ticket Manager",
+    "text": "**Sinkronisasi Tiket Waktu Nyata dengan Cloud Firestore**\n\nAI Ticket Manager menggunakan basis data cloud reaktif untuk kolaborasi tim tanpa jeda:\n\n* **Listener Real-Time onSnapshot:** Setiap perubahan status tiket langsung muncul di layar seluruh agen secara instan tanpa perlu me-refresh browser.\n* **Pembaruan Batch Atomik:** Memperbarui penugasan teknisi dan status tiket secara atomik untuk mencegah konflik data antarpengguna.\n* **Aturan Keamanan Berbasis Peran:** Cloud Firestore Security Rules memastikan staf hanya dapat mengakses tiket sesuai izin divisinya.\n* **Pencarian Cepat Berdasarkan Kategori:** Mengindeks tiket berdasarkan status buka, dalam pengerjaan, atau selesai untuk pelaporan instan.",
+    "links": [
+      {
+        "label": "Detail Proyek AI Ticket Manager",
+        "url": "/projects/ai-ticket-manager"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Cloud Firestore Real-Time Listener Architecture in AI Ticket Manager",
+    "text": "**Real-Time Data Synchronization Architecture with Cloud Firestore**\n\nAI Ticket Manager leverages reactive cloud database streams for effortless collaboration:\n\n* **Reactive onSnapshot Listeners:** Ticket status changes reflect across all active helpdesk agent dashboards instantly with zero page reloads.\n* **Atomic Batch Operations:** Guaranteeing transactional consistency when reassigning technicians and updating ticket status concurrently.\n* **Role-Based Security Rules:** Strict Cloud Firestore Security Rules isolating internal tickets from external submitter views.\n* **Instant Filter Indexing:** High-speed querying across open, in-progress, and resolved ticket queues for executive SLA reporting.",
+    "links": [
+      {
+        "label": "AI Ticket Manager Project Details",
+        "url": "/projects/ai-ticket-manager"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  ATTENDANCE_BIOMETRIC_DEEPDIVE: {
+  "id": {
+    "title": "Verifikasi Wajah Biometrik dan GPS Geofence pada Attendance App",
+    "text": "**Sistem Absensi Biometrik Wajah dan Validasi Lokasi GPS Geofence**\n\nAplikasi Attendance App mengamankan presensi karyawan dan siswa dari kecurangan:\n\n* **Deteksi Titik Wajah ML Kit:** Memverifikasi kesesuaian kontur wajah pengguna langsung di perangkat menggunakan Google ML Kit.\n* **Radius Geofence GPS Ketat:** Presensi hanya diterima jika koordinat GPS smartphone berada di dalam radius 50 meter dari gedung sekolah.\n* **Pencegahan Absensi Palsu:** Mendeteksi upaya pemalsuan lokasi (fake GPS) dan memastikan foto presensi diambil secara langsung bukan dari galeri.\n* **Pencatatan Jam Masuk Akurat:** Mencatat waktu presensi secara otomatis dengan stempel waktu server yang tidak dapat dimanipulasi.",
+    "links": [
+      {
+        "label": "Detail Proyek Attendance App",
+        "url": "/projects/attendance-app"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Biometric Face Verification & GPS Geofencing in Attendance App",
+    "text": "**On-Device Biometric Face Verification & Precision GPS Geofencing**\n\nAttendance App provides tamper-resistant attendance verification for academic campuses:\n\n* **On-Device ML Kit Face Landmarks:** Validating user facial contours locally on the mobile phone using Google ML Kit models.\n* **50-Meter GPS Geofence Boundary:** Submissions are rejected unless the mobile device is verified to be within 50 meters of campus buildings.\n* **Anti-Spoofing & Fake GPS Defense:** Detecting mock location providers and enforcing real-time camera captures to prevent gallery uploads.\n* **Tamper-Proof Time Records:** Logging check-in records with cryptographically verified server timestamps preventing local time manipulation.",
+    "links": [
+      {
+        "label": "Attendance App Mobile Architecture",
+        "url": "/projects/attendance-app"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  ATTENDANCE_OFFLINE_DEEPDIVE: {
+  "id": {
+    "title": "Sinkronisasi Offline Berkelanjutan pada Attendance App",
+    "text": "**Manajemen Penyimpanan Lokal dan Antrean Sinkronisasi Offline Presensi**\n\nAttendance App dirancang tetap berfungsi sempurna saat koneksi internet terputus:\n\n* **Basis Data Lokal SQLite / Hive:** Data presensi tersimpan aman di memori lokal ponsel saat smartphone tidak terhubung ke sinyal internet.\n* **Antrean Sinkronisasi Otomatis:** Saat ponsel kembali mendeteksi sinyal internet atau Wi-Fi, antrean presensi langsung diunggah ke server otomatis.\n* **Resolusi Konflik Data:** Memastikan data presensi lokal yang diunggah belakangan tetap mempertahankan stempel waktu asli saat presensi dilakukan.\n* **Dasbor Ringkasan Kehadiran:** Menampilkan riwayat absensi bulanan dan status ketepatan waktu pengguna secara transparan.",
+    "links": [
+      {
+        "label": "Detail Proyek Attendance App",
+        "url": "/projects/attendance-app"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Offline Local Sync & Background Synchronization in Attendance App",
+    "text": "**Offline-First Local Storage & Background Sync Queue in Attendance App**\n\nAttendance App ensures uninterrupted operational continuity even during network blackouts:\n\n* **Local SQLite / Hive Storage:** Caching attendance records safely on the phone's internal storage during network drops.\n* **Automated Background Sync Queue:** Automatically uploading cached attendance logs to central servers the moment network connectivity resumes.\n* **Conflict Resolution & Timestamp Integrity:** Preserving original offline clock-in timestamps so employees receive full credit for arriving on time.\n* **Monthly Attendance Dashboards:** Providing intuitive monthly timesheets and punctuality analytics for staff and administration.",
+    "links": [
+      {
+        "label": "Attendance App Case Study",
+        "url": "/projects/attendance-app"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  QR_DECODE_DEEPDIVE: {
+  "id": {
+    "title": "Mesin Pemindaian Barcode Sub-Detik pada QR Scanner",
+    "text": "**Kecepatan Pemindaian Kode QR dan Pencegahan Tiket Ganda**\n\nAplikasi QR Guest Manager dirancang untuk gerbang masuk acara bervolume tinggi:\n\n* **Kecepatan Dekode di Bawah 200 Milidetik:** Memproses aliran kamera smartphone secara instan untuk membaca QR code dalam hitungan sepersekian detik.\n* **Dukungan Kondisi Cahaya Redup:** Mengaktifkan lampu flash otomatis dan optimasi kontras untuk memindai kode di ruangan acara yang remang-remang.\n* **Pencegahan Tiket Masuk Ganda:** Sistem langsung mengunci kode tiket yang sudah dipindai, memunculkan peringatan merah jika tiket dicoba pakai ulang.\n* **Umpan Balik Haptik dan Audio:** Mengeluarkan getaran dan suara bip yang jelas untuk mengonfirmasi bahwa tamu telah berhasil masuk.",
+    "links": [
+      {
+        "label": "Detail Proyek QR Scanner",
+        "url": "/projects/qr-scanner"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Sub-Second Barcode Decoding Engine in QR Scanner",
+    "text": "**High-Speed Sub-200ms QR Barcode Decoding & Duplicate Prevention**\n\nQR Guest Manager was built for high-throughput event registration gates:\n\n* **Sub-200ms Frame Processing:** Parsing continuous camera feeds in fractions of a second for instantaneous badge validation.\n* **Low-Light Optical Optimization:** Automatic camera torch toggling and contrast filters scanning screens in dimly lit auditorium settings.\n* **Duplicate Admission Prevention:** Instantly locking scanned ticket tokens and displaying red warning alerts if a badge is presented twice.\n* **Haptic & Audio Validation Cues:** Delivering distinct sound chimes and vibration pulses confirming successful guest admission.",
+    "links": [
+      {
+        "label": "QR Scanner Project Overview",
+        "url": "/projects/qr-scanner"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  QR_CHECKIN_DEEPDIVE: {
+  "id": {
+    "title": "Validasi Tiket dan Manajemen Tamu Instan pada QR Scanner",
+    "text": "**Manajemen Daftar Tamu dan Sinkronisasi Check-In Acara**\n\nQR Guest Manager mempermudah panitia memantau kehadiran peserta seminar dan festival:\n\n* **Sinkronisasi Buku Tamu Real-Time:** Jumlah tamu yang telah masuk langsung terhitung dan terperbarui di layar panitia secara langsung.\n* **Pencarian Manual Cepat:** Jika tamu kehilangan kode QR, panitia dapat mencari nama peserta atau instansi asal dalam hitungan detik.\n* **Pemberitahuan Kategori Tamu:** Menampilkan label khusus seperti VIP, Pembicara, atau Peserta Reguler saat kartu tamu dipindai.\n* **Ekspor Laporan Kehadiran:** Menghasilkan rekap data kehadiran dalam format file spreadsheet untuk evaluasi pasca-acara.",
+    "links": [
+      {
+        "label": "Detail Proyek QR Scanner",
+        "url": "/projects/qr-scanner"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Instant Ticket Validation & Guest Roster Sync in QR Scanner",
+    "text": "**Live Guest Roster Management & Real-Time Event Admission**\n\nQR Guest Manager streamlines event entry logistics for campus conferences and summits:\n\n* **Real-Time Headcount Counter:** Live attendance gauges displaying current checked-in guests versus total registrants in real time.\n* **High-Speed Manual Roster Lookup:** Allowing registration teams to find attendees by name, phone, or organization if badges are misplaced.\n* **Tiered Attendee Badging Alerts:** Displaying clear colored flags identifying VIPs, Keynote Speakers, and Standard Participants upon scan.\n* **Post-Event Audit Export:** Exporting verified attendance logs into structured spreadsheet formats for post-event sponsor reporting.",
+    "links": [
+      {
+        "label": "QR Scanner Case Study",
+        "url": "/projects/qr-scanner"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  NEWS_API_DEEPDIVE: {
+  "id": {
+    "title": "Agregasi Multi-Sumber Berita CNN dan Integrasi REST API pada News App",
+    "text": "**Integrasi REST API dan Agregasi Berita Multi-Sumber pada News App**\n\nNews App mengumpulkan berita terkini dari berbagai media terpercaya:\n\n* **Konsumsi API Berita Terstruktur:** Menghubungkan aplikasi dengan endpoint RESTful media global seperti CNN dan portal berita nasional.\n* **Kategorisasi Berita Otomatis:** Membagi artikel ke dalam kategori Teknologi, Bisnis, Olahraga, Politik, dan Gaya Hidup secara rapi.\n* **Penyaringan Konten Duplikat:** Membersihkan berita yang berulang untuk menyajikan informasi yang relevan dan padat bagi pembaca.\n* **Format Artikel Ramah Mata:** Menampilkan berita dalam tata letak editorial yang bersih dan bebas dari iklan yang mengganggu.",
+    "links": [
+      {
+        "label": "Detail Proyek News App",
+        "url": "/projects/news-app"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Multi-Source CNN News Integration & RESTful Parsing in News App",
+    "text": "**Multi-Source News Aggregation & Normalized REST Architecture in News App**\n\nNews App curates breaking headlines from world-class journalism outlets:\n\n* **High-Volume REST API Integration:** Connecting to verified news endpoints including CNN and global syndicates over secure JSON feeds.\n* **Categorized Feed Filtering:** Automatically grouping articles into Technology, Finance, Sports, Politics, and Global Affairs channels.\n* **Deduplication Pipelines:** Filtering repetitive wire dispatches to present users with clean, concise breaking developments.\n* **Distraction-Free Editorial Layout:** Presenting long-form reporting with clean typography and zero intrusive popups.",
+    "links": [
+      {
+        "label": "News App Project Details",
+        "url": "/projects/news-app"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  NEWS_CACHE_DEEPDIVE: {
+  "id": {
+    "title": "Penyimpanan Offline dan Manajemen State Penanda Berita pada News App",
+    "text": "**Manajemen State Reaktif dan Penyimpanan Offline Berita**\n\nNews App memastikan pengguna dapat membaca artikel favorit di mana saja:\n\n* **Penyimpanan Lokal Berita Pilihan:** Artikel yang ditandai disimpan ke memori lokal ponsel sehingga dapat dibaca kembali saat offline.\n* **Manajemen State Reaktif Cepat:** Menambahkan atau menghapus bookmark berita secara instan tanpa ada jeda animasi antarmuka.\n* **Pencarian Cepat dalam Artikel Tersimpan:** Mencari kata kunci dalam kumpulan artikel yang telah disimpan pengguna.\n* **Mode Hemat Data Seluler:** Mengoptimalkan unduhan gambar berita agar menghemat kuota internet pengguna ponsel.",
+    "links": [
+      {
+        "label": "Detail Proyek News App",
+        "url": "/projects/news-app"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Reactive Bookmarking & Offline Article Caching in News App",
+    "text": "**Reactive State Management & Offline Local Caching in News App**\n\nNews App empowers users to read their favorite investigative reporting anywhere:\n\n* **Local Offline Reading Cache:** Persisting bookmarked long-form articles to device storage for offline reading during flights or commutes.\n* **Reactive Bookmark State:** Instantly toggling bookmark pins across lists with zero UI stutter or latency.\n* **Offline Article Full-Text Search:** Querying indexed articles offline directly from local device databases.\n* **Data-Saver Mobile Mode:** Selective image pre-fetching to preserve mobile cellular data packages.",
+    "links": [
+      {
+        "label": "News App Architecture Details",
+        "url": "/projects/news-app"
+      },
+      {
+        "label": "Explore All 18 Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  QURAN_AUDIO_DEEPDIVE: {
+  "id": {
+    "title": "Pemutar Murottal Audio Berkualitas Tinggi pada Quran App",
+    "text": "**Pemutar Audio Murottal Al-Quran Multi-Qari pada Quran App**\n\nQuran App dilengkapi pemutar audio resolusi tinggi untuk mempermudah tadarus dan hafalan:\n\n* **Pilihan Qari Internasional Terkemuka:** Mendengarkan lantunan merdu dari Qari ternama seperti Syaikh Mishary Rashid Alafasy dan Syaikh As-Sudais.\n* **Penyorotan Ayat Bersamaan (Audio Sync):** Ayat yang sedang dibacakan otomatis disorot dengan warna kontras untuk memandu hafalan pengguna.\n* **Fitur Putar Ulang Ayat:** Pengguna dapat mengulang satu ayat tertentu berkali-kali untuk memperkuat ingatan hafalan Al-Quran.\n* **Pemutaran Latar Belakang:** Audio murottal tetap berjalan lancar saat layar ponsel terkunci atau saat membuka aplikasi lain.",
+    "links": [
+      {
+        "label": "Detail Proyek Quran App",
+        "url": "/projects/quran-app"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "High-Bitrate Audio Recitation Player in Quran App",
+    "text": "**High-Bitrate Multi-Qari Audio Streaming & Memorization Player in Quran App**\n\nQuran App delivers an enriching audio recitation companion for daily recitation and memorization:\n\n* **Acclaimed Global Qari Selection:** Streaming crystal-clear recitations from world-renowned Qaris including Mishary Rashid Alafasy and Abdul Rahman Al-Sudais.\n* **Synchronized Verse Highlighting:** Real-time visual tracking highlighting current verses in sync with reciter audio playback.\n* **Single-Verse Memorization Loops:** Allowing learners to loop specific verses continuously to solidify memorization (tahfidz).\n* **Background Audio Controls:** Uninterrupted playback when mobile screens are locked or while switching between apps.",
+    "links": [
+      {
+        "label": "Quran App Project Details",
+        "url": "/projects/quran-app"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  QURAN_TYPO_DEEPDIVE: {
+  "id": {
+    "title": "Tipografi Utsmani dan Pencarian Surat Cepat pada Quran App",
+    "text": "**Tipografi Arab Utsmani dan Mesin Pencarian Surat Al-Quran**\n\nQuran App mengutamakan kenyamanan dan kejelasan membaca mushaf digital:\n\n* **Huruf Arab Utsmani Standar Madinah:** Menggunakan font Arab dengan ligatur harakat yang presisi dan mudah dibaca di berbagai resolusi layar.\n* **Pencarian Cepat Surat dan Ayat:** Mencari surat berdasarkan nama latin, nomor surat, atau kata kunci terjemahan bahasa Indonesia dalam hitungan detik.\n* **Terjemahan dan Tafsir Standar Kemenag:** Menyajikan terjemahan resmi Kementerian Agama RI berdampingan dengan teks Arab asli.\n* **Pengaturan Ukuran Huruf:** Pengguna dapat menyesuaikan ukuran huruf Arab dan terjemahan sesuai kenyamanan mata.",
+    "links": [
+      {
+        "label": "Detail Proyek Quran App",
+        "url": "/projects/quran-app"
+      },
+      {
+        "label": "Lihat Semua 18 Proyek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Uthmani Arabic Typography & Surah Search Engine in Quran App",
+    "text": "**Uthmani Arabic Typography Engine & Instant Surah Search in Quran App**\n\nQuran App focuses on visual serenity and typographic clarity for digital recitation:\n\n* **Authentic Madinah Uthmani Typography:** High-resolution Arabic font ligatures and precise diacritical marks ensuring clear reading across screens.\n* **Instant Surah & Ayah Search Engine:** Querying surahs by name, chapter number, or translated Indonesian keyword in milliseconds.\n* **Verified Ministry of Religious Affairs Translation:** Official Indonesian Ministry of Religious Affairs translations presented side-by-side with original scripture.\n* **Customizable Reader Typography:** Allowing readers to adjust Arabic font scales and line heights for maximum reading comfort.",
+    "links": [
+      {
+        "label": "Quran App Case Study",
+        "url": "/projects/quran-app"
+      },
+      {
+        "label": "Explore All 18 Software Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  LAZUARDI_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Kurikulum Praktis Rekayasa Web Frontend di SMA Lazuardi GCS",
+    "text": "**Kurikulum Praktis Web Development untuk Siswa SMA Lazuardi GCS**\n\nSebagai Web Development Instructor di SMA Lazuardi GCS, Adyvka menyusun silabus aplikatif:\n\n* **Fondasi Semantik HTML5 dan CSS Grid:** Membimbing siswa membangun tata letak web modern yang responsif dari nol tanpa generator instan.\n* **Logika Interaktif JavaScript:** Mengajarkan manipulasi DOM, penanganan event klik, dan validasi form interaktif.\n* **Pengenalan Alur Kerja Git:** Membiasakan siswa sekolah menengah menggunakan version control untuk menyimpan proyek koding mereka.\n* **Pembangunan Portofolio Siswa:** Setiap siswa berhasil meluncurkan website portofolio pribadi aktif di akhir masa bimbingan.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di SMA Lazuardi",
+        "url": "/experience/sma-lazuardi-gcs-web-development-instructor"
+      },
+      {
+        "label": "Pelatihan Guru di SMPN 25 Depok",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Frontend Web Curriculum & Pedagogy at SMA Lazuardi GCS",
+    "text": "**Applied Frontend Web Engineering Pedagogy at SMA Lazuardi GCS**\n\nAs Web Development Instructor at SMA Lazuardi GCS, Adyvka designed an industry-aligned syllabus:\n\n* **Semantic HTML5 & Modern CSS Grid Layouts:** Coaching senior high students to construct responsive mobile-first web pages natively without templates.\n* **Interactive JavaScript DOM Logic:** Guiding learners through event handlers, interactive input validation, and asynchronous DOM manipulations.\n* **Early Version Control Habits:** Imparting fundamental Git CLI commands, commits, and GitHub repository hosting for student codebases.\n* **Live Student Portfolio Deployments:** Mentoring every student squad to successfully build and deploy active personal portfolio websites by course conclusion.",
+    "links": [
+      {
+        "label": "SMA Lazuardi Instructor Details",
+        "url": "/experience/sma-lazuardi-gcs-web-development-instructor"
+      },
+      {
+        "label": "Faculty Training at SMPN 25 Depok",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  SMPN45_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Kurikulum Logika Pemrograman Aplikasi Mobile di SMPN 45 Jakarta",
+    "text": "**Kurikulum Pemrograman Aplikasi Mobile Siswa SMPN 45 Jakarta**\n\nAdyvka melatih siswa sekolah menengah pertama memahami rekayasa perangkat lunak mobile:\n\n* **Logika Pemrograman Visual:** Mengubah konsep algoritma yang rumit menjadi blok logika visual yang mudah dipahami murid usia remaja.\n* **Desain Antarmuka Mobile:** Mengajarkan penyusunan tombol, gambar, dan navigasi layar yang rapi pada smartphone.\n* **Pengembangan Game Kuis Interaktif:** Murid diajak membuat aplikasi kuis edukasi matematika dan sains berbasis Android.\n* **Membangkitkan Minat Teknologi Sejak Dini:** Menginspirasi puluhan siswa untuk melanjutkan peminatan ke bidang rekayasa perangkat lunak.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di SMPN 45 Jakarta",
+        "url": "/experience/smpn-45-app-development-instructor"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Mobile App Logic & Visual Coding Curriculum at SMPN 45 Jakarta",
+    "text": "**Mobile Application Development Pedagogy at SMPN 45 Jakarta**\n\nAdyvka introduced foundational mobile engineering logic to junior high school students:\n\n* **Visual Algorithmic Thinking:** Demystifying abstract programming conditionals and variables into visual block-based logic.\n* **Mobile Interface Composition:** Guiding students to arrange interactive touch buttons, asset layouts, and view transitions ergonomically.\n* **Educational App Projects:** Mentoring students to build functional Android math and science interactive quiz applications.\n* **Early Career Inspiration:** Igniting long-term passion among dozens of young students to pursue software engineering and STEM disciplines.",
+    "links": [
+      {
+        "label": "SMPN 45 Instructor Case Study",
+        "url": "/experience/smpn-45-app-development-instructor"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  SMPINS_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Kurikulum Logika Komputasi dan Antarmuka Mobile di SMP INS Depok",
+    "text": "**Pedagogi Logika Komputasi dan Antarmuka Mobile di SMP INS Depok**\n\nPelatihan intensif koding mobile untuk membangun pola pikir pemecahan masalah siswa:\n\n* **Dekomposisi Masalah Berpikir Komputasional:** Melatih siswa memecah tantangan besar menjadi langkah-langkah logika instruksi terstruktur.\n* **Prinsip Dasar Desain UI/UX:** Memperkenalkan hierarki visual, keterbacaan teks, dan pemilihan warna pada aplikasi mobile.\n* **Interaktivitas Berbasis Event:** Memahami konsep event handling seperti sentuhan layar, getaran, dan transisi layar ponsel.\n* **Presentasi Karya Akhir:** Siswa mempresentasikan prototipe aplikasi mobile buatan mereka di depan dewan guru dan teman sekelas.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di SMP INS Depok",
+        "url": "/experience/smp-ins-depok-app-development-instructor"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Computational Logic & Mobile Interface Pedagogy at SMP INS Depok",
+    "text": "**Computational Logic & Mobile Interface Architecture at SMP INS Depok**\n\nIntensive youth mobile coding training fostering structured algorithmic problem-solving:\n\n* **Computational Decomposition:** Training young learners to break down complex project goals into structured conditional logic routines.\n* **Fundamental UI/UX Design Principles:** Teaching visual hierarchy, font legibility, and contrast considerations for mobile screen layouts.\n* **Event-Driven Interaction Architecture:** Guiding students through tap listeners, dynamic variable updates, and multi-screen navigation.\n* **Final Project Presentations:** Coaching students to present their working mobile prototypes live before school faculty and peers.",
+    "links": [
+      {
+        "label": "SMP INS Depok Instructor Details",
+        "url": "/experience/smp-ins-depok-app-development-instructor"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  SEMUTSEMUT_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Mekanika Game 2D Scratch dan Problem Solving di Sekolah Alam Semut-Semut",
+    "text": "**Kurikulum Pembuatan Game 2D Scratch di Sekolah Alam Semut-Semut**\n\nAdyvka melatih daya imajinasi komputasi siswa melalui platform visual Scratch:\n\n* **Siklus Game Loop dan Animasi Sprite:** Mengajarkan frame animasi karakter, pergerakan koordinat sumbu X dan Y, serta pergantian kostum.\n* **Deteksi Tumbukan dan Fisika Sederhana:** Mengimplementasikan simulasi gravitasi, rintangan melompat, dan batas arena permainan.\n* **Sistem Poin dan Kemenangan:** Membuat variabel skor, nyawa pemain, dan kondisi tamat permainan yang seru.\n* **Pendekatan Kreatif Sekolah Alam:** Menggabungkan tema alam dan satwa ke dalam cerita game petualangan yang mendidik.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di Semut-Semut",
+        "url": "/experience/semut-semut-the-natural-school-game-development-instructor"
+      },
+      {
+        "label": "Buku Pemrograman Karya Adyvka",
+        "url": "/publications/buku-membuat-game-tanpa-coding"
+      }
+    ]
+  },
+  "en": {
+    "title": "Scratch 2D Game Mechanics & Creative Problem Solving at Semut-Semut School",
+    "text": "**Creative 2D Game Logic & Creative Problem Solving at Semut-Semut Natural School**\n\nAdyvka channeled children's creative imagination through structured Scratch game programming:\n\n* **Game Loop & Sprite Mechanics:** Teaching sprite Cartesian X/Y coordinate translation, costume looping, and dynamic keyboard controls.\n* **Collision Detection & Lightweight Physics:** Programming jumping velocities, boundary detection, and obstacle collision triggers.\n* **Scoring & Health Systems:** Implementing dynamic score counters, player lives, sound effects, and multi-level progression states.\n* **Natural School Environmental Themes:** Inspiring children to craft adventure games centered around wildlife preservation and ecological themes.",
+    "links": [
+      {
+        "label": "Semut-Semut School Instructor Details",
+        "url": "/experience/semut-semut-the-natural-school-game-development-instructor"
+      },
+      {
+        "label": "Adyvka Published Coding Books",
+        "url": "/publications/buku-membuat-game-tanpa-coding"
+      }
+    ]
+  }
+},
+
+  HAJRABYADL_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Tata Letak Web Modern dan Koding Responsif di Hajrabyadl",
+    "text": "**Kurikulum Web Development Responsif di Hajrabyadl**\n\nPembelajaran intensif teknologi web untuk mencetak talenta programmer muda mandiri:\n\n* **Penguasaan CSS Flexbox dan Grid:** Memahami penataan elemen halaman web yang fleksibel di berbagai ukuran layar monitor dan gawai.\n* **Praktik Clean Coding:** Mengajarkan penamaan kelas CSS yang rapi, struktur folder yang teratur, dan penulisan kode tanpa redundansi.\n* **Integrasi Formulir dan Kontak:** Membuat formulir pemesanan dan pengiriman pesan yang langsung terhubung ke layanan email.\n* **Mentoring dari Nol hingga Online:** Memandu siswa dari hari pertama tidak mengenal koding hingga berhasil meluncurkan situs web pertama mereka.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di Hajrabyadl",
+        "url": "/experience/hajrabyadl-web-development-instructor"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Modern Web Layouts & Responsive Coding Curriculum at Hajrabyadl",
+    "text": "**Modern Responsive Web Engineering Pedagogy at Hajrabyadl**\n\nIntensive web development instruction guiding students from complete beginners to active web creators:\n\n* **Flexbox & Grid Layout Mastery:** Imparting intuitive spatial mechanics for fluid layouts adapting gracefully from smartphones to desktops.\n* **Clean Coding Habits:** Enforcing semantic CSS naming, logical repository structure, and disciplined code formatting.\n* **Interactive Form Engineering:** Building functional contact and inquiry forms sending validated payloads to webhook endpoints.\n* **Zero-to-Launch Mentorship:** Personally guiding students from their very first HTML tag to deploying functional websites live on the public internet.",
+    "links": [
+      {
+        "label": "Hajrabyadl Instructor Details",
+        "url": "/experience/hajrabyadl-web-development-instructor"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  ALANSHAR_DESIGN_FIGMA_DEEPDIVE: {
+  "id": {
+    "title": "Desain Sistem UI/UX dan Wireframing Figma di Pesantren Al-Anshar",
+    "text": "**Kurikulum Desain Aplikasi dan Wireframing Figma di Pesantren Al-Anshar**\n\nAdyvka melatih santri mendesain produk digital modern berstandar industri:\n\n* **Penguasaan Tools Figma:** Mengajarkan penggunaan Auto Layout, Components, Variants, dan Style Guide warna serta tipografi.\n* **Wireframing Rendah hingga Tinggi (Lo-Fi to Hi-Fi):** Mengubah sketsa ide di atas kertas menjadi prototipe antarmuka digital yang interaktif.\n* **Desain Berpusat pada Pengguna (User-Centered Design):** Melatih empati santri untuk merancang aplikasi yang mudah digunakan oleh masyarakat luas.\n* **Pameran Karya Santri:** Seluruh santri sukses mempresentasikan prototipe desain aplikasi mobile islami di akhir sesi pelatihan.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Desain Al-Anshar",
+        "url": "/experience/al-anshar-app-design-instructor"
+      },
+      {
+        "label": "Pengalaman Mengajar Game di Al-Anshar",
+        "url": "/experience/al-anshar-game-development-instructor"
+      }
+    ]
+  },
+  "en": {
+    "title": "UI/UX Design Systems & Figma Wireframing at Al-Anshar",
+    "text": "**Digital Product Design Systems & Figma Prototyping at Al-Anshar Islamic School**\n\nAdyvka trained boarding school students in modern industry-grade digital UI/UX design tools:\n\n* **Figma Tooling Fundamentals:** Auto Layout mechanics, reusable components, interactive variants, and global color and typographic styles.\n* **Lo-Fi to Hi-Fi Prototyping:** Transforming rough pencil wireframes into interactive clickable high-fidelity mobile prototypes.\n* **User-Centered Empathy:** Instilling design empathy so students create intuitive interfaces solving real-world community problems.\n* **Student Design Showcase:** Every student completed and presented an interactive mobile prototype addressing social and Islamic educational needs.",
+    "links": [
+      {
+        "label": "Al-Anshar App Design Instructor Details",
+        "url": "/experience/al-anshar-app-design-instructor"
+      },
+      {
+        "label": "Al-Anshar Game Development Experience",
+        "url": "/experience/al-anshar-game-development-instructor"
+      }
+    ]
+  }
+},
+
+  ALANSHAR_GAME_SCRATCH_DEEPDIVE: {
+  "id": {
+    "title": "Mekanika Fisika dan Logika Game Scratch 2D di Pesantren Al-Anshar",
+    "text": "**Kurikulum Logika dan Fisika Game 2D di Pesantren Al-Anshar**\n\nPelatihan logika komputasi santri melalui pembuatan game interaktif:\n\n* **Simulasi Fisika 2D:** Mengajarkan gravitasi buatan, akselerasi kecepatan, dan deteksi tepi layar pada game petualangan.\n* **Kondisi Kemenangan dan Kekalahan:** Memprogram transisi antar-level permainan dengan rintangan bertingkat yang menantang.\n* **Pemanfaatan Suara dan Visual:** Memasukkan efek suara dan musik latar untuk membangun ketegangan dan keseruan permainan.\n* **Menumbuhkan Santri Kreatif Digital:** Membuktikan bahwa santri pesantren mampu bersaing menjadi pencipta teknologi masa depan.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Game Al-Anshar",
+        "url": "/experience/al-anshar-game-development-instructor"
+      },
+      {
+        "label": "Pengalaman Desain di Al-Anshar",
+        "url": "/experience/al-anshar-app-design-instructor"
+      }
+    ]
+  },
+  "en": {
+    "title": "2D Game Physics & Scratch Collision Logic at Al-Anshar",
+    "text": "**2D Interactive Game Physics & Logic Mechanics at Al-Anshar**\n\nTraining Islamic boarding school students in computational thinking through interactive game authoring:\n\n* **2D Physics Simulation:** Custom gravity acceleration, frictionless horizontal velocities, and boundary bounds detection.\n* **Multi-Stage Game Progression:** Engineering win/loss state loops, score multipliers, and dynamic multi-level difficulty jumps.\n* **Audio & Visual Synthesis:** Integrating sound effects, score badges, and dynamic animations to heighten player immersion.\n* **Empowering Muslim Youth Creators:** Proving that boarding school students can excel as proactive software and digital game builders.",
+    "links": [
+      {
+        "label": "Al-Anshar Game Instructor Details",
+        "url": "/experience/al-anshar-game-development-instructor"
+      },
+      {
+        "label": "Al-Anshar App Design Experience",
+        "url": "/experience/al-anshar-app-design-instructor"
+      }
+    ]
+  }
+},
+
+  YASMINE_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Komposisi Visual, Tipografi dan Seni Digital di MTs Yasmine",
+    "text": "**Kurikulum Komposisi Visual dan Desain Grafis di MTs Yasmine**\n\nAdyvka membimbing murid madrasah tsanawiyah mendalami komunikasi visual digital:\n\n* **Prinsip Komposisi Visual:** Mengajarkan keseimbangan bidang, rasio kontras warna, dan titik fokus mata pada sebuah karya grafis.\n* **Hierarki Tipografi Terarah:** Memilih jenis font judul dan teks isi agar poster mudah terbaca dari jarak pandang tertentu.\n* **Desain Poster Acara dan Media Sosial:** Murid membuat poster kegiatan sekolah dan konten publikasi digital berestetika tinggi.\n* **Membangun Percaya Diri Kreatif:** Mengarahkan bakat seni siswa ke dalam keterampilan digital yang memiliki nilai komersial nyata.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di MTs Yasmine",
+        "url": "/experience/mts-yasmine-design-instructor"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Visual Composition, Branding & Digital Art at MTs Yasmine",
+    "text": "**Visual Composition & Digital Graphic Design Pedagogy at MTs Yasmine**\n\nAdyvka guided junior madrasah students to master foundational digital visual communication:\n\n* **Visual Compositional Balance:** Instructing focal points, golden ratio framing, and optical contrast to guide viewer attention.\n* **Typographic Hierarchy & Pairings:** Selecting headline and body font weights ensuring optimal legibility across distance and digital displays.\n* **Event Posters & Social Assets:** Students created vibrant school festival posters and digital announcements meeting high aesthetic standards.\n* **Monetizable Creative Confidence:** Channeling students' artistic creativity into practical digital design skills with real-world industry utility.",
+    "links": [
+      {
+        "label": "MTs Yasmine Instructor Details",
+        "url": "/experience/mts-yasmine-design-instructor"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  GRIYYA_CURRICULUM_DEEPDIVE: {
+  "id": {
+    "title": "Logika Komputasi dan Berpikir Algoritmik di Griyya Sunnah",
+    "text": "**Kurikulum Logika Komputasi dan Algoritma di Griyya Sunnah**\n\nPendidikan logika dasar untuk membentuk pola pikir kritis anak-anak sejak usia dini:\n\n* **Berpikir Algoritmik Prosedural:** Membiasakan siswa menyusun urutan langkah kerja pemecahan masalah secara runtut dan teruji.\n* **Pencabangan Kondisional (If-Else):** Memahami logika pengambilan keputusan dalam instruksi komputasi secara menyenangkan.\n* **Perulangan dan Loop Efisien:** Menjelaskan konsep otomatisasi pekerjaan berulang menggunakan mekanisme loop pemrograman.\n* **Etika Teknologi Islami:** Menanamkan nilai amanah dan tanggung jawab moral dalam menggunakan perangkat teknologi digital.",
+    "links": [
+      {
+        "label": "Detail Pengalaman di Griyya Sunnah",
+        "url": "/experience/griyya-sunnah-game-development-instructor"
+      },
+      {
+        "label": "Buku Pemrograman Karya Adyvka",
+        "url": "/publications/buku-membuat-game-tanpa-coding"
+      }
+    ]
+  },
+  "en": {
+    "title": "Computational Logic & Algorithmic Thinking at Griyya Sunnah",
+    "text": "**Foundational Algorithmic Thinking & Computational Logic at Griyya Sunnah**\n\nEarly education in computer science fundamentals cultivating structured problem-solving:\n\n* **Procedural Algorithmic Sequencing:** Guiding young minds to formulate step-by-step logic workflows addressing complex challenges.\n* **Conditional Branching Mastery:** Understanding logical decision gates (if-else branching) through gamified visual metaphors.\n* **Loops & Automation Efficiency:** Demonstrating how iterative loops automate repetitive tasks, saving time and human effort.\n* **Ethical Technology Values:** Instilling integrity and social responsibility in leveraging computer science for community empowerment.",
+    "links": [
+      {
+        "label": "Griyya Sunnah Instructor Details",
+        "url": "/experience/griyya-sunnah-game-development-instructor"
+      },
+      {
+        "label": "Adyvka's Published Programming Books",
+        "url": "/publications/buku-membuat-game-tanpa-coding"
+      }
+    ]
+  }
+},
+
+  ITFEST_OPS_DEEPDIVE: {
+  "id": {
+    "title": "Operasi Logistik dan Koordinasi Lomba Nasional IT Fest 2025",
+    "text": "**Manajemen Operasi dan Logistik Acara Kompetisi Nasional IT Fest 2025**\n\nSebagai Koordinator Acara Lomba IT FEST 2025, Adyvka mengendalikan operasional hajatan besar:\n\n* **Manajemen Multi-Track Kompetisi:** Mengkoordinasikan cabang lomba Web Development, Desain UI/UX, dan Jaringan Komputer secara bersamaan.\n* **Pengaturan Jadwal dan Waktu Ketat:** Memastikan seluruh rangkaian pembukaan, babak penyisihan, dan presentasi final berjalan tepat waktu.\n* **Kesiapan Infrastruktur Teknis Lab:** Memeriksa kesiapan jaringan lokal, proyektor, dan kestabilan daya listrik selama perlombaan berlangsung.\n* **Layanan Peserta Seluruh Indonesia:** Mengelola komunikasi dan kebutuhan ratusan kontingen peserta lomba dari berbagai sekolah nasional.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Koordinator IT Fest",
+        "url": "/experience/it-fest-2025-competition-event-coordinator"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "National Hackathon Operations & Event Logistics at IT Fest 2025",
+    "text": "**National Competition Operations & Logistics Coordination at IT Fest 2025**\n\nAs Competition Event Coordinator for IT FEST 2025, Adyvka commanded nationwide tournament operations:\n\n* **Multi-Track Competition Governance:** Synchronizing simultaneous heats across Web Development, UI/UX Design, and Networking tracks.\n* **Strict Production Timing:** Ensuring zero schedule overruns across opening ceremonies, hackathon sprints, and final stage presentations.\n* **Technical Lab Infrastructure Readiness:** Rigorously stress-testing local server networks, presentation displays, and high-speed campus internet.\n* **Nationwide Contingent Relations:** Managing logistics, onboarding packets, and inquiries for hundreds of student competitors across Indonesia.",
+    "links": [
+      {
+        "label": "IT Fest Coordinator Case Study",
+        "url": "/experience/it-fest-2025-competition-event-coordinator"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  OSIS_PROJECTS_DEEPDIVE: {
+  "id": {
+    "title": "Kepemimpinan 10+ Inisiatif Unggulan Divisi Acara OSIS SMK IDN",
+    "text": "**Pencapaian Kepemimpinan Divisi Acara OSIS SMK IDN Boarding School**\n\nSebagai Ketua Divisi Acara OSIS, Adyvka memimpin perancangan dan eksekusi agenda besar kampus:\n\n* **Mengarahkan 10+ Program Kerja Akbar:** Memimpin penyelenggaraan festival teknologi, pekan olahraga santri, malam pentas seni, dan perkemahan kepemimpinan.\n* **Manajemen Delegasi Tim Berdisiplin:** Mendelegasikan tugas ke puluhan panitia lintas divisi mulai dari tim perlengkapan, konsumsi, hingga keamanan.\n* **Penyelesaian Masalah Cepat di Lapangan:** Mengatasi kendala teknis cuaca dan pergeseran jadwal dadakan dengan sigap dan tenang.\n* **Membangun Budaya Kerja Kolektif:** Memupuk semangat gotong royong dan rasa kepemilikan tinggi pada seluruh anggota panitia santri.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Ketua Divisi Acara OSIS",
+        "url": "/experience/idn-student-council-event-division-leader"
+      },
+      {
+        "label": "Lihat Semua 20 Pengalaman",
+        "url": "/experience"
+      }
+    ]
+  },
+  "en": {
+    "title": "Directing 10+ Flagship Campus Initiatives in IDN Student Council",
+    "text": "**Directing 10+ Flagship Initiatives as Student Council Event Leader**\n\nAs Event Division Leader for IDN Boarding School Student Council, Adyvka directed major campus productions:\n\n* **Orchestrating 10+ Flagship Campus Summits:** Directing technology showcases, athletic tournaments, cultural galas, and leadership summits.\n* **Disciplined Team Task Delegation:** Assigning roles across dozens of committee officers spanning stage equipment, catering, media, and security.\n* **Live Contingency Resolution:** Rapidly rerouting outdoor schedules indoors during heavy downpours with zero audience panic.\n* **Fostering High-Ownership Team Culture:** Cultivating intense peer trust, discipline, and communal excellence across student leadership cohorts.",
+    "links": [
+      {
+        "label": "Student Council Event Leader Details",
+        "url": "/experience/idn-student-council-event-division-leader"
+      },
+      {
+        "label": "Explore All 20 Experiences",
+        "url": "/experience"
+      }
+    ]
+  }
+},
+
+  BARMUS_IMPACT_DEEPDIVE: {
+  "id": {
+    "title": "Dampak Sosial dan Pemberdayaan Masyarakat Relawan Barmus Voluntrip",
+    "text": "**Aksi Nyata Sosial dan Edukasi Masyarakat pada Barmus Voluntrip**\n\nAdyvka terjun langsung sebagai relawan penyelenggara kegiatan sosial masyarakat desa:\n\n* **Penyelenggaraan Edukasi Anak Pedesaan:** Mengadakan kelas literasi digital dan motivasi belajar untuk anak-anak di pelosok perkampungan.\n* **Penyaluran Bantuan Perlengkapan Belajar:** Mengkoordinasikan paket bantuan buku, alat tulis, dan sarana belajar santri pelosok.\n* **Mobilisasi Logistik Lapangan:** Mengatur transportasi relawan, konsumsi bersama warga desa, dan pembagian pos kegiatan sosial.\n* **Menumbuhkan Kepekaan Sosial:** Mengasah rasa kepedulian nyata bahwa teknologi harus membawa manfaat bagi masyarakat bawah.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Barmus Voluntrip",
+        "url": "/experience/barmus-voluntrip-volunteer-event-organizer"
+      },
+      {
+        "label": "Pengalaman Live In Pedesaan",
+        "url": "/experience/idn-boarding-school-live-in-rural-immersion"
+      }
+    ]
+  },
+  "en": {
+    "title": "Social Impact & Community Empowerment Outreach at Barmus Voluntrip",
+    "text": "**Grassroots Social Empowerment & Rural Youth Outreach at Barmus Voluntrip**\n\nAdyvka volunteered as an operational organizer mobilizing humanitarian outreach in rural villages:\n\n* **Rural Youth Literacy Classes:** Hosting interactive digital literacy sessions and educational workshops for underprivileged village children.\n* **Learning Aid Logistics Distribution:** Coordinating the delivery and handover of learning packs, stationery, and books directly to village students.\n* **Field Operations Management:** Organizing volunteer transit, community kitchen meals with villagers, and village elder liaison channels.\n* **Deep Social Responsibility:** Strengthening the conviction that technical capabilities must uplift underserved grassroots communities.",
+    "links": [
+      {
+        "label": "Barmus Voluntrip Organizer Details",
+        "url": "/experience/barmus-voluntrip-volunteer-event-organizer"
+      },
+      {
+        "label": "Rural Immersion (Live In) Experience",
+        "url": "/experience/idn-boarding-school-live-in-rural-immersion"
+      }
+    ]
+  }
+},
+
+  LIVEIN_LABOR_DEEPDIVE: {
+  "id": {
+    "title": "Kerja Fisik Pertanian dan Ketangguhan Hidup Bersama Petani Tradisional",
+    "text": "**Pengalaman Bertani Tradisional dan Resiliensi Hidup di Pedesaan**\n\nProgram Live In menguji daya tahan fisik dan mental Adyvka hidup bersama keluarga petani:\n\n* **Bekerja di Sawah Sebelum Fajar:** Turun langsung ke lumpur sawah untuk mencangkul tanah, menanam bibit padi, dan menyiangi gulma.\n* **Kesederhanaan Hidup Tanpa Fasilitas Modern:** Menginap di rumah bambu beralaskan tikar, memasak di atas tungku kayu bakar, dan mandi air pegunungan.\n* **Menghargai Setiap Butir Beras:** Merasakan langsung betapa beratnya tetesan keringat petani menghasilkan makanan bagi masyarakat perkotaan.\n* **Ketahanan Fisik dan Kerendahan Hati:** Membentuk ketangguhan jiwa yang tidak mudah mengeluh saat menghadapi tantangan hidup.",
+    "links": [
+      {
+        "label": "Detail Pengalaman Live In Pedesaan",
+        "url": "/experience/idn-boarding-school-live-in-rural-immersion"
+      },
+      {
+        "label": "Pengalaman Survival Bisnis di Semarang",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      }
+    ]
+  },
+  "en": {
+    "title": "Agricultural Labor & Resilience Living with Traditional Farmers",
+    "text": "**Traditional Agricultural Labor & Mental Resilience in Rural West Java**\n\nThe Rural Immersion (Live In) program placed Adyvka in the heart of traditional agrarian life:\n\n* **Pre-Dawn Muddy Paddy Labor:** Waking before dawn to wade into knee-deep mud alongside veteran farmers, hoeing soil, and planting rice shoots.\n* **Uncompromising Simplicity:** Living in bamboo-framed homes without modern luxuries, cooking over open firewood hearths, and bathing in mountain runoff.\n* **Reverence for Food & Labor:** Gaining profound visceral appreciation for the exhausting physical sacrifice required to produce food for modern cities.\n* **Uncomplaining Mental Fortitude:** Instilling deep humility and a resolute refusal to complain when confronting professional or physical fatigue.",
+    "links": [
+      {
+        "label": "Rural Immersion Experience Case Study",
+        "url": "/experience/idn-boarding-school-live-in-rural-immersion"
+      },
+      {
+        "label": "Semarang Business Survival Details",
+        "url": "/experience/pt-intisel-semarang-business-life-survival"
+      }
+    ]
+  }
+},
+
+  SEMUABISA_ACCESS_DEEPDIVE: {
+  "id": {
+    "title": "Aksesibilitas Inklusif & Desain Ramah Disabilitas di SemuaBisa",
+    "text": "Platform SemuaBisa dirancang secara khusus untuk memenuhi standar aksesibilitas web modern (WCAG 2.1 AA). Adyvka mengimplementasikan semantic HTML5 yang lengkap, dukungan pembaca layar (screen reader NVDA dan VoiceOver), navigasi keyboard menyeluruh tanpa mouse, kontras warna rasio tinggi, serta mode teks besar ramah disabilitas penglihatan. Seluruh tombol dan form dilengkapi atribut ARIA yang presisi untuk menjamin pengalaman belajar setara bagi semua kalangan pelajar inklusif.",
+    "links": [
+      {
+        "label": "Detail Projek SemuaBisa",
+        "url": "/projects/semua-bisa"
+      },
+      {
+        "label": "Lihat Semua Projek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Inclusive Accessibility & Assistive UX in SemuaBisa",
+    "text": "The SemuaBisa platform is engineered to comply with modern web accessibility guidelines (WCAG 2.1 AA). Adyvka implemented full semantic HTML5 structures, screen reader optimization for NVDA and VoiceOver, full keyboard navigation without mouse reliance, high-contrast visual modes, and scalable typography. Every interactive button and input field contains precise ARIA attributes, ensuring an equitable, barrier-free learning journey for diverse inclusive learners.",
+    "links": [
+      {
+        "label": "SemuaBisa Project Detail",
+        "url": "/projects/semua-bisa"
+      },
+      {
+        "label": "Explore All Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+
+  SEMUABISA_ARCH_DEEPDIVE: {
+  "id": {
+    "title": "Arsitektur Modular Platform Edukasi SemuaBisa",
+    "text": "SemuaBisa dibangun dengan fondasi frontend berbasis React dan Tailwind CSS yang modular dan responsif. Adyvka menyusun sistem komponen yang fleksibel untuk modul materi inklusif, pemutar konten interaktif, dan kuis adaptif. Arsitektur data diatur secara terstruktur menggunakan custom hooks dan lightweight state management, sehingga platform dapat diakses dengan cepat bahkan pada koneksi internet terbatas dan perangkat berdaya rendah.",
+    "links": [
+      {
+        "label": "Detail Projek SemuaBisa",
+        "url": "/projects/semua-bisa"
+      },
+      {
+        "label": "Lihat Semua Projek",
+        "url": "/projects"
+      }
+    ]
+  },
+  "en": {
+    "title": "Modular Educational Architecture of SemuaBisa",
+    "text": "SemuaBisa is architected on a modular React and Tailwind CSS foundation optimized for resilience and responsive design. Adyvka structured reusable UI components for inclusive learning modules, media players, and adaptive assessments. State handling leverages custom React hooks and lightweight state structures, delivering fast load speeds even over constrained network connections and low-spec student devices.",
+    "links": [
+      {
+        "label": "SemuaBisa Project Detail",
+        "url": "/projects/semua-bisa"
+      },
+      {
+        "label": "Explore All Projects",
+        "url": "/projects"
+      }
+    ]
+  }
+},
+};
+
+
+// ---------------------------------------------------------------------------
+// SUGGESTION CHIP DIRECT LOOKUP MAP (152 QUERIES)
+// Ensures 100% deterministic, instant routing for contextual suggestion chips
+// ---------------------------------------------------------------------------
+export const SUGGESTION_EXACT_MAP = {
+  "why hire adyvka and what makes him stand out": "STRENGTHS_WHY_HIRE",
+  "tell me about adyvka lead systems engineer role at pt intisel prodaktifakom": "PT_INTISEL_DETAIL",
+  "tell me about adyvka internship at pt ardyanda digital inovasi": "PT_ARDYANDA_DETAIL",
+  "how many projects has adyvka worked on and what are they": "COUNT_PROJECTS",
+  "tell me about all 18 software engineering projects by adyvka": "COUNT_PROJECTS",
+  "tell me about adyvka 1st place national award at icomfest": "ACHIEV_ICOMFEST",
+  "how can i contact adyvka via whatsapp or email": "CONTACT",
+  "how can i contact adyvka for collaboration or hiring": "CONTACT",
+  "who is adyvka and what is his professional background": "BIO_IDENTITY",
+  "what technologies frameworks and tools does adyvka use": "TECH_STACK",
+  "tell me about adyvka teaching and leadership track record": "TEACHING_EXPERIENCE",
+  "what is adyvka educational background and high school": "EDUCATION",
+  "what awards and competition achievements has adyvka won": "ACHIEVEMENTS",
+  "what national competitions and hackathons has adyvka won": "ACHIEVEMENTS",
+  "what are adyvka official contact details and social media links": "CONTACT",
+  "tell me about all professional work teaching and leadership experiences of adyvka": "ALL_EXPERIENCES",
+  "tell me about all 20 experiences of adyvka": "ALL_EXPERIENCES",
+  "tell me about adyvka frontend developer role at cv richo bahari": "CV_RICHO_BAHARI_DETAIL",
+  "tell me about adyvka full stack contract at universitas muhammadiyah jakarta": "KEPK_UMJ_DETAIL",
+  "tell me about adyvka zero capital business and life survival in semarang": "SEMARANG_SURVIVAL_DETAIL",
+  "tell me about adyvka 2nd place award at pnbitc": "ACHIEV_PNBITC",
+  "tell me about adyvka finalist achievement at unila": "ACHIEV_UNILA",
+  "what was adyvka winning strategy for national hackathons": "HACKATHON_STRATEGY_DEEPDIVE",
+  "what certifications does adyvka have": "CERTIFICATES",
+  "tell me about adyvka harvard university cs50 certificate": "CERT_CS50",
+  "tell me about adyvka aws cloud practitioner certificate": "CERT_AWS_CLOUD",
+  "tell me about adyvka coding camp full stack developer certificate": "CERT_CODING_CAMP",
+  "tell me about adyvka react web development certificate": "CERT_REACT",
+  "tell me about adyvka backend developer certificate": "CERT_BACKEND",
+  "what is adyvka official whatsapp phone number hotline": "CONTACT_WHATSAPP",
+  "what is adyvka official project email address": "CONTACT_EMAIL",
+  "what are adyvka github and linkedin profile links": "CONTACT_SOCIAL",
+  "tell me about pusakaku nusantara cultural platform": "PUSAKAKU_DETAIL",
+  "how does pusakaku implement gamification and quiz mechanics": "PUSAKAKU_GAMIFY_DEEPDIVE",
+  "how does pusakaku render 3d interactive map and cultural data": "PUSAKAKU_ARCH_DEEPDIVE",
+  "tell me about terastani ai and iot smart agriculture platform": "TERASTANI_DETAIL",
+  "how does terastani implement computer vision plant disease detection": "TERASTANI_AI_DEEPDIVE",
+  "how does terastani integrate iot soil moisture and environmental sensors": "TERASTANI_IOT_DEEPDIVE",
+  "tell me about ruangtumbuh mental health platform": "RUANGTUMBUH_DETAIL",
+  "how does ruangtumbuh time banking and peer support architecture work": "RUANGTUMBUH_TIMEBANK_DEEPDIVE",
+  "what real world mental health problem does ruangtumbuh solve": "RUANGTUMBUH_PROBLEM_DEEPDIVE",
+  "tell me about databank erp system": "DATABANK_DETAIL",
+  "how does adyvka build puppeteer web scraping pipeline in databank erp": "DATABANK_SCRAPING_DEEPDIVE",
+  "how did databank cut 90 percent manual reporting time": "DATABANK_METRICS_DEEPDIVE",
+  "how does the multi-tier hierarchy approval workflow work in databank": "DATABANK_APPROVAL_DEEPDIVE",
+  "what is the microservice architecture and system architecture in databank": "DATABANK_ARCH_DEEPDIVE",
+  "tell me about sim kepk ethical clearance system": "KEPK_DETAIL",
+  "tell me about fitsmart ai health platform": "FITSMART_DETAIL",
+  "how does fitsmart use gemini ai nutrition and dietary analysis": "FITSMART_AI_DEEPDIVE",
+  "how does fitsmart track real-time calorie and macro metrics": "FITSMART_TRACKER_DEEPDIVE",
+  "tell me about richo bahari e-commerce project": "RICHO_BAHARI_DETAIL",
+  "how does richo bahari achieve 95+ performance lighthouse score": "RICHO_PERF_DEEPDIVE",
+  "how is the marine equipment catalog structured in richo bahari": "RICHO_CATALOG_DEEPDIVE",
+  "tell me about javaisland tourism web platform": "JAVAISLAND_DETAIL",
+  "how does the travel booking system work in javaisland": "JAVAISLAND_BOOKING_DEEPDIVE",
+  "how does javaisland showcase javanese cultural heritage and virtual tour": "JAVAISLAND_CULTURE_DEEPDIVE",
+  "tell me about semua bisa inclusive learning platform": "SEMUABISA_DETAIL",
+  "how does semua bisa implement screen reader accessibility and wcag 2.1": "SEMUABISA_ACCESS_DEEPDIVE",
+  "what is the modular educational platform architecture of semua bisa": "SEMUABISA_ARCH_DEEPDIVE",
+  "tell me about idncourse e-learning web platform": "IDNCOURSE_DETAIL",
+  "how does idncourse deliver video streaming and student progress tracking": "IDNCOURSE_LMS_DEEPDIVE",
+  "how does idncourse generate automated certificate verification": "IDNCOURSE_CERT_DEEPDIVE",
+  "tell me about modern coffee shop website project": "COFFEESHOP_DETAIL",
+  "how does coffee shop handle dynamic beverage menu personalization": "COFFEESHOP_MENU_DEEPDIVE",
+  "how does coffee shop implement micro-interactions and ux polish": "COFFEESHOP_UX_DEEPDIVE",
+  "tell me about mystyle e-commerce web platform": "MYSTYLE_DETAIL",
+  "how does mystyle manage persistent shopping cart and checkout": "MYSTYLE_CART_DEEPDIVE",
+  "how does mystyle organize multi-category fashion grid and filtering": "MYSTYLE_CATALOG_DEEPDIVE",
+  "tell me about delifood food delivery web app": "DELIFOOD_DETAIL",
+  "how does delifood provide real-time order tracking and route preview": "DELIFOOD_TRACKING_DEEPDIVE",
+  "how does delifood organize restaurant catalog and menu filtering": "DELIFOOD_ARCH_DEEPDIVE",
+  "tell me about ai ticket manager helpdesk platform": "AI_TICKET_DETAIL",
+  "how does ai ticket manager use gemini nlp auto-classification triage": "AI_TICKET_AI_DEEPDIVE",
+  "how does ai ticket manager track sla real-time analytics and ticket queue": "AI_TICKET_CLOUD_DEEPDIVE",
+  "tell me about attendance app mobile geofencing": "ATTENDANCE_DETAIL",
+  "how does attendance app use gps geofencing and facial biometric verification": "ATTENDANCE_BIOMETRIC_DEEPDIVE",
+  "how does attendance app handle offline clock-in and indexeddb sync": "ATTENDANCE_OFFLINE_DEEPDIVE",
+  "tell me about fast qr code scanner web app": "QR_SCANNER_DETAIL",
+  "how does qr scanner achieve webrtc high-speed camera decoding": "QR_DECODE_DEEPDIVE",
+  "how does qr scanner process event ticket check-in and validation": "QR_CHECKIN_DEEPDIVE",
+  "tell me about real-time news portal web app": "NEWS_APP_DETAIL",
+  "how does news app aggregate rest api news aggregation and breaking feeds": "NEWS_API_DEEPDIVE",
+  "how does news app handle dynamic category filtering and bookmark cache": "NEWS_CACHE_DEEPDIVE",
+  "tell me about quran web application project": "QURAN_APP_DETAIL",
+  "how does quran app stream multi-qari verse audio recitations": "QURAN_AUDIO_DEEPDIVE",
+  "how does quran app render arabic typography and tajweed color coding": "QURAN_TYPO_DEEPDIVE",
+  "how did adyvka automate pph 21 and payroll system at pt ardyanda": "ARDYANDA_PAYROLL_DEEPDIVE",
+  "what was adyvka 98/100 performance evaluation score at pt ardyanda": "ARDYANDA_EVAL_DEEPDIVE",
+  "tell me about adyvka role as master of ceremonies at pt ardyanda": "ARDYANDA_MC_DEEPDIVE",
+  "how did adyvka implement enterprise 1000 bts data mapping at intisel": "INTISEL_BTS_DEEPDIVE",
+  "how did adyvka demonstrate cross-functional team leadership and mentorship at intisel": "INTISEL_TEAM_DEEPDIVE",
+  "tell me about adyvka teaching experience at sma lazuardi": "SMA_LAZUARDI_DETAIL",
+  "what web development curriculum did adyvka teach at sma lazuardi": "LAZUARDI_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka published book on web frameworks": "BOOK_WEB_FRAMEWORK",
+  "tell me about adyvka teaching web development at hajrabyadl": "HAJRABYADL_DETAIL",
+  "what full stack coding roadmap did adyvka mentor at hajrabyadl": "HAJRABYADL_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka teaching app development at smpn 45": "SMPN_45_DETAIL",
+  "what mit app inventor mobile curriculum did adyvka teach at smpn 45": "SMPN45_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka teaching app development at smp ins depok": "SMP_INS_DEPOK_DETAIL",
+  "how did adyvka teach student logic building and mobile architecture at ins depok": "SMPINS_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka teaching game development at semut-semut the natural school": "SEMUT_SEMUT_DETAIL",
+  "what scratch game mechanics and interactive storytelling did adyvka teach at semut-semut": "SEMUTSEMUT_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka published book on making games with scratch": "BOOK_GAME_SCRATCH",
+  "tell me about adyvka teaching app design at al anshar": "AL_ANSHAR_DESIGN_DETAIL",
+  "how did adyvka teach figma wireframing and ui/ux design systems at al anshar": "ALANSHAR_DESIGN_FIGMA_DEEPDIVE",
+  "tell me about adyvka teaching design at mts yasmine": "MTS_YASMINE_DETAIL",
+  "what graphic design and branding curriculum did adyvka teach at yasmine": "YASMINE_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka teaching game development at al anshar": "AL_ANSHAR_GAME_DETAIL",
+  "what scratch game logic and block-based coding did adyvka teach at al anshar": "ALANSHAR_GAME_SCRATCH_DEEPDIVE",
+  "tell me about adyvka teaching game development at griyya sunnah": "GRIYYA_SUNNAH_DETAIL",
+  "how did adyvka design interactive game curricula for young learners at griyya sunnah": "GRIYYA_CURRICULUM_DEEPDIVE",
+  "tell me about adyvka solo backpacker trip across 3 countries": "BACKPACKER_DETAIL",
+  "what life lessons and cross-cultural independence did adyvka learn from solo backpacking": "BACKPACKER_LESSONS_DEEPDIVE",
+  "how did adyvka manage international travel budgeting and currency control as a teenager": "BACKPACKER_FINANCE_DEEPDIVE",
+  "tell me about adyvka leadership role in idn student council event division": "OSIS_LEADERSHIP_DETAIL",
+  "how did adyvka organize campus-wide event execution and logistics in student council": "OSIS_PROJECTS_DEEPDIVE",
+  "tell me about adyvka volunteer role in barmus voluntrip": "BARMUS_VOLUNTRIP_DETAIL",
+  "what youth empowerment and community impact was achieved in barmus voluntrip": "BARMUS_IMPACT_DEEPDIVE",
+  "how did adyvka survive and generate profits from zero capital in semarang": "SEMARANG_PROFIT_DEEPDIVE",
+  "what entrepreneurial mindset did adyvka gain from semarang survival": "SEMARANG_MINDSET_DEEPDIVE",
+  "what street smarts and daily survival hustle did adyvka experience in semarang": "SEMARANG_DAILY_DEEPDIVE",
+  "tell me about adyvka role as event coordinator for it fest 2025": "IT_FEST_DETAIL",
+  "how did adyvka coordinate operations and logistics for 100+ participants in it fest 2025": "ITFEST_OPS_DEEPDIVE",
+  "tell me about adyvka live-in rural immersion experience": "LIVE_IN_DETAIL",
+  "what village labor agricultural work and community life did adyvka undertake during live-in": "LIVEIN_LABOR_DEEPDIVE",
+  "why did the icomfest juries award 1st place to pusakaku": "ICOMFEST_JURY_DEEPDIVE",
+  "how did adyvka deliver the live pitch and presentation at pnbitc": "PNBITC_PITCH_DEEPDIVE",
+  "what feedback and technical evaluation did unila juries give to terastani": "UNILA_JURY_DEEPDIVE",
+  "what algorithms and memory management concepts did adyvka master in cs50 core curriculum": "CS50_CURRICULUM_DEEPDIVE",
+  "what was adyvka cs50 final capstone project and implementation": "CS50_PROJECT_DEEPDIVE",
+  "tell me about adyvka frontend web developer certificate": "CERT_FRONTEND_WEB",
+  "tell me about adyvka basic web programming certificate": "CERT_WEB_DASAR",
+  "tell me about adyvka git and github certificate": "CERT_GIT_GITHUB",
+  "tell me about adyvka ui/ux design fundamentals certificate": "CERT_UIUX_DESIGN",
+  "tell me about adyvka data analyst certificate": "CERT_DATA_ANALYST",
+  "tell me about adyvka python fundamentals certificate": "CERT_PYTHON_FUND",
+  "tell me about adyvka artificial intelligence basics certificate": "CERT_AI_BASICS",
+  "tell me about adyvka javascript basics certificate": "CERT_JS_DASAR",
+  "how does adyvka implement git branching and merge conflicts resolution": "GIT_WORKFLOW_DEEPDIVE",
+  "tell me about adyvka graphic design fundamentals certificate": "CERT_GRAPHIC_DESIGN",
+  "tell me about adyvka c programming certificate dicoding": "CERT_C_MEMULAI",
+  "tell me about adyvka c programming certificate skilvul": "CERT_C_SKILVUL",
+  "tell me about adyvka programming logic certificate": "CERT_LOGIKA",
+  "tell me about adyvka python basics certificate dicoding": "CERT_PYTHON_MEMULAI",
+  "how does adyvka apply aws iam and cloud security best practices": "AWS_SECURITY_DEEPDIVE",
+  "how does adyvka manage state with react hooks and component lifecycle in react": "REACT_HOOKS_DEEPDIVE",
+  "tell me about adyvka prompt engineering certificate": "CERT_PROMPT_ENG",
+  "tell me about adyvka software developer career certificate": "CERT_KARIER",
+  "tell me about adyvka financial literacy certificate": "CERT_FINANCIAL",
+  "tell me about adyvka google developer groups certificate": "CERT_GDG",
+  "tell me about adyvka english proficiency certificate": "CERT_ENGLISH",
+  "what books has adyvka written and published": "BOOKS",
+  "mengapa harus merekrut adyvka dan apa keunggulannya": "STRENGTHS_WHY_HIRE",
+  "ceritakan peran lead systems engineer adyvka di pt intisel prodaktifakom": "PT_INTISEL_DETAIL",
+  "ceritakan peran lead systems engineer adyvka di pt intisel": "PT_INTISEL_DETAIL",
+  "ceritakan magang full stack adyvka di pt ardyanda digital inovasi": "PT_ARDYANDA_DETAIL",
+  "ceritakan magang full stack adyvka di pt ardyanda": "PT_ARDYANDA_DETAIL",
+  "berapa banyak projek yang telah dikerjakan adyvka": "COUNT_PROJECTS",
+  "ceritakan tentang seluruh 18 projek rekayasa perangkat lunak adyvka": "COUNT_PROJECTS",
+  "ceritakan juara 1 nasional web design di icomfest": "ACHIEV_ICOMFEST",
+  "ceritakan penghargaan juara 1 nasional adyvka di icomfest": "ACHIEV_ICOMFEST",
+  "bagaimana cara menghubungi adyvka lewat whatsapp atau email": "CONTACT",
+  "bagaimana cara menghubungi adyvka untuk kolaborasi atau rekrutmen": "CONTACT",
+  "siapa adyvka dan apa latar belakang profesionalnya": "BIO_IDENTITY",
+  "apa tech stack tools dan teknologi yang dikuasai adyvka": "TECH_STACK",
+  "ceritakan rekam jejak kepemimpinan dan mengajar adyvka": "TEACHING_EXPERIENCE",
+  "apa latar belakang pendidikan sekolah adyvka": "EDUCATION",
+  "apa saja prestasi dan penghargaan lomba yang diraih adyvka": "ACHIEVEMENTS",
+  "apa saja kompetisi dan hackathon nasional yang dimenangkan adyvka": "ACHIEVEMENTS",
+  "apa kontak resmi dan link media sosial adyvka": "CONTACT",
+  "apa saja detail kontak resmi dan media sosial adyvka": "CONTACT",
+  "ceritakan seluruh pengalaman kerja mengajar dan organisasi adyvka": "ALL_EXPERIENCES",
+  "ceritakan seluruh 20 pengalaman profesional adyvka": "ALL_EXPERIENCES",
+  "ceritakan pengalaman adyvka sebagai frontend developer di cv richo bahari": "CV_RICHO_BAHARI_DETAIL",
+  "ceritakan pengalaman adyvka mengembangkan sim kepk di universitas muhammadiyah jakarta": "KEPK_UMJ_DETAIL",
+  "ceritakan pengalaman kontrak full stack adyvka di universitas muhammadiyah jakarta": "KEPK_UMJ_DETAIL",
+  "ceritakan pengalaman adyvka survival bisnis di semarang modal rp 0": "SEMARANG_SURVIVAL_DETAIL",
+  "ceritakan pengalaman adyvka survival bisnis di semarang modal nol": "SEMARANG_SURVIVAL_DETAIL",
+  "ceritakan penghargaan juara 2 adyvka di pnbitc": "ACHIEV_PNBITC",
+  "ceritakan pencapaian finalis nasional adyvka di unila": "ACHIEV_UNILA",
+  "apa strategi kemenangan adyvka dalam hackathon nasional": "HACKATHON_STRATEGY_DEEPDIVE",
+  "apa strategi memenangkan kompetisi hackathon nasional": "HACKATHON_STRATEGY_DEEPDIVE",
+  "apa saja sertifikasi profesional yang dimiliki adyvka": "CERTIFICATES",
+  "apa saja sertifikat yang dimiliki adyvka": "CERTIFICATES",
+  "ceritakan tentang sertifikat harvard cs50 adyvka": "CERT_CS50",
+  "ceritakan tentang sertifikat aws cloud practitioner adyvka": "CERT_AWS_CLOUD",
+  "ceritakan tentang sertifikat coding camp full stack developer adyvka": "CERT_CODING_CAMP",
+  "ceritakan tentang sertifikat react web development adyvka": "CERT_REACT",
+  "ceritakan tentang sertifikat backend developer adyvka": "CERT_BACKEND",
+  "apa nomor whatsapp resmi hotline adyvka": "CONTACT_WHATSAPP",
+  "apa nomor wa resmi adyvka hotline": "CONTACT_WHATSAPP",
+  "apa alamat email proyek resmi adyvka": "CONTACT_EMAIL",
+  "apa link profil github dan linkedin adyvka": "CONTACT_SOCIAL",
+  "ceritakan tentang platform budaya pusakaku nusantara": "PUSAKAKU_DETAIL",
+  "ceritakan tentang projek pusakaku": "PUSAKAKU_DETAIL",
+  "bagaimana pusakaku mengimplementasikan gamifikasi dan kuis interaktif": "PUSAKAKU_GAMIFY_DEEPDIVE",
+  "bagaimana gamifikasi kuis di pusakaku": "PUSAKAKU_GAMIFY_DEEPDIVE",
+  "bagaimana pusakaku merender peta 3d interaktif dan data budaya": "PUSAKAKU_ARCH_DEEPDIVE",
+  "bagaimana peta interaktif 3d di pusakaku": "PUSAKAKU_ARCH_DEEPDIVE",
+  "ceritakan tentang platform pertanian cerdas terastani ai dan iot": "TERASTANI_DETAIL",
+  "ceritakan tentang projek terastani": "TERASTANI_DETAIL",
+  "bagaimana terastani mengimplementasikan deteksi penyakit tanaman computer vision": "TERASTANI_AI_DEEPDIVE",
+  "bagaimana deteksi penyakit tanaman computer vision di terastani": "TERASTANI_AI_DEEPDIVE",
+  "bagaimana terastani mengintegrasikan sensor iot kelembapan tanah dan lingkungan": "TERASTANI_IOT_DEEPDIVE",
+  "bagaimana sensor iot kelembapan tanah di terastani": "TERASTANI_IOT_DEEPDIVE",
+  "ceritakan tentang platform kesehatan mental ruangtumbuh": "RUANGTUMBUH_DETAIL",
+  "ceritakan tentang ruangtumbuh": "RUANGTUMBUH_DETAIL",
+  "bagaimana arsitektur time banking dan dukungan peer support di ruangtumbuh": "RUANGTUMBUH_TIMEBANK_DEEPDIVE",
+  "bagaimana sistem time banking di ruangtumbuh": "RUANGTUMBUH_TIMEBANK_DEEPDIVE",
+  "apa masalah kesehatan mental nyata yang diselesaikan oleh ruangtumbuh": "RUANGTUMBUH_PROBLEM_DEEPDIVE",
+  "apa masalah kesehatan mental di ruangtumbuh": "RUANGTUMBUH_PROBLEM_DEEPDIVE",
+  "ceritakan tentang sistem erp databank": "DATABANK_DETAIL",
+  "ceritakan tentang sistem databank erp": "DATABANK_DETAIL",
+  "bagaimana adyvka membangun pipeline web scraping puppeteer di databank erp": "DATABANK_SCRAPING_DEEPDIVE",
+  "bagaimana pipeline web scraping puppeteer di databank": "DATABANK_SCRAPING_DEEPDIVE",
+  "bagaimana databank memotong 90 persen waktu pelaporan manual": "DATABANK_METRICS_DEEPDIVE",
+  "bagaimana databank memotong 90 persen waktu verifikasi laporan": "DATABANK_METRICS_DEEPDIVE",
+  "bagaimana alur persetujuan hierarki bertingkat bekerja di databank": "DATABANK_APPROVAL_DEEPDIVE",
+  "bagaimana alur approval bertingkat di databank": "DATABANK_APPROVAL_DEEPDIVE",
+  "apa arsitektur microservice dan arsitektur sistem di databank": "DATABANK_ARCH_DEEPDIVE",
+  "apa arsitektur microservice di databank": "DATABANK_ARCH_DEEPDIVE",
+  "ceritakan tentang sistem klirens etik sim kepk": "KEPK_DETAIL",
+  "ceritakan tentang projek sim kepk": "KEPK_DETAIL",
+  "ceritakan tentang platform kesehatan fitsmart ai": "FITSMART_DETAIL",
+  "ceritakan tentang platform fitsmart": "FITSMART_DETAIL",
+  "bagaimana fitsmart menggunakan gemini ai untuk analisis nutrisi dan diet": "FITSMART_AI_DEEPDIVE",
+  "bagaimana fitsmart melacak metrik kalori dan makronutrien secara real time": "FITSMART_TRACKER_DEEPDIVE",
+  "ceritakan tentang projek e commerce richo bahari": "RICHO_BAHARI_DETAIL",
+  "ceritakan tentang projek richo bahari": "RICHO_BAHARI_DETAIL",
+  "bagaimana richo bahari mencapai skor lighthouse performa 95 ke atas": "RICHO_PERF_DEEPDIVE",
+  "bagaimana katalog peralatan maritim distrukturkan di richo bahari": "RICHO_CATALOG_DEEPDIVE",
+  "ceritakan tentang platform pariwisata javaisland": "JAVAISLAND_DETAIL",
+  "bagaimana sistem pemesanan perjalanan bekerja di javaisland": "JAVAISLAND_BOOKING_DEEPDIVE",
+  "bagaimana javaisland menampilkan warisan budaya jawa dan tur virtual": "JAVAISLAND_CULTURE_DEEPDIVE",
+  "ceritakan tentang platform pembelajaran inklusif semua bisa": "SEMUABISA_DETAIL",
+  "bagaimana semua bisa mengimplementasikan aksesibilitas pembaca layar dan wcag 2 1": "SEMUABISA_ACCESS_DEEPDIVE",
+  "apa arsitektur platform edukasi modular di semua bisa": "SEMUABISA_ARCH_DEEPDIVE",
+  "ceritakan tentang platform lms idncourse": "IDNCOURSE_DETAIL",
+  "bagaimana idncourse menyediakan streaming video dan pelacakan progres siswa": "IDNCOURSE_LMS_DEEPDIVE",
+  "bagaimana idncourse menghasilkan verifikasi sertifikat otomatis": "IDNCOURSE_CERT_DEEPDIVE",
+  "ceritakan tentang projek website modern coffee shop": "COFFEESHOP_DETAIL",
+  "bagaimana coffee shop menangani personalisasi menu minuman dinamis": "COFFEESHOP_MENU_DEEPDIVE",
+  "bagaimana coffee shop mengimplementasikan mikro interaksi dan polesan ux responsif": "COFFEESHOP_UX_DEEPDIVE",
+  "ceritakan tentang platform e commerce mystyle": "MYSTYLE_DETAIL",
+  "bagaimana mystyle mengelola keranjang belanja persisten dan checkout": "MYSTYLE_CART_DEEPDIVE",
+  "bagaimana mystyle mengatur grid dan filter busana multi kategori": "MYSTYLE_CATALOG_DEEPDIVE",
+  "ceritakan tentang web app pesan antar makanan delifood": "DELIFOOD_DETAIL",
+  "bagaimana delifood menyediakan pelacakan pesanan real time dan rute kurir": "DELIFOOD_TRACKING_DEEPDIVE",
+  "bagaimana delifood mengatur katalog restoran dan filter menu": "DELIFOOD_ARCH_DEEPDIVE",
+  "ceritakan tentang platform helpdesk ai ticket manager": "AI_TICKET_DETAIL",
+  "bagaimana ai ticket manager menggunakan nlp gemini untuk klasifikasi tiket otomatis": "AI_TICKET_AI_DEEPDIVE",
+  "bagaimana ai ticket manager melacak analitik real time sla dan antrean tiket": "AI_TICKET_CLOUD_DEEPDIVE",
+  "ceritakan tentang aplikasi absensi mobile attendance app": "ATTENDANCE_DETAIL",
+  "bagaimana attendance app menggunakan geofencing gps dan verifikasi biometrik wajah": "ATTENDANCE_BIOMETRIC_DEEPDIVE",
+  "bagaimana attendance app menangani presensi offline dan sinkronisasi indexeddb": "ATTENDANCE_OFFLINE_DEEPDIVE",
+  "ceritakan tentang web app pemindai kode qr cepat": "QR_SCANNER_DETAIL",
+  "bagaimana qr scanner mencapai decoding kamera kecepatan tinggi dengan webrtc": "QR_DECODE_DEEPDIVE",
+  "bagaimana qr scanner memproses validasi tiket dan check in acara": "QR_CHECKIN_DEEPDIVE",
+  "ceritakan tentang portal web berita real time news app": "NEWS_APP_DETAIL",
+  "bagaimana news app mengagregasi berita rest api dan live feeds": "NEWS_API_DEEPDIVE",
+  "bagaimana news app menangani filter kategori dinamis dan cache bookmark": "NEWS_CACHE_DEEPDIVE",
+  "ceritakan tentang projek web quran digital": "QURAN_APP_DETAIL",
+  "bagaimana quran app menyiarkan streaming audio murottal berbagai qari": "QURAN_AUDIO_DEEPDIVE",
+  "bagaimana quran app merender tipografi arab beresolusi tinggi dan tajwid berwarna": "QURAN_TYPO_DEEPDIVE",
+  "bagaimana adyvka mengotomatiskan pph 21 dan sistem payroll di pt ardyanda": "ARDYANDA_PAYROLL_DEEPDIVE",
+  "bagaimana otomatisasi payroll pph 21 di ardyanda": "ARDYANDA_PAYROLL_DEEPDIVE",
+  "apa nilai evaluasi kinerja 98 dari 100 adyvka di pt ardyanda": "ARDYANDA_EVAL_DEEPDIVE",
+  "apa nilai evaluasi magang 98 di ardyanda": "ARDYANDA_EVAL_DEEPDIVE",
+  "ceritakan peran adyvka sebagai master of ceremonies di pt ardyanda": "ARDYANDA_MC_DEEPDIVE",
+  "ceritakan peran mc internal kantor di ardyanda": "ARDYANDA_MC_DEEPDIVE",
+  "bagaimana adyvka menerapkan pemetaan data 1000 bts enterprise di intisel": "INTISEL_BTS_DEEPDIVE",
+  "bagaimana pemetaan 1000 bts telekomunikasi di intisel": "INTISEL_BTS_DEEPDIVE",
+  "bagaimana adyvka menunjukkan kepemimpinan tim lintas fungsi dan mentoring di intisel": "INTISEL_TEAM_DEEPDIVE",
+  "bagaimana kepemimpinan tim dan mentoring engineer di intisel": "INTISEL_TEAM_DEEPDIVE",
+  "ceritakan pengalaman mengajar adyvka di sma lazuardi": "SMA_LAZUARDI_DETAIL",
+  "apa kurikulum web development yang diajarkan adyvka di sma lazuardi": "LAZUARDI_CURRICULUM_DEEPDIVE",
+  "ceritakan tentang buku yang diterbitkan adyvka tentang web framework": "BOOK_WEB_FRAMEWORK",
+  "ceritakan pengalaman adyvka mengajar web development di hajrabyadl": "HAJRABYADL_DETAIL",
+  "apa roadmap coding full stack yang dibimbing adyvka di hajrabyadl": "HAJRABYADL_CURRICULUM_DEEPDIVE",
+  "ceritakan pengalaman adyvka mengajar app development di smpn 45": "SMPN_45_DETAIL",
+  "apa kurikulum mobile mit app inventor yang diajarkan adyvka di smpn 45": "SMPN45_CURRICULUM_DEEPDIVE",
+  "ceritakan pengalaman adyvka mengajar app development di smp ins depok": "SMP_INS_DEPOK_DETAIL",
+  "bagaimana adyvka mengajarkan logika pemrograman dan arsitektur mobile di ins depok": "SMPINS_CURRICULUM_DEEPDIVE",
+  "ceritakan pengalaman adyvka mengajar game development di semut semut the natural school": "SEMUT_SEMUT_DETAIL",
+  "apa mekanik game scratch dan cerita interaktif yang diajarkan adyvka di semut semut": "SEMUTSEMUT_CURRICULUM_DEEPDIVE",
+  "ceritakan tentang buku yang diterbitkan adyvka tentang membuat game dengan scratch": "BOOK_GAME_SCRATCH",
+  "ceritakan pengalaman adyvka mengajar desain aplikasi di al anshar": "AL_ANSHAR_DESIGN_DETAIL",
+  "bagaimana adyvka mengajarkan wireframing figma dan sistem desain ui ux di al anshar": "ALANSHAR_DESIGN_FIGMA_DEEPDIVE",
+  "ceritakan pengalaman adyvka mengajar desain di mts yasmine": "MTS_YASMINE_DETAIL",
+  "apa kurikulum desain grafis dan branding yang diajarkan adyvka di yasmine": "YASMINE_CURRICULUM_DEEPDIVE",
+  "ceritakan pengalaman adyvka mengajar game development di al anshar": "AL_ANSHAR_GAME_DETAIL",
+  "apa logika game scratch dan coding berbasis blok yang diajarkan adyvka di al anshar": "ALANSHAR_GAME_SCRATCH_DEEPDIVE",
+  "ceritakan pengalaman adyvka mengajar game development di griyya sunnah": "GRIYYA_SUNNAH_DETAIL",
+  "bagaimana adyvka merancang kurikulum game interaktif untuk anak anak di griyya sunnah": "GRIYYA_CURRICULUM_DEEPDIVE",
+  "ceritakan perjalanan solo backpacker 3 negara adyvka": "BACKPACKER_DETAIL",
+  "ceritakan pengalaman solo backpacker adyvka keliling 3 negara": "BACKPACKER_DETAIL",
+  "apa pelajaran hidup dan kemandirian lintas budaya yang dipelajari adyvka dari solo backpacker": "BACKPACKER_LESSONS_DEEPDIVE",
+  "apa pelajaran hidup solo backpacker yang didapat adyvka": "BACKPACKER_LESSONS_DEEPDIVE",
+  "bagaimana adyvka mengelola anggaran perjalanan internasional dan mata uang saat remaja": "BACKPACKER_FINANCE_DEEPDIVE",
+  "bagaimana manajemen keuangan dan budgeting solo backpacker": "BACKPACKER_FINANCE_DEEPDIVE",
+  "ceritakan peran kepemimpinan adyvka di divisi acara osis idn": "OSIS_LEADERSHIP_DETAIL",
+  "bagaimana adyvka mengatur eksekusi acara sekolah dan logistik di osis": "OSIS_PROJECTS_DEEPDIVE",
+  "ceritakan peran sukarelawan adyvka di barmus voluntrip": "BARMUS_VOLUNTRIP_DETAIL",
+  "apa dampak pemberdayaan pemuda dan masyarakat yang dicapai dalam barmus voluntrip": "BARMUS_IMPACT_DEEPDIVE",
+  "bagaimana adyvka bertahan hidup dan menghasilkan keuntungan dari modal nol di semarang": "SEMARANG_PROFIT_DEEPDIVE",
+  "bagaimana adyvka menghasilkan jutaan rupiah dari modal nol di semarang": "SEMARANG_PROFIT_DEEPDIVE",
+  "apa pola pikir wirausaha yang didapat adyvka dari survival di semarang": "SEMARANG_MINDSET_DEEPDIVE",
+  "apa mindset wirausaha adyvka dari survival di semarang": "SEMARANG_MINDSET_DEEPDIVE",
+  "apa kelihaian jalanan dan rutinitas harian bertahan hidup yang dialami adyvka di semarang": "SEMARANG_DAILY_DEEPDIVE",
+  "bagaimana kehidupan sehari-hari dan street smarts adyvka di semarang": "SEMARANG_DAILY_DEEPDIVE",
+  "ceritakan peran adyvka sebagai koordinator acara it fest 2025": "IT_FEST_DETAIL",
+  "bagaimana adyvka mengoordinasikan operasional dan logistik untuk 100 lebih peserta di it fest 2025": "ITFEST_OPS_DEEPDIVE",
+  "ceritakan pengalaman adyvka live in tinggal bersama warga desa": "LIVE_IN_DETAIL",
+  "apa kerja bakti tani dan kehidupan masyarakat desa yang dijalani adyvka selama live in": "LIVEIN_LABOR_DEEPDIVE",
+  "mengapa juri icomfest memberikan juara 1 untuk pusakaku": "ICOMFEST_JURY_DEEPDIVE",
+  "kenapa juri icomfest memilih pusakaku juara 1": "ICOMFEST_JURY_DEEPDIVE",
+  "bagaimana adyvka membawakan presentasi live pitch di pnbitc": "PNBITC_PITCH_DEEPDIVE",
+  "bagaimana presentasi pitching di pnbitc": "PNBITC_PITCH_DEEPDIVE",
+  "apa evaluasi teknis dan masukan yang diberikan juri unila untuk terastani": "UNILA_JURY_DEEPDIVE",
+  "apa evaluasi juri unila untuk terastani": "UNILA_JURY_DEEPDIVE",
+  "apa konsep algoritma dan manajemen memori yang dikuasai adyvka di kurikulum inti cs50": "CS50_CURRICULUM_DEEPDIVE",
+  "apa kurikulum cs50 harvard yang dipelajari": "CS50_CURRICULUM_DEEPDIVE",
+  "apa proyek capstone akhir cs50 adyvka dan implementasinya": "CS50_PROJECT_DEEPDIVE",
+  "apa proyek capstone akhir cs50": "CS50_PROJECT_DEEPDIVE",
+  "ceritakan tentang sertifikat frontend web developer adyvka": "CERT_FRONTEND_WEB",
+  "ceritakan tentang sertifikat pemrograman web dasar adyvka": "CERT_WEB_DASAR",
+  "sertifikat dasar pemrograman web dicoding belajar apa": "CERT_WEB_DASAR",
+  "ceritakan tentang sertifikat git dan github adyvka": "CERT_GIT_GITHUB",
+  "sertifikat belajar dasar git dengan github belajar apa dan apa yang didapat": "CERT_GIT_GITHUB",
+  "ceritakan tentang sertifikat dasar desain ui ux adyvka": "CERT_UIUX_DESIGN",
+  "ceritakan tentang sertifikat data analyst adyvka": "CERT_DATA_ANALYST",
+  "ceritakan tentang sertifikat python fundamentals adyvka": "CERT_PYTHON_FUND",
+  "ceritakan tentang sertifikat dasar kecerdasan buatan adyvka": "CERT_AI_BASICS",
+  "ceritakan tentang sertifikat dasar pemrograman javascript adyvka": "CERT_JS_DASAR",
+  "bagaimana adyvka menerapkan percabangan git branching dan resolusi konflik merge": "GIT_WORKFLOW_DEEPDIVE",
+  "bagaimana alur kerja branching dan merge conflicts di git": "GIT_WORKFLOW_DEEPDIVE",
+  "ceritakan tentang sertifikat dasar desain grafis adyvka": "CERT_GRAPHIC_DESIGN",
+  "ceritakan tentang sertifikat pemrograman c dicoding adyvka": "CERT_C_MEMULAI",
+  "ceritakan tentang sertifikat pemrograman c skilvul adyvka": "CERT_C_SKILVUL",
+  "ceritakan tentang sertifikat logika pemrograman adyvka": "CERT_LOGIKA",
+  "ceritakan tentang sertifikat dasar python dicoding adyvka": "CERT_PYTHON_MEMULAI",
+  "bagaimana adyvka menerapkan aws iam dan praktik keamanan cloud terbaik": "AWS_SECURITY_DEEPDIVE",
+  "bagaimana praktik keamanan cloud iam aws": "AWS_SECURITY_DEEPDIVE",
+  "bagaimana adyvka mengelola state dengan react hooks dan siklus hidup komponen di react": "REACT_HOOKS_DEEPDIVE",
+  "bagaimana penggunaan hooks dan state management di react": "REACT_HOOKS_DEEPDIVE",
+  "ceritakan tentang sertifikat prompt engineering adyvka": "CERT_PROMPT_ENG",
+  "ceritakan tentang sertifikat meniti karier sebagai software developer adyvka": "CERT_KARIER",
+  "ceritakan tentang sertifikat literasi keuangan adyvka": "CERT_FINANCIAL",
+  "ceritakan tentang sertifikat google developer groups adyvka": "CERT_GDG",
+  "ceritakan tentang sertifikat kemahiran bahasa inggris adyvka": "CERT_ENGLISH",
+  "apa saja buku yang telah ditulis dan diterbitkan oleh adyvka": "BOOKS",
+  "apa saja buku resmi yang diterbitkan adyvka": "BOOKS"
 };
 
 export function findBestAnswer(rawQuery) {
@@ -5487,6 +10513,523 @@ export function findBestAnswer(rawQuery) {
   const tokens = new Set(words);
 
   let matchedCard = null;
+
+  const cleanQuery = typeof rawQuery === "string" ? rawQuery.trim().toLowerCase() : "";
+
+  // -------------------------------------------------------------------------
+  // PRIORITY -1: DIRECT SUGGESTION CHIP MATCH (100% DETERMINISTIC ROUTING)
+  // Guarantees every contextual chip returns its unique, tailored deep-dive card
+  // -------------------------------------------------------------------------
+  if (cleanQuery && SUGGESTION_EXACT_MAP[cleanQuery]) {
+    const cardKey = SUGGESTION_EXACT_MAP[cleanQuery];
+    if (KNOWLEDGE_REGISTRY[cardKey]) {
+      const card = KNOWLEDGE_REGISTRY[cardKey];
+      const localized = card[lang] || card.en || card.id;
+      return {
+        title: localized.title,
+        text: localized.text,
+        links: localized.links,
+        lang,
+      };
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // PRIORITY SUB-TOPIC & DEEP-DIVE ROUTING FOR CUSTOM QUERIES (100% BILINGUAL)
+  // Supports comprehensive Indonesian and English natural language questions
+  // -------------------------------------------------------------------------
+
+  // 1. Direct Contact Sub-Topics
+  if (
+    normalized.includes("whatsapp hotline") ||
+    ((tokens.has("whatsapp") || tokens.has("wa")) && (tokens.has("hotline") || tokens.has("reach") || tokens.has("kontak") || tokens.has("nomor") || tokens.has("channel")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CONTACT_WHATSAPP;
+  }
+  else if (
+    normalized.includes("project email") || normalized.includes("send direct project email") ||
+    ((tokens.has("email") || tokens.has("surel")) && (tokens.has("proyek") || tokens.has("project") || tokens.has("direct") || tokens.has("resmi") || tokens.has("official")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CONTACT_EMAIL;
+  }
+  else if (
+    normalized.includes("github and linkedin profile links") ||
+    ((tokens.has("github") || tokens.has("linkedin")) && (tokens.has("link") || tokens.has("profil") || tokens.has("profile") || tokens.has("links")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CONTACT_SOCIAL;
+  }
+
+  // 2. Semarang Survival Deep-Dives
+  else if (
+    (normalized.includes("semarang") || normalized.includes("survival")) &&
+    (normalized.includes("zero capital") || normalized.includes("generate profits") || normalized.includes("generating millions") || normalized.includes("modal nol") || normalized.includes("modal 0") || normalized.includes("jutaan rupiah") || normalized.includes("keuntungan") || normalized.includes("omzet") || normalized.includes("omset"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SEMARANG_PROFIT_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("semarang") || normalized.includes("survival")) &&
+    (normalized.includes("mindset") || normalized.includes("grit") || normalized.includes("mental") || normalized.includes("wirausaha") || normalized.includes("entrepreneurial") || normalized.includes("kegigihan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SEMARANG_MINDSET_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("semarang") || normalized.includes("survival")) &&
+    (normalized.includes("daily") || normalized.includes("harian") || normalized.includes("sehari hari") || normalized.includes("street smarts") || normalized.includes("rutinitas") || normalized.includes("hustle") || normalized.includes("kehidupan sehari"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SEMARANG_DAILY_DEEPDIVE;
+  }
+
+  // 3. Databank ERP Deep-Dives
+  else if (
+    normalized.includes("databank") &&
+    (normalized.includes("scraping") || normalized.includes("puppeteer") || normalized.includes("isdp"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.DATABANK_SCRAPING_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("databank") &&
+    (normalized.includes("90") || normalized.includes("persen") || normalized.includes("percent") || normalized.includes("efisiensi") || normalized.includes("time reduction") || normalized.includes("cut 90"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.DATABANK_METRICS_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("databank") &&
+    (normalized.includes("approval") || normalized.includes("persetujuan") || normalized.includes("bertingkat") || normalized.includes("hierarchy") || normalized.includes("tier"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.DATABANK_APPROVAL_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("databank") &&
+    (normalized.includes("microservice") || normalized.includes("arsitektur") || normalized.includes("architecture") || normalized.includes("schema") || normalized.includes("backend"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.DATABANK_ARCH_DEEPDIVE;
+  }
+
+  // 4. Pusakaku Nusantara Deep-Dives
+  else if (
+    normalized.includes("pusakaku") &&
+    (normalized.includes("gamifi") || normalized.includes("kuis") || normalized.includes("quiz") || normalized.includes("permainan") || normalized.includes("game mechanics"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.PUSAKAKU_GAMIFY_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("pusakaku") &&
+    (normalized.includes("peta") || normalized.includes("map") || normalized.includes("3d") || normalized.includes("interaktif"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.PUSAKAKU_ARCH_DEEPDIVE;
+  }
+
+  // 5. Terastani AI & IoT Deep-Dives
+  else if (
+    normalized.includes("terastani") &&
+    (normalized.includes("penyakit") || normalized.includes("disease") || normalized.includes("vision") || normalized.includes("visi") || normalized.includes("daun") || normalized.includes("deteksi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.TERASTANI_AI_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("terastani") &&
+    (normalized.includes("iot") || normalized.includes("sensor") || normalized.includes("tanah") || normalized.includes("soil") || normalized.includes("kelembapan") || normalized.includes("moisture") || normalized.includes("irigasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.TERASTANI_IOT_DEEPDIVE;
+  }
+
+  // 6. RuangTumbuh Mental Health Deep-Dives
+  else if (
+    normalized.includes("ruangtumbuh") &&
+    (normalized.includes("time bank") || normalized.includes("timebank") || normalized.includes("kredit waktu") || normalized.includes("social credit") || normalized.includes("peer"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.RUANGTUMBUH_TIMEBANK_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("ruangtumbuh") &&
+    (normalized.includes("mental health") || normalized.includes("kesehatan mental") || normalized.includes("masalah") || normalized.includes("problem") || normalized.includes("isu") || normalized.includes("kesenjangan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.RUANGTUMBUH_PROBLEM_DEEPDIVE;
+  }
+
+  // 7. PT Ardyanda Deep-Dives
+  else if (
+    normalized.includes("ardyanda") &&
+    (normalized.includes("pph") || normalized.includes("pph21") || normalized.includes("pph 21") || normalized.includes("payroll") || normalized.includes("gaji") || normalized.includes("pajak"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ARDYANDA_PAYROLL_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("ardyanda") &&
+    (normalized.includes("98") || normalized.includes("evaluasi") || normalized.includes("evaluation") || normalized.includes("nilai") || normalized.includes("skor"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ARDYANDA_EVAL_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("ardyanda") &&
+    (tokens.has("mc") || normalized.includes("master of ceremony") || normalized.includes("pembawa acara") || normalized.includes("public speaking"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ARDYANDA_MC_DEEPDIVE;
+  }
+
+  // 8. PT Intisel Deep-Dives
+  else if (
+    normalized.includes("intisel") &&
+    (normalized.includes("bts") || normalized.includes("1000") || normalized.includes("pemetaan") || normalized.includes("mapping") || normalized.includes("site telekomunikasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTISEL_BTS_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("intisel") &&
+    (normalized.includes("tim") || normalized.includes("team") || normalized.includes("leadership") || normalized.includes("mentoring") || normalized.includes("kepemimpinan") || normalized.includes("bimbingan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTISEL_TEAM_DEEPDIVE;
+  }
+
+  // 9. Backpacker Deep-Dives
+  else if (
+    normalized.includes("backpacker") &&
+    (normalized.includes("pelajaran") || normalized.includes("lesson") || normalized.includes("kemandirian") || normalized.includes("independence") || normalized.includes("ketangguhan") || normalized.includes("hikmah"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.BACKPACKER_LESSONS_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("backpacker") &&
+    (normalized.includes("keuangan") || normalized.includes("finance") || normalized.includes("budget") || normalized.includes("uang") || normalized.includes("biaya") || normalized.includes("currency"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.BACKPACKER_FINANCE_DEEPDIVE;
+  }
+
+  // 10. CS50 Harvard Deep-Dives
+  else if (
+    normalized.includes("cs50") &&
+    (normalized.includes("kurikulum") || normalized.includes("curriculum") || normalized.includes("silabus") || normalized.includes("algoritma") || normalized.includes("algorithm") || normalized.includes("memori") || normalized.includes("memory") || normalized.includes("materi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CS50_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("cs50") &&
+    (normalized.includes("capstone") || normalized.includes("proyek akhir") || normalized.includes("final project") || normalized.includes("proyek capstone"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CS50_PROJECT_DEEPDIVE;
+  }
+
+  // 11. AWS Security Deep-Dive
+  else if (
+    (normalized.includes("aws") || normalized.includes("cloud practitioner")) &&
+    (normalized.includes("keamanan") || normalized.includes("security") || normalized.includes("iam") || normalized.includes("well architected") || normalized.includes("kepatuhan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.AWS_SECURITY_DEEPDIVE;
+  }
+
+  // 12. Git Workflow Deep-Dive
+  else if (
+    (normalized.includes("git") || normalized.includes("github")) &&
+    (normalized.includes("branch") || normalized.includes("merge") || normalized.includes("conflict") || normalized.includes("percabangan") || normalized.includes("konflik") || normalized.includes("rebase") || normalized.includes("pull request"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.GIT_WORKFLOW_DEEPDIVE;
+  }
+
+  // 13. React Hooks Deep-Dive
+  else if (
+    normalized.includes("react") &&
+    (normalized.includes("hook") || normalized.includes("state") || normalized.includes("lifecycle") || normalized.includes("siklus hidup") || normalized.includes("komponen"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.REACT_HOOKS_DEEPDIVE;
+  }
+
+  // 14. Hackathon Strategy & Jury Deep-Dives
+  else if (
+    normalized.includes("icomfest") &&
+    (normalized.includes("juri") || normalized.includes("jury") || normalized.includes("juries") || normalized.includes("alasan") || normalized.includes("memilih pusakaku") || normalized.includes("defense"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ICOMFEST_JURY_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("pnbitc") &&
+    (normalized.includes("pitch") || normalized.includes("pitching") || normalized.includes("presentasi") || normalized.includes("live demo"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.PNBITC_PITCH_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("unila") &&
+    (normalized.includes("juri") || normalized.includes("jury") || normalized.includes("juries") || normalized.includes("evaluasi") || normalized.includes("feedback") || normalized.includes("masukan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.UNILA_JURY_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("hackathon") &&
+    (normalized.includes("strategi") || normalized.includes("strategy") || normalized.includes("tips") || normalized.includes("playbook") || normalized.includes("menang") || normalized.includes("winning"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.HACKATHON_STRATEGY_DEEPDIVE;
+  }
+
+  // 15. Richo Bahari Deep-Dives
+  else if (
+    (normalized.includes("richo") || normalized.includes("bahari")) &&
+    (normalized.includes("lighthouse") || normalized.includes("95") || normalized.includes("performa") || normalized.includes("performance") || normalized.includes("optimasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.RICHO_PERF_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("richo") || normalized.includes("bahari")) &&
+    (normalized.includes("katalog") || normalized.includes("catalog") || normalized.includes("maritim") || normalized.includes("marine") || normalized.includes("alat berat") || normalized.includes("equipment"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.RICHO_CATALOG_DEEPDIVE;
+  }
+
+  // 16. FitSmart AI Deep-Dives
+  else if (
+    normalized.includes("fitsmart") &&
+    (normalized.includes("nutrisi") || normalized.includes("nutrition") || normalized.includes("diet") || normalized.includes("makanan") || normalized.includes("food") || normalized.includes("gemini"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.FITSMART_AI_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("fitsmart") &&
+    (normalized.includes("kalori") || normalized.includes("calorie") || normalized.includes("macro") || normalized.includes("makro") || normalized.includes("tracker") || normalized.includes("pelacakan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.FITSMART_TRACKER_DEEPDIVE;
+  }
+
+  // 17. JavaIsland Deep-Dives
+  else if (
+    normalized.includes("javaisland") &&
+    (normalized.includes("booking") || normalized.includes("pemesanan") || normalized.includes("tiket") || normalized.includes("reservation") || normalized.includes("reservasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.JAVAISLAND_BOOKING_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("javaisland") &&
+    (normalized.includes("budaya") || normalized.includes("culture") || normalized.includes("heritage") || normalized.includes("virtual tour") || normalized.includes("wisata jawa"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.JAVAISLAND_CULTURE_DEEPDIVE;
+  }
+
+  // 18. SemuaBisa Deep-Dives
+  else if (
+    (normalized.includes("semua bisa") || normalized.includes("semuabisa")) &&
+    (normalized.includes("aksesibilitas") || normalized.includes("accessibility") || normalized.includes("screen reader") || normalized.includes("pembaca layar") || normalized.includes("wcag") || normalized.includes("disabilitas"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SEMUABISA_ACCESS_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("semua bisa") || normalized.includes("semuabisa")) &&
+    (normalized.includes("arsitektur") || normalized.includes("architecture") || normalized.includes("modular") || normalized.includes("platform edukasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SEMUABISA_ARCH_DEEPDIVE;
+  }
+
+  // 19. IDNCourse Deep-Dives
+  else if (
+    normalized.includes("idncourse") &&
+    (normalized.includes("video") || normalized.includes("streaming") || normalized.includes("kuis") || normalized.includes("quiz") || normalized.includes("progres") || normalized.includes("progress"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.IDNCOURSE_LMS_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("idncourse") &&
+    (normalized.includes("sertifikat") || normalized.includes("certificate") || normalized.includes("verifikasi") || normalized.includes("otomatis") || normalized.includes("automated"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.IDNCOURSE_CERT_DEEPDIVE;
+  }
+
+  // 20. Coffee Shop Deep-Dives
+  else if (
+    (normalized.includes("coffee") || normalized.includes("kopi")) &&
+    (normalized.includes("menu") || normalized.includes("minuman") || normalized.includes("beverage") || normalized.includes("kustomisasi") || normalized.includes("personalization"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.COFFEESHOP_MENU_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("coffee") || normalized.includes("kopi")) &&
+    (normalized.includes("mikro") || normalized.includes("micro") || normalized.includes("interaksi") || normalized.includes("interaction") || normalized.includes("ux") || normalized.includes("ui") || normalized.includes("animasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.COFFEESHOP_UX_DEEPDIVE;
+  }
+
+  // 21. MyStyle Deep-Dives
+  else if (
+    normalized.includes("mystyle") &&
+    (normalized.includes("keranjang") || normalized.includes("cart") || normalized.includes("checkout") || normalized.includes("belanja") || normalized.includes("persistent"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.MYSTYLE_CART_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("mystyle") &&
+    (normalized.includes("katalog") || normalized.includes("catalog") || normalized.includes("grid") || normalized.includes("filter") || normalized.includes("fashion") || normalized.includes("busana"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.MYSTYLE_CATALOG_DEEPDIVE;
+  }
+
+  // 22. DeliFood Deep-Dives
+  else if (
+    normalized.includes("delifood") &&
+    (normalized.includes("tracking") || normalized.includes("pelacakan") || normalized.includes("kurir") || normalized.includes("driver") || normalized.includes("rute") || normalized.includes("order"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.DELIFOOD_TRACKING_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("delifood") &&
+    (normalized.includes("restoran") || normalized.includes("restaurant") || normalized.includes("menu") || normalized.includes("katalog") || normalized.includes("kuliner"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.DELIFOOD_ARCH_DEEPDIVE;
+  }
+
+  // 23. AI Ticket Manager Deep-Dives
+  else if (
+    normalized.includes("ticket") &&
+    (normalized.includes("nlp") || normalized.includes("klasifikasi") || normalized.includes("classification") || normalized.includes("triage") || normalized.includes("otomatis") || normalized.includes("gemini"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.AI_TICKET_AI_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("ticket") &&
+    (normalized.includes("sla") || normalized.includes("antrean") || normalized.includes("queue") || normalized.includes("analitik") || normalized.includes("analytics") || normalized.includes("metrik"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.AI_TICKET_CLOUD_DEEPDIVE;
+  }
+
+  // 24. Smart Attendance Deep-Dives
+  else if (
+    (normalized.includes("attendance") || normalized.includes("presensi") || normalized.includes("absensi")) &&
+    (normalized.includes("gps") || normalized.includes("geofencing") || normalized.includes("wajah") || normalized.includes("facial") || normalized.includes("biometrik") || normalized.includes("biometric"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ATTENDANCE_BIOMETRIC_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("attendance") || normalized.includes("presensi") || normalized.includes("absensi")) &&
+    (normalized.includes("offline") || normalized.includes("indexeddb") || normalized.includes("sinkronisasi") || normalized.includes("sync"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ATTENDANCE_OFFLINE_DEEPDIVE;
+  }
+
+  // 25. QR Scanner Deep-Dives
+  else if (
+    (normalized.includes("qr") || normalized.includes("barcode")) &&
+    (normalized.includes("webrtc") || normalized.includes("kamera") || normalized.includes("camera") || normalized.includes("decode") || normalized.includes("decoding") || normalized.includes("kecepatan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.QR_DECODE_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("qr") || normalized.includes("barcode")) &&
+    (normalized.includes("check in") || normalized.includes("checkin") || normalized.includes("tiket") || normalized.includes("ticket") || normalized.includes("validasi") || normalized.includes("acara"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.QR_CHECKIN_DEEPDIVE;
+  }
+
+  // 26. News App Deep-Dives
+  else if (
+    normalized.includes("news") &&
+    (normalized.includes("api") || normalized.includes("rest") || normalized.includes("agregasi") || normalized.includes("aggregation") || normalized.includes("breaking") || normalized.includes("feed") || normalized.includes("berita"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.NEWS_API_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("news") &&
+    (normalized.includes("cache") || normalized.includes("bookmark") || normalized.includes("offline") || normalized.includes("kategori") || normalized.includes("simpan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.NEWS_CACHE_DEEPDIVE;
+  }
+
+  // 27. Quran App Deep-Dives
+  else if (
+    (normalized.includes("quran") || normalized.includes("al quran") || normalized.includes("alquran")) &&
+    (normalized.includes("audio") || normalized.includes("qari") || normalized.includes("murottal") || normalized.includes("suara") || normalized.includes("recitation") || normalized.includes("streaming"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.QURAN_AUDIO_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("quran") || normalized.includes("al quran") || normalized.includes("alquran")) &&
+    (normalized.includes("tajwid") || normalized.includes("tajweed") || normalized.includes("arab") || normalized.includes("arabic") || normalized.includes("tipografi") || normalized.includes("typography") || normalized.includes("warna"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.QURAN_TYPO_DEEPDIVE;
+  }
+
+  // 28. Teaching & Leadership Deep-Dives
+  else if (
+    normalized.includes("lazuardi") &&
+    (normalized.includes("kurikulum") || normalized.includes("curriculum") || normalized.includes("materi") || normalized.includes("silabus") || normalized.includes("web") || normalized.includes("html") || normalized.includes("css"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.LAZUARDI_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("smpn 45") &&
+    (normalized.includes("app inventor") || normalized.includes("kurikulum") || normalized.includes("curriculum") || normalized.includes("mit") || normalized.includes("mobile"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SMPN45_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("ins depok") || normalized.includes("smp ins")) &&
+    (normalized.includes("logika") || normalized.includes("logic") || normalized.includes("arsitektur") || normalized.includes("kurikulum") || normalized.includes("curriculum"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SMPINS_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("semut") &&
+    (normalized.includes("scratch") || normalized.includes("game") || normalized.includes("storytelling") || normalized.includes("cerita") || normalized.includes("mekanik"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.SEMUTSEMUT_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("hajrabyadl") &&
+    (normalized.includes("full stack") || normalized.includes("fullstack") || normalized.includes("roadmap") || normalized.includes("kurikulum") || normalized.includes("mentoring"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.HAJRABYADL_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("anshar") &&
+    (normalized.includes("figma") || normalized.includes("ui ux") || normalized.includes("ui/ux") || normalized.includes("design system") || normalized.includes("wireframing") || normalized.includes("desain aplikasi"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ALANSHAR_DESIGN_FIGMA_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("anshar") &&
+    (normalized.includes("scratch") || normalized.includes("game") || normalized.includes("block") || normalized.includes("permainan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ALANSHAR_GAME_SCRATCH_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("yasmine") &&
+    (normalized.includes("grafis") || normalized.includes("graphic") || normalized.includes("branding") || normalized.includes("desain") || normalized.includes("kurikulum"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.YASMINE_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("griyya") &&
+    (normalized.includes("game") || normalized.includes("anak") || normalized.includes("young") || normalized.includes("interaktif") || normalized.includes("scratch"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.GRIYYA_CURRICULUM_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("it fest") || normalized.includes("itfest")) &&
+    (normalized.includes("100") || normalized.includes("peserta") || normalized.includes("participant") || normalized.includes("logistik") || normalized.includes("operasional") || normalized.includes("operations"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ITFEST_OPS_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("osis") || normalized.includes("student council")) &&
+    (normalized.includes("acara") || normalized.includes("event") || normalized.includes("program") || normalized.includes("eksekusi") || normalized.includes("proyek") || normalized.includes("sekolah"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.OSIS_PROJECTS_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("barmus") &&
+    (normalized.includes("pemberdayaan") || normalized.includes("empowerment") || normalized.includes("dampak") || normalized.includes("impact") || normalized.includes("sosial") || normalized.includes("masyarakat") || normalized.includes("komunitas"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.BARMUS_IMPACT_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("live in") || normalized.includes("live-in")) &&
+    (normalized.includes("tani") || normalized.includes("farm") || normalized.includes("desa") || normalized.includes("village") || normalized.includes("labor") || normalized.includes("pertanian") || normalized.includes("buruh") || normalized.includes("masyarakat"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.LIVEIN_LABOR_DEEPDIVE;
+  }
+
+  if (matchedCard) {
+    const localized = matchedCard[lang] || matchedCard.en || matchedCard.id;
+    return {
+      title: localized.title,
+      text: localized.text,
+      links: localized.links,
+      lang,
+    };
+  }
 
   // -------------------------------------------------------------------------
   // PRIORITY 0: GREETINGS, BOT IDENTITY, GRATITUDE & DIRECT CONTACT
@@ -5527,13 +11070,16 @@ export function findBestAnswer(rawQuery) {
 
   // 4. Contact, WhatsApp, Phone, Email & Direct Social Reach Out
   else if (
-    tokens.has("whatsapp") || tokens.has("wa") || tokens.has("telepon") || tokens.has("phone") || tokens.has("call") || tokens.has("hp") ||
-    tokens.has("surel") || tokens.has("email") || tokens.has("kontak") || tokens.has("contact") || tokens.has("reach") ||
-    normalized.includes("nomor wa") || normalized.includes("no wa") || normalized.includes("nomor telepon") || normalized.includes("no telepon") ||
-    normalized.includes("nomor hp") || normalized.includes("chat wa") || normalized.includes("hubungi") ||
-    normalized.includes("kontak resmi") || normalized.includes("reach out") || normalized.includes("contact him") || normalized.includes("how can i contact") ||
-    ((tokens.has("github") || tokens.has("linkedin") || tokens.has("instagram") || tokens.has("tiktok") || tokens.has("youtube")) &&
-     (tokens.has("akun") || tokens.has("account") || tokens.has("profile") || tokens.has("profil") || tokens.has("link") || tokens.has("url") || tokens.has("handle") || tokens.has("sosmed") || tokens.has("medsos") || tokens.has("kontak") || tokens.has("contact") || tokens.has("mana") || tokens.has("apa") || tokens.has("channel") || tokens.has("show") || tokens.has("give") || tokens.has("lihat") || tokens.has("his") || tokens.has("adyvka")))
+    !tokens.has("sertifikat") && !tokens.has("certificate") && !tokens.has("kursus") && !tokens.has("course") &&
+    (
+      tokens.has("whatsapp") || tokens.has("wa") || tokens.has("telepon") || tokens.has("phone") || tokens.has("call") || tokens.has("hp") ||
+      tokens.has("surel") || tokens.has("email") || tokens.has("kontak") || tokens.has("contact") || tokens.has("reach") ||
+      normalized.includes("nomor wa") || normalized.includes("no wa") || normalized.includes("nomor telepon") || normalized.includes("no telepon") ||
+      normalized.includes("nomor hp") || normalized.includes("chat wa") || normalized.includes("hubungi") ||
+      normalized.includes("kontak resmi") || normalized.includes("reach out") || normalized.includes("contact him") || normalized.includes("how can i contact") ||
+      ((tokens.has("github") || tokens.has("linkedin") || tokens.has("instagram") || tokens.has("tiktok") || tokens.has("youtube")) &&
+       (tokens.has("akun") || tokens.has("account") || tokens.has("profile") || tokens.has("profil") || tokens.has("link") || tokens.has("url") || tokens.has("handle") || tokens.has("sosmed") || tokens.has("medsos") || tokens.has("channel") || tokens.has("username") || tokens.has("follow")))
+    )
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CONTACT;
   }
@@ -5639,7 +11185,9 @@ export function findBestAnswer(rawQuery) {
 
   // 10. Coffee Shop
   else if (
-    normalized.includes("coffee shop") || tokens.has("coffeeshop") || (tokens.has("kopi") && tokens.has("proyek"))
+    tokens.has("coffee") || tokens.has("coffeee") || tokens.has("coffeeshop") || tokens.has("coffeee-shop") ||
+    normalized.includes("coffee") || normalized.includes("coffeee") ||
+    (tokens.has("kopi") && (tokens.has("proyek") || tokens.has("project") || tokens.has("kedai") || tokens.has("kafe") || tokens.has("cafe")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.COFFEESHOP_DETAIL;
   }
@@ -5695,7 +11243,9 @@ export function findBestAnswer(rawQuery) {
 
   // 18. CV Richo Bahari Platform (as project)
   else if (
-    tokens.has("richo") && (tokens.has("proyek") || tokens.has("project") || tokens.has("platform") || tokens.has("website"))
+    (tokens.has("richo") || tokens.has("richobahari") || normalized.includes("richo bahari") || normalized.includes("richobahari")) &&
+    !tokens.has("magang") && !tokens.has("freelance") && !tokens.has("gaji") &&
+    (tokens.has("proyek") || tokens.has("project") || tokens.has("platform") || tokens.has("website") || tokens.has("compro") || tokens.has("katalog") || tokens.has("studi") || tokens.has("case") || tokens.has("lighthouse") || tokens.has("kontraktor") || tokens.has("alat") || tokens.has("berat") || tokens.has("about") || tokens.has("tentang") || tokens.has("ceritakan") || tokens.has("tell") || tokens.has("what") || tokens.has("apa") || tokens.has("arsitektur") || tokens.has("architecture"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.RICHO_BAHARI_DETAIL;
   }
@@ -5737,7 +11287,8 @@ export function findBestAnswer(rawQuery) {
 
   // 5. Frontend Web Developer (Dicoding)
   else if (
-    normalized.includes("sertifikat frontend") || normalized.includes("sertifikat front end") || (tokens.has("frontend") && tokens.has("dicoding"))
+    (tokens.has("frontend") || tokens.has("front-end")) &&
+    (tokens.has("sertifikat") || tokens.has("certificate") || tokens.has("certification") || tokens.has("dicoding") || normalized.includes("sertifikat frontend") || normalized.includes("sertifikat front end"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CERT_FRONTEND_WEB;
   }
@@ -5751,8 +11302,8 @@ export function findBestAnswer(rawQuery) {
 
   // 7. Backend Developer (Dicoding)
   else if (
-    (normalized.includes("aplikasi back end") || normalized.includes("aplikasi backend") || (tokens.has("backend") && tokens.has("dicoding"))) &&
-    (tokens.has("sertifikat") || tokens.has("certificate") || tokens.has("kursus"))
+    (tokens.has("backend") || tokens.has("back-end")) &&
+    (tokens.has("sertifikat") || tokens.has("certificate") || tokens.has("certification") || tokens.has("dicoding") || tokens.has("kursus") || normalized.includes("aplikasi back end") || normalized.includes("aplikasi backend"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CERT_BACKEND;
   }
@@ -5789,8 +11340,8 @@ export function findBestAnswer(rawQuery) {
 
   // 12. Web Dasar HTML CSS (Dicoding)
   else if (
-    (normalized.includes("web dasar") || normalized.includes("dasar web") || (tokens.has("html") && tokens.has("css"))) &&
-    (tokens.has("sertifikat") || tokens.has("certificate") || tokens.has("dicoding"))
+    (normalized.includes("web dasar") || normalized.includes("dasar web") || normalized.includes("pemrograman web") || normalized.includes("dasar pemrograman web") || (tokens.has("html") && tokens.has("css"))) &&
+    (tokens.has("sertifikat") || tokens.has("certificate") || tokens.has("dicoding") || tokens.has("lisensi") || tokens.has("kursus") || tokens.has("course"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CERT_WEB_DASAR;
   }
@@ -5894,7 +11445,8 @@ export function findBestAnswer(rawQuery) {
 
   // 3. CV Richo Bahari (Work Experience)
   else if (
-    tokens.has("richo") || normalized.includes("richo bahari") || normalized.includes("cv richo")
+    (tokens.has("richo") || tokens.has("richobahari") || normalized.includes("richo bahari") || normalized.includes("richobahari")) &&
+    (tokens.has("pengalaman") || tokens.has("experience") || tokens.has("kerja") || tokens.has("magang") || tokens.has("freelance") || tokens.has("role") || tokens.has("peran") || tokens.has("klien") || tokens.has("client"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CV_RICHO_BAHARI_DETAIL;
   }
@@ -5951,18 +11503,13 @@ export function findBestAnswer(rawQuery) {
     matchedCard = KNOWLEDGE_REGISTRY.HAJRABYADL_DETAIL;
   }
 
-  // 11. SD/SMP Al-Anshar App Design
-  else if (
-    (tokens.has("anshar") || tokens.has("alanshar")) && (tokens.has("design") || tokens.has("desain") || tokens.has("figma"))
-  ) {
-    matchedCard = KNOWLEDGE_REGISTRY.AL_ANSHAR_DESIGN_DETAIL;
-  }
-
-  // 12. SD/SMP Al-Anshar Game Development
-  else if (
-    (tokens.has("anshar") || tokens.has("alanshar")) && (tokens.has("game") || tokens.has("scratch"))
-  ) {
-    matchedCard = KNOWLEDGE_REGISTRY.AL_ANSHAR_GAME_DETAIL;
+  // 11. SD/SMP Al-Anshar App Design & Game Development
+  else if (tokens.has("anshar") || tokens.has("alanshar")) {
+    if (tokens.has("game") || tokens.has("scratch")) {
+      matchedCard = KNOWLEDGE_REGISTRY.AL_ANSHAR_GAME_DETAIL;
+    } else {
+      matchedCard = KNOWLEDGE_REGISTRY.AL_ANSHAR_DESIGN_DETAIL;
+    }
   }
 
   // 13. MTs Yasmine
@@ -6028,30 +11575,49 @@ export function findBestAnswer(rawQuery) {
   // PRIORITY 4: SPECIFIC ACHIEVEMENTS & BOOKS
   // -------------------------------------------------------------------------
 
-  // 1. PNBITC #18 Bali (Juara 2 Nasional)
+  // 0. General Competition Awards Overview (check if asking for all awards or listing multiple competitions)
   else if (
-    tokens.has("pnbitc") || (tokens.has("bali") && (tokens.has("lomba") || tokens.has("juara") || tokens.has("politeknik")))
+    (tokens.has("prestasi") || tokens.has("penghargaan") || tokens.has("lomba") || tokens.has("juara") || tokens.has("award") || tokens.has("awards") || tokens.has("competition") || tokens.has("competitions")) &&
+    (tokens.has("semua") || tokens.has("all") || tokens.has("daftar") || tokens.has("list") || (tokens.has("pnbitc") && tokens.has("icomfest")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ACHIEVEMENTS;
+  }
+
+  // 1. PNBITC #18 Bali (Juara 2 Nasional - TerasTani)
+  else if (
+    tokens.has("pnbitc") || normalized.includes("pnbitc") ||
+    normalized.includes("2nd place") || normalized.includes("runner up") || normalized.includes("juara 2") ||
+    (tokens.has("bali") && (tokens.has("lomba") || tokens.has("juara") || tokens.has("politeknik") || tokens.has("competition") || tokens.has("kompetisi")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.ACHIEV_PNBITC;
   }
 
-  // 2. ICOMFEST 2025 (Juara 1 Nasional)
+  // 2. ICOMFEST 2025 (Juara 1 Nasional - PusakaKu)
   else if (
-    tokens.has("icomfest") || (tokens.has("icom") && tokens.has("fest")) || (tokens.has("juara") && tokens.has("1") && tokens.has("nasional"))
+    tokens.has("icomfest") || (tokens.has("icom") && tokens.has("fest")) ||
+    normalized.includes("1st place national") || normalized.includes("1st place web design") ||
+    normalized.includes("juara 1 web design") || normalized.includes("juara 1 nasional") ||
+    (tokens.has("1st") && tokens.has("place") && (tokens.has("national") || tokens.has("web") || tokens.has("competition") || tokens.has("champion") || tokens.has("award"))) ||
+    ((tokens.has("juara") || tokens.has("champion")) && (tokens.has("1") || tokens.has("satu") || tokens.has("pertama") || tokens.has("1st")) && (tokens.has("icomfest") || tokens.has("nasional") || tokens.has("national") || tokens.has("uad") || tokens.has("web") || tokens.has("design")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.ACHIEV_ICOMFEST;
   }
 
-  // 3. UNILA National Finalist
+  // 3. UNILA National Finalist (SemuaBisa)
   else if (
-    tokens.has("unila") || normalized.includes("universitas lampung")
+    tokens.has("unila") || normalized.includes("universitas lampung") ||
+    normalized.includes("finalist national") || normalized.includes("finalis nasional") ||
+    normalized.includes("top 5 finalist") || normalized.includes("top 5 finalis") ||
+    (tokens.has("finalist") && (tokens.has("national") || tokens.has("unila") || tokens.has("lampung") || tokens.has("web") || tokens.has("dev") || tokens.has("competition"))) ||
+    (tokens.has("finalis") && (tokens.has("nasional") || tokens.has("unila") || tokens.has("lampung") || tokens.has("web") || tokens.has("dev") || tokens.has("kompetisi")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.ACHIEV_UNILA;
   }
 
-  // 4. Poster Competition
+  // 4. Poster Competition (dummy-new-achievement)
   else if (
-    tokens.has("poster") && (tokens.has("lomba") || tokens.has("juara") || tokens.has("penghargaan") || tokens.has("desain"))
+    tokens.has("poster") || normalized.includes("dummy new achievement") || normalized.includes("idul adha festival") ||
+    normalized.includes("best poster") || (tokens.has("desain") && tokens.has("poster"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.ACHIEV_POSTER;
   }

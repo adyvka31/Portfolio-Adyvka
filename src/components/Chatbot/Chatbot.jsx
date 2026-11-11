@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect, memo } from "react";
-import { useNavigate } from "react-router-dom";
-import { findBestAnswer, QUICK_SUGGESTIONS } from "../../data/chatbotKnowledge";
+import { useState, useRef, useEffect, useMemo, memo } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { findBestAnswer, getContextualSuggestions, QUICK_SUGGESTIONS } from "../../data/chatbotKnowledge";
 import styles from "./Chatbot.module.css";
 
 // SVG Icons
@@ -124,10 +124,16 @@ function FormattedText({ text }) {
 
 function Chatbot() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+
+  // Dynamic contextual suggestions based on currently visited page
+  const contextualSuggestions = useMemo(() => {
+    return getContextualSuggestions(location?.pathname || "/");
+  }, [location?.pathname]);
 
   // Smooth open and close handlers
   const handleOpen = () => {
@@ -164,6 +170,11 @@ function Chatbot() {
     if (isClosing) {
       setIsOpen(false);
       setIsClosing(false);
+    } else {
+      // Pin scroll to latest bubble once open animation finishes
+      if (messages.length > 1 && messagesContainerRef.current) {
+        messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+      }
     }
   };
 
@@ -238,6 +249,15 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   const inputRef = useRef(null);
   const chatWindowRef = useRef(null);
   const launcherRef = useRef(null);
+  const suggestionsBarRef = useRef(null);
+  const prevIsOpenRef = useRef(false);
+
+  // Smoothly reset suggestions scroll to beginning whenever route pathname changes
+  useEffect(() => {
+    if (suggestionsBarRef.current) {
+      suggestionsBarRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  }, [location?.pathname]);
 
   // Scroll so that user's latest question and top of bot response stay in view
   const scrollToLastUserQuestion = (behavior = "smooth") => {
@@ -254,13 +274,29 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
         behavior,
       });
     } else {
-      messagesEndRef.current?.scrollIntoView({ behavior });
+      if (behavior === "auto") {
+        container.scrollTop = container.scrollHeight;
+      } else {
+        container.scrollTo({
+          top: container.scrollHeight,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
   // Auto scroll to bottom
   const scrollToBottom = (behavior = "smooth") => {
-    messagesEndRef.current?.scrollIntoView({ behavior });
+    const container = messagesContainerRef.current;
+    if (!container) return;
+    if (behavior === "auto") {
+      container.scrollTop = container.scrollHeight;
+    } else {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   // Close chat on pointerdown outside modal and launcher or on Escape key
@@ -379,8 +415,15 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   }, [isOpen, isClosing]);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      prevIsOpenRef.current = false;
+      return;
+    }
 
+    const wasJustOpened = !prevIsOpenRef.current;
+    prevIsOpenRef.current = true;
+
+    // Case 1: Fresh conversation on open (only initial welcome card)
     if (messages.length <= 1 && !isTyping) {
       if (messagesContainerRef.current) {
         messagesContainerRef.current.scrollTop = 0;
@@ -390,11 +433,41 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           }
         });
       }
-    } else if (isTyping) {
-      // While bot is typing, keep user message and typing indicator in view
-      scrollToBottom();
+      return;
+    }
+
+    // Case 2: Reopening chat with existing conversation history
+    // Directly scroll to the very bottom so the latest bubble chat is immediately in view
+    if (wasJustOpened && messages.length > 1) {
+      const scrollToLatest = () => {
+        if (messagesContainerRef.current) {
+          messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+        }
+      };
+
+      scrollToLatest();
+      requestAnimationFrame(scrollToLatest);
+
+      const timer1 = setTimeout(scrollToLatest, 60);
+      const timer2 = setTimeout(scrollToLatest, 180);
+      const timer3 = setTimeout(scrollToLatest, 320);
+
+      if (typeof window !== "undefined" && window.innerWidth > 640) {
+        inputRef.current?.focus({ preventScroll: true });
+      }
+
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+      };
+    }
+
+    // Case 3: While chat is already open, user sends message or isTyping changes
+    if (isTyping) {
+      scrollToBottom("smooth");
     } else {
-      // When bot response arrives, scroll so user question and top of bot response stay in view
+      // When bot response arrives during active session, scroll so user question and top of bot response stay in view
       requestAnimationFrame(() => {
         scrollToLastUserQuestion("smooth");
       });
@@ -515,10 +588,14 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
             </button>
           </header>
 
-          {/* Quick Suggestions Bar */}
+          {/* Dynamic Contextual Suggestions Bar */}
           {!keyboardState.isOpen && (
-            <div className={styles.suggestionsBar} aria-label="Quick Suggestion Topics">
-              {QUICK_SUGGESTIONS.map((sug) => (
+            <div
+              ref={suggestionsBarRef}
+              className={styles.suggestionsBar}
+              aria-label="Contextual Quick Suggestion Topics"
+            >
+              {contextualSuggestions.map((sug) => (
                 <button
                   key={sug.id}
                   type="button"
