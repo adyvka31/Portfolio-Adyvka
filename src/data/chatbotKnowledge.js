@@ -103,6 +103,21 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
       "query": "who is adyvka and what is his professional background"
     },
     {
+      "id": "abt_tracks",
+      "label": "⏳ Two Tracks, Six Years (2021 - 2026 Journey)",
+      "query": "tell me about the two tracks six years journey from 2021 to 2026"
+    },
+    {
+      "id": "abt_currently",
+      "label": "⚡ Right Now: What is Open in the Tabs",
+      "query": "what is adyvka working on and exploring right now"
+    },
+    {
+      "id": "abt_next",
+      "label": "🔮 What is Next & 2027 Graduation",
+      "query": "what is adyvka career direction and next chapter for 2027"
+    },
+    {
       "id": "abt_tech_stack",
       "label": "⚡ Core Full Stack & AI Tech Stack",
       "query": "what technologies frameworks and tools does adyvka use"
@@ -261,6 +276,11 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
       "id": "cnt_overview",
       "label": "📬 Official Contact Channels & Inquiries",
       "query": "how can i contact adyvka for collaboration or hiring"
+    },
+    {
+      "id": "cnt_deliverables",
+      "label": "💼 What I Can Deliver for Your Team",
+      "query": "what services and deliverables can adyvka provide for our team"
     },
     {
       "id": "cnt_whatsapp",
@@ -7408,6 +7428,647 @@ Rafif Sava Adyvka Pratama (known online as Adyvka) is a 17-year-old Software Eng
 ],
     },
   },
+  WHAT_ADYVKA_CAN_DO: {
+    id: {
+      title: "Keahlian & Apa Saja yang Bisa Dilakukan Adyvka (Core Capabilities)",
+      text: `**Keahlian Rekayasa, Solusi & Apa Saja yang Bisa Dilakukan Adyvka**
+
+Sebagai Software Engineer dan Systems Architect berusia 17 tahun dengan pengalaman koding sejak 2021, Adyvka memiliki kapabilitas menyeluruh (end-to-end) di berbagai bidang:
+
+* **1. Pengembangan Aplikasi Web & Enterprise Skala Penuh:**
+  Merancang dan membangun aplikasi web modern berperforma tinggi dari nol hingga deployment produksi menggunakan Next.js, React, NestJS, Express.js, TypeScript, dan PostgreSQL. Terbukti memimpin sistem Databank ERP di PT Intisel Prodaktifakom dan SIM KEPK di FK Universitas Muhammadiyah Jakarta.
+* **2. Arsitektur Sistem Terdistribusi & Database:**
+  Menerapkan Clean Architecture, prinsip SOLID, pemodelan skema database ACID (PostgreSQL transaksional atomic), sistem microservices, dan pipeline otomatisasi web scraping skala besar (Puppeteer).
+* **3. Integrasi Kecerdasan Buatan (AI) & Computer Vision:**
+  Mengintegrasikan Google Gemini AI ke dalam produk nyata (seperti chatbot asisten cerdas dan analisis nutrisi di FitSmart), model Computer Vision YOLO untuk deteksi tanaman di TerasTani, serta inferensi NLP.
+* **4. Rekayasa Aplikasi Mobile & Real-time:**
+  Mengembangkan aplikasi mobile multi-platform menggunakan Flutter / Dart serta komunikasi instan dua arah berbasis WebSocket (Socket.io) seperti pada platform Time Banking RuangTumbuh.
+* **5. Konsultasi Teknis, Audit Kode & Optimasi Performa:**
+  Melakukan profiling latensi API, optimasi query database, audit kepatuhan keamanan cloud (AWS), dan audit performa web hingga mencapai skor Google Lighthouse 95 ke atas.
+* **6. Pelatihan Pedagogis & Kepemimpinan Proyek:**
+  Berpengalaman mengajar sejak usia 13 tahun, menyusun kurikulum coding, melatih puluhan dewan guru sekolah, serta memimpin alur kerja tim developer dan code review sebagai Project Manager.`,
+      links: [
+        { label: "Jelajahi 18 Proyek Rekayasa", url: "/projects" },
+        { label: "Pelajari Profil & Arsitektur", url: "/about" },
+        { label: "Hubungi untuk Kerja Sama & Proyek", url: "/contact" }
+      ]
+    },
+    en: {
+      title: "What Adyvka Can Do: Core Capabilities & Deliverables",
+      text: `**Core Engineering Capabilities: What Adyvka Can Build & Deliver**
+
+As a 17-year-old Software Engineer and Systems Architect building software since 2021, Adyvka delivers comprehensive end-to-end technical capabilities:
+
+* **1. Full Stack Web & Enterprise Engineering:**
+  Architecting and deploying high-throughput modern web applications from scratch to production leveraging Next.js, React, NestJS, Express, TypeScript, and PostgreSQL. Proven track record leading Databank ERP at PT Intisel and SIM KEPK at FK UMJ.
+* **2. Scalable Distributed Systems & Database Design:**
+  Implementing Clean Architecture, SOLID principles, atomic PostgreSQL transaction ledgers, microservices architectures, and large-scale automated Puppeteer web scraping pipelines.
+* **3. Artificial Intelligence & Computer Vision Integration:**
+  Integrating Google Gemini AI into production software (such as FitSmart preventive health copilot), YOLO computer vision models for disease detection in TerasTani, and NLP pipelines.
+* **4. Mobile & Real-time Systems Development:**
+  Building dynamic multi-platform mobile applications using Flutter and low-latency bidirectional WebSocket pipelines via Socket.io as demonstrated in RuangTumbuh.
+* **5. Technical Consultation, Code Review & Performance Profiling:**
+  Profiling API latency, optimizing complex database queries, conducting AWS cloud security audits, and driving web applications to 95+ Google Lighthouse scores.
+* **6. Technical Pedagogy & Engineering Leadership:**
+  Teaching programming since age 13, designing computing curricula, training school faculties, and directing developer team workflows and code reviews as Project Manager.`,
+      links: [
+        { label: "Browse All 18 Projects", url: "/projects" },
+        { label: "Explore Architecture & Background", url: "/about" },
+        { label: "Get in Touch for Opportunities", url: "/contact" }
+      ]
+    }
+  },
+  INTERVIEW_CURRENT_ACTIVITIES: {
+    id: {
+      title: "Aktivitas & Kesibukan Saat Ini (Magang Kelas 12, Freelance & Studi)",
+      text: `**Aktivitas & Kesibukan Adyvka Saat Ini di Kelas 12**
+
+Sebagai siswa tingkat akhir di SMK IDN Boarding School, keseharian Adyvka saat ini berfokus pada tiga pilar tanggung jawab paralel:
+
+* **1. Magang Industri Korporat Satu Tahun Penuh (Full-Time Intern):**
+  Menjalani program magang wajib kelas 12 selama satu tahun di PT Ardyanda Digital Inovasi (Juli 2026 hingga Januari 2027) sebagai Full Stack Developer, menangani modul backend penggajian (payroll presisi 100%), integrasi basis data, dan arsitektur enterprise.
+* **2. Rekayasa Perangkat Lunak Mandiri & Freelance:**
+  Tetap aktif memimpin perancangan sistem produksi nyata, termasuk menjabat sebagai Lead Systems Engineer & Project Manager untuk sistem Databank ERP di PT Intisel Prodaktifakom serta merawat sistem klien institusi.
+* **3. Komitmen Akademik & Riset Teknologi:**
+  Menjaga konsistensi belajar di SMK IDN Boarding School dan mempertahankan rekor akademik tertinggi (IPK 96/100 Semester 4 dengan predikat Academic Honors) sambil mendalami sistem terdistribusi untuk persiapan kelulusan tahun 2027.
+
+Rutinitas ini dijalani dengan disiplin tinggi, alokasi waktu terstruktur, serta fokus eksekusi tanpa kompromi terhadap kualitas.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Lihat Pengalaman Magang Ardyanda", url: "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship" },
+        { label: "Studi Kasus Databank ERP", url: "/projects/databank" }
+      ]
+    },
+    en: {
+      title: "Current Routine & Activities: Grade 12 Internship, Freelancing & Academics",
+      text: `**Current Daily Activities & Professional Routine in Grade 12**
+
+As a final-year student at SMK IDN Boarding School, Adyvka actively balances three high-responsibility parallel tracks:
+
+* **1. Full-Year Corporate Industry Internship:**
+  Serving as a Full Stack Developer at PT Ardyanda Digital Inovasi for a full 1-year placement (July 2026 to January 2027), architecting high-precision payroll workflows, database normalization, and enterprise UI modules.
+* **2. Enterprise Systems Engineering & Freelancing:**
+  Directing production-grade software delivery, notably serving as Lead Systems Engineer and PM for Databank ERP at PT Intisel Prodaktifakom alongside institutional client deliverables.
+* **3. Academic Excellence & Systems Research:**
+  Maintaining an outstanding academic record (96/100 GPA Semester 4 standing with Academic Honors) at SMK IDN Boarding School while deepening research in scalable distributed systems ahead of 2027 graduation.
+
+This routine is sustained through disciplined time-blocking, asynchronous communication, and uncompromising delivery velocity.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "View Ardyanda Internship Details", url: "/experience/pt-ardyanda-digital-inovasi-full-stack-developer-internship" },
+        { label: "Explore Databank ERP", url: "/projects/databank" }
+      ]
+    }
+  },
+  INTERVIEW_FUTURE_STUDY_CAREER: {
+    id: {
+      title: "Rencana Studi Lanjut, Impian & Arah Karier Masa Depan",
+      text: `**Rencana Studi Lanjut, Impian & Visi Karier Jangka Panjang Adyvka**
+
+Adyvka merancang masa depannya melalui integrasi kuat antara pendidikan tinggi global dan kepemimpinan rekayasa teknologi:
+
+* **Rencana Studi Lanjut (Undergraduate Degree):**
+  Berkomitmen menempuh pendidikan sarjana di bidang Computer Science / Software Engineering di universitas terkemuka dunia dengan fokus pendalaman sistem terdistribusi, perancangan database skala besar, dan arsitektur komputasi modern.
+* **Jalur Karier Hibrida (High-Impact Hybrid Path):**
+  Menggabungkan keunggulan riset akademis sarjana dengan praktik langsung membangun sistem perangkat lunak yang beroperasi di skala jutaan pengguna.
+* **Visi 5 Hingga 10 Tahun ke Depan:**
+  Bercita-cita menjadi Principal Systems Architect yang memimpin perancangan infrastruktur misi kritis dan berkontribusi langsung memperkuat ekosistem teknologi nasional di kancah internasional.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Jelajahi Portofolio Rekayasa", url: "/projects" },
+        { label: "Hubungi untuk Diskusi Akademis / Karier", url: "/contact" }
+      ]
+    },
+    en: {
+      title: "Higher Education Aspirations, Career Vision & Long-Term Goals",
+      text: `**Higher Education Aspirations, Career Vision & Long-Term Goals**
+
+Adyvka bridges high-rigor global academia with real-world enterprise engineering velocity:
+
+* **Higher Education Plans (Undergraduate Degree):**
+  Committed to pursuing an undergraduate degree in Computer Science or Software Engineering at a globally renowned institution, specializing in distributed systems, database scalability, and system architecture.
+* **High-Impact Hybrid Career Path:**
+  Integrating academic computer science rigor with production product engineering that directly impacts mission-critical infrastructure.
+* **Long-Term 5 to 10-Year Horizon:**
+  Aiming to become a Principal Systems Architect driving large-scale distributed architectures, advancing sovereign technological infrastructure, and mentoring the next generation of engineers.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Browse Shipped Projects", url: "/projects" },
+        { label: "Get in Touch for Opportunities", url: "/contact" }
+      ]
+    }
+  },
+  INTERVIEW_ROLE_MODEL: {
+    id: {
+      title: "Role Model Inspiratif: Prof. David J. Malan (Harvard CS50)",
+      text: `**Role Model Utama Adyvka: Prof. David J. Malan (Harvard University)**
+
+Tokoh inspirasi terbesar yang memandu filosofi komputasi dan cara mengajar Adyvka adalah **Prof. David J. Malan**, pengajar legendaris program Harvard University CS50:
+
+* **1. Kejelasan Pedagogis Tanpa Kompromi Standar:**
+  Kemampuan luar biasa David J. Malan dalam mengurai konsep komputasi tingkat rendah yang rumit (seperti alokasi memori pointer dalam bahasa C, struktur data pohon biner, dan efisiensi algoritma) menjadi sangat memikat dan intuitif bagi siapa saja.
+* **2. Inspirasi Nyata Jalur Mengajar Adyvka:**
+  Menyaksikan dedikasi Malan menggerakkan Adyvka untuk aktif mengajar sejak usia 13 tahun, menyusun materi ramah pemula, melatih dewan guru di SMPN 25 Depok, dan menulis dua buku pemrograman resmi.
+* **3. Energi Tinggi & Standar Mutu:**
+  Semangat tanpa lelah, persiapan materi yang teramat teliti, serta kepedulian tulus terhadap pertumbuhan setiap siswa menjadi teladan moral yang selalu diterapkan Adyvka dalam memimpin tim maupun berbagi ilmu.`,
+      links: [
+        { label: "Lihat Sertifikat Harvard CS50 Adyvka", url: "/certificates/cs50-introduction-to-computer-science" },
+        { label: "Lihat Riwayat 10 Pengalaman Mengajar", url: "/experience" },
+        { label: "Buku Pemrograman Karya Adyvka", url: "/publications/buku-membuat-website-dengan-framework" }
+      ]
+    },
+    en: {
+      title: "Inspirational Role Model: Prof. David J. Malan (Harvard University)",
+      text: `**Adyvka's Primary Role Model: Prof. David J. Malan (Harvard University)**
+
+The biggest influence shaping Adyvka's engineering discipline and teaching philosophy is **Prof. David J. Malan**, the visionary instructor behind Harvard University's renowned CS50:
+
+* **1. Uncompromising Pedagogical Clarity:**
+  Malan's extraordinary ability to demystify complex low-level computer science concepts (such as pointer memory management in C, hash tables, and algorithmic complexity) with theatrical clarity and infectious enthusiasm.
+* **2. Spark for Adyvka's Teaching Journey:**
+  Experiencing Malan's lectures inspired Adyvka to start mentoring peers at age 13, conduct educator workshops for teachers at SMPN 25 Depok, and publish two programming textbooks for young developers.
+* **3. Relentless Standards & Human Empathy:**
+  The combination of world-class technical precision with genuine warmth and mentorship forms the operational benchmark Adyvka holds himself to every day.`,
+      links: [
+        { label: "View Adyvka's Harvard CS50 Certificate", url: "/certificates/cs50-introduction-to-computer-science" },
+        { label: "Explore 10 Teaching Experiences", url: "/experience" },
+        { label: "Explore Published Books", url: "/publications/buku-membuat-website-dengan-framework" }
+      ]
+    }
+  },
+  INTERVIEW_WEAKNESSES: {
+    id: {
+      title: "Kekurangan & Refleksi Pengembangan Diri Adyvka (Areas for Growth)",
+      text: `**Refleksi Diri: Kekurangan Adyvka & Cara Aktif Mengatasinya**
+
+Dalam standar wawancara profesional tingkat tinggi, kesadaran diri (self-awareness) adalah tanda kematangan. Berikut adalah area pengembangan diri Adyvka beserta langkah mitigasi nyatanya:
+
+* **1. Kecenderungan Mengambil Beban Terlalu Banyak (Over-Ownership):**
+  Karena terbiasa mengawal proyek secara mandiri dari riset hingga rilis, Adyvka terkadang tergoda menyelesaikan seluruh detail sendirian.
+  *Mitigasi aktif:* Adyvka secara sadar melatih pendelegasian terstruktur, menulis dokumentasi arsitektur yang jelas untuk rekan tim, dan membagi tanggung jawab berdasarkan keunggulan tiap anggota tim.
+* **2. Perfeksionisme Arsitektural di Tahap Awal (Over-Engineering):**
+  Kecintaan pada Clean Architecture dan desain modular terkadang membuat prototipe awal dirancang terlalu rumit sebelum kebutuhan pengguna terbukti.
+  *Mitigasi aktif:* Mengadopsi prinsip *Pragmatic Clean Architecture*, mengutamakan validasi fungsional MVP terlebih dahulu, dan melakukan refactoring bertahap berdasarkan data penggunaan riil.
+* **3. Batas Istirahat Saat Menghadapi Bug Sulit (Hyperfocus):**
+  Saat menghadapi kendala arsitektural yang rumit, Adyvka dapat larut berjam-jam tanpa jeda hingga menemukan solusinya.
+  *Mitigasi aktif:* Menerapkan teknik time-boxing dan menyadari bahwa jeda sejenak sering kali memunculkan solusi teknis yang lebih jernih dan efisien.`,
+      links: [
+        { label: "Pelajari Profil Lengkap di About", url: "/about" },
+        { label: "Lihat Filosofi Rekayasa Adyvka", url: "/about" }
+      ]
+    },
+    en: {
+      title: "Self-Awareness & Growth Areas: What Are Adyvka's Weaknesses",
+      text: `**Self-Awareness: Growth Areas & Active Mitigations**
+
+Constructive self-awareness is essential for senior technical execution. Here are Adyvka's authentic growth areas and his practical mitigation strategies:
+
+* **1. Tendency Toward Excessive Ownership:**
+  Accustomed to end-to-end execution, Adyvka can initially be tempted to shoulder too many technical tasks individually rather than delegating immediately.
+  *Active mitigation:* Practicing systematic delegation, writing explicit architectural specifications, and empowering team members to own domain modules.
+* **2. Architectural Perfectionism Early in Prototypes:**
+  A deep appreciation for clean modular design can occasionally lead to over-engineering systems before the initial problem space is fully validated.
+  *Active mitigation:* Adopting a pragmatic MVP-first mindset, shipping working core primitives, and refactoring iteratively based on production workload metrics.
+* **3. Deep Hyperfocus During Complex Debugging:**
+  When tackling intricate distributed bottlenecks, Adyvka can become so absorbed that he pushes through extended hours without breaks.
+  *Active mitigation:* Implementing strict time-boxing schedules and recognizing that stepping back often yields cleaner architectural breakthroughs.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "View Engineering Philosophy", url: "/about" }
+      ]
+    }
+  },
+  INTERVIEW_FAILURE_RESILIENCE: {
+    id: {
+      title: "Pembelajaran dari Kegagalan & Ketangguhan Menghadapi Hambatan",
+      text: `**Pembelajaran Nyata dari Hambatan & Resiliensi Menghadapi Kegagalan**
+
+Bagi Adyvka, kegagalan adalah instrumen riset tercepat untuk memperkuat sistem dan kepribadian:
+
+* **Kasus 1: Tantangan Awal Survival Bisnis Semarang (Modal Rp 0):**
+  *Kegagalan awal:* Ketika pertama kali ditantang bertahan hidup mandiri di Semarang tanpa modal uang saku, beberapa tawaran jasa awal sempat ditolak calon klien karena Adyvka terlalu banyak menggunakan istilah teknis koding yang tidak relevan dengan kebutuhan bisnis mereka.
+  *Pelajaran & Resiliensi:* Belajar bahwa teknologi tidak memiliki arti tanpa pemahaman kebutuhan manusia. Adyvka mengubah pendekatan dengan menawarkan solusi bisnis konkret yang langsung dipahami klien, hingga berhasil mencatatkan omzet jutaan rupiah secara mandiri.
+* **Kasus 2: Perangkap Ruang Lingkup (Scope Creep) di Kompetisi Hackathon:**
+  *Kegagalan awal:* Pada ajang kompetisi awal, Adyvka merancang fitur yang terlalu luas sehingga menjelang batas akhir pengumpulan waktu menjadi sangat sempit dan beberapa modul pendukung terpaksa dipangkas darurat.
+  *Pelajaran & Resiliensi:* Menanamkan metodologi penganggaran ruang lingkup (scope budgeting) yang ketat, selalu merancang arsitektur dengan *graceful fallback*, dan memastikan fitur inti beroperasi stabil sebelum menambah fungsionalitas baru.`,
+      links: [
+        { label: "Studi Kasus Survival Semarang Modal Rp 0", url: "/experience/pt-intisel-semarang-business-life-survival" },
+        { label: "Lihat Rekam Jejak Prestasi Lomba", url: "/achievements" }
+      ]
+    },
+    en: {
+      title: "Overcoming Setbacks: Failures, Resilience & Key Learnings",
+      text: `**Setbacks, Resilience & Key Lessons Learned from Failure**
+
+Adyvka views failures not as dead ends, but as high-signal feedback loops for structural improvement:
+
+* **Case 1: The Initial Rejections in Semarang Zero-Capital Survival:**
+  *Initial setback:* Dropped into Semarang with zero startup capital, Adyvka's initial service pitches were repeatedly rejected by prospective local business clients because he explained technical implementation details rather than their core commercial pain points.
+  *Lesson & turnaround:* Learned that engineering must be anchored in human empathy and commercial relevance. Restructured his proposals to address immediate business bottlenecks, eventually generating millions of rupiah in profit independently.
+* **Case 2: Over-Ambitious Scope in Early Hackathon Environments:**
+  *Initial setback:* In an early hackathon sprint, attempting to build an overly broad feature footprint led to an intense deadline crunch where secondary features had to be stripped at the eleventh hour.
+  *Lesson & turnaround:* Instituted disciplined scope budgeting, prioritized immutable core user journeys, and architected graceful degradation mechanisms across all subsequent hackathon builds.`,
+      links: [
+        { label: "Explore Semarang Survival Case Study", url: "/experience/pt-intisel-semarang-business-life-survival" },
+        { label: "Browse Hackathon Achievements", url: "/achievements" }
+      ]
+    }
+  },
+  INTERVIEW_BIG_FUTURE_PROJECT: {
+    id: {
+      title: "Rencana Ide Besar & Proyek Ambisius Masa Depan Adyvka",
+      text: `**Ide Besar & Visi Proyek Ambisius Masa Depan Adyvka**
+
+Adyvka tertarik membangun sistem berdaya jangkau masif yang memecahkan ketimpangan akses dan efisiensi rekayasa:
+
+* **1. Sovereign Global Time-Banking Ledger (Evolusi RuangTumbuh):**
+  Mengembangkan konsep pertukaran waktu peer-to-peer menjadi jaringan global terdesentralisasi: di mana satu jam mengajar keahlian apa pun bernilai setara dengan satu jam belajar di seluruh dunia. Dilengkapi dengan buku besar kriptografis anti-fraud, verifikasi kredensial otomatis, dan asisten AI adaptif untuk menghapus hambatan finansial dalam pendidikan generasi muda.
+* **2. Autonomous Architecture & Systems Observability Engine:**
+  Merancang platform infrastruktur cerdas yang dapat menganalisis arsitektur sistem terdistribusi, memetakan potensi kemacetan performa secara prediktif, dan memvalidasi kepatuhan Clean Architecture secara otomatis sebelum kode menyentuh lingkungan produksi enterprise.`,
+      links: [
+        { label: "Buka Studi Kasus RuangTumbuh", url: "/projects/ruangtumbuh" },
+        { label: "Lihat Arsitektur Databank ERP", url: "/projects/databank" },
+        { label: "Hubungi untuk Kolaborasi Visi Masa Depan", url: "/contact" }
+      ]
+    },
+    en: {
+      title: "Big Future Projects: Ambitious Vision & Next-Gen Systems",
+      text: `**Big Future Projects: Ambitious Systems Architecture Vision**
+
+Adyvka aims to build planetary-scale platforms tackling educational inequality and systems observability:
+
+* **1. Sovereign Global Time-Banking Ledger (Evolving RuangTumbuh):**
+  Scaling the peer-to-peer time banking paradigm into a borderless decentralized knowledge network: where one hour of teaching any discipline equals one hour of learning worldwide, backed by tamper-proof transactional ledgers, cryptographic credential verification, and AI-assisted pedagogy.
+* **2. Autonomous Systems Observability & Architecture Engine:**
+  Engineering next-generation developer infrastructure capable of statically analyzing distributed system boundaries, predicting latency regressions, and enforcing Clean Architecture compliance across microservices before code reaches enterprise production.`,
+      links: [
+        { label: "Explore RuangTumbuh Case Study", url: "/projects/ruangtumbuh" },
+        { label: "Explore Databank ERP", url: "/projects/databank" },
+        { label: "Connect for Future Collaborations", url: "/contact" }
+      ]
+    }
+  },
+  INTERVIEW_TIME_MANAGEMENT: {
+    id: {
+      title: "Manajemen Waktu & Prioritas: Mengelola Berbagai Tanggung Jawab Sekaligus",
+      text: `**Metodologi Manajemen Waktu & Prioritas Ekstrem Adyvka**
+
+Mengelola magang korporat satu tahun, menjaga nilai rapot 96/100, memimpin sistem Databank ERP, dan memenangkan kompetisi nasional menuntut sistem kerja presisi:
+
+* **1. Time Blocking & Deep Work Berfokus Tunggal:**
+  Membagi hari ke dalam blok waktu yang tegas tanpa berpindah-pindah konteks secara serampangan. Jam kerja kantor didedikasikan penuh untuk tugas industri, jam belajar dialokasikan untuk pemahaman konsep akademik mendalam, dan jam malam dialokasikan untuk riset arsitektur.
+* **2. Komunikasi Asinkron Berstandar Tinggi:**
+  Menghindari rapat yang tidak efektif dengan membiasakan penulisan dokumentasi teknis yang jelas dan ringkas, sehingga kolaborasi dengan tim berjalan efisien dan terarah.
+* **3. Disiplin Prioritas Berbasis Dampak:**
+  Mengevaluasi setiap pekerjaan berdasarkan dampak jangka panjangnya, mengeliminasi gangguan yang tidak bernilai tambah, dan menyelesaikan tugas tersulit di awal waktu.`,
+      links: [
+        { label: "Pelajari Profil di Halaman About", url: "/about" },
+        { label: "Lihat Pengalaman Profesional Adyvka", url: "/experience" }
+      ]
+    },
+    en: {
+      title: "Time Management & Prioritization Under Multiple High-Stakes Roles",
+      text: `**High-Performance Time Management & Prioritization Methodology**
+
+Balancing a full 1-year corporate internship, a 96/100 GPA standing, leading enterprise ERP delivery, and winning national hackathons requires a disciplined operating rhythm:
+
+* **1. Strict Time Blocking & Single-Task Deep Work:**
+  Structuring each day into isolated blocks with zero context switching: dedicated industry delivery blocks, focused academic mastery periods, and evening architecture research slots.
+* **2. High-Clarity Asynchronous Communication:**
+  Minimizing meeting overhead by writing concise, self-documenting technical briefs, enabling developer teams to execute asynchronously with high velocity.
+* **3. Impact-Driven Priority Auditing:**
+  Evaluating tasks strictly on architectural leverage and long-term impact, discarding superficial distractions, and tackling the most demanding engineering problems first.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Browse Career Experiences", url: "/experience" }
+      ]
+    }
+  },
+  INTERVIEW_TEAM_CONFLICT: {
+    id: {
+      title: "Resolusi Konflik & Kolaborasi Tim Rekayasa Perangkat Lunak",
+      text: `**Resolusi Konflik & Pendekatan Kolaborasi Tim Rekayasa Perangkat Lunak**
+
+Ketika terjadi perbedaan pandangan arsitektur atau dinamika tim, Adyvka berpegang pada prinsip profesional berikut:
+
+* **1. Berdebat dengan Data, Berkomitmen dengan Empati:**
+  Perbedaan pilihan teknologi atau skema database tidak diselesaikan lewat ego senioritas, melainkan melalui uji perbandingan performa terukur, bukti prototipe, dan data objektif.
+* **2. Budaya Evaluasi Tanpa Mencari Kambing Hitam (Blameless Post-Mortem):**
+  Ketika terjadi kendala atau kegagalan sistem produksi, fokus investigasi selalu diarahkan pada penguatan arsitektur dan perbaikan proses, bukan menyalahkan individu.
+* **3. Mendengarkan Aktif & Menghargai Masukan Tim:**
+  Memberikan ruang setara bagi setiap anggota tim untuk mengutarakan pandangannya sebelum keputusan arsitektural final disepakati bersama.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Lihat Rekam Jejak Kepemimpinan", url: "/experience" }
+      ]
+    },
+    en: {
+      title: "Team Collaboration, Engineering Disagreements & Conflict Resolution",
+      text: `**Collaborative Engineering & Technical Conflict Resolution**
+
+When architectural debates or workflow friction arise in cross-functional teams, Adyvka navigates them using high-integrity engineering principles:
+
+* **1. Debate with Data, Commit with Empathy:**
+  Differing architectural perspectives (such as database paradigms or API contracts) are resolved through empirical benchmarking and measurable prototypes rather than personal hierarchy.
+* **2. Blameless Engineering Culture:**
+  When production incidents occur, retrospectives focus entirely on structural gaps in testing and process architecture rather than assigning personal blame.
+* **3. Active Listening & Inclusive Consensus:**
+  Ensuring every engineer's technical concerns are heard before arriving at a definitive, unified architectural direction.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Explore Leadership Track Record", url: "/experience" }
+      ]
+    }
+  },
+  INTERVIEW_WHY_CS: {
+    id: {
+      title: "Alasan Memilih Rekayasa Perangkat Lunak & Komputasi",
+      text: `**Alasan Memilih Rekayasa Perangkat Lunak & Kecintaan Terhadap Komputasi**
+
+Alasan mengapa Adyvka mendedikasikan hidupnya pada bidang software engineering sejak usia 13 tahun:
+
+* **1. Daya Ungkit (Leverage) Tanpa Batas Ruang dan Waktu:**
+  Rekayasa perangkat lunak adalah salah satu dari sedikit bidang di mana seorang pemuda dari mejanya dapat merancang sistem yang membantu jutaan orang di berbagai belahan dunia secara bersamaan.
+* **2. Perpaduan Sains Logika & Seni Pemecahan Masalah Manusia:**
+  Komputasi memadukan keindahan ketepatan logika matematis dengan empati sosial untuk memecahkan kesulitan nyata manusia.
+* **3. Kemandirian dan Kegembiraan Mencipta (Craftsmanship):**
+  Sensasi mengubah layar terminal kosong menjadi aplikasi nyata yang berfungsi dengan cepat, andal, dan bermanfaat bagi sesama.`,
+      links: [
+        { label: "Pelajari Profil di Halaman About", url: "/about" },
+        { label: "Jelajahi 18 Proyek Rekayasa", url: "/projects" }
+      ]
+    },
+    en: {
+      title: "Why Computer Science & Software Engineering: Core Motivation",
+      text: `**Why Software Engineering: The Core Motivation Behind Computing**
+
+Why Adyvka has dedicated his life to software engineering and systems architecture since age 13:
+
+* **1. Unmatched Global Leverage:**
+  Software is unique in offering infinite distribution: a single engineer can architect a platform that reliably serves millions globally with zero marginal transport cost.
+* **2. Intersection of Mathematical Logic & Human Empathy:**
+  Computing bridges mathematical precision with social empathy, transforming abstract code into tangible solutions that eliminate human friction.
+* **3. Joy of Pure Craftsmanship:**
+  The enduring thrill of turning an empty terminal into resilient, functional software that empowers users with speed, privacy, and reliability.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Browse All 18 Projects", url: "/projects" }
+      ]
+    }
+  },
+  TWO_TRACKS_TIMELINE: {
+    id: {
+      title: "Timeline 6 Tahun: Perjalanan Teknis & Kepemimpinan Adyvka (2021 - 2026)",
+      text: `**Perjalanan 6 Tahun: Progres Teknis & Kepemimpinan (Two Tracks, Six Years)**
+
+Setiap tahun sejak usia 13 tahun (2021 hingga 2026), Adyvka menyeimbangkan dua jalur pertumbuhan secara simultan: keunggulan rekayasa teknologi (jalur teknis) dan kematangan kepemimpinan manusia (jalur humaniora):
+
+* **2021 (Usia 13 Tahun, Kelas 1 SMP):**
+  * *Technical (First Lines of Code):* Mulai menulis baris kode pertama, menguasai HTML, CSS, JavaScript, dan membangun purwarupa game 2D mandiri.
+  * *Human (Peer Mentoring):* Mulai mengajar dan membimbing teman sebaya melalui model belajar berbagi antarsiswa di sekolah.
+
+* **2022 (Usia 14 Tahun, Kelas 2 SMP):**
+  * *Technical (UI/UX & Robotics):* Mendalami sistem desain antarmuka, logika animasi interaktif modern di Figma, serta eksplorasi sistem kontrol robotika.
+  * *Human (OSIS Core Team):* Menjalani peran kepemimpinan formal pertama sebagai tim inti OSIS, mengelola dokumentasi publikasi dan operasional acara siswa.
+
+* **2023 (Usia 15 Tahun, Kelas 3 SMP):**
+  * *Technical (Production Client Web):* Mengembangkan dan meluncurkan proyek klien komersial pertama baperentcar.com (sistem web rental mobil live produksi).
+  * *Human (International Backpacker):* Lolos seleksi beasiswa ekspedisi solo backpacker mandiri lintas 3 negara (Singapura, Malaysia, Thailand) tanpa pendamping dewasa.
+
+* **2024 (Usia 16 Tahun, Kelas 10 SMK):**
+  * *Technical (Full Stack Systems):* Mendalami arsitektur perangkat lunak skala produksi menggunakan TypeScript modern, React, dan API backend terstruktur.
+  * *Human (Faculty Training & OSIS Lead):* Dipercaya menjadi instruktur pelatihan teknologi untuk dewan guru di SMPN 25 Depok dan terpilih sebagai Ketua Divisi Acara OSIS SMK IDN Boarding School.
+
+* **2025 (Usia 17 Tahun, Kelas 11 SMK):**
+  * *Technical (Academic Honors & Full Stack):* Meraih nilai rapot 96/100 (Academic Honors) di Semester 4, membangun sistem SIM KEPK Universitas Muhammadiyah Jakarta, dan meraih Juara 1 Nasional Web Design ICOMFEST.
+  * *Human (Village Community Live In):* Menjalani program Live In satu minggu penuh di desa terpencil Jawa Barat, tinggal dan bertani membaur dengan warga lokal.
+
+* **2026 (Usia 17 ke 18 Tahun, Kelas 12 SMK):**
+  * *Technical (Enterprise ERP Engineering):* Menjabat Lead Systems Engineer & Project Manager sistem Databank ERP di PT Intisel Prodaktifakom serta menyelesaikan kurikulum DBS Coding Camp (Capstone RuangTumbuh meraih Juara 2 Nasional PNBITC).
+  * *Human (Team Leadership & Mentoring):* Memimpin koordinasi tim pengembang, melakukan review kode, dan membimbing adik tingkat junior software engineer.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Lihat Seluruh 20 Pengalaman", url: "/experience" },
+        { label: "Jelajahi 18 Proyek Rekayasa", url: "/projects" }
+      ]
+    },
+    en: {
+      title: "Two Tracks, Six Years: Technical Progression & Leadership Journey (2021 - 2026)",
+      text: `**Two Tracks, Six Years: Technical Progression & Human Leadership (2021 - 2026)**
+
+Every single year from age 13 through today, Adyvka has advanced along two parallel tracks: technical software engineering on the left, and human leadership and empathy on the right:
+
+* **2021 (Age 13, Grade 7 / SMP Year 1):**
+  * *Technical (First Lines of Code):* Wrote first lines of code, mastering HTML, CSS, JavaScript, and building initial 2D game prototypes.
+  * *Human (Peer Mentoring):* Began teaching and mentoring classmates through the school student-to-student knowledge sharing model.
+
+* **2022 (Age 14, Grade 8 / SMP Year 2):**
+  * *Technical (UI/UX & Robotics):* Explored visual design systems, interactive animation logic, and foundational robotics engineering.
+  * *Human (OSIS Core Team):* First formal student council leadership experience, managing event documentation, logistics, and student operations.
+
+* **2023 (Age 15, Grade 9 / SMP Year 3):**
+  * *Technical (Production Client Web):* Shipped baperentcar.com, a live commercial car rental platform deployed directly into client production.
+  * *Human (International Backpacker):* Selected for and self-funded a solo backpacking expedition across 3 countries (Singapore, Malaysia, Thailand) at age 15.
+
+* **2024 (Age 16, Grade 10 / SMK Year 1):**
+  * *Technical (Full Stack Systems):* Deepened production architecture leveraging modern TypeScript, React interfaces, and structured backend APIs.
+  * *Human (Faculty Training & OSIS Lead):* Trained senior educators at SMPN 25 Depok in app design and led the SMK Student Council Event Division.
+
+* **2025 (Age 17, Grade 11 / SMK Year 2):**
+  * *Technical (Academic Honors & Full Stack):* Achieved a 96/100 Semester 4 GPA while architecting SIM KEPK for Universitas Muhammadiyah Jakarta and winning 1st Place National Web Design Honors at ICOMFEST.
+  * *Human (Village Community Live In):* Completed a week-long rural immersion program, living and farming alongside traditional agricultural families in West Java.
+
+* **2026 (Age 17 to 18, Grade 12 / SMK Year 3):**
+  * *Technical (Enterprise ERP Engineering):* Leading Databank ERP at PT Intisel as Lead Systems Engineer and PM, while completing DBS Coding Camp (Capstone RuangTumbuh took 2nd Place National Honors at PNBITC).
+  * *Human (Team Leadership & Mentoring):* Directing engineering workflows, conducting code reviews, and onboarding junior developers into professional development.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "View All 20 Experiences", url: "/experience" },
+        { label: "Browse All 18 Projects", url: "/projects" }
+      ]
+    }
+  },
+  ABOUT_CURRENT_FOCUS: {
+    id: {
+      title: "Fokus Utama & Aktivitas Adyvka Saat Ini (Right Now)",
+      text: `**Fokus Utama & Apa yang Sedang Dikerjakan Adyvka Saat Ini (Right Now)**
+
+Berdasarkan bagian terkini di halaman About, berikut adalah empat hal utama yang sedang aktif dikerjakan Adyvka:
+
+* **Building (Databank ERP):** Menjabat sebagai Full Stack Engineer & Project Manager yang memimpin arsitektur dan delivery platform telekomunikasi enterprise di PT Intisel Prodaktifakom.
+* **Academics (Nilai Rapot 96/100):** Meraih predikat Academic Honors di Semester 4 program Rekayasa Perangkat Lunak SMK IDN Boarding School, dipertahankan konsisten di tengah tanggung jawab proyek industri.
+* **Deepening (System Architecture):** Memperdalam perancangan arsitektur backend berskala besar, pola otorisasi RBAC yang bersih, efisiensi database terdistribusi, dan micro-APIs performa tinggi.
+* **Exploring (Global Engineering):** Merintis jalur karier hibrida antara rekayasa produk teknologi berkinerja tinggi serta persiapan studi sarjana teknologi di luar negeri.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Studi Kasus Databank ERP", url: "/projects/databank" },
+        { label: "Hubungi Adyvka", url: "/contact" }
+      ]
+    },
+    en: {
+      title: "Current Focus & What is Open in the Tabs Right Now",
+      text: `**What is Open in the Tabs Right Now: Adyvka's Active Pursuits**
+
+Here is what Adyvka is actively focusing on, building, and exploring right now:
+
+* **Building (Databank ERP):** Serving as Full Stack Engineer and Project Manager leading the enterprise telecommunication platform delivery at PT Intisel Prodaktifakom.
+* **Academics (96/100 GPA Honors):** Top-tier academic record achieved in Semester 4 of Software Engineering at SMK IDN Boarding School, maintained while leading corporate ERP deliverables.
+* **Deepening (System Architecture):** Mastering resilient backend patterns, clean RBAC authorization architectures, distributed query optimization, and high-performance micro-APIs.
+* **Exploring (Global Engineering):** Preparing a hybrid career path combining high-impact software engineering with overseas undergraduate studies.`,
+      links: [
+        { label: "View About Page", url: "/about" },
+        { label: "Databank ERP Case Study", url: "/projects/databank" },
+        { label: "Contact Adyvka", url: "/contact" }
+      ]
+    }
+  },
+  ABOUT_WHATS_NEXT: {
+    id: {
+      title: "Rencana Karier Masa Depan & Kelulusan 2027 (What's Next)",
+      text: `**Arah Langkah & Masa Depan Karier Adyvka (What's Next)**
+
+Adyvka akan lulus dari SMK IDN Boarding School pada tahun 2027, namun saat ini sudah beroperasi dengan kecepatan eksekusi, standar mutu, dan kepemilikan penuh layaknya software engineer profesional berpengalaman:
+
+* **Role Focus:** Software Engineer dan Systems Architect dengan kepemilikan penuh dari hulu ke hilir (End-to-End Ownership), mulai dari riset arsitektur hingga deployment produksi.
+* **Core Stack:** Penguasaan polyglot modern: TypeScript, Python, Dart, PHP, C++, SQL, dan Cloud Infrastructure (AWS, Docker, CI/CD).
+* **Spesialisasi Utama:** Clean Architecture, Sistem Terdistribusi Berskala Besar (Scalable Distributed Systems), dan Rekayasa Multi-Platform.
+* **Lingkungan Kerja Ideal:** Tim berorientasi rekayasa kuat (engineering-driven) dengan otonomi tinggi yang membangun produk perangkat lunak misi kritis.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Diskusi Peluang Karier & Kolaborasi", url: "/contact" },
+        { label: "Lihat Portofolio Rekayasa", url: "/projects" }
+      ]
+    },
+    en: {
+      title: "The Next Chapter: Career Direction, Specialization & 2027 Graduation",
+      text: `**The Shape of the Next Chapter: Career Vision & 2027 Graduation**
+
+Graduating in 2027 from SMK IDN Boarding School, Adyvka is already operating with the ownership, speed, and delivery velocity of a seasoned contributor:
+
+* **Role Focus:** Software Engineer and Systems Architect with complete end-to-end ownership from system design to production deployment.
+* **Core Stack:** Polyglot mastery across TypeScript, Python, Dart, PHP, C++, SQL, and Cloud Infrastructure (AWS, Docker, CI/CD).
+* **Technical Specialization:** Clean Architecture, Scalable Distributed Systems, and Multi-Platform Engineering.
+* **Ideal Environment:** High-autonomy, engineering-driven teams building mission-critical software.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Discuss Career Opportunities", url: "/contact" },
+        { label: "Browse Software Projects", url: "/projects" }
+      ]
+    }
+  },
+  ABOUT_CORE_CAPABILITIES: {
+    id: {
+      title: "Kemampuan Inti & Soft Skills Adyvka (Beyond the Code)",
+      text: `**Kemampuan Inti & Karakter Adyvka di Luar Kode (Core Capabilities)**
+
+Di samping kemampuan pemrograman teknis, Adyvka memiliki fondasi kepemimpinan dan karakter yang kuat:
+
+* **Software & System Architecture:** Merancang arsitektur sistem ketersediaan tinggi, batasan domain yang jelas, dan platform multi-tenant yang tangguh.
+* **Polyglot Problem Solving:** Memilih bahasa dan paradigma pemrograman terbaik (OOP, Fungsional, Sistem) yang disesuaikan secara presisi dengan kebutuhan performa.
+* **Engineering Leadership & PM:** Menjabat sebagai Ketua Divisi Acara OSIS serta memimpin arsitektur dan delivery Databank ERP di PT Intisel Prodaktifakom.
+* **Technical Mentoring & Pedagogy:** Berpengalaman mengajar sejak usia 13 tahun, melatih guru di SMPN 25 Depok, dan membimbing junior developer.
+* **Cross-cultural Adaptability:** Terpilih dari ratusan siswa untuk ekspedisi solo backpacker 3 negara ASEAN (Singapura, Malaysia, Thailand).
+* **Community & Resilience:** Menjalani program Live In satu minggu penuh tinggal dan bekerja tani membaur bersama masyarakat desa di Jawa Barat.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Lihat Riwayat Kepemimpinan & Pengajaran", url: "/experience" }
+      ]
+    },
+    en: {
+      title: "Core Capabilities & Interpersonal Strengths Beyond Code",
+      text: `**Core Capabilities and Human Strengths Beyond Code**
+
+Beyond pure syntax and coding, Adyvka brings proven leadership, pedagogic clarity, and high-agency execution:
+
+* **Software & System Architecture:** Designing resilient high-availability systems, clean domain boundaries, and multi-tenant enterprise platforms.
+* **Polyglot Problem Solving:** Selecting optimal languages and paradigms (OOP, Functional, Systems) tailored to performance constraints.
+* **Engineering Leadership & PM:** Served as Head of OSIS Event Division and led architecture and Databank ERP delivery at PT Intisel.
+* **Technical Mentoring & Pedagogy:** Teaching development since age 13, trained educators at SMPN 25 Depok, and mentored junior developer cohorts.
+* **Cross-cultural Adaptability:** Selected out of hundreds for the 3-country IDN International Backpacker program across ASEAN.
+* **Community & Resilience:** Completed a 1-week traditional village Live In program, living and farming alongside local agricultural communities.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Explore Leadership & Teaching Records", url: "/experience" }
+      ]
+    }
+  },
+  ABOUT_PHILOSOPHY_QUOTE: {
+    id: {
+      title: "Filosofi Rekayasa & Prinsip Kerja Adyvka",
+      text: `**Filosofi Rekayasa & Prinsip Kerja Adyvka**
+
+Prinsip dasar yang memandu setiap baris kode, arsitektur, dan kepemimpinan Adyvka:
+
+* **Kutipan Filosofis Utama:**
+  *"Code is how I build systems. Grit is how I solve problems. Empathy is why any of it matters."*
+  (Kode adalah cara saya membangun sistem. Kegigihan adalah cara saya memecahkan masalah. Empati adalah alasan mengapa semua itu bermakna).
+* **Prinsip "Built early. Kept building":** Memulai rekayasa perangkat lunak sejak usia 13 tahun pada 2021 dan terus membangun produk nyata secara konsisten tanpa henti.
+* **Tiga Nilai Inti:**
+  1. *High Agency:* Mengambil inisiatif mandiri untuk menyelesaikan masalah kompleks tanpa perlu disuapi arahan.
+  2. *Extreme Ownership:* Bertanggung jawab penuh terhadap keberhasilan sistem dari perancangan hingga performa di tangan pengguna akhir.
+  3. *Craftsmanship:* Menjunjung tinggi kode bersih, struktur data optimal, dan arsitektur yang mudah dirawat.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Jelajahi Proyek Rekayasa", url: "/projects" }
+      ]
+    },
+    en: {
+      title: "Engineering Philosophy & Core Operating Principles",
+      text: `**Engineering Philosophy & Core Principles of Adyvka**
+
+The core ethos driving every architectural decision, line of code, and leadership initiative:
+
+* **Guiding Philosophy:**
+  *"Code is how I build systems. Grit is how I solve problems. Empathy is why any of it matters."*
+* **"Built early. Kept building":** Started shipping software at age 13 in 2021 and continuously built real-world production systems year after year.
+* **Three Bedrock Values:**
+  1. *High Agency:* Autonomously discovering solutions for ambiguous, complex constraints without requiring handholding.
+  2. *Extreme Ownership:* Taking complete accountability for software performance from architecture modeling to production reliability.
+  3. *Craftsmanship:* Upholding clean architecture standards, optimal algorithmic complexity, and long-term maintainability.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Browse Software Projects", url: "/projects" }
+      ]
+    }
+  },
+  CONTACT_SERVICES_SCOPE: {
+    id: {
+      title: "Ruang Lingkup Layanan & Solusi untuk Tim Anda (Deliverables)",
+      text: `**Ruang Lingkup Layanan & Apa yang Bisa Dikerjakan Adyvka untuk Tim Anda**
+
+Berdasarkan bagian layanan di halaman Kontak (*What I can deliver for your team*), Adyvka siap berkontribusi dalam tiga cakupan keahlian utama:
+
+* **1. Software Engineering & Architecture:**
+  Pengembangan aplikasi full stack end-to-end, perancangan arsitektur sistem terdistribusi, migrasi ke Clean Architecture, dan pembuatan REST/GraphQL API berkinerja tinggi.
+* **2. Technical Consultation & Code Review:**
+  Pemodelan skema basis data PostgreSQL/MySQL yang optimal, profiling performa sistem dan latensi API, audit keamanan arsitektur, serta bimbingan teknis alur kerja Git untuk tim developer.
+* **3. Workshops & Speaking Engagements:**
+  Penyelenggaraan workshop pemrograman langsung (hands-on), penyusunan materi kurikulum komputasi yang mudah dipahami, serta menjadi pembicara teknis untuk komunitas pelajar, kampus, maupun profesional.`,
+      links: [
+        { label: "Hubungi Adyvka", url: "/contact" },
+        { label: "Lihat Bukti 18 Proyek", url: "/projects" },
+        { label: "Lihat Riwayat Mengajar & Workshop", url: "/experience" }
+      ]
+    },
+    en: {
+      title: "What Adyvka Can Deliver for Your Team: Service Scopes",
+      text: `**What Adyvka Can Deliver for Your Team: Core Service Scopes**
+
+Based on the deliverable scopes detailed on the Contact page, Adyvka is available for high-impact engagements across three areas:
+
+* **1. Software Engineering & Architecture:**
+  End-to-end full stack software development, scalable distributed systems architecture, Clean Architecture migrations, and high-throughput production API integrations.
+* **2. Technical Consultation & Code Review:**
+  PostgreSQL/MySQL schema modeling, latency and performance profiling, security audits, and engineering mentorship for developer teams.
+* **3. Workshops & Speaking Engagements:**
+  Hands-on coding workshops, pedagogical curriculum design and delivery, and technical speaking for students, schools, and developer conferences.`,
+      links: [
+        { label: "Get in Touch", url: "/contact" },
+        { label: "Explore 18 Shipped Projects", url: "/projects" },
+        { label: "View Teaching & Workshop Records", url: "/experience" }
+      ]
+    }
+  },
   AGE_INFO: {
     id: {
       title: `Usia, Kelahiran & Domisili Adyvka`,
@@ -10687,7 +11348,133 @@ export const SUGGESTION_EXACT_MAP = {
   "berapa nilai proyek capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
   "berapa nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
   "apa evaluasi dan nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
-  "ceritakan nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE"
+  "ceritakan nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "tell me about the two tracks six years journey from 2021 to 2026": "TWO_TRACKS_TIMELINE",
+  "tell me about the two tracks six years section in about page": "TWO_TRACKS_TIMELINE",
+  "tell me about the two tracks six years": "TWO_TRACKS_TIMELINE",
+  "what is adyvka story from 2021 to 2026": "TWO_TRACKS_TIMELINE",
+  "tell me about adyvka journey from 2021 to 2026": "TWO_TRACKS_TIMELINE",
+  "bagaimana cerita adyvka dari 2021 - 2026": "TWO_TRACKS_TIMELINE",
+  "bagaimana cerita adyvka dari 2021 sampai 2026": "TWO_TRACKS_TIMELINE",
+  "ceritakan perjalanan adyvka dari 2021 sampai 2026": "TWO_TRACKS_TIMELINE",
+  "cerita adyvka 2021 2026": "TWO_TRACKS_TIMELINE",
+  "ceritakan section two tracks six years": "TWO_TRACKS_TIMELINE",
+  "ceritakan section two tracks six years di halaman about": "TWO_TRACKS_TIMELINE",
+  "apa itu two tracks six years": "TWO_TRACKS_TIMELINE",
+  "bagaimana timeline perjalanan teknis dan kepemimpinan adyvka": "TWO_TRACKS_TIMELINE",
+  "apa yang dilewati adyvka dari 2021 hingga 2026": "TWO_TRACKS_TIMELINE",
+  "apa yang bisa adyvka lakukan": "WHAT_ADYVKA_CAN_DO",
+  "apa aktifitas atau kesibukan adyvka saat ini": "INTERVIEW_CURRENT_ACTIVITIES",
+  "apa aktivitas adyvka saat ini": "INTERVIEW_CURRENT_ACTIVITIES",
+  "ceritakan kesibukan adyvka saat ini": "INTERVIEW_CURRENT_ACTIVITIES",
+  "kesibukan adyvka saat ini": "INTERVIEW_CURRENT_ACTIVITIES",
+  "kesibukan kelas 12 adyvka": "INTERVIEW_CURRENT_ACTIVITIES",
+  "bagaimana rutinitas magang dan sekolah adyvka": "INTERVIEW_CURRENT_ACTIVITIES",
+  "aktivitas magang pt ardyanda dan sekolah": "INTERVIEW_CURRENT_ACTIVITIES",
+  "what is adyvka current daily routine and activities": "INTERVIEW_CURRENT_ACTIVITIES",
+  "tell me about adyvka current activities in grade 12": "INTERVIEW_CURRENT_ACTIVITIES",
+  "what is adyvka current routine in grade 12": "INTERVIEW_CURRENT_ACTIVITIES",
+  "apa impian atau rencana studi lanjut adyvka": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "apa rencana studi lanjut adyvka": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "kemana rencana kuliah atau studi sarjana adyvka": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "apa impian karier adyvka": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "apa rencana karier jangka panjang adyvka": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "rencana kuliah adyvka": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "what are adyvka higher education and career goals": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "what are adyvka university and study plans": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "where does adyvka plan to study for undergraduate degree": "INTERVIEW_FUTURE_STUDY_CAREER",
+  "siapa role model atau tokoh panutan adyvka": "INTERVIEW_ROLE_MODEL",
+  "siapa role model adyvka": "INTERVIEW_ROLE_MODEL",
+  "siapa tokoh panutan adyvka": "INTERVIEW_ROLE_MODEL",
+  "siapa yang menginspirasi adyvka": "INTERVIEW_ROLE_MODEL",
+  "kenapa david j malan menjadi role model adyvka": "INTERVIEW_ROLE_MODEL",
+  "kenapa david malan menginspirasi adyvka": "INTERVIEW_ROLE_MODEL",
+  "who is adyvka role model": "INTERVIEW_ROLE_MODEL",
+  "who inspires adyvka in computer science": "INTERVIEW_ROLE_MODEL",
+  "why is david malan adyvka role model": "INTERVIEW_ROLE_MODEL",
+  "apa kekurangan adyvka": "INTERVIEW_WEAKNESSES",
+  "apa kelemahan adyvka": "INTERVIEW_WEAKNESSES",
+  "apa saja kekurangan adyvka": "INTERVIEW_WEAKNESSES",
+  "apa saja kelemahan adyvka": "INTERVIEW_WEAKNESSES",
+  "apa area pengembangan diri adyvka": "INTERVIEW_WEAKNESSES",
+  "sebutkan kelemahan adyvka dan bagaimana mengatasinya": "INTERVIEW_WEAKNESSES",
+  "what are adyvka weaknesses": "INTERVIEW_WEAKNESSES",
+  "what is adyvka weakness": "INTERVIEW_WEAKNESSES",
+  "what are adyvka areas for growth": "INTERVIEW_WEAKNESSES",
+  "what is adyvka greatest weakness and how does he handle it": "INTERVIEW_WEAKNESSES",
+  "ceritakan kegagalan adyvka": "INTERVIEW_FAILURE_RESILIENCE",
+  "apa kegagalan terbesar adyvka": "INTERVIEW_FAILURE_RESILIENCE",
+  "apa kegagalan adyvka": "INTERVIEW_FAILURE_RESILIENCE",
+  "ceritakan kegagalan terbesar adyvka dan bagaimana mengatasinya": "INTERVIEW_FAILURE_RESILIENCE",
+  "pernahkah adyvka gagal dalam proyek atau hidup": "INTERVIEW_FAILURE_RESILIENCE",
+  "bagaimana adyvka bangkit dari kegagalan": "INTERVIEW_FAILURE_RESILIENCE",
+  "tell me about a time adyvka failed": "INTERVIEW_FAILURE_RESILIENCE",
+  "what was adyvka biggest failure and what did he learn": "INTERVIEW_FAILURE_RESILIENCE",
+  "how does adyvka handle setbacks and failure": "INTERVIEW_FAILURE_RESILIENCE",
+  "apa projek besar atau ide besar adyvka di masa depan": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "projek besar atau rencana ide besar di masa depan": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "apa ide besar adyvka": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "ceritakan rencana ide besar masa depan adyvka": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "proyek ambisius apa yang ingin dibangun adyvka": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "what is adyvka big future project or ambitious idea": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "what ambitious systems does adyvka want to build in the future": "INTERVIEW_BIG_FUTURE_PROJECT",
+  "bagaimana adyvka membagi waktu antara magang sekolah dan proyek": "INTERVIEW_TIME_MANAGEMENT",
+  "bagaimana manajemen waktu adyvka": "INTERVIEW_TIME_MANAGEMENT",
+  "bagaimana adyvka mengatur prioritas kerja dan belajar": "INTERVIEW_TIME_MANAGEMENT",
+  "how does adyvka manage time between internship school and freelance": "INTERVIEW_TIME_MANAGEMENT",
+  "how does adyvka prioritize multiple responsibilities": "INTERVIEW_TIME_MANAGEMENT",
+  "bagaimana adyvka menangani perbedaan pendapat atau konflik dalam tim": "INTERVIEW_TEAM_CONFLICT",
+  "bagaimana cara adyvka menyelesaikan konflik tim": "INTERVIEW_TEAM_CONFLICT",
+  "bagaimana adyvka menghadapi perselisihan teknis": "INTERVIEW_TEAM_CONFLICT",
+  "how does adyvka handle team conflicts or technical disagreements": "INTERVIEW_TEAM_CONFLICT",
+  "how does adyvka collaborate when there are differing opinions": "INTERVIEW_TEAM_CONFLICT",
+  "mengapa adyvka memilih rekayasa perangkat lunak": "INTERVIEW_WHY_CS",
+  "kenapa adyvka memilih jurusan rpl dan koding": "INTERVIEW_WHY_CS",
+  "apa motivasi adyvka memilih computer science": "INTERVIEW_WHY_CS",
+  "why did adyvka choose software engineering and computer science": "INTERVIEW_WHY_CS",
+  "what motivates adyvka to code and build systems": "INTERVIEW_WHY_CS",
+  "apa saja yang bisa adyvka lakukan": "WHAT_ADYVKA_CAN_DO",
+  "apa yang bisa dilakukan adyvka": "WHAT_ADYVKA_CAN_DO",
+  "apa saja yang bisa dilakukan adyvka": "WHAT_ADYVKA_CAN_DO",
+  "adyvka bisa apa": "WHAT_ADYVKA_CAN_DO",
+  "adyvka bisa apa saja": "WHAT_ADYVKA_CAN_DO",
+  "bisa apa saja adyvka": "WHAT_ADYVKA_CAN_DO",
+  "apa yang bisa dikerjakan adyvka": "WHAT_ADYVKA_CAN_DO",
+  "kemampuan adyvka": "WHAT_ADYVKA_CAN_DO",
+  "what can adyvka do": "WHAT_ADYVKA_CAN_DO",
+  "what does adyvka do": "WHAT_ADYVKA_CAN_DO",
+  "what can adyvka build": "WHAT_ADYVKA_CAN_DO",
+  "what is adyvka capable of": "WHAT_ADYVKA_CAN_DO",
+  "what are adyvka capabilities": "WHAT_ADYVKA_CAN_DO",
+  "apa yang dibuat adyvka": "LIST_PROJECTS",
+  "apa saja yang dibuat adyvka": "LIST_PROJECTS",
+  "apa saja projek yang dibuat adyvka": "LIST_PROJECTS",
+  "what is adyvka working on and exploring right now": "ABOUT_CURRENT_FOCUS",
+  "what is open in the tabs right now": "ABOUT_CURRENT_FOCUS",
+  "apa yang sedang dikerjakan adyvka saat ini": "ABOUT_CURRENT_FOCUS",
+  "apa fokus utama adyvka saat ini": "ABOUT_CURRENT_FOCUS",
+  "ceritakan section right now di halaman about": "ABOUT_CURRENT_FOCUS",
+  "apa yang sedang dibuka di tab adyvka": "ABOUT_CURRENT_FOCUS",
+  "what is adyvka career direction and next chapter for 2027": "ABOUT_WHATS_NEXT",
+  "what is next for adyvka": "ABOUT_WHATS_NEXT",
+  "apa rencana adyvka setelah lulus 2027": "ABOUT_WHATS_NEXT",
+  "kapan adyvka lulus dan apa rencana ke depan": "ABOUT_WHATS_NEXT",
+  "ceritakan section what is next di halaman about": "ABOUT_WHATS_NEXT",
+  "ceritakan section whats next di halaman about": "ABOUT_WHATS_NEXT",
+  "what are adyvka core capabilities and soft skills": "ABOUT_CORE_CAPABILITIES",
+  "apa saja soft skills atau core capabilities adyvka di halaman about": "ABOUT_CORE_CAPABILITIES",
+  "apa keahlian non teknis adyvka": "ABOUT_CORE_CAPABILITIES",
+  "ceritakan core capabilities adyvka": "ABOUT_CORE_CAPABILITIES",
+  "what is adyvka engineering philosophy and quote": "ABOUT_PHILOSOPHY_QUOTE",
+  "apa filosofi atau quote adyvka": "ABOUT_PHILOSOPHY_QUOTE",
+  "apa arti quote code is how i build systems": "ABOUT_PHILOSOPHY_QUOTE",
+  "apa filosofi rekayasa adyvka": "ABOUT_PHILOSOPHY_QUOTE",
+  "what services and deliverables can adyvka provide for our team": "CONTACT_SERVICES_SCOPE",
+  "what can adyvka deliver for our team": "CONTACT_SERVICES_SCOPE",
+  "layanan atau jasa apa yang bisa adyvka berikan untuk tim kami": "CONTACT_SERVICES_SCOPE",
+  "apa saja deliverable yang bisa dikerjakan adyvka untuk tim": "CONTACT_SERVICES_SCOPE",
+  "apakah adyvka menerima konsultasi kode atau review kode": "CONTACT_SERVICES_SCOPE",
+  "apakah adyvka bisa diundang untuk workshop atau speaking": "CONTACT_SERVICES_SCOPE"
 };
 
 export function findBestAnswer(rawQuery) {
@@ -10723,8 +11510,175 @@ export function findBestAnswer(rawQuery) {
   // Supports comprehensive Indonesian and English natural language questions
   // -------------------------------------------------------------------------
 
-  // 1. Direct Contact Sub-Topics
+  // 0. Website Page & Section Specific Inquiries
   if (
+    normalized.includes("david malan") ||
+    normalized.includes("david j malan") ||
+    normalized.includes("role model") ||
+    normalized.includes("panutan") ||
+    normalized.includes("tokoh panutan") ||
+    ((normalized.includes("menginspirasi") || normalized.includes("inspirasi") || normalized.includes("inspires")) && (normalized.includes("adyvka") || normalized.includes("kamu") || normalized.includes("koding")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_ROLE_MODEL;
+  }
+  else if (
+    normalized.includes("kekurangan") ||
+    normalized.includes("kelemahan") ||
+    normalized.includes("weakness") ||
+    normalized.includes("weaknesses") ||
+    normalized.includes("areas for growth") ||
+    normalized.includes("area pengembangan") ||
+    normalized.includes("titik lemah")
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_WEAKNESSES;
+  }
+  else if (
+    normalized.includes("kegagalan") ||
+    normalized.includes("pernah gagal") ||
+    normalized.includes("biggest failure") ||
+    normalized.includes("time adyvka failed") ||
+    normalized.includes("setback") ||
+    normalized.includes("setbacks") ||
+    (normalized.includes("gagal") && (normalized.includes("proyek") || normalized.includes("hidup") || normalized.includes("pernah") || normalized.includes("adyvka") || normalized.includes("ceritakan")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_FAILURE_RESILIENCE;
+  }
+  else if (
+    normalized.includes("projek besar") ||
+    normalized.includes("proyek besar") ||
+    normalized.includes("ide besar") ||
+    normalized.includes("rencana ide besar") ||
+    normalized.includes("proyek ambisius") ||
+    normalized.includes("ambitious idea") ||
+    normalized.includes("big future project") ||
+    normalized.includes("ambitious systems") ||
+    (normalized.includes("ambisi") && (normalized.includes("masa depan") || normalized.includes("proyek") || normalized.includes("projek")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_BIG_FUTURE_PROJECT;
+  }
+  else if (
+    (normalized.includes("studi lanjut") || normalized.includes("kuliah") || normalized.includes("universitas") || normalized.includes("undergraduate") || normalized.includes("sarjana") || normalized.includes("degree") || normalized.includes("higher education")) &&
+    (normalized.includes("rencana") || normalized.includes("impian") || normalized.includes("plan") || normalized.includes("goals") || normalized.includes("kemana") || normalized.includes("dimana") || normalized.includes("study"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_FUTURE_STUDY_CAREER;
+  }
+  else if (
+    (normalized.includes("magang") || normalized.includes("kelas 12") || normalized.includes("ardyanda")) &&
+    (normalized.includes("kesibukan") || normalized.includes("aktifitas") || normalized.includes("aktivitas") || normalized.includes("rutinitas") || normalized.includes("kegiatan") || normalized.includes("sehari hari") || normalized.includes("routine"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_CURRENT_ACTIVITIES;
+  }
+  else if (
+    (normalized.includes("membagi waktu") || normalized.includes("manajemen waktu") || normalized.includes("manage time") || normalized.includes("time management") || normalized.includes("prioritas kerja")) &&
+    (normalized.includes("magang") || normalized.includes("sekolah") || normalized.includes("freelance") || normalized.includes("proyek") || normalized.includes("adyvka") || normalized.includes("belajar"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_TIME_MANAGEMENT;
+  }
+  else if (
+    normalized.includes("konflik") ||
+    normalized.includes("perbedaan pendapat") ||
+    normalized.includes("team conflict") ||
+    normalized.includes("team conflicts") ||
+    normalized.includes("technical disagreement") ||
+    normalized.includes("perselisihan teknis") ||
+    (normalized.includes("beda pendapat") && normalized.includes("tim"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_TEAM_CONFLICT;
+  }
+  else if (
+    (normalized.includes("mengapa") || normalized.includes("kenapa") || normalized.includes("why") || normalized.includes("motivasi")) &&
+    (normalized.includes("rekayasa perangkat lunak") || normalized.includes("software engineering") || normalized.includes("computer science") || normalized.includes("jurusan rpl") || normalized.includes("memilih koding") || normalized.includes("memilih coding"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_WHY_CS;
+  }
+  else if (
+    normalized.includes("bisa adyvka lakukan") ||
+    normalized.includes("bisa dilakukan adyvka") ||
+    normalized.includes("yang bisa adyvka") ||
+    normalized.includes("adyvka bisa apa") ||
+    normalized.includes("bisa apa saja") ||
+    normalized.includes("bisa apa adyvka") ||
+    normalized.includes("apa yang bisa dikerjakan") ||
+    normalized.includes("apa saja yang bisa dilakukan") ||
+    normalized.includes("what can adyvka do") ||
+    normalized.includes("what is adyvka capable of") ||
+    normalized.includes("what can adyvka build") ||
+    normalized.includes("what does adyvka do") ||
+    (normalized.includes("kemampuan") && normalized.includes("adyvka")) ||
+    (normalized.includes("kapabilitas") && normalized.includes("adyvka")) ||
+    ((tokens.has("bisa") || tokens.has("mampu")) && (tokens.has("lakukan") || tokens.has("buat") || tokens.has("kerjakan") || tokens.has("bikin"))) ||
+    ((tokens.has("can") || tokens.has("capable")) && (tokens.has("do") || tokens.has("build") || tokens.has("deliver") || tokens.has("create")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.WHAT_ADYVKA_CAN_DO;
+  }
+  else if (
+    normalized.includes("apa yang dibuat") ||
+    normalized.includes("apa yang dibangun") ||
+    normalized.includes("projek apa saja yang dibuat") ||
+    normalized.includes("proyek apa saja yang dibuat") ||
+    (tokens.has("dibuat") && (tokens.has("proyek") || tokens.has("projek") || tokens.has("software") || tokens.has("aplikasi") || tokens.has("karya")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.LIST_PROJECTS;
+  }
+  else if (
+    (normalized.includes("2021") && normalized.includes("2026")) ||
+    normalized.includes("two tracks") ||
+    normalized.includes("six years") ||
+    normalized.includes("enam tahun") ||
+    (normalized.includes("cerita") && (normalized.includes("2021") || normalized.includes("perjalanan"))) ||
+    (normalized.includes("timeline") && (normalized.includes("about") || normalized.includes("karier") || normalized.includes("career") || normalized.includes("perjalanan") || normalized.includes("teknis") || normalized.includes("hidup")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.TWO_TRACKS_TIMELINE;
+  }
+  else if (
+    normalized.includes("right now") ||
+    normalized.includes("open in the tabs") ||
+    normalized.includes("sedang dibuka di tab") ||
+    ((normalized.includes("saat ini") || normalized.includes("sekarang") || normalized.includes("currently") || normalized.includes("right now")) &&
+     (normalized.includes("fokus") || normalized.includes("focus") || normalized.includes("dikerjakan") || normalized.includes("working on") || normalized.includes("bangun") || normalized.includes("building") || normalized.includes("aktivitas") || normalized.includes("activities") || normalized.includes("sibuk") || normalized.includes("kesibukan") || normalized.includes("projek saat ini") || normalized.includes("proyek saat ini")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ABOUT_CURRENT_FOCUS;
+  }
+  else if (
+    normalized.includes("what is next") ||
+    normalized.includes("whats next") ||
+    normalized.includes("next chapter") ||
+    normalized.includes("bab berikutnya") ||
+    (normalized.includes("2027") && (normalized.includes("lulus") || normalized.includes("graduate") || normalized.includes("graduating") || normalized.includes("kelulusan") || normalized.includes("rencana") || normalized.includes("karier") || normalized.includes("kuliah"))) ||
+    ((normalized.includes("rencana") || normalized.includes("plan") || normalized.includes("direction") || normalized.includes("tujuan")) && (normalized.includes("ke depan") || normalized.includes("masa depan") || normalized.includes("future") || normalized.includes("next") || normalized.includes("karier")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ABOUT_WHATS_NEXT;
+  }
+  else if (
+    normalized.includes("core capabilities") ||
+    normalized.includes("beyond the code") ||
+    (normalized.includes("soft skill") || normalized.includes("soft skills") || normalized.includes("non teknis") || normalized.includes("interpersonal") || normalized.includes("karakter") || normalized.includes("kemampuan inti"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ABOUT_CORE_CAPABILITIES;
+  }
+  else if (
+    normalized.includes("quote") ||
+    normalized.includes("kutipan") ||
+    normalized.includes("code is how i build") ||
+    normalized.includes("built early kept building") ||
+    ((normalized.includes("filosofi") || normalized.includes("philosophy") || normalized.includes("prinsip")) && (normalized.includes("koding") || normalized.includes("coding") || normalized.includes("rekayasa") || normalized.includes("engineering") || normalized.includes("kerja") || normalized.includes("hidup")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.ABOUT_PHILOSOPHY_QUOTE;
+  }
+  else if (
+    normalized.includes("what i can deliver") ||
+    normalized.includes("deliver for your team") ||
+    normalized.includes("deliver for our team") ||
+    (normalized.includes("deliverables") && (normalized.includes("team") || normalized.includes("tim") || normalized.includes("jasa") || normalized.includes("layanan"))) ||
+    ((normalized.includes("layanan") || normalized.includes("services") || normalized.includes("jasa") || normalized.includes("lingkup kerja") || normalized.includes("scope of work")) && (normalized.includes("tim") || normalized.includes("team") || normalized.includes("perusahaan") || normalized.includes("klien") || normalized.includes("adyvka") || normalized.includes("bisa"))) ||
+    ((normalized.includes("konsultasi") || normalized.includes("consultation")) && (normalized.includes("kode") || normalized.includes("code") || normalized.includes("arsitektur") || normalized.includes("review"))) ||
+    ((normalized.includes("workshop") || normalized.includes("speaking") || normalized.includes("pembicara") || normalized.includes("narasumber")) && (normalized.includes("undang") || normalized.includes("invite") || normalized.includes("bisa") || normalized.includes("terima") || normalized.includes("isi")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CONTACT_SERVICES_SCOPE;
+  }
+
+  // 1. Direct Contact Sub-Topics
+  else if (
     normalized.includes("whatsapp hotline") ||
     ((tokens.has("whatsapp") || tokens.has("wa")) && (tokens.has("hotline") || tokens.has("reach") || tokens.has("kontak") || tokens.has("nomor") || tokens.has("channel")))
   ) {
