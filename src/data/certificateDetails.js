@@ -1,5 +1,7 @@
 // src/data/certificateDetails.js
 // Comprehensive, verified, and detailed credentials data for all 23 certificates
+import transcriptImg from "../assets/certificates/coding-camp-2026-final-transcript.webp";
+import transcriptPdf from "../assets/certificates/coding-camp-2026-final-transcript.pdf";
 
 export const certificateDetails = {
   "cs50-introduction-to-computer-science": {
@@ -33,31 +35,150 @@ export const certificateDetails = {
     "issuer": "Dicoding Indonesia \u00d7 DBS Foundation",
     "issued": "Apr 2026",
     "track": "Full Stack Web Engineering",
-    "effort": "90+ Hours \u00b7 Corporate Sponsored",
-    "credentialId": "DICODING-DBS-FS-2026",
+    "effort": "766 Hours \u00b7 Corporate Sponsored",
+    "credentialId": "CFS211D6Y054",
     "verifyUrl": "https://www.dicoding.com/certificates",
-    "summary": "Intensive corporate-sponsored full-stack bootcamp focused on production-grade web application architecture, spanning RESTful API design, modern React frontend patterns, secure authentication, and CI/CD deployment.",
+    "summary": "Intensive corporate-sponsored full-stack engineering program by DBS Foundation and Dicoding, spanning foundational programming logic, AWS cloud and generative AI, responsive frontend interfaces, React architecture, scalable backend services, and a production-grade Capstone platform (RuangTumbuh).",
     "skills": [
       "React",
       "Node.js",
       "Express",
       "REST APIs",
-      "JWT Auth",
       "PostgreSQL",
-      "Full Stack Architecture"
+      "AWS Cloud & Gen AI",
+      "Full Stack Architecture",
+      "Child Health Tech"
     ],
     "highlights": [
-      "Decoupled full-stack architecture with Express backend and React frontend",
-      "Client-side state management, optimistic UI updates, and intelligent caching",
-      "Secure JWT-based authentication, CORS policies, and SQL/XSS input sanitization",
-      "Automated integration testing and production containerized deployment pipelines"
+      "Completed 766 curriculum hours with an overall grade of A (Average Score: 89/100)",
+      "Engineered RuangTumbuh as the team capstone project (Score: 93/100, Grade A, 250 hours)",
+      "Maintained 94% mandatory attendance and 90% overall cohort session attendance",
+      "Mastered 8 core technical modules from programming fundamentals to cloud-native backends"
     ],
-    "application": "Established industry standards for architecting scalable full-stack applications, directly influencing my development process across freelance client projects and internal school business suites."
+    "application": "Directly translated into architecting RuangTumbuh, an AI-augmented pediatric screening and child development monitoring platform, as well as production systems delivered for enterprise clients.",
+    "transcript": {
+      "cohortId": "CFS211D6Y054",
+      "institution": "SMK Islamic Development Network (IDN Boarding School)",
+      "nisn": "0094329760",
+      "supervisor": "Dion Ahza Rabbani",
+      "transcriptStatus": "Final",
+      "completionStatus": "Full Graduated",
+      "learningPath": "Full-Stack Web Developer",
+      "totalHours": 766,
+      "averageScore": 89,
+      "finalGrade": "A",
+      "attendance": {
+        "mandatory": "94%",
+        "overall": "90%"
+      },
+      "capstone": {
+        "teamId": "CC26-PS050",
+        "projectName": "RuangTumbuh",
+        "projectSlug": "ruangtumbuh",
+        "projectDescription": "AI-augmented pediatric screening and child development monitoring platform based on WHO growth standards",
+        "hours": 250,
+        "score": 93,
+        "grade": "A"
+      },
+      "docImage": transcriptImg,
+      "docPdf": transcriptPdf,
+      "courses": [
+        {
+          "code": "CCMT01",
+          "title": "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+          "hours": 9,
+          "score": 90,
+          "grade": "A",
+          "certSlug": "meniti-karier-sebagai-software-developer"
+        },
+        {
+          "code": "CCMT02",
+          "title": "Pengenalan Ke Logika Pemrograman",
+          "hours": 6,
+          "score": 93,
+          "grade": "A",
+          "certSlug": "pengenalan-ke-logika-pemrograman"
+        },
+        {
+          "code": "CCMT03",
+          "title": "Belajar Dasar Cloud dan Gen AI di AWS",
+          "hours": 18,
+          "score": 93,
+          "grade": "A",
+          "certSlug": "cloud-practitioner-essentials"
+        },
+        {
+          "code": "CCFS01",
+          "title": "Belajar Dasar Pemrograman Web",
+          "hours": 45,
+          "score": 85,
+          "grade": "A",
+          "certSlug": "belajar-dasar-pemrograman-web"
+        },
+        {
+          "code": "CCFS02",
+          "title": "Belajar Dasar Pemrograman JavaScript",
+          "hours": 46,
+          "score": 83,
+          "grade": "B",
+          "certSlug": "belajar-dasar-pemrograman-javascript"
+        },
+        {
+          "code": "CCFS03",
+          "title": "Belajar Membuat Aplikasi Front-End Web untuk Pemula",
+          "hours": 45,
+          "score": 93,
+          "grade": "A",
+          "certSlug": "frontend-web-developer"
+        },
+        {
+          "code": "CCFS04",
+          "title": "Belajar Membuat Aplikasi Web dengan React",
+          "hours": 35,
+          "score": 88,
+          "grade": "A",
+          "certSlug": "belajar-membuat-aplikasi-web-dengan-react"
+        },
+        {
+          "code": "CCFS05",
+          "title": "Belajar Back-End Pemula dengan JavaScript",
+          "hours": 50,
+          "score": 93,
+          "grade": "A",
+          "certSlug": "belajar-membuat-aplikasi-back-end"
+        },
+        {
+          "code": "CCCP01",
+          "title": "Capstone / Final Project (RuangTumbuh)",
+          "hours": 250,
+          "score": 93,
+          "grade": "A",
+          "projectSlug": "ruangtumbuh"
+        },
+        {
+          "code": "CCSS02",
+          "title": "Soft Skills & Career Development",
+          "hours": 262,
+          "score": 83,
+          "grade": "B"
+        }
+      ]
+    }
   },
   "frontend-web-developer": {
     "title": "Frontend Web Developer",
     "issuer": "Dicoding Indonesia",
     "issued": "Mar 2026",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCFS03",
+      "courseName": "Belajar Membuat Aplikasi Front-End Web untuk Pemula",
+      "hours": "45 Hours",
+      "score": "93 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Modern Frontend Architecture",
     "effort": "60+ Hours \u00b7 Professional Track",
     "credentialId": "DICODING-FE-2026-DEV",
@@ -108,6 +229,16 @@ export const certificateDetails = {
     "title": "Belajar Membuat Aplikasi Back-End",
     "issuer": "Dicoding Indonesia",
     "issued": "2024",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCFS05",
+      "courseName": "Belajar Back-End Pemula dengan JavaScript",
+      "hours": "50 Hours",
+      "score": "93 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Backend Engineering & REST APIs",
     "effort": "55+ Hours \u00b7 Intermediate Track",
     "credentialId": "DICODING-BE-2024-REST",
@@ -256,6 +387,16 @@ export const certificateDetails = {
     "title": "Belajar Dasar Pemrograman JavaScript",
     "issuer": "Dicoding Indonesia",
     "issued": "2024",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCFS02",
+      "courseName": "Belajar Dasar Pemrograman JavaScript",
+      "hours": "46 Hours",
+      "score": "83 / 100",
+      "grade": "B",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Frontend & JavaScript Runtime",
     "effort": "50+ Hours \u00b7 Foundational Track",
     "credentialId": "DICODING-JS-2024-CORE",
@@ -281,6 +422,16 @@ export const certificateDetails = {
     "title": "Cloud Practitioner Essentials",
     "issuer": "Amazon Web Services (AWS)",
     "issued": "2024",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCMT03",
+      "courseName": "Belajar Dasar Cloud dan Gen AI di AWS",
+      "hours": "18 Hours",
+      "score": "93 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Cloud Architecture & Infrastructure",
     "effort": "40+ Hours \u00b7 Cloud Foundations",
     "credentialId": "AWS-CP-2024-CLOUD",
@@ -306,6 +457,16 @@ export const certificateDetails = {
     "title": "Belajar Membuat Aplikasi Web dengan React",
     "issuer": "Dicoding Indonesia",
     "issued": "2025",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCFS04",
+      "courseName": "Belajar Membuat Aplikasi Web dengan React",
+      "hours": "35 Hours",
+      "score": "88 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Frontend Component Architecture",
     "effort": "60+ Hours \u00b7 Intermediate Track",
     "credentialId": "DICODING-REACT-2025-DEV",
@@ -355,6 +516,16 @@ export const certificateDetails = {
     "title": "Belajar Dasar Pemrograman Web",
     "issuer": "Dicoding Indonesia",
     "issued": "2024",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCFS01",
+      "courseName": "Belajar Dasar Pemrograman Web",
+      "hours": "45 Hours",
+      "score": "85 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Web Fundamentals",
     "effort": "40+ Hours \u00b7 Foundational Track",
     "credentialId": "DICODING-WEB-2024-BASE",
@@ -379,6 +550,16 @@ export const certificateDetails = {
     "title": "Pengenalan ke Logika Pemrograman",
     "issuer": "Dicoding Indonesia",
     "issued": "2023",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCMT02",
+      "courseName": "Pengenalan Ke Logika Pemrograman",
+      "hours": "6 Hours",
+      "score": "93 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Computational Logic & Algorithms",
     "effort": "20+ Hours \u00b7 Foundational Track",
     "credentialId": "DICODING-LOGIC-2023-CS",
@@ -452,6 +633,16 @@ export const certificateDetails = {
     "title": "Meniti Karier Sebagai Software Developer",
     "issuer": "Dicoding Indonesia",
     "issued": "2024",
+    "transcriptGrade": {
+      "program": "DBS Foundation Coding Camp 2026",
+      "courseCode": "CCMT01",
+      "courseName": "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+      "hours": "9 Hours",
+      "score": "90 / 100",
+      "grade": "A",
+      "cohortId": "CFS211D6Y054",
+      "parentSlug": "coding-camp-full-stack-developer"
+    },
     "track": "Software Engineering & Industry Standards",
     "effort": "15+ Hours \u00b7 Professional Track",
     "credentialId": "DICODING-CAREER-2024",

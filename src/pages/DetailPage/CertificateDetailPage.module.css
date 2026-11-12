@@ -479,3 +479,408 @@
     opacity: 1;
   }
 }
+
+/* ==========================================================================
+   ACADEMIC TRANSCRIPT STYLES
+   ========================================================================== */
+
+.transcriptGradeCard {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transcriptGradeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transcriptBadge {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.transcriptGradeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transcriptScorePill {
+  font-family: "Geist Mono", monospace;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.transcriptCourseName {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ink-200);
+  margin: 0;
+}
+
+.transcriptMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-400);
+}
+
+.viewTranscriptLink {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #34d399;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.viewTranscriptLink:hover {
+  color: #6ee7b7;
+  gap: 0.6rem;
+}
+
+/* FULL TRANSCRIPT SECTION (FOR CODING CAMP) */
+.transcriptSection {
+  width: 100%;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.transcriptHeader {
+  margin-bottom: 2rem;
+}
+
+.sectionTag {
+  display: inline-block;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #34d399;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+}
+
+.sectionLead {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-300);
+  max-width: 48rem;
+  margin: 0;
+}
+
+.transcriptMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 860px) {
+  .transcriptMetricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .transcriptMetricsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metricCard {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metricVal {
+  font-family: "Geist Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.metricLabel {
+  font-size: 0.8125rem;
+  color: var(--ink-300);
+}
+
+.metricSub {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.6875rem;
+  color: var(--ink-400);
+}
+
+/* CAPSTONE HIGHLIGHT CARD */
+.capstoneCard {
+  margin-bottom: 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.capstoneHeaderRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.capstoneBadge {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.capstoneScoreBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.capstoneBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.capstoneTitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.capstoneDesc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--ink-200);
+  max-width: 52rem;
+  margin: 0;
+}
+
+.capstoneBtn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #070709;
+  background: #34d399;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.capstoneBtn:hover {
+  background: #6ee7b7;
+  transform: translateY(-1px);
+}
+
+/* COURSES TABLE */
+.tableSectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 1rem;
+}
+
+.coursesTableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(20, 20, 24, 0.6);
+  margin-bottom: 2.5rem;
+}
+
+.coursesTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+  min-width: 600px;
+}
+
+.coursesTable th {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.875rem 1rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.coursesTable td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--ink-200);
+}
+
+.coursesTable tr:last-child td {
+  border-bottom: none;
+}
+
+.coursesTable tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.codeCell {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--ink-400);
+  white-space: nowrap;
+}
+
+.courseLink {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.courseLink:hover {
+  color: #34d399;
+}
+
+.numCell {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8125rem;
+  color: #ffffff;
+}
+
+.gradePillA {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.375rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.gradePillB {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.375rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.totalRow td {
+  background: rgba(255, 255, 255, 0.03);
+  font-weight: 600;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* TRANSCRIPT DOCUMENT CARD */
+.transcriptDocCard {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 20, 24, 0.8);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.transcriptDocFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(15, 15, 18, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.docInfo {
+  font-size: 0.8125rem;
+  color: var(--ink-300);
+}
+
+.downloadPdfBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.downloadPdfBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}

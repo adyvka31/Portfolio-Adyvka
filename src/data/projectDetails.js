@@ -1,86 +1,86 @@
-import richobahariImg from "../assets/cv-richo-bahari-machinery-corporate-website.webp";
+import richobahariImg from "../assets/projects/cv-richo-bahari-machinery-corporate-website.webp";
 import richobahari1 from "../assets/richobahari/cv-richo-bahari-machinery-catalog-1.webp";
 import richobahari2 from "../assets/richobahari/cv-richo-bahari-product-specification-2.webp";
 import richobahari3 from "../assets/richobahari/cv-richo-bahari-responsive-layout-3.webp";
 import richobahari4 from "../assets/richobahari/cv-richo-bahari-corporate-inquiry-4.webp";
-import terastaniImg from "../assets/terastani-agriculture-ecommerce-marketplace.webp";
+import terastaniImg from "../assets/projects/terastani-agriculture-ecommerce-marketplace.webp";
 import terastani1 from "../assets/terastani/terastani-harvest-marketplace-catalog-1.webp";
 import terastani2 from "../assets/terastani/terastani-farmer-direct-pricing-2.webp";
 import terastani3 from "../assets/terastani/terastani-logistics-delivery-tracking-3.webp";
 import terastani4 from "../assets/terastani/terastani-farmer-cooperative-dashboard-4.webp";
-import kepkImg from "../assets/kepk-umj-medical-research-ethics-platform.webp";
+import kepkImg from "../assets/projects/kepk-umj-medical-research-ethics-platform.webp";
 import kepk1 from "../assets/kepk/kepk-umj-protocol-submission-console-1.webp";
 import kepk2 from "../assets/kepk/kepk-umj-reviewer-scoring-matrix-2.webp";
 import kepk3 from "../assets/kepk/kepk-umj-committee-decision-interface-3.webp";
 import kepk4 from "../assets/kepk/kepk-umj-audit-log-security-dashboard-4.webp";
-import databankImg from "../assets/databank-erp-telecommunication-system.webp";
+import databankImg from "../assets/projects/databank-erp-telecommunication-system.webp";
 import databank1 from "../assets/databank/databank-erp-dashboard-telecom-site-1.png";
 import databank2 from "../assets/databank/databank-erp-inventory-management-2.png";
 import databank3 from "../assets/databank/databank-erp-database-schema-architecture-3.png";
 import databank4 from "../assets/databank/databank-erp-analytics-reporting-console-4.png";
-import ruangtumbuhImg from "../assets/ruang-tumbuh-pediatric-screening-platform.webp";
+import ruangtumbuhImg from "../assets/projects/ruang-tumbuh-pediatric-screening-platform.webp";
 import ruangtumbuh1 from "../assets/ruangtumbuh/ruang-tumbuh-child-growth-assessment-1.webp";
 import ruangtumbuh2 from "../assets/ruangtumbuh/ruang-tumbuh-pediatric-screening-report-2.webp";
 import ruangtumbuh3 from "../assets/ruangtumbuh/ruang-tumbuh-parental-guidance-dashboard-3.webp";
 import ruangtumbuh4 from "../assets/ruangtumbuh/ruang-tumbuh-clinical-growth-chart-4.webp";
-import fitsmartImg from "../assets/fitsmart-ai-nutrition-fitness-assistant.webp";
+import fitsmartImg from "../assets/projects/fitsmart-ai-nutrition-fitness-assistant.webp";
 import fitsmart1 from "../assets/fitsmart/fitsmart-workout-routine-planner-1.webp";
 import fitsmart2 from "../assets/fitsmart/fitsmart-nutrition-calorie-tracker-2.webp";
 import fitsmart3 from "../assets/fitsmart/fitsmart-ai-coaching-insights-3.webp";
 import fitsmart4 from "../assets/fitsmart/fitsmart-health-progress-analytics-4.webp";
-import javaislandImg from "../assets/java-island-travel-tourism-booking-portal.webp";
+import javaislandImg from "../assets/projects/java-island-travel-tourism-booking-portal.webp";
 import javaisland1 from "../assets/javaisland/java-island-destination-discovery-1.webp";
 import javaisland2 from "../assets/javaisland/java-island-tour-package-itinerary-2.webp";
 import javaisland3 from "../assets/javaisland/java-island-booking-reservation-flow-3.webp";
 import javaisland4 from "../assets/javaisland/java-island-traveler-review-system-4.webp";
-import pusakakuImg from "../assets/pusakaku-indonesian-culture-heritage-platform.webp";
+import pusakakuImg from "../assets/projects/pusakaku-indonesian-culture-heritage-platform.webp";
 import pusakaku1 from "../assets/pusakaku/pusakaku-cultural-heritage-interactive-map-1.webp";
 import pusakaku2 from "../assets/pusakaku/pusakaku-gamified-heritage-quiz-engine-2.webp";
 import pusakaku3 from "../assets/pusakaku/pusakaku-virtual-museum-exhibition-gallery-3.webp";
 import pusakaku4 from "../assets/pusakaku/pusakaku-cultural-preservation-community-hub-4.webp";
-import semuaBisaImg from "../assets/semua-bisa-education-accessibility-platform.webp";
+import semuaBisaImg from "../assets/projects/semua-bisa-education-accessibility-platform.webp";
 import semuabisa1 from "../assets/semua-bisa/semua-bisa-accessible-learning-portal-1.webp";
 import semuabisa2 from "../assets/semua-bisa/semua-bisa-course-catalog-interface-2.webp";
 import semuabisa3 from "../assets/semua-bisa/semua-bisa-interactive-quiz-module-3.webp";
 import semuabisa4 from "../assets/semua-bisa/semua-bisa-student-progress-dashboard-4.webp";
-import idncourseImg from "../assets/idncourse-online-learning-management-system.webp";
+import idncourseImg from "../assets/projects/idncourse-online-learning-management-system.webp";
 import idncourse1 from "../assets/idncourse/idncourse-curriculum-learning-paths-1.webp";
 import idncourse2 from "../assets/idncourse/idncourse-video-lesson-streaming-2.webp";
 import idncourse3 from "../assets/idncourse/idncourse-coding-quiz-assessment-3.webp";
 import idncourse4 from "../assets/idncourse/idncourse-student-certificate-verification-4.webp";
-import coffeeeShopImg from "../assets/coffeee-shop-specialty-storefront-platform.webp";
+import coffeeeShopImg from "../assets/projects/coffeee-shop-specialty-storefront-platform.webp";
 import coffeee1 from "../assets/coffeee-shop/coffeee-shop-artisan-coffee-menu-1.webp";
 import coffeee2 from "../assets/coffeee-shop/coffeee-shop-order-customization-modal-2.webp";
 import coffeee3 from "../assets/coffeee-shop/coffeee-shop-table-delivery-booking-3.webp";
 import coffeee4 from "../assets/coffeee-shop/coffeee-shop-customer-loyalty-rewards-4.webp";
-import mystyleImg from "../assets/mystyle-fashion-apparel-ecommerce-store.webp";
+import mystyleImg from "../assets/projects/mystyle-fashion-apparel-ecommerce-store.webp";
 import mystyle1 from "../assets/mystyle/mystyle-apparel-collection-lookbook-1.webp";
 import mystyle2 from "../assets/mystyle/mystyle-product-detail-pricing-2.webp";
 import mystyle3 from "../assets/mystyle/mystyle-responsive-shopping-cart-3.webp";
 import mystyle4 from "../assets/mystyle/mystyle-secure-checkout-flow-4.webp";
-import delifoodImg from "../assets/delifood-culinary-delivery-restaurant-platform.webp";
+import delifoodImg from "../assets/projects/delifood-culinary-delivery-restaurant-platform.webp";
 import delifood1 from "../assets/delifood/delifood-menu-catalog-discovery-1.png";
 import delifood2 from "../assets/delifood/delifood-cart-checkout-interface-2.png";
 import delifood3 from "../assets/delifood/delifood-order-tracking-pipeline-3.png";
 import delifood4 from "../assets/delifood/delifood-merchant-admin-dashboard-4.png";
-import attendanceImg from "../assets/minimalist-todo-task-manager-app.webp";
+import attendanceImg from "../assets/projects/minimalist-todo-task-manager-app.webp";
 import attendance1 from "../assets/attendance/ai-ticket-manager-dashboard-overview-1.png";
 import attendance2 from "../assets/attendance/ai-ticket-manager-sentiment-analysis-2.png";
 import attendance3 from "../assets/attendance/ai-ticket-manager-workflow-routing-3.png";
 import attendance4 from "../assets/attendance/ai-ticket-manager-performance-metrics-4.png";
-import qrscannerImg from "../assets/qr-code-scanner-mobile-utility-app.webp";
+import qrscannerImg from "../assets/projects/qr-code-scanner-mobile-utility-app.webp";
 import qrscanner1 from "../assets/qrscanner/qr-code-scanner-camera-viewport-1.webp";
 import qrscanner2 from "../assets/qrscanner/qr-code-scanner-payload-parser-2.webp";
 import qrscanner3 from "../assets/qrscanner/qr-code-scanner-history-export-log-3.webp";
-import newsImg from "../assets/news-portal-interactive-journalism-app.webp";
+import newsImg from "../assets/projects/news-portal-interactive-journalism-app.webp";
 import news1 from "../assets/news/news-portal-breaking-headlines-feed-1.webp";
 import news2 from "../assets/news/news-portal-editorial-reader-experience-2.webp";
 import news3 from "../assets/news/news-portal-category-search-filter-3.webp";
-import quranImg from "../assets/quran-digital-recitation-audio-companion.webp";
+import quranImg from "../assets/projects/quran-digital-recitation-audio-companion.webp";
 import quran1 from "../assets/quran/quran-digital-surah-reader-1.webp";
 import quran2 from "../assets/quran/quran-digital-audio-recitation-player-2.webp";
 import quran3 from "../assets/quran/quran-digital-translation-tafsir-3.webp";
-import aigeneratorImg from "../assets/ai-image-generator-neural-synthesis-platform.webp";
+import aigeneratorImg from "../assets/projects/ai-image-generator-neural-synthesis-platform.webp";
 import aigenerator1 from "../assets/aigenerator/ai-image-generator-prompt-workspace-1.png";
 import aigenerator2 from "../assets/aigenerator/ai-image-generator-diffusion-gallery-2.png";
 import aigenerator3 from "../assets/aigenerator/ai-image-generator-parameter-tuning-3.png";
@@ -2016,8 +2016,9 @@ export const projectDetails = {
     domain: "ruang-tumbuh.vercel.app",
     meta: [
       { label: "Role", value: "Project Lead & Server Architect" },
-      { label: "Cohort", value: "Bangkit Academy (CC26-PS050)" },
-      { label: "Timeline", value: "2025 – 2026" },
+      { label: "Program", value: "DBS Coding Camp 2026 (CC26-PS050)" },
+      { label: "Capstone Grade", value: "Score: 93/100 (Grade A)" },
+      { label: "Timeline", value: "2025 - 2026" },
       { label: "Team", value: "5 Engineers" },
       { label: "Architecture", value: "pnpm Workspaces Monorepo" },
     ],
@@ -2559,6 +2560,7 @@ export const projectDetails = {
       { label: "Backend API", url: "https://ruangtumbuh-production.up.railway.app/" },
       { label: "GitHub", url: "https://github.com/adyvka31/RuangTumbuh" },
       { label: "LinkedIn Post", url: "https://lnkd.in/p/gh6RRZFw" },
+      { label: "Coding Camp Transcript", url: "/certificates/coding-camp-full-stack-developer" },
     ],
   },
   fitsmart: {

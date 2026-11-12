@@ -24,10 +24,10 @@ import smpn253 from "../assets/smpn25/smpn-25-depok-kodular-hands-on-practice-3.
 import smpn254 from "../assets/smpn25/smpn-25-depok-faculty-completion-ceremony-4.webp";
 
 // 2022 foundational archives
-import alanshar1 from "../assets/al-anshar-game-development-instructor.webp";
-import alanshar2 from "../assets/al-anshar-app-design-instructor.webp";
-import mtsyasmine1 from "../assets/mts-yasmine-graphic-design-instructor.webp";
-import griyyasunnah1 from "../assets/griyya-sunnah-game-development-instructor.webp";
+import alanshar1 from "../assets/experiences/al-anshar-game-development-instructor.webp";
+import alanshar2 from "../assets/experiences/al-anshar-app-design-instructor.webp";
+import mtsyasmine1 from "../assets/experiences/mts-yasmine-graphic-design-instructor.webp";
+import griyyasunnah1 from "../assets/experiences/griyya-sunnah-game-development-instructor.webp";
 
 export const teachingDetails = {
   // =========================================================================

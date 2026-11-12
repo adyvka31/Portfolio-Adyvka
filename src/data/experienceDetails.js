@@ -1,6 +1,6 @@
-import kepkImg from "../assets/kepk-umj-medical-research-ethics-platform.webp";
-import databankImg from "../assets/databank-erp-telecommunication-system.webp";
-import richobahariImg from "../assets/cv-richo-bahari-machinery-corporate-website.webp";
+import kepkImg from "../assets/projects/kepk-umj-medical-research-ethics-platform.webp";
+import databankImg from "../assets/projects/databank-erp-telecommunication-system.webp";
+import richobahariImg from "../assets/projects/cv-richo-bahari-machinery-corporate-website.webp";
 
 // Field & on-site documentation archives
 import ptardyanda1 from "../assets/ptardyanda/pt-ardyanda-digital-inovasi-fullstack-internship-1.webp";

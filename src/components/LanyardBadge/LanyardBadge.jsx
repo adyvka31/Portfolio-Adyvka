@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState, useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import Image from "../Image/Image";
-import profilePhoto from "../../assets/rafif-sava-adyvka-pratama-software-engineer.webp";
-import cvPdfFile from "../../assets/RafifSavaAdyvkaPratama_CV.pdf";
+import profilePhoto from "../../assets/profile/rafif-sava-adyvka-pratama-software-engineer.webp";
+import cvPdfFile from "../../assets/profile/RafifSavaAdyvkaPratama_CV.pdf";
 import styles from "./LanyardBadge.module.css";
 
 const DEFAULT_FACTS = [

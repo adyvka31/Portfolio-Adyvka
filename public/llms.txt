@@ -55,11 +55,13 @@ Rafif Sava Adyvka Pratama (widely recognized online as **Adyvka**) is a Software
 - **Stack**: Next.js, Node.js, PostgreSQL, Tailwind CSS
 - **Summary**: Agricultural B2B commerce network connecting local farming cooperatives directly with urban distribution networks with real-time price index tracking.
 
-### 5. [Ruang Tumbuh (Pediatric Development Screening)](https://adyvkapratama.my.id/projects/ruangtumbuh)
+### 5. [RuangTumbuh (Capstone Project)](https://adyvkapratama.my.id/projects/ruangtumbuh)
 - **URL**: [https://adyvkapratama.my.id/projects/ruangtumbuh](https://adyvkapratama.my.id/projects/ruangtumbuh)
-- **Role**: Full Stack Engineer
-- **Stack**: Next.js, NestJS, PostgreSQL, Framer Motion
-- **Summary**: Clinical pediatric milestone screening platform standardizing developmental assessments according to national pediatric guidelines.
+- **Role**: Project Lead & Server Architect
+- **Program**: DBS Foundation Coding Camp 2026 Capstone Project (Team CC26-PS050)
+- **Evaluation**: Score 93/100 (Grade A), 250 Curriculum Hours
+- **Stack**: Next.js, NestJS, PostgreSQL, Framer Motion, Matter.js, Socket.io, Google Gemini AI
+- **Summary**: Peer-to-peer educational time-banking platform where learning hours equal teaching hours, built as the culminating team capstone project for DBS Foundation Coding Camp 2026.
 
 ### Complete Catalogue of 18 Shipped Platforms
 - [Databank ERP](https://adyvkapratama.my.id/projects/databank): Enterprise telecommunication resource planning and operations ecosystem.
@@ -288,8 +290,11 @@ Every credential links to its dedicated, verified detail page with curriculum br
    - Skills: Algorithms, Data Structures, Memory Management, C, Python, SQL, Complexity Analysis
 2. **[Amazon Web Services (AWS) — Cloud Practitioner Essentials](https://adyvkapratama.my.id/certificates/cloud-practitioner-essentials)** (2024)
    - Skills: AWS Global Cloud Infrastructure, EC2, S3, IAM Security, VPC Networking, Cloud Architecture
-3. **[Dicoding Indonesia × DBS Foundation — Coding Camp: Full Stack Developer](https://adyvkapratama.my.id/certificates/coding-camp-full-stack-developer)** (Apr 2026)
-   - Skills: Full-Stack Web Development, Node.js REST APIs, Scalable Backends, React Frontends
+3. **[Dicoding Indonesia × DBS Foundation: Coding Camp Full Stack Developer](https://adyvkapratama.my.id/certificates/coding-camp-full-stack-developer)** (Apr 2026)
+   - Cohort ID: CFS211D6Y054 (Full Graduated)
+   - Academic Transcript: 766 Hours, Cumulative Grade A (Average Score: 89/100), 94% Mandatory Attendance
+   - Capstone Project: RuangTumbuh (Team CC26-PS050, Score 93/100, Grade A, 250 Hours)
+   - Skills: Full-Stack Web Development, Node.js REST APIs, Scalable Backends, React Frontends, AWS Cloud & Gen AI, PostgreSQL
 4. **[Dicoding Indonesia — Frontend Web Developer](https://adyvkapratama.my.id/certificates/frontend-web-developer)** (Mar 2026)
    - Skills: Semantic HTML5, Responsive Layouts, Modern CSS3, DOM Manipulation, Web Accessibility
 5. **[Dicoding Indonesia — Belajar Membuat Aplikasi Back-End](https://adyvkapratama.my.id/certificates/belajar-membuat-aplikasi-back-end)** (2024)

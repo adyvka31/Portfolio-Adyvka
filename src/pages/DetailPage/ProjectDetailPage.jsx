@@ -186,6 +186,14 @@ function ProjectDetailPage() {
     "System Architecture",
     ...(project.tags || []),
     ...(detail?.techStack?.map((t) => (typeof t === "string" ? t : t.name)) || []),
+    ...(project.slug === "ruangtumbuh"
+      ? [
+          "DBS Foundation Coding Camp Capstone",
+          "Capstone Team CC26-PS050",
+          "RuangTumbuh Capstone Project",
+          "Time Banking Platform",
+        ]
+      : []),
   ];
 
   const projectSchema = {
@@ -198,6 +206,12 @@ function ProjectDetailPage() {
     author: { "@id": `${SITE_URL}/#person` },
     creator: { "@id": `${SITE_URL}/#person` },
     keywords: projectKeywords.join(", "),
+    ...(project.slug === "ruangtumbuh"
+      ? {
+          award:
+            "DBS Foundation Coding Camp 2026 Capstone Project with Distinction (Score: 93/100, Grade A)",
+        }
+      : {}),
   };
 
   return (

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
-import profilePhoto from "../../../assets/rafif-sava-adyvka-pratama-contact-portrait.webp";
+import profilePhoto from "../../../assets/profile/rafif-sava-adyvka-pratama-contact-portrait.webp";
 import Image from "../../../components/Image/Image";
 
 import {

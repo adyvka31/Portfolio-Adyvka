@@ -3,7 +3,7 @@ import NativeReveal from "../../../components/Reveal/NativeReveal"; // ✅ Impor
 import { ArrowRightIcon, GithubIcon } from "../../../components/Icons/Icons";
 import { heroMetrics, personalInfo } from "../../../data/portfolio";
 import styles from "./HeroLayout.module.css";
-import profilePhoto from "../../../assets/rafif-sava-adyvka-pratama-hero-portrait.webp";
+import profilePhoto from "../../../assets/profile/rafif-sava-adyvka-pratama-hero-portrait.webp";
 
 function HeroLayout() {
   const heroRef = useRef(null);

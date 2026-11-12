@@ -1,8 +1,8 @@
 // src/data/publicationDetails.js
-import bookGameCover from "../assets/buku-membuat-game-tanpa-coding-cover.webp?w=400;800&quality=85&format=avif;webp&as=picture";
-import bookWebCover from "../assets/buku-membuat-website-dengan-framework-cover.webp?w=400;800&quality=85&format=avif;webp&as=picture";
-import bookGamePdf from "../assets/buku-membuat-game-tanpa-coding-adyvka.pdf";
-import bookWebPdf from "../assets/buku-membuat-website-dengan-framework-adyvka.pdf";
+import bookGameCover from "../assets/publications/buku-membuat-game-tanpa-coding-cover.webp?w=400;800&quality=85&format=avif;webp&as=picture";
+import bookWebCover from "../assets/publications/buku-membuat-website-dengan-framework-cover.webp?w=400;800&quality=85&format=avif;webp&as=picture";
+import bookGamePdf from "../assets/publications/buku-membuat-game-tanpa-coding-adyvka.pdf";
+import bookWebPdf from "../assets/publications/buku-membuat-website-dengan-framework-adyvka.pdf";
 
 export const publicationDetails = {
   "buku-membuat-game-tanpa-coding": {

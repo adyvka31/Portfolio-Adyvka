@@ -182,12 +182,21 @@ export default function SEO({
       },
       {
         "@type": "EducationalOccupationalCredential",
-        name: "Coding Camp Full Stack Developer",
+        name: "Coding Camp: Full Stack Developer",
         credentialCategory: "certificate",
-        recognizedBy: {
-          "@type": "Organization",
-          name: "Dicoding Indonesia",
-        },
+        description:
+          "Corporate-sponsored 766-hour full-stack engineering program by DBS Foundation & Dicoding. Cumulative Grade A (Average Score: 89/100) and Capstone Project RuangTumbuh (Score: 93/100, Grade A).",
+        identifier: "CFS211D6Y054",
+        recognizedBy: [
+          {
+            "@type": "Organization",
+            name: "DBS Foundation",
+          },
+          {
+            "@type": "Organization",
+            name: "Dicoding Indonesia",
+          },
+        ],
         url: `${SITE_URL}/certificates/coding-camp-full-stack-developer`,
       },
       {

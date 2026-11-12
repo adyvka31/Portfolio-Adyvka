@@ -359,6 +359,11 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
       "query": "tell me about ruangtumbuh mental health platform"
     },
     {
+      "id": "prj_ruang_capstone",
+      "label": "🏆 Coding Camp Capstone Grade & Evaluation",
+      "query": "what score and evaluation did ruangtumbuh achieve as coding camp capstone"
+    },
+    {
       "id": "prj_ruang_timebank",
       "label": "⏱️ Time Banking Social Credit Architecture",
       "query": "how does ruangtumbuh time banking and peer support architecture work"
@@ -1671,6 +1676,16 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
       "query": "tell me about adyvka coding camp full stack developer certificate"
     },
     {
+      "id": "cert_camp_transcript",
+      "label": "📊 DBS Coding Camp 2026 Academic Transcript",
+      "query": "tell me about adyvka academic transcript in dbs coding camp"
+    },
+    {
+      "id": "cert_camp_capstone",
+      "label": "🏆 RuangTumbuh Capstone Project Evaluation",
+      "query": "what score and evaluation did ruangtumbuh achieve as coding camp capstone"
+    },
+    {
       "id": "cert_camp_cs50",
       "label": "🎓 Harvard CS50 Introduction to Computer Science",
       "query": "tell me about adyvka harvard university cs50 certificate"
@@ -2611,7 +2626,7 @@ export function detectLanguage(text) {
     "hobby", "free", "time", "leisure", "vision", "goals", "goal", "plans", "aspirations",
     "faith", "religion", "family", "parents", "parent", "father", "mother", "dad", "mom",
     "sibling", "siblings", "brother", "sister", "download", "resume", "cv", "curriculum",
-    "vitae", "thanks", "thank", "awesome", "great", "job", "impressive", "amazing",
+    "vitae", "thanks", "thank", "hello", "hi", "hey", "awesome", "great", "job", "impressive", "amazing",
     "fantastic", "brilliant", "technologies", "technology", "framework", "frameworks",
     "languages", "language", "code", "coding", "software", "developer", "engineer",
     "engineering", "internship", "intern", "contract", "freelance", "fulltime", "parttime",
@@ -3802,65 +3817,163 @@ Rebuilt fundamental mental models of runtime execution by understanding raw memo
   },
   CERT_CODING_CAMP: {
     id: {
-      title: `Sertifikat: Coding Camp: Full Stack Developer (Dicoding Indonesia × DBS Foundation)`,
-      text: `**Sertifikat Resmi: Coding Camp: Full Stack Developer**
+      title: `Sertifikat & Transkrip: Coding Camp Full Stack Developer (DBS Foundation × Dicoding)`,
+      text: `**Sertifikat & Transkrip Nilai Resmi: Coding Camp 2026**
 
-* **Institusi Penerbit:** Dicoding Indonesia × DBS Foundation
-* **Waktu & Kredensial:** Diterbitkan Apr 2026 (ID Kredensial: \`DICODING-DBS-FS-2026\`)
-* **Beban Pembelajaran:** 90+ Hours · Corporate Sponsored
-* **Bidang Keahlian:** Full Stack Web Engineering
+* **Penyelenggara:** Dicoding Indonesia × DBS Foundation
+* **Cohort ID:** \`CFS211D6Y054\` (Status: Full Graduated)
+* **Sekolah:** SMK IDN Boarding School (Guru: Dion Ahza Rabbani)
+* **Total Jam Belajar:** 766 Jam Kurikulum Intensif
+* **Nilai Rata-Rata Kumulatif:** 89 / 100 (Predikat Nilai A)
+* **Kehadiran:** 94% Sesi Wajib (90% Sesi Keseluruhan)
+* **Proyek Akhir (Capstone):** RuangTumbuh (Tim CC26-PS050, Nilai 93 / 100, Predikat A, 250 Jam)
 
-**Apa yang Dipelajari & Kurikulum Utama:**
-Intensive corporate-sponsored full-stack bootcamp focused on production-grade web application architecture, spanning RESTful API design, modern React frontend patterns, secure authentication, and CI/CD deployment.
-* **Keahlian yang Dikuasai:** React, Node.js, Express, REST APIs, JWT Auth, PostgreSQL, Full Stack Architecture
-* Decoupled full-stack architecture with Express backend and React frontend
-* Client-side state management, optimistic UI updates, and intelligent caching
-* Secure JWT-based authentication, CORS policies, and SQL/XSS input sanitization
-* Automated integration testing and production containerized deployment pipelines
-
-**Apa yang Didapatkan & Implementasi Nyata:**
-Established industry standards for architecting scalable full-stack applications, directly influencing my development process across freelance client projects and internal school business suites.`,
+**Ringkasan 10 Modul dan Nilai Transkrip:**
+1. Memulai Dasar Pemrograman (CCMT01): Nilai 90 (Grade A)
+2. Pengenalan Ke Logika Pemrograman (CCMT02): Nilai 93 (Grade A)
+3. Belajar Dasar Cloud & Gen AI di AWS (CCMT03): Nilai 93 (Grade A)
+4. Belajar Dasar Pemrograman Web (CCFS01): Nilai 85 (Grade A)
+5. Belajar Dasar Pemrograman JavaScript (CCFS02): Nilai 83 (Grade B)
+6. Belajar Front-End Web Pemula (CCFS03): Nilai 93 (Grade A)
+7. Belajar Membuat Web dengan React (CCFS04): Nilai 88 (Grade A)
+8. Belajar Back-End Pemula JavaScript (CCFS05): Nilai 93 (Grade A)
+9. Capstone / Final Project (RuangTumbuh): Nilai 93 (Grade A)
+10. Soft Skills & Career Development: Nilai 83 (Grade B)`,
       links: [
         {
-                "label": "Lihat Studi Kasus Sertifikat",
-                "url": "/certificates/coding-camp-full-stack-developer"
+          "label": "Lihat Detail Sertifikat & Transkrip",
+          "url": "/certificates/coding-camp-full-stack-developer"
         },
         {
-                "label": "Verifikasi Kredensial Resmi",
-                "url": "https://www.dicoding.com/certificates"
+          "label": "Lihat Proyek Capstone RuangTumbuh",
+          "url": "/projects/ruangtumbuh"
         }
-],
+      ],
     },
     en: {
-      title: `Certificate: Coding Camp: Full Stack Developer (Dicoding Indonesia × DBS Foundation)`,
-      text: `**Verified Credential: Coding Camp: Full Stack Developer**
+      title: `Certificate & Transcript: Coding Camp Full Stack Developer (DBS Foundation × Dicoding)`,
+      text: `**Official Credential & Final Academic Transcript: Coding Camp 2026**
 
 * **Issuing Body:** Dicoding Indonesia × DBS Foundation
-* **Issue Date & Credential ID:** Apr 2026 (ID: \`DICODING-DBS-FS-2026\`)
-* **Verified Effort:** 90+ Hours · Corporate Sponsored
-* **Specialization Track:** Full Stack Web Engineering
+* **Cohort ID:** \`CFS211D6Y054\` (Status: Full Graduated)
+* **Institution:** SMK IDN Boarding School (Instructor: Dion Ahza Rabbani)
+* **Total Curriculum Effort:** 766 Verified Hours
+* **Cumulative Average Score:** 89 / 100 (Final Grade A Distinction)
+* **Attendance Rate:** 94% Mandatory Sessions (90% Overall)
+* **Capstone Project:** RuangTumbuh (Team CC26-PS050, Score 93 / 100, Grade A, 250 Hours)
 
-**Curriculum & What Was Learned:**
-Intensive corporate-sponsored full-stack bootcamp focused on production-grade web application architecture, spanning RESTful API design, modern React frontend patterns, secure authentication, and CI/CD deployment.
-* **Core Skills Mastered:** React, Node.js, Express, REST APIs, JWT Auth, PostgreSQL, Full Stack Architecture
-* Decoupled full-stack architecture with Express backend and React frontend
-* Client-side state management, optimistic UI updates, and intelligent caching
-* Secure JWT-based authentication, CORS policies, and SQL/XSS input sanitization
-* Automated integration testing and production containerized deployment pipelines
-
-**Takeaways & Practical Application:**
-Established industry standards for architecting scalable full-stack applications, directly influencing my development process across freelance client projects and internal school business suites.`,
+**Transcribed Course Performance (10 Modules):**
+1. Software Developer Career Foundations (CCMT01): Score 90 (Grade A)
+2. Programming Logic Fundamentals (CCMT02): Score 93 (Grade A)
+3. Cloud & Generative AI on AWS (CCMT03): Score 93 (Grade A)
+4. Web Programming Foundations (CCFS01): Score 85 (Grade A)
+5. JavaScript Programming Fundamentals (CCFS02): Score 83 (Grade B)
+6. Front-End Web Development (CCFS03): Score 93 (Grade A)
+7. Modern React Web Development (CCFS04): Score 88 (Grade A)
+8. Back-End Development with JavaScript (CCFS05): Score 93 (Grade A)
+9. Capstone Project (RuangTumbuh): Score 93 (Grade A)
+10. Soft Skills & Career Development: Score 83 (Grade B)`,
       links: [
         {
-                "label": "View Certificate Case Study",
-                "url": "/certificates/coding-camp-full-stack-developer"
+          "label": "View Certificate & Full Transcript",
+          "url": "/certificates/coding-camp-full-stack-developer"
         },
         {
-                "label": "Verify Credential Online",
-                "url": "https://www.dicoding.com/certificates"
+          "label": "Explore Capstone Project RuangTumbuh",
+          "url": "/projects/ruangtumbuh"
         }
-],
+      ],
     },
+  },
+  CODING_CAMP_TRANSCRIPT_DEEPDIVE: {
+    id: {
+      title: "Transkrip Nilai Akademik & Capstone RuangTumbuh di Coding Camp 2026",
+      text: `**Transkrip Nilai Akademik Resmi: DBS Foundation Coding Camp 2026**
+
+Adyvka menyelesaikan program intensif Full Stack Developer Track (Dicoding Indonesia × DBS Foundation) dengan predikat kelulusan sempurna (Full Graduated):
+
+* **Informasi Peserta:** Rafif Sava Adyvka Pratama (ID Cohort: \`CFS211D6Y054\`)
+* **Asal Sekolah:** SMK IDN Boarding School Bogor (Guru Pendamping: Dion Ahza Rabbani)
+* **Total Beban Belajar:** 766 Jam Pembelajaran Terverifikasi
+* **Indeks Prestasi / Nilai Rata-Rata:** 89 / 100 (Predikat Nilai A)
+* **Tingkat Kehadiran Sesi:** 94% Sesi Wajib (90% Sesi Keseluruhan)
+
+**Daftar Nilai 10 Modul Kurikulum:**
+1. **CCMT01** Memulai Dasar Pemrograman untuk Menjadi Pengembang Software (16 Jam): Nilai 90 (Grade A)
+2. **CCMT02** Pengenalan ke Logika Pemrograman (Programming Logic 101) (16 Jam): Nilai 93 (Grade A)
+3. **CCMT03** Belajar Dasar Cloud dan Generative AI di AWS (28 Jam): Nilai 93 (Grade A)
+4. **CCFS01** Belajar Dasar Pemrograman Web (48 Jam): Nilai 85 (Grade A)
+5. **CCFS02** Belajar Dasar Pemrograman JavaScript (53 Jam): Nilai 83 (Grade B)
+6. **CCFS03** Belajar Membuat Front-End Web untuk Pemula (53 Jam): Nilai 93 (Grade A)
+7. **CCFS04** Belajar Membuat Aplikasi Web dengan React (70 Jam): Nilai 88 (Grade A)
+8. **CCFS05** Belajar Membuat Aplikasi Back-End Pemula dengan JavaScript (75 Jam): Nilai 93 (Grade A)
+9. **CCCP01** Capstone / Final Project RuangTumbuh (250 Jam): Nilai 93 (Grade A)
+10. **CCSK01** Soft Skills & Career Development (157 Jam): Nilai 83 (Grade B)
+
+**Pencapaian Proyek Akhir (Capstone) RuangTumbuh:**
+* **Tim:** CC26-PS050
+* **Peran:** Full Stack Lead & Architecture Designer
+* **Nilai Capstone:** 93 / 100 (Predikat Nilai A)
+* **Karya Nyata:** Platform edukasi pertukaran keahlian peer-to-peer berbasis Time Banking dengan PostgreSQL atomic transaction, Socket.io real-time chat, dan Google Gemini AI. Platform ini juga memenangkan Juara 2 Nasional Web Design di PNB IT Competition #18 (2026).`,
+      links: [
+        {
+          label: "Buka Transkrip Nilai & Detail Sertifikat",
+          url: "/certificates/coding-camp-full-stack-developer"
+        },
+        {
+          label: "Buka Studi Kasus Capstone RuangTumbuh",
+          url: "/projects/ruangtumbuh"
+        },
+        {
+          label: "Jelajahi Seluruh 23 Sertifikat Profesional",
+          url: "/certificates"
+        }
+      ]
+    },
+    en: {
+      title: "Academic Transcript & RuangTumbuh Capstone in Coding Camp 2026",
+      text: `**Official Academic Transcript: DBS Foundation Coding Camp 2026**
+
+Adyvka graduated with distinction from the intensive Full Stack Developer Track delivered by Dicoding Indonesia in partnership with DBS Foundation:
+
+* **Student Identity:** Rafif Sava Adyvka Pratama (Cohort ID: \`CFS211D6Y054\`)
+* **Partner Institution:** SMK IDN Boarding School Bogor (Instructor: Dion Ahza Rabbani)
+* **Total Curriculum Effort:** 766 Verified Learning Hours
+* **Cumulative Average Score:** 89 / 100 (Grade A Distinction)
+* **Session Attendance Rate:** 94% Mandatory Sessions (90% Overall)
+
+**Complete 10-Module Transcribed Breakdown:**
+1. **CCMT01** Software Developer Career Foundations (16 Hours): Score 90 (Grade A)
+2. **CCMT02** Programming Logic Fundamentals (16 Hours): Score 93 (Grade A)
+3. **CCMT03** Cloud and Generative AI Fundamentals on AWS (28 Hours): Score 93 (Grade A)
+4. **CCFS01** Web Programming Fundamentals (48 Hours): Score 85 (Grade A)
+5. **CCFS02** JavaScript Programming Fundamentals (53 Hours): Score 83 (Grade B)
+6. **CCFS03** Front-End Web Development for Beginners (53 Hours): Score 93 (Grade A)
+7. **CCFS04** Modern React Web Application Development (70 Hours): Score 88 (Grade A)
+8. **CCFS05** Back-End Application Development with JavaScript (75 Hours): Score 93 (Grade A)
+9. **CCCP01** Capstone / Final Project RuangTumbuh (250 Hours): Score 93 (Grade A)
+10. **CCSK01** Soft Skills and Career Readiness (157 Hours): Score 83 (Grade B)
+
+**Capstone Performance: RuangTumbuh:**
+* **Team:** CC26-PS050
+* **Role:** Full Stack Lead & Architecture Designer
+* **Capstone Evaluation:** 93 / 100 (Grade A Distinction)
+* **Delivered System:** A peer-to-peer educational time banking ecosystem featuring atomic PostgreSQL balance transfers, Socket.io real-time chat, and Google Gemini AI assistance. The same system also earned 2nd Place National Web Design Honors at PNB IT Competition #18 (2026).`,
+      links: [
+        {
+          label: "View Official Transcript & Certificate Details",
+          url: "/certificates/coding-camp-full-stack-developer"
+        },
+        {
+          label: "Explore RuangTumbuh Capstone Case Study",
+          url: "/projects/ruangtumbuh"
+        },
+        {
+          label: "Browse All 23 Professional Certifications",
+          url: "/certificates"
+        }
+      ]
+    }
   },
   CERT_FRONTEND_WEB: {
     id: {
@@ -5391,22 +5504,27 @@ Equipped me with fluent English communication required for consuming internation
 * **Google Gemini AI Copilot:** Embedded AI assistant leveraging gemini-flash-latest with custom system instructions to guide students, recommend mentors, and resolve time wallet queries.
 
 **Metrik Kunci & Performa (KPIs):**
-* **1 : 1:** Time Value Parity - 1 hour of design = 1 hour of physics across all courses
-* **100%:** Atomic Guarantee - Zero partial writes or balance drift via prisma.$transaction
-* **26:** Curated Disciplines - Dynamic courses across engineering, design, and science
-* **<200ms:** p95 API Latency - High-throughput Express 5 backend deployed on Railway
-* **30 Min:** Session Safeguard - Automated idle logout guarding active time balances
-* **100%:** Contract Parity - Shared Zod schemas across client forms and server parsers`,
+* **Nilai Capstone 93 / 100:** Proyek Akhir Tim CC26-PS050 DBS Foundation Coding Camp 2026 (Predikat Nilai A, 250 Jam Kurikulum)
+* **1 : 1:** Time Value Parity, 1 jam belajar setara 1 jam mengajar di semua bidang
+* **100%:** Atomic Guarantee, transaksi saldo waktu bebas error lewat prisma.$transaction
+* **26:** Pilihan Bidang Keahlian, kursus dinamis di bidang rekayasa, desain, dan sains
+* **<200ms:** p95 API Latency, backend Express 5 performa tinggi di Railway
+* **30 Min:** Session Safeguard, logout otomatis untuk mengamankan saldo waktu pengguna
+* **100%:** Contract Parity, skema Zod terpadu di formulir klien dan validasi server`,
       links: [
         {
-                "label": "Studi Kasus Proyek RuangTumbuh",
-                "url": "/projects/ruangtumbuh"
+          "label": "Studi Kasus Proyek RuangTumbuh",
+          "url": "/projects/ruangtumbuh"
         },
         {
-                "label": "Lihat Repositori / Demo",
-                "url": "https://ruang-tumbuh.vercel.app/"
+          "label": "Lihat Transkrip Nilai Coding Camp",
+          "url": "/certificates/coding-camp-full-stack-developer"
+        },
+        {
+          "label": "Lihat Repositori / Demo",
+          "url": "https://ruang-tumbuh.vercel.app/"
         }
-],
+      ],
     },
     en: {
       title: `Project: RuangTumbuh (Time Banking Educational Ecosystem & Mentorship Platform)`,
@@ -5423,22 +5541,27 @@ Equipped me with fluent English communication required for consuming internation
 * **Google Gemini AI Copilot:** Embedded AI assistant leveraging gemini-flash-latest with custom system instructions to guide students, recommend mentors, and resolve time wallet queries.
 
 **Key Metrics & Performance (KPIs):**
-* **1 : 1:** Time Value Parity - 1 hour of design = 1 hour of physics across all courses
-* **100%:** Atomic Guarantee - Zero partial writes or balance drift via prisma.$transaction
-* **26:** Curated Disciplines - Dynamic courses across engineering, design, and science
-* **<200ms:** p95 API Latency - High-throughput Express 5 backend deployed on Railway
-* **30 Min:** Session Safeguard - Automated idle logout guarding active time balances
-* **100%:** Contract Parity - Shared Zod schemas across client forms and server parsers`,
+* **93 / 100 Capstone Score:** Official Team CC26-PS050 Final Project at DBS Foundation Coding Camp 2026 (Grade A Distinction, 250 Hours)
+* **1 : 1:** Time Value Parity, 1 hour of design equals 1 hour of physics across all courses
+* **100%:** Atomic Guarantee, zero partial writes or balance drift via prisma.$transaction
+* **26:** Curated Disciplines, dynamic courses across engineering, design, and science
+* **<200ms:** p95 API Latency, high-throughput Express 5 backend deployed on Railway
+* **30 Min:** Session Safeguard, automated idle logout guarding active time balances
+* **100%:** Contract Parity, shared Zod schemas across client forms and server parsers`,
       links: [
         {
-                "label": "RuangTumbuh Project Case Study",
-                "url": "/projects/ruangtumbuh"
+          "label": "RuangTumbuh Project Case Study",
+          "url": "/projects/ruangtumbuh"
         },
         {
-                "label": "View Source Code / Demo",
-                "url": "https://ruang-tumbuh.vercel.app/"
+          "label": "View Coding Camp Transcript",
+          "url": "/certificates/coding-camp-full-stack-developer"
+        },
+        {
+          "label": "View Source Code / Demo",
+          "url": "https://ruang-tumbuh.vercel.app/"
         }
-],
+      ],
     },
   },
   FITSMART_DETAIL: {
@@ -7399,7 +7522,7 @@ CV resmi Rafif Sava Adyvka Pratama memuat ringkasan rekam jejak profesional, kea
       links: [
         {
           "label": "Unduh CV Resmi (PDF)",
-          "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+          "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
         },
         {
           "label": "Kunjungi Halaman Kontak",
@@ -7418,7 +7541,7 @@ Adyvka's verified resume outlines his engineering experience, technical skills, 
       links: [
         {
           "label": "Download Official CV (PDF)",
-          "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+          "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
         },
         {
           "label": "Contact Page",
@@ -7798,39 +7921,39 @@ Adyvka was raised in a warm and supportive family environment in Depok, West Jav
   GREETINGS: {
     id: {
       title: `Halo! Selamat Datang di Portofolio Adyvka`,
-      text: `**Halo! Selamat datang di portofolio resmi Rafif Sava Adyvka Pratama (Adyvka)**
+      text: `**Halo! Selamat datang di portofolio interaktif Rafif Sava Adyvka Pratama (Adyvka)**
 
-Saya adalah asisten virtual cerdas yang siap membantu Anda mengenal seluruh rekam jejak, keahlian, dan karya Adyvka secara lengkap:
+Saya memiliki akses penuh ke seluruh rekam jejak terverifikasi Adyvka di bidang rekayasa perangkat lunak, pengajaran, dan kepemimpinan:
 
-* **18 Proyek Rekayasa:** Databank ERP (PT Intisel), SIM KEPK FK UMJ, RuangTumbuh, DeliFood, FitSmart AI, dll.
-* **20 Pengalaman Terverifikasi:** Magang Full Stack di PT Ardyanda, Systems Engineer PT Intisel, melatih guru SMPN 25 Depok, workshop SMA Lazuardi, hingga ekspedisi solo backpacker 3 negara.
-* **23 Sertifikat Internasional:** Harvard CS50, AWS Cloud Practitioner, Dicoding Full Stack & React, dll.
-* **Prestasi & Publikasi:** Juara 1 Nasional ICOMFEST 2025, Juara 2 PNBITC Bali, serta 2 buku pemrograman resmi yang sudah diterbitkan.
-* **Karier & Kontak:** Nilai rapot 96/100, ketersediaan kerja remote/freelance, unduh CV resmi, nomor WhatsApp, dan email.
+* **Academic Honors (Nilai Rapot 96/100):** Semester 4 Rekayasa Perangkat Lunak di SMK IDN Boarding School.
+* **Engineering Projects & Publications:** Mengembangkan 18 solusi perangkat lunak (sistem web enterprise, aplikasi mobile, AI) dan penulis 2 buku teknis resmi.
+* **Work Experience & Leadership:** 2+ tahun berkarier di 4 perusahaan (Lead Systems Engineer di PT Intisel), 10 sesi mengajar, dan 6 peran kepemimpinan organisasi.
+* **National Achievements:** Juara 1 Nasional ICOMFEST 2025, Juara 2 PNBITC Bali, dan Finalis Nasional Universitas Lampung.
+* **Certifications:** 23 kredensial terverifikasi, termasuk Harvard University CS50, AWS Cloud Practitioner, dan Coding Camp Full Stack Developer (Grade A).
 
-Silakan ajukan pertanyaan apa pun yang ingin Anda ketahui!`,
+Anda dapat bertanya dalam **Bahasa Indonesia** maupun **English**. Apa yang ingin Anda ketahui lebih lanjut?`,
       links: [
-        { label: "Jelajahi Proyek", url: "/projects" },
-        { label: "Lihat Rekam Jejak Pengalaman", url: "/experience" },
+        { label: "Jelajahi Profil Lengkap", url: "/about" },
+        { label: "Lihat Proyek Rekayasa", url: "/projects" },
         { label: "Hubungi Adyvka", url: "/contact" }
       ],
     },
     en: {
       title: `Hello! Welcome to Adyvka's Official Portfolio`,
-      text: `**Hello and welcome to Rafif Sava Adyvka Pratama's (Adyvka) Portfolio**
+      text: `**Hello! I am the interactive portfolio assistant for Rafif Sava Adyvka Pratama (Adyvka)**
 
-I am the interactive assistant here to help you explore every aspect of Adyvka's work, engineering architecture, and background:
+I have full access to Adyvka's verified records across software engineering, teaching, and leadership:
 
-* **18 Shipped Projects:** Databank ERP (PT Intisel), SIM KEPK FK UMJ, RuangTumbuh, DeliFood, FitSmart AI, etc.
-* **20 Real-World Experiences:** PT Ardyanda full-stack internship, PT Intisel lead systems engineer, faculty training at SMPN 25 Depok, SMA Lazuardi workshop, and 3-country solo backpacking.
-* **23 Verified Credentials:** Harvard CS50, AWS Cloud Practitioner, Dicoding React, Backend, etc.
-* **National Honors & Books:** 1st Place National ICOMFEST 2025, 2nd Place PNBITC Bali, and 2 published books.
-* **Career & Contact:** 96/100 GPA record, remote/freelance availability, official CV download, WhatsApp, and email.
+* **Academic Honors (96/100 GPA):** Semester 4 in Software Engineering at SMK IDN Boarding School.
+* **Engineering Projects & Publications:** Built 18 software solutions (enterprise web systems, mobile apps, AI tools) and authored 2 published technical books.
+* **Work Experience & Leadership:** 2+ years in industry across 4 companies (Lead Systems Engineer at PT Intisel), 10 teaching engagements, and 6 organizational leadership roles.
+* **National Achievements:** 1st Place Champion at ICOMFEST 2025, 2nd Place at PNBITC, and National Finalist at Universitas Lampung.
+* **Certifications:** 23 verified credentials, including Harvard University CS50, AWS Cloud Practitioner, and Coding Camp Full Stack Developer (Grade A).
 
-Feel free to ask me anything about Adyvka!`,
+You can ask me questions in **English** or **Bahasa Indonesia**. What would you like to explore?`,
       links: [
-        { label: "Explore Projects", url: "/projects" },
-        { label: "Browse Experiences", url: "/experience" },
+        { label: "Explore About Profile", url: "/about" },
+        { label: "View Enterprise Projects", url: "/projects" },
         { label: "Contact Adyvka", url: "/contact" }
       ],
     },
@@ -7923,7 +8046,7 @@ Silakan tanyakan hal apa pun mengenai proyek, sertifikat, atau pengalaman spesif
         },
         {
                 "label": "Unduh CV Resmi",
-                "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+                "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
         }
 ],
     },
@@ -7956,7 +8079,7 @@ Feel free to ask me anything about any specific project, experience, or certific
         },
         {
                 "label": "Download CV",
-                "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+                "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
         }
 ],
     },
@@ -8006,7 +8129,7 @@ Feel free to ask me anything about any specific project, experience, or certific
       },
       {
         "label": "Unduh CV Resmi",
-        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+        "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
       },
       {
         "label": "Kunjungi Halaman Kontak",
@@ -8024,7 +8147,7 @@ Feel free to ask me anything about any specific project, experience, or certific
       },
       {
         "label": "Download Official CV",
-        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+        "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
       },
       {
         "label": "Visit Contact Page",
@@ -8518,7 +8641,7 @@ Feel free to ask me anything about any specific project, experience, or certific
       },
       {
         "label": "Unduh CV Terverifikasi",
-        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+        "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
       }
     ]
   },
@@ -8532,7 +8655,7 @@ Feel free to ask me anything about any specific project, experience, or certific
       },
       {
         "label": "Download Verified CV",
-        "url": "/assets/RafifSavaAdyvkaPratama_CV.pdf"
+        "url": "/assets/profile/RafifSavaAdyvkaPratama_CV.pdf"
       }
     ]
   }
@@ -10551,7 +10674,20 @@ export const SUGGESTION_EXACT_MAP = {
   "ceritakan tentang sertifikat google developer groups adyvka": "CERT_GDG",
   "ceritakan tentang sertifikat kemahiran bahasa inggris adyvka": "CERT_ENGLISH",
   "apa saja buku yang telah ditulis dan diterbitkan oleh adyvka": "BOOKS",
-  "apa saja buku resmi yang diterbitkan adyvka": "BOOKS"
+  "apa saja buku resmi yang diterbitkan adyvka": "BOOKS",
+  "tell me about adyvka academic transcript in dbs coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "tell me about adyvka academic transcript in coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "what is adyvka academic transcript in coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "ceritakan transkrip nilai akademik coding camp adyvka": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "ceritakan transkrip nilai coding camp adyvka": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "bagaimana transkrip nilai akademik coding camp adyvka": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "apa transkrip nilai akademik coding camp adyvka": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "what score and evaluation did ruangtumbuh achieve as coding camp capstone": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "what was ruangtumbuh score in coding camp capstone": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "berapa nilai proyek capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "berapa nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "apa evaluasi dan nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE",
+  "ceritakan nilai capstone ruangtumbuh di coding camp": "CODING_CAMP_TRANSCRIPT_DEEPDIVE"
 };
 
 export function findBestAnswer(rawQuery) {
@@ -10681,7 +10817,13 @@ export function findBestAnswer(rawQuery) {
     matchedCard = KNOWLEDGE_REGISTRY.TERASTANI_IOT_DEEPDIVE;
   }
 
-  // 6. RuangTumbuh Mental Health Deep-Dives
+  // 6. RuangTumbuh & Coding Camp Transcript Deep-Dives
+  else if (
+    (normalized.includes("ruangtumbuh") || normalized.includes("coding camp") || normalized.includes("dbs") || normalized.includes("transkrip") || normalized.includes("transcript")) &&
+    (normalized.includes("capstone") || normalized.includes("transkrip") || normalized.includes("transcript") || normalized.includes("rapot") || normalized.includes("nilai") || normalized.includes("score") || normalized.includes("evaluasi") || normalized.includes("evaluation") || normalized.includes("predikat"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CODING_CAMP_TRANSCRIPT_DEEPDIVE;
+  }
   else if (
     normalized.includes("ruangtumbuh") &&
     (normalized.includes("time bank") || normalized.includes("timebank") || normalized.includes("kredit waktu") || normalized.includes("social credit") || normalized.includes("peer"))
