@@ -11363,6 +11363,36 @@ export const SUGGESTION_EXACT_MAP = {
   "apa itu two tracks six years": "TWO_TRACKS_TIMELINE",
   "bagaimana timeline perjalanan teknis dan kepemimpinan adyvka": "TWO_TRACKS_TIMELINE",
   "apa yang dilewati adyvka dari 2021 hingga 2026": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka di dunia teknolog": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka di dunia teknologi": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka di dunia it": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka koding": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka coding": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka belajar koding": "TWO_TRACKS_TIMELINE",
+  "berapa tahun adyvka belajar coding": "TWO_TRACKS_TIMELINE",
+  "berapa tahun pengalaman koding adyvka": "TWO_TRACKS_TIMELINE",
+  "berapa lama adyvka di dunia teknolog": "TWO_TRACKS_TIMELINE",
+  "berapa lama adyvka di dunia teknologi": "TWO_TRACKS_TIMELINE",
+  "berapa lama adyvka belajar koding": "TWO_TRACKS_TIMELINE",
+  "berapa lama adyvka belajar coding": "TWO_TRACKS_TIMELINE",
+  "sudah berapa lama adyvka belajar koding": "TWO_TRACKS_TIMELINE",
+  "sudah berapa tahun adyvka di dunia teknologi": "TWO_TRACKS_TIMELINE",
+  "sudah berapa tahun adyvka di dunia teknolog": "TWO_TRACKS_TIMELINE",
+  "sejak kapan adyvka masuk dunia teknologi": "TWO_TRACKS_TIMELINE",
+  "sejak kapan adyvka belajar koding": "TWO_TRACKS_TIMELINE",
+  "sejak kapan adyvka mulai koding": "TWO_TRACKS_TIMELINE",
+  "kapan adyvka mulai belajar koding": "TWO_TRACKS_TIMELINE",
+  "tahun berapa adyvka mulai koding": "TWO_TRACKS_TIMELINE",
+  "ceritakan perjalanan koding adyvka": "TWO_TRACKS_TIMELINE",
+  "perjalanan adyvka dari 2021 sampai 2026": "TWO_TRACKS_TIMELINE",
+  "cerita adyvka 6 tahun di dunia teknologi": "TWO_TRACKS_TIMELINE",
+  "how many years has adyvka been in tech": "TWO_TRACKS_TIMELINE",
+  "how many years has adyvka been coding": "TWO_TRACKS_TIMELINE",
+  "how long has adyvka been in technology": "TWO_TRACKS_TIMELINE",
+  "how long has adyvka been coding": "TWO_TRACKS_TIMELINE",
+  "when did adyvka start coding": "TWO_TRACKS_TIMELINE",
+  "since when has adyvka been coding": "TWO_TRACKS_TIMELINE",
+  "what is adyvka 6 year journey in tech": "TWO_TRACKS_TIMELINE",
   "apa yang bisa adyvka lakukan": "WHAT_ADYVKA_CAN_DO",
   "apa aktifitas atau kesibukan adyvka saat ini": "INTERVIEW_CURRENT_ACTIVITIES",
   "apa aktivitas adyvka saat ini": "INTERVIEW_CURRENT_ACTIVITIES",
@@ -11625,8 +11655,12 @@ export function findBestAnswer(rawQuery) {
     normalized.includes("two tracks") ||
     normalized.includes("six years") ||
     normalized.includes("enam tahun") ||
-    (normalized.includes("cerita") && (normalized.includes("2021") || normalized.includes("perjalanan"))) ||
-    (normalized.includes("timeline") && (normalized.includes("about") || normalized.includes("karier") || normalized.includes("career") || normalized.includes("perjalanan") || normalized.includes("teknis") || normalized.includes("hidup")))
+    normalized.includes("6 tahun") ||
+    ((normalized.includes("berapa tahun") || normalized.includes("berapa lama") || normalized.includes("sejak kapan") || normalized.includes("tahun berapa") || normalized.includes("kapan mulai") || normalized.includes("mulai dari kapan") || normalized.includes("how many years") || normalized.includes("how long") || normalized.includes("when did") || normalized.includes("since when")) &&
+     (normalized.includes("teknolog") || normalized.includes("tech") || normalized.includes("koding") || normalized.includes("coding") || normalized.includes("belajar") || normalized.includes("software") || normalized.includes("dunia it") || normalized.includes("pemrograman") || normalized.includes("rekayasa") || normalized.includes("ngoding") || normalized.includes("mengoding") || normalized.includes("pengalaman koding") || normalized.includes("pengalaman coding") || normalized.includes("coding experience") || normalized.includes("tech experience"))) ||
+    ((normalized.includes("perjalanan") || normalized.includes("cerita") || normalized.includes("kisah") || normalized.includes("journey") || normalized.includes("story")) &&
+     (normalized.includes("2021") || normalized.includes("koding") || normalized.includes("coding") || normalized.includes("teknolog") || normalized.includes("tech") || normalized.includes("6 tahun") || normalized.includes("enam tahun") || normalized.includes("dari awal"))) ||
+    (normalized.includes("timeline") && (normalized.includes("about") || normalized.includes("karier") || normalized.includes("career") || normalized.includes("perjalanan") || normalized.includes("teknis") || normalized.includes("hidup") || normalized.includes("adyvka") || normalized.includes("koding")))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.TWO_TRACKS_TIMELINE;
   }
