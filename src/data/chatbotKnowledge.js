@@ -1739,7 +1739,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_front_webdasar",
-      "label": "💻 Belajar Dasar Pemrograman Web",
+      "label": "💻 Web Programming Fundamentals",
       "query": "tell me about adyvka basic web programming certificate"
     },
     {
@@ -1749,12 +1749,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_front_git",
-      "label": "🐙 Belajar Dasar Git dengan GitHub",
+      "label": "🐙 Git & GitHub Fundamentals",
       "query": "tell me about adyvka git and github certificate"
     },
     {
       "id": "cert_front_uiux",
-      "label": "🎨 Dasar UI/UX Design Certification",
+      "label": "🎨 UI/UX Design (Figma)",
       "query": "tell me about adyvka ui/ux design fundamentals certificate"
     },
     {
@@ -1766,7 +1766,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/belajar-dasar-data-analyst": [
     {
       "id": "cert_data_summary",
-      "label": "📊 Belajar Dasar Data Analyst Overview",
+      "label": "📊 Data Analysis with Excel Overview",
       "query": "tell me about adyvka data analyst certificate"
     },
     {
@@ -1798,12 +1798,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/belajar-membuat-aplikasi-back-end": [
     {
       "id": "cert_back_summary",
-      "label": "🛠️ Belajar Membuat Aplikasi Back-End Overview",
+      "label": "🛠️ Building Backend Applications Overview",
       "query": "tell me about adyvka backend developer certificate"
     },
     {
       "id": "cert_back_js",
-      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "label": "⚡ JavaScript Programming Fundamentals",
       "query": "tell me about adyvka javascript basics certificate"
     },
     {
@@ -1818,7 +1818,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_back_git",
-      "label": "🐙 Belajar Dasar Git dengan GitHub",
+      "label": "🐙 Git & GitHub Fundamentals",
       "query": "tell me about adyvka git and github certificate"
     },
     {
@@ -1830,7 +1830,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/belajar-dasar-git-dengan-github": [
     {
       "id": "cert_git_summary",
-      "label": "🐙 Belajar Dasar Git dengan GitHub Overview",
+      "label": "🐙 Git & GitHub Fundamentals Overview",
       "query": "tell me about adyvka git and github certificate"
     },
     {
@@ -1867,7 +1867,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_graph_uiux",
-      "label": "📐 Dasar UI/UX Design Certification",
+      "label": "📐 UI/UX Design (Figma)",
       "query": "tell me about adyvka ui/ux design fundamentals certificate"
     },
     {
@@ -1894,12 +1894,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/memulai-pemrograman-dengan-c": [
     {
       "id": "cert_c_mem_summary",
-      "label": "💻 Memulai Pemrograman Dengan C Overview",
+      "label": "💻 Getting Started with C Overview",
       "query": "tell me about adyvka c programming certificate dicoding"
     },
     {
       "id": "cert_c_mem_skilvul",
-      "label": "⌨️ Pemrograman Dasar C (Skilvul)",
+      "label": "⌨️ C Programming Fundamentals (Skilvul)",
       "query": "tell me about adyvka c programming certificate skilvul"
     },
     {
@@ -1909,12 +1909,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_c_mem_logika",
-      "label": "🧠 Pengenalan ke Logika Pemrograman",
+      "label": "🧠 Introduction to Programming Logic",
       "query": "tell me about adyvka programming logic certificate"
     },
     {
       "id": "cert_c_mem_py",
-      "label": "🐍 Memulai Pemrograman Dengan Python",
+      "label": "🐍 Getting Started with Python",
       "query": "tell me about adyvka python basics certificate dicoding"
     },
     {
@@ -1926,7 +1926,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/dasar-ui-ux-design": [
     {
       "id": "cert_ui_summary",
-      "label": "📐 Dasar UI/UX Design Overview",
+      "label": "📐 UI/UX Design (Figma) Overview",
       "query": "tell me about adyvka ui/ux design fundamentals certificate"
     },
     {
@@ -1963,12 +1963,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_pyfund_dicoding",
-      "label": "🐍 Memulai Pemrograman Dengan Python",
+      "label": "🐍 Getting Started with Python",
       "query": "tell me about adyvka python basics certificate dicoding"
     },
     {
       "id": "cert_pyfund_data",
-      "label": "📊 Belajar Dasar Data Analyst",
+      "label": "📊 Data Analysis with Excel",
       "query": "tell me about adyvka data analyst certificate"
     },
     {
@@ -1990,7 +1990,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/belajar-dasar-pemrograman-javascript": [
     {
       "id": "cert_js_summary",
-      "label": "⚡ Belajar Dasar Pemrograman JS Overview",
+      "label": "⚡ JavaScript Fundamentals Overview",
       "query": "tell me about adyvka javascript basics certificate"
     },
     {
@@ -2000,12 +2000,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_js_backend",
-      "label": "🛠️ Belajar Membuat Aplikasi Back-End",
+      "label": "🛠️ Building Backend Applications",
       "query": "tell me about adyvka backend developer certificate"
     },
     {
       "id": "cert_js_web",
-      "label": "💻 Belajar Dasar Pemrograman Web",
+      "label": "💻 Web Programming Fundamentals",
       "query": "tell me about adyvka basic web programming certificate"
     },
     {
@@ -2042,7 +2042,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_aws_backend",
-      "label": "🛠️ Belajar Membuat Aplikasi Back-End",
+      "label": "🛠️ Building Backend Applications",
       "query": "tell me about adyvka backend developer certificate"
     },
     {
@@ -2054,7 +2054,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/belajar-membuat-aplikasi-web-dengan-react": [
     {
       "id": "cert_react_summary",
-      "label": "⚛️ Belajar Aplikasi Web dengan React Overview",
+      "label": "⚛️ Building Web Apps with React Overview",
       "query": "tell me about adyvka react web development certificate"
     },
     {
@@ -2064,7 +2064,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_react_js",
-      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "label": "⚡ JavaScript Programming Fundamentals",
       "query": "tell me about adyvka javascript basics certificate"
     },
     {
@@ -2086,7 +2086,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/memulai-pemrograman-dengan-python": [
     {
       "id": "cert_pymem_summary",
-      "label": "🐍 Memulai Pemrograman Dengan Python Overview",
+      "label": "🐍 Python Programming Overview",
       "query": "tell me about adyvka python basics certificate dicoding"
     },
     {
@@ -2096,7 +2096,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_pymem_data",
-      "label": "📊 Belajar Dasar Data Analyst",
+      "label": "📊 Data Analysis with Excel",
       "query": "tell me about adyvka data analyst certificate"
     },
     {
@@ -2118,7 +2118,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/belajar-dasar-pemrograman-web": [
     {
       "id": "cert_web_summary",
-      "label": "💻 Belajar Dasar Pemrograman Web Overview",
+      "label": "💻 Web Programming Fundamentals Overview",
       "query": "tell me about adyvka basic web programming certificate"
     },
     {
@@ -2128,7 +2128,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_web_js",
-      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "label": "⚡ JavaScript Programming Fundamentals",
       "query": "tell me about adyvka javascript basics certificate"
     },
     {
@@ -2150,17 +2150,17 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/pengenalan-ke-logika-pemrograman": [
     {
       "id": "cert_log_summary",
-      "label": "🧠 Logika Pemrograman Overview",
+      "label": "🧠 Programming Logic Overview",
       "query": "tell me about adyvka programming logic certificate"
     },
     {
       "id": "cert_log_c",
-      "label": "💻 Memulai Pemrograman Dengan C",
+      "label": "💻 Getting Started with C",
       "query": "tell me about adyvka c programming certificate dicoding"
     },
     {
       "id": "cert_log_js",
-      "label": "⚡ Belajar Dasar Pemrograman JavaScript",
+      "label": "⚡ JavaScript Programming Fundamentals",
       "query": "tell me about adyvka javascript basics certificate"
     },
     {
@@ -2182,12 +2182,12 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/pemrograman-dasar-c": [
     {
       "id": "cert_cskil_summary",
-      "label": "⌨️ Pemrograman Dasar C (Skilvul) Overview",
+      "label": "⌨️ C Programming Fundamentals Overview",
       "query": "tell me about adyvka c programming certificate skilvul"
     },
     {
       "id": "cert_cskil_dicoding",
-      "label": "💻 Memulai Pemrograman Dengan C (Dicoding)",
+      "label": "💻 Getting Started with C (Dicoding)",
       "query": "tell me about adyvka c programming certificate dicoding"
     },
     {
@@ -2197,7 +2197,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_cskil_log",
-      "label": "🧠 Pengenalan ke Logika Pemrograman",
+      "label": "🧠 Introduction to Programming Logic",
       "query": "tell me about adyvka programming logic certificate"
     },
     {
@@ -2214,7 +2214,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/dasar-prompt-engineering": [
     {
       "id": "cert_prompt_summary",
-      "label": "🤖 Dasar Prompt Engineering Overview",
+      "label": "🤖 Prompt Engineering Fundamentals Overview",
       "query": "tell me about adyvka prompt engineering certificate"
     },
     {
@@ -2229,7 +2229,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_prompt_data",
-      "label": "📊 Belajar Dasar Data Analyst",
+      "label": "📊 Data Analysis with Excel",
       "query": "tell me about adyvka data analyst certificate"
     },
     {
@@ -2246,7 +2246,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
   "/certificates/meniti-karier-sebagai-software-developer": [
     {
       "id": "cert_karier_summary",
-      "label": "🚀 Meniti Karier Sebagai Software Dev Overview",
+      "label": "🚀 Software Developer Career Overview",
       "query": "tell me about adyvka software developer career certificate"
     },
     {
@@ -2266,7 +2266,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_karier_git",
-      "label": "🐙 Belajar Dasar Git dengan GitHub",
+      "label": "🐙 Git & GitHub Fundamentals",
       "query": "tell me about adyvka git and github certificate"
     },
     {
@@ -2283,7 +2283,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_fin_karier",
-      "label": "🚀 Meniti Karier Sebagai Software Developer",
+      "label": "🚀 Building a Career as a Software Developer",
       "query": "tell me about adyvka software developer career certificate"
     },
     {
@@ -2315,7 +2315,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_ai_prompt",
-      "label": "🤖 Dasar Prompt Engineering",
+      "label": "🤖 Prompt Engineering Fundamentals",
       "query": "tell me about adyvka prompt engineering certificate"
     },
     {
@@ -2325,7 +2325,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_ai_data",
-      "label": "📊 Belajar Dasar Data Analyst",
+      "label": "📊 Data Analysis with Excel",
       "query": "tell me about adyvka data analyst certificate"
     },
     {
@@ -2394,7 +2394,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
     },
     {
       "id": "cert_eng_karier",
-      "label": "🚀 Meniti Karier Sebagai Software Developer",
+      "label": "🚀 Building a Career as a Software Developer",
       "query": "tell me about adyvka software developer career certificate"
     },
     {
@@ -2528,7 +2528,7 @@ export function getContextualSuggestions(pathname = "/", lang = "id") {
       { id: "dyn_cert_sum", label: "📜 Syllabus & Topics Covered", query: `what was taught and learned in ${slug} certificate` },
       { id: "dyn_cert_skills", label: "🎓 Skills & Competencies Acquired", query: `what skills and competencies did adyvka gain from ${slug}` },
       { id: "dyn_cert_verify", label: "🔗 Verify Official Credential", query: `tell me about adyvka ${slug} certificate credentials` },
-      { id: "dyn_cert_all", label: "📜 Explore All 23 Certifications", query: "what certificates and certifications does adyvka have" },
+      { id: "dyn_cert_all", label: "📜 Explore All 25 Certifications", query: "what certificates and certifications does adyvka have" },
       { id: "dyn_cert_cs50", label: "🎓 Harvard University CS50 Credential", query: "tell me about adyvka harvard cs50 certificate" },
       { id: "dyn_cert_aws", label: "☁️ AWS Cloud Practitioner Essentials", query: "tell me about adyvka aws cloud practitioner certificate" },
     ];
@@ -7078,59 +7078,83 @@ A comprehensive directory of all 18 production systems and applications engineer
   },
   CERTIFICATES: {
     id: {
-      title: `23 Sertifikasi Profesional & Akademik Internasional`,
-      text: `**23 Sertifikasi Profesional & Akademik Terverifikasi Adyvka**
+      title: `30 Sertifikasi Profesional & Akademik Internasional`,
+      text: `**30 Sertifikasi Profesional & Akademik Terverifikasi Adyvka**
 
-Adyvka memegang total 23 sertifikat resmi yang memvalidasi keahlian teknis dari institusi global dan nasional terkemuka:
+Adyvka memegang total 30 sertifikat resmi yang memvalidasi keahlian teknis dari institusi global dan nasional terkemuka:
+
+* **Open Science, AI Ethics & Kemampuan Bahasa Internasional (2026):**
+  * **NASA Open Science Essentials (NASA):** Sertifikasi resmi dari NASA Transform to Open Science (TOPS) mencakup prinsip FAIR Data, open software, dan riset sains transparan.
+  * **AI in Society: Ethics, Leadership, and the Road Ahead (HP × edX):** Tata kelola etika AI, mitigasi bias algoritma, keamanan ancaman AI, regulasi EU AI Act, dan workforce augmentation.
+  * **IELTS Academic: English Proficiency (IDP IELTS Australia · Cambridge Assessment English):** Skor keseluruhan Band 5.5 (CEFR B2 Competent) dengan Speaking Band 6.5.
+
+* **Penghargaan Nasional, Kepemimpinan & Kompetisi Resmi:**
+  * **Piagam Penghargaan Juara 2: National Web Design Competition (Politeknik Negeri Bali - PNBITC#18):** Piagam penghargaan resmi No. 23685/DST/PL8/PP.06/2026 atas raihan National Runner-Up lomba desain web tingkat nasional.
+  * **1st Place National Web Design Competition (ICOMFEST 2025):** Sertifikat resmi Juara 1 Nasional sebagai Lead of Program Team Batosai merancang platform PusakaKu.
+  * **Certificate of Appreciation: Event Organizer Student Council (OSIS IDN Boarding School):** Sertifikat apresiasi resmi No. 015/SRT/OSIS-SMKIDN/VIII/2026 atas kepemimpinan Divisi Event 2 periode dan ketua pelaksana IT FEST 2025 (500+ peserta).
+  * **Cerdas Cermat APBN 2025 (Kementerian Keuangan Republik Indonesia):** Sertifikat kompetensi kebijakan fiskal nasional, struktur APBN, pengelolaan belanja publik, dan transparansi keuangan negara.
+  * **Sertifikat Peserta Lomba Poster Muharram Competition (LDK KAHFI Universitas YARSI):** Sertifikat partisipasi resmi kompetisi desain poster tingkat nasional.
 
 * **Computer Science & Sistem Tingkat Rendah:**
   * **CS50: Introduction to Computer Science (Harvard University):** Kurikulum ilmu komputer unggulan dunia (Algoritma, Alokasi Memori C, Python, SQL, Struktur Data).
   * **Memulai Pemrograman Dengan C & Pemrograman Dasar C (Dicoding & Skilvul):** Fondasi pointer, alokasi memori heap/stack, dan logika komputasi murni.
 
 * **Full Stack & Cloud Architecture:**
-  * **Coding Camp: Full Stack Developer (Dicoding × DBS Foundation):** Bootcamp intensif 90+ jam rekayasa web Express, React, RESTful API, dan PostgreSQL.
+  * **Coding Camp: Full Stack Developer (Dicoding × DBS Foundation):** 766 jam kurikulum intensif rekayasa web Express, React, RESTful API, dan PostgreSQL dengan nilai kumulatif A (89/100).
   * **Cloud Practitioner Essentials (Amazon Web Services / AWS):** Arsitektur cloud computing, EC2, S3, RDS, IAM, keamanan, dan reliabilitas server.
   * **Belajar Membuat Aplikasi Back-End (Dicoding):** RESTful API berstandar industri dengan Hapi.js/Express dan pengujian Postman.
   * **Frontend Web Developer & Aplikasi Web dengan React (Dicoding):** Komponen modern, state management, SPA architecture, dan WCAG accessibility.
 
-* **DevOps & Rekayasa Perangkat Lunak:**
-  * **Belajar Dasar Git dengan GitHub (Dicoding):** Branching strategies, rebase, resolusi merge conflict, dan open-source collaboration.
-  * **Belajar Dasar Data Analyst & Python Fundamentals (Dicoding & DQLab):** Data wrangling, statistika, manipulasi dataset, dan visualisasi.
-  * **Dasar Prompt Engineering & Artificial Intelligence Basics (AI Academy):** Rekayasa prompt LLM terstruktur, few-shot learning, dan etika AI.
+* **DevOps, Data Analytics & AI:**
+  * **Kursus Git & GitHub (Progate):** Branching strategies, rebase, resolusi merge conflict, dan open-source collaboration.
+  * **Introduction to Data Analysis using Microsoft Excel (Coursera) & Data Science with Python (DQLab):** Data wrangling, pivot tables, statistika, manipulasi dataset, dan visualisasi.
+  * **Dasar Prompt Engineering & Artificial Intelligence Basics (Dicoding):** Rekayasa prompt LLM terstruktur, few-shot learning, dan etika AI.
 
 Anda dapat menanyakan detail materi dan capaian dari setiap sertifikat spesifik secara langsung kepada saya.`,
       links: [
         {
-                "label": "Lihat Daftar Seluruh Sertifikat",
+                "label": "Lihat Daftar Seluruh 30 Sertifikat",
                 "url": "/certificates"
         }
 ],
     },
     en: {
-      title: `23 Professional & Academic Certifications`,
-      text: `**Adyvka's 23 Verified Professional and Academic Certifications**
+      title: `30 Professional & Academic Certifications`,
+      text: `**Adyvka's 30 Verified Professional and Academic Certifications**
 
-Adyvka holds 23 credentials validating technical rigor across computer science, software engineering, and cloud systems:
+Adyvka holds 30 credentials validating technical rigor across computer science, software engineering, and cloud systems:
+
+* **Open Science, AI Ethics & International English (2026):**
+  * **NASA Open Science Essentials (NASA TOPS):** Official certification covering FAIR data principles, open scientific software, and transparent reproducible research.
+  * **AI in Society: Ethics, Leadership, and the Road Ahead (HP × edX):** AI ethics governance, algorithmic bias auditing, AI security, EU AI Act compliance, and leadership.
+  * **IELTS Academic: English Proficiency (IDP IELTS Australia · Cambridge Assessment English):** Overall Band 5.5 (CEFR B2 Competent) with Speaking Band 6.5.
+
+* **National Awards, Leadership & Official Competition Honors:**
+  * **2nd Place National Web Design Certificate (Politeknik Negeri Bali - PNBITC#18):** Official Award Certificate No. 23685/DST/PL8/PP.06/2026 for National Runner-Up honors.
+  * **1st Place National Web Design Competition (ICOMFEST 2025):** Official 1st Place Champion Certificate as Lead of Program for Team Batosai.
+  * **Certificate of Appreciation: Event Organizer Student Council (OSIS IDN):** Official Certificate No. 015/SRT/OSIS-SMKIDN/VIII/2026 for 2-term event division leadership and commanding IT FEST 2025 (500+ attendees).
+  * **Cerdas Cermat APBN 2025 (Ministry of Finance Republic of Indonesia):** Official national competition award in fiscal policy, national state budget (APBN) architecture, and public expenditure accountability.
+  * **Muharram Poster Competition Participant Certificate (LDK KAHFI Universitas YARSI):** Official participant certificate in national visual design.
 
 * **Computer Science & Low-Level Foundations:**
   * **CS50: Introduction to Computer Science (Harvard University):** Harvard's flagship CS curriculum covering memory management in C, algorithms, Big-O complexity, Python, and SQL.
   * **C Programming Foundations (Dicoding & Skilvul):** Manual pointer arithmetic, data structures, and runtime efficiency.
 
 * **Full Stack & Cloud Engineering:**
-  * **Coding Camp: Full Stack Developer (Dicoding × DBS Foundation):** 90+ hours corporate-sponsored bootcamp covering decoupled Express APIs, React, and PostgreSQL.
+  * **Coding Camp: Full Stack Developer (Dicoding × DBS Foundation):** 766 hours corporate-sponsored program covering decoupled Express APIs, React, and PostgreSQL with Grade A (89/100).
   * **Cloud Practitioner Essentials (Amazon Web Services / AWS):** Cloud architecture, EC2, S3, RDS, IAM security, and distributed infrastructure.
   * **Backend Application Development (Dicoding):** Industrial RESTful API contracts, validation middleware, and automated endpoint testing.
   * **Frontend Web Developer & Modern React (Dicoding):** Semantic HTML5, CSS Grid layouting, state management, and WCAG accessibility standards.
 
 * **DevOps, Data Analytics & AI:**
-  * **Git with GitHub Fundamentals (Dicoding):** Clean commit hygiene, rebase workflows, merge conflict resolution, and PR reviews.
-  * **Data Analyst Foundations & Python (Dicoding & DQLab):** Data cleansing, exploratory analysis, and data modeling.
-  * **Prompt Engineering & AI Foundations (AI Academy):** LLM instruction tuning, few-shot prompting patterns, and deterministic reasoning.
+  * **Git with GitHub Fundamentals (Progate):** Clean commit hygiene, rebase workflows, merge conflict resolution, and PR reviews.
+  * **Data Analysis using Excel (Coursera) & Python Fundamentals (DQLab):** Data cleansing, pivot tables, exploratory analysis, and data modeling.
+  * **Prompt Engineering & AI Foundations (Dicoding):** LLM instruction tuning, few-shot prompting patterns, and deterministic reasoning.
 
 You can ask me about any specific certificate to explore what was learned and achieved.`,
       links: [
         {
-                "label": "View All 23 Certificates",
+                "label": "View All 30 Certificates",
                 "url": "/certificates"
         }
 ],
@@ -9487,7 +9511,7 @@ Feel free to ask me anything about any specific project, experience, or certific
         "url": "/certificates/cs50-introduction-to-computer-science"
       },
       {
-        "label": "Jelajahi Seluruh 23 Sertifikat",
+        "label": "Jelajahi Seluruh 30 Sertifikat",
         "url": "/certificates"
       }
     ]
@@ -9501,7 +9525,7 @@ Feel free to ask me anything about any specific project, experience, or certific
         "url": "/certificates/cs50-introduction-to-computer-science"
       },
       {
-        "label": "Explore All 23 Verified Credentials",
+        "label": "Explore All 30 Verified Credentials",
         "url": "/certificates"
       }
     ]
@@ -9611,7 +9635,7 @@ Feel free to ask me anything about any specific project, experience, or certific
         "url": "/certificates/belajar-membuat-aplikasi-web-dengan-react"
       },
       {
-        "label": "Jelajahi Seluruh 23 Sertifikat",
+        "label": "Jelajahi Seluruh 30 Sertifikat",
         "url": "/certificates"
       }
     ]
@@ -9625,7 +9649,7 @@ Feel free to ask me anything about any specific project, experience, or certific
         "url": "/certificates/belajar-membuat-aplikasi-web-dengan-react"
       },
       {
-        "label": "Explore All 23 Verified Credentials",
+        "label": "Explore All 30 Verified Credentials",
         "url": "/certificates"
       }
     ]
@@ -10005,7 +10029,7 @@ Feel free to ask me anything about any specific project, experience, or certific
         "url": "/projects/idncourse"
       },
       {
-        "label": "Explore Adyvka's 23 Certifications",
+        "label": "Explore Adyvka's 25 Certifications",
         "url": "/certificates"
       }
     ]

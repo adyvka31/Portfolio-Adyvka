@@ -319,6 +319,21 @@ function CertificateDetailPage() {
                   </a>
                 )}
 
+                {detail?.relatedStoryUrl && (
+                  <Link
+                    to={detail.relatedStoryUrl}
+                    className={local.verifyBtn}
+                    style={{
+                      borderColor: "rgba(124, 242, 255, 0.35)",
+                      background: "rgba(124, 242, 255, 0.08)",
+                      color: "var(--accent-primary, #7cf2ff)",
+                    }}
+                  >
+                    <span>{detail.relatedStoryLabel || "View Full Story & Overview"}</span>
+                    <ArrowUpRightIcon size={13} />
+                  </Link>
+                )}
+
                 {/* VERIFIED CODING CAMP TRANSCRIPT GRADE */}
                 {detail?.transcriptGrade && (
                   <div className={local.transcriptGradeCard}>

@@ -6,6 +6,7 @@ import backpacker2 from "../assets/backpacker/singapore-malaysia-thailand-cross-
 import backpacker3 from "../assets/backpacker/singapore-malaysia-thailand-cultural-expedition-3.webp";
 
 import osisHero from "../assets/experiences/idn-student-council-event-division-leader.webp";
+import osisCert from "../assets/experiences/idn-student-council-event-division-leader-certificate.webp";
 import osis2 from "../assets/osis/idn-student-council-leadership-summit-2.webp";
 import osis3 from "../assets/osis/idn-student-council-event-production-3.webp";
 
@@ -294,13 +295,6 @@ export const leadershipDetails = {
       "Event organization photos, committee coordination meetings, and stage productions at IDN Boarding School.",
     documentation: [
       {
-        id: "osis-stage",
-        title: "Campus Festival Main Stage Production",
-        tag: "Stage Operations",
-        image: osisHero,
-        desc: "Overseeing main stage audio, lighting, and timeline execution during an annual IDN Boarding School flagship event.",
-      },
-      {
         id: "osis-team",
         title: "Event Division Committee Briefing & Coordination",
         tag: "Team Leadership",
@@ -313,6 +307,13 @@ export const leadershipDetails = {
         tag: "Executive Tenure",
         image: osis3,
         desc: "Commemorating successful completion of annual event calendar deliverables with the executive council board.",
+      },
+      {
+        id: "osis-certificate",
+        title: "Official Certificate of Appreciation - Event Organizer",
+        tag: "Official Credential",
+        image: osisCert,
+        desc: "Certificate of Appreciation Number: 015/SRT/OSIS-SMKIDN/VIII/2026 awarded by IDN Boarding School for executive leadership and service as Student Council Event Organizer (2025-2026).",
       },
     ],
   },

@@ -68,6 +68,13 @@ import aiImg from "../assets/certificates/dicoding-artificial-intelligence-basic
 import gdgImg from "../assets/certificates/google-developer-groups-participant-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import codingcampImg from "../assets/certificates/coding-camp-fullstack-developer-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import englishImg from "../assets/certificates/english-proficiency-assessment-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import nasaImg from "../assets/certificates/nasa-open-science-essentials-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import hpImg from "../assets/certificates/hp-edx-ai-in-society-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import apbnImg from "../assets/certificates/kemenkeu-cerdas-cermat-apbn-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import pnbCertImg from "../assets/pnb/pnbitc-2024-runner-up-official-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import icomfestCertImg from "../assets/achievements/icomfest-2025-1st-place-web-design-national-champion-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import osisCertImg from "../assets/experiences/idn-student-council-event-division-leader-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import yarsiPosterImg from "../assets/certificates/universitas-yarsi-muharram-poster-competition-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -190,30 +197,7 @@ export const marqueeStack = [
 // PROJECTS (Bento grid)
 // ============================================
 export const projects = [
-  // ── FEATURED / EXISTING ──────────────────────────────────────────
-  {
-    id: "richobahari",
-    category: "web",
-    span: "lg",
-    label: "WEBSITE · CORPORATE CONTRACTOR & INDUSTRIAL",
-    title: "CV. Richo Bahari",
-    year: "2025",
-    description:
-      "Corporate profile and interactive project catalog for CV. Richo Bahari (General Contractor & Industrial Services). Showcases civil construction, MEP, steel fabrication, and industrial racking built with Next.js 16, React 19, and Tailwind CSS v4.",
-    tags: [
-      "Next.js 16",
-      "React 19",
-      "Tailwind CSS v4",
-      "TypeScript",
-      "React Compiler",
-      "PostCSS",
-      "SEO & SSG",
-      "Industrial EPC",
-    ],
-    hasPreview: true,
-    link: "https://github.com/CentraDev-Team/RichoBahariCompro",
-    thumbnail: richobahariImg,
-  },
+  // ── 2026 (NEWEST) ────────────────────────────────────────────────
   {
     id: "terastani",
     category: "web",
@@ -240,6 +224,54 @@ export const projects = [
     thumbnail: terastaniImg,
   },
   {
+    id: "databank",
+    category: "web",
+    span: "lg",
+    label: "WEBSITE · ENTERPRISE ERP",
+    title: "Databank ERP",
+    year: "2026",
+    description:
+      "Mission-critical telecom ERP pitched from a high-school dorm and delivered for PT Intisel. Extended to a 9-month professional engagement, it actively automates procurement workflows, daily attendance, payroll calculations, and Huawei ISDP data synchronization across national operations.",
+    tags: [
+      "React",
+      "Vite",
+      "NestJS",
+      "PostgreSQL",
+      "TypeScript",
+      "PrismaORM",
+      "Docker",
+      "CI/CD",
+    ],
+    hasPreview: true,
+    link: "#",
+    thumbnail: databankImg,
+  },
+
+  // ── 2025 ─────────────────────────────────────────────────────────
+  {
+    id: "richobahari",
+    category: "web",
+    span: "lg",
+    label: "WEBSITE · CORPORATE CONTRACTOR & INDUSTRIAL",
+    title: "CV. Richo Bahari",
+    year: "2025",
+    description:
+      "Corporate profile and interactive project catalog for CV. Richo Bahari (General Contractor & Industrial Services). Showcases civil construction, MEP, steel fabrication, and industrial racking built with Next.js 16, React 19, and Tailwind CSS v4.",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS v4",
+      "TypeScript",
+      "React Compiler",
+      "PostCSS",
+      "SEO & SSG",
+      "Industrial EPC",
+    ],
+    hasPreview: true,
+    link: "https://github.com/CentraDev-Team/RichoBahariCompro",
+    thumbnail: richobahariImg,
+  },
+  {
     id: "kepk",
     category: "web",
     span: "lg",
@@ -261,29 +293,6 @@ export const projects = [
     hasPreview: true,
     link: "https://github.com/adyvka31/kepk-backend",
     thumbnail: kepkImg,
-  },
-  {
-    id: "databank",
-    category: "web",
-    span: "lg",
-    label: "WEBSITE · ENTERPRISE ERP",
-    title: "Databank ERP",
-    year: "2025",
-    description:
-      "Mission-critical telecom ERP pitched from a high-school dorm and delivered for PT Intisel. Extended to a 9-month professional engagement, it actively automates procurement workflows, daily attendance, payroll calculations, and Huawei ISDP data synchronization across national operations.",
-    tags: [
-      "React",
-      "Vite",
-      "NestJS",
-      "PostgreSQL",
-      "TypeScript",
-      "PrismaORM",
-      "Docker",
-      "CI/CD",
-    ],
-    hasPreview: true,
-    link: "#",
-    thumbnail: databankImg,
   },
   {
     id: "ruangtumbuh",
@@ -308,6 +317,8 @@ export const projects = [
     link: "https://ruang-tumbuh.vercel.app/",
     thumbnail: ruangtumbuhImg,
   },
+
+  // ── 2024 ─────────────────────────────────────────────────────────
   {
     id: "fitsmart",
     category: "web",
@@ -322,25 +333,119 @@ export const projects = [
     thumbnail: fitsmartImg,
   },
   {
-    id: "javaisland",
+    id: "semua-bisa",
     category: "web",
-    span: "md",
-    label: "WEBSITE · CULTURAL HERITAGE & AI",
-    title: "JavaIsland",
-    year: "2023",
+    span: "sm",
+    label: "WEBSITE · EDTECH & YOUTH CAREER ECOSYSTEM",
+    title: "SemuaBisa",
+    year: "2024",
     description:
-      "An interactive cultural preservation and tourism exploration platform for Java Island. Features Vue.js 3D mouse parallax city cards, curated culinary archives, and a bilingual Gemini 1.5 Flash AI concierge with cultural domain guardrails.",
+      "An inclusive EdTech ecosystem built for the Unila 2024 National Web Design Competition. Unites 8 free technical bootcamps, university degree pathways with Alpine.js tabs, a freelance digital marketplace, and curated tech job recruitment.",
     tags: [
       "HTML5",
       "CSS3",
       "Tailwind CSS",
-      "Vue.js",
-      "Gemini 1.5 Flash",
+      "DaisyUI",
+      "Alpine.js",
       "JavaScript",
     ],
-    link: "https://github.com/adyvka31/JavaIsland",
-    thumbnail: javaislandImg,
+    link: "https://github.com/adyvka31/SemuaBisa-Web",
+    thumbnail: semuaBisaImg,
   },
+  {
+    id: "delifood",
+    category: "mobile",
+    span: "md",
+    label: "MOBILE · FOOD DELIVERY",
+    title: "DeliFood",
+    year: "2024",
+    description:
+      "Real-time mobile food ordering application engineered with Flutter and Cloud Firestore. Features live product stream synchronization, atomic cart deduplication, dynamic wishlist, and multi-stage delivery tracking.",
+    tags: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Cloud Firestore",
+      "Provider",
+      "Material 3",
+    ],
+    link: "https://github.com/adyvka31/DeliFood",
+    thumbnail: delifoodImg,
+  },
+  {
+    id: "ai-ticket-manager",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · AI & PRODUCTIVITY",
+    title: "AI Ticket Manager",
+    year: "2024",
+    description:
+      "Cross-platform intelligent task and ticket management mobile application built with Flutter, Firebase Authentication, and Cloud Firestore. Powered by Google Gemini AI for automated task summarization, contextual prompt instructions, real-time sync, and multi-tenant isolation.",
+    tags: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Gemini API",
+      "Provider",
+      "Cloud Firestore",
+    ],
+    link: "https://github.com/adyvka31/AI-Generator-App",
+    thumbnail: aigeneratorImg,
+  },
+  {
+    id: "attendance-app",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · BIOMETRICS & PRODUCTIVITY",
+    title: "Attendance App",
+    year: "2024",
+    description:
+      "Cross-platform mobile attendance and task management application built with Flutter, Firebase, and Google ML Kit. Features on-device biometric face verification, real-time Firestore task streaming, and reactive GetX theme switching.",
+    tags: ["Flutter", "Dart", "Firebase", "Google ML Kit", "GetX", "Camera API"],
+    link: "https://github.com/adyvka31/Attendance-App",
+    thumbnail: todoImg,
+  },
+  {
+    id: "qr-scanner",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · EVENT TICKETING & SCANNER",
+    title: "QR Guest Manager",
+    year: "2024",
+    description:
+      "High-speed event ticketing and guest check-in mobile application built with Flutter, Firebase, and Dio REST API. Features live camera barcode scanning via mobile_scanner, dynamic QR vector generation, and duplicate-prevention check-in workflows.",
+    tags: ["Flutter", "Dart", "Firebase", "Mobile Scanner", "Dio", "QR Flutter"],
+    link: "https://github.com/adyvka31/QR_Scanner_App",
+    thumbnail: qrscannerImg,
+  },
+  {
+    id: "news-app",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · NEWS & MEDIA",
+    title: "News App",
+    year: "2024",
+    description:
+      "Cross-platform digital journalism and news curation mobile app built with Flutter and GetX reactive state management. Ingests live CNN Indonesia REST streams with real-time substring search, calendar date filtering, dynamic dark mode, and persistent bookmark curation.",
+    tags: ["Flutter", "Dart", "GetX", "REST API", "Lottie", "HTTP"],
+    link: "https://github.com/adyvka31/News-App",
+    thumbnail: newsImg,
+  },
+  {
+    id: "quran-app",
+    category: "mobile",
+    span: "sm",
+    label: "MOBILE · ISLAMIC & LIFESTYLE",
+    title: "Quran App",
+    year: "2024",
+    description:
+      "Modern digital Al-Quran mobile application built with Flutter, GetX reactive state management, and REST API integration. Features 114 surah directory browsing, responsive search, full ayat reader with Arabic typography and HTML transliteration, dynamic dark mode, and persistent bookmark curation.",
+    tags: ["Flutter", "Dart", "GetX", "REST API", "HTML", "HTTP"],
+    link: "https://github.com/adyvka31/Quran-App",
+    thumbnail: quranImg,
+  },
+
+  // ── 2023 (OLDEST) ────────────────────────────────────────────────
   {
     id: "pusakaku",
     category: "web",
@@ -362,24 +467,24 @@ export const projects = [
     thumbnail: pusakakuImg,
   },
   {
-    id: "semua-bisa",
+    id: "javaisland",
     category: "web",
-    span: "sm",
-    label: "WEBSITE · EDTECH & YOUTH CAREER ECOSYSTEM",
-    title: "SemuaBisa",
-    year: "2024",
+    span: "md",
+    label: "WEBSITE · CULTURAL HERITAGE & AI",
+    title: "JavaIsland",
+    year: "2023",
     description:
-      "An inclusive EdTech ecosystem built for the Unila 2024 National Web Design Competition. Unites 8 free technical bootcamps, university degree pathways with Alpine.js tabs, a freelance digital marketplace, and curated tech job recruitment.",
+      "An interactive cultural preservation and tourism exploration platform for Java Island. Features Vue.js 3D mouse parallax city cards, curated culinary archives, and a bilingual Gemini 1.5 Flash AI concierge with cultural domain guardrails.",
     tags: [
       "HTML5",
       "CSS3",
       "Tailwind CSS",
-      "DaisyUI",
-      "Alpine.js",
+      "Vue.js",
+      "Gemini 1.5 Flash",
       "JavaScript",
     ],
-    link: "https://github.com/adyvka31/SemuaBisa-Web",
-    thumbnail: semuaBisaImg,
+    link: "https://github.com/adyvka31/JavaIsland",
+    thumbnail: javaislandImg,
   },
   {
     id: "idncourse",
@@ -440,99 +545,6 @@ export const projects = [
     link: "https://github.com/adyvka31/MyStyle",
     thumbnail: mystyleImg,
   },
-  {
-    id: "delifood",
-    category: "mobile",
-    span: "md",
-    label: "MOBILE · FOOD DELIVERY",
-    title: "DeliFood",
-    year: "2024",
-    description:
-      "Real-time mobile food ordering application engineered with Flutter and Cloud Firestore. Features live product stream synchronization, atomic cart deduplication, dynamic wishlist, and multi-stage delivery tracking.",
-    tags: [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "Cloud Firestore",
-      "Provider",
-      "Material 3",
-    ],
-    link: "https://github.com/adyvka31/DeliFood",
-    thumbnail: delifoodImg,
-  },
-  {
-    id: "ai-ticket-manager",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · AI & PRODUCTIVITY",
-    title: "AI Ticket Manager",
-    year: "2024",
-    description:
-      "Cross-platform intelligent task and ticket management mobile application built with Flutter, Firebase Authentication, and Cloud Firestore. Powered by Google Gemini AI for automated task summarization, contextual prompt instructions, real-time sync, and multi-tenant isolation.",
-    tags: [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "Gemini API",
-      "Provider",
-      "Cloud Firestore",
-    ],
-    link: "https://github.com/adyvka31/AI-Generator-App",
-    thumbnail: aigeneratorImg,
-  },
-
-  {
-    id: "attendance-app",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · BIOMETRICS & PRODUCTIVITY",
-    title: "Attendance App",
-    year: "2024",
-    description:
-      "Cross-platform mobile attendance and task management application built with Flutter, Firebase, and Google ML Kit. Features on-device biometric face verification, real-time Firestore task streaming, and reactive GetX theme switching.",
-    tags: ["Flutter", "Dart", "Firebase", "Google ML Kit", "GetX", "Camera API"],
-    link: "https://github.com/adyvka31/Attendance-App",
-    thumbnail: todoImg,
-  },
-  {
-    id: "qr-scanner",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · EVENT TICKETING & SCANNER",
-    title: "QR Guest Manager",
-    year: "2024",
-    description:
-      "High-speed event ticketing and guest check-in mobile application built with Flutter, Firebase, and Dio REST API. Features live camera barcode scanning via mobile_scanner, dynamic QR vector generation, and duplicate-prevention check-in workflows.",
-    tags: ["Flutter", "Dart", "Firebase", "Mobile Scanner", "Dio", "QR Flutter"],
-    link: "https://github.com/adyvka31/QR_Scanner_App",
-    thumbnail: qrscannerImg,
-  },
-  {
-    id: "news-app",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · NEWS & MEDIA",
-    title: "News App",
-    year: "2024",
-    description:
-      "Cross-platform digital journalism and news curation mobile app built with Flutter and GetX reactive state management. Ingests live CNN Indonesia REST streams with real-time substring search, calendar date filtering, dynamic dark mode, and persistent bookmark curation.",
-    tags: ["Flutter", "Dart", "GetX", "REST API", "Lottie", "HTTP"],
-    link: "https://github.com/adyvka31/News-App",
-    thumbnail: newsImg,
-  },
-  {
-    id: "quran-app",
-    category: "mobile",
-    span: "sm",
-    label: "MOBILE · ISLAMIC & LIFESTYLE",
-    title: "Quran App",
-    year: "2024",
-    description:
-      "Modern digital Al-Quran mobile application built with Flutter, GetX reactive state management, and REST API integration. Features 114 surah directory browsing, responsive search, full ayat reader with Arabic typography and HTML transliteration, dynamic dark mode, and persistent bookmark curation.",
-    tags: ["Flutter", "Dart", "GetX", "REST API", "HTML", "HTTP"],
-    link: "https://github.com/adyvka31/Quran-App",
-    thumbnail: quranImg,
-  },
 ];
 
 export const publicationsList = [
@@ -567,32 +579,32 @@ export const publicationsList = [
     ],
     chapters: [
       {
-        num: "BAB I",
-        title: "Membuat Game di Scratch",
+        num: "Chapter I",
+        title: "Introduction to Game Development with Scratch",
         desc: "1.1 Introduction to visual block programming · 1.2 Downloading and installing Scratch · 1.3 Using Scratch on the web.",
       },
       {
-        num: "BAB II",
+        num: "Chapter II",
         title: "Catching Fruit",
         desc: "2.1 Concept · 2.2 Gameplay UI · 2.3 Creating & importing Sprites · 2.4 Designing Backgrounds · 2.5 Complete game logic & scripts.",
       },
       {
-        num: "BAB III",
+        num: "Chapter III",
         title: "Alien Invader",
         desc: "3.1 Concept · 3.2 Gameplay UI · 3.3 Sprite design & animation · 3.4 Background setup · 3.5 Laser projectile shooting & collision scripts.",
       },
       {
-        num: "BAB IV",
-        title: "Game Adab",
+        num: "Chapter IV",
+        title: "Game Adab (Character Ethics)",
         desc: "4.1 Educational game concept · 4.2 Gameplay UI · 4.3 Character Sprites · 4.4 Environmental Backgrounds · 4.5 Interactive choice & score logic.",
       },
       {
-        num: "BAB V",
+        num: "Chapter V",
         title: "Pacman",
         desc: "5.1 Maze survival mechanics · 5.2 Gameplay UI · 5.3 Player & ghost Sprites · 5.4 Labyrinth Backdrop · 5.5 Path navigation & collectible scripts.",
       },
       {
-        num: "BAB VI",
+        num: "Chapter VI",
         title: "Block Breaker",
         desc: "6.1 Arcade paddle & bounce physics · 6.2 Gameplay UI · 6.3 Paddle & ball Sprites · 6.4 Stage Backdrop · 6.5 Reflection angles & brick destruction logic.",
       },
@@ -632,23 +644,23 @@ export const publicationsList = [
     ],
     chapters: [
       {
-        num: "BAB I",
-        title: "Pengenalan HTML Dasar",
+        num: "Chapter I",
+        title: "Foundations of HTML5",
         desc: "Core web architecture, semantic document markup, Head & Body tags, VS Code + Live Server setup, text elements, media, hyperlinks, tables, and forms.",
       },
       {
-        num: "BAB II",
-        title: "Pengenalan CSS Dasar",
+        num: "Chapter II",
+        title: "Foundations of CSS3 & Box Model",
         desc: "CSS syntax, element/class/ID selectors, internal & external stylesheets, the Box Model (margin, padding, border), color palettes, and typography.",
       },
       {
-        num: "BAB III",
-        title: "Membuat Project HTML CSS",
+        num: "Chapter III",
+        title: "Engineering HTML5 & CSS3 Projects",
         desc: "Hands-on project constructing a clean, fully-structured landing page with custom Hero sections, navigation bars, content grids, and interactive buttons.",
       },
       {
-        num: "BAB IV",
-        title: "Menggunakan Tailwind",
+        num: "Chapter IV",
+        title: "Mastering Tailwind CSS",
         desc: "Tailwind philosophy, CLI & CDN installation, core utility classes, Tailwind component libraries (Tailblocks), and engineering a complete modern responsive web layout.",
       },
     ],
@@ -679,71 +691,79 @@ export const teachingFilters = [
   { id: "design", label: "UI/UX & Design" },
 ];
 
-export const extraCertificatesOnlyForPage = [
+export const allCertificatesRaw = [
+  // ── 2026 ─────────────────────────────────────────────────────────
   {
-    title: "Graphic Design Fundamentals",
-    institution: "Canva / Course",
-    year: "2023",
-    category: "design",
-    description:
-      "Certification in visual design principles, typography, and digital asset composition.",
-    image: canvaImg,
-    tags: ["Design", "Canva", "Creative"],
-  },
-  {
-    title: "Memulai Pemrograman Dengan C",
-    institution: "Dicoding Indonesia",
-    year: "2023",
-    category: "programming",
-    description:
-      "Certification in foundational C programming, covering memory management, low-level algorithms, and data structures.",
-    image: cdicodingImg,
-    tags: ["C Programming", "Logic", "Backend"],
-  },
-  {
-    title: "Dasar UI/UX Design",
-    institution: "Skilvul",
-    year: "2023",
-    category: "design",
-    description:
-      "Certification in wireframing, interactive prototyping, and design system creation using Figma.",
-    image: figmaImg,
-    tags: ["UI/UX", "Skilvul", "Figma", "Design"],
-  },
-  {
-    title: "Python Fundamentals",
-    institution: "DQLab",
-    year: "2024",
+    slug: "ai-in-society-ethics-leadership-and-the-road-ahead",
+    title: "AI in Society: Ethics, Leadership, and the Road Ahead",
+    institution: "HP × edX",
+    year: "Nov 2026",
     category: "data-ai",
     description:
-      "Certification in foundational Python syntax, data manipulation, and exploratory data analysis.",
-    image: pythondqlabImg,
-    tags: ["Python", "DQLab", "Data Science"],
+      "Advanced professional credential by HP and edX covering algorithmic fairness, AI threat vectors, workforce transformation, and global AI governance (EU AI Act).",
+    image: hpImg,
+    tags: ["HP", "edX", "AI Ethics", "AI Governance", "Leadership"],
   },
   {
-    title: "Belajar Dasar Pemrograman JavaScript",
-    institution: "Dicoding Indonesia",
-    year: "2024",
+    slug: "nasa-open-science-essentials",
+    title: "NASA Open Science Essentials",
+    institution: "NASA Open Science",
+    year: "Nov 2026",
+    category: "programming",
+    description:
+      "Verified certification from NASA's Transform to Open Science (TOPS) initiative covering FAIR data principles, open research computing, and transparent scientific collaboration.",
+    image: nasaImg,
+    tags: ["NASA", "Open Science", "FAIR Data", "Research"],
+  },
+  {
+    slug: "english-proficiency-assessment",
+    title: "English Proficiency Assessment",
+    institution: "IDP IELTS Australia · Cambridge Assessment English",
+    year: "Oct 2026",
+    category: "design",
+    description:
+      "Official IELTS Academic certification validating English proficiency across Listening (5.5), Reading (5.0), Writing (5.0), and Speaking (6.5), achieving CEFR B2 level.",
+    image: englishImg,
+    tags: ["IELTS", "English", "CEFR B2", "Band 5.5", "Academic"],
+  },
+  {
+    slug: "2nd-place-national-web-design-competition-pnbitc",
+    title: "2nd Place: National Web Design Competition (PNBITC#18)",
+    institution: "Politeknik Negeri Bali (PNBITC#18)",
+    year: "Oct 2026",
     category: "web",
     description:
-      "Certification in core JavaScript fundamentals, ES6+ features, and interactive DOM manipulation.",
-    image: javascriptImg,
-    tags: ["JavaScript", "Frontend", "ES6"],
+      "Official Certificate of Achievement recognizing 2nd Place nationally in the Web Design Competition at the 18th PNB IT Competition (PNBITC#18), organized by Politeknik Negeri Bali (No: 23685/DST/PL8/PP.06/2026).",
+    image: pnbCertImg,
+    tags: ["2nd Place", "Web Design", "PNBITC#18", "Politeknik Negeri Bali", "National"],
   },
   {
-    title: "Cloud Practitioner Essentials",
-    institution: "Amazon Web Services (AWS)",
-    year: "2024",
+    slug: "idn-student-council-event-division-leader",
+    title: "Certificate of Appreciation: Event Organizer Student Council",
+    institution: "IDN Boarding School Student Council",
+    year: "Aug 2026",
+    category: "design",
+    description:
+      "Official Certificate of Appreciation recognizing leadership as Student Council Event Organizer (2025–2026 term, No: 015/SRT/OSIS-SMKIDN/VIII/2026) at SMK IDN Boarding School, coordinating flagship school events and national competitions.",
+    image: osisCertImg,
+    tags: ["Leadership", "Event Organizer", "Student Council", "OSIS", "IDN Boarding School"],
+  },
+  {
+    slug: "coding-camp-full-stack-developer",
+    title: "Coding Camp: Full Stack Developer",
+    institution: "Dicoding Indonesia × DBS Foundation",
+    year: "May 2026",
     category: "web",
     description:
-      "Certification in cloud computing architecture, global infrastructure, and core AWS cloud services.",
-    image: awsImg,
-    tags: ["AWS", "Cloud", "Infrastructure"],
+      "Intensive full-stack development certification mastering end-to-end architectures from scalable backend APIs to responsive React frontends.",
+    image: codingcampImg,
+    tags: ["Web Development", "Backend", "Frontend"],
   },
   {
-    title: "Belajar Membuat Aplikasi Web dengan React",
+    slug: "belajar-membuat-aplikasi-web-dengan-react",
+    title: "Building Web Applications with React",
     institution: "Dicoding Indonesia",
-    year: "2025",
+    year: "Feb 2026",
     category: "web",
     description:
       "Certification in modern web application engineering using React.js components, hooks, and state management.",
@@ -751,19 +771,43 @@ export const extraCertificatesOnlyForPage = [
     tags: ["React.js", "Frontend", "Web"],
   },
   {
-    title: "Memulai Pemrograman Dengan Python",
+    slug: "belajar-membuat-aplikasi-back-end",
+    title: "Building Backend Applications for Beginners",
     institution: "Dicoding Indonesia",
-    year: "2024",
-    category: "programming",
+    year: "Feb 2026",
+    category: "web",
     description:
-      "Certification in algorithmic problem-solving and structured programming with Python.",
-    image: pythondicodingImg,
-    tags: ["Python", "Programming", "Logic"],
+      "Certification in architecting secure, scalable RESTful APIs and server-side business logic using Node.js.",
+    image: backendImg,
+    tags: ["Backend", "REST API", "Node.js"],
   },
   {
-    title: "Belajar Dasar Pemrograman Web",
+    slug: "frontend-web-developer",
+    title: "Frontend Web Developer",
     institution: "Dicoding Indonesia",
-    year: "2024",
+    year: "Feb 2026",
+    category: "web",
+    description:
+      "Professional frontend certification in developing responsive, accessible, and high-performance modern web interfaces.",
+    image: frontendImg,
+    tags: ["HTML/CSS", "JavaScript", "Frontend"],
+  },
+  {
+    slug: "belajar-dasar-pemrograman-javascript",
+    title: "JavaScript Programming Fundamentals",
+    institution: "Dicoding Indonesia",
+    year: "Feb 2026",
+    category: "web",
+    description:
+      "Certification in core JavaScript fundamentals, ES6+ features, and interactive DOM manipulation.",
+    image: javascriptImg,
+    tags: ["JavaScript", "Frontend", "ES6"],
+  },
+  {
+    slug: "belajar-dasar-pemrograman-web",
+    title: "Web Programming Fundamentals",
+    institution: "Dicoding Indonesia",
+    year: "Jan 2026",
     category: "web",
     description:
       "Certification in semantic web development using HTML5, modern CSS layouts, and Flexbox.",
@@ -771,9 +815,21 @@ export const extraCertificatesOnlyForPage = [
     tags: ["HTML", "CSS", "Frontend"],
   },
   {
-    title: "Pengenalan ke Logika Pemrograman",
+    slug: "cloud-practitioner-essentials",
+    title: "Cloud Practitioner Essentials",
+    institution: "Amazon Web Services (AWS)",
+    year: "Jan 2026",
+    category: "web",
+    description:
+      "Certification in cloud computing architecture, global infrastructure, and core AWS cloud services.",
+    image: awsImg,
+    tags: ["AWS", "Cloud", "Infrastructure"],
+  },
+  {
+    slug: "pengenalan-ke-logika-pemrograman",
+    title: "Introduction to Programming Logic",
     institution: "Dicoding Indonesia",
-    year: "2023",
+    year: "Jan 2026",
     category: "programming",
     description:
       "Certification in computational logic, flowcharting, and algorithmic problem-solving methodologies.",
@@ -781,19 +837,34 @@ export const extraCertificatesOnlyForPage = [
     tags: ["Logic", "Algorithm", "Computer Science"],
   },
   {
-    title: "Pemrograman Dasar C",
-    institution: "Skilvul",
-    year: "2023",
+    slug: "meniti-karier-sebagai-software-developer",
+    title: "Building a Career as a Software Developer",
+    institution: "Dicoding Indonesia",
+    year: "Jan 2026",
+    category: "design",
+    description:
+      "Certification in professional software engineering workflows, agile methodologies, and SDLC standards.",
+    image: softwaredevImg,
+    tags: ["Career", "Software Engineering", "Agile"],
+  },
+
+  // ── 2025 ─────────────────────────────────────────────────────────
+  {
+    slug: "memulai-pemrograman-dengan-python",
+    title: "Getting Started with Python Programming",
+    institution: "Dicoding Indonesia",
+    year: "Dec 2025",
     category: "programming",
     description:
-      "Certification in algorithm development and core data structure implementations in C.",
-    image: cskillvulImg,
-    tags: ["C", "Skilvul", "Algorithm"],
+      "Certification in algorithmic problem-solving and structured programming with Python.",
+    image: pythondicodingImg,
+    tags: ["Python", "Programming", "Logic"],
   },
   {
-    title: "Dasar Prompt Engineering",
+    slug: "dasar-prompt-engineering",
+    title: "Prompt Engineering Fundamentals",
     institution: "Dicoding Indonesia",
-    year: "2025",
+    year: "Nov 2025",
     category: "data-ai",
     description:
       "Certification in advanced prompt engineering strategies to optimize generative LLM completions.",
@@ -801,29 +872,10 @@ export const extraCertificatesOnlyForPage = [
     tags: ["Prompt Engineering", "Dicoding", "LLM", "AI"],
   },
   {
-    title: "Meniti Karier Sebagai Software Developer",
-    institution: "Dicoding Indonesia",
-    year: "2024",
-    category: "design",
-    description:
-      "Certification in professional software engineering workflows, agile methodologies, and SDLC standards.",
-    image: softwaredevImg,
-    tags: ["Career", "Software Engineering", "Agile"],
-  },
-  {
-    title: "Financial Literacy Fundamentals",
-    institution: "Dicoding Indonesia",
-    year: "2023",
-    category: "design",
-    description:
-      "Certification in personal financial literacy, budgeting frameworks, and asset management principles.",
-    image: financialImg,
-    tags: ["Finance", "Dicoding", "Literacy", "Management"],
-  },
-  {
+    slug: "artificial-intelligence-basics",
     title: "Artificial Intelligence Basics",
     institution: "Dicoding Indonesia",
-    year: "2024",
+    year: "Nov 2025",
     category: "data-ai",
     description:
       "Certification in foundational artificial intelligence concepts, machine learning models, and neural networks.",
@@ -831,26 +883,158 @@ export const extraCertificatesOnlyForPage = [
     tags: ["AI", "Dicoding", "Machine Learning", "Tech"],
   },
   {
+    slug: "financial-literacy-fundamentals",
+    title: "Financial Literacy Fundamentals",
+    institution: "Dicoding Indonesia",
+    year: "Nov 2025",
+    category: "design",
+    description:
+      "Certification in personal financial literacy, budgeting frameworks, and asset management principles.",
+    image: financialImg,
+    tags: ["Finance", "Dicoding", "Literacy", "Management"],
+  },
+  {
+    slug: "cerdas-cermat-apbn",
+    title: "National State Budget (APBN) Academic Competition",
+    institution: "Kementerian Keuangan Republik Indonesia",
+    year: "Oct 2025",
+    category: "design",
+    description:
+      "National competition certification from the Ministry of Finance RI in fiscal literacy, state budget management, and macroeconomics.",
+    image: apbnImg,
+    tags: ["Kemenkeu RI", "APBN", "Fiscal Policy", "Economics", "National"],
+  },
+  {
+    slug: "cs50-introduction-to-computer-science",
+    title: "CS50: Introduction to Computer Science",
+    institution: "Harvard University",
+    year: "Oct 2025",
+    category: "programming",
+    description:
+      "Comprehensive computer science curriculum certification covering algorithms, data structures, memory management, and software engineering in C and Python.",
+    image: cs50Img,
+    tags: ["Computer Science", "Harvard", "C", "Python"],
+  },
+  {
+    slug: "1st-place-national-web-design-competition-icomfest",
+    title: "1st Place: National Web Design Competition (ICOMFEST)",
+    institution: "ICOMFEST 2025",
+    year: "Feb 2025",
+    category: "web",
+    description:
+      "Official 1st Place Winner Certificate at the ICOMFEST 2025 National Web Design Competition in Bogor as Lead of Program for Team Batosai with 'PusakaKu'.",
+    image: icomfestCertImg,
+    tags: ["1st Place", "Web Design", "ICOMFEST 2025", "Team Batosai", "National Champion"],
+  },
+
+  // ── 2024 ─────────────────────────────────────────────────────────
+  {
+    slug: "google-developer-groups-participant",
     title: "Google Developer Groups Participant",
     institution: "Google Developer Groups",
-    year: "2024",
+    year: "Jul 2024",
     category: "design",
     description:
       "Active participation certification in Google Developer Groups tech talks and technical workshops.",
     image: gdgImg,
     tags: ["GDG", "Google", "Community"],
   },
+
+  // ── 2023 ─────────────────────────────────────────────────────────
   {
-    title: "English Proficiency Assessment",
-    institution: "English Language Course",
-    year: "2024",
+    slug: "belajar-dasar-git-dengan-github",
+    title: "Git & GitHub Version Control Fundamentals",
+    institution: "Progate",
+    year: "Nov 2023",
+    category: "web",
+    description:
+      "Certification in version control workflows, branch isolation, merge conflicts, and collaborative development with Git & GitHub.",
+    image: gitImg,
+    tags: ["Git", "GitHub", "Version Control", "Progate"],
+  },
+  {
+    slug: "pemrograman-dasar-c",
+    title: "C Programming Fundamentals",
+    institution: "Skilvul",
+    year: "Aug 2023",
+    category: "programming",
+    description:
+      "Certification in algorithm development and core data structure implementations in C.",
+    image: cskillvulImg,
+    tags: ["C", "Skilvul", "Algorithm"],
+  },
+  {
+    slug: "memulai-pemrograman-dengan-c",
+    title: "Getting Started with C Programming",
+    institution: "Dicoding Indonesia",
+    year: "Aug 2023",
+    category: "programming",
+    description:
+      "Certification in foundational C programming, covering memory management, low-level algorithms, and data structures.",
+    image: cdicodingImg,
+    tags: ["C Programming", "Logic", "Backend"],
+  },
+  {
+    slug: "python-fundamentals",
+    title: "Introduction to Data Science with Python",
+    institution: "DQLab",
+    year: "Aug 2023",
+    category: "data-ai",
+    description:
+      "Certification in foundational Python syntax, data manipulation, and exploratory data analysis.",
+    image: pythondqlabImg,
+    tags: ["Python", "DQLab", "Data Science"],
+  },
+  {
+    slug: "universitas-yarsi-muharram-poster-competition",
+    title: "Participant Certificate: National Muharram Poster Competition",
+    institution: "LDK KAHFI Universitas YARSI",
+    year: "Jul 2023",
     category: "design",
     description:
-      "Verified English proficiency certification evaluating professional communication and global technical collaboration.",
-    image: englishImg,
-    tags: ["English", "Language", "Communication"],
+      "Official Certificate of Participation in the National Muharram Poster Design Competition themed 'Welcoming the Sacred Month of Muharram with Nobility', organized by LDK KAHFI Universitas YARSI.",
+    image: yarsiPosterImg,
+    tags: ["Poster Design", "Graphic Design", "Universitas YARSI", "LDK KAHFI", "Competition"],
+  },
+  {
+    slug: "belajar-dasar-data-analyst",
+    title: "Introduction to Data Analysis using Microsoft Excel",
+    institution: "Coursera · Microsoft Excel",
+    year: "May 2023",
+    category: "data-ai",
+    description:
+      "Hands-on guided certification in data wrangling, spreadsheet formulas, Pivot Tables, and business dashboards using Microsoft Excel.",
+    image: dataanalystImg,
+    tags: ["Excel", "Data Analyst", "Coursera", "Spreadsheets"],
+  },
+
+  // ── 2022 ─────────────────────────────────────────────────────────
+  {
+    slug: "dasar-ui-ux-design",
+    title: "Get Started with Figma (UI/UX Design)",
+    institution: "Coursera & Skilvul · Figma",
+    year: "Sep 2022",
+    category: "design",
+    description:
+      "Certification in wireframing, interactive prototyping, and design system creation using Figma.",
+    image: figmaImg,
+    tags: ["UI/UX", "Figma", "Design", "Coursera"],
+  },
+  {
+    slug: "graphic-design-fundamentals",
+    title: "Graphic Design Fundamentals",
+    institution: "Canva / Course",
+    year: "Aug 2022",
+    category: "design",
+    description:
+      "Certification in visual design principles, typography, and digital asset composition.",
+    image: canvaImg,
+    tags: ["Design", "Canva", "Creative"],
   },
 ];
+
+export const allCertificates = allCertificatesRaw;
+export const extraCertificatesOnlyForPage = allCertificatesRaw.slice(8);
 
 // ============================================
 // AI STARTUP FEATURES
@@ -886,19 +1070,19 @@ export const experiences = [
     current: true,
   },
   {
+    period: "May 2026 – Aug 2026",
+    role: "Frontend Developer - Freelance",
+    company: "CV. Richo Bahari",
+    description:
+      "Engineering modern corporate web platforms and interactive industrial catalogs for civil construction, MEP, steel fabrication, and logistics fleet operations across West Java.",
+  },
+  {
     period: "Feb 2026 – Present",
     role: "Full Stack Engineer - Freelance",
     company: "PT Intisel Prodaktifakom",
     description:
       "Leading end-to-end development of the Databank ERP system. Architected NestJS backend, PostgreSQL schemas, and dynamic RBAC from scratch, and extended freelance contract through 2026 for Huawei ISDP data synchronization.",
     current: true,
-  },
-  {
-    period: "May 2026 – Aug 2026",
-    role: "Frontend Developer - Freelance",
-    company: "CV. Richo Bahari",
-    description:
-      "Engineering modern corporate web platforms and interactive industrial catalogs for civil construction, MEP, steel fabrication, and logistics fleet operations across West Java.",
   },
   {
     period: "Jul 2025 – Jan 2026",
@@ -915,6 +1099,24 @@ export const experiences = [
 export const recognitionData = {
   experience: [
     {
+      title: "Volunteer Event Organizer",
+      institution: "Barmus Voluntrip",
+      year: "Feb 2026",
+      description:
+        "Coordinated field logistics, resource distribution, and community engagement for grassroots volunteer initiatives to empower marginalized local populations.",
+      image: barmusImg,
+      tags: ["Empathy Social", "Community"],
+    },
+    {
+      title: "Event Division Leader",
+      institution: "IDN Student Council",
+      year: "Jan 2025 - Mar 2026",
+      description:
+        "Led the Student Council Event Division for two consecutive terms, orchestrating end-to-end event production, sponsor acquisition, logistical pipelines, and cross-functional teams for major school ceremonies.",
+      image: osisImg,
+      tags: ["Leadership", "Event Management", "Time Management"],
+    },
+    {
       title: "Web Development Instructor",
       institution: "SMA Lazuardi GCS",
       year: "Sep 2025",
@@ -925,13 +1127,13 @@ export const recognitionData = {
       tags: ["Web Development", "UI/UX Design", "25+ Students"],
     },
     {
-      title: "Event Division Leader",
-      institution: "IDN Student Council",
-      year: "Jan 2025 - Mar 2026",
+      title: "Backpacker 3 Country",
+      institution: "Singapore, Malaysia, Thailand",
+      year: "Sep 2025",
       description:
-        "Led the Student Council Event Division for two consecutive terms, orchestrating end-to-end event production, sponsor acquisition, logistical pipelines, and cross-functional teams for major school ceremonies.",
-      image: osisImg,
-      tags: ["Leadership", "Event Management", "Time Management"],
+        "Completed a self-navigated multi-country backpacking expedition across Singapore, Malaysia, and Thailand within one week, strengthening cross-cultural agility, budget logistics, and rapid decision-making in volatile environments.",
+      image: backpackerImg,
+      tags: ["Public Speaking", "Cross-cultural Fluency"],
     },
     {
       title: "App Development Instructor",
@@ -944,15 +1146,6 @@ export const recognitionData = {
       tags: ["App Development", "25+ Students"],
     },
     {
-      title: "Backpacker 3 Country",
-      institution: "Singapore, Malaysia, Thailand",
-      year: "Sep 2025",
-      description:
-        "Completed a self-navigated multi-country backpacking expedition across Singapore, Malaysia, and Thailand within one week, strengthening cross-cultural agility, budget logistics, and rapid decision-making in volatile environments.",
-      image: backpackerImg,
-      tags: ["Public Speaking", "Cross-cultural Fluency"],
-    },
-    {
       title: "Game Development Instructor",
       institution: "Semut-Semut The Natural School",
       year: "Oct 2023",
@@ -961,15 +1154,6 @@ export const recognitionData = {
         "Instructed elementary and middle school students in computational thinking and 2D game mechanics through hands-on visual scripting and physics simulations.",
       image: semutsemutImg,
       tags: ["Game Development", "25+ Students"],
-    },
-    {
-      title: "Volunteer Event Organizer",
-      institution: "Barmus Voluntrip",
-      year: "Feb 2026",
-      description:
-        "Coordinated field logistics, resource distribution, and community engagement for grassroots volunteer initiatives to empower marginalized local populations.",
-      image: barmusImg,
-      tags: ["Empathy Social", "Community"],
     },
   ],
   achievement: [
@@ -1001,68 +1185,7 @@ export const recognitionData = {
       tags: ["4th Place", "Top 5 Finalist", "SemuaBisa", "Tailwind CSS"],
     },
   ],
-  certificate: [
-    {
-      title: "CS50: Introduction to Computer Science",
-      institution: "Harvard University",
-      year: "Oct 2025",
-      category: "programming",
-      description:
-        "Comprehensive computer science curriculum certification covering algorithms, data structures, memory management, and software engineering in C and Python.",
-      image: cs50Img,
-      tags: ["Computer Science", "Harvard", "C", "Python"],
-    },
-    {
-      title: "Coding Camp: Full Stack Developer",
-      institution: "Dicoding Indonesia × DBS Foundation",
-      year: "Apr 2026",
-      category: "web",
-      description:
-        "Intensive full-stack development certification mastering end-to-end architectures from scalable backend APIs to responsive React frontends.",
-      image: codingcampImg,
-      tags: ["Web Development", "Backend", "Frontend"],
-    },
-    {
-      title: "Frontend Web Developer",
-      institution: "Dicoding Indonesia",
-      year: "Mar 2026",
-      category: "web",
-      description:
-        "Professional frontend certification in developing responsive, accessible, and high-performance modern web interfaces.",
-      image: frontendImg,
-      tags: ["HTML/CSS", "JavaScript", "Frontend"],
-    },
-    {
-      title: "Belajar Dasar Data Analyst",
-      institution: "Dicoding Indonesia",
-      year: "2024",
-      category: "data-ai",
-      description:
-        "Certification in exploratory data analysis, tabular data transformation, and visual storytelling.",
-      image: dataanalystImg,
-      tags: ["Data Analyst", "Data Science"],
-    },
-    {
-      title: "Belajar Membuat Aplikasi Back-End",
-      institution: "Dicoding Indonesia",
-      year: "2024",
-      category: "web",
-      description:
-        "Certification in architecting secure, scalable RESTful APIs and server-side business logic using Node.js.",
-      image: backendImg,
-      tags: ["Backend", "REST API", "Node.js"],
-    },
-    {
-      title: "Belajar Dasar Git dengan GitHub",
-      institution: "Dicoding Indonesia",
-      year: "2024",
-      category: "web",
-      description:
-        "Certification in version control workflows, branch management, code reviews, and open-source collaboration using Git and GitHub.",
-      image: gitImg,
-      tags: ["Git", "GitHub", "Version Control"],
-    },
-  ],
+  certificate: allCertificatesRaw.slice(0, 8),
 };
 
 export const extraTeachingExperiences = [
@@ -1087,16 +1210,15 @@ export const extraTeachingExperiences = [
     tags: ["App Development", "Kodular", "10+ Students"],
   },
   {
-    title: "App Design Instructor",
+    title: "Game Development Instructor",
     institution: "Al Anshar",
-    year: "Sep 2022",
-    category: "design",
+    year: "Nov 2022",
+    category: "game",
     description:
-      "Educated students on UI/UX wireframing, color theory, and digital prototyping using Figma to create intuitive mobile application interfaces.",
-    image: alansharImg2,
-    tags: ["UI/UX Design", "Figma", "15+ Students"],
+      "Taught 2D game architecture, event-driven programming, and physics simulation logic to students through Scratch.",
+    image: alansharImg,
+    tags: ["Game Development", "Scratch", "15+ Students"],
   },
-
   {
     title: "Design Instructor",
     institution: "MTs Yasmine",
@@ -1108,14 +1230,14 @@ export const extraTeachingExperiences = [
     tags: ["Design", "Figma", "UI/UX & Poster Design", "25+ Students"],
   },
   {
-    title: "Game Development Instructor",
+    title: "App Design Instructor",
     institution: "Al Anshar",
-    year: "Nov 2022",
-    category: "game",
+    year: "Sep 2022",
+    category: "design",
     description:
-      "Taught 2D game architecture, event-driven programming, and physics simulation logic to students through Scratch.",
-    image: alansharImg,
-    tags: ["Game Development", "Scratch", "15+ Students"],
+      "Educated students on UI/UX wireframing, color theory, and digital prototyping using Figma to create intuitive mobile application interfaces.",
+    image: alansharImg2,
+    tags: ["UI/UX Design", "Figma", "15+ Students"],
   },
   {
     title: "Game Development Instructor",
@@ -1235,21 +1357,24 @@ export const allAchievements = [
   },
 ];
 
-export const allCertificates = [
-  ...recognitionData.certificate.map((x) => ({
-    ...x,
-    slug: slugify(x.title),
-  })),
-  ...extraCertificatesOnlyForPage.map((x) => ({
-    ...x,
-    slug: slugify(x.title),
-  })),
-];
-
 export const experiencesList = experiences.map((e) => ({
   ...e,
   slug: slugify(`${e.company}-${e.role}`),
 }));
+
+function parseExperienceDate(yearStr) {
+  const months = {
+    jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
+    jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+  };
+  const str = String(yearStr || "").toLowerCase();
+  const matches = [...str.matchAll(/(?:([a-z]{3})\s+)?(\d{4})/g)];
+  if (!matches.length) return 0;
+  const last = matches[matches.length - 1];
+  const m = last[1] && months[last[1]] ? months[last[1]] : 6;
+  const y = parseInt(last[2], 10);
+  return y * 100 + m;
+}
 
 export const allTeachingExperiences = [
   ...recognitionData.experience.filter(
@@ -1258,10 +1383,12 @@ export const allTeachingExperiences = [
       exp.title.toLowerCase().includes("teaching"),
   ),
   ...extraTeachingExperiences,
-].map((item) => ({
-  ...item,
-  slug: slugify(`${item.institution}-${item.title}`),
-}));
+]
+  .map((item) => ({
+    ...item,
+    slug: slugify(`${item.institution}-${item.title}`),
+  }))
+  .sort((a, b) => parseExperienceDate(b.year) - parseExperienceDate(a.year));
 
 export const allLeadershipExperiences = [
   ...recognitionData.experience.filter(
@@ -1270,10 +1397,12 @@ export const allLeadershipExperiences = [
       !exp.title.toLowerCase().includes("teaching"),
   ),
   ...extraOtherExperiences,
-].map((item) => ({
-  ...item,
-  slug: slugify(`${item.institution}-${item.title}`),
-}));
+]
+  .map((item) => ({
+    ...item,
+    slug: slugify(`${item.institution}-${item.title}`),
+  }))
+  .sort((a, b) => parseExperienceDate(b.year) - parseExperienceDate(a.year));
 
 export function slugify(s) {
   return s

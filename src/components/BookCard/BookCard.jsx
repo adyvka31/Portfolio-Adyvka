@@ -21,7 +21,7 @@ function BookCard({ item, onRead, className = "" }) {
     <article
       className={`card glass ${styles.card} ${className}`}
       {...spotlight}
-      aria-label={`Buku: ${item.title}`}
+      aria-label={`Book: ${item.title}`}
     >
       {/* ── LEFT: 3D BOOK COVER DISPLAY ─────────────────── */}
       <div className={styles.coverColumn}>

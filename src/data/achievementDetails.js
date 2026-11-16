@@ -3,8 +3,10 @@
 import pnb1 from "../assets/pnb/pnbitc-2024-runner-up-stage-award-1.webp";
 import pnb2 from "../assets/pnb/pnbitc-2024-runner-up-trophy-certificate-2.webp";
 import pnb3 from "../assets/pnb/pnbitc-2024-national-competition-team-bali-3.webp";
+import pnbCert from "../assets/pnb/pnbitc-2024-runner-up-official-certificate.webp";
 
 import icomfest1 from "../assets/achievements/icomfest-2025-1st-place-web-design-national-champion.webp";
+import icomfestCert from "../assets/achievements/icomfest-2025-1st-place-web-design-national-champion-certificate.webp";
 import icomfest2 from "../assets/icomfest/icomfest-2025-champion-trophy-ceremony-2.webp";
 import icomfest3 from "../assets/icomfest/icomfest-2025-web-design-finalist-stage-3.webp";
 
@@ -142,6 +144,13 @@ export const achievementDetails = {
     documentationLead:
       "Official award plaque, live stage announcement ceremony, and platform showcase from Politeknik Negeri Bali.",
     documentation: [
+      {
+        id: "pnb-cert",
+        title: "Official 2nd Place National Winner Certificate",
+        tag: "Official Certificate",
+        image: pnbCert,
+        desc: "Official digital certificate of achievement awarded by Politeknik Negeri Bali (PNBITC#18) for securing 2nd Place in the National Web Design Competition.",
+      },
       {
         id: "pnb-award",
         title: "Official 2nd Place Award Plaque & Winner Moment",
@@ -297,9 +306,16 @@ export const achievementDetails = {
       {
         id: "icomfest-cert",
         title: "Official 1st Place National Winner Certificate",
+        tag: "Official Certificate",
+        image: icomfestCert,
+        desc: "Official national certificate awarding 1st Place to our team for 'PusakaKu' in the ICOMFEST 2025 National Web Design Competition.",
+      },
+      {
+        id: "icomfest-hero",
+        title: "National Champion Stage & Plaque Showcase",
         tag: "Official Award",
         image: icomfest1,
-        desc: "Official national certificate awarding 1st Place to our team for 'PusakaKu' in the ICOMFEST 2025 National Web Design Competition.",
+        desc: "Celebrating our 1st Place National Championship achievement with the official award plaque and winner laurels.",
       },
       {
         id: "icomfest-pitch",

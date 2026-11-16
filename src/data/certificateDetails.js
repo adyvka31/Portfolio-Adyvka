@@ -9,9 +9,9 @@ export const certificateDetails = {
     "issuer": "Harvard University",
     "issued": "Oct 2025",
     "track": "Computer Science & Systems",
-    "effort": "120+ Hours \u00b7 Verified Curriculum",
-    "credentialId": "CS50x-2025-HARVARD",
-    "verifyUrl": "https://cs50.harvard.edu/certificates/",
+    "effort": "120+ Hours · Verified Curriculum",
+    "credentialId": "0b2f666c-4595-4203-8348-1ad6217eacda",
+    "verifyUrl": "https://certificates.cs50.io/0b2f666c-4595-4203-8348-1ad6217eacda.pdf",
     "summary": "Harvard University's flagship computer science curriculum covering algorithmic problem-solving, computational thinking, low-level memory allocation, and software architecture across C, Python, SQL, and web technologies.",
     "skills": [
       "Algorithms",
@@ -33,7 +33,7 @@ export const certificateDetails = {
   "coding-camp-full-stack-developer": {
     "title": "Coding Camp: Full Stack Developer",
     "issuer": "Dicoding Indonesia \u00d7 DBS Foundation",
-    "issued": "Apr 2026",
+    "issued": "May 2026",
     "track": "Full Stack Web Engineering",
     "effort": "766 Hours \u00b7 Corporate Sponsored",
     "credentialId": "CFS211D6Y054",
@@ -85,7 +85,7 @@ export const certificateDetails = {
       "courses": [
         {
           "code": "CCMT01",
-          "title": "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+          "title": "Getting Started with Programming to Become a Software Developer",
           "hours": 9,
           "score": 90,
           "grade": "A",
@@ -93,7 +93,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCMT02",
-          "title": "Pengenalan Ke Logika Pemrograman",
+          "title": "Introduction to Programming Logic",
           "hours": 6,
           "score": 93,
           "grade": "A",
@@ -101,7 +101,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCMT03",
-          "title": "Belajar Dasar Cloud dan Gen AI di AWS",
+          "title": "AWS Cloud and Generative AI Fundamentals",
           "hours": 18,
           "score": 93,
           "grade": "A",
@@ -109,7 +109,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCFS01",
-          "title": "Belajar Dasar Pemrograman Web",
+          "title": "Web Programming Fundamentals",
           "hours": 45,
           "score": 85,
           "grade": "A",
@@ -117,7 +117,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCFS02",
-          "title": "Belajar Dasar Pemrograman JavaScript",
+          "title": "JavaScript Programming Fundamentals",
           "hours": 46,
           "score": 83,
           "grade": "B",
@@ -125,7 +125,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCFS03",
-          "title": "Belajar Membuat Aplikasi Front-End Web untuk Pemula",
+          "title": "Building Front-End Web Applications for Beginners",
           "hours": 45,
           "score": 93,
           "grade": "A",
@@ -133,7 +133,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCFS04",
-          "title": "Belajar Membuat Aplikasi Web dengan React",
+          "title": "Building Web Applications with React",
           "hours": 35,
           "score": 88,
           "grade": "A",
@@ -141,7 +141,7 @@ export const certificateDetails = {
         },
         {
           "code": "CCFS05",
-          "title": "Belajar Back-End Pemula dengan JavaScript",
+          "title": "Building Backend Applications for Beginners with JavaScript",
           "hours": 50,
           "score": 93,
           "grade": "A",
@@ -168,11 +168,11 @@ export const certificateDetails = {
   "frontend-web-developer": {
     "title": "Frontend Web Developer",
     "issuer": "Dicoding Indonesia",
-    "issued": "Mar 2026",
+    "issued": "Feb 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCFS03",
-      "courseName": "Belajar Membuat Aplikasi Front-End Web untuk Pemula",
+      "courseName": "Building Front-End Web Applications for Beginners",
       "hours": "45 Hours",
       "score": "93 / 100",
       "grade": "A",
@@ -180,9 +180,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Modern Frontend Architecture",
-    "effort": "60+ Hours \u00b7 Professional Track",
-    "credentialId": "DICODING-FE-2026-DEV",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "60+ Hours · Professional Track",
+    "credentialId": "JMZVOQE5RXN9",
+    "verifyUrl": "https://www.dicoding.com/certificates/JMZVOQE5RXN9",
     "summary": "Professional certification validating mastery over responsive web development, modern CSS layout paradigms, DOM manipulation, client-side data binding, and web performance optimization.",
     "skills": [
       "HTML5",
@@ -201,38 +201,39 @@ export const certificateDetails = {
     "application": "Formed the bedrock of my UI engineering precision, ensuring that all client and portfolio applications achieve sub-second load times and maintain flawless layout responsiveness across mobile and desktop."
   },
   "belajar-dasar-data-analyst": {
-    "title": "Belajar Dasar Data Analyst",
-    "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "title": "Introduction to Data Analysis using Microsoft Excel",
+    "issuer": "Coursera · Coursera Project Network",
+    "issued": "May 2023",
     "track": "Data Analytics & Visualization",
-    "effort": "40+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-DA-2024-BASE",
-    "verifyUrl": "https://www.dicoding.com/certificates",
-    "summary": "Comprehensive foundation in data lifecycle management, data cleansing, statistical exploration, and insight extraction for informed product and engineering decisions.",
+    "effort": "Verified Hands-On Guided Project · Coursera",
+    "credentialId": "LAKH7U85RKE3",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/LAKH7U85RKE3",
+    "summary": "Comprehensive hands-on certification in spreadsheet data analysis using Microsoft Excel. Covers data cleaning, transformation formulas (VLOOKUP, INDEX/MATCH), pivot tables, statistical summaries, and dynamic interactive business dashboards.",
     "skills": [
+      "Microsoft Excel",
       "Data Analysis",
       "Data Cleansing",
+      "Pivot Tables",
+      "VLOOKUP & Formulas",
       "Data Visualization",
-      "Spreadsheets",
-      "Statistics",
-      "Data Wrangling"
+      "Statistical Summaries"
     ],
     "highlights": [
-      "Data wrangling, deduplication, and anomaly identification workflows",
-      "Descriptive statistical summaries (variance, standard deviation, frequency distribution)",
-      "Data visualization design principles and narrative dashboard construction",
-      "Translating raw telemetry datasets into actionable engineering and product KPIs"
+      "Data wrangling, formula auditing, deduplication, and anomaly identification workflows",
+      "Multi-dimensional Pivot Tables, slicers, and calculated fields for business reporting",
+      "Descriptive statistics, variance analysis, and executive dashboard design",
+      "Translating raw business telemetry into actionable KPIs and decision models"
     ],
-    "application": "Enabled structured interpretation of application telemetry and user engagement data, allowing me to build data-informed features and track performance metrics across interactive web applications."
+    "application": "Enabled structured interpretation of business telemetry and user engagement data, allowing me to build data-informed features and track performance metrics across interactive web applications."
   },
   "belajar-membuat-aplikasi-back-end": {
-    "title": "Belajar Membuat Aplikasi Back-End",
+    "title": "Building Backend Applications for Beginners",
     "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "issued": "Feb 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCFS05",
-      "courseName": "Belajar Back-End Pemula dengan JavaScript",
+      "courseName": "Building Backend Applications for Beginners with JavaScript",
       "hours": "50 Hours",
       "score": "93 / 100",
       "grade": "A",
@@ -240,9 +241,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Backend Engineering & REST APIs",
-    "effort": "55+ Hours \u00b7 Intermediate Track",
-    "credentialId": "DICODING-BE-2024-REST",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "55+ Hours · Intermediate Track",
+    "credentialId": "07Z67L69JPQR",
+    "verifyUrl": "https://www.dicoding.com/certificates/07Z67L69JPQR",
     "summary": "Technical certification in server-side development with Node.js and Hapi framework, emphasizing RESTful API architecture, HTTP methods, payload validation, and clean architectural separation.",
     "skills": [
       "Node.js",
@@ -261,14 +262,14 @@ export const certificateDetails = {
     "application": "Provided the architectural blueprint for designing predictable RESTful endpoints, used extensively during backend development for company dashboards and national competition platforms."
   },
   "belajar-dasar-git-dengan-github": {
-    "title": "Belajar Dasar Git dengan GitHub",
-    "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "title": "Git & GitHub Version Control Fundamentals",
+    "issuer": "Progate",
+    "issued": "Nov 2023",
     "track": "DevOps & Version Control",
-    "effort": "30+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-GIT-2024-HUB",
-    "verifyUrl": "https://www.dicoding.com/certificates",
-    "summary": "Rigorous curriculum covering distributed version control with Git and collaborative open-source workflows on GitHub.",
+    "effort": "Verified Practical Curriculum · Progate",
+    "credentialId": "19dc0dd1s4gaqq",
+    "verifyUrl": "https://progate.com/course_certificate/19dc0dd1s4gaqq",
+    "summary": "Practical certification in distributed version control fundamentals with Git and collaborative open-source workflows on GitHub.",
     "skills": [
       "Git",
       "GitHub",
@@ -288,9 +289,9 @@ export const certificateDetails = {
   "graphic-design-fundamentals": {
     "title": "Graphic Design Fundamentals",
     "issuer": "Canva / Course",
-    "issued": "2023",
+    "issued": "Aug 2022",
     "track": "Visual Design & Composition",
-    "effort": "25+ Hours \u00b7 Creative Track",
+    "effort": "25+ Hours · Creative Track",
     "credentialId": "CANVA-DESIGN-2023",
     "verifyUrl": "https://www.canva.com/designschool/",
     "summary": "Core principles of graphic design, color psychology, visual hierarchy, layout grid systems, and brand consistency for digital and print media.",
@@ -311,13 +312,13 @@ export const certificateDetails = {
     "application": "Helped bridge the gap between engineering and visual aesthetics, leading directly to winning the Best Poster Award at the Idul Adha Festival and crafting polished portfolio visuals."
   },
   "memulai-pemrograman-dengan-c": {
-    "title": "Memulai Pemrograman Dengan C",
+    "title": "Getting Started with C Programming",
     "issuer": "Dicoding Indonesia",
-    "issued": "2023",
+    "issued": "Aug 2023",
     "track": "Low-Level Programming",
-    "effort": "45+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-C-2023-START",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "45+ Hours · Foundational Track",
+    "credentialId": "N9ZO611N6XG5",
+    "verifyUrl": "https://www.dicoding.com/certificates/N9ZO611N6XG5",
     "summary": "Foundational programming course in C covering syntax fundamentals, basic data types, memory representations, control structures, and modular function architecture.",
     "skills": [
       "C Language",
@@ -335,13 +336,13 @@ export const certificateDetails = {
     "application": "Provided deep appreciation for compile-time vs runtime execution, laying an indispensable foundation before tackling CS50 and modern web runtimes."
   },
   "dasar-ui-ux-design": {
-    "title": "Dasar UI/UX Design",
-    "issuer": "Skilvul",
-    "issued": "2023",
+    "title": "Get Started with Figma (UI/UX Design)",
+    "issuer": "Coursera · Coursera Project Network",
+    "issued": "Sep 2022",
     "track": "UI/UX & Product Design",
-    "effort": "35+ Hours \u00b7 Design Track",
-    "credentialId": "FIGMA-UIUX-2023-BASE",
-    "verifyUrl": "https://skilvul.com",
+    "effort": "Verified Hands-On Guided Project · Coursera",
+    "credentialId": "KLGTMA9XEMMH",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/KLGTMA9XEMMH",
     "summary": "Practical design curriculum exploring user-centered design methodologies, wireframing, interactive prototyping, and scalable Figma design systems.",
     "skills": [
       "Figma",
@@ -360,13 +361,13 @@ export const certificateDetails = {
     "application": "Transformed my development approach into a design-first mindset, allowing me to prototype complete interactive mockups in Figma before writing a single line of React code."
   },
   "python-fundamentals": {
-    "title": "Python Fundamentals",
+    "title": "Introduction to Data Science with Python",
     "issuer": "DQLab",
-    "issued": "2024",
+    "issued": "Aug 2023",
     "track": "Data Science & Scripting",
-    "effort": "30+ Hours \u00b7 Data Track",
-    "credentialId": "DQLAB-PY-2024-FUND",
-    "verifyUrl": "https://www.dqlab.id",
+    "effort": "Verified Academy Credential · DQLab",
+    "credentialId": "DQLABINTP1ADBGRQ",
+    "verifyUrl": "https://academy.dqlab.id/Certificate_check/result/DQLABINTP1ADBGRQ",
     "summary": "Essential Python programming curriculum focusing on data structures, control logic, modular libraries, and basic data manipulation routines.",
     "skills": [
       "Python",
@@ -384,13 +385,13 @@ export const certificateDetails = {
     "application": "Accelerated my ability to write rapid automation scripts, test data transformations, and interact with machine learning APIs."
   },
   "belajar-dasar-pemrograman-javascript": {
-    "title": "Belajar Dasar Pemrograman JavaScript",
+    "title": "JavaScript Programming Fundamentals",
     "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "issued": "Feb 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCFS02",
-      "courseName": "Belajar Dasar Pemrograman JavaScript",
+      "courseName": "JavaScript Programming Fundamentals",
       "hours": "46 Hours",
       "score": "83 / 100",
       "grade": "B",
@@ -398,9 +399,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Frontend & JavaScript Runtime",
-    "effort": "50+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-JS-2024-CORE",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "50+ Hours · Foundational Track",
+    "credentialId": "98XWO3N69ZM3",
+    "verifyUrl": "https://www.dicoding.com/certificates/98XWO3N69ZM3",
     "summary": "Modern ECMAScript (ES6+) programming fundamentals, covering lexical scope, closures, event loops, promises, and functional array operations.",
     "skills": [
       "JavaScript",
@@ -420,12 +421,12 @@ export const certificateDetails = {
   },
   "cloud-practitioner-essentials": {
     "title": "Cloud Practitioner Essentials",
-    "issuer": "Amazon Web Services (AWS)",
-    "issued": "2024",
+    "issuer": "Amazon Web Services (AWS) × Dicoding",
+    "issued": "Jan 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCMT03",
-      "courseName": "Belajar Dasar Cloud dan Gen AI di AWS",
+      "courseName": "AWS Cloud and Generative AI Fundamentals",
       "hours": "18 Hours",
       "score": "93 / 100",
       "grade": "A",
@@ -433,9 +434,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Cloud Architecture & Infrastructure",
-    "effort": "40+ Hours \u00b7 Cloud Foundations",
-    "credentialId": "AWS-CP-2024-CLOUD",
-    "verifyUrl": "https://aws.amazon.com/certification/",
+    "effort": "40+ Hours · Cloud Foundations",
+    "credentialId": "L4PQ20G62ZO1",
+    "verifyUrl": "https://www.dicoding.com/certificates/L4PQ20G62ZO1",
     "summary": "Official AWS curriculum introducing cloud computing concepts, AWS security models, compute services (EC2, Lambda), storage (S3), and networking fundamentals (VPC).",
     "skills": [
       "AWS",
@@ -454,13 +455,13 @@ export const certificateDetails = {
     "application": "Established foundational understanding of cloud deployment architectures, allowing informed infrastructure decisions for web applications and client hosting."
   },
   "belajar-membuat-aplikasi-web-dengan-react": {
-    "title": "Belajar Membuat Aplikasi Web dengan React",
+    "title": "Building Web Applications with React",
     "issuer": "Dicoding Indonesia",
-    "issued": "2025",
+    "issued": "Feb 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCFS04",
-      "courseName": "Belajar Membuat Aplikasi Web dengan React",
+      "courseName": "Building Web Applications with React",
       "hours": "35 Hours",
       "score": "88 / 100",
       "grade": "A",
@@ -468,9 +469,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Frontend Component Architecture",
-    "effort": "60+ Hours \u00b7 Intermediate Track",
-    "credentialId": "DICODING-REACT-2025-DEV",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "60+ Hours · Intermediate Track",
+    "credentialId": "1OP8RDQVVZQK",
+    "verifyUrl": "https://www.dicoding.com/certificates/1OP8RDQVVZQK",
     "summary": "Comprehensive React framework certification covering declarative UI paradigms, component composition, hooks, state isolation, and controlled forms.",
     "skills": [
       "React.js",
@@ -489,13 +490,13 @@ export const certificateDetails = {
     "application": "Directly underpins this portfolio website, PusakaKu, and multiple national competition platforms engineered with component-driven architecture."
   },
   "memulai-pemrograman-dengan-python": {
-    "title": "Memulai Pemrograman Dengan Python",
+    "title": "Getting Started with Python Programming",
     "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "issued": "Dec 2025",
     "track": "Python Fundamentals",
-    "effort": "35+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-PY-2024-INIT",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "35+ Hours · Foundational Track",
+    "credentialId": "6RPNG00E9Z2M",
+    "verifyUrl": "https://www.dicoding.com/certificates/6RPNG00E9Z2M",
     "summary": "Introductory course into the Python programming language, focusing on clear code formatting (PEP 8), variable handling, data structures, and conditional logic.",
     "skills": [
       "Python",
@@ -513,13 +514,13 @@ export const certificateDetails = {
     "application": "Strengthened algorithmic problem solving and provided the versatility to build backend scripts and utility tools quickly."
   },
   "belajar-dasar-pemrograman-web": {
-    "title": "Belajar Dasar Pemrograman Web",
+    "title": "Web Programming Fundamentals",
     "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "issued": "Jan 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCFS01",
-      "courseName": "Belajar Dasar Pemrograman Web",
+      "courseName": "Web Programming Fundamentals",
       "hours": "45 Hours",
       "score": "85 / 100",
       "grade": "A",
@@ -527,9 +528,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Web Fundamentals",
-    "effort": "40+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-WEB-2024-BASE",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "40+ Hours · Foundational Track",
+    "credentialId": "2VX35QQE3PYQ",
+    "verifyUrl": "https://www.dicoding.com/certificates/2VX35QQE3PYQ",
     "summary": "Core web standards course focused on HTML5 semantics, CSS styling principles, box model mastery, and building cross-browser responsive layouts.",
     "skills": [
       "HTML5",
@@ -547,13 +548,13 @@ export const certificateDetails = {
     "application": "Instilled deep respect for raw web standards, avoiding framework dependency for simple layout challenges."
   },
   "pengenalan-ke-logika-pemrograman": {
-    "title": "Pengenalan ke Logika Pemrograman",
+    "title": "Introduction to Programming Logic",
     "issuer": "Dicoding Indonesia",
-    "issued": "2023",
+    "issued": "Jan 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCMT02",
-      "courseName": "Pengenalan Ke Logika Pemrograman",
+      "courseName": "Introduction to Programming Logic",
       "hours": "6 Hours",
       "score": "93 / 100",
       "grade": "A",
@@ -561,9 +562,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Computational Logic & Algorithms",
-    "effort": "20+ Hours \u00b7 Foundational Track",
-    "credentialId": "DICODING-LOGIC-2023-CS",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "20+ Hours · Foundational Track",
+    "credentialId": "JMZVVRMLRZN9",
+    "verifyUrl": "https://www.dicoding.com/certificates/JMZVVRMLRZN9",
     "summary": "Introductory curriculum establishing computational thinking, flowchart modeling, pseudocode conventions, and boolean logic.",
     "skills": [
       "Computational Thinking",
@@ -581,11 +582,11 @@ export const certificateDetails = {
     "application": "Sharpened core problem-solving discipline, making debugging intuitive and structured rather than guess-and-check."
   },
   "pemrograman-dasar-c": {
-    "title": "Pemrograman Dasar C",
+    "title": "C Programming Fundamentals",
     "issuer": "Skilvul",
-    "issued": "2023",
+    "issued": "Aug 2023",
     "track": "C Programming",
-    "effort": "25+ Hours \u00b7 Foundational Track",
+    "effort": "25+ Hours · Foundational Track",
     "credentialId": "SKILVUL-C-2023-BASE",
     "verifyUrl": "https://skilvul.com",
     "summary": "Practical C programming course covering input/output streams, conditional branching, repetitive loops, and multi-dimensional arrays.",
@@ -605,13 +606,13 @@ export const certificateDetails = {
     "application": "Reinforced early coding skills and mathematical programming techniques in my first year of vocational high school."
   },
   "dasar-prompt-engineering": {
-    "title": "Dasar Prompt Engineering",
+    "title": "Prompt Engineering Fundamentals",
     "issuer": "Dicoding Indonesia",
-    "issued": "2025",
+    "issued": "Nov 2025",
     "track": "Generative AI & LLM Systems",
     "effort": "20+ Hours · AI Specialization",
-    "credentialId": "AI-PROMPT-2025-SPEC",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "credentialId": "MEPJ23Q2LP3V",
+    "verifyUrl": "https://www.dicoding.com/certificates/MEPJ23Q2LP3V",
     "summary": "Modern course on prompt design, few-shot prompting, chain-of-thought elicitation, system instructions, and LLM output guardrailing.",
     "skills": [
       "Prompt Engineering",
@@ -630,13 +631,13 @@ export const certificateDetails = {
     "application": "Directly applied when integrating Google Gemini AI virtual doctors in FitSmart and cultural AI concierges in JavaIsland."
   },
   "meniti-karier-sebagai-software-developer": {
-    "title": "Meniti Karier Sebagai Software Developer",
+    "title": "Building a Career as a Software Developer",
     "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "issued": "Jan 2026",
     "transcriptGrade": {
       "program": "DBS Foundation Coding Camp 2026",
       "courseCode": "CCMT01",
-      "courseName": "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+      "courseName": "Getting Started with Programming to Become a Software Developer",
       "hours": "9 Hours",
       "score": "90 / 100",
       "grade": "A",
@@ -644,9 +645,9 @@ export const certificateDetails = {
       "parentSlug": "coding-camp-full-stack-developer"
     },
     "track": "Software Engineering & Industry Standards",
-    "effort": "15+ Hours \u00b7 Professional Track",
-    "credentialId": "DICODING-CAREER-2024",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "effort": "15+ Hours · Professional Track",
+    "credentialId": "GRX5J8VEYX0M",
+    "verifyUrl": "https://www.dicoding.com/certificates/GRX5J8VEYX0M",
     "summary": "Comprehensive industry orientation covering software engineering roles, team methodologies (Agile/Scrum), code quality standards, and professional ethics.",
     "skills": [
       "Software Development",
@@ -666,7 +667,7 @@ export const certificateDetails = {
   "financial-literacy-fundamentals": {
     "title": "Financial Literacy Fundamentals",
     "issuer": "Dicoding Indonesia",
-    "issued": "2023",
+    "issued": "Nov 2025",
     "track": "Financial Economics & Literacy",
     "effort": "20+ Hours · Foundational Track",
     "credentialId": "FIN-LIT-2023-BASE",
@@ -690,11 +691,11 @@ export const certificateDetails = {
   "artificial-intelligence-basics": {
     "title": "Artificial Intelligence Basics",
     "issuer": "Dicoding Indonesia",
-    "issued": "2024",
+    "issued": "Nov 2025",
     "track": "Artificial Intelligence & Machine Learning",
     "effort": "30+ Hours · Foundational Track",
-    "credentialId": "AI-ACADEMY-2024-BASE",
-    "verifyUrl": "https://www.dicoding.com/certificates",
+    "credentialId": "ERZR2NY22PYV",
+    "verifyUrl": "https://www.dicoding.com/certificates/ERZR2NY22PYV",
     "summary": "Broad exploration of artificial intelligence concepts, machine learning taxonomies (supervised, unsupervised, reinforcement), neural networks, and AI ethics.",
     "skills": [
       "Artificial Intelligence",
@@ -715,7 +716,7 @@ export const certificateDetails = {
   "google-developer-groups-participant": {
     "title": "Google Developer Groups Participant",
     "issuer": "Google Developer Groups",
-    "issued": "2024",
+    "issued": "Jul 2024",
     "track": "Community & Technical Keynotes",
     "effort": "Industry Participation",
     "credentialId": "GDG-PARTICIPANT-2024",
@@ -737,28 +738,218 @@ export const certificateDetails = {
     "application": "Broadened technical horizons through direct interaction with community leaders, inspiring adoption of bleeding-edge web tooling and cloud patterns."
   },
   "english-proficiency-assessment": {
-    "title": "English Proficiency Assessment",
-    "issuer": "English Language Course",
-    "issued": "2024",
-    "track": "Language & Professional Communication",
-    "effort": "Intermediate / Professional Communication",
-    "credentialId": "ENG-PROF-2024-ASSESS",
-    "verifyUrl": "",
-    "summary": "Standardized evaluation of English reading comprehension, technical writing, listening, and spoken conversational fluency in professional settings.",
+    "title": "IELTS Academic: English Proficiency",
+    "issuer": "IDP IELTS Australia · Cambridge Assessment English",
+    "issued": "Oct 2026",
+    "track": "Language & International Communication",
+    "effort": "Academic Band 5.5 · CEFR B2 Competent",
+    "credentialId": "IELTS-ACAD-2026",
+    "verifyUrl": "https://ielts.idp.com/results/check-your-result",
+    "summary": "Official IELTS (International English Language Testing System) Academic test report issued by IDP Education and Cambridge Assessment English. Validates English proficiency across Listening (5.5), Reading (5.0), Writing (5.0), and Speaking (6.5), achieving an Overall Band Score of 5.5 at CEFR Level B2.",
     "skills": [
+      "IELTS Academic",
       "English Proficiency",
-      "Technical Writing",
-      "Professional Communication",
-      "Public Speaking",
-      "Reading Comprehension"
+      "Listening Comprehension",
+      "Reading Analysis",
+      "Academic Writing",
+      "Spoken Fluency",
+      "CEFR B2"
     ],
     "highlights": [
-      "Technical documentation reading and API specification comprehension",
-      "Professional email correspondence, pull request reviews, and sprint standup communication",
-      "Listening comprehension across diverse international accents",
-      "Verbal presentation and pitching of software architectures"
+      "Overall Band Score 5.5 corresponding to CEFR B2 Competent English user level",
+      "Speaking Band 6.5 demonstrating strong verbal fluency, clear pronunciation, and spontaneous topic discussion",
+      "Listening Band 5.5 in academic lecture comprehension and real-time information processing",
+      "Academic Writing & Reading Band 5.0 for complex text analysis and structured technical reports"
     ],
-    "application": "Equipped me with fluent English communication required for consuming international technical documentation, writing clean codebases, and speaking confidently during cross-cultural initiatives."
+    "application": "Equipped me with fluent English communication required for consuming international technical documentation, writing clean codebases, and speaking confidently during cross-cultural initiatives and global engineering teams."
+  },
+  "nasa-open-science-essentials": {
+    "title": "NASA Open Science Essentials",
+    "issuer": "NASA Open Science",
+    "issued": "Nov 2026",
+    "track": "Open Science & Research Transparency",
+    "effort": "Verified NASA TOPS Curriculum · Credly Digital Badge",
+    "credentialId": "414bed10-39e3-485d-a42d-d503c3532561",
+    "verifyUrl": "https://www.credly.com/badges/414bed10-39e3-485d-a42d-d503c3532561/public_url",
+    "summary": "Official open science certification issued by NASA's Transform to Open Science (TOPS) initiative under the Science Mission Directorate. Validates core competencies in transparent scientific research, FAIR data stewardship, open-source scientific software, persistent identifiers, and collaborative reproducible workflows.",
+    "skills": [
+      "Open Science Principles",
+      "FAIR Data Stewardship",
+      "Open Source Software",
+      "Persistent Identifiers (DOI & ORCID)",
+      "Research Data Management",
+      "Open Access Publishing",
+      "Reproducible Workflows",
+      "Collaborative Research"
+    ],
+    "highlights": [
+      "Core ethos, transparency guidelines, and accessibility standards of modern open science",
+      "FAIR data principles (Findable, Accessible, Interoperable, Reusable) for open datasets",
+      "Open scientific computing, open-source licensing (MIT, Apache, GPL), and code repository governance",
+      "Preprint architectures, open peer review methodologies, and data management plans (DMPs)",
+      "Cross-institutional research equity, citizen science, and mitigating barriers in scientific collaboration"
+    ],
+    "application": "Directly applied to engineering transparent academic platforms (like SIM KEPK FK UMJ) and publishing open-access educational literature. Guides architectural decisions on open API schemas, FAIR dataset structures, and verifiable audit logging."
+  },
+  "ai-in-society-ethics-leadership-and-the-road-ahead": {
+    "title": "AI in Society: Ethics, Leadership, and the Road Ahead",
+    "issuer": "HP × edX",
+    "issued": "Nov 2026",
+    "track": "AI Ethics, Governance & Strategic Leadership",
+    "effort": "Course 3 of HP AI Foundations Program · Verified edX Credential",
+    "credentialId": "335ef764df4c4a19a5fbf7208be2df68",
+    "verifyUrl": "https://courses.edx.org/certificates/335ef764df4c4a19a5fbf7208be2df68",
+    "summary": "Advanced executive and technical curriculum by HP and edX (Course code HPAIFPL.3x.en) examining the societal, ethical, and organizational impacts of modern artificial intelligence. Covers algorithmic bias mitigation, novel AI security threats, workforce transformation, global regulatory compliance (EU AI Act), and the AI alignment problem.",
+    "skills": [
+      "AI Ethics & Governance",
+      "Algorithmic Bias Mitigation",
+      "AI Security & Threat Vectors",
+      "EU AI Act & Regulations",
+      "Prompt Injection Defense",
+      "Workforce AI Augmentation",
+      "AI Alignment & Safety",
+      "Responsible AI Leadership"
+    ],
+    "highlights": [
+      "Algorithmic fairness audits, representation bias detection, and dataset curation ethics",
+      "AI security vulnerabilities: prompt injections, jailbreaks, data poisoning, and synthetic deepfake defense",
+      "Socio-economic impact analysis and workforce augmentation frameworks over wholesale replacement",
+      "Global AI regulatory landscape: EU AI Act risk tiers, US NIST AI RMF, and corporate governance models",
+      "AI alignment problem, explainable AI (XAI) interpretability, and long-term AGI safety considerations"
+    ],
+    "application": "Provides the foundational ethical and security blueprint for building intelligent software products. Directly integrated into guardrail architecture, input sanitization, and bias mitigation pipelines across AI-driven applications like FitSmart and JavaIsland."
+  },
+  "cerdas-cermat-apbn": {
+    "title": "National State Budget (APBN) Academic Competition",
+    "issuer": "Kementerian Keuangan Republik Indonesia (Kemenkeu RI)",
+    "issued": "Oct 2025",
+    "track": "National Fiscal Literacy & Public Economics",
+    "effort": "National Fiscal Competition · Kemenkeu RI",
+    "credentialId": "SERT-2276/CCA.01/2025",
+    "verifyUrl": "https://klc2.kemenkeu.go.id",
+    "summary": "Official Certificate of Commendation from the Ministry of Finance of the Republic of Indonesia for participation and academic excellence in the National State Budget Academic Competition (Cerdas Cermat APBN 2025). Evaluates in-depth mastery of national budget formulation, macroeconomic fiscal policy, state revenue streams, ministerial expenditure allocations, regional transfers, and transparent public financial governance.",
+    "skills": [
+      "APBN & Fiscal Policy",
+      "Macroeconomics",
+      "State Budget Management",
+      "Taxation Principles",
+      "Public Expenditure",
+      "National Economic Governance",
+      "Financial Accountability"
+    ],
+    "highlights": [
+      "Prestigious national academic competition organized directly by the Ministry of Finance of the Republic of Indonesia",
+      "Comprehensive mastery over state revenue structures (taxation and non-tax revenues), ministerial allocations, and intergovernmental fiscal transfers",
+      "In-depth analytical evaluation of the state budget as a macroeconomic shock absorber fostering sustainable national development",
+      "Clear understanding of transparent, accountable, and impactful public financial governance"
+    ],
+    "application": "Broadens macroeconomic literacy and fiscal governance insights, complementing software engineering capabilities with strategic understanding of public budget allocation, public expenditure efficiency, and the digital economy."
+  },
+  "2nd-place-national-web-design-competition-pnbitc": {
+    "title": "2nd Place: National Web Design Competition (PNBITC#18)",
+    "issuer": "Politeknik Negeri Bali (PNBITC#18)",
+    "issued": "Oct 2026",
+    "track": "National Web Design Competition",
+    "effort": "1-Month Intensive Sprint · National Grand Final",
+    "credentialId": "23685/DST/PL8/PP.06/2026",
+    "verifyUrl": "https://idn.sch.id/smk-dkv-terbaik-bogor-siswa-idn-tembus-final-kompetisi-it-di-bali/",
+    "relatedStoryUrl": "/achievements/2nd-place-national-web-design-competition-pnbitc",
+    "relatedStoryLabel": "Read Full National Achievement Story",
+    "summary": "Official Certificate of Achievement No: 23685/DST/PL8/PP.06/2026 awarded by the Director of Politeknik Negeri Bali and Head of the Electrical Engineering Department, recognizing 2nd Place nationally in the Web Design Competition at the 18th PNB IT Competition (PNBITC#18).",
+    "skills": [
+      "Web Architecture",
+      "React",
+      "Tailwind CSS",
+      "UI/UX Design",
+      "Competitive Sprint",
+      "National Defense Presentation"
+    ],
+    "highlights": [
+      "Official Certificate of Achievement No: 23685/DST/PL8/PP.06/2026 signed by the Director of Politeknik Negeri Bali",
+      "Achieved 2nd Place (National Runner-Up) outperforming hundreds of university and vocational student teams across Indonesia",
+      "Engineered completely from scratch within an intensive one-month development sprint (September 2026) alongside a full-time corporate internship",
+      "Underwent rigorous evaluation covering frontend systems architecture, WCAG accessibility compliance, visual hierarchy, and a live defense before a jury panel"
+    ],
+    "application": "Demonstrates high-velocity software engineering execution under competitive deadlines, establishing architectural design patterns and accessibility benchmarks that now serve as production standards across high-performance web applications."
+  },
+  "1st-place-national-web-design-competition-icomfest": {
+    "title": "1st Place: National Web Design Competition (ICOMFEST)",
+    "issuer": "ICOMFEST 2025",
+    "issued": "Feb 2025",
+    "track": "National Web Design Championship",
+    "effort": "Team Batosai · Lead of Program · Collegiate Level",
+    "credentialId": "ICOMFEST-2025-WIN-01",
+    "verifyUrl": "https://github.com/adyvka31/Pusakaku",
+    "relatedStoryUrl": "/achievements/1st-place-national-web-design-competition",
+    "relatedStoryLabel": "Read Full Championship Story",
+    "summary": "Official Certificate of Achievement awarded to Rafif Sava Adyvka Pratama as Lead of Program for Team Batosai for winning 1st Place in the National Web Design Competition at ICOMFEST 2025, held on 1 February in Bogor.",
+    "skills": [
+      "Frontend Architecture",
+      "UI/UX Design",
+      "Gamified Quiz Engine",
+      "Cultural Archival Preservation",
+      "Team Technical Leadership",
+      "Client-Side State Management"
+    ],
+    "highlights": [
+      "1st Place National Champion at ICOMFEST 2025, competing against university students and open public teams",
+      "Served as Lead of Program heading the technical architecture and engineering of the 'PusakaKu' cultural heritage platform",
+      "Engineered an interactive ethnographic archive of traditional Indonesian folk games with a 10-stage interactive gamified quiz engine",
+      "Achieved highest evaluation marks in visual originality, runtime render performance, and intuitive user experience"
+    ],
+    "application": "Applied technical leadership in harmonizing interactive frontend architecture with digital cultural preservation, demonstrating software engineering excellence before a national academic jury."
+  },
+  "idn-student-council-event-division-leader": {
+    "title": "Certificate of Appreciation: Event Organizer Student Council",
+    "issuer": "SMK IDN Boarding School Student Council",
+    "issued": "Aug 2026",
+    "track": "Executive Leadership & Event Operations",
+    "effort": "2 Consecutive Terms · 500+ Attendees Flagship Events",
+    "credentialId": "015/SRT/OSIS-SMKIDN/VIII/2026",
+    "verifyUrl": "https://idn.sch.id",
+    "relatedStoryUrl": "/experience/idn-student-council-event-division-leader",
+    "relatedStoryLabel": "Read Full Student Council Leadership Story",
+    "summary": "Official Certificate of Appreciation Number: 015/SRT/OSIS-SMKIDN/VIII/2026 awarded by IDN Boarding School to Rafif Sava Adyvka Pratama as Event Organizer Student Council (OSIS) of IDN Boarding School for the 2025-2026 period.",
+    "skills": [
+      "Executive Leadership",
+      "Event Production",
+      "Crisis Triage & Operations",
+      "Cross-Functional Delegation",
+      "Stakeholder Communication",
+      "Logistics Management"
+    ],
+    "highlights": [
+      "Official Certificate of Appreciation No: 015/SRT/OSIS-SMKIDN/VIII/2026 signed by the Principal of SMK IDN Boarding School",
+      "Led the Student Council Event Division across two consecutive executive terms (2025–2026)",
+      "Served as Head Coordinator for IT FEST 2025, a nationwide technology festival and competition engaging 500+ attendees",
+      "Orchestrated stage logistics, corporate sponsorships, zero-delay rundown execution, and rapid crisis management"
+    ],
+    "application": "Developed executive leadership resilience, calm problem resolution under pressure, and large-scale cross-functional team coordination essential for industrial software engineering."
+  },
+  "universitas-yarsi-muharram-poster-competition": {
+    "title": "Participant Certificate: National Muharram Poster Competition",
+    "issuer": "LDK KAHFI Universitas YARSI",
+    "issued": "Jul 2023",
+    "track": "Creative Graphic Design & Visual Communication",
+    "effort": "National Poster Design Competition · Universitas YARSI",
+    "credentialId": "YARSI-LDK-POSTER-2023",
+    "verifyUrl": "https://yarsi.ac.id",
+    "summary": "Official Certificate of Participation awarded by Lembaga Dakwah Kampus (LDK) KAHFI Universitas YARSI to Rafif Sava Adyvka Pratama for participating in the National Muharram Poster Design Competition with the theme 'Welcoming the Sacred Month of Muharram with Nobility'.",
+    "skills": [
+      "Poster Design",
+      "Visual Hierarchy",
+      "Islamic Typography",
+      "Color Harmony & Balance",
+      "Figma & Vector Illustration",
+      "Creative Conceptualization"
+    ],
+    "highlights": [
+      "Official participation in the National Muharram Poster Design Competition hosted by LDK KAHFI Universitas YARSI",
+      "Created an impactful visual design centering on Islamic heritage and ethical nobility",
+      "Explored modern typography layouts, negative space balance, and harmonious color theory",
+      "Early validation of visual communication competencies, establishing the foundation for digital interface engineering (UI/UX)"
+    ],
+    "application": "Editorial graphic design and typography principles honed during this competition serve as key pillars for visual hierarchy and user interface aesthetics in contemporary web projects."
   }
 };
 
@@ -768,3 +959,26 @@ certificateDetails["frontend-web"] = certificateDetails["frontend-web-developer"
 certificateDetails["coding-camp"] = certificateDetails["coding-camp-full-stack-developer"];
 certificateDetails["aws-cloud"] = certificateDetails["cloud-practitioner-essentials"];
 certificateDetails["react-dicoding"] = certificateDetails["belajar-membuat-aplikasi-web-dengan-react"];
+certificateDetails["nasa"] = certificateDetails["nasa-open-science-essentials"];
+certificateDetails["nasa-open-science"] = certificateDetails["nasa-open-science-essentials"];
+certificateDetails["open-science-nasa"] = certificateDetails["nasa-open-science-essentials"];
+certificateDetails["ai-in-society"] = certificateDetails["ai-in-society-ethics-leadership-and-the-road-ahead"];
+certificateDetails["hp-ai"] = certificateDetails["ai-in-society-ethics-leadership-and-the-road-ahead"];
+certificateDetails["hp-ai-in-society"] = certificateDetails["ai-in-society-ethics-leadership-and-the-road-ahead"];
+certificateDetails["cerdas-cermat-apbn"] = certificateDetails["cerdas-cermat-apbn"];
+certificateDetails["apbn"] = certificateDetails["cerdas-cermat-apbn"];
+certificateDetails["kemenkeu"] = certificateDetails["cerdas-cermat-apbn"];
+certificateDetails["ielts"] = certificateDetails["english-proficiency-assessment"];
+certificateDetails["ielts-academic"] = certificateDetails["english-proficiency-assessment"];
+certificateDetails["coursera-excel"] = certificateDetails["belajar-dasar-data-analyst"];
+certificateDetails["coursera-figma"] = certificateDetails["dasar-ui-ux-design"];
+certificateDetails["progate-git"] = certificateDetails["belajar-dasar-git-dengan-github"];
+certificateDetails["dqlab-python"] = certificateDetails["python-fundamentals"];
+certificateDetails["pnbitc"] = certificateDetails["2nd-place-national-web-design-competition-pnbitc"];
+certificateDetails["pnb"] = certificateDetails["2nd-place-national-web-design-competition-pnbitc"];
+certificateDetails["icomfest"] = certificateDetails["1st-place-national-web-design-competition-icomfest"];
+certificateDetails["1st-place-national-web-design-competition"] = certificateDetails["1st-place-national-web-design-competition-icomfest"];
+certificateDetails["osis"] = certificateDetails["idn-student-council-event-division-leader"];
+certificateDetails["osis-idn"] = certificateDetails["idn-student-council-event-division-leader"];
+certificateDetails["yarsi-poster"] = certificateDetails["universitas-yarsi-muharram-poster-competition"];
+certificateDetails["lomba-poster-yarsi"] = certificateDetails["universitas-yarsi-muharram-poster-competition"];

@@ -109,7 +109,7 @@ export default function CertificatesPage() {
         italicWord="Verified"
         description="A verified record of self-directed computational study, spanning Harvard CS50 fundamentals, AWS cloud architecture, backend systems, and artificial intelligence."
         meta={[
-          { label: "Total Credentials", value: "23 Verified Certificates" },
+          { label: "Total Credentials", value: `${(allCertificates || []).length} Verified Certificates` },
           { label: "Core Foundation", value: "Harvard CS50x Graduate" },
           { label: "Architecture & Cloud", value: "AWS, Dicoding & DQLab" },
           { label: "Domains Covered", value: "Web, Cloud, Data & AI" },

@@ -70,8 +70,8 @@ export default function RootErrorBoundary() {
           }}
         >
           {isChunkOrManifestError
-            ? "Pembaruan Versi Tersedia"
-            : "Terjadi Kendala Teknis"}
+            ? "New Version Available"
+            : "An Unexpected Error Occurred"}
         </h1>
         <p
           style={{
@@ -82,8 +82,8 @@ export default function RootErrorBoundary() {
           }}
         >
           {isChunkOrManifestError
-            ? "Versi terbaru dari portofolio telah dipublikasikan. Silakan muat ulang halaman untuk memperbarui aset aplikasi."
-            : (error?.message || "Terjadi kesalahan saat memproses rute aplikasi.")}
+            ? "A newer version of the portfolio has been published. Please reload the page to update application assets."
+            : (error?.message || "An error occurred while processing the application route.")}
         </p>
         <button
           onClick={() => window.location.reload()}
@@ -107,7 +107,7 @@ export default function RootErrorBoundary() {
             e.currentTarget.style.transform = "scale(1)";
           }}
         >
-          Muat Ulang Halaman
+          Reload Page
         </button>
       </div>
     </div>

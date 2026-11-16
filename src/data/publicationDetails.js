@@ -80,7 +80,7 @@ export const publicationDetails = {
     projectsBuilt: [
       {
         name: "Catching Fruit",
-        chapter: "BAB II",
+        chapter: "Chapter II",
         genre: "Arcade Reflex & Falling Object",
         summary:
           "Players control a basket moving horizontally across the stage to catch randomized falling fruits while dodging penalties.",
@@ -93,7 +93,7 @@ export const publicationDetails = {
       },
       {
         name: "Alien Invader",
-        chapter: "BAB III",
+        chapter: "Chapter III",
         genre: "Classic Space Shooter",
         summary:
           "An action space defender featuring projectile shooting, enemy squadron wave movements, and health point tracking.",
@@ -106,7 +106,7 @@ export const publicationDetails = {
       },
       {
         name: "Game Adab",
-        chapter: "BAB IV",
+        chapter: "Chapter IV",
         genre: "Interactive Narrative & Social Values",
         summary:
           "A value-oriented interactive story game presenting daily behavioral scenarios, decision branches, and educational feedback.",
@@ -119,7 +119,7 @@ export const publicationDetails = {
       },
       {
         name: "Pacman",
-        chapter: "BAB V",
+        chapter: "Chapter V",
         genre: "Labyrinth Grid Survival",
         summary:
           "A faithful visual recreation of the classic arcade maze navigation with ghost patrol AI and collectible pellets.",
@@ -132,7 +132,7 @@ export const publicationDetails = {
       },
       {
         name: "Block Breaker",
-        chapter: "BAB VI",
+        chapter: "Chapter VI",
         genre: "Brick Breaker Physics Arcade",
         summary:
           "High-speed arcade paddle game testing geometric rebound calculations and multi-element grid destruction.",
@@ -146,86 +146,86 @@ export const publicationDetails = {
     ],
     chapters: [
       {
-        num: "BAB I",
-        title: "Membuat Game di Scratch",
+        num: "Chapter I",
+        title: "Introduction to Game Development with Scratch",
         pages: "Pages 1 – 20",
         summary:
           "Introduction to visual block programming paradigms, environment setup, and foundational Scratch architecture.",
         subsections: [
-          "1.1 Mengenal Pemrograman Visual & MIT Scratch",
-          "1.2 Download & Instalasi Scratch Desktop di Windows/Mac",
-          "1.3 Menggunakan Scratch Web Editor di Browser",
-          "1.4 Memahami Workspace: Stage, Sprite Area, dan Palette Block",
+          "1.1 Understanding Visual Block Programming & MIT Scratch",
+          "1.2 Downloading & Installing Scratch Desktop on Windows/Mac",
+          "1.3 Using Scratch Web Editor in Modern Browsers",
+          "1.4 Navigating the Workspace: Stage, Sprite Area, and Block Palette",
         ],
       },
       {
-        num: "BAB II",
+        num: "Chapter II",
         title: "Catching Fruit",
         pages: "Pages 21 – 40",
         summary:
           "Designing the first interactive game: mechanics of falling items, responsive basket controls, and collision loops.",
         subsections: [
-          "2.1 Konsep Game & Wireframing Alur Permainan",
-          "2.2 Membuat & Mengimpor Sprite Keranjang dan Buah",
-          "2.3 Mendesain Backdrop Panggung yang Menarik",
-          "2.4 Script Logika Gerak Horizontal Keranjang",
-          "2.5 Script Gravitasi Buah, Random Spawning, dan Sistem Skor",
+          "2.1 Game Concepts & Gameplay Flow Wireframing",
+          "2.2 Designing & Importing Basket and Fruit Sprites",
+          "2.3 Crafting Engaging Visual Stage Backdrops",
+          "2.4 Horizontal Basket Movement Control Logic",
+          "2.5 Fruit Gravity, Random Spawning, and Real-time Score Systems",
         ],
       },
       {
-        num: "BAB III",
+        num: "Chapter III",
         title: "Alien Invader",
         pages: "Pages 41 – 60",
         summary:
           "Building a top-down arcade space shooter with laser projectile cloning, enemy patrols, and hit detection.",
         subsections: [
-          "3.1 Konsep Space Defender Arcade",
-          "3.2 Mendesain Sprite Pesawat Luar Angkasa dan Musuh Alien",
-          "3.3 Backdrop Kosmis & Animasi Efek Bintang Bergerak",
-          "3.4 Script Mekanisme Penembakan Laser dengan Fitur Clone",
-          "3.5 Deteksi Tumbukan Laser ke Alien & Sistem Pengurangan HP",
+          "3.1 Arcade Space Defender Gameplay Concept",
+          "3.2 Designing Spaceship and Alien Squadron Sprites",
+          "3.3 Cosmic Backdrops & Starfield Motion Animation",
+          "3.4 Laser Projectile Shooting Mechanics with Sprite Cloning",
+          "3.5 Projectile-to-Alien Collision Detection & HP Reduction Systems",
         ],
       },
       {
-        num: "BAB IV",
-        title: "Game Adab",
+        num: "Chapter IV",
+        title: "Game Adab (Character Ethics)",
         pages: "Pages 61 – 80",
         summary:
           "Engineering an educational narrative experience with interactive question nodes, character dialogues, and scoring.",
         subsections: [
-          "4.1 Konsep Game Edukasi Nilai Moral & Adab Sehari-hari",
-          "4.2 Desain Karakter Ekspresif & Beragam Latar Lingkungan",
-          "4.3 Script Percakapan Menggunakan Block 'Say' dan 'Broadcast'",
-          "4.4 Pembuatan Pilihan Jawaban Interaktif & Cabang Skenario",
-          "4.5 Rekapitulasi Skor & Evaluasi Pembelajaran Akhir",
+          "4.1 Educational Game Design: Daily Ethics & Moral Values",
+          "4.2 Expressive Character Design & Environmental Backdrops",
+          "4.3 Dialogue Scripts Using 'Say' and 'Broadcast' Message Blocks",
+          "4.4 Interactive Choice Nodes & Decision Branching Scenarios",
+          "4.5 Cumulative Scoring & Final Learning Evaluation",
         ],
       },
       {
-        num: "BAB V",
+        num: "Chapter V",
         title: "Pacman",
         pages: "Pages 81 – 102",
         summary:
           "Constructing maze navigation logic, wall collision boundaries, autonomous patrol ghosts, and collectible item counters.",
         subsections: [
-          "5.1 Mekanika Navigasi Labirin & Penataan Grid Koordinat",
-          "5.2 Desain Backdrop Labirin Berbasis Warna Tembok",
-          "5.3 Script Pergerakan 4-Arah Pacman & Pencegahan Tembus Dinding",
-          "5.4 Script Pergerakan Patroli Hantu Secara Mandiri",
-          "5.5 Koleksi Pelet Makanan, Kalkulasi Skor, & Game Over Trigger",
+          "5.1 Maze Navigation Mechanics & Coordinate Grid Systems",
+          "5.2 Wall-Color Sensing Backdrop Architecture",
+          "5.3 4-Way Directional Movement & Wall Clipping Prevention",
+          "5.4 Autonomous Ghost Patrol AI Scripting",
+          "5.5 Pellet Consumption, Score Calculation, & Game Over Triggers",
         ],
       },
       {
-        num: "BAB VI",
+        num: "Chapter VI",
         title: "Block Breaker",
         pages: "Pages 103 – 123",
         summary:
           "Implementing paddle deflection angles, ball velocity physics, brick grid destruction routines, and complete game victory loops.",
         subsections: [
-          "6.1 Konsep Arcade Classic Brick Breaker",
-          "6.2 Desain Sprite Pemukul (Paddle), Bola, dan Varian Balok",
-          "6.3 Script Pemantulan Bola Berdasarkan Sudut Benturan Paddle",
-          "6.4 Script Penghancuran Balok Menggunakan Blok Clone / Pola Grid",
-          "6.5 Batas Zona Kematian Bawah, Nyawa Pemain, & Layar Kemenangan",
+          "6.1 Classic Arcade Brick Breaker Game Architecture",
+          "6.2 Designing Paddle, Ball, and Multi-Hit Brick Sprites",
+          "6.3 Ball Angle Deflection Physics on Paddle Collision",
+          "6.4 Grid Brick Destruction Routines Using Sprite Clones",
+          "6.5 Bottom Death Boundary, Player Lives, & Victory Screen Triggers",
         ],
       },
     ],
@@ -333,7 +333,7 @@ export const publicationDetails = {
     projectsBuilt: [
       {
         name: "Semantic HTML5 Personal Portfolio",
-        chapter: "BAB I",
+        chapter: "Chapter I",
         genre: "Web Document Structure & Form Design",
         summary:
           "Constructing an accessible, multi-section personal profile page focusing strictly on structural semantics, hyperlinks, media embeds, and table layouts.",
@@ -346,7 +346,7 @@ export const publicationDetails = {
       },
       {
         name: "Styled CSS3 Modern Landing Page",
-        chapter: "BAB II & BAB III",
+        chapter: "Chapter II & Chapter III",
         genre: "Visual Design & Box Model Layout",
         summary:
           "Transforming unstyled HTML markup into a vibrant, polished landing page with custom color palettes, Google Fonts typography, and Flexbox cards.",
@@ -359,7 +359,7 @@ export const publicationDetails = {
       },
       {
         name: "Responsive Production Site with Tailwind CSS",
-        chapter: "BAB IV",
+        chapter: "Chapter IV",
         genre: "Utility-First Web Engineering",
         summary:
           "Developing a complete, mobile-responsive production web interface using Tailwind CSS utility classes and Tailblocks component patterns.",
@@ -373,62 +373,62 @@ export const publicationDetails = {
     ],
     chapters: [
       {
-        num: "BAB I",
-        title: "Pengenalan HTML Dasar",
+        num: "Chapter I",
+        title: "Foundations of HTML5",
         pages: "Pages 1 – 28",
         summary:
           "Web architectural foundations, developer tooling setup, HTML5 document structures, typography tags, media embedding, and accessible forms.",
         subsections: [
-          "1.1 Memahami Cara Kerja Website, Server, dan Browser",
-          "1.2 Instalasi & Konfigurasi VS Code dan Ekstensi Live Server",
-          "1.3 Struktur Dokumen Dasar HTML5 (Head, Meta, Title, Body)",
-          "1.4 Elemen Teks: Heading, Paragraf, Format Tebal/Miring, dan List",
-          "1.5 Menambahkan Gambar, Hyperlink Internal/Eksternal, & Video",
-          "1.6 Membuat Struktur Tabel Data dan Formulir Input Lengkap",
+          "1.1 Understanding How the Web, Web Servers, and Browsers Work",
+          "1.2 Installing & Configuring VS Code and Live Server Extension",
+          "1.3 Core HTML5 Document Architecture (Head, Meta, Title, Body)",
+          "1.4 Text Typography: Headings, Paragraphs, Inline Formatting, and Lists",
+          "1.5 Embedding Images, Internal/External Hyperlinks, and Video Media",
+          "1.6 Structuring Accessible Data Tables and Interactive Input Forms",
         ],
       },
       {
-        num: "BAB II",
-        title: "Pengenalan CSS Dasar",
+        num: "Chapter II",
+        title: "Foundations of CSS3 & Box Model",
         pages: "Pages 29 – 54",
         summary:
           "Styling mechanics, CSS selectors, color theory, typography, the fundamental Box Model, and introductory layout arrangements.",
         subsections: [
-          "2.1 Sintaks CSS: Selektor Elemen, Class, ID, dan Universal",
-          "2.2 Tiga Metode Menyisipkan CSS: Inline, Internal, dan External",
-          "2.3 Membedah Box Model: Margin, Padding, Border, dan Content",
-          "2.4 Pengaturan Tipografi: Font-Family, Font-Size, Line-Height, dan Warna",
-          "2.5 Background Styling: Linear Gradient, Background Image, dan Opacity",
-          "2.6 Dasar Layouting: Display Block, Inline-Block, dan Flexbox Pengantar",
+          "2.1 CSS Syntax: Element, Class, ID, and Universal Selectors",
+          "2.2 Three Styling Approaches: Inline, Internal, and External Stylesheets",
+          "2.3 Mastering the Box Model: Margin, Padding, Border, and Content",
+          "2.4 Typography Controls: Font Family, Sizing, Line Height, and Color",
+          "2.5 Background Aesthetics: Linear Gradients, Images, and Opacity",
+          "2.6 Layout Foundations: Block, Inline-Block, and Flexbox Introduction",
         ],
       },
       {
-        num: "BAB III",
-        title: "Membuat Project HTML CSS",
+        num: "Chapter III",
+        title: "Engineering HTML5 & CSS3 Projects",
         pages: "Pages 55 – 78",
         summary:
           "Hands-on architectural project synthesizing HTML5 and CSS3 into an attractive, responsive landing page with custom component sections.",
         subsections: [
-          "3.1 Perancangan Konsep & Wireframe Halaman Landing Page",
-          "3.2 Menyusun Struktur HTML Header dan Navigasi Menu",
-          "3.3 Styling Hero Section dengan Call-to-Action (CTA) Menarik",
-          "3.4 Membangun Grid Konten dan Kartu Fitur dengan Flexbox",
-          "3.5 Mendesain Bagian Kontak, Footer, dan Finishing Detail",
+          "3.1 Concept Ideation & Wireframing a Modern Landing Page",
+          "3.2 Assembling Semantic HTML Header and Navigation Components",
+          "3.3 Styling Hero Sections with Compelling Call-to-Action (CTA) Elements",
+          "3.4 Constructing Content Grids and Feature Cards with Flexbox",
+          "3.5 Designing Contact Sections, Footers, and Visual Polish",
         ],
       },
       {
-        num: "BAB IV",
-        title: "Menggunakan Tailwind",
+        num: "Chapter IV",
+        title: "Mastering Tailwind CSS",
         pages: "Pages 79 – 104",
         summary:
           "Comprehensive guide to modern utility-first CSS using Tailwind CSS, rapid prototyping with Tailblocks, and responsive mobile-first development.",
         subsections: [
-          "4.1 Mengapa Tailwind CSS? Paradigma Utility-First vs Tradisional",
-          "4.2 Setup Cepat Menggunakan Tailwind CDN dan Tailwind CLI",
-          "4.3 Kelas Utilitas Esensial: Spacing, Flex, Grid, Typography, dan Colors",
-          "4.4 Pemanfaatan Library Komponen Tailblocks untuk Perakitan Kilat",
-          "4.5 Implementasi Responsif Mobile-First (sm, md, lg, xl)",
-          "4.6 Membangun Website Responsif Siap Produksi dari Awal",
+          "4.1 Why Tailwind CSS? Utility-First Paradigm vs Traditional CSS",
+          "4.2 Rapid Setup with Tailwind CDN and Production Tailwind CLI",
+          "4.3 Essential Utility Classes: Spacing, Flex, Grid, Typography, and Colors",
+          "4.4 Leveraging Tailblocks Component Libraries for High-Speed Prototyping",
+          "4.5 Implementing Mobile-First Responsive Breakpoints (sm, md, lg, xl)",
+          "4.6 Building a Production-Ready Responsive Website from Scratch",
         ],
       },
     ],

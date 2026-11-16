@@ -42,6 +42,10 @@ const CORE_KEYWORDS = [
   "Technical Author",
   "Scratch Programming Guide",
   "Tailwind CSS Learning Module",
+  "NASA Open Science Essentials",
+  "NASA Open Science",
+  "HP edX AI in Society",
+  "AI in Society Ethics Leadership",
 ];
 
 /**
@@ -211,13 +215,105 @@ export default function SEO({
       },
       {
         "@type": "EducationalOccupationalCredential",
-        name: "Belajar Membuat Aplikasi Back-End untuk Pemula",
+        name: "Building Backend Applications for Beginners",
         credentialCategory: "certificate",
         recognizedBy: {
           "@type": "Organization",
           name: "Dicoding Indonesia",
         },
         url: `${SITE_URL}/certificates/belajar-membuat-aplikasi-back-end`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "NASA Open Science Essentials",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "NASA (National Aeronautics and Space Administration)",
+        },
+        url: `${SITE_URL}/certificates/nasa-open-science-essentials`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "AI in Society: Ethics, Leadership, and the Road Ahead",
+        credentialCategory: "certificate",
+        recognizedBy: [
+          {
+            "@type": "Organization",
+            name: "HP (Hewlett-Packard)",
+          },
+          {
+            "@type": "Organization",
+            name: "edX",
+          },
+        ],
+        url: `${SITE_URL}/certificates/ai-in-society-ethics-leadership-and-the-road-ahead`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "IELTS Academic: English Proficiency",
+        credentialCategory: "certificate",
+        recognizedBy: [
+          {
+            "@type": "EducationalOrganization",
+            name: "IDP IELTS Australia",
+          },
+          {
+            "@type": "EducationalOrganization",
+            name: "Cambridge Assessment English",
+          },
+        ],
+        url: `${SITE_URL}/certificates/english-proficiency-assessment`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "National State Budget (APBN) Academic Competition",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "GovernmentOrganization",
+          name: "Kementerian Keuangan Republik Indonesia",
+        },
+        url: `${SITE_URL}/certificates/cerdas-cermat-apbn`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "2nd Place: National Web Design Competition (PNBITC#18)",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "EducationalOrganization",
+          name: "Politeknik Negeri Bali",
+        },
+        url: `${SITE_URL}/certificates/2nd-place-national-web-design-competition-pnbitc`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "1st Place: National Web Design Competition (ICOMFEST)",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "ICOMFEST 2025",
+        },
+        url: `${SITE_URL}/certificates/1st-place-national-web-design-competition-icomfest`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Certificate of Appreciation: Event Organizer Student Council",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "EducationalOrganization",
+          name: "SMK IDN Boarding School",
+        },
+        url: `${SITE_URL}/certificates/idn-student-council-event-division-leader`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Participant Certificate: National Muharram Poster Competition",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "LDK KAHFI Universitas YARSI",
+        },
+        url: `${SITE_URL}/certificates/universitas-yarsi-muharram-poster-competition`,
       },
     ],
     knowsAbout: [
