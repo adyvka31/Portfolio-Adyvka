@@ -3,6 +3,11 @@ import databankImg from "../assets/projects/databank-erp-telecommunication-syste
 import richobahariImg from "../assets/projects/cv-richo-bahari-machinery-corporate-website.webp";
 
 // Field & on-site documentation archives
+import richobahari1 from "../assets/richobahari/cv-richo-bahari-machinery-catalog-1.webp";
+import richobahari2 from "../assets/richobahari/cv-richo-bahari-product-specification-2.webp";
+import richobahari3 from "../assets/richobahari/cv-richo-bahari-responsive-layout-3.webp";
+import richobahari4 from "../assets/richobahari/cv-richo-bahari-corporate-inquiry-4.webp";
+
 import ptardyanda1 from "../assets/ptardyanda/pt-ardyanda-digital-inovasi-fullstack-internship-1.webp";
 import ptardyanda2 from "../assets/ptardyanda/pt-ardyanda-backend-api-architecture-2.webp";
 import ptardyanda3 from "../assets/ptardyanda/pt-ardyanda-production-deployment-review-3.webp";
@@ -426,6 +431,39 @@ export const experienceDetails = {
       image: richobahariImg,
       tags: ["Next.js 16", "React 19", "Tailwind CSS v4", "TypeScript", "Industrial EPC"],
     },
+    documentationTitle: "Corporate Flagship & Interactive Catalog Showcase",
+    documentationLead:
+      "Production interface captures documenting the corporate flagship platform, interactive engineering bento grid, and lead generation pipeline built for CV. Richo Bahari.",
+    documentation: [
+      {
+        id: "richobahari-hero-catalog",
+        image: richobahari1,
+        tag: "Corporate Flagship",
+        title: "Industrial Precision Hero & Operational Credentials",
+        desc: "The corporate flagship hero section highlighting CV. Richo Bahari's core capabilities, K3 Zero Accident safety commitment, and operational footprints across West Java.",
+      },
+      {
+        id: "richobahari-capabilities-bento",
+        image: richobahari2,
+        tag: "Interactive Bento",
+        title: "Engineering Capabilities & Worksite Portfolio Grid",
+        desc: "Interactive bento masonry showcasing verified worksite execution across Civil Construction (road paving, building structures), Storage Systems (selective pallet racking), and Precision Jig Fabrication.",
+      },
+      {
+        id: "richobahari-vision-safety",
+        image: richobahari3,
+        tag: "Corporate Vision & K3",
+        title: "Company Vision, Mission & Certified K3 Safety Standards",
+        desc: "Architectural blueprint layout articulating the company's long-term engineering vision, mission pillars, and rigorous K3 workplace safety benchmarks essential for industrial plant tenders.",
+      },
+      {
+        id: "richobahari-inquiry-funnel",
+        image: richobahari4,
+        tag: "Lead Generation",
+        title: "Direct Commercial Inquiry & Project Consultation Pipeline",
+        desc: "Streamlined corporate consultation and procurement inquiry interface connecting plant managers and factory procurement officers directly with executive engineering estimators.",
+      },
+    ],
   },
 
   // Aliases for Richo Bahari backward compatibility
@@ -632,8 +670,8 @@ export const experienceDetails = {
         id: "intisel-stakeholder-sync-2",
         image: ptintisel3,
         tag: "System Walkthrough",
-        title: "PO & Outsource Workflow Demonstration",
-        desc: "Direct walkthrough showcasing sequential Purchase Order approvals, billing reconciliation, and field vendor management directly to the client.",
+        title: "Live Requirements Alignment & Architecture Review",
+        desc: "In-depth technical consultation and sprint sync with PT Intisel's client representative, reviewing operational Purchase Order workflows, vendor reconciliation, and system requirements at the workstation.",
       },
     ],
     stack: [

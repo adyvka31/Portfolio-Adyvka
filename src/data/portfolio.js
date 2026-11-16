@@ -1129,7 +1129,7 @@ export const recognitionData = {
     {
       title: "Backpacker 3 Country",
       institution: "Singapore, Malaysia, Thailand",
-      year: "Sep 2025",
+      year: "Feb 2024 - Mar 2024",
       description:
         "Completed a self-navigated multi-country backpacking expedition across Singapore, Malaysia, and Thailand within one week, strengthening cross-cultural agility, budget logistics, and rapid decision-making in volatile environments.",
       image: backpackerImg,
