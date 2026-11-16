@@ -702,13 +702,13 @@ export const extraCertificatesOnlyForPage = [
   },
   {
     title: "Dasar UI/UX Design",
-    institution: "Figma Course",
+    institution: "Skilvul",
     year: "2023",
     category: "design",
     description:
       "Certification in wireframing, interactive prototyping, and design system creation using Figma.",
     image: figmaImg,
-    tags: ["UI/UX", "Figma", "Design"],
+    tags: ["UI/UX", "Skilvul", "Figma", "Design"],
   },
   {
     title: "Python Fundamentals",
@@ -792,13 +792,13 @@ export const extraCertificatesOnlyForPage = [
   },
   {
     title: "Dasar Prompt Engineering",
-    institution: "AI Course",
+    institution: "Dicoding Indonesia",
     year: "2025",
     category: "data-ai",
     description:
       "Certification in advanced prompt engineering strategies to optimize generative LLM completions.",
     image: promptImg,
-    tags: ["Prompt Engineering", "LLM", "AI"],
+    tags: ["Prompt Engineering", "Dicoding", "LLM", "AI"],
   },
   {
     title: "Meniti Karier Sebagai Software Developer",
@@ -812,23 +812,23 @@ export const extraCertificatesOnlyForPage = [
   },
   {
     title: "Financial Literacy Fundamentals",
-    institution: "Finance Course",
+    institution: "Dicoding Indonesia",
     year: "2023",
     category: "design",
     description:
       "Certification in personal financial literacy, budgeting frameworks, and asset management principles.",
     image: financialImg,
-    tags: ["Finance", "Literacy", "Management"],
+    tags: ["Finance", "Dicoding", "Literacy", "Management"],
   },
   {
     title: "Artificial Intelligence Basics",
-    institution: "AI Academy",
+    institution: "Dicoding Indonesia",
     year: "2024",
     category: "data-ai",
     description:
       "Certification in foundational artificial intelligence concepts, machine learning models, and neural networks.",
     image: aiImg,
-    tags: ["AI", "Machine Learning", "Tech"],
+    tags: ["AI", "Dicoding", "Machine Learning", "Tech"],
   },
   {
     title: "Google Developer Groups Participant",

@@ -292,7 +292,7 @@ export const certificateDetails = {
     "track": "Visual Design & Composition",
     "effort": "25+ Hours \u00b7 Creative Track",
     "credentialId": "CANVA-DESIGN-2023",
-    "verifyUrl": "",
+    "verifyUrl": "https://www.canva.com/designschool/",
     "summary": "Core principles of graphic design, color psychology, visual hierarchy, layout grid systems, and brand consistency for digital and print media.",
     "skills": [
       "Graphic Design",
@@ -336,12 +336,12 @@ export const certificateDetails = {
   },
   "dasar-ui-ux-design": {
     "title": "Dasar UI/UX Design",
-    "issuer": "Figma Course",
+    "issuer": "Skilvul",
     "issued": "2023",
     "track": "UI/UX & Product Design",
     "effort": "35+ Hours \u00b7 Design Track",
     "credentialId": "FIGMA-UIUX-2023-BASE",
-    "verifyUrl": "",
+    "verifyUrl": "https://skilvul.com",
     "summary": "Practical design curriculum exploring user-centered design methodologies, wireframing, interactive prototyping, and scalable Figma design systems.",
     "skills": [
       "Figma",
@@ -435,7 +435,7 @@ export const certificateDetails = {
     "track": "Cloud Architecture & Infrastructure",
     "effort": "40+ Hours \u00b7 Cloud Foundations",
     "credentialId": "AWS-CP-2024-CLOUD",
-    "verifyUrl": "https://aws.amazon.com",
+    "verifyUrl": "https://aws.amazon.com/certification/",
     "summary": "Official AWS curriculum introducing cloud computing concepts, AWS security models, compute services (EC2, Lambda), storage (S3), and networking fundamentals (VPC).",
     "skills": [
       "AWS",
@@ -606,12 +606,12 @@ export const certificateDetails = {
   },
   "dasar-prompt-engineering": {
     "title": "Dasar Prompt Engineering",
-    "issuer": "AI Course",
+    "issuer": "Dicoding Indonesia",
     "issued": "2025",
     "track": "Generative AI & LLM Systems",
-    "effort": "20+ Hours \u00b7 AI Specialization",
+    "effort": "20+ Hours · AI Specialization",
     "credentialId": "AI-PROMPT-2025-SPEC",
-    "verifyUrl": "",
+    "verifyUrl": "https://www.dicoding.com/certificates",
     "summary": "Modern course on prompt design, few-shot prompting, chain-of-thought elicitation, system instructions, and LLM output guardrailing.",
     "skills": [
       "Prompt Engineering",
@@ -665,12 +665,12 @@ export const certificateDetails = {
   },
   "financial-literacy-fundamentals": {
     "title": "Financial Literacy Fundamentals",
-    "issuer": "Finance Course",
+    "issuer": "Dicoding Indonesia",
     "issued": "2023",
     "track": "Financial Economics & Literacy",
-    "effort": "20+ Hours \u00b7 Foundational Track",
+    "effort": "20+ Hours · Foundational Track",
     "credentialId": "FIN-LIT-2023-BASE",
-    "verifyUrl": "",
+    "verifyUrl": "https://www.dicoding.com/certificates",
     "summary": "Foundational course exploring budgeting principles, cash flow management, digital transaction security, and personal financial modeling.",
     "skills": [
       "Financial Literacy",
@@ -689,12 +689,12 @@ export const certificateDetails = {
   },
   "artificial-intelligence-basics": {
     "title": "Artificial Intelligence Basics",
-    "issuer": "AI Academy",
+    "issuer": "Dicoding Indonesia",
     "issued": "2024",
     "track": "Artificial Intelligence & Machine Learning",
-    "effort": "30+ Hours \u00b7 Foundational Track",
+    "effort": "30+ Hours · Foundational Track",
     "credentialId": "AI-ACADEMY-2024-BASE",
-    "verifyUrl": "",
+    "verifyUrl": "https://www.dicoding.com/certificates",
     "summary": "Broad exploration of artificial intelligence concepts, machine learning taxonomies (supervised, unsupervised, reinforcement), neural networks, and AI ethics.",
     "skills": [
       "Artificial Intelligence",
@@ -719,7 +719,7 @@ export const certificateDetails = {
     "track": "Community & Technical Keynotes",
     "effort": "Industry Participation",
     "credentialId": "GDG-PARTICIPANT-2024",
-    "verifyUrl": "",
+    "verifyUrl": "https://developers.google.com/community/gdg",
     "summary": "Active participation in Google Developer Groups tech summits, engaging with developer advocates on modern web technologies, Android, Cloud, and Gemini APIs.",
     "skills": [
       "Google Developer Groups",

@@ -2,5 +2,8 @@
 https://adyvka-pratama.netlify.app/* https://adyvkapratama.my.id/:splat 301!
 http://adyvka-pratama.netlify.app/* https://adyvkapratama.my.id/:splat 301!
 
-# SPA fallback
-/* /index.html 200
+# Permanent 301 Redirects for Legacy / Renamed Slugs
+/achievements/dummy-new-achievement /achievements/best-poster-award-idul-adha-festival 301!
+
+# Custom 404 Page for Netlify (Ensures true 404 HTTP status code, eliminating Soft 404)
+/* /404.html 404

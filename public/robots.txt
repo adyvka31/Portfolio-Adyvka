@@ -20,6 +20,7 @@ Allow: /
 
 # Prevent indexing errors and test items
 Disallow: /404
+Disallow: /404.html
 
 # Sitemaps & Knowledge Base
 Sitemap: https://adyvkapratama.my.id/sitemap.xml
