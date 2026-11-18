@@ -75,6 +75,8 @@ import pnbCertImg from "../assets/pnb/pnbitc-2024-runner-up-official-certificate
 import icomfestCertImg from "../assets/achievements/icomfest-2025-1st-place-web-design-national-champion-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import osisCertImg from "../assets/experiences/idn-student-council-event-division-leader-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 import yarsiPosterImg from "../assets/certificates/universitas-yarsi-muharram-poster-competition-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import adbiCertImg from "../assets/certificates/adbi-cybersecurity-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
+import dubaiPromptersImg from "../assets/certificates/dubai-future-foundation-one-million-prompters-certificate.webp?w=400;800&quality=70&format=avif;webp&as=picture";
 
 export const personalInfo = {
   name: "Rafif Sava Adyvka Pratama",
@@ -693,6 +695,28 @@ export const teachingFilters = [
 
 export const allCertificatesRaw = [
   // ── 2026 ─────────────────────────────────────────────────────────
+  {
+    slug: "one-million-prompters",
+    title: "One Million Prompters",
+    institution: "Dubai Future Foundation · Dubai Centre for AI",
+    year: "Nov 2026",
+    category: "data-ai",
+    description:
+      "Official prompt engineering credential from the Dubai Future Foundation and Dubai Centre for Artificial Intelligence (DCAI), launched under the directives of Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum.",
+    image: dubaiPromptersImg,
+    tags: ["Dubai Future Foundation", "Prompt Engineering", "Generative AI", "DCAI", "LLMs"],
+  },
+  {
+    slug: "adbi-cybersecurity",
+    title: "Cybersecurity",
+    institution: "Asian Development Bank Institute (ADBI)",
+    year: "Nov 2026",
+    category: "programming",
+    description:
+      "Official cybersecurity certification from the Asian Development Bank Institute (ADBI) covering foundational data protection, cyberattack threat recognition (phishing, ransomware), and operational digital defense tools.",
+    image: adbiCertImg,
+    tags: ["ADBI", "Cybersecurity", "Data Protection", "InfoSec", "Threat Defense"],
+  },
   {
     slug: "ai-in-society-ethics-leadership-and-the-road-ahead",
     title: "AI in Society: Ethics, Leadership, and the Road Ahead",

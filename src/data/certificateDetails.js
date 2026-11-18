@@ -950,10 +950,73 @@ export const certificateDetails = {
       "Early validation of visual communication competencies, establishing the foundation for digital interface engineering (UI/UX)"
     ],
     "application": "Editorial graphic design and typography principles honed during this competition serve as key pillars for visual hierarchy and user interface aesthetics in contemporary web projects."
+  },
+  "adbi-cybersecurity": {
+    "title": "Cybersecurity",
+    "issuer": "Asian Development Bank Institute (ADBI)",
+    "issued": "Nov 2026",
+    "track": "Information Security & Digital Defense",
+    "effort": "Official ADBI e-Learning Course · 1 Hour Intensive",
+    "credentialId": "217178-179-496-9150",
+    "verifyUrl": "https://elearning-adbi.org/certificate-verifier/?&code=217178-179-496-9150",
+    "summary": "Official cybersecurity certification awarded by the Asian Development Bank Institute (ADBI). Validates essential competencies in organizational data protection, threat landscape recognition (phishing, ransomware, data breach mechanisms), operational security tools, and cyber risk mitigation across digital development environments.",
+    "skills": [
+      "Information Security (InfoSec)",
+      "Data Protection & Privacy",
+      "Cyberattack Threat Recognition",
+      "Phishing & Social Engineering Defense",
+      "Ransomware Mitigation",
+      "Data Transmission Security",
+      "Access Control & Authentication",
+      "Digital Security Hygiene"
+    ],
+    "highlights": [
+      "Core principles of data confidentiality, integrity, and safe digital transmission",
+      "Recognizing common cyber threat vectors including phishing campaigns, credential stuffing, and ransomware",
+      "Operational security tools, encryption practices, multi-factor authentication (MFA), and incident mitigation protocols",
+      "Risk governance frameworks for safeguarding enterprise information assets and user privacy"
+    ],
+    "application": "Directly applied to engineering resilient web applications and APIs (such as Databank ERP, RuangTumbuh, and SIM KEPK FK UMJ). Enforces security-first development: robust input sanitization, HTTPS/TLS data in transit encryption, role-based access control (RBAC), and adherence to OWASP Top 10 web security standards."
+  },
+  "one-million-prompters": {
+    "title": "One Million Prompters",
+    "issuer": "Dubai Future Foundation · Dubai Centre for AI",
+    "issued": "Nov 2026",
+    "track": "Generative AI & Prompt Engineering",
+    "effort": "Global Strategic AI Initiative · Dubai Universal Blueprint for AI",
+    "credentialId": "DFF-DCAI-1M-PROMPTERS-2026",
+    "verifyUrl": "https://www.dubaifuture.ae/one-million-prompters",
+    "summary": "Official prompt engineering credential awarded by the Dubai Future Foundation and the Dubai Centre for Artificial Intelligence (DCAI) under the global One Million Prompters initiative launched by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai. Certifies specialized competencies in generative AI prompting paradigms, conversational LLM orchestration, multimodal AI workflows, and strategic AI productivity aligned with the Dubai Universal Blueprint for Artificial Intelligence.",
+    "skills": [
+      "Prompt Engineering",
+      "Generative AI & LLMs",
+      "AI Systems Interaction",
+      "Context Window & Few-Shot Prompting",
+      "Chain-of-Thought Reasoning",
+      "Multimodal AI Applications",
+      "AI Productivity Automation",
+      "Responsible AI Alignment"
+    ],
+    "highlights": [
+      "Global strategic initiative overseen by the Dubai Future Foundation and Dubai Centre for Artificial Intelligence (DCAI)",
+      "Mastery of generative AI fundamentals, system prompt design, role-prompting, and multi-turn conversational architectures",
+      "Advanced few-shot prompting, chain-of-thought (CoT) problem decomposition, and constrained output formatting (JSON/Structured schemas)",
+      "Workflow acceleration through multimodal generative AI for technical documentation, code generation, and rapid prototyping",
+      "Adherence to the Dubai Universal Blueprint for Artificial Intelligence, driving ethical and future-ready workforce transformation"
+    ],
+    "application": "Directly applied to engineering sophisticated LLM-powered applications and agentic workflows (such as FitSmart, AI Ticket Manager, and portfolio conversational engines). Guides optimal context calibration, deterministic system prompt guardrails, zero-shot/few-shot task framing, and structured output parsing for production-grade AI integration."
   }
 };
 
 // Aliases for intuitive URL routing
+certificateDetails["dubai-prompters"] = certificateDetails["one-million-prompters"];
+certificateDetails["dubai-future-foundation"] = certificateDetails["one-million-prompters"];
+certificateDetails["dubai-ai"] = certificateDetails["one-million-prompters"];
+certificateDetails["1-million-prompters"] = certificateDetails["one-million-prompters"];
+certificateDetails["adbi"] = certificateDetails["adbi-cybersecurity"];
+certificateDetails["adbi-cyber"] = certificateDetails["adbi-cybersecurity"];
+certificateDetails["adbi-cybersecurity-certificate"] = certificateDetails["adbi-cybersecurity"];
+certificateDetails["cybersecurity-adbi"] = certificateDetails["adbi-cybersecurity"];
 certificateDetails["cs50"] = certificateDetails["cs50-introduction-to-computer-science"];
 certificateDetails["frontend-web"] = certificateDetails["frontend-web-developer"];
 certificateDetails["coding-camp"] = certificateDetails["coding-camp-full-stack-developer"];

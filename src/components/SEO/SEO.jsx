@@ -225,6 +225,32 @@ export default function SEO({
       },
       {
         "@type": "EducationalOccupationalCredential",
+        name: "One Million Prompters",
+        credentialCategory: "certificate",
+        recognizedBy: [
+          {
+            "@type": "Organization",
+            name: "Dubai Future Foundation",
+          },
+          {
+            "@type": "Organization",
+            name: "Dubai Centre for Artificial Intelligence",
+          },
+        ],
+        url: `${SITE_URL}/certificates/one-million-prompters`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Cybersecurity",
+        credentialCategory: "certificate",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Asian Development Bank Institute (ADBI)",
+        },
+        url: `${SITE_URL}/certificates/adbi-cybersecurity`,
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
         name: "NASA Open Science Essentials",
         credentialCategory: "certificate",
         recognizedBy: {

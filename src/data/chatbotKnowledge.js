@@ -3,7 +3,7 @@
 // Authoritative dataset covering 100% of portfolio records across all domains:
 // - 18 Software Engineering Projects (with full architecture, stack & links)
 // - 20 Verified Experiences (4 Work, 10 Teaching & Faculty Training, 6 Leadership/Survival)
-// - 23 Official Certifications (Harvard CS50, AWS, Git/GitHub, React, SQL, etc.)
+// - 25 Official Certifications (Harvard CS50, One Million Prompters Dubai, ADBI Cybersecurity, AWS, Git/GitHub, React, SQL, etc.)
 // - 4 National Competition Achievements (PNBITC Bali, ICOMFEST 1st, UNILA, Poster)
 // - 2 Published Programming Books
 // Automatically detects query language (English vs Bahasa Indonesia)
@@ -24,7 +24,7 @@ export const ADYVKA_PROFILE = {
   workExperiencesCount: 4,
   teachingExperiencesCount: 10,
   leadershipExperiencesCount: 6,
-  totalCertificates: 23,
+  totalCertificates: 25,
   nationalAwardsCount: 4,
   location: "Depok, West Java, Indonesia",
   timezone: "UTC+07 (WIB)",
@@ -5240,6 +5240,132 @@ Equipped me with fluent English communication required for consuming internation
         }
 ],
     },
+  },
+
+  CERT_ADBI_CYBERSECURITY: {
+    id: {
+      title: `Sertifikat: Cybersecurity (Asian Development Bank Institute - ADBI)`,
+      text: `**Sertifikat Resmi: Cybersecurity (ADBI)**
+
+* **Institusi Penerbit:** Asian Development Bank Institute (ADBI)
+* **Waktu & Kredensial:** Diterbitkan 18 November 2026 (ID Kredensial: \`217178-179-496-9150\`)
+* **Beban Pembelajaran:** 1 Hour Intensive · Official ADBI e-Learning Course
+* **Bidang Keahlian:** Information Security & Digital Defense
+
+**Apa yang Dipelajari & Kurikulum Utama:**
+Kurikulum resmi dari Asian Development Bank Institute yang mencakup perlindungan data, pengenalan ancaman serangan siber, dan instrumen keamanan digital.
+* **Keahlian yang Dikuasai:** Information Security (InfoSec), Data Protection, Cyberattack Threat Recognition, Phishing Defense, Ransomware Mitigation, Data Transmission Security, Access Control
+* Perlindungan data, enkripsi, dan keamanan transmisi digital
+* Identifikasi vektor serangan siber umum seperti phishing, rekayasa sosial, pencurian kredensial, dan ransomware
+* Penerapan alat keamanan operasional, autentikasi multi-faktor (MFA), dan kebersihan keamanan digital
+
+**Apa yang Didapatkan & Implementasi Nyata:**
+Mendasari prinsip keamanan berlapis (defense-in-depth) pada pengembangan web dan API skala produksi (seperti Databank ERP, RuangTumbuh, dan SIM KEPK FK UMJ), memastikan sanitasi input ketat, enkripsi HTTPS/TLS, kontrol akses berbasis peran (RBAC), serta kepatuhan standar OWASP Top 10.`,
+      links: [
+        {
+          label: "Lihat Studi Kasus Sertifikat",
+          url: "/certificates/adbi-cybersecurity"
+        },
+        {
+          label: "Verifikasi Kredensial Resmi ADBI",
+          url: "https://elearning-adbi.org/certificate-verifier/?&code=217178-179-496-9150"
+        }
+      ]
+    },
+    en: {
+      title: `Certificate: Cybersecurity (Asian Development Bank Institute - ADBI)`,
+      text: `**Verified Credential: Cybersecurity (ADBI)**
+
+* **Issuing Body:** Asian Development Bank Institute (ADBI)
+* **Issue Date & Credential ID:** 18 November 2026 (ID: \`217178-179-496-9150\`)
+* **Verified Effort:** 1 Hour Intensive · Official ADBI e-Learning Course
+* **Specialization Track:** Information Security & Digital Defense
+
+**Curriculum & What Was Learned:**
+Official curriculum from the Asian Development Bank Institute covering foundational data protection, cyber threat recognition, and digital security tools.
+* **Core Skills Mastered:** Information Security (InfoSec), Data Protection & Privacy, Cyberattack Threat Recognition, Phishing Defense, Ransomware Mitigation, Data Transmission Security, Access Control
+* Data confidentiality, encryption principles, and safe data transmission protocols
+* Identification of common cyber threat vectors including phishing campaigns, credential theft, and ransomware attacks
+* Deployment of operational digital security tools, multi-factor authentication (MFA), and digital security hygiene
+
+**Takeaways & Practical Application:**
+Directly reinforces defense-in-depth architecture across production web applications and APIs (such as Databank ERP, RuangTumbuh, and SIM KEPK FK UMJ), guaranteeing rigorous input sanitization, HTTPS/TLS transit encryption, role-based access control (RBAC), and alignment with OWASP Top 10 web security benchmarks.`,
+      links: [
+        {
+          label: "View Certificate Case Study",
+          url: "/certificates/adbi-cybersecurity"
+        },
+        {
+          label: "Verify Official ADBI Credential",
+          url: "https://elearning-adbi.org/certificate-verifier/?&code=217178-179-496-9150"
+        }
+      ]
+    }
+  },
+
+  CERT_DUBAI_PROMPTERS: {
+    id: {
+      title: `Sertifikat: One Million Prompters (Dubai Future Foundation · Dubai Centre for AI)`,
+      text: `**Sertifikat Resmi: One Million Prompters (Pemerintah Dubai)**
+
+* **Institusi Penerbit:** Dubai Future Foundation & Dubai Centre for Artificial Intelligence (DCAI)
+* **Prakarsa:** Diluncurkan langsung oleh Yang Mulia Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Putra Mahkota Dubai
+* **Waktu & Kredensial:** Diterbitkan Nov 2026 (ID Kredensial: \`DFF-DCAI-1M-PROMPTERS-2026\`)
+* **Beban Pembelajaran:** Inisiatif Global Rekayasa Prompt & Literasi AI
+* **Bidang Keahlian:** Generative AI & Prompt Engineering
+
+**Apa yang Dipelajari & Kurikulum Utama:**
+Program strategis global di bawah Dubai Universal Blueprint for Artificial Intelligence yang melatih dan memberdayakan talenta masa depan dalam rekayasa prompt dan sistem AI generatif.
+* **Keahlian yang Dikuasai:** Prompt Engineering, Generative AI, LLMs, Few-Shot Prompting, Chain-of-Thought Reasoning, Multimodal AI, AI Automation
+* Fondasi kecerdasan buatan generatif, arsitektur percakapan model bahasa besar (LLMs), dan role-based prompting
+* Teknik prompting tingkat lanjut (few-shot prompting, dekomposisi masalah Chain-of-Thought, dan format output terstruktur JSON)
+* Revolusi produktivitas dan otomatisasi alur kerja rekayasa menggunakan kecerdasan buatan
+* Penerapan AI generatif multimedia dan kepatuhan etika AI selaras dengan visi strategis Dubai
+
+**Apa yang Didapatkan & Implementasi Nyata:**
+Mendasari perancangan alur kerja agentik dan integrasi LLM pada aplikasi cerdas Adyvka (seperti FitSmart, AI Ticket Manager, dan asisten percakapan cerdas), memastikan prompt sistem memiliki guardrail deterministik, kalibrasi konteks yang presisi, dan parsing output terstruktur tanpa halusinasi.`,
+      links: [
+        {
+          label: "Lihat Studi Kasus Sertifikat",
+          url: "/certificates/one-million-prompters"
+        },
+        {
+          label: "Informasi Inisiatif Resmi Dubai Future Foundation",
+          url: "https://www.dubaifuture.ae/one-million-prompters"
+        }
+      ]
+    },
+    en: {
+      title: `Certificate: One Million Prompters (Dubai Future Foundation · Dubai Centre for AI)`,
+      text: `**Verified Credential: One Million Prompters (Dubai Government)**
+
+* **Issuing Body:** Dubai Future Foundation & Dubai Centre for Artificial Intelligence (DCAI)
+* **Initiative:** Launched by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai
+* **Issue Date & Credential ID:** Nov 2026 (ID: \`DFF-DCAI-1M-PROMPTERS-2026\`)
+* **Verified Effort:** Global AI Prompt Engineering Initiative
+* **Specialization Track:** Generative AI & Prompt Engineering
+
+**Curriculum & What Was Learned:**
+Global strategic initiative aligned with the Dubai Universal Blueprint for Artificial Intelligence to empower future-ready talent in prompt engineering and generative AI systems.
+* **Core Skills Mastered:** Prompt Engineering, Generative AI, Large Language Models (LLMs), Few-Shot Prompting, Chain-of-Thought Reasoning, Multimodal AI, AI Productivity
+* Generative AI principles, system prompt design, role framing, and conversational LLM architectures
+* Advanced prompting methodologies including few-shot demonstrations, Chain-of-Thought (CoT) reasoning, and schema-constrained output generation
+* Workflow acceleration and productivity automation leveraging generative AI tools
+* Multimodal generative AI creation and ethical AI alignment adhering to Dubai's future-ready AI blueprint
+
+**Takeaways & Practical Application:**
+Directly informs the design of agentic workflows and LLM orchestration across Adyvka's intelligent software products (such as FitSmart, AI Ticket Manager, and portfolio conversational engines), guaranteeing deterministic system prompt guardrails, optimal context calibration, and clean structured schema extraction.`,
+      links: [
+        {
+          label: "View Certificate Case Study",
+          url: "/certificates/one-million-prompters"
+        },
+        {
+          label: "Official Dubai Future Foundation Initiative",
+          url: "https://www.dubaifuture.ae/one-million-prompters"
+        }
+      ]
+    }
   },
 
   RICHO_BAHARI_DETAIL: {
@@ -11159,6 +11285,18 @@ export const SUGGESTION_EXACT_MAP = {
   "tell me about adyvka financial literacy certificate": "CERT_FINANCIAL",
   "tell me about adyvka google developer groups certificate": "CERT_GDG",
   "tell me about adyvka english proficiency certificate": "CERT_ENGLISH",
+  "tell me about adyvka cybersecurity certificate": "CERT_ADBI_CYBERSECURITY",
+  "tell me about adyvka adbi cybersecurity certificate": "CERT_ADBI_CYBERSECURITY",
+  "tell me about adyvka adbi certificate": "CERT_ADBI_CYBERSECURITY",
+  "ceritakan tentang sertifikat cybersecurity adyvka": "CERT_ADBI_CYBERSECURITY",
+  "ceritakan tentang sertifikat keamanan siber adyvka": "CERT_ADBI_CYBERSECURITY",
+  "ceritakan tentang sertifikat adbi adyvka": "CERT_ADBI_CYBERSECURITY",
+  "tell me about adyvka one million prompters certificate": "CERT_DUBAI_PROMPTERS",
+  "tell me about adyvka dubai ai prompt certificate": "CERT_DUBAI_PROMPTERS",
+  "tell me about adyvka dubai future foundation certificate": "CERT_DUBAI_PROMPTERS",
+  "ceritakan tentang sertifikat one million prompters adyvka": "CERT_DUBAI_PROMPTERS",
+  "ceritakan tentang sertifikat ai prompt dubai adyvka": "CERT_DUBAI_PROMPTERS",
+  "ceritakan tentang sertifikat dubai future foundation adyvka": "CERT_DUBAI_PROMPTERS",
   "what books has adyvka written and published": "BOOKS",
   "mengapa harus merekrut adyvka dan apa keunggulannya": "STRENGTHS_WHY_HIRE",
   "ceritakan peran lead systems engineer adyvka di pt intisel prodaktifakom": "PT_INTISEL_DETAIL",
@@ -12624,6 +12762,25 @@ export function findBestAnswer(rawQuery) {
     normalized.includes("english proficiency") || normalized.includes("kemampuan bahasa inggris") || (tokens.has("english") && tokens.has("assessment"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.CERT_ENGLISH;
+  }
+
+  // 24. ADBI Cybersecurity Certificate
+  else if (
+    normalized.includes("cybersecurity") ||
+    normalized.includes("keamanan siber") ||
+    (tokens.has("adbi") && (tokens.has("cyber") || tokens.has("security") || tokens.has("sertifikat") || tokens.has("certificate")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CERT_ADBI_CYBERSECURITY;
+  }
+
+  // 25. One Million Prompters (Dubai Government & Dubai Future Foundation)
+  else if (
+    normalized.includes("one million prompters") ||
+    normalized.includes("dubai") ||
+    (tokens.has("prompter") || tokens.has("prompters")) ||
+    (tokens.has("prompt") && (tokens.has("dubai") || tokens.has("foundation") || tokens.has("sheikh") || tokens.has("hamdan")))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.CERT_DUBAI_PROMPTERS;
   }
 
   // -------------------------------------------------------------------------

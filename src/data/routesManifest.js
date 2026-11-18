@@ -65,6 +65,8 @@ export const ACHIEVEMENT_SLUGS = [
 ];
 
 export const CERTIFICATE_SLUGS = [
+  "one-million-prompters",
+  "adbi-cybersecurity",
   "nasa-open-science-essentials",
   "ai-in-society-ethics-leadership-and-the-road-ahead",
   "2nd-place-national-web-design-competition-pnbitc",
