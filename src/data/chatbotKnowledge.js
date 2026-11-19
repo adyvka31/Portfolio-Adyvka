@@ -7966,6 +7966,272 @@ Why Adyvka has dedicated his life to software engineering and systems architectu
       ]
     }
   },
+  INTERVIEW_DATABANK_TECH_DEEPDIVE: {
+    id: {
+      title: "Deep-Dive Teknis Databank ERP: Arsitektur, Scraping Huawei ISDP & Krisis Produksi",
+      text: `**Deep-Dive Teknis Databank ERP: Arsitektur, Scraping Huawei ISDP & Penanganan Krisis**
+
+Sebagai Lead Systems Engineer & Project Manager sistem Databank ERP di PT Intisel Prodaktifakom, berikut keputusan rekayasa mendalam yang diambil Adyvka:
+
+* **1. Mengapa NestJS, PostgreSQL dan Prisma ORM:**
+  Express murni terlalu fleksibel tanpa struktur baku, berisiko tinggi menghasilkan kode tidak teratur ketika dikerjakan oleh 4 engineer. NestJS memaksakan struktur modular berbasis TypeScript, Dependency Injection, dan Clean Architecture yang teratur. Prisma ORM menjamin kueri basis data Type-Safe sehingga kesalahan runtime dapat ditekan drastis sebelum rilis.
+* **2. Mengatasi Hambatan Scraping Portal Huawei ISDP:**
+  Portal Huawei ISDP menerapkan re-autentikasi berkala dan muatan data inspeksi menara yang sangat besar. Solusinya: Merancang asynchronous job queue menggunakan BullMQ dengan headless worker berjarak jeda adaptif, exponential backoff retries, dan mekanisme caching session token agar tidak terkena blokir IP atau pembatasan kuota trafik (rate limiting).
+* **3. Protokol Penanganan Insiden Produksi (Production Post-Mortem):**
+  Ketika vendor lapangan mengirimkan data berformat anomali yang menggagalkan validasi skema saat jam sibuk, langkah mitigasi yang diambil adalah mengisolasi saluran data tanpa mematikan sistem audit inti, mengaktifkan alur pencatatan sementara, dan menerbitkan pembaruan perbaikan dalam kurun waktu 3 jam disertai laporan audit transparan kepada manajemen.
+* **4. Memimpin Tim Engineer Lintas Usia:**
+  Tidak mengandalkan hierarki posisi, melainkan kejelasan teknis: mendefinisikan spesifikasi OpenAPI (Swagger) yang ketat sebelum penulisan kode dimulai, dan menjalankan code review berbasis bukti metrik performa objektif.`,
+      links: [
+        { label: "Studi Kasus Databank ERP", url: "/projects/databank" },
+        { label: "Pengalaman Kerja PT Intisel", url: "/experience/pt-intisel-prodaktifakom-lead-systems-engineer" }
+      ]
+    },
+    en: {
+      title: "Technical Deep-Dive Databank ERP: Architecture, Huawei ISDP Scraping & Incident Handling",
+      text: `**Technical Deep-Dive Databank ERP: Architecture, Huawei ISDP Scraping & Incident Handling**
+
+As Lead Systems Engineer & Project Manager for Databank ERP at PT Intisel Prodaktifakom, Adyvka navigated high-stakes technical tradeoffs:
+
+* **1. Why NestJS, PostgreSQL and Prisma ORM:**
+  Unopinionated frameworks like raw Express easily degrade into unmaintainable code across a 4-engineer team. NestJS enforces modular TypeScript architecture, Dependency Injection, and strict Clean Architecture domain boundaries. Prisma guarantees type-safe database queries, drastically cutting runtime crashes.
+* **2. Overcoming Huawei ISDP Extraction Bottlenecks:**
+  The Huawei ISDP portal requires periodic re-authentication and yields high volume telecom survey datasets. Handled by building an asynchronous job queue using BullMQ with headless workers, adaptive delay throttles, exponential backoff retries, and token session caching to avoid IP bans.
+* **3. Production Incident Response & Post-Mortem:**
+  When unexpected vendor field formats failed schema validation during peak operating hours, the team isolated the ingestion pipeline without taking down core audit workflows, triggered graceful fallbacks, and deployed a verified hotfix within 3 hours alongside clear management reporting.
+* **4. Leading Across Age Gaps:**
+  Led through architectural clarity rather than hierarchy: drafting strict OpenAPI contracts prior to sprint execution and conducting pull request reviews grounded in objective performance benchmarks.`,
+      links: [
+        { label: "Explore Databank ERP Case Study", url: "/projects/databank" },
+        { label: "PT Intisel Experience Details", url: "/experience/pt-intisel-prodaktifakom-lead-systems-engineer" }
+      ]
+    }
+  },
+  INTERVIEW_TERASTANI_TECH_DEEPDIVE: {
+    id: {
+      title: "Deep-Dive Teknis TerasTani: Edge AI Offline, Telemetri IoT & Smart Escrow",
+      text: `**Deep-Dive Teknis TerasTani: Edge AI Offline, Telemetri IoT & Smart Escrow**
+
+TerasTani dirancang untuk memecahkan kendala nyata urban farming dan rantai pasok pangan komunitas:
+
+* **1. Penanganan Jaringan Terputus di Kebun Komunitas (Edge-First AI):**
+  Kebun perumahan dan perkotaan kerap mengalami fluktuasi sinyal internet seluler. Model Computer Vision untuk diagnosis penyakit tanaman dikonversi ke format terkuantisasi TensorFlow Lite dan ONNX agar inferensi visual dapat dieksekusi langsung di sisi peramban atau perangkat lokal tanpa ketergantungan koneksi awan konstan.
+* **2. Telemetri Mikroklimat IoT Offline-First:**
+  Node sensor tanah dan cuaca dilengkapi memori flash lokal (SPIFFS). Pembacaan kondisi tanaman disimpan sementara secara lokal selama jaringan terputus, dan secara otomatis melakukan pengiriman berkala terintegrasi (batch push) ke basis data Supabase begitu koneksi nirkabel pulih.
+* **3. Transaksi Aman Smart Escrow:**
+  Mencegah perselisihan transaksi antara petani perkotaan dan pembeli crate hub lingkungan dengan menerapkan kontrak escrow berbasis state machine, di mana dana baru dicairkan setelah kedua belah pihak melakukan pemindaian fisik kode QR verifikasi serah terima produk.`,
+      links: [
+        { label: "Studi Kasus TerasTani", url: "/projects/terastani" },
+        { label: "Repositori GitHub TerasTani", url: "https://github.com/adyvka31/TerasTani" }
+      ]
+    },
+    en: {
+      title: "Technical Deep-Dive TerasTani: Edge AI Offline, IoT Telemetry & Smart Escrow",
+      text: `**Technical Deep-Dive TerasTani: Edge AI Offline, IoT Telemetry & Smart Escrow**
+
+TerasTani addresses physical constraints in urban micro-farming and neighborhood food distribution:
+
+* **1. Intermittent Connectivity in Urban Farming (Edge-First AI):**
+  Residential community gardens often encounter volatile cellular network reception. Engineered an edge-first paradigm by quantizing Computer Vision diagnostic models into TensorFlow Lite and ONNX formats to execute client-side inside the browser without round-trip cloud latency.
+* **2. Offline-First IoT Microclimate Telemetry:**
+  Microcontroller sensor nodes buffer environmental readings in local flash memory (SPIFFS) during network dropouts, syncing in transactional batches to Supabase once Wi-Fi or cellular links recover.
+* **3. Smart Escrow Settlement:**
+  Prevents settlement disputes between urban growers and communal hub buyers via state-machine escrow contracts that release payments only after verified physical QR handoff confirmation.`,
+      links: [
+        { label: "Explore TerasTani Case Study", url: "/projects/terastani" },
+        { label: "TerasTani GitHub Repository", url: "https://github.com/adyvka31/TerasTani" }
+      ]
+    }
+  },
+  INTERVIEW_SIM_KEPK_TECH_DEEPDIVE: {
+    id: {
+      title: "Deep-Dive SIM KEPK FK UMJ: Privasi Medis WHO, Double-Blind & Kepatuhan Etik",
+      text: `**Deep-Dive SIM KEPK FK UMJ: Privasi Medis WHO, Double-Blind Reviewer & Kepatuhan Etik**
+
+Membangun sistem tata kelola etik penelitian medis untuk Fakultas Kedokteran Universitas Muhammadiyah Jakarta:
+
+* **1. Standar Regulasi Medis Internasional:**
+  Sistem mendigitalkan alur kaji etik penelitian kesehatan manusia dengan mengadopsi standar etik WHO dan CIOMS 2016 secara menyeluruh.
+* **2. Penegakan Privasi Double-Blind Reviewer:**
+  Menerapkan Role-Based Access Control (RBAC) granular menggunakan paket Spatie di Laravel 12. Di tingkat basis data, kueri penilaian protokol diisolasi secara ketat dengan scope middleware sehingga reviewer independen tidak dapat melihat catatan atau skor reviewer lain sebelum sekretariat komite membuka sidang pleno konsensus.
+* **3. Jejak Audit Forensik Tidak Dapat Diubah (Immutable Audit Logs):**
+  Setiap unggahan berkas, koreksi metodologi, dan persetujuan digital dicatat bersama stempel waktu terenkripsi dan alamat IP untuk memenuhi standar audit akreditasi KEPPKN nasional.
+* **4. Alasan Pemilihan Laravel 12 dan MySQL:**
+  Dipilih karena kematangan ekosistem PHP enterprise, keandalan relasi data multi-tahap dengan Eloquent ORM, serta kemudahan integrasi dengan infrastruktur server kampus UMJ.`,
+      links: [
+        { label: "Studi Kasus SIM KEPK UMJ", url: "/projects/kepk" },
+        { label: "Kontrak Kerja Universitas Muhammadiyah Jakarta", url: "/experience/universitas-muhammadiyah-jakarta-full-stack-engineer" }
+      ]
+    },
+    en: {
+      title: "Technical Deep-Dive SIM KEPK FK UMJ: WHO Medical Ethics, Double-Blind & Audit Trails",
+      text: `**Technical Deep-Dive SIM KEPK FK UMJ: WHO Medical Ethics, Double-Blind Review & Audit Trails**
+
+Engineering clinical research ethics governance for the Faculty of Medicine at Universitas Muhammadiyah Jakarta:
+
+* **1. International Medical Ethics Compliance:**
+  Digitized clinical trial protocol assessments strictly under WHO and CIOMS 2016 biomedical governance guidelines.
+* **2. Double-Blind Reviewer Isolation:**
+  Enforced using granular Role-Based Access Control via Spatie in Laravel 12. Database query scopes strictly isolate scoring matrices so peer reviewers cannot inspect concurrent evaluations before official plenary consensus meetings.
+* **3. Immutable Forensic Audit Trails:**
+  Every file revision, methodology amendment, and digital signature is logged with hashed timestamps and IP records for national KEPPKN accreditation audits.
+* **4. Why Laravel 12 and MySQL:**
+  Selected for long-term institutional stability, robust multi-stage relational modeling, and frictionless deployment onto university server environments.`,
+      links: [
+        { label: "Explore SIM KEPK Case Study", url: "/projects/kepk" },
+        { label: "UMJ Engineering Contract Details", url: "/experience/universitas-muhammadiyah-jakarta-full-stack-engineer" }
+      ]
+    }
+  },
+  INTERVIEW_HACKATHON_STRATEGY: {
+    id: {
+      title: "Strategi Juara Kompetisi Nasional: Formula Pitching & Mengatasi Bias Siswa SMK",
+      text: `**Strategi Juara Kompetisi Nasional: Formula Pitching & Mengatasi Bias Siswa SMK**
+
+Wawasan di balik kemenangan Juara 1 Nasional ICOMFEST 2025 dan Juara 2 Nasional PNBITC#18 Bali:
+
+* **1. Formula Problem-First Dibanding Tech-First:**
+  Banyak peserta tingkat universitas terjebak memamerkan teknologi rumit tanpa menyelesaikan masalah nyata. Tim Adyvka selalu mengawali dari titik sakit pengguna yang konkret, lalu merealisasikannya dalam produk fungsional dengan antarmuka Linear-grade dan skor performa Google Lighthouse di atas 95.
+* **2. Mematahkan Keraguan Juri Terhadap Siswa SMK:**
+  Pada sesi tanya jawab komprehensif, dewan juri kerap melontarkan pertanyaan mendalam untuk memastikan keaslian kode. Adyvka menjawab dengan metrik rekayasa terukur: normalisasi skema basis data, pemisahan layer logika bisnis, penanganan race condition, dan standar aksesibilitas WCAG.
+* **3. Manajemen Waktu Hackathon 24 Hingga 48 Jam:**
+  Menerapkan pembatasan ruang lingkup (scope budgeting) ketat: mengunci alur utama pengguna dalam 12 jam pertama sebelum menambahkan visual interaktif lanjutan.`,
+      links: [
+        { label: "Prestasi Juara 1 ICOMFEST 2025", url: "/achievements/icomfest-2025-1st-place-web-design-national-champion" },
+        { label: "Prestasi Juara 2 PNBITC#18 Bali", url: "/achievements/pnbitc-2024-runner-up-national-web-design" },
+        { label: "Jelajahi Semua Penghargaan Nasional", url: "/achievements" }
+      ]
+    },
+    en: {
+      title: "National Competition Winning Strategy: Pitching Mastery & Overcoming High School Bias",
+      text: `**National Competition Winning Strategy: Pitching Mastery & Overcoming High School Bias**
+
+Engineering strategy behind 1st Place National Champion at ICOMFEST 2025 and 2nd Place at PNBITC#18 Bali:
+
+* **1. Problem-First vs Tech-First Approach:**
+  Collegiate teams often prioritize complex libraries over verified human friction. Adyvka's teams begin with clear field problems, delivering working production interfaces with 95+ Lighthouse scores and refined Linear-grade UX.
+* **2. Overcoming High School Stereotypes in Jury Defenses:**
+  When academic panels probed technical authenticity, Adyvka defended architectures with measurable data: schema normalization, modular business logic boundaries, race condition handling, and WCAG accessibility compliance.
+* **3. 24 to 48-Hour Hackathon Scope Budgeting:**
+  Locking core happy path user flows within the initial 12 hours before layering micro-interactions and visual refinements.`,
+      links: [
+        { label: "ICOMFEST 1st Place Details", url: "/achievements/icomfest-2025-1st-place-web-design-national-champion" },
+        { label: "PNBITC#18 2nd Place Details", url: "/achievements/pnbitc-2024-runner-up-national-web-design" },
+        { label: "Browse All National Awards", url: "/achievements" }
+      ]
+    }
+  },
+  INTERVIEW_BOOKS_TEACHING_PHILOSOPHY: {
+    id: {
+      title: "Filosofi Menulis 2 Buku & Mengajar 100+ Siswa: Seni Komunikasi Rekayasa",
+      text: `**Filosofi Menulis 2 Buku & Mengajar 100+ Siswa: Seni Komunikasi Rekayasa**
+
+Refleksi mendalam di balik penulisan buku resmi dan dedikasi mengajar sejak usia muda:
+
+* **1. Mengapa Menulis Buku di Usia Belia:**
+  Mengikuti prinsip bahwa pemahaman sejati terbukti ketika kita mampu menjelaskan hal rumit secara sederhana. Menulis buku 'Membuat Game Tanpa Coding' (125 halaman) dan 'Membuat Website dengan Framework' (106 halaman) menjadi cara menguji pemahaman konsep fundamental diri sendiri sekaligus memperluas akses belajar teknologi bagi pelajar vokasi.
+* **2. Metode Pedagogi Hasil Cepat (Aturan 15 Menit Pertama):**
+  Pemula mudah kehilangan minat bila langsung dihadapkan pada sintaks abstrak. Adyvka menyusun materi agar siswa dapat melihat hasil nyata di layar dalam 15 menit pertama, seperti menggerakkan sprite visual atau menampilkan kartu interaktif modern menggunakan Tailwind CSS.
+* **3. Relevansi Mengajar Terhadap Kemampuan Systems Architect:**
+  Mengajar lebih dari 100 siswa di berbagai jenjang sekolah melatih kesabaran, empati pengguna, dan kemampuan komunikasi lisan maupun tulisan. Keterampilan ini menjadi pembeda utama saat menyusun arsitektur sistem skala besar yang harus dipahami oleh tim lintas disiplin.`,
+      links: [
+        { label: "Buku Framework Tailwind CSS", url: "/publications/buku-membuat-website-dengan-framework" },
+        { label: "Buku Game Scratch", url: "/publications/buku-membuat-game-tanpa-coding" },
+        { label: "Lihat 10 Riwayat Mengajar", url: "/experience" }
+      ]
+    },
+    en: {
+      title: "Authoring 2 Books & Mentoring 100+ Students: The Art of Technical Communication",
+      text: `**Authoring 2 Books & Mentoring 100+ Students: The Art of Technical Communication**
+
+The pedagogical drivers behind authoring two textbooks and instructing from a young age:
+
+* **1. Why Author Books at Age 15 to 16:**
+  True technical mastery is proven when complex concepts can be taught simply. Authoring 'Membuat Game Tanpa Coding' (125 pages) and 'Membuat Website dengan Framework' (106 pages) validated fundamental principles while broadening computing education for vocational students.
+* **2. The 15-Minute Immediate Reward Methodology:**
+  Beginners frequently disengage when confronted with abstract boilerplate code. Adyvka structures modules so learners achieve visible results within 15 minutes, whether animating visual blocks or styling reactive components with Tailwind CSS.
+* **3. How Teaching Powers Systems Architecture:**
+  Mentoring 100+ learners across schools built active listening, patience, and empathetic documentation habits, essential qualities when designing resilient distributed architectures for collaborative engineering teams.`,
+      links: [
+        { label: "Tailwind CSS Book Details", url: "/publications/buku-membuat-website-dengan-framework" },
+        { label: "Scratch Game Book Details", url: "/publications/buku-membuat-game-tanpa-coding" },
+        { label: "Explore 10 Teaching Experiences", url: "/experience" }
+      ]
+    }
+  },
+  INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE: {
+    id: {
+      title: "Tujuan Beasiswa: Mengapa Tetap Membutuhkan Kuliah S1 Ilmu Komputer",
+      text: `**Tujuan Beasiswa: Mengapa Tetap Membutuhkan Kuliah S1 Ilmu Komputer**
+
+Jawaban komprehensif atas pertanyaan mengapa seorang praktisi muda tetap memprioritaskan pendidikan tinggi sarjana:
+
+* **1. Kesenjangan Rekayasa Terapan vs Fondasi Komputasi Murni:**
+  Pengalaman kerja industri SMK mengasah keahlian terapan, namun untuk memecahkan batas komputasi global (seperti algoritma konsensus terdistribusi, perancangan kompilator, verifikasi formal matematis, dan keselamatan sistem kecerdasan buatan), fondasi teoritis ilmu komputer di universitas riset dunia tidak dapat digantikan oleh tutorial kilat.
+* **2. Beasiswa Sebagai Kemitraan Strategis Berdampak Tinggi:**
+  Adyvka memandang beasiswa bukan sekadar sokongan dana, melainkan kemitraan mutualisme: Adyvka membawa etos kerja tangguh, rekam jejak produksi teruji, dan integritas lapangan, sementara institusi donor dan universitas menyediakan laboratorium riset berstandar dunia untuk memperluas kontribusi teknologi bagi kedaulatan digital Indonesia.
+* **3. Visi Akademis Jangka Panjang:**
+  Berkomitmen memadukan kecepatan eksekusi produk industri dengan ketelitian riset ilmiah guna melahirkan infrastruktur perangkat lunak yang berdaya tahan tinggi.`,
+      links: [
+        { label: "Buka Halaman About", url: "/about" },
+        { label: "Jelajahi 18 Proyek Rekayasa", url: "/projects" },
+        { label: "Hubungi untuk Diskusi Akademis", url: "/contact" }
+      ]
+    },
+    en: {
+      title: "Scholarship Purpose: Why Pursue an Undergraduate Degree When Already Earning",
+      text: `**Scholarship Purpose: Why Pursue an Undergraduate Degree When Already Earning**
+
+A rigorous rationale for pursuing global undergraduate Computer Science studies despite early commercial success:
+
+* **1. Practical Engineering vs Theoretical Computer Science:**
+  Industry delivery sharpens pragmatic development, but breaking planetary computational barriers (such as distributed consensus protocols, compiler design, formal mathematical verification, and safe AI architectures) requires rigorous theoretical computer science taught at premier academic institutions.
+* **2. Scholarship as High-Impact Partnership:**
+  Approaching scholarships as mutual investments: Adyvka brings proven production velocity, academic honors (96/100 GPA), and community leadership, while sponsoring institutions provide elite research laboratories and international networks to compound technological impact for Indonesia.
+* **3. Long-Term Academic Trajectory:**
+  Committed to merging commercial execution velocity with scientific research rigor, architecting resilient software infrastructure for the next generation.`,
+      links: [
+        { label: "Explore About Page", url: "/about" },
+        { label: "Browse Shipped Projects", url: "/projects" },
+        { label: "Contact for Opportunities", url: "/contact" }
+      ]
+    }
+  },
+  INTERVIEW_SURVIVAL_AND_GRIT: {
+    id: {
+      title: "Ketahanan Mental: Ekspedisi Backpacker 3 Negara & Survival Bisnis Semarang",
+      text: `**Ketahanan Mental: Ekspedisi Backpacker 3 Negara & Survival Bisnis Modal Rp 0 di Semarang**
+
+Bagaimana ketangguhan mental dan kedewasaan emosional Adyvka ditempa lewat tantangan nyata di luar dunia koding:
+
+* **1. Ekspedisi Solo Backpacker 3 Negara (Singapura, Malaysia, Thailand):**
+  Menavigasi perjalanan lintas negara secara mandiri dalam satu minggu dengan anggaran terbatas pada usia 15 tahun, melatih adaptasi cepat terhadap perbedaan budaya, ketenangan menghadapi situasi darurat transportasi, dan efisiensi logistik mandiri.
+* **2. Survival Bisnis Modal Rp 0 di Semarang:**
+  Diberangkatkan ke kota asing tanpa modal uang saku, belajar bangkit dari penolakan awal calon mitra bisnis, mengubah strategi komunikasi teknis menjadi solusi komersial yang bernilai nyata, hingga berhasil mencatatkan omzet jutaan rupiah secara mandiri.
+* **3. Relevansi Terhadap Rekayasa Sistem di Bawah Tekanan:**
+  Ketika sistem produksi menghadapi kendala kritis atau tenggat waktu rilis yang mendesak, daya tahan mental yang terasah dari pengalaman lapangan ini menghindarkan kepanikan dan menjaga fokus eksekusi pemecahan masalah secara terstruktur.`,
+      links: [
+        { label: "Detail Survival Semarang Modal Rp 0", url: "/experience/pt-intisel-semarang-business-life-survival" },
+        { label: "Detail Backpacker 3 Negara", url: "/experience/singapore-malaysia-thailand-backpacker-expedition" }
+      ]
+    },
+    en: {
+      title: "Mental Resilience: 3-Country Backpacker Expedition & Zero-Capital Semarang Survival",
+      text: `**Mental Resilience: 3-Country Backpacker Expedition & Zero-Capital Semarang Survival**
+
+How Adyvka forged emotional maturity and composure through extreme real-world challenges beyond code:
+
+* **1. Solo Backpacker Expedition Across 3 Countries (Singapore, Malaysia, Thailand):**
+  Navigated multi-border routes within one week under strict budget constraints at age 15, sharpening cross-cultural adaptability, logistical autonomy, and calm problem-solving in unfamiliar settings.
+* **2. Zero-Capital Business Survival in Semarang:**
+  Challenged to survive in an unfamiliar city with zero initial cash allowance, pivoted past early client rejections, translated technical knowledge into commercial solutions, and generated millions of rupiah in profit independently.
+* **3. Direct Correlation to Production Engineering Under Pressure:**
+  When enterprise deployments encounter critical production incidents or high-stakes deadlines, the grit gained through physical adversity eliminates panic and guarantees level-headed technical troubleshooting.`,
+      links: [
+        { label: "Semarang Zero-Capital Survival", url: "/experience/pt-intisel-semarang-business-life-survival" },
+        { label: "3-Country Backpacker Expedition", url: "/experience/singapore-malaysia-thailand-backpacker-expedition" }
+      ]
+    }
+  },
   TWO_TRACKS_TIMELINE: {
     id: {
       title: "Timeline 6 Tahun: Perjalanan Teknis & Kepemimpinan Adyvka (2021 - 2026)",
@@ -11625,6 +11891,59 @@ export const SUGGESTION_EXACT_MAP = {
   "apa motivasi adyvka memilih computer science": "INTERVIEW_WHY_CS",
   "why did adyvka choose software engineering and computer science": "INTERVIEW_WHY_CS",
   "what motivates adyvka to code and build systems": "INTERVIEW_WHY_CS",
+  "ceritakan tantangan teknis databank erp": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "mengapa nestjs dan prisma di databank erp": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "bagaimana bot scraping huawei isdp bekerja": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "bagaimana penanganan insiden produksi di databank erp": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "bagaimana adyvka memimpin tim engineer databank": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "tell me about technical deep dive of databank erp": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "why nestjs and prisma in databank erp": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "how does huawei isdp scraping work in databank": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "how did adyvka handle production incidents in databank": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "how did adyvka lead engineers in databank erp": "INTERVIEW_DATABANK_TECH_DEEPDIVE",
+  "bagaimana terastani bekerja saat offline": "INTERVIEW_TERASTANI_TECH_DEEPDIVE",
+  "ceritakan arsitektur edge ai dan iot terastani": "INTERVIEW_TERASTANI_TECH_DEEPDIVE",
+  "bagaimana sistem smart escrow terastani": "INTERVIEW_TERASTANI_TECH_DEEPDIVE",
+  "how does terastani work offline": "INTERVIEW_TERASTANI_TECH_DEEPDIVE",
+  "tell me about edge ai and iot architecture in terastani": "INTERVIEW_TERASTANI_TECH_DEEPDIVE",
+  "how does smart escrow work in terastani": "INTERVIEW_TERASTANI_TECH_DEEPDIVE",
+  "bagaimana privasi data medis di sim kepk umj": "INTERVIEW_SIM_KEPK_TECH_DEEPDIVE",
+  "bagaimana mekanisme double blind reviewer di sim kepk": "INTERVIEW_SIM_KEPK_TECH_DEEPDIVE",
+  "mengapa laravel di sim kepk fk umj": "INTERVIEW_SIM_KEPK_TECH_DEEPDIVE",
+  "how does sim kepk ensure medical data privacy": "INTERVIEW_SIM_KEPK_TECH_DEEPDIVE",
+  "how does double blind review work in sim kepk": "INTERVIEW_SIM_KEPK_TECH_DEEPDIVE",
+  "why laravel for sim kepk fk umj": "INTERVIEW_SIM_KEPK_TECH_DEEPDIVE",
+  "apa strategi adyvka menjuarai lomba web nasional": "INTERVIEW_HACKATHON_STRATEGY",
+  "bagaimana adyvka memenangkan icomfest dan pnbitc": "INTERVIEW_HACKATHON_STRATEGY",
+  "bagaimana cara adyvka menghadapi pertanyaan juri lomba": "INTERVIEW_HACKATHON_STRATEGY",
+  "bagaimana adyvka mengatasi bias siswa smk di lomba": "INTERVIEW_HACKATHON_STRATEGY",
+  "what is adyvka hackathon winning strategy": "INTERVIEW_HACKATHON_STRATEGY",
+  "how did adyvka win icomfest and pnbitc against university students": "INTERVIEW_HACKATHON_STRATEGY",
+  "how does adyvka pitch and defend projects to juries": "INTERVIEW_HACKATHON_STRATEGY",
+  "mengapa adyvka menulis 2 buku pemrograman": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "kenapa adyvka menulis buku di usia 15 tahun": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "apa metode mengajar adyvka untuk 100 siswa": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "bagaimana pengalaman mengajar membentuk kemampuan arsitektur adyvka": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "why did adyvka write 2 programming books": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "why author books at age 15": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "what is adyvka teaching philosophy for 100 students": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "how does teaching impact adyvka systems architecture skills": "INTERVIEW_BOOKS_TEACHING_PHILOSOPHY",
+  "mengapa adyvka membutuhkan beasiswa kuliah s1": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "kenapa adyvka masih ingin kuliah jika sudah bisa koding dan bekerja": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "kenapa komite beasiswa harus memilih adyvka": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "apa tujuan studi sarjana adyvka": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "why does adyvka need a university scholarship": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "why pursue a computer science degree when already working": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "why should scholarship committees choose adyvka": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "what is adyvka undergraduate study purpose": "INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE",
+  "ceritakan pengalaman backpacker 3 negara adyvka": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "ceritakan survival bisnis modal rp 0 di semarang": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "bagaimana ketahanan mental adyvka terbentuk": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "apa hubungan survival backpacker dengan koding adyvka": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "tell me about adyvka 3 country backpacker trip": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "tell me about adyvka zero capital semarang survival": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "how was adyvka mental grit and resilience forged": "INTERVIEW_SURVIVAL_AND_GRIT",
+  "how does backpacker survival relate to systems engineering": "INTERVIEW_SURVIVAL_AND_GRIT",
   "apa saja yang bisa adyvka lakukan": "WHAT_ADYVKA_CAN_DO",
   "apa yang bisa dilakukan adyvka": "WHAT_ADYVKA_CAN_DO",
   "apa saja yang bisa dilakukan adyvka": "WHAT_ADYVKA_CAN_DO",
@@ -11782,6 +12101,49 @@ export function findBestAnswer(rawQuery) {
     (normalized.includes("rekayasa perangkat lunak") || normalized.includes("software engineering") || normalized.includes("computer science") || normalized.includes("jurusan rpl") || normalized.includes("memilih koding") || normalized.includes("memilih coding"))
   ) {
     matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_WHY_CS;
+  }
+  else if (
+    (normalized.includes("databank") || normalized.includes("huawei isdp") || normalized.includes("pt intisel")) &&
+    (normalized.includes("nestjs") || normalized.includes("prisma") || normalized.includes("scraping") || normalized.includes("insiden") || normalized.includes("incident") || normalized.includes("post-mortem") || normalized.includes("post mortem") || normalized.includes("lead") || normalized.includes("memimpin") || normalized.includes("krisis") || normalized.includes("tradeoff") || normalized.includes("trade-off") || normalized.includes("bottleneck") || normalized.includes("rate limit") || normalized.includes("teknis") || normalized.includes("technical deep dive") || normalized.includes("deep dive"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_DATABANK_TECH_DEEPDIVE;
+  }
+  else if (
+    normalized.includes("terastani") &&
+    (normalized.includes("offline") || normalized.includes("edge") || normalized.includes("escrow") || normalized.includes("smart escrow") || normalized.includes("iot") || normalized.includes("sensor") || normalized.includes("spiffs") || normalized.includes("onnx") || normalized.includes("tflite") || normalized.includes("tanpa internet") || normalized.includes("telemetri") || normalized.includes("telemetry") || normalized.includes("deep dive") || normalized.includes("teknis"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_TERASTANI_TECH_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("kepk") || normalized.includes("etik medis") || normalized.includes("ethical clearance") || normalized.includes("fk umj") || normalized.includes("kedokteran umj")) &&
+    (normalized.includes("double blind") || normalized.includes("blind") || normalized.includes("privasi") || normalized.includes("privacy") || normalized.includes("who") || normalized.includes("cioms") || normalized.includes("spatie") || normalized.includes("audit log") || normalized.includes("keppkn") || normalized.includes("kenapa laravel") || normalized.includes("mengapa laravel") || normalized.includes("deep dive") || normalized.includes("teknis"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_SIM_KEPK_TECH_DEEPDIVE;
+  }
+  else if (
+    (normalized.includes("strategi") || normalized.includes("strategy") || normalized.includes("rahasia") || normalized.includes("secret") || normalized.includes("cara menang") || normalized.includes("how did adyvka win") || normalized.includes("winning formula") || normalized.includes("pitching") || normalized.includes("bias smk") || normalized.includes("pertanyaan juri") || normalized.includes("defense")) &&
+    (normalized.includes("lomba") || normalized.includes("hackathon") || normalized.includes("kompetisi") || normalized.includes("competition") || normalized.includes("icomfest") || normalized.includes("pnbitc") || normalized.includes("unila"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_HACKATHON_STRATEGY;
+  }
+  else if (
+    (normalized.includes("buku") || normalized.includes("book") || normalized.includes("mengajar") || normalized.includes("teaching") || normalized.includes("instruktur") || normalized.includes("instructor") || normalized.includes("100 siswa") || normalized.includes("100 students")) &&
+    (normalized.includes("mengapa") || normalized.includes("kenapa") || normalized.includes("why") || normalized.includes("alasan") || normalized.includes("filosofi") || normalized.includes("philosophy") || normalized.includes("metode") || normalized.includes("pedagogi") || normalized.includes("15 menit") || normalized.includes("immediate reward") || normalized.includes("membentuk kemampuan") || normalized.includes("impact")) &&
+    (normalized.includes("tulis") || normalized.includes("ajar") || normalized.includes("buku") || normalized.includes("siswa"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_BOOKS_TEACHING_PHILOSOPHY;
+  }
+  else if (
+    (normalized.includes("beasiswa") || normalized.includes("scholarship") || normalized.includes("kuliah s1") || normalized.includes("studi sarjana") || normalized.includes("undergraduate") || normalized.includes("degree")) &&
+    (normalized.includes("kenapa") || normalized.includes("mengapa") || normalized.includes("why") || normalized.includes("butuh") || normalized.includes("tujuan") || normalized.includes("purpose") || normalized.includes("alasan") || normalized.includes("sudah bisa koding") || normalized.includes("sudah kerja") || normalized.includes("already earning") || normalized.includes("memilih adyvka") || normalized.includes("choose adyvka"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_SCHOLARSHIP_PURPOSE_WHY_DEGREE;
+  }
+  else if (
+    (normalized.includes("backpacker") || normalized.includes("semarang") || normalized.includes("modal rp 0") || normalized.includes("modal 0") || normalized.includes("zero capital") || normalized.includes("3 negara") || normalized.includes("3 countries") || normalized.includes("tiga negara")) &&
+    (normalized.includes("survival") || normalized.includes("ketahanan") || normalized.includes("resilience") || normalized.includes("grit") || normalized.includes("mental") || normalized.includes("krisis") || normalized.includes("pelajaran") || normalized.includes("relevansi") || normalized.includes("koding") || normalized.includes("ceritakan") || normalized.includes("pengalaman") || normalized.includes("tekanan"))
+  ) {
+    matchedCard = KNOWLEDGE_REGISTRY.INTERVIEW_SURVIVAL_AND_GRIT;
   }
   else if (
     normalized.includes("bisa adyvka lakukan") ||
