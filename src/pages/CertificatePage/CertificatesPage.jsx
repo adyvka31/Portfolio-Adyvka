@@ -1,5 +1,5 @@
 import SEO from "../../components/SEO/SEO";
-import { useState, useMemo, useDeferredValue, useCallback, useEffect } from "react";
+import { useState, useMemo, useDeferredValue, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -30,21 +30,11 @@ const CERTIFICATE_ITEMS = (allCertificates || []).map((c) => ({
 
 export default function CertificatesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialFilter = searchParams.get("filter") || "all";
+  const urlFilter = searchParams.get("filter") || "all";
+  const filter = certificateFilters.some((f) => f.id === urlFilter) ? urlFilter : "all";
 
-  const [filter, setFilter] = useState(
-    certificateFilters.some((f) => f.id === initialFilter) ? initialFilter : "all"
-  );
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
-
-  // Sync state if URL query param changes
-  useEffect(() => {
-    const urlFilter = searchParams.get("filter");
-    if (urlFilter && certificateFilters.some((f) => f.id === urlFilter)) {
-      setFilter(urlFilter);
-    }
-  }, [searchParams]);
 
   const handleQueryChange = useCallback((e) => {
     setQuery(e.target.value);
@@ -52,7 +42,6 @@ export default function CertificatesPage() {
 
   const handleFilterClick = useCallback(
     (id) => {
-      setFilter(id);
       if (id === "all") {
         setSearchParams({}, { replace: true });
       } else {

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo, memo } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback, memo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { findBestAnswer, getContextualSuggestions } from "../../data/chatbotKnowledge";
 import styles from "./Chatbot.module.css";
@@ -141,11 +141,11 @@ function Chatbot() {
     setIsOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     if (isClosing || !isOpen) return;
     inputRef.current?.blur();
     setIsClosing(true);
-  };
+  }, [isClosing, isOpen]);
 
   const handleToggle = () => {
     if (isOpen) {
@@ -182,13 +182,10 @@ function Chatbot() {
 
   // Periodic floating notification bubble ("Ask Adyvka")
   const [bubbleState, setBubbleState] = useState("idle"); // "idle" | "visible" | "hidden"
+  const currentBubbleState = isChatActive ? "hidden" : bubbleState;
 
   useEffect(() => {
-    // If chat is open, immediately collapse bubble
-    if (isChatActive) {
-      setBubbleState("hidden");
-      return;
-    }
+    if (isChatActive) return;
 
     let showTimer;
     let hideTimer;
@@ -327,7 +324,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       document.removeEventListener("pointerdown", handlePointerDownOutside);
       document.removeEventListener("keydown", handleKeyDownGlobal);
     };
-  }, [isOpen, isClosing]);
+  }, [isOpen, isClosing, handleClose]);
 
   // Lock body scroll on mobile when chat window is active
   useEffect(() => {
@@ -360,21 +357,20 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     cardHeight: null,
   });
 
-  useEffect(() => {
-    if (!isOpen || isClosing) {
-      setKeyboardState({ isOpen: false, top: null, cardHeight: null });
-      return;
-    }
+  const activeKeyboardState = isOpen && !isClosing
+    ? keyboardState
+    : { isOpen: false, top: null, cardHeight: null };
 
+  useEffect(() => {
+    if (!isOpen || isClosing) return;
     if (typeof window === "undefined" || !window.visualViewport) return;
 
-    const handleViewportChange = () => {
-      const vv = window.visualViewport;
-      if (!vv) return;
+    const vv = window.visualViewport;
 
+    const handleViewportChange = () => {
       const isMobile = window.innerWidth <= 640;
       if (!isMobile) {
-        setKeyboardState({ isOpen: false, top: null, cardHeight: null });
+        setKeyboardState((prev) => (prev.isOpen ? { isOpen: false, top: null, cardHeight: null } : prev));
         return;
       }
 
@@ -397,20 +393,16 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           scrollToBottom("smooth");
         });
       } else {
-        setKeyboardState({
-          isOpen: false,
-          top: null,
-          cardHeight: null,
-        });
+        setKeyboardState((prev) => (prev.isOpen ? { isOpen: false, top: null, cardHeight: null } : prev));
       }
     };
 
-    window.visualViewport.addEventListener("resize", handleViewportChange);
-    window.visualViewport.addEventListener("scroll", handleViewportChange);
+    vv.addEventListener("resize", handleViewportChange);
+    vv.addEventListener("scroll", handleViewportChange);
 
     return () => {
-      window.visualViewport.removeEventListener("resize", handleViewportChange);
-      window.visualViewport.removeEventListener("scroll", handleViewportChange);
+      vv.removeEventListener("resize", handleViewportChange);
+      vv.removeEventListener("scroll", handleViewportChange);
     };
   }, [isOpen, isClosing]);
 
@@ -425,14 +417,11 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
 
     // Case 1: Fresh conversation on open (only initial welcome card)
     if (messages.length <= 1 && !isTyping) {
-      if (messagesContainerRef.current) {
-        messagesContainerRef.current.scrollTop = 0;
-        requestAnimationFrame(() => {
-          if (messagesContainerRef.current && messages.length <= 1) {
-            messagesContainerRef.current.scrollTop = 0;
-          }
-        });
-      }
+      requestAnimationFrame(() => {
+        if (messagesContainerRef.current && messages.length <= 1) {
+          messagesContainerRef.current.scrollTop = 0;
+        }
+      });
       return;
     }
 
@@ -480,7 +469,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   }, [isOpen, messages, isTyping]);
 
   // Handle send message
-  const handleSendMessage = (customQuery = null) => {
+  const handleSendMessage = useCallback((customQuery = null) => {
     const query = (customQuery || inputValue).trim();
     if (!query) return;
 
@@ -514,7 +503,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       setMessages((prev) => [...prev, botMessage]);
       setIsTyping(false);
     }, 400);
-  };
+  }, [inputValue, setMessages, setInputValue, setIsTyping]);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -532,13 +521,13 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     }
   };
 
-  const chatWindowDynamicStyle = keyboardState.isOpen
+  const chatWindowDynamicStyle = activeKeyboardState.isOpen
     ? {
         position: "fixed",
-        top: `${keyboardState.top}px`,
+        top: `${activeKeyboardState.top}px`,
         bottom: "auto",
-        height: `${keyboardState.cardHeight}px`,
-        maxHeight: `${keyboardState.cardHeight}px`,
+        height: `${activeKeyboardState.cardHeight}px`,
+        maxHeight: `${activeKeyboardState.cardHeight}px`,
         transition: "none",
       }
     : undefined;
@@ -551,7 +540,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       {isOpen && (
         <section
           ref={chatWindowRef}
-          className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening} ${keyboardState.isOpen ? styles.chatWindowKeyboardOpen : ""}`}
+          className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening} ${activeKeyboardState.isOpen ? styles.chatWindowKeyboardOpen : ""}`}
           style={chatWindowDynamicStyle}
           onAnimationEnd={handleAnimationEnd}
           role="dialog"
@@ -589,7 +578,7 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
           </header>
 
           {/* Dynamic Contextual Suggestions Bar */}
-          {!keyboardState.isOpen && (
+          {!activeKeyboardState.isOpen && (
             <div
               ref={suggestionsBarRef}
               className={styles.suggestionsBar}
@@ -697,14 +686,14 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
       {/* Floating Circular Toggle Button & Notification Bubble */}
       <div
         ref={launcherRef}
-        className={`${styles.launcherWrapper} ${keyboardState.isOpen ? styles.launcherHiddenWhenKeyboard : ""}`}
+        className={`${styles.launcherWrapper} ${activeKeyboardState.isOpen ? styles.launcherHiddenWhenKeyboard : ""}`}
       >
         {/* Floating Notification Badge ("Ask Adyvka") */}
         <div
           className={`${styles.bubbleBadge} ${
-            bubbleState === "visible"
+            currentBubbleState === "visible"
               ? styles.bubbleVisible
-              : bubbleState === "hidden"
+              : currentBubbleState === "hidden"
               ? styles.bubbleHidden
               : styles.bubbleIdle
           }`}

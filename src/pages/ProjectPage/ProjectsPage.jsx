@@ -1,5 +1,5 @@
 import SEO from "../../components/SEO/SEO";
-import { useState, useMemo, useDeferredValue, useCallback, useEffect } from "react";
+import { useState, useMemo, useDeferredValue, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import PageHero from "../../components/PageHero/PageHero";
@@ -52,22 +52,12 @@ const PROJECT_ITEMS = projectsList.map((p) => ({
 
 export default function ProjectsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialFilter = searchParams.get("filter") || "web";
+  const urlFilter = searchParams.get("filter") || "web";
+  const filter = projectFilters.some((f) => f.id === urlFilter) ? urlFilter : "web";
 
-  const [filter, setFilter] = useState(
-    projectFilters.some((f) => f.id === initialFilter) ? initialFilter : "web"
-  );
   const [query, setQuery] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const deferredQuery = useDeferredValue(query);
-
-  // Sync state if URL query param changes
-  useEffect(() => {
-    const urlFilter = searchParams.get("filter");
-    if (urlFilter && projectFilters.some((f) => f.id === urlFilter)) {
-      setFilter(urlFilter);
-    }
-  }, [searchParams]);
 
   const handleQueryChange = useCallback((e) => {
     setQuery(e.target.value);
@@ -75,7 +65,6 @@ export default function ProjectsPage() {
 
   const handleFilterClick = useCallback(
     (id) => {
-      setFilter(id);
       if (id === "web") {
         setSearchParams({}, { replace: true });
       } else {

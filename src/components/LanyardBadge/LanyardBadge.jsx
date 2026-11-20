@@ -48,6 +48,8 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
     animating: true,
   });
 
+  const updatePhysicsRef = useRef(null);
+
   // Physics simulation loop
   const updatePhysics = useCallback(() => {
     const p = physicsRef.current;
@@ -133,15 +135,19 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
     if (rightStitchRef.current) rightStitchRef.current.setAttribute("d", rightD);
 
     if (p.animating || p.isDragging) {
-      animFrameRef.current = requestAnimationFrame(updatePhysics);
+      animFrameRef.current = requestAnimationFrame(() => {
+        updatePhysicsRef.current?.();
+      });
     }
   }, []);
 
   const startLoop = useCallback(() => {
     physicsRef.current.animating = true;
     cancelAnimationFrame(animFrameRef.current);
-    animFrameRef.current = requestAnimationFrame(updatePhysics);
-  }, [updatePhysics]);
+    animFrameRef.current = requestAnimationFrame(() => {
+      updatePhysicsRef.current?.();
+    });
+  }, []);
 
   // Initial mount start simulation and ensure initial strap path is set
   useEffect(() => {
@@ -213,6 +219,8 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
     p.angle = Math.max(-26, Math.min(26, p.x * 0.075 + p.vx * 0.14));
   }, []);
 
+  const handlePointerUpRef = useRef(null);
+
   // Drag release handler attached to window
   const handlePointerUp = useCallback(() => {
     const p = physicsRef.current;
@@ -220,8 +228,10 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
     p.isDragging = false;
 
     window.removeEventListener("pointermove", handlePointerMove);
-    window.removeEventListener("pointerup", handlePointerUp);
-    window.removeEventListener("pointercancel", handlePointerUp);
+    if (handlePointerUpRef.current) {
+      window.removeEventListener("pointerup", handlePointerUpRef.current);
+      window.removeEventListener("pointercancel", handlePointerUpRef.current);
+    }
 
     // If user held still for more than 45ms before releasing, zero out toss velocity
     const timeSinceLastMove = performance.now() - p.lastTime;
@@ -242,14 +252,22 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
     setIsGrabbed(false);
   }, [handlePointerMove]);
 
+  // Sync latest function refs in effect
+  useEffect(() => {
+    handlePointerUpRef.current = handlePointerUp;
+    updatePhysicsRef.current = updatePhysics;
+  }, [handlePointerUp, updatePhysics]);
+
   // Clean up global window drag listeners on unmount
   useEffect(() => {
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-      window.removeEventListener("pointercancel", handlePointerUp);
+      if (handlePointerUpRef.current) {
+        window.removeEventListener("pointerup", handlePointerUpRef.current);
+        window.removeEventListener("pointercancel", handlePointerUpRef.current);
+      }
     };
-  }, [handlePointerMove, handlePointerUp]);
+  }, [handlePointerMove]);
 
   // Pointer down handler to initiate drag
   const handlePointerDown = (e) => {
