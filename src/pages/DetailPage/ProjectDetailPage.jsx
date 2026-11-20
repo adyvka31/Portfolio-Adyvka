@@ -12,7 +12,6 @@ import Tag from "../../components/Tag/Tag";
 import SubNav from "../../components/SubNav/SubNav";
 import NativeReveal from "../../components/Reveal/NativeReveal";
 import Card from "../../components/Card/Card";
-import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import DatabankPreview from "../../layouts/HomeLayout/ProjectLayout/DatabankPreview";
 import ProjectGallery from "../../components/ProjectGallery/ProjectGallery";
 

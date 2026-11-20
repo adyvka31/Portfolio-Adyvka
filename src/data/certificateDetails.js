@@ -1028,7 +1028,6 @@ certificateDetails["open-science-nasa"] = certificateDetails["nasa-open-science-
 certificateDetails["ai-in-society"] = certificateDetails["ai-in-society-ethics-leadership-and-the-road-ahead"];
 certificateDetails["hp-ai"] = certificateDetails["ai-in-society-ethics-leadership-and-the-road-ahead"];
 certificateDetails["hp-ai-in-society"] = certificateDetails["ai-in-society-ethics-leadership-and-the-road-ahead"];
-certificateDetails["cerdas-cermat-apbn"] = certificateDetails["cerdas-cermat-apbn"];
 certificateDetails["apbn"] = certificateDetails["cerdas-cermat-apbn"];
 certificateDetails["kemenkeu"] = certificateDetails["cerdas-cermat-apbn"];
 certificateDetails["ielts"] = certificateDetails["english-proficiency-assessment"];

@@ -8,10 +8,7 @@ import smpins1 from "../assets/smpins/smp-ins-depok-mobile-app-workshop-1.webp";
 import smpins2 from "../assets/smpins/smp-ins-depok-block-programming-mentoring-2.webp";
 import smpins3 from "../assets/smpins/smp-ins-depok-student-app-showcase-3.webp";
 
-import semutsemut1 from "../assets/semutsemut/semut-semut-game-development-workshop-1.webp";
-import semutsemut2 from "../assets/semutsemut/semut-semut-construct-game-engine-2.webp";
-import semutsemut3 from "../assets/semutsemut/semut-semut-interactive-gameplay-demo-3.webp";
-import semutsemut4 from "../assets/semutsemut/semut-semut-student-certificate-showcase-4.webp";
+// Semut-Semut documentation (authentic PC lab session)
 import semutsemutHero from "../assets/experiences/semut-semut-game-development-instructor.webp";
 
 import hajrabyadl1 from "../assets/hajrabyadl/hajrabyadl-frontend-coding-workshop-1.webp";
@@ -24,11 +21,30 @@ import smpn252 from "../assets/smpn25/smpn-25-depok-mobile-classroom-workshop-2.
 import smpn253 from "../assets/smpn25/smpn-25-depok-kodular-hands-on-practice-3.webp";
 import smpn254 from "../assets/smpn25/smpn-25-depok-faculty-completion-ceremony-4.webp";
 
-// 2022 foundational archives
-import alanshar1 from "../assets/experiences/al-anshar-game-development-instructor.webp";
-import alanshar2 from "../assets/experiences/al-anshar-app-design-instructor.webp";
-import mtsyasmine1 from "../assets/experiences/mts-yasmine-graphic-design-instructor.webp";
-import griyyasunnah1 from "../assets/experiences/griyya-sunnah-game-development-instructor.webp";
+// 2022 foundational archives & field workshops
+// Al-Anshar App Design
+import alansharAppHero from "../assets/experiences/al-anshar-app-design-instructor.webp";
+import alansharApp1 from "../assets/alanshar/al-anshar-quran-app-figma-workspace-1.webp";
+import alansharApp2 from "../assets/alanshar/al-anshar-mobile-ui-wireframing-session-2.webp";
+import alansharApp3 from "../assets/alanshar/al-anshar-classroom-ui-prototyping-3.webp";
+
+// Al-Anshar Game Development
+import alansharGameHero from "../assets/experiences/al-anshar-game-development-instructor.webp";
+import alansharGame1 from "../assets/alanshar/al-anshar-scratch-gameplay-projector-1.webp";
+import alansharGame2 from "../assets/alanshar/al-anshar-game-logic-programming-lab-2.webp";
+
+// MTs Yasmine Graphic Design
+import mtsyasmineHero from "../assets/experiences/mts-yasmine-graphic-design-instructor.webp";
+import mtsyasmine1 from "../assets/mtsyasmine/mts-yasmine-graphic-design-mentoring-1.webp";
+import mtsyasmine2 from "../assets/mtsyasmine/mts-yasmine-classroom-projector-session-2.webp";
+import mtsyasmine3 from "../assets/mtsyasmine/mts-yasmine-student-figma-mockup-3.webp";
+
+// Griyya Sunnah Game Development
+import griyyasunnahHero from "../assets/experiences/griyya-sunnah-game-development-instructor.webp";
+import griyyasunnah1 from "../assets/griyyasunnah/griyya-sunnah-pavilion-coding-session-1.webp";
+import griyyasunnah2 from "../assets/griyyasunnah/griyya-sunnah-student-projector-showcase-2.webp";
+import griyyasunnah3 from "../assets/griyyasunnah/griyya-sunnah-collaborative-workstation-3.webp";
+import griyyasunnah4 from "../assets/griyyasunnah/griyya-sunnah-digital-assets-tuning-4.webp";
 
 export const teachingDetails = {
   // =========================================================================
@@ -49,6 +65,7 @@ export const teachingDetails = {
       { label: "Audience", value: "20 IT Club High School Students" },
       { label: "Timeline", value: "September 2025" },
       { label: "Syllabus", value: "HTML5, CSS3, UI Layouts, VS Code & DevTools" },
+      { label: "Curriculum Book", value: "Buku: Membuat Website dengan Framework" },
     ],
     kpis: [
       {
@@ -193,6 +210,7 @@ export const teachingDetails = {
     ],
     links: [
       { label: "LinkedIn Post", url: "https://lnkd.in/p/gCSnVS6B" },
+      { label: "Buku Panduan: Membuat Website dengan Framework", url: "/publications/buku-membuat-website-dengan-framework" },
     ],
   },
 
@@ -228,6 +246,7 @@ export const teachingDetails = {
       { label: "Audience", value: "23+ Santri (Boarding School Students)" },
       { label: "Timeline", value: "May 2025 · 1-Week Dormitory Immersion" },
       { label: "Tech Stack", value: "HTML5, CSS3, Hardware Setup, Linux, DevTools" },
+      { label: "Reference Guide", value: "Buku: Membuat Website dengan Framework" },
     ],
     kpis: [
       {
@@ -369,6 +388,9 @@ export const teachingDetails = {
       "Compassionate Pedagogy",
       "Backpacking Outreach",
       "Public Speaking",
+    ],
+    links: [
+      { label: "Buku Referensi: Membuat Website dengan Framework", url: "/publications/buku-membuat-website-dengan-framework" },
     ],
   },
 
@@ -585,6 +607,7 @@ export const teachingDetails = {
       { label: "Audience", value: "25+ Junior High Boarding Students" },
       { label: "Timeline", value: "October 2023" },
       { label: "Platform", value: "Kodular Visual Logic & Android APK" },
+      { label: "Visual Logic Module", value: "Buku: Membuat Game Tanpa Coding" },
     ],
     kpis: [
       {
@@ -742,6 +765,7 @@ export const teachingDetails = {
       { label: "Audience", value: "25+ Middle School Students" },
       { label: "Timeline", value: "October 2023" },
       { label: "Platform", value: "Scratch 2D Game Mechanics & Physics" },
+      { label: "Course Book", value: "Buku: Membuat Game Tanpa Coding" },
     ],
     kpis: [
       {
@@ -843,42 +867,14 @@ export const teachingDetails = {
     ],
     documentationTitle: "Classroom Archives & Game Demos",
     documentationLead:
-      "Capturing interactive game design sessions, PC lab workshops, visual scripting, and creative student projects at Semut-Semut.",
+      "Capturing interactive game design sessions, PC lab workshops, visual scripting, and creative student projects at Semut-Semut The Natural School.",
     documentation: [
       {
         id: "semut-doc-hero",
         image: semutsemutHero,
         tag: "Computer Lab Session",
         title: "Interactive Game Mechanics & Computational Thinking in PC Lab",
-        desc: "Elementary and middle school students in orange uniforms seated at PC workstations in the air-conditioned computer room, learning game design and computational logic.",
-      },
-      {
-        id: "semut-doc-1",
-        image: semutsemut1,
-        tag: "Floor Pavilion Session",
-        title: "Visual Design & Logic Session on Floor Workstations",
-        desc: "Students seated at low wooden tables with laptops and projector, exploring visual scripting and creative digital assets.",
-      },
-      {
-        id: "semut-doc-2",
-        image: semutsemut2,
-        tag: "Student Showcase",
-        title: "Student Project Presentation via Classroom Projector",
-        desc: "Student presenter standing before the classroom demonstrating his custom digital project ('RAYHAN') using wall projection.",
-      },
-      {
-        id: "semut-doc-3",
-        image: semutsemut3,
-        tag: "Peer Collaboration",
-        title: "Collaborative Laptop Workstation Problem-Solving",
-        desc: "Students collaborating closely at a shared laptop table, troubleshooting script events and interactive logic flow.",
-      },
-      {
-        id: "semut-doc-4",
-        image: semutsemut4,
-        tag: "Creative Digital Art",
-        title: "Hands-on Digital Layout & Asset Creation",
-        desc: "Students working on Dell laptops crafting custom digital visual layouts and thematic assets ('BEACH', 'AIR').",
+        desc: "Elementary and middle school students in orange uniforms seated at PC workstations in the air-conditioned computer room, learning game design and computational logic at Semut-Semut The Natural School.",
       },
     ],
     stack: [
@@ -892,6 +888,7 @@ export const teachingDetails = {
     ],
     links: [
       { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
+      { label: "Buku Panduan: Membuat Game Tanpa Coding", url: "/publications/buku-membuat-game-tanpa-coding" },
     ],
   },
 
@@ -1008,11 +1005,32 @@ export const teachingDetails = {
       "Archival records from the mobile application UI/UX design workshops conducted at Al Anshar Islamic School.",
     documentation: [
       {
-        id: "alanshar2-doc-1",
-        image: alanshar2,
+        id: "alanshar-app-hero",
+        image: alansharAppHero,
         tag: "Figma UI Prototyping",
         title: "Quran App Mobile UI Design & Prototyping in Figma",
         desc: "Classroom instruction with students at desks, featuring the master workstation open in Figma designing a mobile Quran application interface.",
+      },
+      {
+        id: "alanshar-app-1",
+        image: alansharApp1,
+        tag: "Quran App Workspace",
+        title: "Hands-on Mobile UI Wireframing & Screen Layout",
+        desc: "Close-up of the master workspace showing the mobile Quran App design layout, screen navigation flow, and typography hierarchy in Figma.",
+      },
+      {
+        id: "alanshar-app-2",
+        image: alansharApp2,
+        tag: "Classroom Collaboration",
+        title: "Peer Problem-Solving & Layout Framing Session",
+        desc: "Junior high students collaborating at computer workstations, testing mobile screen frames, vector buttons, and layout alignments.",
+      },
+      {
+        id: "alanshar-app-3",
+        image: alansharApp3,
+        tag: "Interactive Testing",
+        title: "Testing Prototype Transitions on Mobile Canvas",
+        desc: "Students testing interactive tap transitions, responsive scroll views, and component variants in live Figma presentation previews.",
       },
     ],
     stack: ["Figma", "UI/UX Design", "Wireframing", "Mobile Ergonomics", "Interactive Prototyping", "Public Speaking"],
@@ -1131,11 +1149,32 @@ export const teachingDetails = {
       "Photographic archives documenting digital design training sessions at MTs Yasmine.",
     documentation: [
       {
-        id: "mtsyasmine-doc-1",
-        image: mtsyasmine1,
+        id: "mtsyasmine-doc-hero",
+        image: mtsyasmineHero,
         tag: "Hands-on Coaching",
         title: "1-on-1 Graphic Design & Layout Coaching on Zyrex Laptop",
-        desc: "Adyvka in IDN batik shirt and peci leaning over a batik-clothed desk, guiding female junior high school students through graphic design tools, typography, and visual hierarchy on a Zyrex laptop.",
+        desc: "Adyvka in IDN batik shirt and peci leaning over a batik-clothed desk, guiding junior high school students through graphic design tools, typography, and visual hierarchy on a Zyrex laptop.",
+      },
+      {
+        id: "mtsyasmine-doc-1",
+        image: mtsyasmine1,
+        tag: "Individual Mentoring",
+        title: "Typographic Composition & Vector Design Mentoring",
+        desc: "Guiding a student step-by-step through vector typography alignment ('DO WHAT MAKES YOU HAPPY') on an HP laptop workstation.",
+      },
+      {
+        id: "mtsyasmine-doc-2",
+        image: mtsyasmine2,
+        tag: "Classroom Projection",
+        title: "Live Design Demonstration & Whiteboard Briefing",
+        desc: "Classroom session showing students referencing the live design demonstration projected on the front whiteboard while crafting their own posters.",
+      },
+      {
+        id: "mtsyasmine-doc-3",
+        image: mtsyasmine3,
+        tag: "Digital Asset Creation",
+        title: "Mobile Screen Layout & UI Prototyping Practice",
+        desc: "Student at ThinkPad workstation creating clean 'Welcome' onboarding layouts and practicing component hierarchy during the design sprint.",
       },
     ],
     stack: ["Figma", "Graphic Design", "Typography", "Visual Hierarchy", "Poster Design", "Teaching"],
@@ -1167,6 +1206,7 @@ export const teachingDetails = {
       { label: "Audience", value: "15+ Middle School Students" },
       { label: "Timeline", value: "November 2022" },
       { label: "Platform", value: "Scratch 2D Game Mechanics & Logic" },
+      { label: "Curriculum Textbook", value: "Buku: Membuat Game Tanpa Coding" },
     ],
     kpis: [
       {
@@ -1254,16 +1294,31 @@ export const teachingDetails = {
       "Visual archives documenting Scratch game programming sessions at Al Anshar Islamic School.",
     documentation: [
       {
-        id: "alanshar1-doc-1",
-        image: alanshar1,
+        id: "alanshar-game-hero",
+        image: alansharGameHero,
         tag: "Scratch Visual Blocks",
         title: "Projector Demonstration of Scratch Event Programming",
-        desc: "Student sitting at the master desk projecting Scratch visual block programming onto the classroom wall, while students in pramuka uniform code on laptops.",
+        desc: "Classroom instruction with Scratch visual block programming projected on the wall, while students in pramuka uniform code 2D game loops on laptops.",
+      },
+      {
+        id: "alanshar-game-1",
+        image: alansharGame1,
+        tag: "Live Big-Screen Coding",
+        title: "Interactive Game Mechanics & Sprite Coordination",
+        desc: "Students testing sprite motion, edge bounce boundaries, and jump gravity loops directly from their laptop workstations.",
+      },
+      {
+        id: "alanshar-game-2",
+        image: alansharGame2,
+        tag: "Classroom Lab Setup",
+        title: "Peer Problem-Solving & Instructor Workstation Lab",
+        desc: "Workshop lab view showing students fine-tuning sprite collision guards, score variable counters, and win-state triggers.",
       },
     ],
     stack: ["Scratch", "Game Development", "Logic Programming", "Collision Detection", "Teaching", "Public Speaking"],
     links: [
       { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
+      { label: "Buku Panduan: Membuat Game Tanpa Coding", url: "/publications/buku-membuat-game-tanpa-coding" },
     ],
   },
 
@@ -1293,6 +1348,7 @@ export const teachingDetails = {
       { label: "Audience", value: "15+ Young Community Students" },
       { label: "Timeline", value: "July 2022 · Career Milestone" },
       { label: "Platform", value: "Scratch Visual Computational Logic" },
+      { label: "Curriculum Basis", value: "Buku: Membuat Game Tanpa Coding" },
     ],
     kpis: [
       {
@@ -1380,16 +1436,45 @@ export const teachingDetails = {
       "Visual archives capturing the very first community game development workshop conducted at Griyya Sunnah in Bogor.",
     documentation: [
       {
-        id: "griyyasunnah-doc-1",
-        image: griyyasunnah1,
+        id: "griyyasunnah-doc-hero",
+        image: griyyasunnahHero,
         tag: "First Workshop Collage",
         title: "Game Development & Computational Logic Workshop Collage",
         desc: "Multi-perspective photographic collage capturing students in peci coding on laptops across low wooden tables in the open pavilion at Griyya Sunnah.",
+      },
+      {
+        id: "griyyasunnah-doc-1",
+        image: griyyasunnah1,
+        tag: "Floor Pavilion Session",
+        title: "Visual Design & Logic Session on Floor Workstations",
+        desc: "Students seated at low wooden tables with laptops and projector, exploring visual scripting and creative digital assets in the open pavilion.",
+      },
+      {
+        id: "griyyasunnah-doc-2",
+        image: griyyasunnah2,
+        tag: "Student Showcase",
+        title: "Student Project Presentation via Classroom Projector",
+        desc: "Student presenter standing before the classroom demonstrating his custom digital project ('RAYHAN') using wall projection.",
+      },
+      {
+        id: "griyyasunnah-doc-3",
+        image: griyyasunnah3,
+        tag: "Peer Collaboration",
+        title: "Collaborative Laptop Workstation Problem-Solving",
+        desc: "Students collaborating closely at a shared laptop table, troubleshooting script events and interactive logic flow.",
+      },
+      {
+        id: "griyyasunnah-doc-4",
+        image: griyyasunnah4,
+        tag: "Creative Digital Art",
+        title: "Hands-on Digital Layout & Asset Creation",
+        desc: "Students working on laptops crafting custom digital visual layouts and thematic character assets ('BEACH', 'AIR').",
       },
     ],
     stack: ["Scratch", "Game Development", "Youth Pedagogy", "Computational Thinking", "Public Speaking", "Community Outreach"],
     links: [
       { label: "LinkedIn Post", url: "https://lnkd.in/p/gNy2EZRA" },
+      { label: "Buku Panduan: Membuat Game Tanpa Coding", url: "/publications/buku-membuat-game-tanpa-coding" },
     ],
   },
 

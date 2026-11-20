@@ -1,4 +1,5 @@
 import { useState, memo } from "react";
+import { Link } from "react-router-dom";
 import PageShell from "../../components/PageShell/PageShell";
 import SEO from "../../components/SEO/SEO";
 import SubNav from "../../components/SubNav/SubNav";
@@ -16,6 +17,7 @@ import {
   ArrowUpRightIcon,
   LinkedInIcon,
   GithubIcon,
+  BookOpenIcon,
 } from "../../components/Icons/Icons";
 import styles from "./NarrativeDetailTemplate.module.css";
 
@@ -35,7 +37,6 @@ function NarrativeDetailTemplate({
   seo,
   subnav,
   hero,
-  institution,
   tags = [],
   links = [],
   kpis = [],
@@ -83,22 +84,43 @@ function NarrativeDetailTemplate({
           {links && links.length > 0 && (
             <NativeReveal className="css-reveal" delay={0.08}>
               <div className={styles.linksRow}>
-                {links.map((l) => (
-                  <a
-                    key={l.url}
-                    href={l.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.linkBtn}
-                  >
-                    {l.url.includes("lnkd.in") || l.url.includes("linkedin") ? (
-                      <LinkedInIcon size={13} />
-                    ) : l.url.includes("github.com") ? (
-                      <GithubIcon size={13} />
-                    ) : null}
-                    {l.label} <ArrowUpRightIcon size={12} />
-                  </a>
-                ))}
+                {links.map((l) => {
+                  const isInternal = l.url && l.url.startsWith("/");
+                  const isBook = l.url && (l.url.includes("publication") || l.isBook);
+                  const Icon = isBook
+                    ? BookOpenIcon
+                    : l.url && (l.url.includes("lnkd.in") || l.url.includes("linkedin"))
+                    ? LinkedInIcon
+                    : l.url && l.url.includes("github.com")
+                    ? GithubIcon
+                    : null;
+
+                  if (isInternal) {
+                    return (
+                      <Link
+                        key={l.url}
+                        to={l.url}
+                        className={`${styles.linkBtn} ${isBook ? styles.linkBtnBook : ""}`}
+                      >
+                        {Icon && <Icon size={13} />}
+                        {l.label} <ArrowUpRightIcon size={12} />
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <a
+                      key={l.url}
+                      href={l.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${styles.linkBtn} ${isBook ? styles.linkBtnBook : ""}`}
+                    >
+                      {Icon && <Icon size={13} />}
+                      {l.label} <ArrowUpRightIcon size={12} />
+                    </a>
+                  );
+                })}
               </div>
             </NativeReveal>
           )}

@@ -82,6 +82,19 @@
   transform: translateY(-1px);
 }
 
+.linkBtnBook {
+  background: rgba(124, 242, 255, 0.08);
+  border-color: rgba(124, 242, 255, 0.35);
+  box-shadow: 0 0 12px rgba(124, 242, 255, 0.1);
+  font-weight: 500;
+}
+
+.linkBtnBook:hover {
+  background: rgba(124, 242, 255, 0.18);
+  border-color: rgba(124, 242, 255, 0.6);
+  box-shadow: 0 0 18px rgba(124, 242, 255, 0.2);
+}
+
 /* ==========================================================================
    GENERIC SECTION & HEADER
    ========================================================================== */

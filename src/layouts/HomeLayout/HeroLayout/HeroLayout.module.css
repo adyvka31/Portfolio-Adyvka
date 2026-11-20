@@ -148,13 +148,31 @@
 }
 
 .headline {
-  font-size: clamp(2.2rem, 10vw, 3.5rem);
+  font-size: clamp(1.65rem, 8.5vw, 3.5rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 0.88;
   margin: 0;
   text-align: center;
   white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+  .headline {
+    font-size: clamp(1.4rem, 7.8vw, 1.75rem);
+  }
+  .gapTop {
+    width: 0.8em;
+  }
+  .gapBottom {
+    width: 0.95em;
+  }
+  .shiftAdyvka {
+    transform: none;
+  }
+  .shiftPratama {
+    transform: none;
+  }
 }
 
 @media (min-width: 640px) {
@@ -482,5 +500,33 @@
   .metrics {
     max-width: 64rem;
     margin: 5rem auto 0;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero {
+    min-height: 80svh;
+  }
+  .content {
+    max-width: 88rem;
+  }
+  .headline {
+    font-size: clamp(9rem, 7.5vw, 12.5rem);
+  }
+  .gapTop {
+    width: 7.5rem;
+  }
+  .gapBottom {
+    width: 25rem;
+  }
+  .shiftAdyvka {
+    transform: translateX(10rem);
+  }
+  .heroBgPhotoContainer {
+    max-width: 1350px;
+  }
+  .metrics {
+    max-width: 76rem;
+    margin: 6rem auto 0;
   }
 }

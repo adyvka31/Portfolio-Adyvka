@@ -45,6 +45,16 @@ function ProjectLayout() {
     return styles.gridColSpan2;
   };
 
+  const getResponsiveVisibilityClass = (idx) => {
+    if (idx >= 6) {
+      return styles.hideOnTabletAndBelow;
+    }
+    if (idx >= 5) {
+      return styles.hideOnMobile;
+    }
+    return "";
+  };
+
   return (
     <section id="work" className={styles.section}>
       <div className={styles.container}>
@@ -86,7 +96,7 @@ function ProjectLayout() {
             <NativeReveal
               key={`${activeFilter}-${project.id}`}
               delay={(idx % 3) * 0.12}
-              className={`reveal-slide-up ${getColSpanClass(idx, activeFilter)}`}
+              className={`reveal-slide-up ${getColSpanClass(idx, activeFilter)} ${getResponsiveVisibilityClass(idx)}`}
             >
               <Card variant="project" item={project} />
             </NativeReveal>

@@ -1,14 +1,16 @@
-import { useState, useEffect, memo } from "react";
+import { useEffect, useSyncExternalStore, memo } from "react";
 import { createPortal } from "react-dom";
 import { ArrowUpRightIcon } from "../Icons/Icons";
 import styles from "./BookReaderModal.module.css";
 
-function BookReaderModal({ book, onClose }) {
-  const [mounted, setMounted] = useState(false);
+const emptySubscribe = () => () => {};
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+function BookReaderModal({ book, onClose }) {
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   // Body Scroll Lock & ESC key listener
   useEffect(() => {

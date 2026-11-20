@@ -52,10 +52,18 @@
   border-radius: 9999px;
   padding: 0.625rem 1rem;
   flex: 1;
-  min-width: 280px;
+  min-width: 0;
+  width: 100%;
   max-width: 32rem;
   color: var(--ink-200);
   transition: border-color 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .searchWrap {
+    min-width: 280px;
+    width: auto;
+  }
 }
 
 .searchWrap:focus-within {
@@ -379,5 +387,27 @@
   }
   .overlayGradient {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardImageWrap {
+    height: 210px;
+  }
+  .cardTitleModern {
+    font-size: 1.4rem;
+  }
+  .cardFooterModern {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .cardActionWrap {
+    margin-left: 0;
+    width: 100%;
+  }
+  .cardActionButton {
+    width: 100%;
+    justify-content: center;
   }
 }

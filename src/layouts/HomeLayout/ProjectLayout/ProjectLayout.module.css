@@ -115,6 +115,25 @@
   min-width: 0;
 }
 
+/* Responsive Card Display:
+   - Handphone (mobile < 768px): Show exactly 5 cards
+   - Tablet (768px - 1023px): Show exactly 6 cards
+   - Desktop (>= 1024px): Show all cards
+*/
+@media (max-width: 767px) {
+  .grid > *:nth-child(n + 6),
+  .hideOnMobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .grid > *:nth-child(n + 7),
+  .hideOnTabletAndBelow {
+    display: none !important;
+  }
+}
+
 .footerActions {
   margin-top: clamp(2.5rem, 5vw, 4rem);
   display: flex;

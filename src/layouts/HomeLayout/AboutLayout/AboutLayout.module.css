@@ -129,6 +129,15 @@
   transition: border-color 0.3s ease;
 }
 
+@media (max-width: 480px) {
+  .cardIcon {
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .skillCard:hover .cardIcon {
   border-color: rgba(124, 242, 255, 0.18);
 }

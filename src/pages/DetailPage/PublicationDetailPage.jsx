@@ -1,6 +1,6 @@
 // src/pages/DetailPage/PublicationDetailPage.jsx
 import { useState, memo } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import SEO from "../../components/SEO/SEO";
 import PageShell from "../../components/PageShell/PageShell";
 import SubNav from "../../components/SubNav/SubNav";
@@ -23,7 +23,6 @@ import {
   WorkflowIcon,
   CloudIcon,
   ChevronRightIcon,
-  FileTextIcon,
 } from "../../components/Icons/Icons";
 import { publicationsList, getSiblings } from "../../data/portfolio";
 import { publicationDetails } from "../../data/publicationDetails";

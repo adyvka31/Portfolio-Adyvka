@@ -145,6 +145,34 @@
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .lightbox {
+    padding: 0.75rem;
+  }
+  .lightboxHeader {
+    padding: 0.75rem 1rem;
+  }
+  .lightboxNav {
+    width: 36px;
+    height: 36px;
+  }
+  .lightboxNavPrev {
+    left: 0.5rem;
+  }
+  .lightboxNavNext {
+    right: 0.5rem;
+  }
+  .lightboxFooter {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .lightboxContent {
+    max-width: 1200px;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

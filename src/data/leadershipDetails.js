@@ -19,6 +19,7 @@ import semarang2 from "../assets/businesssurvival/pt-intisel-semarang-market-tra
 import semarang3 from "../assets/businesssurvival/pt-intisel-semarang-entrepreneurship-survival-3.webp";
 
 import itfestHero from "../assets/experiences/it-fest-2025-competition-event-coordinator.webp";
+import itfestDefense from "../assets/experiences/it-fest-2025-competition-defense-presentation.webp";
 
 import livein1 from "../assets/livein/idn-boarding-school-rural-livein-immersion-1.webp";
 import livein2 from "../assets/livein/idn-boarding-school-community-collaboration-2.webp";
@@ -460,6 +461,13 @@ export const leadershipDetails = {
         image: barmus2,
         desc: "Sharing heartfelt smiles and warm companionship with an elderly resident giving two thumbs up during our volunteer care visit to the senior home.",
       },
+      {
+        id: "barmus-team-coordination",
+        title: "Volunteer Team Coordination & Field Logistics",
+        tag: "Team Operations",
+        image: barmus3,
+        desc: "Coordinating logistics, task distribution, and volunteer safety protocols on the ground during community outreach.",
+      },
     ],
   },
 
@@ -735,6 +743,13 @@ export const leadershipDetails = {
         tag: "Awards Ceremony",
         image: itfestHero,
         desc: "Serving as event coordinator on the main stage at IT Fest 2025 (#RebornWithInnovation), presenting the 2nd Place Web Design prize (mock cheque of Rp 600.000 and championship trophy) to the winning student team.",
+      },
+      {
+        id: "itfest-defense",
+        title: "Finalist Project Defense & Judging Session",
+        tag: "Floor Coordination",
+        image: itfestDefense,
+        desc: "Coordinating technical staging and timing during the live pitch defense, where finalist teams present their project architecture before the competition judging panel.",
       },
     ],
   },

@@ -88,6 +88,21 @@
   padding-left: 3.5rem;
 }
 
+@media (max-width: 380px) {
+  .spine {
+    left: 0.75rem;
+  }
+  .dot {
+    left: 0.75rem;
+  }
+  .item {
+    padding-left: 2rem;
+  }
+  .itemCard {
+    padding: 1rem;
+  }
+}
+
 /* --- DESKTOP GRID SYSTEM (Min 768px) --- */
 @media (min-width: 768px) {
   .timeline {
@@ -235,6 +250,16 @@
 
 .spacer {
   display: none;
+}
+
+/* Responsive Timeline Display:
+   - Handphone (mobile < 768px): Show exactly 3 items
+   - Tablet & Desktop (>= 768px): Show all items
+*/
+@media (max-width: 767px) {
+  .hideOnMobile {
+    display: none !important;
+  }
 }
 
 /* =========================================

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useMemo, memo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { findBestAnswer, getContextualSuggestions, QUICK_SUGGESTIONS } from "../../data/chatbotKnowledge";
+import { findBestAnswer, getContextualSuggestions } from "../../data/chatbotKnowledge";
 import styles from "./Chatbot.module.css";
 
 // SVG Icons

@@ -2470,7 +2470,7 @@ export const CONTEXTUAL_SUGGESTIONS_MAP = {
 };
 
 
-export function getContextualSuggestions(pathname = "/", lang = "id") {
+export function getContextualSuggestions(pathname = "/") {
   if (!pathname || typeof pathname !== "string") {
     return QUICK_SUGGESTIONS;
   }

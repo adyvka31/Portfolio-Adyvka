@@ -237,6 +237,12 @@ export const publicationDetails = {
     ],
     workshopDeployments: [
       {
+        school: "Semut-Semut The Natural School",
+        role: "Game Development & Computational Logic Instructor",
+        date: "October 2023",
+        impact: "Implemented to teach Cartesian coordinates, 2D physics, velocity variables, and arcade game loops to 25+ creative students.",
+      },
+      {
         school: "SMP INS Depok",
         role: "Lead Mobile & Game Logic Instructor",
         date: "October 2024",
@@ -251,8 +257,8 @@ export const publicationDetails = {
       {
         school: "Al-Anshar Boarding School",
         role: "Game Development Instructor",
-        date: "May 2023",
-        impact: "Guided 25+ students through building their own complete 2D arcade games.",
+        date: "November 2022",
+        impact: "Guided 15+ students through building their own complete 2D arcade games.",
       },
     ],
   },
