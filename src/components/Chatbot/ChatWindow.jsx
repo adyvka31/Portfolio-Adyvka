@@ -229,27 +229,22 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     };
   }, [isOpen, isClosing, onClose, launcherRef]);
 
-  // Lock body scroll on mobile
+  // Lock body scroll on mobile without resetting scroll position
   useEffect(() => {
     if (!isOpen || isClosing) return;
 
     const isMobile = typeof window !== "undefined" && window.innerWidth <= 640;
     if (!isMobile) return;
 
-    const scrollY = window.scrollY;
-    const originalPosition = document.body.style.position;
-    const originalTop = document.body.style.top;
-    const originalWidth = document.body.style.width;
+    const originalOverflow = document.body.style.overflow;
+    const originalOverscroll = document.body.style.overscrollBehavior;
 
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
+    document.body.style.overflow = "hidden";
+    document.body.style.overscrollBehavior = "none";
 
     return () => {
-      document.body.style.position = originalPosition;
-      document.body.style.top = originalTop;
-      document.body.style.width = originalWidth;
-      window.scrollTo(0, scrollY);
+      document.body.style.overflow = originalOverflow;
+      document.body.style.overscrollBehavior = originalOverscroll;
     };
   }, [isOpen, isClosing]);
 
