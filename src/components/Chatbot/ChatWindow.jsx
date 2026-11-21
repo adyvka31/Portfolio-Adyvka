@@ -153,10 +153,21 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   const suggestionsBarRef = useRef(null);
   const prevIsOpenRef = useRef(false);
 
-  // Focus input when chat window becomes active
+  // Focus input when chat window becomes active on desktop only (avoid triggering virtual keyboard on mobile)
   useEffect(() => {
-    if (isOpen && !isClosing) {
-      inputRef.current?.focus({ preventScroll: true });
+    if (isOpen && !isClosing && typeof window !== "undefined") {
+      const isTouchOrMobile =
+        window.innerWidth <= 768 ||
+        window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+        "ontouchstart" in window;
+
+      if (!isTouchOrMobile) {
+        inputRef.current?.focus({ preventScroll: true });
+      }
+    } else if (isClosing) {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
     }
   }, [isOpen, isClosing]);
 
