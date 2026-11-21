@@ -22,13 +22,18 @@ export function useCardSpotlight() {
   const handleMouseMove = useCallback(
     (e) => {
       if (isTouchDevice) return;
+      const card = e.currentTarget;
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const clientX = e.clientX;
+      const clientY = e.clientY;
+
       if (rafId.current) cancelAnimationFrame(rafId.current);
 
       rafId.current = requestAnimationFrame(() => {
-        const card = e.currentTarget;
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty("--cx", e.clientX - rect.left + "px");
-        card.style.setProperty("--cy", e.clientY - rect.top + "px");
+        if (!card || !card.style) return;
+        card.style.setProperty("--cx", clientX - rect.left + "px");
+        card.style.setProperty("--cy", clientY - rect.top + "px");
       });
     },
     [isTouchDevice],

@@ -12,6 +12,17 @@ if (typeof window !== "undefined") {
     window.__VITE_REACT_SSG_STATIC_LOADER_MANIFEST__ || {};
   window.__VITE_REACT_SSG_STATIC_LOADER_DATA__ =
     window.__VITE_REACT_SSG_STATIC_LOADER_DATA__ || {};
+
+  // Auto-reload saat ada chunk deployment baru (mencegah error "Failed to fetch dynamically imported module")
+  window.addEventListener("vite:preloadError", (event) => {
+    event.preventDefault();
+    const lastReload = sessionStorage.getItem("app_chunk_reload_time");
+    const now = Date.now();
+    if (!lastReload || now - parseInt(lastReload, 10) > 10000) {
+      sessionStorage.setItem("app_chunk_reload_time", String(now));
+      window.location.reload();
+    }
+  });
 }
 
 // ViteReactSSG otomatis membungkus aplikasi dengan Data Router

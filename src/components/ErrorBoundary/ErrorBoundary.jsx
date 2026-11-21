@@ -11,6 +11,24 @@ export default class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
+    // If it's a dynamic import / chunk load error from a newly deployed build, auto-reload once
+    const errorMsg = error?.message || "";
+    const isChunkError =
+      errorMsg.includes("Failed to fetch dynamically imported module") ||
+      errorMsg.includes("Importing a module script failed") ||
+      errorMsg.includes("error loading dynamically imported module") ||
+      error?.name === "ChunkLoadError";
+
+    if (isChunkError && typeof window !== "undefined") {
+      const lastReload = sessionStorage.getItem("app_chunk_reload_time");
+      const now = Date.now();
+      if (!lastReload || now - parseInt(lastReload, 10) > 10000) {
+        sessionStorage.setItem("app_chunk_reload_time", String(now));
+        window.location.reload();
+        return;
+      }
+    }
+
     // Production: send to Sentry/LogRocket
     if (import.meta.env.PROD) {
       console.error("App error:", error, errorInfo);
@@ -23,6 +41,34 @@ export default class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
+      const errorMsg = this.state.error?.message || "";
+      const isChunkError =
+        errorMsg.includes("Failed to fetch dynamically imported module") ||
+        errorMsg.includes("Importing a module script failed") ||
+        errorMsg.includes("error loading dynamically imported module") ||
+        this.state.error?.name === "ChunkLoadError";
+
+      if (isChunkError) {
+        return (
+          <div
+            style={{
+              minHeight: "60vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1rem",
+              color: "#fff",
+              textAlign: "center",
+              padding: "2rem",
+            }}
+          >
+            <p style={{ color: "var(--ink-200)", fontSize: "0.9375rem" }}>
+              Updating to the latest version...
+            </p>
+          </div>
+        );
+      }
       return (
         <div
           style={{
