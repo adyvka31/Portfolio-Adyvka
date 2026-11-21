@@ -112,7 +112,7 @@ function HeroLayout() {
                   width={1296}
                   height={1728}
                   loading="eager"
-                  decoding="sync"
+                  decoding="async"
                   fetchPriority="high"
                 />
               </div>

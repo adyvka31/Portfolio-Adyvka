@@ -1,19 +1,10 @@
-import { useState, useRef, useEffect, useMemo, useCallback, memo } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { findBestAnswer, getContextualSuggestions } from "../../data/chatbotKnowledge";
+import { useState, useRef, useEffect, useCallback, lazy, Suspense, memo } from "react";
 import styles from "./Chatbot.module.css";
 
-// SVG Icons
-function SendIcon({ size = 16 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="22" y1="2" x2="11" y2="13" />
-      <polygon points="22 2 15 22 11 13 2 9 22 2" />
-    </svg>
-  );
-}
+// Lazy load the heavy chat window and 660KB knowledge engine on demand
+const ChatWindow = lazy(() => import("./ChatWindow"));
 
-function CloseIcon({ size = 18, strokeWidth = 2.2 }) {
+function CloseIcon({ size = 20, strokeWidth = 2.4 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="6" x2="6" y2="18" />
@@ -22,26 +13,6 @@ function CloseIcon({ size = 18, strokeWidth = 2.2 }) {
   );
 }
 
-function ArrowUpRightIcon({ size = 12, className = "" }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <line x1="7" y1="17" x2="17" y2="7" />
-      <polyline points="7 7 17 7 17 17" />
-    </svg>
-  );
-}
-
-// Modern AI Chatbot / Robot Icon for floating launcher
 function ChatBotIcon({ size = 26 }) {
   return (
     <svg
@@ -56,86 +27,44 @@ function ChatBotIcon({ size = 26 }) {
       className={styles.botIconSvg}
       aria-hidden="true"
     >
-      {/* Robot Antenna with Signal Beacon */}
       <path d="M12 6V2.5" />
       <circle cx="12" cy="2" r="1" fill="currentColor" stroke="none" />
-
-      {/* Robot Head with Speech Bubble Contour */}
       <rect x="3.5" y="6" width="17" height="12" rx="4" />
       <path d="M8 18l-3.5 3.5v-3.5" strokeLinejoin="round" />
-
-      {/* Expressive Glowing Eyes */}
       <circle cx="9" cy="11.5" r="1.25" fill="currentColor" stroke="none" />
       <circle cx="15" cy="11.5" r="1.25" fill="currentColor" stroke="none" />
-
-      {/* Friendly Curvature Smile */}
       <path d="M10 14.5c.6.6 1.3.8 2 .8s1.4-.2 2-.8" strokeWidth="1.8" />
     </svg>
   );
 }
 
-// Simple Markdown Text Formatter with bold and italic support
-function FormattedText({ text }) {
-  if (!text) return null;
-
-  const lines = text.split("\n");
-
-  return (
-    <div className={styles.messageText}>
-      {lines.map((line, idx) => {
-        const isBullet = line.trim().startsWith("* ");
-        const content = isBullet ? line.trim().slice(2) : line;
-
-        // Parse bold (**...**) first
-        const boldParts = content.split(/(\*\*[^*]+\*\*)/g);
-        const renderedLine = boldParts.map((bPart, bIdx) => {
-          if (bPart.startsWith("**") && bPart.endsWith("**")) {
-            return <strong key={`b-${bIdx}`}>{bPart.slice(2, -2)}</strong>;
-          }
-
-          // Parse italic (*...*) in remaining text
-          const italicParts = bPart.split(/(\*[^*]+\*)/g);
-          return italicParts.map((iPart, iIdx) => {
-            if (iPart.startsWith("*") && iPart.endsWith("*") && iPart.length > 2) {
-              return <em key={`i-${bIdx}-${iIdx}`}>{iPart.slice(1, -1)}</em>;
-            }
-            return iPart;
-          });
-        });
-
-        if (isBullet) {
-          return (
-            <div key={idx} style={{ display: "flex", gap: "0.45rem", marginBottom: "0.3rem", paddingLeft: "0.35rem" }}>
-              <span style={{ color: "var(--accent-glow, #7cf2ff)" }}>•</span>
-              <div>{renderedLine}</div>
-            </div>
-          );
-        }
-
-        if (line.trim() === "") {
-          return <div key={idx} style={{ height: "0.55rem" }} />;
-        }
-
-        return <p key={idx} style={{ margin: "0 0 0.45rem" }}>{renderedLine}</p>;
-      })}
-    </div>
-  );
-}
-
 function Chatbot() {
-  const navigate = useNavigate();
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const [bubbleState, setBubbleState] = useState("idle"); // "idle" | "visible" | "hidden"
+  const launcherRef = useRef(null);
 
-  // Dynamic contextual suggestions based on currently visited page
-  const contextualSuggestions = useMemo(() => {
-    return getContextualSuggestions(location?.pathname || "/");
-  }, [location?.pathname]);
+  const isChatActive = isOpen && !isClosing;
+  const currentBubbleState = isChatActive ? "hidden" : bubbleState;
 
-  // Smooth open and close handlers
+  // Prefetch ChatWindow when user idles or hovers over launcher
+  const prefetchChatWindow = useCallback(() => {
+    import("./ChatWindow");
+  }, []);
+
+  useEffect(() => {
+    // Prefetch during browser idle time (4s after initial load)
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        const id = window.requestIdleCallback(prefetchChatWindow, { timeout: 4500 });
+        return () => window.cancelIdleCallback(id);
+      } else {
+        const timer = setTimeout(prefetchChatWindow, 4000);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [prefetchChatWindow]);
+
   const handleOpen = () => {
     setIsClosing(false);
     setIsOpen(true);
@@ -143,7 +72,6 @@ function Chatbot() {
 
   const handleClose = useCallback(() => {
     if (isClosing || !isOpen) return;
-    inputRef.current?.blur();
     setIsClosing(true);
   }, [isClosing, isOpen]);
 
@@ -170,20 +98,10 @@ function Chatbot() {
     if (isClosing) {
       setIsOpen(false);
       setIsClosing(false);
-    } else {
-      // Pin scroll to latest bubble once open animation finishes
-      if (messages.length > 1 && messagesContainerRef.current) {
-        messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
-      }
     }
   };
 
-  const isChatActive = isOpen && !isClosing;
-
   // Periodic floating notification bubble ("Ask Adyvka")
-  const [bubbleState, setBubbleState] = useState("idle"); // "idle" | "visible" | "hidden"
-  const currentBubbleState = isChatActive ? "hidden" : bubbleState;
-
   useEffect(() => {
     if (isChatActive) return;
 
@@ -196,17 +114,14 @@ function Chatbot() {
         if (isCancelled) return;
         setBubbleState("visible");
 
-        // Keep visible for 4.5s then collapse into button
         hideTimer = setTimeout(() => {
           if (isCancelled) return;
           setBubbleState("hidden");
-          // Wait 3.8s before expanding again
           scheduleCycle(3800);
         }, 4500);
       }, delay);
     };
 
-    // First appearance 1.6s after component mounts or chat closes
     scheduleCycle(1600);
 
     return () => {
@@ -216,479 +131,28 @@ function Chatbot() {
     };
   }, [isChatActive]);
 
-  // Initial greeting (English-first matching website with bilingual support notice)
-  const [messages, setMessages] = useState([
-    {
-      id: "welcome",
-      sender: "bot",
-      title: "Adyvka Portfolio Assistant",
-      text: `Hello! I am the interactive portfolio assistant for Rafif Sava Adyvka Pratama (Adyvka).
-
-I have full access to Adyvka's verified records across software engineering, teaching, and leadership:
-* **Academic Honors (96/100 GPA):** Semester 4 in Software Engineering at SMK IDN Boarding School.
-* **Engineering Projects & Publications:** Built 18 software solutions (enterprise web systems, mobile apps, AI tools) and authored 2 published technical books.
-* **Work Experience & Leadership:** 2+ years in industry across 4 companies, 10 teaching engagements, and 6 organizational leadership roles.
-* **National Achievements:** 1st Place Champion at ICOMFEST 2025, 2nd Place at PNBITC, and National Finalist at Universitas Lampung.
-* **Certifications:** 23 verified credentials, including Harvard University CS50, AWS Cloud Practitioner, and Coding Camp Full Stack Developer (Grade A).
-
-You can ask me questions in **English** or **Bahasa Indonesia**. What would you like to explore?`,
-      links: [
-        { label: "Explore About Profile", url: "/about" },
-        { label: "View Enterprise Projects", url: "/projects" },
-      ],
-      timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-    },
-  ]);
-
-  const messagesContainerRef = useRef(null);
-  const messagesEndRef = useRef(null);
-  const lastUserMessageRef = useRef(null);
-  const inputRef = useRef(null);
-  const chatWindowRef = useRef(null);
-  const launcherRef = useRef(null);
-  const suggestionsBarRef = useRef(null);
-  const prevIsOpenRef = useRef(false);
-
-  // Smoothly reset suggestions scroll to beginning whenever route pathname changes
-  useEffect(() => {
-    if (suggestionsBarRef.current) {
-      suggestionsBarRef.current.scrollTo({ left: 0, behavior: "smooth" });
-    }
-  }, [location?.pathname]);
-
-  // Scroll so that user's latest question and top of bot response stay in view
-  const scrollToLastUserQuestion = (behavior = "smooth") => {
-    const container = messagesContainerRef.current;
-    const target = lastUserMessageRef.current;
-    if (!container) return;
-
-    if (target) {
-      const containerRect = container.getBoundingClientRect();
-      const targetRect = target.getBoundingClientRect();
-      const offset = (targetRect.top - containerRect.top) + container.scrollTop - 12;
-      container.scrollTo({
-        top: Math.max(0, offset),
-        behavior,
-      });
-    } else {
-      if (behavior === "auto") {
-        container.scrollTop = container.scrollHeight;
-      } else {
-        container.scrollTo({
-          top: container.scrollHeight,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
-
-  // Auto scroll to bottom
-  const scrollToBottom = (behavior = "smooth") => {
-    const container = messagesContainerRef.current;
-    if (!container) return;
-    if (behavior === "auto") {
-      container.scrollTop = container.scrollHeight;
-    } else {
-      container.scrollTo({
-        top: container.scrollHeight,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Close chat on pointerdown outside modal and launcher or on Escape key
-  useEffect(() => {
-    if (!isOpen || isClosing) return;
-
-    const handlePointerDownOutside = (e) => {
-      if (
-        chatWindowRef.current &&
-        !chatWindowRef.current.contains(e.target) &&
-        launcherRef.current &&
-        !launcherRef.current.contains(e.target)
-      ) {
-        handleClose();
-      }
-    };
-
-    const handleKeyDownGlobal = (e) => {
-      if (e.key === "Escape") {
-        handleClose();
-      }
-    };
-
-    document.addEventListener("pointerdown", handlePointerDownOutside);
-    document.addEventListener("keydown", handleKeyDownGlobal);
-
-    return () => {
-      document.removeEventListener("pointerdown", handlePointerDownOutside);
-      document.removeEventListener("keydown", handleKeyDownGlobal);
-    };
-  }, [isOpen, isClosing, handleClose]);
-
-  // Lock body scroll on mobile when chat window is active
-  useEffect(() => {
-    if (!isOpen || isClosing) return;
-
-    const isMobile = typeof window !== "undefined" && window.innerWidth <= 640;
-    if (!isMobile) return;
-
-    const scrollY = window.scrollY;
-    const originalPosition = document.body.style.position;
-    const originalTop = document.body.style.top;
-    const originalWidth = document.body.style.width;
-
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
-
-    return () => {
-      document.body.style.position = originalPosition;
-      document.body.style.top = originalTop;
-      document.body.style.width = originalWidth;
-      window.scrollTo(0, scrollY);
-    };
-  }, [isOpen, isClosing]);
-
-  // Track visual viewport for mobile keyboard positioning
-  const [keyboardState, setKeyboardState] = useState({
-    isOpen: false,
-    top: null,
-    cardHeight: null,
-  });
-
-  const activeKeyboardState = isOpen && !isClosing
-    ? keyboardState
-    : { isOpen: false, top: null, cardHeight: null };
-
-  useEffect(() => {
-    if (!isOpen || isClosing) return;
-    if (typeof window === "undefined" || !window.visualViewport) return;
-
-    const vv = window.visualViewport;
-
-    const handleViewportChange = () => {
-      const isMobile = window.innerWidth <= 640;
-      if (!isMobile) {
-        setKeyboardState((prev) => (prev.isOpen ? { isOpen: false, top: null, cardHeight: null } : prev));
-        return;
-      }
-
-      const heightDiff = window.innerHeight - vv.height;
-      const isKeyboard = heightDiff > 140;
-
-      if (isKeyboard) {
-        const safeTop = 48;
-        const topPos = Math.max(8, (vv.offsetTop || 0) + safeTop);
-        const cardH = Math.max(260, vv.height - safeTop - 12);
-
-        setKeyboardState({
-          isOpen: true,
-          top: topPos,
-          cardHeight: cardH,
-        });
-
-        // Ensure messages list scrolls smoothly to bottom when keyboard opens
-        requestAnimationFrame(() => {
-          scrollToBottom("smooth");
-        });
-      } else {
-        setKeyboardState((prev) => (prev.isOpen ? { isOpen: false, top: null, cardHeight: null } : prev));
-      }
-    };
-
-    vv.addEventListener("resize", handleViewportChange);
-    vv.addEventListener("scroll", handleViewportChange);
-
-    return () => {
-      vv.removeEventListener("resize", handleViewportChange);
-      vv.removeEventListener("scroll", handleViewportChange);
-    };
-  }, [isOpen, isClosing]);
-
-  useEffect(() => {
-    if (!isOpen) {
-      prevIsOpenRef.current = false;
-      return;
-    }
-
-    const wasJustOpened = !prevIsOpenRef.current;
-    prevIsOpenRef.current = true;
-
-    // Case 1: Fresh conversation on open (only initial welcome card)
-    if (messages.length <= 1 && !isTyping) {
-      requestAnimationFrame(() => {
-        if (messagesContainerRef.current && messages.length <= 1) {
-          messagesContainerRef.current.scrollTop = 0;
-        }
-      });
-      return;
-    }
-
-    // Case 2: Reopening chat with existing conversation history
-    // Directly scroll to the very bottom so the latest bubble chat is immediately in view
-    if (wasJustOpened && messages.length > 1) {
-      const scrollToLatest = () => {
-        if (messagesContainerRef.current) {
-          messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
-        }
-      };
-
-      scrollToLatest();
-      requestAnimationFrame(scrollToLatest);
-
-      const timer1 = setTimeout(scrollToLatest, 60);
-      const timer2 = setTimeout(scrollToLatest, 180);
-      const timer3 = setTimeout(scrollToLatest, 320);
-
-      if (typeof window !== "undefined" && window.innerWidth > 640) {
-        inputRef.current?.focus({ preventScroll: true });
-      }
-
-      return () => {
-        clearTimeout(timer1);
-        clearTimeout(timer2);
-        clearTimeout(timer3);
-      };
-    }
-
-    // Case 3: While chat is already open, user sends message or isTyping changes
-    if (isTyping) {
-      scrollToBottom("smooth");
-    } else {
-      // When bot response arrives during active session, scroll so user question and top of bot response stay in view
-      requestAnimationFrame(() => {
-        scrollToLastUserQuestion("smooth");
-      });
-    }
-
-    // Only auto-focus on desktop so mobile on-screen keyboard does not aggressively pop up
-    if (typeof window !== "undefined" && window.innerWidth > 640) {
-      inputRef.current?.focus({ preventScroll: true });
-    }
-  }, [isOpen, messages, isTyping]);
-
-  // Handle send message
-  const handleSendMessage = useCallback((customQuery = null) => {
-    const query = (customQuery || inputValue).trim();
-    if (!query) return;
-
-    const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-
-    // Append user message
-    const userMessage = {
-      id: "user-" + Date.now(),
-      sender: "user",
-      text: query,
-      timestamp: time,
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    if (!customQuery) setInputValue("");
-    setIsTyping(true);
-
-    // Simulate natural thinking delay
-    setTimeout(() => {
-      const answer = findBestAnswer(query);
-
-      const botMessage = {
-        id: "bot-" + Date.now(),
-        sender: "bot",
-        title: answer.title,
-        text: answer.text,
-        links: answer.links,
-        timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-      };
-
-      setMessages((prev) => [...prev, botMessage]);
-      setIsTyping(false);
-    }, 400);
-  }, [inputValue, setMessages, setInputValue, setIsTyping]);
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage();
-    }
-  };
-
-  const handleLinkClick = (url) => {
-    if (!url) return;
-    if (url.startsWith("http") || url.startsWith("mailto:")) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } else {
-      navigate(url);
-    }
-  };
-
-  const chatWindowDynamicStyle = activeKeyboardState.isOpen
-    ? {
-        position: "fixed",
-        top: `${activeKeyboardState.top}px`,
-        bottom: "auto",
-        height: `${activeKeyboardState.cardHeight}px`,
-        maxHeight: `${activeKeyboardState.cardHeight}px`,
-        transition: "none",
-      }
-    : undefined;
-
-  const lastUserMessageIndex = messages.map((m) => m.sender).lastIndexOf("user");
-
   return (
     <>
-      {/* Chat Window Modal */}
-      {isOpen && (
-        <section
-          ref={chatWindowRef}
-          className={`${styles.chatWindow} ${isClosing ? styles.chatWindowClosing : styles.chatWindowOpening} ${activeKeyboardState.isOpen ? styles.chatWindowKeyboardOpen : ""}`}
-          style={chatWindowDynamicStyle}
-          onAnimationEnd={handleAnimationEnd}
-          role="dialog"
-          aria-label="Ask Adyvka Assistant"
-          aria-modal="true"
-        >
-          {/* Header (Clean minimal, human, single close button) */}
-          <header className={styles.chatHeader}>
-            <div className={styles.headerLeft}>
-              <div className={styles.botAvatar}>
-                <div className={styles.botAvatarIconWrap}>
-                  <ChatBotIcon size={20} />
-                </div>
-                <span className={styles.avatarLiveDot} aria-hidden="true" />
-              </div>
-              <div className={styles.headerInfo}>
-                <span className={styles.botName}>Adyvka Assistant</span>
-                <span className={styles.botStatus}>
-                  <span className={styles.statusLabel}>Portfolio AI</span>
-                  <span className={styles.statusDivider} aria-hidden="true">•</span>
-                  <span className={styles.statusLive}>Online</span>
-                </span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              className={styles.headerCloseBtn}
-              onClick={handleClose}
-              title="Close conversation"
-              aria-label="Close conversation"
-            >
-              <CloseIcon size={18} strokeWidth={2.4} />
-            </button>
-          </header>
-
-          {/* Dynamic Contextual Suggestions Bar */}
-          {!activeKeyboardState.isOpen && (
-            <div
-              ref={suggestionsBarRef}
-              className={styles.suggestionsBar}
-              aria-label="Contextual Quick Suggestion Topics"
-            >
-              {contextualSuggestions.map((sug) => (
-                <button
-                  key={sug.id}
-                  type="button"
-                  className={styles.suggestionChip}
-                  onClick={() => handleSendMessage(sug.query)}
-                >
-                  {sug.label}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Messages Area */}
-          <div ref={messagesContainerRef} className={styles.messagesList}>
-            {messages.map((msg, idx) => (
-              <div
-                key={msg.id}
-                ref={idx === lastUserMessageIndex ? lastUserMessageRef : null}
-                className={`${styles.messageRow} ${
-                  msg.sender === "user" ? styles.userRow : styles.botRow
-                }`}
-              >
-                <div
-                  className={`${styles.messageBubble} ${
-                    msg.sender === "user" ? styles.userBubble : styles.botBubble
-                  } ${msg.links && msg.links.length > 0 ? styles.bubbleWithLinks : ""}`}
-                >
-                  {msg.title && <div className={styles.messageTitle}>{msg.title}</div>}
-                  <FormattedText text={msg.text} />
-
-                  {/* Action Link Buttons */}
-                  {msg.links && msg.links.length > 0 && (
-                    <div className={styles.linkButtonsWrap}>
-                      {msg.links.map((link, lIdx) => (
-                        <button
-                          key={lIdx}
-                          type="button"
-                          className={styles.linkBtn}
-                          onClick={() => handleLinkClick(link.url)}
-                        >
-                          <span className={styles.linkBtnLabel}>{link.label}</span>
-                          <ArrowUpRightIcon size={12} className={styles.linkBtnIcon} />
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className={styles.messageMeta}>
-                    <span>{msg.timestamp}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Typing Indicator */}
-            {isTyping && (
-              <div className={`${styles.messageRow} ${styles.botRow}`}>
-                <div className={`${styles.messageBubble} ${styles.botBubble} ${styles.typingBubble}`}>
-                  <span className={styles.typingDot} />
-                  <span className={styles.typingDot} />
-                  <span className={styles.typingDot} />
-                </div>
-              </div>
-            )}
-
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Input Form */}
-          <form
-            className={styles.inputForm}
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSendMessage();
-            }}
-          >
-            <input
-              ref={inputRef}
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Ask anything about Adyvka... (English / Indonesia)"
-              className={styles.textInput}
-              aria-label="Type question"
-            />
-            <button
-              type="submit"
-              disabled={!inputValue.trim() || isTyping}
-              className={styles.sendBtn}
-              aria-label="Send Message"
-            >
-              <SendIcon size={16} />
-            </button>
-          </form>
-        </section>
+      {/* Heavy Chat Window & Knowledge Base Modal only rendered when open */}
+      {(isOpen || isClosing) && (
+        <Suspense fallback={null}>
+          <ChatWindow
+            isOpen={isOpen}
+            isClosing={isClosing}
+            onClose={handleClose}
+            onAnimationEnd={handleAnimationEnd}
+            launcherRef={launcherRef}
+          />
+        </Suspense>
       )}
 
-      {/* Floating Circular Toggle Button & Notification Bubble */}
+      {/* Lightweight Floating Circular Toggle Button & Notification Bubble */}
       <div
         ref={launcherRef}
-        className={`${styles.launcherWrapper} ${activeKeyboardState.isOpen ? styles.launcherHiddenWhenKeyboard : ""}`}
+        className={styles.launcherWrapper}
+        onPointerEnter={prefetchChatWindow}
+        onTouchStart={prefetchChatWindow}
       >
-        {/* Floating Notification Badge ("Ask Adyvka") */}
         <div
           className={`${styles.bubbleBadge} ${
             currentBubbleState === "visible"

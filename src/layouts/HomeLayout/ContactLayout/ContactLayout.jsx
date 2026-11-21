@@ -28,8 +28,12 @@ export default function ContactLayout() {
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
 
-    // SENIOR FIX: Gating. Jika ini perangkat layar sentuh (HP), hentikan fungsi.
-    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches)
+    // Gating: Jika ini perangkat layar sentuh (HP / Tablet), hentikan fungsi.
+    if (
+      window.innerWidth <= 1024 ||
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+      "ontouchstart" in window
+    )
       return;
 
     if (frameRef.current) cancelAnimationFrame(frameRef.current);

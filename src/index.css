@@ -358,6 +358,13 @@ textarea {
   );
 }
 
+/* Nonaktifkan efek cahaya kursor di layar mobile dan layar sentuh */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .spotlight {
+    display: none !important;
+  }
+}
+
 /* ============================================
    METEOR SHOWER (LUXURY LIGHT BEAMS)
    ============================================ */
@@ -608,6 +615,14 @@ textarea {
   animation: aurora-drift 22s ease-in-out infinite alternate-reverse;
 }
 
+@media (max-width: 768px) {
+  .aurora::before,
+  .aurora::after {
+    filter: blur(40px);
+    animation: none;
+  }
+}
+
 @keyframes aurora-drift {
   0% {
     transform: translateX(-50%) translateY(0) scale(1);
@@ -648,6 +663,16 @@ textarea {
 
 .card:hover::before {
   opacity: 1;
+}
+
+/* Nonaktifkan efek glow hover kartu di mobile/touch */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .card::before {
+    display: none !important;
+  }
+  .card:hover::before {
+    opacity: 0 !important;
+  }
 }
 
 /* ============================================
@@ -790,6 +815,13 @@ textarea {
     black,
     transparent 40%
   );
+}
+
+/* Nonaktifkan efek titik-titik kursor di mobile/touch */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .global-dots {
+    display: none !important;
+  }
 }
 
 /* ============================================

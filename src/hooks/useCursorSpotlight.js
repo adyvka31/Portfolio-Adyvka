@@ -8,14 +8,15 @@ export function useCursorSpotlight() {
   const { pathname } = useLocation(); // Untuk mendeteksi perpindahan halaman
 
   useEffect(() => {
-    // 1. Matikan di mobile & mode hemat baterai/motion
-    const isMobile = window.matchMedia(
-      "(hover: none) and (pointer: coarse)",
-    ).matches;
+    // 1. Matikan di mobile & tablet layar sentuh & mode hemat baterai/motion
+    const isMobileOrTouch =
+      window.innerWidth <= 1024 ||
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+      "ontouchstart" in window;
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    if (isMobile || reducedMotion) return;
+    if (isMobileOrTouch || reducedMotion) return;
 
     // 2. Trik Anti-Reflow: Simpan kordinat ABSOLUT (terhadap dokumen)
     const refreshDotsCache = () => {
