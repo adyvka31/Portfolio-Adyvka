@@ -411,3 +411,9 @@
     justify-content: center;
   }
 }
+
+/* Optimasi Virtual Rendering untuk off-screen cards */
+.cardItemWrap {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 420px;
+}

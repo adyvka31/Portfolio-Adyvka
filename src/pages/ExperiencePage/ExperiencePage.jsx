@@ -240,7 +240,7 @@ export default function ExperiencePage() {
               <NativeReveal
                 key={i}
                 delay={(i % 3) * 0.1}
-                className="reveal-slide-up"
+                className={`reveal-slide-up ${styles.expItemWrap}`}
               >
                 <Card variant="bento" item={item} />
               </NativeReveal>
@@ -271,7 +271,7 @@ export default function ExperiencePage() {
               <NativeReveal
                 key={i}
                 delay={(i % 3) * 0.1}
-                className="reveal-slide-up"
+                className={`reveal-slide-up ${styles.expItemWrap}`}
               >
                 <Card variant="bento" item={item} />
               </NativeReveal>

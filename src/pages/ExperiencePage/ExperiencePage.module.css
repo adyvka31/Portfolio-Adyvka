@@ -357,6 +357,12 @@
   position: relative;
 }
 
+/* Virtual rendering untuk kartu experience */
+.expItemWrap {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 320px;
+}
+
 @media (min-width: 768px) {
   .bentoGrid {
     grid-template-columns: repeat(2, 1fr);

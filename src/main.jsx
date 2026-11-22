@@ -23,6 +23,12 @@ if (typeof window !== "undefined") {
       window.location.reload();
     }
   });
+  // Service Worker Registration untuk Offline Mode dan Pemuatan Instan 0ms
+  if (import.meta.env.PROD && "serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    });
+  }
 }
 
 // ViteReactSSG otomatis membungkus aplikasi dengan Data Router

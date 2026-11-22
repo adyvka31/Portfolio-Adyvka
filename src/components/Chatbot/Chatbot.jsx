@@ -47,23 +47,10 @@ function Chatbot() {
   const isChatActive = isOpen && !isClosing;
   const currentBubbleState = isChatActive ? "hidden" : bubbleState;
 
-  // Prefetch ChatWindow when user idles or hovers over launcher
+  // Intent-driven prefetch: Dipanggil secara instan saat kursor mendekati launcher atau layar disentuh
   const prefetchChatWindow = useCallback(() => {
     import("./ChatWindow");
   }, []);
-
-  useEffect(() => {
-    // Prefetch during browser idle time (4s after initial load)
-    if (typeof window !== "undefined") {
-      if ("requestIdleCallback" in window) {
-        const id = window.requestIdleCallback(prefetchChatWindow, { timeout: 4500 });
-        return () => window.cancelIdleCallback(id);
-      } else {
-        const timer = setTimeout(prefetchChatWindow, 4000);
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [prefetchChatWindow]);
 
   const handleOpen = () => {
     setIsClosing(false);

@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   build: {
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     target: ["es2022", "chrome100", "safari15", "firefox100", "edge100"],
     rollupOptions: {
       output: {
@@ -19,10 +19,15 @@ export default defineConfig({
           if (assetInfo.name && assetInfo.name.endsWith(".woff2")) {
             return "assets/fonts/[name][extname]";
           }
+          if (assetInfo.name && assetInfo.name.includes("hero-portrait")) {
+            return "assets/images/[name][extname]";
+          }
           return "assets/[name]-[hash][extname]";
         },
         manualChunks(id) {
           if (id.endsWith(".css") || id.includes(".css?")) return;
+          if (id.includes("src/data/chatbotKnowledge")) return "chatbot-knowledge";
+          if (id.includes("src/data/projectDetails")) return "project-details";
           if (!id.includes("node_modules")) return;
           if (id.includes("react-router")) return "router";
           if (

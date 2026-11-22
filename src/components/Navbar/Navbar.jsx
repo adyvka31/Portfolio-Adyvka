@@ -41,9 +41,16 @@ export default function Navbar() {
   const [cvOpen, setCvOpen] = useState(false);
   const location = useLocation();
 
-  // Handle Scroll Transparency
+  // Handle Scroll Transparency dengan state guard nol beban komputasi
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    let prevScrolled = typeof window !== "undefined" && window.scrollY > 20;
+    const onScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== prevScrolled) {
+        prevScrolled = isScrolled;
+        setScrolled(isScrolled);
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

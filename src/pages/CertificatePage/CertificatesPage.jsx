@@ -159,7 +159,7 @@ export default function CertificatesPage() {
                 <NativeReveal
                   key={item.slug}
                   delay={(i % 3) * 0.1}
-                  className="reveal-slide-up"
+                  className={`reveal-slide-up ${styles.certItemWrap}`}
                 >
                   <Card variant="certificate" item={item} />
                 </NativeReveal>

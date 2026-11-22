@@ -182,7 +182,7 @@ export default function ProjectsPage() {
                       <div key={item.slug} className={styles.bookCardWrapper}>
                         <NativeReveal
                           delay={i * 0.1}
-                          className="reveal-slide-up"
+                          className={`reveal-slide-up ${styles.cardItemWrap}`}
                         >
                           <BookCard item={item} onRead={handleReadBook} />
                         </NativeReveal>
@@ -194,7 +194,7 @@ export default function ProjectsPage() {
                     <NativeReveal
                       key={item.slug}
                       delay={i * 0.1}
-                      className="reveal-slide-up"
+                      className={`reveal-slide-up ${styles.cardItemWrap}`}
                     >
                       <Card variant="project" item={item} />
                     </NativeReveal>
