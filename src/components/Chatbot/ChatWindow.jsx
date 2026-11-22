@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { findBestAnswer, getContextualSuggestions } from "../../data/chatbotKnowledge";
+import { getContextualSuggestions } from "../../data/chatbotSuggestions";
 import styles from "./Chatbot.module.css";
 
 // SVG Icons
@@ -152,6 +152,14 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   const chatWindowRef = useRef(null);
   const suggestionsBarRef = useRef(null);
   const prevIsOpenRef = useRef(false);
+  const knowledgeEngineRef = useRef(null);
+
+  // Preload knowledge base secara asinkron saat modal chat dibuka
+  useEffect(() => {
+    import("../../data/chatbotKnowledge").then((mod) => {
+      knowledgeEngineRef.current = mod;
+    });
+  }, []);
 
   // Focus input when chat window becomes active on desktop only (avoid triggering virtual keyboard on mobile)
   useEffect(() => {
@@ -386,8 +394,13 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
     if (!customQuery) setInputValue("");
     setIsTyping(true);
 
-    setTimeout(() => {
-      const answer = findBestAnswer(query);
+    setTimeout(async () => {
+      let engine = knowledgeEngineRef.current;
+      if (!engine) {
+        engine = await import("../../data/chatbotKnowledge");
+        knowledgeEngineRef.current = engine;
+      }
+      const answer = engine.findBestAnswer(query);
 
       const botMessage = {
         id: "bot-" + Date.now(),

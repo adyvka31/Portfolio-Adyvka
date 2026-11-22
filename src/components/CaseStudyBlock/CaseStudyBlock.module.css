@@ -33,10 +33,10 @@
   font-weight: 500;
   letter-spacing: -0.02em;
   margin: 0;
-  color: #fff;
+  color: var(--color-white);
 }
 .body {
-  color: rgba(207, 207, 214, 0.85);
+  color: var(--ink-100-a85);
   font-size: 1.0625rem;
   line-height: 1.7;
 }

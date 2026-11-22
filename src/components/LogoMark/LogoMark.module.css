@@ -8,11 +8,11 @@
   border-radius: 9999px;
   background: radial-gradient(
     circle at center,
-    rgba(124, 242, 255, 0.15) 0%,
-    rgba(11, 13, 20, 0.9) 100%
+    var(--accent-a15-perc) 0%,
+    var(--tint-panel-10) 100%
   );
-  border: 1px solid rgba(124, 242, 255, 0.35);
-  box-shadow: 0 0 10px rgba(124, 242, 255, 0.15);
+  border: 1px solid var(--accent-a35);
+  box-shadow: 0 0 10px var(--accent-a15-perc);
   overflow: visible;
   flex-shrink: 0;
   transition:
@@ -23,7 +23,7 @@
 
 .logoMark:hover {
   border-color: var(--accent-glow);
-  box-shadow: 0 0 16px rgba(124, 242, 255, 0.35);
+  box-shadow: 0 0 16px var(--accent-a35);
   transform: scale(1.05);
 }
 

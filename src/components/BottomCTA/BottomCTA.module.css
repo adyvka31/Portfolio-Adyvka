@@ -37,7 +37,7 @@
 
 .description {
   margin-top: clamp(1.25rem, 3vw, 1.5rem);
-  color: rgba(207, 207, 214, 0.75);
+  color: var(--ink-100-a75);
   font-size: clamp(0.95rem, 2vw, 1.0625rem); /* Fluid font size */
   line-height: 1.6;
   max-width: 32rem;
@@ -51,7 +51,7 @@
   justify-content: center;
   gap: 0.5rem;
   margin-top: clamp(2rem, 5vw, 2.5rem);
-  background: #fff;
+  background: var(--color-white);
   color: var(--ink-950);
   padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 9999px;
@@ -65,13 +65,13 @@
 .btn:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.2),
-    0 0 15px rgba(255, 255, 255, 0.1);
+    0 10px 20px var(--black-a20),
+    0 0 15px var(--white-a10);
 }
 
 .btn:focus-visible {
   outline: none;
   border-color: var(--accent-glow);
-  box-shadow: 0 0 0 2px rgba(124, 242, 255, 0.3);
+  box-shadow: 0 0 0 2px var(--accent-a30);
   transform: translateY(-2px);
 }

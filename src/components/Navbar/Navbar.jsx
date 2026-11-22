@@ -13,8 +13,16 @@ const NAV = [
   { to: "/certificates", label: "Certificates" },
 ];
 
+const MOBILE_NAV = [
+  { to: "/", label: "Home", end: true },
+  ...NAV,
+];
+
 const handlePrefetch = (path) => {
   switch (path) {
+    case "/":
+      import("../../pages/HomePage/HomePage");
+      break;
     case "/about":
       import("../../pages/AboutPage/AboutPage");
       break;
@@ -147,11 +155,14 @@ export default function Navbar() {
               ✕
             </button>
             <ul className={styles.sheetLinks}>
-              {NAV.map((l) => (
+              {MOBILE_NAV.map((l) => (
                 <li key={l.to}>
                   <NavLink
                     to={l.to}
-                    className={styles.sheetLink}
+                    end={l.end}
+                    className={({ isActive }) =>
+                      `${styles.sheetLink} ${isActive ? styles.sheetLinkActive : ""}`
+                    }
                     onTouchStart={() => handlePrefetch(l.to)}
                   >
                     {l.label}

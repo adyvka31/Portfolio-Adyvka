@@ -49,7 +49,7 @@
   color: var(--ink-200);
   padding: 0.35rem 0.875rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--white-a3);
   border: 1px solid var(--line);
   white-space: nowrap;
   flex-shrink: 0;
@@ -59,14 +59,14 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #f59e0b;
-  box-shadow: 0 0 10px #f59e0b;
+  background: var(--color-amber-500);
+  box-shadow: 0 0 10px var(--color-amber-500);
   animation: pulseGlow 2.5s infinite ease-in-out;
 }
 
 .statusPulseLive {
-  background: #10b981;
-  box-shadow: 0 0 10px #10b981;
+  background: var(--color-emerald-500);
+  box-shadow: 0 0 10px var(--color-emerald-500);
 }
 
 @keyframes pulseGlow {

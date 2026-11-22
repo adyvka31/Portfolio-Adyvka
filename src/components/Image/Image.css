@@ -5,7 +5,7 @@
 }
 
 .img-skeleton-container.is-loading:not(.is-priority) {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: var(--white-a3);
 }
 
 .img-skeleton-container.is-loaded {
@@ -17,9 +17,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.02) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.02) 100%
+    var(--white-a2) 0%,
+    var(--white-a8) 50%,
+    var(--white-a2) 100%
   );
   background-size: 200% 100%;
   animation: img-shimmer 1.8s infinite ease-in-out;

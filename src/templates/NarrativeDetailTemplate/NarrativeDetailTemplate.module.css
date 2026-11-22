@@ -67,32 +67,32 @@
   gap: 0.375rem;
   font-family: "Geist Mono", monospace;
   font-size: 0.8rem;
-  color: var(--accent-glow, #7cf2ff);
+  color: var(--accent-glow, var(--accent-glow));
   padding: 0.45rem 0.85rem;
   border-radius: 9999px;
-  background: rgba(124, 242, 255, 0.05);
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  background: var(--accent-a5);
+  border: 1px solid var(--accent-a20);
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .linkBtn:hover {
-  background: rgba(124, 242, 255, 0.12);
-  border-color: rgba(124, 242, 255, 0.4);
+  background: var(--accent-a12);
+  border-color: var(--accent-a40);
   transform: translateY(-1px);
 }
 
 .linkBtnBook {
-  background: rgba(124, 242, 255, 0.08);
-  border-color: rgba(124, 242, 255, 0.35);
-  box-shadow: 0 0 12px rgba(124, 242, 255, 0.1);
+  background: var(--accent-a8);
+  border-color: var(--accent-a35);
+  box-shadow: 0 0 12px var(--accent-a10);
   font-weight: 500;
 }
 
 .linkBtnBook:hover {
-  background: rgba(124, 242, 255, 0.18);
-  border-color: rgba(124, 242, 255, 0.6);
-  box-shadow: 0 0 18px rgba(124, 242, 255, 0.2);
+  background: var(--accent-a18);
+  border-color: var(--accent-a60);
+  box-shadow: 0 0 18px var(--accent-a20);
 }
 
 /* ==========================================================================
@@ -134,7 +134,7 @@
 }
 
 .storyQuoteBox {
-  background: rgba(255, 255, 255, 0.015);
+  background: var(--white-a15);
   border-left: 3px solid var(--accent-glow);
   padding: 1.75rem 2rem;
   border-radius: 0 0.75rem 0.75rem 0;
@@ -186,11 +186,11 @@
 }
 
 .chapterCardFeatured {
-  border-color: rgba(124, 242, 255, 0.22);
+  border-color: var(--accent-a22);
 }
 
 .chapterCard:hover {
-  border-color: rgba(124, 242, 255, 0.4);
+  border-color: var(--accent-a40);
 }
 
 .chapterHeader {
@@ -246,7 +246,7 @@
 }
 
 .pillarCard:hover {
-  border-color: rgba(124, 242, 255, 0.35);
+  border-color: var(--accent-a35);
 }
 
 .pillarTop {
@@ -313,7 +313,7 @@
 }
 
 .curriculumCard:hover {
-  border-color: rgba(124, 242, 255, 0.35);
+  border-color: var(--accent-a35);
 }
 
 .curriculumTop {
@@ -407,7 +407,7 @@
 }
 
 .takeawayCard:hover {
-  border-color: rgba(124, 242, 255, 0.35);
+  border-color: var(--accent-a35);
 }
 
 .takeawayTitle {

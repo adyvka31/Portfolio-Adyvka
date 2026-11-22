@@ -11,8 +11,8 @@
 
 .bar {
   height: 100%;
-  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.8), 0 0 6px rgba(129, 140, 248, 0.6);
+  background: linear-gradient(90deg, var(--color-sky-400) 0%, var(--color-indigo-400) 50%, var(--color-emerald-400) 100%);
+  box-shadow: 0 0 12px var(--color-sky-a80), 0 0 6px var(--color-purple-a70);
   border-radius: 0 2px 2px 0;
   transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
@@ -23,7 +23,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #38bdf8, 0 0 5px #38bdf8;
+  box-shadow: 0 0 10px var(--color-sky-400), 0 0 5px var(--color-sky-400);
   opacity: 1;
   transform: rotate(3deg) translate(0px, -4px);
 }

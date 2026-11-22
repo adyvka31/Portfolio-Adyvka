@@ -22,7 +22,7 @@
   height: 40vw;
   background: radial-gradient(
     circle,
-    rgba(124, 242, 255, 0.08) 0%,
+    var(--accent-a8) 0%,
     transparent 60%
   );
   filter: blur(60px);
@@ -41,7 +41,7 @@
   height: 40vw;
   background: radial-gradient(
     circle,
-    rgba(180, 130, 255, 0.06) 0%,
+    var(--color-violet-glow-2) 0%,
     transparent 60%
   ); /* Warna ungu/biru halus */
   filter: blur(60px);
@@ -103,8 +103,8 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(255, 255, 255, 0.08) 20%,
-    rgba(255, 255, 255, 0.08) 80%,
+    var(--white-a8) 20%,
+    var(--white-a8) 80%,
     transparent
   );
   pointer-events: none;
@@ -156,10 +156,10 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--white-a8);
   border-radius: 1rem;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--white-a8);
   max-width: 48rem;
   width: 100%;
 }
@@ -254,7 +254,7 @@
 .metaValue {
   font-size: clamp(0.875rem, 1.6vw, 1.05rem);
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   white-space: normal; /* Mengizinkan teks panjang turun rapi tanpa terpotong */
   line-height: 1.35;

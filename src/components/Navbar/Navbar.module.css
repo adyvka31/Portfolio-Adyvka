@@ -37,8 +37,8 @@
 .header.scrolled .nav {
   padding: 0.625rem 1.25rem;
   border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background-color: rgba(15, 15, 17, 0.8);
+  border: 1px solid var(--white-a6);
+  background-color: var(--tint-dark-15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -84,12 +84,12 @@
 }
 
 .link {
-  color: rgba(207, 207, 214, 0.8);
+  color: var(--ink-100);
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .actions {
@@ -104,7 +104,7 @@
   gap: 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
-  background: #fff;
+  background: var(--color-white);
   color: var(--ink-950);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
@@ -114,7 +114,7 @@
 }
 
 .cta:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--white-a90);
   transform: translateY(-1px);
 }
 
@@ -124,11 +124,11 @@
   gap: 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--white-a5);
+  border: 1px solid var(--white-a10);
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -136,7 +136,7 @@
 }
 
 .ctaSecondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white-a10);
   border-color: var(--accent-glow);
   transform: translateY(-1px);
 }
@@ -201,7 +201,7 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--black-a80);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 999999;
@@ -222,15 +222,15 @@
   max-width: 900px;
   height: 90vh;
   background: var(--ink-950);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--white-a15-perc);
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
   box-shadow:
-    0 25px 50px -12px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(124, 242, 255, 0.05);
+    0 25px 50px -12px var(--black-a70),
+    0 0 40px var(--accent-a5);
   animation: modalSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -278,9 +278,9 @@
 
 /* SENIOR FIX: Menambahkan titik (.) yang hilang pada selector class */
 .closeBtn {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--white-a5);
   border: 1px solid var(--line);
-  color: #fff;
+  color: var(--color-white);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -293,7 +293,7 @@
 }
 
 .closeBtn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--white-a15-perc);
   transform: rotate(90deg);
 }
 
@@ -307,7 +307,7 @@
 }
 
 .linkActive {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .linkActive::after {
@@ -330,8 +330,8 @@
   gap: 4px;
   width: 32px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--white-a5);
+  border: 1px solid var(--white-a10);
   border-radius: 8px;
   padding: 0 8px;
 }
@@ -339,7 +339,7 @@
 .burger span {
   display: block;
   height: 1.5px;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 2px;
 }
 
@@ -353,7 +353,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--black-a80);
 }
 
 .sheetInner {
@@ -363,7 +363,7 @@
   bottom: 0;
   width: min(360px, 85vw);
   background: var(--ink-900);
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid var(--white-a8);
   padding: 5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
@@ -386,9 +386,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--white-a5);
+  border: 1px solid var(--white-a10);
+  color: var(--color-white);
 }
 
 .sheetLinks {
@@ -405,12 +405,17 @@
   padding: 1rem 0;
   font-size: 1.5rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--white-a70);
+  border-bottom: 1px solid var(--white-a5);
+  transition: color 0.2s ease;
 }
 
 .sheetLink:hover {
-  color: #fff;
+  color: var(--color-white);
+}
+
+.sheetLinkActive {
+  color: var(--accent-glow) !important;
 }
 
 @media (max-width: 640px) {
@@ -436,13 +441,13 @@
 
 .sheetDivider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white-a10);
   margin: 1rem 0;
 }
 
 .externalLink {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--white-a70);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -451,5 +456,5 @@
 }
 
 .externalLink:hover {
-  color: white;
+  color: var(--color-white);
 }

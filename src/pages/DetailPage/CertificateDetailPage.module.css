@@ -23,14 +23,14 @@
   width: 100%;
   border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 50px var(--black-a50);
   cursor: pointer;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fullWidthCertCard:hover {
-  border-color: rgba(124, 242, 255, 0.3);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(124, 242, 255, 0.08);
+  border-color: var(--accent-a30);
+  box-shadow: 0 25px 60px var(--black-a60), 0 0 35px var(--accent-a8);
   transform: translateY(-2px);
 }
 
@@ -40,8 +40,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.875rem 1.25rem;
-  background: rgba(20, 20, 24, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--tint-panel-33);
+  border-bottom: 1px solid var(--white-a6);
 }
 
 .chromeDots {
@@ -57,15 +57,15 @@
 }
 
 .dotRed {
-  background: #ff5f56;
+  background: var(--color-mac-close);
 }
 
 .dotYellow {
-  background: #ffbd2e;
+  background: var(--color-mac-minimize);
 }
 
 .dotGreen {
-  background: #27c93f;
+  background: var(--color-mac-maximize);
 }
 
 .chromeTitle {
@@ -91,11 +91,11 @@
   gap: 0.4rem;
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-emerald-500);
+  background: var(--color-emerald-a10);
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--color-emerald-a20);
 }
 
 /* CERTIFICATE IMAGE WRAP (FULL-WIDTH PRESENTATION) */
@@ -104,7 +104,7 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   max-height: 640px;
-  background: #070709;
+  background: var(--ink-950);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +135,7 @@
   background: linear-gradient(
     to bottom,
     transparent 75%,
-    rgba(7, 7, 8, 0.6) 100%
+    var(--bg-glass-60) 100%
   );
   pointer-events: none;
 }
@@ -149,10 +149,10 @@
   gap: 0.5rem;
   padding: 0.45rem 0.875rem;
   border-radius: 9999px;
-  background: rgba(0, 0, 0, 0.75);
+  background: var(--black-a75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--white-a20);
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
   color: var(--ink-100);
@@ -161,9 +161,9 @@
 }
 
 .fullWidthCertCard:hover .expandBadge {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(0, 0, 0, 0.9);
+  color: var(--color-white);
+  border-color: var(--white-a40);
+  background: var(--black-a90);
 }
 
 /* FOOTER METADATA STRIP */
@@ -172,8 +172,8 @@
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background: rgba(20, 20, 24, 0.85);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--tint-panel-31);
+  border-top: 1px solid var(--white-a6);
 }
 
 .footerItem {
@@ -192,7 +192,7 @@
 
 .footerVal {
   font-size: 0.875rem;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -236,7 +236,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 0.875rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--white-a5);
 }
 
 .specRow:last-of-type {
@@ -289,9 +289,9 @@
   width: 100%;
   padding: 0.75rem 1.25rem;
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #fff;
+  background: var(--white-a5);
+  border: 1px solid var(--white-a12);
+  color: var(--color-white);
   font-family: "Geist Mono", monospace;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -300,8 +300,8 @@
 }
 
 .verifyBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: var(--white-a10);
+  border-color: var(--white-a25);
   transform: translateY(-1px);
 }
 
@@ -315,8 +315,8 @@
 .panelCard {
   padding: 1.75rem;
   border-radius: 1.25rem;
-  background: rgba(14, 14, 18, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--tint-panel-16);
+  border: 1px solid var(--white-a8);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -327,15 +327,15 @@
   align-items: center;
   gap: 0.75rem;
   padding-bottom: 0.875rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--white-a6);
 }
 
 .panelIcon {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--white-a4);
+  border: 1px solid var(--white-a8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,7 +345,7 @@
 .panelTitle {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -371,7 +371,7 @@
 .checkIcon {
   flex-shrink: 0;
   margin-top: 0.25rem;
-  color: #10b981;
+  color: var(--color-emerald-500);
 }
 
 .applicationText {
@@ -388,7 +388,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.92);
+  background: var(--black-a92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   display: flex;
@@ -402,11 +402,11 @@
   position: relative;
   max-width: 64rem;
   width: 100%;
-  background: rgba(14, 14, 18, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--tint-panel-19);
+  border: 1px solid var(--white-a12);
   border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 60px var(--black-a70);
   display: flex;
   flex-direction: column;
 }
@@ -416,13 +416,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--white-a8);
 }
 
 .lightboxTitle {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -440,8 +440,8 @@
 }
 
 .lightboxCloseBtn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  background: var(--white-a8);
 }
 
 .lightboxImageWrap {
@@ -449,7 +449,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #070709;
+  background: var(--ink-950);
 }
 
 .lightboxImg {
@@ -488,8 +488,8 @@
   margin-top: 1.25rem;
   padding: 1.25rem;
   border-radius: 1rem;
-  background: rgba(16, 185, 129, 0.05);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: var(--color-emerald-a5);
+  border: 1px solid var(--color-emerald-a20);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -506,11 +506,11 @@
   font-size: 0.6875rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #34d399;
-  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-emerald-400);
+  background: var(--color-emerald-a12);
   padding: 0.25rem 0.6rem;
   border-radius: 9999px;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid var(--color-emerald-a25);
 }
 
 .transcriptGradeBody {
@@ -523,7 +523,7 @@
   font-family: "Geist Mono", monospace;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .transcriptCourseName {
@@ -549,13 +549,13 @@
   gap: 0.4rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #34d399;
+  color: var(--color-emerald-400);
   text-decoration: none;
   transition: color 0.2s ease, gap 0.2s ease;
 }
 
 .viewTranscriptLink:hover {
-  color: #6ee7b7;
+  color: var(--color-emerald-300);
   gap: 0.6rem;
 }
 
@@ -563,7 +563,7 @@
 .transcriptSection {
   width: 100%;
   padding: clamp(2.5rem, 5vw, 4rem) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--white-a6);
 }
 
 .transcriptHeader {
@@ -577,7 +577,7 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #34d399;
+  color: var(--color-emerald-400);
   margin-bottom: 0.5rem;
 }
 
@@ -585,7 +585,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 0 0 0.75rem;
 }
 
@@ -619,8 +619,8 @@
 .metricCard {
   padding: 1.25rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--white-a2);
+  border: 1px solid var(--white-a7);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -630,7 +630,7 @@
   font-family: "Geist Mono", monospace;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .metricLabel {
@@ -649,12 +649,12 @@
   margin-bottom: 2.5rem;
   padding: clamp(1.5rem, 3vw, 2rem);
   border-radius: 1.25rem;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: linear-gradient(135deg, var(--color-emerald-a8) 0%, var(--accent-a4) 100%);
+  border: 1px solid var(--color-emerald-a25);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px var(--black-a30);
 }
 
 .capstoneHeaderRow {
@@ -668,11 +668,11 @@
 .capstoneBadge {
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
-  color: #34d399;
-  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-emerald-400);
+  background: var(--color-emerald-a15);
   padding: 0.3rem 0.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid var(--color-emerald-a30);
 }
 
 .capstoneScoreBadge {
@@ -682,11 +682,11 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-white);
+  background: var(--black-a30);
   padding: 0.3rem 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-a10);
 }
 
 .capstoneBody {
@@ -698,7 +698,7 @@
 .capstoneTitle {
   font-size: clamp(1.25rem, 2.5vw, 1.625rem);
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -717,8 +717,8 @@
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #070709;
-  background: #34d399;
+  color: var(--ink-950);
+  background: var(--color-emerald-400);
   padding: 0.625rem 1.25rem;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -726,7 +726,7 @@
 }
 
 .capstoneBtn:hover {
-  background: #6ee7b7;
+  background: var(--color-emerald-300);
   transform: translateY(-1px);
 }
 
@@ -734,7 +734,7 @@
 .tableSectionTitle {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 0 0 1rem;
 }
 
@@ -744,8 +744,8 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(20, 20, 24, 0.6);
+  border: 1px solid var(--white-a8);
+  background: var(--tint-panel-29);
   margin-bottom: 2.5rem;
 }
 
@@ -758,7 +758,7 @@
 }
 
 .coursesTable th {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--white-a3);
   padding: 0.875rem 1rem;
   font-family: "Geist Mono", monospace;
   font-size: 0.6875rem;
@@ -766,12 +766,12 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-400);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--white-a8);
 }
 
 .coursesTable td {
   padding: 0.875rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--white-a5);
   color: var(--ink-200);
 }
 
@@ -780,7 +780,7 @@
 }
 
 .coursesTable tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white-a2);
 }
 
 .codeCell {
@@ -791,7 +791,7 @@
 }
 
 .courseLink {
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -800,13 +800,13 @@
 }
 
 .courseLink:hover {
-  color: #34d399;
+  color: var(--color-emerald-400);
 }
 
 .numCell {
   font-family: "Geist Mono", monospace;
   font-size: 0.8125rem;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .gradePillA {
@@ -816,9 +816,9 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
   font-weight: 600;
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: var(--color-emerald-a15);
+  color: var(--color-emerald-400);
+  border: 1px solid var(--color-emerald-a30);
 }
 
 .gradePillB {
@@ -828,16 +828,16 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
   font-weight: 600;
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: var(--color-amber-a15);
+  color: var(--color-amber-400);
+  border: 1px solid var(--color-amber-a30);
 }
 
 .totalRow td {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--white-a3);
   font-weight: 600;
-  color: #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  border-top: 1px solid var(--white-a12);
 }
 
 /* TRANSCRIPT DOCUMENT CARD */
@@ -845,9 +845,9 @@
   position: relative;
   border-radius: 1.25rem;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(20, 20, 24, 0.8);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--white-a10);
+  background: var(--tint-panel-30);
+  box-shadow: 0 20px 50px var(--black-a50);
 }
 
 .transcriptDocFooter {
@@ -857,8 +857,8 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(15, 15, 18, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--tint-panel-15);
+  border-top: 1px solid var(--white-a6);
 }
 
 .docInfo {
@@ -872,17 +872,17 @@
   gap: 0.5rem;
   padding: 0.55rem 1.1rem;
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--white-a8);
+  border: 1px solid var(--white-a15-perc);
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .downloadPdfBtn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--white-a15-perc);
+  border-color: var(--white-a30);
   transform: translateY(-1px);
 }

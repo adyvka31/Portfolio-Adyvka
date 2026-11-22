@@ -47,8 +47,8 @@
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--white-a3);
+  border: 1px solid var(--white-a8);
   border-radius: 9999px;
   padding: 0.625rem 1rem;
   flex: 1;
@@ -67,7 +67,7 @@
 }
 
 .searchWrap:focus-within {
-  border-color: rgba(124, 242, 255, 0.3);
+  border-color: var(--accent-a30);
 }
 
 .searchInput {
@@ -76,7 +76,7 @@
   outline: 0;
   width: 100%;
   font-size: 0.875rem;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .searchInput::placeholder {
@@ -92,7 +92,7 @@
 .chip {
   padding: 0.5rem 0.875rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-a10);
   color: var(--ink-200);
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
@@ -100,13 +100,13 @@
 }
 
 .chip:hover {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .chipActive {
-  border-color: rgba(124, 242, 255, 0.3);
+  border-color: var(--accent-a30);
   color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.05);
+  background: var(--accent-a5);
 }
 
 /* =========================================
@@ -180,12 +180,12 @@
   position: relative;
   overflow: hidden;
   height: 320px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--white-a6);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.02) 25%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(255, 255, 255, 0.02) 75%
+    var(--white-a2) 25%,
+    var(--white-a6) 50%,
+    var(--white-a2) 75%
   );
   background-size: 200% 100%;
   animation: skeletonShimmer 2s infinite linear;
@@ -231,13 +231,13 @@
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.45) 30%,
+      var(--black-a85) 0%,
+      var(--black-a45) 30%,
       transparent 60%
     ),
     radial-gradient(
       circle at bottom,
-      rgba(124, 242, 255, 0.22),
+      var(--accent-a22),
       transparent 60%
     );
   opacity: 0;
@@ -258,7 +258,7 @@
   padding: 1rem 1.2rem;
   margin-bottom: 1rem;
   border-radius: 1.25rem;
-  background: rgba(15, 15, 15, 0.85);
+  background: var(--tint-panel-20);
   transform: translateY(120%) translateZ(0);
   transition: transform 0.3s ease-out;
   will-change: transform;
@@ -286,8 +286,8 @@
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(124, 242, 255, 1),
-    rgba(84, 214, 255, 0.8)
+    var(--accent-a100),
+    var(--accent-a80)
   );
   color: black;
 }
@@ -320,7 +320,7 @@
 }
 
 .cardDescModern {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--white-a70);
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -352,18 +352,18 @@
   gap: 0.4rem;
   padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--white-a5);
   color: var(--ink-200);
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--white-a8);
   transition: all 0.3s ease;
   z-index: 10;
 }
 
 .cardActionButton:hover {
-  background: rgba(124, 242, 255, 0.1);
-  color: #fff;
-  border-color: rgba(124, 242, 255, 0.3);
+  background: var(--accent-a10);
+  color: var(--color-white);
+  border-color: var(--accent-a30);
 }
 
 .cardActionText {

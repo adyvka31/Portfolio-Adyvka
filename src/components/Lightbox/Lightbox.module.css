@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(5, 5, 8, 0.92);
+  background: var(--tint-dark-1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   display: flex;
@@ -16,11 +16,11 @@
   position: relative;
   max-width: 900px;
   width: 100%;
-  background: rgba(18, 20, 29, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--tint-panel-28);
+  border: 1px solid var(--white-a12);
   border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 24px 60px var(--black-a70);
   display: flex;
   flex-direction: column;
 }
@@ -30,8 +30,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 11, 16, 0.6);
+  border-bottom: 1px solid var(--white-a8);
+  background: var(--tint-panel-9);
 }
 
 .lightboxMeta {
@@ -47,8 +47,8 @@
   color: var(--accent-glow);
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
-  background: rgba(124, 242, 255, 0.1);
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  background: var(--accent-a10);
+  border: 1px solid var(--accent-a20);
 }
 
 .lightboxCounter {
@@ -61,9 +61,9 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #fff;
+  background: var(--white-a6);
+  border: 1px solid var(--white-a12);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,7 @@
 }
 
 .lightboxClose:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--white-a18);
   transform: rotate(90deg);
 }
 
@@ -80,7 +80,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: #000;
+  background: var(--color-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,9 +101,9 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: var(--black-a65);
+  border: 1px solid var(--white-a15-perc);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +113,7 @@
 
 .lightboxNav:hover {
   background: var(--accent-glow);
-  color: #000;
+  color: var(--color-black);
   border-color: var(--accent-glow);
 }
 
@@ -127,14 +127,14 @@
 
 .lightboxFooter {
   padding: 1.25rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 11, 16, 0.4);
+  border-top: 1px solid var(--white-a8);
+  background: var(--tint-panel-8);
 }
 
 .lightboxTitle {
   font-size: 1.05rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0 0 0.25rem;
 }
 

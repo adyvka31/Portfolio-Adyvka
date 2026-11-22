@@ -28,8 +28,8 @@
   gap: 0.5rem;
   padding: 1.5rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--white-a2);
+  border: 1px solid var(--white-a6);
   transition: all 0.3s ease;
 }
 .linkNext {
@@ -37,8 +37,8 @@
 }
 .linkPrev:hover,
 .linkNext:hover {
-  border-color: rgba(124, 242, 255, 0.2);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent-a20);
+  background: var(--white-a4);
   transform: translateY(-2px);
 }
 .label {
@@ -50,6 +50,6 @@
 }
 .title {
   font-size: 1.125rem;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 500;
 }

@@ -2,8 +2,8 @@
 .section {
   position: relative;
   padding: clamp(2.5rem, 5vw, 4rem) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--white-a6);
+  border-bottom: 1px solid var(--white-a6);
   overflow: hidden;
 }
 
@@ -86,29 +86,29 @@
 
 /* Urutan 1: Warna Base */
 .row:nth-child(3n + 1) .itemText {
-  color: rgba(207, 207, 214, 0.9);
+  color: var(--ink-100-a90);
 }
 
 /* Urutan 2: Warna Aksen (Cyan Glow) */
 .row:nth-child(3n + 2) .itemText {
-  color: rgba(124, 242, 255, 0.75);
+  color: var(--accent-a75);
 }
 
 /* Urutan 3: Warna Tersier (Purple/Magenta) */
 .row:nth-child(3n + 3) .itemText {
-  color: rgba(168, 85, 247, 0.7);
+  color: var(--color-purple-a70);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .itemText:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    color: var(--color-white) !important;
+    text-shadow: 0 0 10px var(--white-a60);
     transform: scale(1.05); /* Sedikit feedback scaling */
   }
 }
 
 .bullet {
-  color: rgba(124, 242, 255, 0.3);
+  color: var(--accent-a30);
   font-size: 0.75em; /* Menggunakan em agar merespon pada perubahan font-size parent */
-  text-shadow: 0 0 12px rgba(124, 242, 255, 0.2);
+  text-shadow: 0 0 12px var(--accent-a20);
 }

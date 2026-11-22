@@ -33,8 +33,8 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
   color: var(--ink-200);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--white-a3);
+  border: 1px solid var(--white-a6);
   white-space: nowrap;
   transition: all 0.2s ease;
   flex-shrink: 0;
@@ -43,8 +43,8 @@
 .navPill:hover,
 .navPillActive {
   color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.08);
-  border-color: rgba(124, 242, 255, 0.25);
+  background: var(--accent-a8);
+  border-color: var(--accent-a25-perc);
 }
 
 /* ==========================================================================
@@ -53,7 +53,7 @@
 .tagsStrip {
   padding: 2rem 0;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.01);
+  background: var(--white-a1);
 }
 
 .tagsInner {
@@ -88,15 +88,15 @@
   color: var(--accent-glow);
   padding: 0.5rem 0.875rem;
   border-radius: 9999px;
-  background: rgba(124, 242, 255, 0.05);
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  background: var(--accent-a5);
+  border: 1px solid var(--accent-a20);
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .linkBtn:hover {
-  background: rgba(124, 242, 255, 0.12);
-  border-color: rgba(124, 242, 255, 0.4);
+  background: var(--accent-a12);
+  border-color: var(--accent-a40);
   transform: translateY(-1px);
 }
 
@@ -115,8 +115,8 @@
 .previewCard {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(124, 242, 255, 0.15);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--accent-a15-perc);
+  box-shadow: 0 20px 50px -10px var(--black-a70);
   background: var(--ink-900);
 }
 
@@ -132,8 +132,8 @@
 }
 
 .specChipsCard {
-  background: var(--bg-surface-elevated, rgba(255, 255, 255, 0.02));
-  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.08));
+  background: var(--bg-surface-elevated, var(--white-a2));
+  border: 1px solid var(--border-light, var(--white-a8));
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
   backdrop-filter: blur(12px);
@@ -146,7 +146,7 @@
   justify-content: space-between;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.06));
+  border-bottom: 1px solid var(--border-light, var(--white-a6));
 }
 
 .specHeaderBadge {
@@ -277,7 +277,7 @@
 }
 
 .sectionAlt {
-  background: rgba(10, 10, 14, 0.4);
+  background: var(--tint-panel-2);
 }
 
 .container {
@@ -293,7 +293,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--color-white);
   margin: 0.5rem 0 0.75rem;
 }
 
@@ -332,8 +332,8 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: rgba(124, 242, 255, 0.08);
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  background: var(--accent-a8);
+  border: 1px solid var(--accent-a20);
   color: var(--accent-glow);
   display: flex;
   align-items: center;
@@ -343,7 +343,7 @@
 .pillarTitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   letter-spacing: -0.01em;
 }
@@ -371,7 +371,7 @@
   justify-content: space-between;
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white-a2);
   border: 1px solid var(--line);
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
@@ -382,10 +382,10 @@
 
 .archBadge {
   color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.08);
+  background: var(--accent-a8);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  border: 1px solid var(--accent-a20);
 }
 
 .archLayersGrid {
@@ -424,7 +424,7 @@
 .archLayerName {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -432,10 +432,10 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
   color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.06);
+  background: var(--accent-a6);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid rgba(124, 242, 255, 0.15);
+  border: 1px solid var(--accent-a15-perc);
   white-space: nowrap;
 }
 
@@ -471,7 +471,7 @@
 }
 
 .featureCard:hover {
-  border-color: rgba(124, 242, 255, 0.25);
+  border-color: var(--accent-a25-perc);
   transform: translateY(-2px);
 }
 
@@ -493,7 +493,7 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
   color: var(--ink-200);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--white-a4);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   border: 1px solid var(--line);
@@ -502,7 +502,7 @@
 .featureTitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   letter-spacing: -0.01em;
 }
@@ -574,8 +574,8 @@
 }
 
 .stageCardActive {
-  border-color: rgba(124, 242, 255, 0.4);
-  box-shadow: 0 0 25px rgba(124, 242, 255, 0.1);
+  border-color: var(--accent-a40);
+  box-shadow: 0 0 25px var(--accent-a10);
 }
 
 .stageHeader {
@@ -596,8 +596,8 @@
   font-size: 0.7rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  background: rgba(124, 242, 255, 0.08);
-  border: 1px solid rgba(124, 242, 255, 0.25);
+  background: var(--accent-a8);
+  border: 1px solid var(--accent-a25-perc);
   color: var(--accent-glow);
   font-weight: 500;
 }
@@ -605,7 +605,7 @@
 .stageTitle {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -620,8 +620,8 @@
   margin-top: auto;
   padding: 0.75rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px dashed rgba(124, 242, 255, 0.2);
+  background: var(--white-a2);
+  border: 1px dashed var(--accent-a20);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -633,15 +633,15 @@
 .lockNoticeCard {
   padding: 1.5rem;
   border-radius: 12px;
-  background: rgba(245, 158, 11, 0.05);
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  background: var(--color-amber-a5);
+  border: 1px solid var(--color-amber-a20);
   display: flex;
   gap: 1rem;
   align-items: flex-start;
 }
 
 .lockNoticeIcon {
-  color: #f59e0b;
+  color: var(--color-amber-500);
   margin-top: 0.25rem;
   flex-shrink: 0;
 }
@@ -649,7 +649,7 @@
 .lockNoticeTitle {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #fbbf24;
+  color: var(--color-amber-400);
   margin: 0 0 0.35rem;
 }
 
@@ -686,7 +686,7 @@
 .techGroupTitle {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   display: flex;
   align-items: center;
@@ -711,20 +711,20 @@
   justify-content: space-between;
   padding: 0.625rem 0.75rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white-a2);
   border: 1px solid var(--line);
   transition: all 0.2s ease;
 }
 
 .techItemRow:hover {
-  background: rgba(124, 242, 255, 0.04);
-  border-color: rgba(124, 242, 255, 0.15);
+  background: var(--accent-a4);
+  border-color: var(--accent-a15-perc);
 }
 
 .techItemName {
   font-family: "Geist Mono", monospace;
   font-size: 0.8125rem;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 500;
 }
 
@@ -758,7 +758,7 @@
 }
 
 .terminalHead {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--white-a3);
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
@@ -875,7 +875,7 @@
   gap: 0.75rem;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white-a2);
   border: 1px solid var(--line);
   font-family: "Geist Mono", monospace;
   font-size: 0.75rem;
@@ -889,31 +889,31 @@
 }
 
 .methodGet {
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: var(--color-sky-a15);
+  color: var(--color-sky-400);
+  border: 1px solid var(--color-sky-a30);
 }
 
 .methodPost {
-  background: rgba(52, 211, 153, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.3);
+  background: var(--color-emerald-a15);
+  color: var(--color-emerald-400);
+  border: 1px solid var(--color-emerald-a30);
 }
 
 .methodPatch {
-  background: rgba(251, 191, 36, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: var(--color-amber-a15);
+  color: var(--color-amber-400);
+  border: 1px solid var(--color-amber-a30);
 }
 
 .methodDelete {
-  background: rgba(248, 113, 113, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(248, 113, 113, 0.3);
+  background: var(--color-rose-a15);
+  color: var(--color-rose-400);
+  border: 1px solid var(--color-rose-a30);
 }
 
 .endpointPath {
-  color: #fff;
+  color: var(--color-white);
   flex-grow: 1;
 }
 
@@ -941,9 +941,9 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: rgba(52, 211, 153, 0.1);
-  border: 1px solid rgba(52, 211, 153, 0.25);
-  color: #34d399;
+  background: var(--color-emerald-a10);
+  border: 1px solid var(--color-emerald-a25);
+  color: var(--color-emerald-400);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -953,7 +953,7 @@
 .securityTitle {
   font-size: 1rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0 0 0.35rem;
 }
 
@@ -980,7 +980,7 @@
 .subSectionTitle {
   font-size: 1.375rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0 0 0.5rem;
   letter-spacing: -0.01em;
   display: flex;
@@ -1022,10 +1022,10 @@
   font-family: "Geist Mono", monospace;
   font-size: 0.7rem;
   color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.08);
+  background: var(--accent-a8);
   padding: 0.25rem 0.625rem;
   border-radius: 4px;
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  border: 1px solid var(--accent-a20);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -1033,7 +1033,7 @@
 .challengeTitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -1075,7 +1075,7 @@
 .challengeItemTitle {
   font-size: 1.0625rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -1103,8 +1103,8 @@
 .resultCard {
   padding: 1.5rem;
   border-radius: 12px;
-  background: rgba(52, 211, 153, 0.04);
-  border: 1px solid rgba(52, 211, 153, 0.2);
+  background: var(--color-emerald-a5);
+  border: 1px solid var(--color-emerald-a20);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1114,7 +1114,7 @@
 .resultValue {
   font-size: 2rem;
   font-weight: 400;
-  color: #34d399;
+  color: var(--color-emerald-400);
   margin: 0 0 0.35rem;
   letter-spacing: -0.02em;
 }
@@ -1157,7 +1157,7 @@
   justify-content: space-between;
   padding: 0.875rem 1rem;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white-a2);
   border: 1px solid var(--line);
   color: var(--ink-200);
   font-size: 0.875rem;
@@ -1168,13 +1168,13 @@
 }
 
 .moduleNavItem:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  background: var(--white-a5);
+  color: var(--color-white);
 }
 
 .moduleNavItemActive {
-  background: rgba(124, 242, 255, 0.08);
-  border-color: rgba(124, 242, 255, 0.35);
+  background: var(--accent-a8);
+  border-color: var(--accent-a35);
   color: var(--accent-glow);
   font-weight: 500;
 }
@@ -1189,8 +1189,8 @@
   padding: 2.25rem;
   border-radius: 14px;
   background: var(--ink-950);
-  border: 1px solid rgba(124, 242, 255, 0.2);
-  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--accent-a20);
+  box-shadow: 0 15px 40px -10px var(--black-a60);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;

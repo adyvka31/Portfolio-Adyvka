@@ -1,7 +1,7 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--black-a80);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 999999;
@@ -16,15 +16,15 @@
   max-width: 900px;
   height: 90vh;
   background: var(--ink-950);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--white-a15-perc);
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
   box-shadow:
-    0 25px 50px -12px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(124, 242, 255, 0.05);
+    0 25px 50px -12px var(--black-a70),
+    0 0 40px var(--accent-a5);
   animation: modalSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -50,9 +50,9 @@
 }
 
 .closeBtn {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--white-a5);
   border: 1px solid var(--line);
-  color: #fff;
+  color: var(--color-white);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -67,13 +67,13 @@
 }
 
 .closeBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--white-a10);
+  border-color: var(--white-a30);
 }
 
 .externalLink {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--white-a70);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -139,8 +139,8 @@
   width: 68px;
   height: 68px;
   border-radius: 1.25rem;
-  background: rgba(124, 242, 255, 0.08);
-  border: 1px solid rgba(124, 242, 255, 0.25);
+  background: var(--accent-a8);
+  border: 1px solid var(--accent-a25-perc);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@
 .mobileBookTitle {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin: 0 0 0.5rem;
   line-height: 1.35;
 }
@@ -163,8 +163,8 @@
   font-family: var(--font-mono, monospace);
   font-size: 0.75rem;
   color: var(--accent-glow);
-  background: rgba(124, 242, 255, 0.08);
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  background: var(--accent-a8);
+  border: 1px solid var(--accent-a20);
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
   margin-bottom: 1rem;
@@ -196,8 +196,8 @@
 }
 
 .mobileCloseBtn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--white-a5);
+  border: 1px solid var(--white-a12);
   color: var(--ink-200);
   padding: 0.65rem 1.25rem;
   border-radius: 0.75rem;

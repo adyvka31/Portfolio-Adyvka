@@ -59,7 +59,7 @@
 
 .sectionLead {
   margin-top: 0.75rem;
-  color: rgba(207, 207, 214, 0.7);
+  color: var(--ink-100-a70);
   font-size: clamp(0.9rem, 2vw, 0.9375rem);
   line-height: 1.6;
   max-width: 36rem;
@@ -104,7 +104,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  color: rgba(207, 207, 214, 0.78);
+  color: var(--ink-100-a78);
   font-size: clamp(0.95rem, 2vw, 1.0625rem);
   line-height: 1.7;
   max-width: 36rem;
@@ -130,10 +130,10 @@
   border-radius: 1.5rem;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.04),
-    rgba(255, 255, 255, 0.015)
+    var(--white-a4),
+    var(--white-a15)
   );
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--white-a8);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -155,20 +155,20 @@
   border-radius: 1.25rem;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.01)
+    var(--white-a3),
+    var(--white-a1)
   );
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--white-a6);
   overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .introCard:hover {
-  border-color: rgba(124, 242, 255, 0.22);
+  border-color: var(--accent-a22);
   box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.35),
-    0 0 50px rgba(124, 242, 255, 0.08);
+    0 30px 60px var(--black-a35),
+    0 0 50px var(--accent-a8);
 }
 
 /* ---- Photo header ---- */
@@ -180,10 +180,10 @@
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    rgba(124, 242, 255, 0.05),
-    rgba(255, 255, 255, 0.01)
+    var(--accent-a5),
+    var(--white-a1)
   );
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--white-a6);
 }
 
 .introPhotoGlow {
@@ -195,7 +195,7 @@
   height: 260px;
   background: radial-gradient(
     circle,
-    rgba(124, 242, 255, 0.16),
+    var(--accent-a16-perc),
     transparent 70%
   );
   filter: blur(40px);
@@ -227,7 +227,7 @@
   background: linear-gradient(
     180deg,
     transparent 45%,
-    rgba(8, 8, 10, 0.65) 100%
+    var(--tint-panel-1) 100%
   );
   pointer-events: none;
   z-index: 2;
@@ -245,14 +245,14 @@
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.625rem 0.875rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--white-a8);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-a10);
   border-radius: 0.75rem;
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: clamp(0.6rem, 1.5vw, 0.7rem);
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--white-a92);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -273,8 +273,8 @@
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 9999px;
-  background: #34d399;
-  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+  background: var(--color-emerald-400);
+  box-shadow: 0 0 8px var(--color-emerald-glow);
 }
 
 .introPhotoBadgeMeta {
@@ -312,7 +312,7 @@
   grid-template-columns: clamp(90px, 25vw, 110px) 1fr;
   gap: 1rem;
   padding: 0.625rem 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+  border-bottom: 1px dashed var(--white-a6);
   align-items: baseline;
 }
 
@@ -330,7 +330,7 @@
 
 .introCardValue {
   font-size: clamp(0.85rem, 2vw, 0.875rem);
-  color: #fff;
+  color: var(--color-white);
   margin: 0; /* Reset margin dt/dd */
 }
 
@@ -344,7 +344,7 @@
   grid-template-columns: 1fr;
   gap: 0.625rem;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--white-a5);
   align-items: center;
   transition: background 0.25s ease;
 }
@@ -352,7 +352,7 @@
   border-bottom: 0;
 }
 .skillRow:hover {
-  background: rgba(124, 242, 255, 0.02);
+  background: var(--accent-a2);
 }
 
 @media (min-width: 768px) {
@@ -394,17 +394,17 @@
   font-family: "Geist Mono", ui-monospace, monospace;
   font-size: 0.7rem;
   color: var(--ink-100);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--white-a3);
+  border: 1px solid var(--white-a8);
   padding: 0.3rem 0.7rem;
   border-radius: 9999px;
   transition: all 0.2s ease;
   cursor: default;
 }
 .skillTag:hover {
-  background: rgba(124, 242, 255, 0.08);
-  border-color: rgba(124, 242, 255, 0.3);
-  color: #fff;
+  background: var(--accent-a8);
+  border-color: var(--accent-a30);
+  color: var(--color-white);
   transform: translateY(-1px);
 }
 
@@ -414,7 +414,7 @@
   grid-template-columns: 1fr;
   gap: 0.375rem;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--white-a5);
   align-items: baseline;
   transition: background 0.25s ease;
 }
@@ -422,7 +422,7 @@
   border-bottom: 0;
 }
 .softCompactRow:hover {
-  background: rgba(180, 130, 255, 0.025);
+  background: var(--color-violet-glow-1);
 }
 
 @media (min-width: 768px) {
@@ -439,18 +439,18 @@
   gap: 0.5rem;
 }
 .softCompactBadge {
-  color: rgba(180, 130, 255, 0.9);
+  color: var(--color-violet-glow-4);
   font-size: 0.75rem;
 }
 .softCompactName {
   font-size: 0.9375rem;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 .softCompactFrom {
   font-size: 0.875rem;
-  color: rgba(207, 207, 214, 0.7);
+  color: var(--ink-100-a70);
   line-height: 1.55;
 }
 
@@ -460,7 +460,7 @@
   gap: clamp(2.5rem, 5vw, 4rem);
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
   padding-top: clamp(2.5rem, 5vw, 3rem);
-  border-top: 1.5px dashed rgba(255, 255, 255, 0.1);
+  border-top: 1.5px dashed var(--white-a10);
 }
 
 @media (min-width: 1024px) {
@@ -528,8 +528,8 @@
     background: linear-gradient(
       to bottom,
       transparent,
-      rgba(124, 242, 255, 0.25) 10%,
-      rgba(124, 242, 255, 0.25) 90%,
+      var(--accent-a25-perc) 10%,
+      var(--accent-a25-perc) 90%,
       transparent
     );
     pointer-events: none;
@@ -542,7 +542,7 @@
   grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--white-a6);
 }
 @media (min-width: 768px) {
   .trackRow {
@@ -587,16 +587,16 @@
 .trackCard {
   padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--white-a2);
+  border: 1px solid var(--white-a5);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   transition: all 0.3s ease;
 }
 .trackCard:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(124, 242, 255, 0.18);
+  background: var(--white-a4);
+  border-color: var(--accent-a18);
   transform: translateY(-2px);
 }
 .trackBadge {
@@ -606,21 +606,21 @@
   color: var(--accent-glow);
 }
 .trackHuman .trackBadge {
-  color: rgba(180, 130, 255, 0.9);
+  color: var(--color-violet-glow-4);
 }
 .trackHuman:hover {
-  border-color: rgba(180, 130, 255, 0.22);
+  border-color: var(--color-violet-glow-3);
 }
 .trackTitle {
   font-size: 1.0625rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   letter-spacing: -0.015em;
 }
 .trackDetail {
   font-size: 0.875rem;
-  color: rgba(207, 207, 214, 0.7);
+  color: var(--ink-100-a70);
   line-height: 1.55;
   margin: 0;
 }
@@ -665,8 +665,8 @@
   padding: clamp(1.5rem, 4vw, 2.5rem);
   background: linear-gradient(
     180deg,
-    rgba(124, 242, 255, 0.04),
-    rgba(255, 255, 255, 0.01)
+    var(--accent-a4),
+    var(--white-a1)
   );
 }
 .storyEyebrow {
@@ -680,7 +680,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   line-height: 1.25;
 }
@@ -691,7 +691,7 @@
 }
 .storyBody {
   font-size: 0.9375rem;
-  color: rgba(207, 207, 214, 0.78);
+  color: var(--ink-100-a78);
   line-height: 1.7;
   margin: 0;
 }
@@ -708,8 +708,8 @@
   display: grid;
   grid-template-columns: 1fr;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--white-a2);
+  border: 1px solid var(--white-a6);
   overflow: hidden;
 }
 @media (min-width: 768px) {
@@ -728,12 +728,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--white-a5);
+  border-right: 1px solid var(--white-a5);
   transition: background 0.3s ease;
 }
 .currentSlot:hover {
-  background: rgba(124, 242, 255, 0.025);
+  background: var(--accent-a25);
 }
 
 /* Border Logic */
@@ -775,7 +775,7 @@
   height: 0.45rem;
   border-radius: 9999px;
   background: var(--accent-glow);
-  box-shadow: 0 0 8px rgba(124, 242, 255, 0.6);
+  box-shadow: 0 0 8px var(--accent-a60);
 }
 .currentLabel {
   font-family: "Geist Mono", ui-monospace, monospace;
@@ -786,13 +786,13 @@
 .currentTitle {
   font-size: 1.0625rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   letter-spacing: -0.015em;
 }
 .currentDetail {
   font-size: 0.875rem;
-  color: rgba(207, 207, 214, 0.7);
+  color: var(--ink-100-a70);
   line-height: 1.55;
   margin: 0;
 }
@@ -818,7 +818,7 @@
   gap: 0.75rem;
 }
 .nextLead {
-  color: rgba(207, 207, 214, 0.7);
+  color: var(--ink-100-a70);
   font-size: clamp(0.9rem, 2vw, 0.9375rem);
   line-height: 1.65;
   margin: 0.5rem 0 0.25rem;
@@ -833,23 +833,23 @@
   color: var(--accent-glow);
   padding: 0.625rem 1rem;
   border-radius: 9999px;
-  background: rgba(124, 242, 255, 0.05);
-  border: 1px solid rgba(124, 242, 255, 0.2);
+  background: var(--accent-a5);
+  border: 1px solid var(--accent-a20);
   transition: all 0.2s ease;
   align-self: flex-start;
   margin-top: 0.5rem;
   text-decoration: none;
 }
 .nextCta:hover {
-  background: rgba(124, 242, 255, 0.1);
+  background: var(--accent-a10);
   transform: translateY(-1px);
 }
 .nextRight {
   display: flex;
   flex-direction: column;
   border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--white-a2);
+  border: 1px solid var(--white-a6);
   overflow: hidden;
   margin: 0; /* Reset margin on dl */
 }
@@ -858,7 +858,7 @@
   grid-template-columns: clamp(90px, 20vw, 110px) 1fr;
   gap: 1.25rem;
   padding: clamp(1rem, 3vw, 1.25rem) 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--white-a5);
   align-items: baseline;
 }
 .nextRow:last-child {
@@ -880,7 +880,7 @@
 }
 .nextRowValue {
   font-size: clamp(0.875rem, 2vw, 0.9375rem);
-  color: #fff;
+  color: var(--color-white);
   line-height: 1.55;
   margin: 0;
 }

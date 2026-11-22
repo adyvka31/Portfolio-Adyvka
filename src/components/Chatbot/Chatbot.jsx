@@ -47,6 +47,30 @@ function Chatbot() {
   const isChatActive = isOpen && !isClosing;
   const currentBubbleState = isChatActive ? "hidden" : bubbleState;
 
+  // Idle prefetch: setelah halaman selesai memuat dan browser santai (idle)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const schedulePreload = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => {
+          import("./ChatWindow");
+        }, { timeout: 3500 });
+      } else {
+        setTimeout(() => {
+          import("./ChatWindow");
+        }, 2000);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      schedulePreload();
+    } else {
+      window.addEventListener("load", schedulePreload, { once: true });
+      return () => window.removeEventListener("load", schedulePreload);
+    }
+  }, []);
+
   // Intent-driven prefetch: Dipanggil secara instan saat kursor mendekati launcher atau layar disentuh
   const prefetchChatWindow = useCallback(() => {
     import("./ChatWindow");
