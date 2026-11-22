@@ -45,6 +45,23 @@ function ProjectLayout() {
     return styles.gridColSpan2;
   };
 
+  const getCardDelay = (idx, filter) => {
+    if (filter === "all") {
+      // Row 1 & 2 (idx 0..3): 2 cards per row (col 0 = left, col 1 = right)
+      if (idx < 4) {
+        return (idx % 2) * 0.12;
+      }
+      // Row 3 (idx 4..6): 3 cards per row (col 0 = left, col 1 = mid, col 2 = right)
+      return ((idx - 4) % 3) * 0.12;
+    }
+    if (filter === "web") {
+      // 2 cards per row
+      return (idx % 2) * 0.12;
+    }
+    // 3 cards per row
+    return (idx % 3) * 0.12;
+  };
+
   const getResponsiveVisibilityClass = (idx) => {
     if (idx >= 6) {
       return styles.hideOnTabletAndBelow;
@@ -95,7 +112,7 @@ function ProjectLayout() {
           {displayedProjects.map((project, idx) => (
             <NativeReveal
               key={`${activeFilter}-${project.id}`}
-              delay={(idx % 3) * 0.12}
+              delay={getCardDelay(idx, activeFilter)}
               className={`reveal-slide-up ${getColSpanClass(idx, activeFilter)} ${getResponsiveVisibilityClass(idx)}`}
             >
               <Card variant="project" item={project} />

@@ -187,6 +187,18 @@ function AboutLayout() {
     },
   ];
 
+  const getSkillDelay = (idx) => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 640 && window.innerWidth < 1024) {
+        return (idx % 2) * 0.12;
+      }
+      if (window.innerWidth < 640) {
+        return 0.06;
+      }
+    }
+    return (idx % 3) * 0.12;
+  };
+
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
@@ -230,10 +242,9 @@ function AboutLayout() {
 
           <div className={styles.skillsGrid}>
             {skillsData.map((skillGroup, idx) => (
-              /* ✅ Terapkan rumus stagger Grid (idx % 3) * 0.15 */
               <NativeReveal
                 key={idx}
-                delay={(idx % 3) * 0.15}
+                delay={getSkillDelay(idx)}
                 className="reveal-slide-up"
               >
                 <div

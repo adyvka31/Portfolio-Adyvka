@@ -177,28 +177,28 @@ export default function ProjectsPage() {
                 {filtered.map((item, i) => {
                   const isBook = item.category === "publications" || item.type === "book";
 
-                  if (isBook) {
-                    return (
-                      <div key={item.slug} className={styles.bookCardWrapper}>
-                        <NativeReveal
-                          delay={i * 0.1}
-                          className={`reveal-slide-up ${styles.cardItemWrap}`}
-                        >
-                          <BookCard item={item} onRead={handleReadBook} />
-                        </NativeReveal>
-                      </div>
-                    );
-                  }
+                    if (isBook) {
+                      return (
+                        <div key={item.slug} className={styles.bookCardWrapper}>
+                          <NativeReveal
+                            delay={0.1}
+                            className={`reveal-slide-up ${styles.cardItemWrap}`}
+                          >
+                            <BookCard item={item} onRead={handleReadBook} />
+                          </NativeReveal>
+                        </div>
+                      );
+                    }
 
-                  return (
-                    <NativeReveal
-                      key={item.slug}
-                      delay={i * 0.1}
-                      className={`reveal-slide-up ${styles.cardItemWrap}`}
-                    >
-                      <Card variant="project" item={item} />
-                    </NativeReveal>
-                  );
+                    return (
+                      <NativeReveal
+                        key={item.slug}
+                        delay={(i % 3) * 0.1}
+                        className={`reveal-slide-up ${styles.cardItemWrap}`}
+                      >
+                        <Card variant="project" item={item} />
+                      </NativeReveal>
+                    );
                 })}
               </div>
             )}

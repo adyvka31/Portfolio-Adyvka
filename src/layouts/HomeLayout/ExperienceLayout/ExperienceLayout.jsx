@@ -10,7 +10,7 @@ function TimelineItem({ item, index }) {
 
   return (
     <NativeReveal
-      delay={index * 0.1}
+      delay={(index % 2) * 0.12}
       className={`reveal-slide-up ${styles.timelineItemWrapper} ${index >= 3 ? styles.hideOnMobile : ""}`}
       style={{
         gridColumn: isLeft ? 1 : 2,
