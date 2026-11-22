@@ -1,8 +1,6 @@
-import { useState, useRef, useEffect, useCallback, lazy, Suspense, memo } from "react";
+import { useState, useRef, useEffect, useCallback, memo } from "react";
 import styles from "./Chatbot.module.css";
-
-// Lazy load the heavy chat window and 660KB knowledge engine on demand
-const ChatWindow = lazy(() => import("./ChatWindow"));
+import ChatWindow from "./ChatWindow";
 
 function CloseIcon({ size = 20, strokeWidth = 2.4 }) {
   return (
@@ -47,18 +45,18 @@ function Chatbot() {
   const isChatActive = isOpen && !isClosing;
   const currentBubbleState = isChatActive ? "hidden" : bubbleState;
 
-  // Idle prefetch: setelah halaman selesai memuat dan browser santai (idle)
+  // Idle prefetch knowledge engine: prefetch 646KB AI data saat browser idle agar instan saat user bertanya
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const schedulePreload = () => {
       if ("requestIdleCallback" in window) {
         window.requestIdleCallback(() => {
-          import("./ChatWindow");
+          import("../../data/chatbotKnowledge");
         }, { timeout: 3500 });
       } else {
         setTimeout(() => {
-          import("./ChatWindow");
+          import("../../data/chatbotKnowledge");
         }, 2000);
       }
     };
@@ -71,9 +69,9 @@ function Chatbot() {
     }
   }, []);
 
-  // Intent-driven prefetch: Dipanggil secara instan saat kursor mendekati launcher atau layar disentuh
-  const prefetchChatWindow = useCallback(() => {
-    import("./ChatWindow");
+  // Intent-driven prefetch: Dipanggil saat kursor mendekati launcher atau layar disentuh
+  const prefetchKnowledge = useCallback(() => {
+    import("../../data/chatbotKnowledge");
   }, []);
 
   const handleOpen = () => {
@@ -144,25 +142,23 @@ function Chatbot() {
 
   return (
     <>
-      {/* Heavy Chat Window & Knowledge Base Modal only rendered when open */}
+      {/* Interactive Chat Window Modal - Instant 0ms render without network wait */}
       {(isOpen || isClosing) && (
-        <Suspense fallback={null}>
-          <ChatWindow
-            isOpen={isOpen}
-            isClosing={isClosing}
-            onClose={handleClose}
-            onAnimationEnd={handleAnimationEnd}
-            launcherRef={launcherRef}
-          />
-        </Suspense>
+        <ChatWindow
+          isOpen={isOpen}
+          isClosing={isClosing}
+          onClose={handleClose}
+          onAnimationEnd={handleAnimationEnd}
+          launcherRef={launcherRef}
+        />
       )}
 
       {/* Lightweight Floating Circular Toggle Button & Notification Bubble */}
       <div
         ref={launcherRef}
         className={styles.launcherWrapper}
-        onPointerEnter={prefetchChatWindow}
-        onTouchStart={prefetchChatWindow}
+        onPointerEnter={prefetchKnowledge}
+        onTouchStart={prefetchKnowledge}
       >
         <div
           className={`${styles.bubbleBadge} ${

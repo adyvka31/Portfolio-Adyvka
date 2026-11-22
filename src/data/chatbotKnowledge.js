@@ -46,13 +46,6 @@ export const ADYVKA_PROFILE = {
   portfolioUrl: "https://adyvkapratama.my.id",
 };
 
-export {
-  QUICK_SUGGESTIONS,
-  CONTEXTUAL_SUGGESTIONS_MAP,
-  getContextualSuggestions,
-} from "./chatbotSuggestions";
-
-
 export function detectLanguage(text) {
   if (!text || typeof text !== "string") return "id";
   const lower = text.toLowerCase().trim();
