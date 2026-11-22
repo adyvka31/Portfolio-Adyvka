@@ -16,6 +16,7 @@ const NAV = [
 const MOBILE_NAV = [
   { to: "/", label: "Home", end: true },
   ...NAV,
+  { to: "/contact", label: "Contact" },
 ];
 
 const handlePrefetch = (path) => {
@@ -37,6 +38,9 @@ const handlePrefetch = (path) => {
       break;
     case "/certificates":
       import("../../pages/CertificatePage/CertificatesPage");
+      break;
+    case "/contact":
+      import("../../pages/ContactPage/ContactPage");
       break;
     default:
       break;
@@ -69,16 +73,28 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  // Body Scroll Lock ketika Modal / Menu terbuka
+  // Body & HTML Scroll Lock ketika Modal / Menu terbuka
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     if (menuOpen || cvOpen) {
+      const origBodyOverflow = document.body.style.overflow;
+      const origBodyOverscroll = document.body.style.overscrollBehavior;
+      const origHtmlOverflow = document.documentElement.style.overflow;
+      const origHtmlOverscroll = document.documentElement.style.overscrollBehavior;
+
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overscrollBehavior = "none";
+      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.overscrollBehavior = "none";
+
+      return () => {
+        document.body.style.overflow = origBodyOverflow;
+        document.body.style.overscrollBehavior = origBodyOverscroll;
+        document.documentElement.style.overflow = origHtmlOverflow;
+        document.documentElement.style.overscrollBehavior = origHtmlOverscroll;
+      };
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
   }, [menuOpen, cvOpen]);
 
   return (
