@@ -261,6 +261,8 @@ export default function Navbar() {
                 src={`${personalInfo.cvUrl}#zoom=100&toolbar=1`}
                 title="Curriculum Vitae PDF Document"
                 className={styles.pdfViewer}
+                loading="lazy"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>

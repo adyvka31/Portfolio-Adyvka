@@ -52,7 +52,7 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
 
   // Ignore cross-origin third party requests (like Google Tag Manager, Formspree)
-  if (url.origin !== self.location.origin) {
+  if (url.origin !== self.location.origin || url.pathname === "/sw.js") {
     return;
   }
 

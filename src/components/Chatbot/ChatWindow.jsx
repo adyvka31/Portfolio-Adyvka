@@ -378,8 +378,11 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   }, [messages, isTyping, isOpen]);
 
   const handleSendMessage = useCallback((customQuery = null) => {
-    const query = (customQuery || inputValue).trim();
-    if (!query) return;
+    const raw = (customQuery || inputValue).trim();
+    if (!raw) return;
+
+    // Defensively bound query length to prevent memory amplification
+    const query = raw.slice(0, 500);
 
     const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
@@ -424,10 +427,14 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
   };
 
   const handleLinkClick = (url) => {
-    if (url.startsWith("http") || url.startsWith("mailto:")) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } else {
-      navigate(url);
+    if (!url || typeof url !== "string") return;
+    const cleanUrl = url.trim();
+
+    // Prevent open redirects, protocol-relative attacks (//), backslash injections (\), and dangerous schemes
+    if (cleanUrl.startsWith("http://") || cleanUrl.startsWith("https://") || cleanUrl.startsWith("mailto:")) {
+      window.open(cleanUrl, "_blank", "noopener,noreferrer");
+    } else if (cleanUrl.startsWith("/") && !cleanUrl.startsWith("//") && !cleanUrl.includes("\\")) {
+      navigate(cleanUrl);
     }
   };
 
@@ -565,6 +572,9 @@ You can ask me questions in **English** or **Bahasa Indonesia**. What would you 
         <input
           ref={inputRef}
           type="text"
+          maxLength={500}
+          autoComplete="off"
+          spellCheck="false"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}

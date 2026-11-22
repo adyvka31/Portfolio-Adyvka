@@ -69,8 +69,10 @@ function renderChannelIcon(iconId, size = 20) {
 
 export default function ContactPage() {
   const [formStatus, setFormStatus] = useState("IDLE");
+  const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
   const copyTimeoutRef = useRef(null);
+  const lastSubmitRef = useRef(0);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personalInfo.email);
@@ -81,9 +83,53 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormStatus("SUBMITTING");
+    setErrorMessage("");
+
+    // Rate limiting guard to prevent replay spam
+    const now = Date.now();
+    if (now - lastSubmitRef.current < 5000) {
+      setErrorMessage("Please wait a few seconds before dispatching again.");
+      return;
+    }
+
     const form = e.target;
     const data = new FormData(form);
+
+    // Honeypot bot protection: drop silently if automated bot filled hidden trap
+    const gotcha = data.get("_gotcha");
+    if (gotcha) {
+      setFormStatus("SUCCESS");
+      form.reset();
+      setTimeout(() => setFormStatus("IDLE"), 4000);
+      return;
+    }
+
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const subject = String(data.get("subject") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    // Input sanitization and bounds validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!name || name.length > 100) {
+      setErrorMessage("Name must be between 1 and 100 characters.");
+      return;
+    }
+    if (!email || email.length > 120 || !emailRegex.test(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+    if (subject.length > 150) {
+      setErrorMessage("Subject must not exceed 150 characters.");
+      return;
+    }
+    if (!message || message.length > 3000) {
+      setErrorMessage("Message must be between 1 and 3000 characters.");
+      return;
+    }
+
+    lastSubmitRef.current = now;
+    setFormStatus("SUBMITTING");
 
     try {
       const response = await fetch("https://formspree.io/f/mkoevqya", {
@@ -212,6 +258,16 @@ export default function ContactPage() {
                   onSubmit={handleSubmit}
                   aria-label="Contact dispatch form"
                 >
+                  {/* Honeypot field for bot trap */}
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabIndex="-1"
+                    autoComplete="off"
+                    style={{ display: "none" }}
+                    aria-hidden="true"
+                  />
+
                   <div className={styles.formGroup}>
                     <label htmlFor="contact-name" className={styles.label}>
                       Your Name
@@ -221,6 +277,8 @@ export default function ContactPage() {
                       type="text"
                       name="name"
                       required
+                      maxLength={100}
+                      autoComplete="name"
                       className={styles.input}
                       placeholder="e.g. Alex Mercer"
                     />
@@ -235,6 +293,8 @@ export default function ContactPage() {
                       type="email"
                       name="email"
                       required
+                      maxLength={120}
+                      autoComplete="email"
                       className={styles.input}
                       placeholder="alex@company.com"
                     />
@@ -248,6 +308,7 @@ export default function ContactPage() {
                       id="contact-subject"
                       type="text"
                       name="subject"
+                      maxLength={150}
                       className={styles.input}
                       placeholder="e.g. Systems Architecture / Full Stack Role"
                     />
@@ -261,11 +322,18 @@ export default function ContactPage() {
                       id="contact-message"
                       name="message"
                       required
+                      maxLength={3000}
                       rows="5"
                       className={`${styles.input} ${styles.textarea}`}
                       placeholder="Briefly describe your project, team requirements, or discussion topic..."
                     ></textarea>
                   </div>
+
+                  {errorMessage && (
+                    <div style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "-0.25rem", marginBottom: "0.5rem" }} role="alert">
+                      {errorMessage}
+                    </div>
+                  )}
 
                   <button
                     type="submit"
