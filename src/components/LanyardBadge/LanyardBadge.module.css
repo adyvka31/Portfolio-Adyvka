@@ -535,3 +535,34 @@
   height: 14px;
   flex-shrink: 0;
 }
+
+/* Nonaktifkan gantungan dan simulasi fisika di layar sentuh mobile/tablet */
+@media (max-width: 1023px) {
+  .lanyardStage {
+    min-height: auto;
+    padding: 0;
+    touch-action: auto;
+    user-select: auto;
+    -webkit-user-select: auto;
+  }
+
+  .lanyardAnchor,
+  .lanyardSvg,
+  .claspAssembly,
+  .badgeSlot {
+    display: none !important;
+  }
+
+  .badgeCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto;
+    max-width: 420px;
+    width: 100%;
+    transform: none !important;
+    cursor: default;
+    touch-action: auto;
+    will-change: auto;
+  }
+}

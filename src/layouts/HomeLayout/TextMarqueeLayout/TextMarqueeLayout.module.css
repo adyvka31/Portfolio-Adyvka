@@ -55,10 +55,11 @@
   white-space: nowrap;
 }
 
-/* Tambahan UX: Jika global animasi marquee-track menggunakan CSS, 
-   kita pause saat pengguna ingin melihat teks / efek hover-nya */
-.viewport:hover .marquee {
-  animation-play-state: paused;
+/* Pause on hover hanya untuk pengguna mouse di desktop */
+@media (hover: hover) and (pointer: fine) {
+  .viewport:hover .marquee {
+    animation-play-state: paused;
+  }
 }
 
 .track {
@@ -98,10 +99,12 @@
   color: rgba(168, 85, 247, 0.7);
 }
 
-.itemText:hover {
-  color: #ffffff !important;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  transform: scale(1.05); /* Sedikit feedback scaling */
+@media (hover: hover) and (pointer: fine) {
+  .itemText:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05); /* Sedikit feedback scaling */
+  }
 }
 
 .bullet {

@@ -101,10 +101,6 @@
   transition: transform 0.5s ease;
 }
 
-.docCard:hover .docImage {
-  transform: scale(1.05);
-}
-
 .docExpandBtn {
   position: absolute;
   top: 0.75rem;
@@ -124,7 +120,17 @@
   transition: all 0.25s ease;
 }
 
-.docCard:hover .docExpandBtn,
+@media (hover: hover) and (pointer: fine) {
+  .docCard:hover .docImage {
+    transform: scale(1.05);
+  }
+
+  .docCard:hover .docExpandBtn {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .docCard:focus-visible .docExpandBtn {
   opacity: 1;
   transform: scale(1);

@@ -14,10 +14,12 @@
     box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(124, 242, 255, 0.28);
-  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124, 242, 255, 0.28);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .cardClickable {
@@ -97,8 +99,10 @@
   display: block;
 }
 
-.card:hover .thumbnail {
-  transform: scale(1.04);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .thumbnail {
+    transform: scale(1.04);
+  }
 }
 
 .mediaOverlay {
@@ -137,9 +141,17 @@
   pointer-events: none;
 }
 
-.card:hover .mediaHoverBadge {
-  opacity: 1;
-  transform: translateY(0);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .mediaHoverBadge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .mediaHoverBadge {
+    display: none !important;
+  }
 }
 
 .content {
@@ -305,8 +317,10 @@
   display: block;
 }
 
-.card:hover .cardImage {
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .cardImage {
+    transform: scale(1.05);
+  }
 }
 
 .imageOverlay {
@@ -405,11 +419,13 @@
   flex-shrink: 0;
 }
 
-.card:hover .detailArrow {
-  background: var(--accent-glow);
-  color: #000;
-  border-color: var(--accent-glow);
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .detailArrow {
+    background: var(--accent-glow);
+    color: #000;
+    border-color: var(--accent-glow);
+    transform: translateX(3px);
+  }
 }
 
 /* =========================================
@@ -527,10 +543,12 @@
   transition: all 0.3s ease;
 }
 
-.card:hover .certActionBtn {
-  background: rgba(124, 242, 255, 0.08);
-  border-color: rgba(124, 242, 255, 0.3);
-  color: var(--accent-glow);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .certActionBtn {
+    background: rgba(124, 242, 255, 0.08);
+    border-color: rgba(124, 242, 255, 0.3);
+    color: var(--accent-glow);
+  }
 }
 
 /* =========================================

@@ -48,11 +48,13 @@
     box-shadow 0.3s ease;
 }
 
-.cardName:hover {
-  border-color: rgba(124, 242, 255, 0.2);
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.35),
-    0 0 80px rgba(124, 242, 255, 0.08);
+@media (hover: hover) and (pointer: fine) {
+  .cardName:hover {
+    border-color: rgba(124, 242, 255, 0.2);
+    box-shadow:
+      0 30px 60px rgba(0, 0, 0, 0.35),
+      0 0 80px rgba(124, 242, 255, 0.08);
+  }
 }
 
 .inner3D {
@@ -78,6 +80,12 @@
     rgba(124, 242, 255, 0.14),
     transparent 45%
   );
+}
+
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .mouseGlow {
+    display: none !important;
+  }
 }
 .cardBorder {
   position: absolute;

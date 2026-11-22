@@ -13,6 +13,15 @@ const DEFAULT_FACTS = [
   { label: "Academics", value: "96 / 100 GPA (Honors)" },
 ];
 
+const checkIsTouchOrMobile = () => {
+  if (typeof window === "undefined") return false;
+  return (
+    window.innerWidth < 1024 ||
+    window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+    "ontouchstart" in window
+  );
+};
+
 function LanyardBadge({ facts = DEFAULT_FACTS }) {
   const containerRef = useRef(null);
   const cardRef = useRef(null);
@@ -142,6 +151,7 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
   }, []);
 
   const startLoop = useCallback(() => {
+    if (checkIsTouchOrMobile()) return;
     physicsRef.current.animating = true;
     cancelAnimationFrame(animFrameRef.current);
     animFrameRef.current = requestAnimationFrame(() => {
@@ -151,6 +161,7 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
 
   // Initial mount start simulation and ensure initial strap path is set
   useEffect(() => {
+    if (checkIsTouchOrMobile()) return;
     startLoop();
     return () => cancelAnimationFrame(animFrameRef.current);
   }, [startLoop]);
@@ -171,6 +182,12 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
   // Resize handler to update anchor coordinates
   useEffect(() => {
     const handleResize = () => {
+      if (checkIsTouchOrMobile()) {
+        cancelAnimationFrame(animFrameRef.current);
+        if (cardRef.current) cardRef.current.style.transform = "";
+        if (claspRef.current) claspRef.current.style.transform = "";
+        return;
+      }
       startLoop();
     };
     window.addEventListener("resize", handleResize);
@@ -271,6 +288,7 @@ function LanyardBadge({ facts = DEFAULT_FACTS }) {
 
   // Pointer down handler to initiate drag
   const handlePointerDown = (e) => {
+    if (checkIsTouchOrMobile()) return;
     if (e.button !== undefined && e.button !== 0) return;
     if (e.target.closest("a, button")) return;
     e.preventDefault();
