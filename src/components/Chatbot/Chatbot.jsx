@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect, useCallback, memo } from "react";
+import { useState, useRef, useEffect, useCallback, memo, lazy, Suspense } from "react";
 import styles from "./Chatbot.module.css";
-import ChatWindow from "./ChatWindow";
+
+const ChatWindow = lazy(() => import("./ChatWindow"));
 
 function CloseIcon({ size = 20, strokeWidth = 2.4 }) {
   return (
@@ -45,17 +46,19 @@ function Chatbot() {
   const isChatActive = isOpen && !isClosing;
   const currentBubbleState = isChatActive ? "hidden" : bubbleState;
 
-  // Idle prefetch knowledge engine: prefetch 646KB AI data saat browser idle agar instan saat user bertanya
+  // Idle prefetch knowledge engine: prefetch ChatWindow dan 646KB AI data saat browser idle agar instan saat user bertanya
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const schedulePreload = () => {
       if ("requestIdleCallback" in window) {
         window.requestIdleCallback(() => {
+          import("./ChatWindow");
           import("../../data/chatbotKnowledge");
         }, { timeout: 3500 });
       } else {
         setTimeout(() => {
+          import("./ChatWindow");
           import("../../data/chatbotKnowledge");
         }, 2000);
       }
@@ -71,6 +74,7 @@ function Chatbot() {
 
   // Intent-driven prefetch: Dipanggil saat kursor mendekati launcher atau layar disentuh
   const prefetchKnowledge = useCallback(() => {
+    import("./ChatWindow");
     import("../../data/chatbotKnowledge");
   }, []);
 
@@ -144,13 +148,15 @@ function Chatbot() {
     <>
       {/* Interactive Chat Window Modal - Instant 0ms render without network wait */}
       {(isOpen || isClosing) && (
-        <ChatWindow
-          isOpen={isOpen}
-          isClosing={isClosing}
-          onClose={handleClose}
-          onAnimationEnd={handleAnimationEnd}
-          launcherRef={launcherRef}
-        />
+        <Suspense fallback={null}>
+          <ChatWindow
+            isOpen={isOpen}
+            isClosing={isClosing}
+            onClose={handleClose}
+            onAnimationEnd={handleAnimationEnd}
+            launcherRef={launcherRef}
+          />
+        </Suspense>
       )}
 
       {/* Lightweight Floating Circular Toggle Button & Notification Bubble */}

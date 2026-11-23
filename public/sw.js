@@ -13,7 +13,10 @@ const PRECACHE_ASSETS = [
   "/favicon.ico",
   "/favicon.svg",
   "/logo-192.png",
-  "/site.webmanifest"
+  "/site.webmanifest",
+  "/404.html",
+  "/assets/fonts/geist-latin-400-normal.woff2",
+  "/assets/fonts/instrument-serif-latin-400-italic.woff2"
 ];
 
 // 1. Install Event: Pre-cache core shell

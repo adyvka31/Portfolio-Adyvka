@@ -16,14 +16,19 @@ export default function App() {
 
   return (
     <LazyMotion features={domAnimation} strict>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <ProgressBar />
       <div className="spotlight" />
       <Navbar />
-      <ErrorBoundary>
-        <Suspense fallback={<PageLoader />}>
-          <Outlet />
-        </Suspense>
-      </ErrorBoundary>
+      <div id="main-content" tabIndex={-1} style={{ outline: "none" }}>
+        <ErrorBoundary>
+          <Suspense fallback={<PageLoader />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
+      </div>
       <Chatbot />
     </LazyMotion>
   );
