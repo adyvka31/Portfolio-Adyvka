@@ -56,8 +56,8 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Strategy A: Versioned Immutable Assets (/assets/*) -> Cache-First
-  if (url.pathname.startsWith("/assets/")) {
+  // Strategy A: Versioned Immutable Assets (/assets/* and /static-loader-data/*) -> Cache-First
+  if (url.pathname.startsWith("/assets/") || url.pathname.startsWith("/static-loader-data/")) {
     event.respondWith(
       caches.match(request).then((cachedResponse) => {
         if (cachedResponse) {

@@ -18,6 +18,10 @@
   Cache-Control: public, max-age=31536000, stale-while-revalidate=604800
   Cross-Origin-Resource-Policy: same-origin
 
+/assets/images/*
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=604800
+  Cross-Origin-Resource-Policy: same-origin
+
 /static-loader-data/*
   Cache-Control: public, max-age=31536000, immutable
   Cross-Origin-Resource-Policy: same-origin
@@ -46,8 +50,13 @@
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
   Cross-Origin-Resource-Policy: same-origin
 
+/site.webmanifest
+  Cache-Control: public, max-age=86400, stale-while-revalidate=86400
+  Content-Type: application/manifest+json; charset=utf-8
+
 /publications/*.pdf
   Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+  Content-Type: application/pdf
   Cross-Origin-Resource-Policy: same-origin
 
 /*.html
