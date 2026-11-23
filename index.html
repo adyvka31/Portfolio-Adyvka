@@ -2,14 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Immediate Canonical Domain Redirect (adyvka-pratama.netlify.app -> adyvkapratama.my.id) -->
-    <script>
-      (function() {
-        if (window.location.hostname === 'adyvka-pratama.netlify.app') {
-          window.location.replace('https://adyvkapratama.my.id' + window.location.pathname + window.location.search + window.location.hash);
-        }
-      })();
-    </script>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <!-- Google tag (gtag.js) - Deferred loading on user interaction / idle to maximize performance -->
@@ -44,11 +36,9 @@
         }
       })();
     </script>
-    <!-- Preload Critical Fonts (Eliminates request chaining latency) -->
+    <!-- Preload Critical Above-The-Fold Fonts -->
     <link rel="preload" href="/assets/fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/assets/fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/assets/fonts/geist-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Preload Critical Hero Image (LCP Optimization) -->
     <link rel="preload" href="/assets/images/rafif-sava-adyvka-pratama-hero-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
