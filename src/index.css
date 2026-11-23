@@ -183,7 +183,7 @@
   --white-a025: rgba(255, 255, 255, 0.025);
   --white-a3: rgba(255, 255, 255, 0.03);
   --white-a035: rgba(255, 255, 255, 0.035);
-  --grid-line: rgba(255, 255, 255, 0.035);
+  --grid-line: rgba(255, 255, 255, 0.045);
   --white-a4: rgba(255, 255, 255, 0.04);
   --white-a5: rgba(255, 255, 255, 0.05);
   --white-a6: rgba(255, 255, 255, 0.06);
@@ -569,7 +569,7 @@ textarea {
    SURFACES
    ============================================ */
 .glass {
-  background-color: var(--tint-dark-15);
+  background-color: var(--tint-dark-11);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid var(--line);
@@ -580,7 +580,7 @@ textarea {
 }
 
 .glass-hi {
-  background-color: var(--tint-dark-19);
+  background-color: var(--tint-dark-12);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border: 1px solid var(--line-strong);
@@ -603,7 +603,7 @@ textarea {
         var(--white-a6),
         var(--white-a2)
       ),
-      var(--tint-dark-15);
+      var(--tint-dark-11);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
   }
@@ -615,7 +615,7 @@ textarea {
         var(--white-a8),
         var(--white-a3)
       ),
-      var(--tint-dark-19);
+      var(--tint-dark-12);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
   }
@@ -1085,21 +1085,21 @@ textarea {
   z-index: 0;
   pointer-events: none;
   background-image: radial-gradient(
-    var(--white-a15-perc) 1px,
+    rgba(255, 255, 255, 0.18) 1px,
     transparent 1px
   );
   background-size: 24px 24px;
 
   /* Gunakan variabel kursor yang relatif terhadap containernya */
   mask-image: radial-gradient(
-    600px circle at var(--dotX, -1000px) var(--dotY, -1000px),
+    560px circle at var(--dotX, -1000px) var(--dotY, -1000px),
     black,
-    transparent 40%
+    transparent 38%
   );
   -webkit-mask-image: radial-gradient(
-    600px circle at var(--dotX, -1000px) var(--dotY, -1000px),
+    560px circle at var(--dotX, -1000px) var(--dotY, -1000px),
     black,
-    transparent 40%
+    transparent 38%
   );
 }
 

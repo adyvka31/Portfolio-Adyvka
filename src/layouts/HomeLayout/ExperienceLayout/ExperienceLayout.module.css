@@ -181,16 +181,15 @@
 .itemCard {
   padding: clamp(1.25rem, 3vw, 2rem);
   border-radius: 1.25rem;
-  background: linear-gradient(180deg, var(--white-a3), transparent);
-  border: 1px solid var(--white-a5);
-  transition: all 0.4s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1),
+    border-color 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .itemCard:hover {
-    border-color: var(--accent-a20);
-    background: var(--white-a5);
-    transform: translateY(-2px);
+    border-color: var(--accent-a18);
+    transform: translateY(-4px);
   }
 }
 

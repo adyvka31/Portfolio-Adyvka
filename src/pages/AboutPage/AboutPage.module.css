@@ -128,12 +128,14 @@
   flex-direction: column;
   padding: 0;
   border-radius: 1.5rem;
-  background: linear-gradient(
-    180deg,
-    var(--white-a4),
-    var(--white-a15)
-  );
-  border: 1px solid var(--white-a8);
+  background:
+    linear-gradient(
+      180deg,
+      var(--white-a4),
+      var(--white-a15)
+    ),
+    rgba(12, 12, 16, 0.95);
+  border: 1px solid var(--line);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -153,12 +155,14 @@
   display: flex;
   flex-direction: column;
   border-radius: 1.25rem;
-  background: linear-gradient(
-    180deg,
-    var(--white-a3),
-    var(--white-a1)
-  );
-  border: 1px solid var(--white-a6);
+  background:
+    linear-gradient(
+      180deg,
+      var(--white-a6),
+      var(--white-a2)
+    ),
+    rgba(12, 12, 16, 0.95);
+  border: 1px solid var(--line);
   overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -587,15 +591,12 @@
 .trackCard {
   padding: clamp(1rem, 2.5vw, 1.25rem) clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 1rem;
-  background: var(--white-a2);
-  border: 1px solid var(--white-a5);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   transition: all 0.3s ease;
 }
 .trackCard:hover {
-  background: var(--white-a4);
   border-color: var(--accent-a18);
   transform: translateY(-2px);
 }

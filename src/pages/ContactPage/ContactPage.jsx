@@ -5,6 +5,7 @@ import PageHero from "../../components/PageHero/PageHero";
 import NativeReveal from "../../components/Reveal/NativeReveal";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import {
   MailIcon,
   LinkedInIcon,
@@ -67,7 +68,50 @@ function renderChannelIcon(iconId, size = 20) {
   }
 }
 
+function ChannelCardItem({ channel }) {
+  const spotlight = useCardSpotlight();
+  return (
+    <a
+      href={channel.url}
+      target={channel.id === "email" ? undefined : "_blank"}
+      rel={channel.id === "email" ? undefined : "noopener noreferrer"}
+      className={`card glass ${styles.channelCard}`}
+      style={{ "--channel-accent": channel.accent }}
+      {...spotlight}
+    >
+      <div className={styles.channelCardTop}>
+        <div className={styles.channelIconBox}>
+          {renderChannelIcon(channel.icon, 20)}
+        </div>
+        <span className={styles.channelCategory}>{channel.category}</span>
+      </div>
+
+      <div className={styles.channelBody}>
+        <div className={styles.channelNameRow}>
+          <h3 className={styles.channelName}>{channel.name}</h3>
+          <ArrowUpRightIcon size={14} className={styles.channelArrow} />
+        </div>
+        <span className={styles.channelHandle}>{channel.handle}</span>
+        <p className={styles.channelDesc}>{channel.desc}</p>
+      </div>
+    </a>
+  );
+}
+
+function ScopeCardItem({ scope, idx }) {
+  const spotlight = useCardSpotlight();
+  return (
+    <article className={`card glass ${styles.scopeCard}`} {...spotlight}>
+      <span className={styles.scopeNumber}>// 0{idx + 1}</span>
+      <h3 className={styles.scopeTitle}>{scope.title}</h3>
+      <p className={styles.scopeDesc}>{scope.desc}</p>
+    </article>
+  );
+}
+
 export default function ContactPage() {
+  const infoSpotlight = useCardSpotlight();
+  const formSpotlight = useCardSpotlight();
   const [formStatus, setFormStatus] = useState("IDLE");
   const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
@@ -183,7 +227,7 @@ export default function ContactPage() {
           <div className={styles.consoleGrid}>
             {/* LEFT: Quick Info & Direct Access */}
             <NativeReveal className="reveal-slide-up">
-              <div className={`card glass-hi ${styles.infoCard}`}>
+              <div className={`card glass-hi ${styles.infoCard}`} {...infoSpotlight}>
                 <div className={styles.infoGlow} aria-hidden="true" />
                 <SectionLabel number="01" label="DIRECT INQUIRIES" />
 
@@ -246,7 +290,7 @@ export default function ContactPage() {
 
             {/* RIGHT: Formspree Message Form */}
             <NativeReveal delay={0.15} className="reveal-slide-up">
-              <div className={`card glass-hi ${styles.formCard}`}>
+              <div className={`card glass-hi ${styles.formCard}`} {...formSpotlight}>
                 <SectionLabel number="02" label="DIRECT MESSAGE" />
                 <h3 className={styles.formTitle}>Send a direct dispatch</h3>
                 <p className={styles.formSubhead}>
@@ -386,29 +430,7 @@ export default function ContactPage() {
             <div className={styles.channelsGrid}>
               {personalInfo.channels.map((channel, idx) => (
                 <NativeReveal key={channel.id} delay={idx * 0.07}>
-                  <a
-                    href={channel.url}
-                    target={channel.id === "email" ? undefined : "_blank"}
-                    rel={channel.id === "email" ? undefined : "noopener noreferrer"}
-                    className={`card glass ${styles.channelCard}`}
-                    style={{ "--channel-accent": channel.accent }}
-                  >
-                    <div className={styles.channelCardTop}>
-                      <div className={styles.channelIconBox}>
-                        {renderChannelIcon(channel.icon, 20)}
-                      </div>
-                      <span className={styles.channelCategory}>{channel.category}</span>
-                    </div>
-
-                    <div className={styles.channelBody}>
-                      <div className={styles.channelNameRow}>
-                        <h3 className={styles.channelName}>{channel.name}</h3>
-                        <ArrowUpRightIcon size={14} className={styles.channelArrow} />
-                      </div>
-                      <span className={styles.channelHandle}>{channel.handle}</span>
-                      <p className={styles.channelDesc}>{channel.desc}</p>
-                    </div>
-                  </a>
+                  <ChannelCardItem channel={channel} />
                 </NativeReveal>
               ))}
             </div>
@@ -435,11 +457,7 @@ export default function ContactPage() {
           <div className={styles.scopeGrid}>
             {INQUIRY_TYPES.map((scope, idx) => (
               <NativeReveal key={scope.title} delay={idx * 0.08}>
-                <article className={`card glass ${styles.scopeCard}`}>
-                  <span className={styles.scopeNumber}>// 0{idx + 1}</span>
-                  <h3 className={styles.scopeTitle}>{scope.title}</h3>
-                  <p className={styles.scopeDesc}>{scope.desc}</p>
-                </article>
+                <ScopeCardItem scope={scope} idx={idx} />
               </NativeReveal>
             ))}
           </div>

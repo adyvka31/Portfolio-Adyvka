@@ -4,8 +4,14 @@
   gap: 2.25rem;
   padding: 2rem;
   border-radius: 1.5rem;
-  background: var(--tint-panel-17);
-  border: 1px solid var(--white-a8);
+  background:
+    linear-gradient(
+      180deg,
+      var(--white-a6),
+      var(--white-a2)
+    ),
+    rgba(12, 12, 16, 0.95);
+  border: 1px solid var(--line);
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;

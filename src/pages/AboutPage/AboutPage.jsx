@@ -4,6 +4,7 @@ import PageHero from "../../components/PageHero/PageHero";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import NativeReveal from "../../components/Reveal/NativeReveal";
 import LanyardBadge from "../../components/LanyardBadge/LanyardBadge";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import styles from "./AboutPage.module.css";
 
 /* ====== DATA ====== */
@@ -250,6 +251,8 @@ const NEXT_INTENT = [
 /* ====== SUBCOMPONENTS ====== */
 
 function TrackRow({ row, last }) {
+  const techSpotlight = useCardSpotlight();
+  const humanSpotlight = useCardSpotlight();
   return (
     <div className={`${styles.trackRow} ${last ? styles.trackRowLast : ""}`}>
       <div className={styles.trackYear}>
@@ -257,14 +260,14 @@ function TrackRow({ row, last }) {
         <span className={styles.trackYearMeta}>age {row.age}</span>
         <span className={styles.trackYearGrade}>{row.grade}</span>
       </div>
-      <article className={`glass ${styles.trackCard}`}>
+      <article className={`card glass ${styles.trackCard}`} {...techSpotlight}>
         <span className={styles.trackBadge} aria-hidden="true">
           ◆ {row.tech.label}
         </span>
         <h3 className={styles.trackTitle}>{row.tech.title}</h3>
         <p className={styles.trackDetail}>{row.tech.detail}</p>
       </article>
-      <article className={`glass ${styles.trackCard} ${styles.trackHuman}`}>
+      <article className={`card glass ${styles.trackCard} ${styles.trackHuman}`} {...humanSpotlight}>
         <span className={styles.trackBadge} aria-hidden="true">
           ◇ {row.human.label}
         </span>
@@ -276,8 +279,9 @@ function TrackRow({ row, last }) {
 }
 
 function CurrentSlot({ item }) {
+  const spotlight = useCardSpotlight();
   return (
-    <article className={styles.currentSlot}>
+    <article className={`card ${styles.currentSlot}`} {...spotlight}>
       <div className={styles.currentHeader}>
         <span className={`${styles.currentDot} pulse-dot`} aria-hidden="true" />
         <span className={styles.currentLabel}>{item.label}</span>

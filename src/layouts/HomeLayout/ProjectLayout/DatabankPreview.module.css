@@ -4,7 +4,7 @@
   margin-top: clamp(1.5rem, 4vw, 2rem);
   border-radius: 1rem;
   border: 1px solid var(--white-a8);
-  background: var(--tint-panel-1);
+  background: rgba(10, 10, 14, 0.95);
   padding: clamp(1rem, 3vw, 1.25rem);
   overflow: hidden;
 }

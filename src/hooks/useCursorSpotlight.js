@@ -4,8 +4,7 @@ import { useLocation } from "react-router-dom";
 export function useCursorSpotlight() {
   const rafIdRef = useRef(null);
   const lastEventRef = useRef(null);
-  const dotsCacheRef = useRef([]);
-  const { pathname } = useLocation(); // Untuk mendeteksi perpindahan halaman
+  const { pathname } = useLocation();
 
   useEffect(() => {
     // 1. Matikan di mobile & tablet layar sentuh & mode hemat baterai/motion
@@ -18,65 +17,60 @@ export function useCursorSpotlight() {
     ).matches;
     if (isMobileOrTouch || reducedMotion) return;
 
-    // 2. Trik Anti-Reflow: Simpan kordinat ABSOLUT (terhadap dokumen)
-    const refreshDotsCache = () => {
-      dotsCacheRef.current = Array.from(
-        document.querySelectorAll(".global-dots"),
-      ).map((el) => {
-        const rect = el.getBoundingClientRect();
-        return {
-          el,
-          // Menyimpan posisi tetap meskipun user men-scroll
-          absoluteTop: rect.top + window.scrollY,
-          absoluteLeft: rect.left + window.scrollX,
-        };
-      });
-    };
+    const root = document.documentElement;
 
-    // Ambil elemen dengan jeda agar halaman selesai render
-    const timer = setTimeout(refreshDotsCache, 150);
-    window.addEventListener("resize", refreshDotsCache, { passive: true });
-
-    // 3. Fungsi Render (Hanya Tulis CSS, Tidak Ada Baca DOM)
+    // 2. Fungsi Render Live (Anti-Stale Cache, Anti-Disappear)
     const update = () => {
       const e = lastEventRef.current;
-      if (!e) return;
+      if (!e) {
+        rafIdRef.current = null;
+        return;
+      }
 
-      const root = document.documentElement;
-
-      // Update cahaya utama (.spotlight)
+      // Update cahaya utama kursor (.spotlight)
       root.style.setProperty("--mx", `${e.clientX}px`);
       root.style.setProperty("--my", `${e.clientY}px`);
 
-      // Update cahaya titik-titik (.global-dots)
-      for (let i = 0; i < dotsCacheRef.current.length; i++) {
-        const { el, absoluteTop, absoluteLeft } = dotsCacheRef.current[i];
-
-        // Kalkulasi posisi saat ini secara matematis (SANGAT RINGAN)
-        const currentTop = absoluteTop - window.scrollY;
-        const currentLeft = absoluteLeft - window.scrollX;
-
-        el.style.setProperty("--dotX", `${e.clientX - currentLeft}px`);
-        el.style.setProperty("--dotY", `${e.clientY - currentTop}px`);
+      // Update posisi titik-titik (.global-dots) secara live terhadap viewport
+      const dotElements = document.querySelectorAll(".global-dots");
+      for (let i = 0; i < dotElements.length; i++) {
+        const el = dotElements[i];
+        const rect = el.getBoundingClientRect();
+        // Hanya update saat elemen berada di sekitar viewport untuk efisiensi
+        if (rect.bottom >= -150 && rect.top <= window.innerHeight + 150) {
+          const dotX = e.clientX - rect.left;
+          const dotY = e.clientY - rect.top;
+          el.style.setProperty("--dotX", `${dotX}px`);
+          el.style.setProperty("--dotY", `${dotY}px`);
+        }
       }
       rafIdRef.current = null;
     };
 
-    const handleMouseMove = (e) => {
-      lastEventRef.current = e;
-      // Gunakan requestAnimationFrame agar terkunci di 60fps/120fps
+    const scheduleUpdate = () => {
       if (rafIdRef.current === null) {
         rafIdRef.current = requestAnimationFrame(update);
       }
     };
 
+    const handleMouseMove = (e) => {
+      lastEventRef.current = e;
+      scheduleUpdate();
+    };
+
+    const handleScroll = () => {
+      if (lastEventRef.current) {
+        scheduleUpdate();
+      }
+    };
+
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      clearTimeout(timer);
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", refreshDotsCache);
+      window.removeEventListener("scroll", handleScroll);
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
-  }, [pathname]); // Refresh cache hanya jika URL (halaman) berubah
+  }, [pathname]);
 }

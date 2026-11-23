@@ -7,6 +7,7 @@ import NativeReveal from "../../components/Reveal/NativeReveal";
 import BottomCTA from "../../components/BottomCTA/BottomCTA";
 import SectionLabel from "../../components/SectionLabel/SectionLabel";
 import Card from "../../components/Card/Card";
+import { useCardSpotlight } from "../../hooks/useCardSpotlight";
 import {
   experiencesList,
   allTeachingExperiences,
@@ -52,6 +53,39 @@ const EXPERIENCE_ITEMS = [
     url: `/experience/${l.slug}`,
   })),
 ];
+
+function ExperienceRow({ exp }) {
+  const spotlight = useCardSpotlight();
+  return (
+    <article className={`card glass ${styles.row}`} {...spotlight}>
+      <Link
+        to={`/experience/${exp.slug}`}
+        className={styles.rowLinkOverlay}
+        aria-label={`View details for ${exp.role} at ${exp.company}`}
+      />
+      <div
+        className={`${styles.dot} ${exp.current ? styles.dotCurrent : ""}`}
+        aria-hidden="true"
+      />
+
+      <div className={styles.rowContent}>
+        <div
+          className={`${styles.period} ${exp.current ? styles.periodCurrent : ""}`}
+        >
+          {exp.period}
+        </div>
+        <h3 className={styles.role}>{exp.role}</h3>
+        <div className={styles.company}>{exp.company}</div>
+        <p className={styles.description}>
+          {exp.description}
+        </p>
+        <span className={styles.cta} aria-hidden="true">
+          Read more →
+        </span>
+      </div>
+    </article>
+  );
+}
 
 export default function ExperiencePage() {
   const scrollRef = useRef(null);
@@ -151,33 +185,7 @@ export default function ExperiencePage() {
                 {experiencesList.map((exp, i) => (
                   <li key={exp.slug} className={styles.cardWrapper}>
                     <NativeReveal delay={i * 0.1} className="reveal-slide-up">
-                      <article className={styles.row}>
-                        <Link
-                          to={`/experience/${exp.slug}`}
-                          className={styles.rowLinkOverlay}
-                          aria-label={`View details for ${exp.role} at ${exp.company}`}
-                        />
-                        <div
-                          className={`${styles.dot} ${exp.current ? styles.dotCurrent : ""}`}
-                          aria-hidden="true"
-                        />
-
-                        <div className={styles.rowContent}>
-                          <div
-                            className={`${styles.period} ${exp.current ? styles.periodCurrent : ""}`}
-                          >
-                            {exp.period}
-                          </div>
-                          <h3 className={styles.role}>{exp.role}</h3>
-                          <div className={styles.company}>{exp.company}</div>
-                          <p className={styles.description}>
-                            {exp.description}
-                          </p>
-                          <span className={styles.cta} aria-hidden="true">
-                            Read more →
-                          </span>
-                        </div>
-                      </article>
+                      <ExperienceRow exp={exp} />
                     </NativeReveal>
                   </li>
                 ))}

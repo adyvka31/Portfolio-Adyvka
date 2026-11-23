@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import NativeReveal from "../../../components/Reveal/NativeReveal";
 import SectionLabel from "../../../components/SectionLabel/SectionLabel";
 import Tag from "../../../components/Tag/Tag";
+import { useCardSpotlight } from "../../../hooks/useCardSpotlight";
 import { experiences } from "../../../data/portfolio";
 import styles from "./ExperienceLayout.module.css";
 
 function TimelineItem({ item, index }) {
   const isLeft = index % 2 === 0;
+  const spotlight = useCardSpotlight();
 
   return (
     <NativeReveal
@@ -26,7 +28,7 @@ function TimelineItem({ item, index }) {
           aria-hidden="true"
         />
 
-        <div className={styles.itemCard}>
+        <div className={`card glass ${styles.itemCard}`} {...spotlight}>
           <header className={styles.itemHeader}>
             <div
               className={`${styles.period} ${item.current ? styles.periodCurrent : ""}`}
