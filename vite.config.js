@@ -27,6 +27,7 @@ export default defineConfig({
         manualChunks(id) {
           if (id.endsWith(".css") || id.includes(".css?")) return;
           if (id.includes("src/data/chatbotKnowledge")) return "chatbot-knowledge";
+          if (id.includes("src/data/chatbotSuggestions")) return "chatbot-suggestions";
           if (id.includes("src/data/projectDetails")) return "project-details";
           if (!id.includes("node_modules")) return;
           if (id.includes("react-router")) return "router";

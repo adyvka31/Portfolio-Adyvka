@@ -1122,3 +1122,29 @@ textarea {
   transform: translateZ(0);
   will-change: transform;
 }
+
+/* ============================================
+   ACCESSIBILITY / SKIP TO CONTENT LINK
+   ============================================ */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 1.25rem;
+  z-index: 10000;
+  padding: 0.6rem 1.2rem;
+  background: var(--bg-card, #121216);
+  color: var(--text, #ededf0);
+  border: 1px solid var(--border-focus, #7cf2ff);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1.25rem;
+  outline: 2px solid var(--accent, #7cf2ff);
+  outline-offset: 2px;
+}
